@@ -82,3 +82,5 @@
       href: release-notes-azureps.md
     - name: "Критические изменения в версии Az\_2.0.0"
       href: migrate-az-2.0.0.md
+    - name: "Критические изменения в версии Az\_3.0.0"
+      href: migrate-az-3.0.0.md

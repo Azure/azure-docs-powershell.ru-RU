@@ -77,6 +77,8 @@ landingContent:
             url: release-notes-azureps.md
           - text: "Критические изменения в Az\_2.0.0"
             url: migrate-az-2.0.0.md
+          - text: "Критические изменения в Az\_3.0.0"
+            url: migrate-az-3.0.0.md
   - title: Другие модули Azure PowerShell
     linkLists:
       - linkListType: overview
