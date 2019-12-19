@@ -7,81 +7,81 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: 1d99f04525a33f03f859bfb4abe263b12ca6add9
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.openlocfilehash: e5121d61b0f5f68ff3e1f33d774e3533adfeb64f
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370313"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75035784"
 ---
-# <a name="breaking-changes-for-az-100"></a><span data-ttu-id="ee6d0-103">Критические изменения для Az 1.0.0</span><span class="sxs-lookup"><span data-stu-id="ee6d0-103">Breaking changes for Az 1.0.0</span></span>
+# <a name="breaking-changes-for-az-100"></a><span data-ttu-id="ca35b-103">Критические изменения для Az 1.0.0</span><span class="sxs-lookup"><span data-stu-id="ca35b-103">Breaking changes for Az 1.0.0</span></span>
 
-<span data-ttu-id="ee6d0-104">В этом документе содержатся подробные сведения об отличиях между AzureRM 6.x и новым модулем Az версии 1.x и более поздних.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-104">This document provides detailed information on the changes between AzureRM 6.x and the new Az module, version 1.x and later.</span></span> <span data-ttu-id="ee6d0-105">Пункты в оглавлении помогут вам разобраться со всеми этапами переноса, включая изменения модуля, которые могут повлиять на скрипты.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-105">The table of contents will help guide you through a full migration path, including module-specific changes that may affect your scripts.</span></span>
+<span data-ttu-id="ca35b-104">В этом документе содержатся подробные сведения об отличиях между AzureRM 6.x и новым модулем Az версии 1.x и более поздних.</span><span class="sxs-lookup"><span data-stu-id="ca35b-104">This document provides detailed information on the changes between AzureRM 6.x and the new Az module, version 1.x and later.</span></span> <span data-ttu-id="ca35b-105">Пункты в оглавлении помогут вам разобраться со всеми этапами переноса, включая изменения модуля, которые могут повлиять на скрипты.</span><span class="sxs-lookup"><span data-stu-id="ca35b-105">The table of contents will help guide you through a full migration path, including module-specific changes that may affect your scripts.</span></span>
 
-<span data-ttu-id="ee6d0-106">Общие советы по началу перехода с Az на AzureRM см. в [этой статье](migrate-from-azurerm-to-az.md).</span><span class="sxs-lookup"><span data-stu-id="ee6d0-106">For general advice on getting started with a migration from AzureRM to Az, see [Start migration from AzureRM to Az](migrate-from-azurerm-to-az.md).</span></span>
+<span data-ttu-id="ca35b-106">Общие советы по началу перехода с Az на AzureRM см. в [этой статье](migrate-from-azurerm-to-az.md).</span><span class="sxs-lookup"><span data-stu-id="ca35b-106">For general advice on getting started with a migration from AzureRM to Az, see [Start migration from AzureRM to Az](migrate-from-azurerm-to-az.md).</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="ee6d0-107">Кроме того, после выхода версии Az 1.0.0 также были внесены критические изменения, которые представлены в Az 2.0.0.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-107">There have been breaking changes between Az 1.0.0 and Az 2.0.0 as well.</span></span> <span data-ttu-id="ee6d0-108">Выполнив действия по переходу с AzureRM на Az, представленные в этом руководстве, перейдите к статье [о критических изменениях в Az 2.0.0](migrate-az-2.0.0.md), чтобы узнать, необходимо ли вам внести дополнительные изменения.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-108">After following this guide for updating from AzureRM to Az, see the [Az 2.0.0 breaking changes](migrate-az-2.0.0.md) to find out if you need to make additional changes.</span></span>
+> <span data-ttu-id="ca35b-107">Кроме того, после выхода версии Az 1.0.0 также были внесены критические изменения, которые представлены в Az 2.0.0.</span><span class="sxs-lookup"><span data-stu-id="ca35b-107">There have been breaking changes between Az 1.0.0 and Az 2.0.0 as well.</span></span> <span data-ttu-id="ca35b-108">Выполнив действия по переходу с AzureRM на Az, представленные в этом руководстве, перейдите к статье [о критических изменениях в Az 2.0.0](migrate-az-2.0.0.md), чтобы узнать, необходимо ли вам внести дополнительные изменения.</span><span class="sxs-lookup"><span data-stu-id="ca35b-108">After following this guide for updating from AzureRM to Az, see the [Az 2.0.0 breaking changes](migrate-az-2.0.0.md) to find out if you need to make additional changes.</span></span>
 
-## <a name="table-of-contents"></a><span data-ttu-id="ee6d0-109">Оглавление</span><span class="sxs-lookup"><span data-stu-id="ee6d0-109">Table of Contents</span></span>
+## <a name="table-of-contents"></a><span data-ttu-id="ca35b-109">Оглавление</span><span class="sxs-lookup"><span data-stu-id="ca35b-109">Table of Contents</span></span>
 
-- [<span data-ttu-id="ee6d0-110">Общие критически важные изменения</span><span class="sxs-lookup"><span data-stu-id="ee6d0-110">General breaking changes</span></span>](#general-breaking-changes)
-  - [<span data-ttu-id="ee6d0-111">Изменения префикса существительного командлета</span><span class="sxs-lookup"><span data-stu-id="ee6d0-111">Cmdlet noun prefix changes</span></span>](#cmdlet-noun-prefix-changes)
-  - [<span data-ttu-id="ee6d0-112">Изменение имени модуля</span><span class="sxs-lookup"><span data-stu-id="ee6d0-112">Module name changes</span></span>](#module-name-changes)
-  - [<span data-ttu-id="ee6d0-113">Удаленные модули</span><span class="sxs-lookup"><span data-stu-id="ee6d0-113">Removed modules</span></span>](#removed-modules)
-  - [<span data-ttu-id="ee6d0-114">Windows PowerShell 5.1 и .NET 4.7.2</span><span class="sxs-lookup"><span data-stu-id="ee6d0-114">Windows PowerShell 5.1 and .NET 4.7.2</span></span>](#windows-powershell-51-and-net-472)
-  - [<span data-ttu-id="ee6d0-115">Временное удаление входа пользователя с помощью PSCredential</span><span class="sxs-lookup"><span data-stu-id="ee6d0-115">Temporary removal of user login using PSCredential</span></span>](#temporary-removal-of-user-login-using-pscredential)
-  - [<span data-ttu-id="ee6d0-116">Вход с кодом устройства по умолчанию вместо запроса веб-браузера</span><span class="sxs-lookup"><span data-stu-id="ee6d0-116">Default device code login instead of web browser prompt</span></span>](#default-device-code-login-instead-of-web-browser-prompt)
-- [<span data-ttu-id="ee6d0-117">Критические изменения модуля</span><span class="sxs-lookup"><span data-stu-id="ee6d0-117">Module breaking changes</span></span>](#module-breaking-changes)
-  - [<span data-ttu-id="ee6d0-118">Az.ApiManagement (ранее AzureRM.ApiManagement)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-118">Az.ApiManagement (previously AzureRM.ApiManagement)</span></span>](#azapimanagement-previously-azurermapimanagement)
-  - [<span data-ttu-id="ee6d0-119">Az.Billing (ранее AzureRM.Billing, AzureRM.Consitation и AzureRM.UsageAggregates)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-119">Az.Billing (previously AzureRM.Billing, AzureRM.Consumption, and AzureRM.UsageAggregates)</span></span>](#azbilling-previously-azurermbilling-azurermconsumption-and-azurermusageaggregates)
-  - [<span data-ttu-id="ee6d0-120">Az.CognitiveServices (ранее AzureRM.CognitiveServices)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-120">Az.CognitiveServices (previously AzureRM.CognitiveServices)</span></span>](#azcognitiveservices-previously-azurermcognitiveservices)
-  - [<span data-ttu-id="ee6d0-121">Az.Compute (ранее AzureRM.Compute)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-121">Az.Compute (previously AzureRM.Compute)</span></span>](#azcompute-previously-azurermcompute)
-  - [<span data-ttu-id="ee6d0-122">Az.DataFactory (ранее AzureRM.DataFactories и AzureRM.DataFactoryV2)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-122">Az.DataFactory (previously AzureRM.DataFactories and AzureRM.DataFactoryV2)</span></span>](#azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2)
-  - [<span data-ttu-id="ee6d0-123">Az.DataLakeAnalytics (ранее AzureRM.DataLakeAnalytics)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-123">Az.DataLakeAnalytics (previously AzureRM.DataLakeAnalytics)</span></span>](#azdatalakeanalytics-previously-azurermdatalakeanalytics)
-  - [<span data-ttu-id="ee6d0-124">Az.DataLakeStore (ранее AzureRM.DataLakeStore)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-124">Az.DataLakeStore (previously AzureRM.DataLakeStore)</span></span>](#azdatalakestore-previously-azurermdatalakestore)
-  - [<span data-ttu-id="ee6d0-125">Az.KeyVault (ранее AzureRM.KeyVault)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-125">Az.KeyVault (previously AzureRM.KeyVault)</span></span>](#azkeyvault-previously-azurermkeyvault)
-  - [<span data-ttu-id="ee6d0-126">Az.Media (ранее AzureRM.Media)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-126">Az.Media (previously AzureRM.Media)</span></span>](#azmedia-previously-azurermmedia)
-  - [<span data-ttu-id="ee6d0-127">Az.Monitor (ранее AzureRM.Insights)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-127">Az.Monitor (previously AzureRM.Insights)</span></span>](#azmonitor-previously-azurerminsights)
-  - [<span data-ttu-id="ee6d0-128">Az.Network (ранее AzureRM.Network)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-128">Az.Network (previously AzureRM.Network)</span></span>](#aznetwork-previously-azurermnetwork)
-  - [<span data-ttu-id="ee6d0-129">Az.OperationalInsights (ранее AzureRM.OperationalInsights)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-129">Az.OperationalInsights (previously AzureRM.OperationalInsights)</span></span>](#azoperationalinsights-previously-azurermoperationalinsights)
-  - [<span data-ttu-id="ee6d0-130">Az.RecoveryServices (ранее AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup и AzureRM.RecoveryServices.SiteRecovery)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-130">Az.RecoveryServices (previously AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup, and AzureRM.RecoveryServices.SiteRecovery)</span></span>](#azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery)
-  - [<span data-ttu-id="ee6d0-131">Az.Resources (ранее AzureRM.Resources)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-131">Az.Resources (previously AzureRM.Resources)</span></span>](#azresources-previously-azurermresources)
-  - [<span data-ttu-id="ee6d0-132">Az.ServiceFabric (ранее AzureRM.ServiceFabric)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-132">Az.ServiceFabric (previously AzureRM.ServiceFabric)</span></span>](#azservicefabric-previously-azurermservicefabric)
-  - [<span data-ttu-id="ee6d0-133">Az.Sql (ранее AzureRM.Sql)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-133">Az.Sql (previously AzureRM.Sql)</span></span>](#azsql-previously-azurermsql)
-  - [<span data-ttu-id="ee6d0-134">Az.Storage (ранее Azure.Storage и AzureRM.Storage)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-134">Az.Storage (previously Azure.Storage and AzureRM.Storage)</span></span>](#azstorage-previously-azurestorage-and-azurermstorage)
-  - [<span data-ttu-id="ee6d0-135">Az.Websites (ранее AzureRM.Websites)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-135">Az.Websites (previously AzureRM.Websites)</span></span>](#azwebsites-previously-azurermwebsites)
+- [<span data-ttu-id="ca35b-110">Общие критически важные изменения</span><span class="sxs-lookup"><span data-stu-id="ca35b-110">General breaking changes</span></span>](#general-breaking-changes)
+  - [<span data-ttu-id="ca35b-111">Изменения префикса существительного командлета</span><span class="sxs-lookup"><span data-stu-id="ca35b-111">Cmdlet noun prefix changes</span></span>](#cmdlet-noun-prefix-changes)
+  - [<span data-ttu-id="ca35b-112">Изменение имени модуля</span><span class="sxs-lookup"><span data-stu-id="ca35b-112">Module name changes</span></span>](#module-name-changes)
+  - [<span data-ttu-id="ca35b-113">Удаленные модули</span><span class="sxs-lookup"><span data-stu-id="ca35b-113">Removed modules</span></span>](#removed-modules)
+  - [<span data-ttu-id="ca35b-114">Windows PowerShell 5.1 и .NET 4.7.2</span><span class="sxs-lookup"><span data-stu-id="ca35b-114">Windows PowerShell 5.1 and .NET 4.7.2</span></span>](#windows-powershell-51-and-net-472)
+  - [<span data-ttu-id="ca35b-115">Временное удаление входа пользователя с помощью PSCredential</span><span class="sxs-lookup"><span data-stu-id="ca35b-115">Temporary removal of user login using PSCredential</span></span>](#temporary-removal-of-user-login-using-pscredential)
+  - [<span data-ttu-id="ca35b-116">Вход с кодом устройства по умолчанию вместо запроса веб-браузера</span><span class="sxs-lookup"><span data-stu-id="ca35b-116">Default device code login instead of web browser prompt</span></span>](#default-device-code-login-instead-of-web-browser-prompt)
+- [<span data-ttu-id="ca35b-117">Критические изменения модуля</span><span class="sxs-lookup"><span data-stu-id="ca35b-117">Module breaking changes</span></span>](#module-breaking-changes)
+  - [<span data-ttu-id="ca35b-118">Az.ApiManagement (ранее AzureRM.ApiManagement)</span><span class="sxs-lookup"><span data-stu-id="ca35b-118">Az.ApiManagement (previously AzureRM.ApiManagement)</span></span>](#azapimanagement-previously-azurermapimanagement)
+  - [<span data-ttu-id="ca35b-119">Az.Billing (ранее AzureRM.Billing, AzureRM.Consitation и AzureRM.UsageAggregates)</span><span class="sxs-lookup"><span data-stu-id="ca35b-119">Az.Billing (previously AzureRM.Billing, AzureRM.Consumption, and AzureRM.UsageAggregates)</span></span>](#azbilling-previously-azurermbilling-azurermconsumption-and-azurermusageaggregates)
+  - [<span data-ttu-id="ca35b-120">Az.CognitiveServices (ранее AzureRM.CognitiveServices)</span><span class="sxs-lookup"><span data-stu-id="ca35b-120">Az.CognitiveServices (previously AzureRM.CognitiveServices)</span></span>](#azcognitiveservices-previously-azurermcognitiveservices)
+  - [<span data-ttu-id="ca35b-121">Az.Compute (ранее AzureRM.Compute)</span><span class="sxs-lookup"><span data-stu-id="ca35b-121">Az.Compute (previously AzureRM.Compute)</span></span>](#azcompute-previously-azurermcompute)
+  - [<span data-ttu-id="ca35b-122">Az.DataFactory (ранее AzureRM.DataFactories и AzureRM.DataFactoryV2)</span><span class="sxs-lookup"><span data-stu-id="ca35b-122">Az.DataFactory (previously AzureRM.DataFactories and AzureRM.DataFactoryV2)</span></span>](#azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2)
+  - [<span data-ttu-id="ca35b-123">Az.DataLakeAnalytics (ранее AzureRM.DataLakeAnalytics)</span><span class="sxs-lookup"><span data-stu-id="ca35b-123">Az.DataLakeAnalytics (previously AzureRM.DataLakeAnalytics)</span></span>](#azdatalakeanalytics-previously-azurermdatalakeanalytics)
+  - [<span data-ttu-id="ca35b-124">Az.DataLakeStore (ранее AzureRM.DataLakeStore)</span><span class="sxs-lookup"><span data-stu-id="ca35b-124">Az.DataLakeStore (previously AzureRM.DataLakeStore)</span></span>](#azdatalakestore-previously-azurermdatalakestore)
+  - [<span data-ttu-id="ca35b-125">Az.KeyVault (ранее AzureRM.KeyVault)</span><span class="sxs-lookup"><span data-stu-id="ca35b-125">Az.KeyVault (previously AzureRM.KeyVault)</span></span>](#azkeyvault-previously-azurermkeyvault)
+  - [<span data-ttu-id="ca35b-126">Az.Media (ранее AzureRM.Media)</span><span class="sxs-lookup"><span data-stu-id="ca35b-126">Az.Media (previously AzureRM.Media)</span></span>](#azmedia-previously-azurermmedia)
+  - [<span data-ttu-id="ca35b-127">Az.Monitor (ранее AzureRM.Insights)</span><span class="sxs-lookup"><span data-stu-id="ca35b-127">Az.Monitor (previously AzureRM.Insights)</span></span>](#azmonitor-previously-azurerminsights)
+  - [<span data-ttu-id="ca35b-128">Az.Network (ранее AzureRM.Network)</span><span class="sxs-lookup"><span data-stu-id="ca35b-128">Az.Network (previously AzureRM.Network)</span></span>](#aznetwork-previously-azurermnetwork)
+  - [<span data-ttu-id="ca35b-129">Az.OperationalInsights (ранее AzureRM.OperationalInsights)</span><span class="sxs-lookup"><span data-stu-id="ca35b-129">Az.OperationalInsights (previously AzureRM.OperationalInsights)</span></span>](#azoperationalinsights-previously-azurermoperationalinsights)
+  - [<span data-ttu-id="ca35b-130">Az.RecoveryServices (ранее AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup и AzureRM.RecoveryServices.SiteRecovery)</span><span class="sxs-lookup"><span data-stu-id="ca35b-130">Az.RecoveryServices (previously AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup, and AzureRM.RecoveryServices.SiteRecovery)</span></span>](#azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery)
+  - [<span data-ttu-id="ca35b-131">Az.Resources (ранее AzureRM.Resources)</span><span class="sxs-lookup"><span data-stu-id="ca35b-131">Az.Resources (previously AzureRM.Resources)</span></span>](#azresources-previously-azurermresources)
+  - [<span data-ttu-id="ca35b-132">Az.ServiceFabric (ранее AzureRM.ServiceFabric)</span><span class="sxs-lookup"><span data-stu-id="ca35b-132">Az.ServiceFabric (previously AzureRM.ServiceFabric)</span></span>](#azservicefabric-previously-azurermservicefabric)
+  - [<span data-ttu-id="ca35b-133">Az.Sql (ранее AzureRM.Sql)</span><span class="sxs-lookup"><span data-stu-id="ca35b-133">Az.Sql (previously AzureRM.Sql)</span></span>](#azsql-previously-azurermsql)
+  - [<span data-ttu-id="ca35b-134">Az.Storage (ранее Azure.Storage и AzureRM.Storage)</span><span class="sxs-lookup"><span data-stu-id="ca35b-134">Az.Storage (previously Azure.Storage and AzureRM.Storage)</span></span>](#azstorage-previously-azurestorage-and-azurermstorage)
+  - [<span data-ttu-id="ca35b-135">Az.Websites (ранее AzureRM.Websites)</span><span class="sxs-lookup"><span data-stu-id="ca35b-135">Az.Websites (previously AzureRM.Websites)</span></span>](#azwebsites-previously-azurermwebsites)
 
-## <a name="general-breaking-changes"></a><span data-ttu-id="ee6d0-136">Общие критически важные изменения</span><span class="sxs-lookup"><span data-stu-id="ee6d0-136">General breaking changes</span></span>
+## <a name="general-breaking-changes"></a><span data-ttu-id="ca35b-136">Общие критически важные изменения</span><span class="sxs-lookup"><span data-stu-id="ca35b-136">General breaking changes</span></span>
 
-<span data-ttu-id="ee6d0-137">В этом разделе описаны общие критические изменения, которые являются частью этой переработанной версии модуля Az.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-137">This section details the general breaking changes that are part of the redesign of the Az module.</span></span>
+<span data-ttu-id="ca35b-137">В этом разделе описаны общие критические изменения, которые являются частью этой переработанной версии модуля Az.</span><span class="sxs-lookup"><span data-stu-id="ca35b-137">This section details the general breaking changes that are part of the redesign of the Az module.</span></span>
 
-### <a name="cmdlet-noun-prefix-changes"></a><span data-ttu-id="ee6d0-138">Изменения префикса существительного командлета</span><span class="sxs-lookup"><span data-stu-id="ee6d0-138">Cmdlet Noun Prefix Changes</span></span>
+### <a name="cmdlet-noun-prefix-changes"></a><span data-ttu-id="ca35b-138">Изменения префикса существительного командлета</span><span class="sxs-lookup"><span data-stu-id="ca35b-138">Cmdlet Noun Prefix Changes</span></span>
 
-<span data-ttu-id="ee6d0-139">В модуле AzureRM в существительных командлетов используется префикс `AzureRM` или `Azure`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-139">In the AzureRM module, cmdlets used either `AzureRM` or `Azure` as a noun prefix.</span></span>  <span data-ttu-id="ee6d0-140">Az упрощает и нормализует имена командлетов, так что все командлеты используют "Az" в качестве префикса существительного командлета.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-140">Az simplifies and normalizes cmdlet names, so that all cmdlets use 'Az' as their cmdlet noun prefix.</span></span> <span data-ttu-id="ee6d0-141">Например:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-141">For example:</span></span>
+<span data-ttu-id="ca35b-139">В модуле AzureRM в существительных командлетов используется префикс `AzureRM` или `Azure`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-139">In the AzureRM module, cmdlets used either `AzureRM` or `Azure` as a noun prefix.</span></span>  <span data-ttu-id="ca35b-140">Az упрощает и нормализует имена командлетов, так что все командлеты используют "Az" в качестве префикса существительного командлета.</span><span class="sxs-lookup"><span data-stu-id="ca35b-140">Az simplifies and normalizes cmdlet names, so that all cmdlets use 'Az' as their cmdlet noun prefix.</span></span> <span data-ttu-id="ca35b-141">Например:</span><span class="sxs-lookup"><span data-stu-id="ca35b-141">For example:</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRMVM
 Get-AzureKeyVaultSecret
 ```
 
-<span data-ttu-id="ee6d0-142">изменено на:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-142">Has changed to:</span></span>
+<span data-ttu-id="ca35b-142">изменено на:</span><span class="sxs-lookup"><span data-stu-id="ca35b-142">Has changed to:</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM
 Get-AzKeyVaultSecret
 ```
 
-<span data-ttu-id="ee6d0-143">Чтобы упростить переход на эти новые имена командлетов, Az представляет два новых командлета: [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) и [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="ee6d0-143">To make the transition to these new cmdlet names simpler, Az introduces two new cmdlets, [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) and [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).</span></span>  <span data-ttu-id="ee6d0-144">`Enable-AzureRmAlias` создает псевдонимы для старых имен командлетов в AzureRM, которые сопоставляются с новыми именами командлетов Az.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-144">`Enable-AzureRmAlias` creates aliases for the older cmdlet names in AzureRM that map to the newer Az cmdlet names.</span></span> <span data-ttu-id="ee6d0-145">Используя аргумент `-Scope` с командлетом `Enable-AzureRmAlias`, вы можете выбрать, в контексте чего будут включены псевдонимы.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-145">Using the `-Scope` argument with `Enable-AzureRmAlias` allows you to choose where aliases are enabled.</span></span>
+<span data-ttu-id="ca35b-143">Чтобы упростить переход на эти новые имена командлетов, Az представляет два новых командлета: [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) и [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="ca35b-143">To make the transition to these new cmdlet names simpler, Az introduces two new cmdlets, [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) and [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).</span></span>  <span data-ttu-id="ca35b-144">`Enable-AzureRmAlias` создает псевдонимы для старых имен командлетов в AzureRM, которые сопоставляются с новыми именами командлетов Az.</span><span class="sxs-lookup"><span data-stu-id="ca35b-144">`Enable-AzureRmAlias` creates aliases for the older cmdlet names in AzureRM that map to the newer Az cmdlet names.</span></span> <span data-ttu-id="ca35b-145">Используя аргумент `-Scope` с командлетом `Enable-AzureRmAlias`, вы можете выбрать, в контексте чего будут включены псевдонимы.</span><span class="sxs-lookup"><span data-stu-id="ca35b-145">Using the `-Scope` argument with `Enable-AzureRmAlias` allows you to choose where aliases are enabled.</span></span>
 
-<span data-ttu-id="ee6d0-146">Следующий сценарий в AzureRM является примером.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-146">For example, the following script in AzureRM:</span></span>
+<span data-ttu-id="ca35b-146">Следующий сценарий в AzureRM является примером.</span><span class="sxs-lookup"><span data-stu-id="ca35b-146">For example, the following script in AzureRM:</span></span>
 
 ```azurepowershell-interactive
 #Requires -Modules AzureRM.Storage
 Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 ```
 
-<span data-ttu-id="ee6d0-147">Его можно выполнить с минимальными изменениями с помощью `Enable-AzureRmAlias`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-147">Can be run with minimal changes using `Enable-AzureRmAlias`:</span></span>
+<span data-ttu-id="ca35b-147">Его можно выполнить с минимальными изменениями с помощью `Enable-AzureRmAlias`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-147">Can be run with minimal changes using `Enable-AzureRmAlias`:</span></span>
 
 ```azurepowershell-interactive
 #Requires -Modules Az.Storage
@@ -89,299 +89,299 @@ Enable-AzureRmAlias -Scope Process
 Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 ```
 
-<span data-ttu-id="ee6d0-148">При выполнении `Enable-AzureRmAlias -Scope CurrentUser` псевдонимы будут включены для всех открытых сеансов PowerShell, так что после выполнения этого командлета такой сценарий не нужно будет изменять.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-148">Running `Enable-AzureRmAlias -Scope CurrentUser` will enable the aliases for all PowerShell sessions you open, so that after executing this cmdlet, a script like this would not need to be changed at all:</span></span>
+<span data-ttu-id="ca35b-148">При выполнении `Enable-AzureRmAlias -Scope CurrentUser` псевдонимы будут включены для всех открытых сеансов PowerShell, так что после выполнения этого командлета такой сценарий не нужно будет изменять.</span><span class="sxs-lookup"><span data-stu-id="ca35b-148">Running `Enable-AzureRmAlias -Scope CurrentUser` will enable the aliases for all PowerShell sessions you open, so that after executing this cmdlet, a script like this would not need to be changed at all:</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 ```
 
-<span data-ttu-id="ee6d0-149">Дополнительные сведения об использовании командлетов псевдонимов см. в [справочнике по командлету Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="ee6d0-149">For complete details on the usage of the alias cmdlets, see the [Enable-AzureRmAlias reference](/powershell/module/az.accounts/enable-azurermalias).</span></span>
+<span data-ttu-id="ca35b-149">Дополнительные сведения об использовании командлетов псевдонимов см. в [справочнике по командлету Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="ca35b-149">For complete details on the usage of the alias cmdlets, see the [Enable-AzureRmAlias reference](/powershell/module/az.accounts/enable-azurermalias).</span></span>
 
-<span data-ttu-id="ee6d0-150">Когда вы будете готовы отключить псевдонимы, запустите командлет `Disable-AzureRmAlias`, который удаляет созданные псевдонимы.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-150">When you're ready to disable aliases, `Disable-AzureRmAlias` removes the created aliases.</span></span> <span data-ttu-id="ee6d0-151">Дополнительные сведения см. в [справочнике по командлету Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="ee6d0-151">For complete details, see the [Disable-AzureRmAlias reference](/powershell/module/az.accounts/disable-azurermalias).</span></span>
+<span data-ttu-id="ca35b-150">Когда вы будете готовы отключить псевдонимы, запустите командлет `Disable-AzureRmAlias`, который удаляет созданные псевдонимы.</span><span class="sxs-lookup"><span data-stu-id="ca35b-150">When you're ready to disable aliases, `Disable-AzureRmAlias` removes the created aliases.</span></span> <span data-ttu-id="ca35b-151">Дополнительные сведения см. в [справочнике по командлету Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="ca35b-151">For complete details, see the [Disable-AzureRmAlias reference](/powershell/module/az.accounts/disable-azurermalias).</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="ee6d0-152">Убедитесь, что отключили псевдонимы для _всех_ областей, в которых они были включены.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-152">When disabling aliases, make sure that they are disabled for _all_ scopes which had aliases enabled.</span></span>
+> <span data-ttu-id="ca35b-152">Убедитесь, что отключили псевдонимы для _всех_ областей, в которых они были включены.</span><span class="sxs-lookup"><span data-stu-id="ca35b-152">When disabling aliases, make sure that they are disabled for _all_ scopes which had aliases enabled.</span></span>
 
-### <a name="module-name-changes"></a><span data-ttu-id="ee6d0-153">Изменение имени модуля</span><span class="sxs-lookup"><span data-stu-id="ee6d0-153">Module Name Changes</span></span>
+### <a name="module-name-changes"></a><span data-ttu-id="ca35b-153">Изменение имени модуля</span><span class="sxs-lookup"><span data-stu-id="ca35b-153">Module Name Changes</span></span>
 
-<span data-ttu-id="ee6d0-154">Имена модулей изменены с `AzureRM.*` на `Az.*`, за исключением следующих модулей.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-154">The module names have changed from `AzureRM.*` to `Az.*`, except for the following modules:</span></span>
+<span data-ttu-id="ca35b-154">Имена модулей изменены с `AzureRM.*` на `Az.*`, за исключением следующих модулей.</span><span class="sxs-lookup"><span data-stu-id="ca35b-154">The module names have changed from `AzureRM.*` to `Az.*`, except for the following modules:</span></span>
 
-| <span data-ttu-id="ee6d0-155">Модуль AzureRM</span><span class="sxs-lookup"><span data-stu-id="ee6d0-155">AzureRM module</span></span> | <span data-ttu-id="ee6d0-156">Модуль Az</span><span class="sxs-lookup"><span data-stu-id="ee6d0-156">Az module</span></span> |
+| <span data-ttu-id="ca35b-155">Модуль AzureRM</span><span class="sxs-lookup"><span data-stu-id="ca35b-155">AzureRM module</span></span> | <span data-ttu-id="ca35b-156">Модуль Az</span><span class="sxs-lookup"><span data-stu-id="ca35b-156">Az module</span></span> |
 |----------------|-----------|
-| <span data-ttu-id="ee6d0-157">Azure.Storage;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-157">Azure.Storage</span></span> | <span data-ttu-id="ee6d0-158">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="ee6d0-158">Az.Storage</span></span> |
-| <span data-ttu-id="ee6d0-159">Azure.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="ee6d0-159">Azure.AnalysisServices</span></span> | <span data-ttu-id="ee6d0-160">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="ee6d0-160">Az.AnalysisServices</span></span> |
-| <span data-ttu-id="ee6d0-161">AzureRM.Profile</span><span class="sxs-lookup"><span data-stu-id="ee6d0-161">AzureRM.Profile</span></span> | <span data-ttu-id="ee6d0-162">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="ee6d0-162">Az.Accounts</span></span> |
-| <span data-ttu-id="ee6d0-163">AzureRM.Insights;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-163">AzureRM.Insights</span></span> | <span data-ttu-id="ee6d0-164">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="ee6d0-164">Az.Monitor</span></span> |
-| <span data-ttu-id="ee6d0-165">AzureRM.DataFactories</span><span class="sxs-lookup"><span data-stu-id="ee6d0-165">AzureRM.DataFactories</span></span> | <span data-ttu-id="ee6d0-166">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="ee6d0-166">Az.DataFactory</span></span> |
-| <span data-ttu-id="ee6d0-167">AzureRM.DataFactoryV2</span><span class="sxs-lookup"><span data-stu-id="ee6d0-167">AzureRM.DataFactoryV2</span></span> | <span data-ttu-id="ee6d0-168">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="ee6d0-168">Az.DataFactory</span></span> |
-| <span data-ttu-id="ee6d0-169">AzureRM.RecoveryServices.Backup</span><span class="sxs-lookup"><span data-stu-id="ee6d0-169">AzureRM.RecoveryServices.Backup</span></span> | <span data-ttu-id="ee6d0-170">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="ee6d0-170">Az.RecoveryServices</span></span> |
-| <span data-ttu-id="ee6d0-171">AzureRM.RecoveryServices.SiteRecovery</span><span class="sxs-lookup"><span data-stu-id="ee6d0-171">AzureRM.RecoveryServices.SiteRecovery</span></span> | <span data-ttu-id="ee6d0-172">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="ee6d0-172">Az.RecoveryServices</span></span> |
-| <span data-ttu-id="ee6d0-173">AzureRM.Tags</span><span class="sxs-lookup"><span data-stu-id="ee6d0-173">AzureRM.Tags</span></span> | <span data-ttu-id="ee6d0-174">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="ee6d0-174">Az.Resources</span></span> |
-| <span data-ttu-id="ee6d0-175">AzureRM.MachineLearningCompute</span><span class="sxs-lookup"><span data-stu-id="ee6d0-175">AzureRM.MachineLearningCompute</span></span> | <span data-ttu-id="ee6d0-176">Az.MachineLearning</span><span class="sxs-lookup"><span data-stu-id="ee6d0-176">Az.MachineLearning</span></span> |
-| <span data-ttu-id="ee6d0-177">AzureRM.UsageAggregates</span><span class="sxs-lookup"><span data-stu-id="ee6d0-177">AzureRM.UsageAggregates</span></span> | <span data-ttu-id="ee6d0-178">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="ee6d0-178">Az.Billing</span></span> |
-| <span data-ttu-id="ee6d0-179">AzureRM.Consumption:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-179">AzureRM.Consumption</span></span> | <span data-ttu-id="ee6d0-180">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="ee6d0-180">Az.Billing</span></span> |
+| <span data-ttu-id="ca35b-157">Azure.Storage;</span><span class="sxs-lookup"><span data-stu-id="ca35b-157">Azure.Storage</span></span> | <span data-ttu-id="ca35b-158">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="ca35b-158">Az.Storage</span></span> |
+| <span data-ttu-id="ca35b-159">Azure.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="ca35b-159">Azure.AnalysisServices</span></span> | <span data-ttu-id="ca35b-160">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="ca35b-160">Az.AnalysisServices</span></span> |
+| <span data-ttu-id="ca35b-161">AzureRM.Profile</span><span class="sxs-lookup"><span data-stu-id="ca35b-161">AzureRM.Profile</span></span> | <span data-ttu-id="ca35b-162">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="ca35b-162">Az.Accounts</span></span> |
+| <span data-ttu-id="ca35b-163">AzureRM.Insights;</span><span class="sxs-lookup"><span data-stu-id="ca35b-163">AzureRM.Insights</span></span> | <span data-ttu-id="ca35b-164">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="ca35b-164">Az.Monitor</span></span> |
+| <span data-ttu-id="ca35b-165">AzureRM.DataFactories</span><span class="sxs-lookup"><span data-stu-id="ca35b-165">AzureRM.DataFactories</span></span> | <span data-ttu-id="ca35b-166">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="ca35b-166">Az.DataFactory</span></span> |
+| <span data-ttu-id="ca35b-167">AzureRM.DataFactoryV2</span><span class="sxs-lookup"><span data-stu-id="ca35b-167">AzureRM.DataFactoryV2</span></span> | <span data-ttu-id="ca35b-168">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="ca35b-168">Az.DataFactory</span></span> |
+| <span data-ttu-id="ca35b-169">AzureRM.RecoveryServices.Backup</span><span class="sxs-lookup"><span data-stu-id="ca35b-169">AzureRM.RecoveryServices.Backup</span></span> | <span data-ttu-id="ca35b-170">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="ca35b-170">Az.RecoveryServices</span></span> |
+| <span data-ttu-id="ca35b-171">AzureRM.RecoveryServices.SiteRecovery</span><span class="sxs-lookup"><span data-stu-id="ca35b-171">AzureRM.RecoveryServices.SiteRecovery</span></span> | <span data-ttu-id="ca35b-172">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="ca35b-172">Az.RecoveryServices</span></span> |
+| <span data-ttu-id="ca35b-173">AzureRM.Tags</span><span class="sxs-lookup"><span data-stu-id="ca35b-173">AzureRM.Tags</span></span> | <span data-ttu-id="ca35b-174">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="ca35b-174">Az.Resources</span></span> |
+| <span data-ttu-id="ca35b-175">AzureRM.MachineLearningCompute</span><span class="sxs-lookup"><span data-stu-id="ca35b-175">AzureRM.MachineLearningCompute</span></span> | <span data-ttu-id="ca35b-176">Az.MachineLearning</span><span class="sxs-lookup"><span data-stu-id="ca35b-176">Az.MachineLearning</span></span> |
+| <span data-ttu-id="ca35b-177">AzureRM.UsageAggregates</span><span class="sxs-lookup"><span data-stu-id="ca35b-177">AzureRM.UsageAggregates</span></span> | <span data-ttu-id="ca35b-178">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="ca35b-178">Az.Billing</span></span> |
+| <span data-ttu-id="ca35b-179">AzureRM.Consumption:</span><span class="sxs-lookup"><span data-stu-id="ca35b-179">AzureRM.Consumption</span></span> | <span data-ttu-id="ca35b-180">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="ca35b-180">Az.Billing</span></span> |
 
-<span data-ttu-id="ee6d0-181">Изменения в именах модулей означают, что любой сценарий, который использует `#Requires` или `Import-Module` для загрузки определенных модулей, необходимо будет изменить, чтобы вместо него использовать новый модуль.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-181">The changes in module names mean that any script that uses `#Requires` or `Import-Module` to load specific modules will need to be changed to use the new module instead.</span></span> <span data-ttu-id="ee6d0-182">Для модулей, в которых суффикс командлета не был изменен, это означает, что хотя имя модуля изменилось, суффикс, указывающий пространство операции, _не изменился_.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-182">For modules where the cmdlet suffix has not changed, this means that although the module name has changed, the suffix indicating the operation space has _not_.</span></span>
+<span data-ttu-id="ca35b-181">Изменения в именах модулей означают, что любой сценарий, который использует `#Requires` или `Import-Module` для загрузки определенных модулей, необходимо будет изменить, чтобы вместо него использовать новый модуль.</span><span class="sxs-lookup"><span data-stu-id="ca35b-181">The changes in module names mean that any script that uses `#Requires` or `Import-Module` to load specific modules will need to be changed to use the new module instead.</span></span> <span data-ttu-id="ca35b-182">Для модулей, в которых суффикс командлета не был изменен, это означает, что хотя имя модуля изменилось, суффикс, указывающий пространство операции, _не изменился_.</span><span class="sxs-lookup"><span data-stu-id="ca35b-182">For modules where the cmdlet suffix has not changed, this means that although the module name has changed, the suffix indicating the operation space has _not_.</span></span>
 
-#### <a name="migrating-requires-and-import-module-statements"></a><span data-ttu-id="ee6d0-183">Перенос инструкций #Requires и Import-Module</span><span class="sxs-lookup"><span data-stu-id="ee6d0-183">Migrating #Requires and Import-Module Statements</span></span>
+#### <a name="migrating-requires-and-import-module-statements"></a><span data-ttu-id="ca35b-183">Перенос инструкций #Requires и Import-Module</span><span class="sxs-lookup"><span data-stu-id="ca35b-183">Migrating #Requires and Import-Module Statements</span></span>
 
-<span data-ttu-id="ee6d0-184">Скрипты, объявляющие зависимости от модулей AzureRM с помощью `#Requires` или `Import-Module`, должны быть обновлены для использования новых имен модулей.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-184">Scripts that use `#Requires` or `Import-Module` to declare a dependency on AzureRM modules must be updated to use the new module names.</span></span> <span data-ttu-id="ee6d0-185">Например:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-185">For example:</span></span>
+<span data-ttu-id="ca35b-184">Скрипты, объявляющие зависимости от модулей AzureRM с помощью `#Requires` или `Import-Module`, должны быть обновлены для использования новых имен модулей.</span><span class="sxs-lookup"><span data-stu-id="ca35b-184">Scripts that use `#Requires` or `Import-Module` to declare a dependency on AzureRM modules must be updated to use the new module names.</span></span> <span data-ttu-id="ca35b-185">Например:</span><span class="sxs-lookup"><span data-stu-id="ca35b-185">For example:</span></span>
 
 ```azurepowershell-interactive
 #Requires -Module AzureRM.Compute
 ```
 
-<span data-ttu-id="ee6d0-186">следует изменить на</span><span class="sxs-lookup"><span data-stu-id="ee6d0-186">Should be changed to:</span></span>
+<span data-ttu-id="ca35b-186">следует изменить на</span><span class="sxs-lookup"><span data-stu-id="ca35b-186">Should be changed to:</span></span>
 
 ```azurepowershell-interactive
 #Requires -Module Az.Compute
 ```
 
-<span data-ttu-id="ee6d0-187">Для `Import-Module`:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-187">For `Import-Module`:</span></span>
+<span data-ttu-id="ca35b-187">Для `Import-Module`:</span><span class="sxs-lookup"><span data-stu-id="ca35b-187">For `Import-Module`:</span></span>
 
 ```azurepowershell-interactive
 Import-Module -Name AzureRM.Compute
 ```
 
-<span data-ttu-id="ee6d0-188">следует изменить на</span><span class="sxs-lookup"><span data-stu-id="ee6d0-188">Should be changed to:</span></span>
+<span data-ttu-id="ca35b-188">следует изменить на</span><span class="sxs-lookup"><span data-stu-id="ca35b-188">Should be changed to:</span></span>
 
 ```azurepowershell-interactive
 Import-Module -Name Az.Compute
 ```
 
-### <a name="migrating-fully-qualified-cmdlet-invocations"></a><span data-ttu-id="ee6d0-189">Миграция вызовов командлета Fully-Qualified</span><span class="sxs-lookup"><span data-stu-id="ee6d0-189">Migrating Fully-Qualified Cmdlet Invocations</span></span>
+### <a name="migrating-fully-qualified-cmdlet-invocations"></a><span data-ttu-id="ca35b-189">Миграция вызовов командлета Fully-Qualified</span><span class="sxs-lookup"><span data-stu-id="ca35b-189">Migrating Fully-Qualified Cmdlet Invocations</span></span>
 
-<span data-ttu-id="ee6d0-190">Скрипты, использующие вызовы командлетов с указанием модуля, например:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-190">Scripts that use module-qualified cmdlet invocations, such as:</span></span>
+<span data-ttu-id="ca35b-190">Скрипты, использующие вызовы командлетов с указанием модуля, например:</span><span class="sxs-lookup"><span data-stu-id="ca35b-190">Scripts that use module-qualified cmdlet invocations, such as:</span></span>
 
 ```azurepowershell-interactive
 AzureRM.Compute\Get-AzureRmVM
 ```
 
-<span data-ttu-id="ee6d0-191">Следует изменить, чтобы использовать новые имена модулей и командлетов:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-191">Must be changed to use the new module and cmdlet names:</span></span>
+<span data-ttu-id="ca35b-191">Следует изменить, чтобы использовать новые имена модулей и командлетов:</span><span class="sxs-lookup"><span data-stu-id="ca35b-191">Must be changed to use the new module and cmdlet names:</span></span>
 
 ```azurepowershell-interactive
 Az.Compute\Get-AzVM
 ```
 
-### <a name="migrating-module-manifest-dependencies"></a><span data-ttu-id="ee6d0-192">Перенос зависимостей манифеста модуля</span><span class="sxs-lookup"><span data-stu-id="ee6d0-192">Migrating module manifest dependencies</span></span>
+### <a name="migrating-module-manifest-dependencies"></a><span data-ttu-id="ca35b-192">Перенос зависимостей манифеста модуля</span><span class="sxs-lookup"><span data-stu-id="ca35b-192">Migrating module manifest dependencies</span></span>
 
-<span data-ttu-id="ee6d0-193">Модули, которые выражают зависимости от модулей AzureRM через файл манифеста модуля (PSD1), должны обновить имена модулей в разделе `RequiredModules`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-193">Modules that express dependencies on AzureRM modules through a module manifest (.psd1) file will need to updated the module names in their `RequiredModules` section:</span></span>
+<span data-ttu-id="ca35b-193">Модули, которые выражают зависимости от модулей AzureRM через файл манифеста модуля (PSD1), должны обновить имена модулей в разделе `RequiredModules`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-193">Modules that express dependencies on AzureRM modules through a module manifest (.psd1) file will need to updated the module names in their `RequiredModules` section:</span></span>
 
 ```powershell
 RequiredModules = @(@{ModuleName="AzureRM.Profile"; ModuleVersion="5.8.2"})
 ```
 
-<span data-ttu-id="ee6d0-194">Необходимо изменить на:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-194">Must be changed to:</span></span>
+<span data-ttu-id="ca35b-194">Необходимо изменить на:</span><span class="sxs-lookup"><span data-stu-id="ca35b-194">Must be changed to:</span></span>
 
 ```powershell
 RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 ```
 
-### <a name="removed-modules"></a><span data-ttu-id="ee6d0-195">Удаленные модули</span><span class="sxs-lookup"><span data-stu-id="ee6d0-195">Removed modules</span></span>
+### <a name="removed-modules"></a><span data-ttu-id="ca35b-195">Удаленные модули</span><span class="sxs-lookup"><span data-stu-id="ca35b-195">Removed modules</span></span>
 
-<span data-ttu-id="ee6d0-196">Следующие модули удалены:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-196">The following modules have been removed:</span></span>
+<span data-ttu-id="ca35b-196">Следующие модули удалены:</span><span class="sxs-lookup"><span data-stu-id="ca35b-196">The following modules have been removed:</span></span>
 
 - `AzureRM.Backup`
 - `AzureRM.Compute.ManagedService`
 - `AzureRM.Scheduler`
 
-<span data-ttu-id="ee6d0-197">Средства для работы с этими службами больше не поддерживаются.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-197">The tools for these services are no longer actively supported.</span></span>  <span data-ttu-id="ee6d0-198">Клиентам рекомендуется обратиться к альтернативным службам, как только появится возможность.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-198">Customers are encouraged to move to alternative services as soon as it is convenient.</span></span>
+<span data-ttu-id="ca35b-197">Средства для работы с этими службами больше не поддерживаются.</span><span class="sxs-lookup"><span data-stu-id="ca35b-197">The tools for these services are no longer actively supported.</span></span>  <span data-ttu-id="ca35b-198">Клиентам рекомендуется обратиться к альтернативным службам, как только появится возможность.</span><span class="sxs-lookup"><span data-stu-id="ca35b-198">Customers are encouraged to move to alternative services as soon as it is convenient.</span></span>
 
-### <a name="windows-powershell-51-and-net-472"></a><span data-ttu-id="ee6d0-199">Windows PowerShell 5.1 и .NET 4.7.2</span><span class="sxs-lookup"><span data-stu-id="ee6d0-199">Windows PowerShell 5.1 and .NET 4.7.2</span></span>
+### <a name="windows-powershell-51-and-net-472"></a><span data-ttu-id="ca35b-199">Windows PowerShell 5.1 и .NET 4.7.2</span><span class="sxs-lookup"><span data-stu-id="ca35b-199">Windows PowerShell 5.1 and .NET 4.7.2</span></span>
 
-<span data-ttu-id="ee6d0-200">Для использования Az с PowerShell 5.1 для Windows требуется установить .NET Framework 4.7.2.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-200">Using Az with PowerShell 5.1 for Windows requires the installation of .NET Framework 4.7.2.</span></span> <span data-ttu-id="ee6d0-201">Для использования PowerShell Core 6.x или более поздней версии .NET Framework не требуется.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-201">Using PowerShell Core 6.x or later does not require .NET Framework.</span></span>
+<span data-ttu-id="ca35b-200">Для использования Az с PowerShell 5.1 для Windows требуется установить .NET Framework 4.7.2.</span><span class="sxs-lookup"><span data-stu-id="ca35b-200">Using Az with PowerShell 5.1 for Windows requires the installation of .NET Framework 4.7.2.</span></span> <span data-ttu-id="ca35b-201">Для использования PowerShell Core 6.x или более поздней версии .NET Framework не требуется.</span><span class="sxs-lookup"><span data-stu-id="ca35b-201">Using PowerShell Core 6.x or later does not require .NET Framework.</span></span>
 
-### <a name="temporary-removal-of-user-login-using-pscredential"></a><span data-ttu-id="ee6d0-202">Временное удаление входа пользователя с помощью PSCredential</span><span class="sxs-lookup"><span data-stu-id="ee6d0-202">Temporary removal of User login using PSCredential</span></span>
+### <a name="temporary-removal-of-user-login-using-pscredential"></a><span data-ttu-id="ca35b-202">Временное удаление входа пользователя с помощью PSCredential</span><span class="sxs-lookup"><span data-stu-id="ca35b-202">Temporary removal of User login using PSCredential</span></span>
 
-<span data-ttu-id="ee6d0-203">Из-за изменений в процессе проверки подлинности для .NET Standard мы временно удаляем вход пользователя через PSCredential.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-203">Due to changes in the authentication flow for .NET Standard, we are temporarily removing user login via PSCredential.</span></span> <span data-ttu-id="ee6d0-204">Эта возможность будет доступна в выпуске от 15 января 2019 г. для Windows PowerShell 5.1.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-204">This capability will be re-introduced in the 1/15/2019 release for PowerShell 5.1 for Windows.</span></span> <span data-ttu-id="ee6d0-205">Это подробно описано в [этом сообщении на сайте GitHub](https://github.com/Azure/azure-powershell/issues/7430).</span><span class="sxs-lookup"><span data-stu-id="ee6d0-205">This is discussed in detail in [this GitHub issue.](https://github.com/Azure/azure-powershell/issues/7430)</span></span>
+<span data-ttu-id="ca35b-203">Из-за изменений в процессе проверки подлинности для .NET Standard мы временно удаляем вход пользователя через PSCredential.</span><span class="sxs-lookup"><span data-stu-id="ca35b-203">Due to changes in the authentication flow for .NET Standard, we are temporarily removing user login via PSCredential.</span></span> <span data-ttu-id="ca35b-204">Эта возможность будет доступна в выпуске от 15 января 2019 г. для Windows PowerShell 5.1.</span><span class="sxs-lookup"><span data-stu-id="ca35b-204">This capability will be re-introduced in the 1/15/2019 release for PowerShell 5.1 for Windows.</span></span> <span data-ttu-id="ca35b-205">Это подробно описано в [этом сообщении на сайте GitHub](https://github.com/Azure/azure-powershell/issues/7430).</span><span class="sxs-lookup"><span data-stu-id="ca35b-205">This is discussed in detail in [this GitHub issue.](https://github.com/Azure/azure-powershell/issues/7430)</span></span>
 
-### <a name="default-device-code-login-instead-of-web-browser-prompt"></a><span data-ttu-id="ee6d0-206">Вход с кодом устройства по умолчанию вместо запроса веб-браузера</span><span class="sxs-lookup"><span data-stu-id="ee6d0-206">Default device code login instead of web browser prompt</span></span>
+### <a name="default-device-code-login-instead-of-web-browser-prompt"></a><span data-ttu-id="ca35b-206">Вход с кодом устройства по умолчанию вместо запроса веб-браузера</span><span class="sxs-lookup"><span data-stu-id="ca35b-206">Default device code login instead of web browser prompt</span></span>
 
-<span data-ttu-id="ee6d0-207">Из-за изменений в процессе проверки подлинности для .NET Standard мы используем вход устройства в качестве потока входа по умолчанию во время интерактивного входа.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-207">Due to changes in the authentication flow for .NET Standard, we are using device login as the default login flow during interactive login.</span></span> <span data-ttu-id="ee6d0-208">Вход через веб-браузер будет повторно представлен для Windows PowerShell 5.1 в качестве версии по умолчанию в выпуске от 15 января 2019 г.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-208">Web browser based login will be re-introduced for PowerShell 5.1 for Windows as the default in the 1/15/2019 release.</span></span> <span data-ttu-id="ee6d0-209">В это время пользователи смогут выбрать вход устройства с помощью параметра Switch.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-209">At that time, users will be able to choose device login using a Switch parameter.</span></span>
+<span data-ttu-id="ca35b-207">Из-за изменений в процессе проверки подлинности для .NET Standard мы используем вход устройства в качестве потока входа по умолчанию во время интерактивного входа.</span><span class="sxs-lookup"><span data-stu-id="ca35b-207">Due to changes in the authentication flow for .NET Standard, we are using device login as the default login flow during interactive login.</span></span> <span data-ttu-id="ca35b-208">Вход через веб-браузер будет повторно представлен для Windows PowerShell 5.1 в качестве версии по умолчанию в выпуске от 15 января 2019 г.</span><span class="sxs-lookup"><span data-stu-id="ca35b-208">Web browser based login will be re-introduced for PowerShell 5.1 for Windows as the default in the 1/15/2019 release.</span></span> <span data-ttu-id="ca35b-209">В это время пользователи смогут выбрать вход устройства с помощью параметра Switch.</span><span class="sxs-lookup"><span data-stu-id="ca35b-209">At that time, users will be able to choose device login using a Switch parameter.</span></span>
 
-## <a name="module-breaking-changes"></a><span data-ttu-id="ee6d0-210">Критические изменения модуля</span><span class="sxs-lookup"><span data-stu-id="ee6d0-210">Module breaking changes</span></span>
+## <a name="module-breaking-changes"></a><span data-ttu-id="ca35b-210">Критические изменения модуля</span><span class="sxs-lookup"><span data-stu-id="ca35b-210">Module breaking changes</span></span>
 
-<span data-ttu-id="ee6d0-211">В этом разделе описаны конкретные критические изменения для отдельных модулей и командлетов.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-211">This section details specific breaking changes for individual modules and cmdlets.</span></span>
+<span data-ttu-id="ca35b-211">В этом разделе описаны конкретные критические изменения для отдельных модулей и командлетов.</span><span class="sxs-lookup"><span data-stu-id="ca35b-211">This section details specific breaking changes for individual modules and cmdlets.</span></span>
 
-### <a name="azapimanagement-previously-azurermapimanagement"></a><span data-ttu-id="ee6d0-212">Az.ApiManagement (ранее AzureRM.ApiManagement)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-212">Az.ApiManagement (previously AzureRM.ApiManagement)</span></span>
+### <a name="azapimanagement-previously-azurermapimanagement"></a><span data-ttu-id="ca35b-212">Az.ApiManagement (ранее AzureRM.ApiManagement)</span><span class="sxs-lookup"><span data-stu-id="ca35b-212">Az.ApiManagement (previously AzureRM.ApiManagement)</span></span>
 
-- <span data-ttu-id="ee6d0-213">Удалены приведенные ниже командлеты.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-213">Removed the following cmdlets:</span></span>
-  - <span data-ttu-id="ee6d0-214">New-AzureRmApiManagementHostnameConfiguration</span><span class="sxs-lookup"><span data-stu-id="ee6d0-214">New-AzureRmApiManagementHostnameConfiguration</span></span>
-  - <span data-ttu-id="ee6d0-215">Set-AzureRmApiManagementHostnames</span><span class="sxs-lookup"><span data-stu-id="ee6d0-215">Set-AzureRmApiManagementHostnames</span></span>
-  - <span data-ttu-id="ee6d0-216">Update-AzureRmApiManagementDeployment</span><span class="sxs-lookup"><span data-stu-id="ee6d0-216">Update-AzureRmApiManagementDeployment</span></span>
-  - <span data-ttu-id="ee6d0-217">Import-AzureRmApiManagementHostnameCertificate</span><span class="sxs-lookup"><span data-stu-id="ee6d0-217">Import-AzureRmApiManagementHostnameCertificate</span></span>
-  - <span data-ttu-id="ee6d0-218">Используйте командлет **Set-AzApiManagement**, чтобы задать эти свойства.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-218">Use **Set-AzApiManagement** cmdlet to set these properties instead</span></span>
-- <span data-ttu-id="ee6d0-219">Удалены приведенные ниже свойства.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-219">Removed the following properties:</span></span>
-  - <span data-ttu-id="ee6d0-220">Удалены свойства: `PortalHostnameConfiguration`, `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration` и `ScmHostnameConfiguration` типа `PsApiManagementHostnameConfiguration` из `PsApiManagementContext`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-220">Removed property `PortalHostnameConfiguration`, `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration` and `ScmHostnameConfiguration` of type `PsApiManagementHostnameConfiguration` from `PsApiManagementContext`.</span></span> <span data-ttu-id="ee6d0-221">Вместо этого используйте: `PortalCustomHostnameConfiguration`, `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration` и `ScmCustomHostnameConfiguration` типа `PsApiManagementCustomHostNameConfiguration`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-221">Instead use `PortalCustomHostnameConfiguration`, `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration` and `ScmCustomHostnameConfiguration` of type `PsApiManagementCustomHostNameConfiguration`.</span></span>
-  - <span data-ttu-id="ee6d0-222">Свойство `StaticIPs` удалено из PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-222">Removed property `StaticIPs` from PsApiManagementContext.</span></span> <span data-ttu-id="ee6d0-223">Свойство было разделено на `PublicIPAddresses` и `PrivateIPAddresses`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-223">The property has been split into `PublicIPAddresses` and `PrivateIPAddresses`.</span></span>
-  - <span data-ttu-id="ee6d0-224">Обязательное свойство `Location` удалено из командлета New-AzureApiManagementVirtualNetwork.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-224">Removed required property `Location` from New-AzureApiManagementVirtualNetwork cmdlet.</span></span>
+- <span data-ttu-id="ca35b-213">Удалены приведенные ниже командлеты.</span><span class="sxs-lookup"><span data-stu-id="ca35b-213">Removed the following cmdlets:</span></span>
+  - <span data-ttu-id="ca35b-214">New-AzureRmApiManagementHostnameConfiguration</span><span class="sxs-lookup"><span data-stu-id="ca35b-214">New-AzureRmApiManagementHostnameConfiguration</span></span>
+  - <span data-ttu-id="ca35b-215">Set-AzureRmApiManagementHostnames</span><span class="sxs-lookup"><span data-stu-id="ca35b-215">Set-AzureRmApiManagementHostnames</span></span>
+  - <span data-ttu-id="ca35b-216">Update-AzureRmApiManagementDeployment</span><span class="sxs-lookup"><span data-stu-id="ca35b-216">Update-AzureRmApiManagementDeployment</span></span>
+  - <span data-ttu-id="ca35b-217">Import-AzureRmApiManagementHostnameCertificate</span><span class="sxs-lookup"><span data-stu-id="ca35b-217">Import-AzureRmApiManagementHostnameCertificate</span></span>
+  - <span data-ttu-id="ca35b-218">Используйте командлет **Set-AzApiManagement**, чтобы задать эти свойства.</span><span class="sxs-lookup"><span data-stu-id="ca35b-218">Use **Set-AzApiManagement** cmdlet to set these properties instead</span></span>
+- <span data-ttu-id="ca35b-219">Удалены приведенные ниже свойства.</span><span class="sxs-lookup"><span data-stu-id="ca35b-219">Removed the following properties:</span></span>
+  - <span data-ttu-id="ca35b-220">Удалены свойства: `PortalHostnameConfiguration`, `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration` и `ScmHostnameConfiguration` типа `PsApiManagementHostnameConfiguration` из `PsApiManagementContext`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-220">Removed property `PortalHostnameConfiguration`, `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration` and `ScmHostnameConfiguration` of type `PsApiManagementHostnameConfiguration` from `PsApiManagementContext`.</span></span> <span data-ttu-id="ca35b-221">Вместо этого используйте: `PortalCustomHostnameConfiguration`, `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration` и `ScmCustomHostnameConfiguration` типа `PsApiManagementCustomHostNameConfiguration`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-221">Instead use `PortalCustomHostnameConfiguration`, `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration` and `ScmCustomHostnameConfiguration` of type `PsApiManagementCustomHostNameConfiguration`.</span></span>
+  - <span data-ttu-id="ca35b-222">Свойство `StaticIPs` удалено из PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="ca35b-222">Removed property `StaticIPs` from PsApiManagementContext.</span></span> <span data-ttu-id="ca35b-223">Свойство было разделено на `PublicIPAddresses` и `PrivateIPAddresses`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-223">The property has been split into `PublicIPAddresses` and `PrivateIPAddresses`.</span></span>
+  - <span data-ttu-id="ca35b-224">Обязательное свойство `Location` удалено из командлета New-AzureApiManagementVirtualNetwork.</span><span class="sxs-lookup"><span data-stu-id="ca35b-224">Removed required property `Location` from New-AzureApiManagementVirtualNetwork cmdlet.</span></span>
 
-### <a name="azbilling-previously-azurermbilling-azurermconsumption-and-azurermusageaggregates"></a><span data-ttu-id="ee6d0-225">Az.Billing (ранее AzureRM.Billing, AzureRM.Consitation и AzureRM.UsageAggregates)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-225">Az.Billing (previously AzureRM.Billing, AzureRM.Consumption, and AzureRM.UsageAggregates)</span></span>
+### <a name="azbilling-previously-azurermbilling-azurermconsumption-and-azurermusageaggregates"></a><span data-ttu-id="ca35b-225">Az.Billing (ранее AzureRM.Billing, AzureRM.Consitation и AzureRM.UsageAggregates)</span><span class="sxs-lookup"><span data-stu-id="ca35b-225">Az.Billing (previously AzureRM.Billing, AzureRM.Consumption, and AzureRM.UsageAggregates)</span></span>
 
-- <span data-ttu-id="ee6d0-226">Параметр `InvoiceName` удален из командлета `Get-AzConsumptionUsageDetail`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-226">The `InvoiceName` parameter was removed from the `Get-AzConsumptionUsageDetail` cmdlet.</span></span>  <span data-ttu-id="ee6d0-227">Для сценариев необходимо использовать другие параметры идентификации для счета.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-227">Scripts will need to use other identity parameters for the invoice.</span></span>
+- <span data-ttu-id="ca35b-226">Параметр `InvoiceName` удален из командлета `Get-AzConsumptionUsageDetail`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-226">The `InvoiceName` parameter was removed from the `Get-AzConsumptionUsageDetail` cmdlet.</span></span>  <span data-ttu-id="ca35b-227">Для сценариев необходимо использовать другие параметры идентификации для счета.</span><span class="sxs-lookup"><span data-stu-id="ca35b-227">Scripts will need to use other identity parameters for the invoice.</span></span>
 
-### <a name="azcognitiveservices-previously-azurermcognitiveservices"></a><span data-ttu-id="ee6d0-228">Az.CognitiveServices (ранее AzureRM.CognitiveServices)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-228">Az.CognitiveServices (previously AzureRM.CognitiveServices)</span></span>
+### <a name="azcognitiveservices-previously-azurermcognitiveservices"></a><span data-ttu-id="ca35b-228">Az.CognitiveServices (ранее AzureRM.CognitiveServices)</span><span class="sxs-lookup"><span data-stu-id="ca35b-228">Az.CognitiveServices (previously AzureRM.CognitiveServices)</span></span>
 
-- <span data-ttu-id="ee6d0-229">Набор параметров `GetSkusWithAccountParamSetName` удален из командлета `Get-AzCognitiveServicesAccountSkus`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-229">Removed `GetSkusWithAccountParamSetName` parameter set from `Get-AzCognitiveServicesAccountSkus` cmdlet.</span></span>  <span data-ttu-id="ee6d0-230">Необходимо получить Skus по типу и расположению учетной записи, а не использовать ResourceGroupName и имя учетной записи.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-230">You must get Skus by Account Type and Location, instead of using ResourceGroupName and Account Name.</span></span>
+- <span data-ttu-id="ca35b-229">Набор параметров `GetSkusWithAccountParamSetName` удален из командлета `Get-AzCognitiveServicesAccountSkus`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-229">Removed `GetSkusWithAccountParamSetName` parameter set from `Get-AzCognitiveServicesAccountSkus` cmdlet.</span></span>  <span data-ttu-id="ca35b-230">Необходимо получить Skus по типу и расположению учетной записи, а не использовать ResourceGroupName и имя учетной записи.</span><span class="sxs-lookup"><span data-stu-id="ca35b-230">You must get Skus by Account Type and Location, instead of using ResourceGroupName and Account Name.</span></span>
 
-### <a name="azcompute-previously-azurermcompute"></a><span data-ttu-id="ee6d0-231">Az.Compute (ранее AzureRM.Compute)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-231">Az.Compute (previously AzureRM.Compute)</span></span>
+### <a name="azcompute-previously-azurermcompute"></a><span data-ttu-id="ca35b-231">Az.Compute (ранее AzureRM.Compute)</span><span class="sxs-lookup"><span data-stu-id="ca35b-231">Az.Compute (previously AzureRM.Compute)</span></span>
 
-- <span data-ttu-id="ee6d0-232">`IdentityIds` удалены из свойства `Identity` в объектах `PSVirtualMachine` и `PSVirtualMachineScaleSet`. Сценарии больше не должны использовать значение этого поля для принятия решений об обработке.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-232">`IdentityIds` are removed from `Identity` property in `PSVirtualMachine` and `PSVirtualMachineScaleSet` objects Scripts should no longer use the value of this field to make processing decisions.</span></span>
-- <span data-ttu-id="ee6d0-233">Тип свойства `InstanceView` объекта `PSVirtualMachineScaleSetVM` изменен с `VirtualMachineInstanceView` на `VirtualMachineScaleSetVMInstanceView`</span><span class="sxs-lookup"><span data-stu-id="ee6d0-233">The type of `InstanceView` property of `PSVirtualMachineScaleSetVM` object is changed from `VirtualMachineInstanceView` to `VirtualMachineScaleSetVMInstanceView`</span></span>
-- <span data-ttu-id="ee6d0-234">Свойства `AutoOSUpgradePolicy` и `AutomaticOSUpgrade` удалены из свойства `UpgradePolicy`</span><span class="sxs-lookup"><span data-stu-id="ee6d0-234">`AutoOSUpgradePolicy` and `AutomaticOSUpgrade` properties are removed from `UpgradePolicy` property</span></span>
-- <span data-ttu-id="ee6d0-235">Тип свойства `Sku` в объекте `PSSnapshotUpdate` изменен с `DiskSku` на `SnapshotSku`</span><span class="sxs-lookup"><span data-stu-id="ee6d0-235">The type of `Sku` property in `PSSnapshotUpdate` object is changed from `DiskSku` to `SnapshotSku`</span></span>
-- <span data-ttu-id="ee6d0-236">`VmScaleSetVMParameterSet` удалено из командлета `Add-AzVMDataDisk`, вы больше не можете отдельно добавлять диск с данными в виртуальную машину масштабируемого набора.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-236">`VmScaleSetVMParameterSet` is removed from `Add-AzVMDataDisk` cmdlet, you cna no longer add a data disk individually to a ScaleSet VM.</span></span>
+- <span data-ttu-id="ca35b-232">`IdentityIds` удалены из свойства `Identity` в объектах `PSVirtualMachine` и `PSVirtualMachineScaleSet`. Сценарии больше не должны использовать значение этого поля для принятия решений об обработке.</span><span class="sxs-lookup"><span data-stu-id="ca35b-232">`IdentityIds` are removed from `Identity` property in `PSVirtualMachine` and `PSVirtualMachineScaleSet` objects Scripts should no longer use the value of this field to make processing decisions.</span></span>
+- <span data-ttu-id="ca35b-233">Тип свойства `InstanceView` объекта `PSVirtualMachineScaleSetVM` изменен с `VirtualMachineInstanceView` на `VirtualMachineScaleSetVMInstanceView`</span><span class="sxs-lookup"><span data-stu-id="ca35b-233">The type of `InstanceView` property of `PSVirtualMachineScaleSetVM` object is changed from `VirtualMachineInstanceView` to `VirtualMachineScaleSetVMInstanceView`</span></span>
+- <span data-ttu-id="ca35b-234">Свойства `AutoOSUpgradePolicy` и `AutomaticOSUpgrade` удалены из свойства `UpgradePolicy`</span><span class="sxs-lookup"><span data-stu-id="ca35b-234">`AutoOSUpgradePolicy` and `AutomaticOSUpgrade` properties are removed from `UpgradePolicy` property</span></span>
+- <span data-ttu-id="ca35b-235">Тип свойства `Sku` в объекте `PSSnapshotUpdate` изменен с `DiskSku` на `SnapshotSku`</span><span class="sxs-lookup"><span data-stu-id="ca35b-235">The type of `Sku` property in `PSSnapshotUpdate` object is changed from `DiskSku` to `SnapshotSku`</span></span>
+- <span data-ttu-id="ca35b-236">Параметр `VmScaleSetVMParameterSet` удален из командлета `Add-AzVMDataDisk`. Больше нельзя отдельно добавлять диск данных в виртуальную машину из масштабируемого набора.</span><span class="sxs-lookup"><span data-stu-id="ca35b-236">`VmScaleSetVMParameterSet` is removed from `Add-AzVMDataDisk` cmdlet, you can no longer add a data disk individually to a ScaleSet VM.</span></span>
 
-### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a><span data-ttu-id="ee6d0-237">Az.DataFactory (ранее AzureRM.DataFactories и AzureRM.DataFactoryV2)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-237">Az.DataFactory (previously AzureRM.DataFactories and AzureRM.DataFactoryV2)</span></span>
+### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a><span data-ttu-id="ca35b-237">Az.DataFactory (ранее AzureRM.DataFactories и AzureRM.DataFactoryV2)</span><span class="sxs-lookup"><span data-stu-id="ca35b-237">Az.DataFactory (previously AzureRM.DataFactories and AzureRM.DataFactoryV2)</span></span>
 
-- <span data-ttu-id="ee6d0-238">Параметр `GatewayName` стал обязательным в командлете `New-AzDataFactoryEncryptValue`</span><span class="sxs-lookup"><span data-stu-id="ee6d0-238">The `GatewayName` parameter has become mandatory in the `New-AzDataFactoryEncryptValue` cmdlet</span></span>
-- <span data-ttu-id="ee6d0-239">Командлет `New-AzDataFactoryGatewayKey` удалено</span><span class="sxs-lookup"><span data-stu-id="ee6d0-239">Removed `New-AzDataFactoryGatewayKey` cmdlet</span></span>
-- <span data-ttu-id="ee6d0-240">Параметр `LinkedServiceName` удален из командлета `Get-AzDataFactoryV2ActivityRun`. Сценарии больше не должны использовать значение этого поля для принятия решений об обработке.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-240">Removed `LinkedServiceName` parameter from `Get-AzDataFactoryV2ActivityRun` cmdlet Scripts should no longer use the value of this field to make processing decisions.</span></span>
+- <span data-ttu-id="ca35b-238">Параметр `GatewayName` стал обязательным в командлете `New-AzDataFactoryEncryptValue`</span><span class="sxs-lookup"><span data-stu-id="ca35b-238">The `GatewayName` parameter has become mandatory in the `New-AzDataFactoryEncryptValue` cmdlet</span></span>
+- <span data-ttu-id="ca35b-239">Командлет `New-AzDataFactoryGatewayKey` удалено</span><span class="sxs-lookup"><span data-stu-id="ca35b-239">Removed `New-AzDataFactoryGatewayKey` cmdlet</span></span>
+- <span data-ttu-id="ca35b-240">Параметр `LinkedServiceName` удален из командлета `Get-AzDataFactoryV2ActivityRun`. Сценарии больше не должны использовать значение этого поля для принятия решений об обработке.</span><span class="sxs-lookup"><span data-stu-id="ca35b-240">Removed `LinkedServiceName` parameter from `Get-AzDataFactoryV2ActivityRun` cmdlet Scripts should no longer use the value of this field to make processing decisions.</span></span>
 
-### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a><span data-ttu-id="ee6d0-241">Az.DataLakeAnalytics (ранее AzureRM.DataLakeAnalytics)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-241">Az.DataLakeAnalytics (previously AzureRM.DataLakeAnalytics)</span></span>
+### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a><span data-ttu-id="ca35b-241">Az.DataLakeAnalytics (ранее AzureRM.DataLakeAnalytics)</span><span class="sxs-lookup"><span data-stu-id="ca35b-241">Az.DataLakeAnalytics (previously AzureRM.DataLakeAnalytics)</span></span>
 
-- <span data-ttu-id="ee6d0-242">Удалены следующие нерекомендуемые командлеты: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret` и `Set-AzDataLakeAnalyticsCatalogSecret`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-242">Removed deprecated cmdlets: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret`, and `Set-AzDataLakeAnalyticsCatalogSecret`</span></span>
+- <span data-ttu-id="ca35b-242">Удалены следующие нерекомендуемые командлеты: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret` и `Set-AzDataLakeAnalyticsCatalogSecret`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-242">Removed deprecated cmdlets: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret`, and `Set-AzDataLakeAnalyticsCatalogSecret`</span></span>
 
-### <a name="azdatalakestore-previously-azurermdatalakestore"></a><span data-ttu-id="ee6d0-243">Az.DataLakeStore (ранее AzureRM.DataLakeStore)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-243">Az.DataLakeStore (previously AzureRM.DataLakeStore)</span></span>
+### <a name="azdatalakestore-previously-azurermdatalakestore"></a><span data-ttu-id="ca35b-243">Az.DataLakeStore (ранее AzureRM.DataLakeStore)</span><span class="sxs-lookup"><span data-stu-id="ca35b-243">Az.DataLakeStore (previously AzureRM.DataLakeStore)</span></span>
 
-- <span data-ttu-id="ee6d0-244">В следующих командлетах параметр `Encoding` изменен с типа `FileSystemCmdletProviderEncoding` на `System.Text.Encoding`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-244">The following cmdlets have had the `Encoding` parameter changed from the type `FileSystemCmdletProviderEncoding` to `System.Text.Encoding`.</span></span> <span data-ttu-id="ee6d0-245">Это изменение удаляет значения кодирования `String` и `Oem`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-245">This change removes the encoding values `String` and `Oem`.</span></span> <span data-ttu-id="ee6d0-246">Все остальные предыдущие значения кодирования остаются.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-246">All the other prior encoding values remain.</span></span>
-  - <span data-ttu-id="ee6d0-247">New-AzureRmDataLakeStoreItem</span><span class="sxs-lookup"><span data-stu-id="ee6d0-247">New-AzureRmDataLakeStoreItem</span></span>
-  - <span data-ttu-id="ee6d0-248">Add-AzureRmDataLakeStoreItemContent</span><span class="sxs-lookup"><span data-stu-id="ee6d0-248">Add-AzureRmDataLakeStoreItemContent</span></span>
-  - <span data-ttu-id="ee6d0-249">Get-AzureRmDataLakeStoreItemContent</span><span class="sxs-lookup"><span data-stu-id="ee6d0-249">Get-AzureRmDataLakeStoreItemContent</span></span>
-- <span data-ttu-id="ee6d0-250">Удален нерекомендуемый псевдоним свойства `Tags` из командлетов `New-AzDataLakeStoreAccount` и `Set-AzDataLakeStoreAccount`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-250">Removed deprecated `Tags` property alias from `New-AzDataLakeStoreAccount` and `Set-AzDataLakeStoreAccount` cmdlets</span></span>
+- <span data-ttu-id="ca35b-244">В следующих командлетах параметр `Encoding` изменен с типа `FileSystemCmdletProviderEncoding` на `System.Text.Encoding`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-244">The following cmdlets have had the `Encoding` parameter changed from the type `FileSystemCmdletProviderEncoding` to `System.Text.Encoding`.</span></span> <span data-ttu-id="ca35b-245">Это изменение удаляет значения кодирования `String` и `Oem`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-245">This change removes the encoding values `String` and `Oem`.</span></span> <span data-ttu-id="ca35b-246">Все остальные предыдущие значения кодирования остаются.</span><span class="sxs-lookup"><span data-stu-id="ca35b-246">All the other prior encoding values remain.</span></span>
+  - <span data-ttu-id="ca35b-247">New-AzureRmDataLakeStoreItem</span><span class="sxs-lookup"><span data-stu-id="ca35b-247">New-AzureRmDataLakeStoreItem</span></span>
+  - <span data-ttu-id="ca35b-248">Add-AzureRmDataLakeStoreItemContent</span><span class="sxs-lookup"><span data-stu-id="ca35b-248">Add-AzureRmDataLakeStoreItemContent</span></span>
+  - <span data-ttu-id="ca35b-249">Get-AzureRmDataLakeStoreItemContent</span><span class="sxs-lookup"><span data-stu-id="ca35b-249">Get-AzureRmDataLakeStoreItemContent</span></span>
+- <span data-ttu-id="ca35b-250">Удален нерекомендуемый псевдоним свойства `Tags` из командлетов `New-AzDataLakeStoreAccount` и `Set-AzDataLakeStoreAccount`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-250">Removed deprecated `Tags` property alias from `New-AzDataLakeStoreAccount` and `Set-AzDataLakeStoreAccount` cmdlets</span></span>
 
-  <span data-ttu-id="ee6d0-251">Сценарии, которые используют</span><span class="sxs-lookup"><span data-stu-id="ee6d0-251">Scripts using</span></span>
+  <span data-ttu-id="ca35b-251">Сценарии, которые используют</span><span class="sxs-lookup"><span data-stu-id="ca35b-251">Scripts using</span></span>
   ```azurepowershell-interactive
   New-AzureRMDataLakeStoreAccount -Tags @{TagName="TagValue"}
   ```
 
-  <span data-ttu-id="ee6d0-252">следует изменить на</span><span class="sxs-lookup"><span data-stu-id="ee6d0-252">Should be changed to</span></span>
+  <span data-ttu-id="ca35b-252">следует изменить на</span><span class="sxs-lookup"><span data-stu-id="ca35b-252">Should be changed to</span></span>
   ```azurepowershell-interactive
   New-AzDataLakeStoreAccount -Tag @{TagName="TagValue"}
   ```
 
-- <span data-ttu-id="ee6d0-253">Из объекта `PSDataLakeStoreAccountBasic` удалены нерекомендуемые свойства: `Identity`, `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier`, `FirewallAllowAzureIps`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-253">Removed deprecated properties `Identity`, `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier`, `FirewallAllowAzureIps` from `PSDataLakeStoreAccountBasic` object.</span></span>  <span data-ttu-id="ee6d0-254">Любой сценарий, который использует `PSDatalakeStoreAccount`, возвращенный из `Get-AzDataLakeStoreAccount`, не должен ссылаться на эти свойства.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-254">Any script that uses the `PSDatalakeStoreAccount` returned from `Get-AzDataLakeStoreAccount` should not reference these properties.</span></span>
+- <span data-ttu-id="ca35b-253">Из объекта `PSDataLakeStoreAccountBasic` удалены нерекомендуемые свойства: `Identity`, `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier`, `FirewallAllowAzureIps`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-253">Removed deprecated properties `Identity`, `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier`, `FirewallAllowAzureIps` from `PSDataLakeStoreAccountBasic` object.</span></span>  <span data-ttu-id="ca35b-254">Любой сценарий, который использует `PSDatalakeStoreAccount`, возвращенный из `Get-AzDataLakeStoreAccount`, не должен ссылаться на эти свойства.</span><span class="sxs-lookup"><span data-stu-id="ca35b-254">Any script that uses the `PSDatalakeStoreAccount` returned from `Get-AzDataLakeStoreAccount` should not reference these properties.</span></span>
 
-### <a name="azkeyvault-previously-azurermkeyvault"></a><span data-ttu-id="ee6d0-255">Az.KeyVault (ранее AzureRM.KeyVault)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-255">Az.KeyVault (previously AzureRM.KeyVault)</span></span>
+### <a name="azkeyvault-previously-azurermkeyvault"></a><span data-ttu-id="ca35b-255">Az.KeyVault (ранее AzureRM.KeyVault)</span><span class="sxs-lookup"><span data-stu-id="ca35b-255">Az.KeyVault (previously AzureRM.KeyVault)</span></span>
 
-- <span data-ttu-id="ee6d0-256">Свойство `PurgeDisabled` удалено из объектов `PSKeyVaultKeyAttributes`, `PSKeyVaultKeyIdentityItem` и `PSKeyVaultSecretAttributes`. Скрипты больше не должны ссылаться на свойство ```PurgeDisabled``` для принятия решений об обработке.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-256">The `PurgeDisabled` property was removed from the `PSKeyVaultKeyAttributes`, `PSKeyVaultKeyIdentityItem`, and `PSKeyVaultSecretAttributes` objects Scripts should no longer reference the ```PurgeDisabled``` property to make processing decisions.</span></span>
+- <span data-ttu-id="ca35b-256">Свойство `PurgeDisabled` удалено из объектов `PSKeyVaultKeyAttributes`, `PSKeyVaultKeyIdentityItem` и `PSKeyVaultSecretAttributes`. Скрипты больше не должны ссылаться на свойство ```PurgeDisabled``` для принятия решений об обработке.</span><span class="sxs-lookup"><span data-stu-id="ca35b-256">The `PurgeDisabled` property was removed from the `PSKeyVaultKeyAttributes`, `PSKeyVaultKeyIdentityItem`, and `PSKeyVaultSecretAttributes` objects Scripts should no longer reference the ```PurgeDisabled``` property to make processing decisions.</span></span>
 
-### <a name="azmedia-previously-azurermmedia"></a><span data-ttu-id="ee6d0-257">Az.Media (ранее AzureRM.Media)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-257">Az.Media (previously AzureRM.Media)</span></span>
+### <a name="azmedia-previously-azurermmedia"></a><span data-ttu-id="ca35b-257">Az.Media (ранее AzureRM.Media)</span><span class="sxs-lookup"><span data-stu-id="ca35b-257">Az.Media (previously AzureRM.Media)</span></span>
 
-- <span data-ttu-id="ee6d0-258">Удалите нерекомендуемый псевдоним свойства `Tags` из командлета `New-AzMediaService`. Сценарии, которые используют</span><span class="sxs-lookup"><span data-stu-id="ee6d0-258">Remove deprecated `Tags` property alias from `New-AzMediaService` cmdlet Scripts using</span></span>
+- <span data-ttu-id="ca35b-258">Удалите нерекомендуемый псевдоним свойства `Tags` из командлета `New-AzMediaService`. Сценарии, которые используют</span><span class="sxs-lookup"><span data-stu-id="ca35b-258">Remove deprecated `Tags` property alias from `New-AzMediaService` cmdlet Scripts using</span></span>
   ```azurepowershell-interactive
   New-AzureRMMediaService -Tags @{TagName="TagValue"}
   ```
 
-  <span data-ttu-id="ee6d0-259">следует изменить на</span><span class="sxs-lookup"><span data-stu-id="ee6d0-259">Should be changed to</span></span>
+  <span data-ttu-id="ca35b-259">следует изменить на</span><span class="sxs-lookup"><span data-stu-id="ca35b-259">Should be changed to</span></span>
   ```azurepowershell-interactive
   New-AzMediaService -Tag @{TagName="TagValue"}
   ```
 
-### <a name="azmonitor-previously-azurerminsights"></a><span data-ttu-id="ee6d0-260">Az.Monitor (ранее AzureRM.Insights)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-260">Az.Monitor (previously AzureRM.Insights)</span></span>
+### <a name="azmonitor-previously-azurerminsights"></a><span data-ttu-id="ca35b-260">Az.Monitor (ранее AzureRM.Insights)</span><span class="sxs-lookup"><span data-stu-id="ca35b-260">Az.Monitor (previously AzureRM.Insights)</span></span>
 
-- <span data-ttu-id="ee6d0-261">Множественные имена `Categories` и `Timegrains` параметра удалены в пользу единичных имен параметров из командлета `Set-AzDiagnosticSetting`. Сценарии, которые используют</span><span class="sxs-lookup"><span data-stu-id="ee6d0-261">Removed plural names `Categories` and `Timegrains` parameter in favor of singular parameter names from `Set-AzDiagnosticSetting` cmdlet Scripts using</span></span>
+- <span data-ttu-id="ca35b-261">Множественные имена `Categories` и `Timegrains` параметра удалены в пользу единичных имен параметров из командлета `Set-AzDiagnosticSetting`. Сценарии, которые используют</span><span class="sxs-lookup"><span data-stu-id="ca35b-261">Removed plural names `Categories` and `Timegrains` parameter in favor of singular parameter names from `Set-AzDiagnosticSetting` cmdlet Scripts using</span></span>
   ```azurepowershell-interactive
   Set-AzureRmDiagnosticSetting -Timegrains PT1M -Categories Category1, Category2
   ```
 
-  <span data-ttu-id="ee6d0-262">следует изменить на</span><span class="sxs-lookup"><span data-stu-id="ee6d0-262">Should be changed to</span></span>
+  <span data-ttu-id="ca35b-262">следует изменить на</span><span class="sxs-lookup"><span data-stu-id="ca35b-262">Should be changed to</span></span>
   ```azurepowershell-interactive
   Set-AzDiagnosticSetting -Timegrain PT1M -Category Category1, Category2
   ```
 
-### <a name="aznetwork-previously-azurermnetwork"></a><span data-ttu-id="ee6d0-263">Az.Network (ранее AzureRM.Network)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-263">Az.Network (previously AzureRM.Network)</span></span>
+### <a name="aznetwork-previously-azurermnetwork"></a><span data-ttu-id="ca35b-263">Az.Network (ранее AzureRM.Network)</span><span class="sxs-lookup"><span data-stu-id="ca35b-263">Az.Network (previously AzureRM.Network)</span></span>
 
-- <span data-ttu-id="ee6d0-264">Из командлета `Get-AzServiceEndpointPolicyDefinition` удален нерекомендуемый параметр `ResourceId`</span><span class="sxs-lookup"><span data-stu-id="ee6d0-264">Removed deprecated `ResourceId` parameter from `Get-AzServiceEndpointPolicyDefinition` cmdlet</span></span>
-- <span data-ttu-id="ee6d0-265">Из объекта `PSVirtualNetwork` удалено нерекомендуемое свойство `EnableVmProtection`</span><span class="sxs-lookup"><span data-stu-id="ee6d0-265">Removed deprecated `EnableVmProtection` property from `PSVirtualNetwork` object</span></span>
-- <span data-ttu-id="ee6d0-266">Нерекомендуемый командлет `Set-AzVirtualNetworkGatewayVpnClientConfig` удален</span><span class="sxs-lookup"><span data-stu-id="ee6d0-266">Removed deprecated `Set-AzVirtualNetworkGatewayVpnClientConfig` cmdlet</span></span>
-  
-<span data-ttu-id="ee6d0-267">Скрипты больше не должны принимать решения об обработке на основе значений этих полей.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-267">Scripts should no longer make processing decisions based on the values fo these fields.</span></span>
+- <span data-ttu-id="ca35b-264">Из командлета `Get-AzServiceEndpointPolicyDefinition` удален нерекомендуемый параметр `ResourceId`</span><span class="sxs-lookup"><span data-stu-id="ca35b-264">Removed deprecated `ResourceId` parameter from `Get-AzServiceEndpointPolicyDefinition` cmdlet</span></span>
+- <span data-ttu-id="ca35b-265">Из объекта `PSVirtualNetwork` удалено нерекомендуемое свойство `EnableVmProtection`</span><span class="sxs-lookup"><span data-stu-id="ca35b-265">Removed deprecated `EnableVmProtection` property from `PSVirtualNetwork` object</span></span>
+- <span data-ttu-id="ca35b-266">Нерекомендуемый командлет `Set-AzVirtualNetworkGatewayVpnClientConfig` удален</span><span class="sxs-lookup"><span data-stu-id="ca35b-266">Removed deprecated `Set-AzVirtualNetworkGatewayVpnClientConfig` cmdlet</span></span>
 
-### <a name="azoperationalinsights-previously-azurermoperationalinsights"></a><span data-ttu-id="ee6d0-268">Az.OperationalInsights (ранее AzureRM.OperationalInsights)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-268">Az.OperationalInsights (previously AzureRM.OperationalInsights)</span></span>
+<span data-ttu-id="ca35b-267">Скрипты больше не должны принимать решения об обработке на основе значений этих полей.</span><span class="sxs-lookup"><span data-stu-id="ca35b-267">Scripts should no longer make processing decisions based on the values fo these fields.</span></span>
 
-- <span data-ttu-id="ee6d0-269">Набор параметров по умолчанию для `Get-AzOperationalInsightsDataSource` удален и заменен на `ByWorkspaceNameByKind`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-269">Default parameter set for `Get-AzOperationalInsightsDataSource` is removed, and `ByWorkspaceNameByKind` has become the default parameter set</span></span>
+### <a name="azoperationalinsights-previously-azurermoperationalinsights"></a><span data-ttu-id="ca35b-268">Az.OperationalInsights (ранее AzureRM.OperationalInsights)</span><span class="sxs-lookup"><span data-stu-id="ca35b-268">Az.OperationalInsights (previously AzureRM.OperationalInsights)</span></span>
 
-  <span data-ttu-id="ee6d0-270">Сценарии, в которых перечислены источники данных, использующие</span><span class="sxs-lookup"><span data-stu-id="ee6d0-270">Scripts that listed data sources using</span></span>
+- <span data-ttu-id="ca35b-269">Набор параметров по умолчанию для `Get-AzOperationalInsightsDataSource` удален и заменен на `ByWorkspaceNameByKind`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-269">Default parameter set for `Get-AzOperationalInsightsDataSource` is removed, and `ByWorkspaceNameByKind` has become the default parameter set</span></span>
+
+  <span data-ttu-id="ca35b-270">Сценарии, в которых перечислены источники данных, использующие</span><span class="sxs-lookup"><span data-stu-id="ca35b-270">Scripts that listed data sources using</span></span>
   ```azurepowershell-interactive
   Get-AzureRmOperationalInsightsDataSource
   ```
 
-  <span data-ttu-id="ee6d0-271">следует изменить, чтобы указать вид</span><span class="sxs-lookup"><span data-stu-id="ee6d0-271">Should be changed to specify a Kind</span></span>
+  <span data-ttu-id="ca35b-271">следует изменить, чтобы указать вид</span><span class="sxs-lookup"><span data-stu-id="ca35b-271">Should be changed to specify a Kind</span></span>
   ```azurepowershell-interactive
   Get-AzOperationalInsightsDataSource -Kind AzureActivityLog
   ```
 
-### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a><span data-ttu-id="ee6d0-272">Az.RecoveryServices (ранее AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup и AzureRM.RecoveryServices.SiteRecovery)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-272">Az.RecoveryServices (previously AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup, and AzureRM.RecoveryServices.SiteRecovery)</span></span>
+### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a><span data-ttu-id="ca35b-272">Az.RecoveryServices (ранее AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup и AzureRM.RecoveryServices.SiteRecovery)</span><span class="sxs-lookup"><span data-stu-id="ca35b-272">Az.RecoveryServices (previously AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup, and AzureRM.RecoveryServices.SiteRecovery)</span></span>
 
-- <span data-ttu-id="ee6d0-273">Из командлета `New/Set-AzRecoveryServicesAsrPolicy` удален параметр `Encryption`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-273">Removed `Encryption` parameter from `New/Set-AzRecoveryServicesAsrPolicy` cmdlet</span></span>
-- <span data-ttu-id="ee6d0-274">Параметр `TargetStorageAccountName` теперь является обязательным для восстановления управляемого диска в командлете `Restore-AzRecoveryServicesBackupItem`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-274">`TargetStorageAccountName` parameter is now mandatory for managed disk restores in `Restore-AzRecoveryServicesBackupItem` cmdlet</span></span>
-- <span data-ttu-id="ee6d0-275">В командлете `Restore-AzRecoveryServicesBackupItem` удалены параметры `StorageAccountName` и `StorageAccountResourceGroupName`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-275">Removed `StorageAccountName` and `StorageAccountResourceGroupName` parameters in `Restore-AzRecoveryServicesBackupItem` cmdlet</span></span>
-- <span data-ttu-id="ee6d0-276">В командлете `Get-AzRecoveryServicesBackupContainer` удален параметр `Name`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-276">Removed `Name`parameter in `Get-AzRecoveryServicesBackupContainer` cmdlet</span></span>
+- <span data-ttu-id="ca35b-273">Из командлета `New/Set-AzRecoveryServicesAsrPolicy` удален параметр `Encryption`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-273">Removed `Encryption` parameter from `New/Set-AzRecoveryServicesAsrPolicy` cmdlet</span></span>
+- <span data-ttu-id="ca35b-274">Параметр `TargetStorageAccountName` теперь является обязательным для восстановления управляемого диска в командлете `Restore-AzRecoveryServicesBackupItem`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-274">`TargetStorageAccountName` parameter is now mandatory for managed disk restores in `Restore-AzRecoveryServicesBackupItem` cmdlet</span></span>
+- <span data-ttu-id="ca35b-275">В командлете `Restore-AzRecoveryServicesBackupItem` удалены параметры `StorageAccountName` и `StorageAccountResourceGroupName`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-275">Removed `StorageAccountName` and `StorageAccountResourceGroupName` parameters in `Restore-AzRecoveryServicesBackupItem` cmdlet</span></span>
+- <span data-ttu-id="ca35b-276">В командлете `Get-AzRecoveryServicesBackupContainer` удален параметр `Name`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-276">Removed `Name`parameter in `Get-AzRecoveryServicesBackupContainer` cmdlet</span></span>
 
-### <a name="azresources-previously-azurermresources"></a><span data-ttu-id="ee6d0-277">Az.Resources (ранее AzureRM.Resources)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-277">Az.Resources (previously AzureRM.Resources)</span></span>
+### <a name="azresources-previously-azurermresources"></a><span data-ttu-id="ca35b-277">Az.Resources (ранее AzureRM.Resources)</span><span class="sxs-lookup"><span data-stu-id="ca35b-277">Az.Resources (previously AzureRM.Resources)</span></span>
 
-- <span data-ttu-id="ee6d0-278">Из командлета `New/Set-AzPolicyAssignment` удален параметр `Sku`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-278">Removed `Sku` parameter from `New/Set-AzPolicyAssignment` cmdlet</span></span>
-- <span data-ttu-id="ee6d0-279">Параметр `Password` удален из командлетов `New-AzADServicePrincipal` и `New-AzADSpCredential`. Пароли генерируются автоматически. Сценарии, которые предоставили пароль:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-279">Removed `Password` parameter from `New-AzADServicePrincipal` and `New-AzADSpCredential` cmdlet Passwords are automatically generated, scripts that provided the password:</span></span>
+- <span data-ttu-id="ca35b-278">Из командлета `New/Set-AzPolicyAssignment` удален параметр `Sku`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-278">Removed `Sku` parameter from `New/Set-AzPolicyAssignment` cmdlet</span></span>
+- <span data-ttu-id="ca35b-279">Параметр `Password` удален из командлетов `New-AzADServicePrincipal` и `New-AzADSpCredential`. Пароли генерируются автоматически. Сценарии, которые предоставили пароль:</span><span class="sxs-lookup"><span data-stu-id="ca35b-279">Removed `Password` parameter from `New-AzADServicePrincipal` and `New-AzADSpCredential` cmdlet Passwords are automatically generated, scripts that provided the password:</span></span>
 
   ```azurepowershell-interactive
   New-AzAdSpCredential -ObjectId 1f99cf81-0146-4f4e-beae-2007d0668476 -Password $secPassword
   ```
 
-  <span data-ttu-id="ee6d0-280">Следует изменить, чтобы получить пароль из выходных данных.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-280">Should be changed to retrieve the password from the output:</span></span>
+  <span data-ttu-id="ca35b-280">Следует изменить, чтобы получить пароль из выходных данных.</span><span class="sxs-lookup"><span data-stu-id="ca35b-280">Should be changed to retrieve the password from the output:</span></span>
 
   ```azurepowershell-interactive
   $credential = New-AzAdSpCredential -ObjectId 1f99cf81-0146-4f4e-beae-2007d0668476
   $secPassword = $credential.Secret
   ```
 
-### <a name="azservicefabric-previously-azurermservicefabric"></a><span data-ttu-id="ee6d0-281">Az.ServiceFabric (ранее AzureRM.ServiceFabric)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-281">Az.ServiceFabric (previously AzureRM.ServiceFabric)</span></span>
+### <a name="azservicefabric-previously-azurermservicefabric"></a><span data-ttu-id="ca35b-281">Az.ServiceFabric (ранее AzureRM.ServiceFabric)</span><span class="sxs-lookup"><span data-stu-id="ca35b-281">Az.ServiceFabric (previously AzureRM.ServiceFabric)</span></span>
 
-- <span data-ttu-id="ee6d0-282">Следующие типы возвращаемого значения командлета были изменены.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-282">The following cmdlet return types have been changed:</span></span>
-  - <span data-ttu-id="ee6d0-283">Свойство `ServiceTypeHealthPolicies` типа `ApplicationHealthPolicy` удалено.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-283">The property `ServiceTypeHealthPolicies` of type `ApplicationHealthPolicy` has been removed.</span></span>
-  - <span data-ttu-id="ee6d0-284">Свойство `ApplicationHealthPolicies` типа `ClusterUpgradeDeltaHealthPolicy` удалено.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-284">The property `ApplicationHealthPolicies` of type `ClusterUpgradeDeltaHealthPolicy` has been removed.</span></span>
-  - <span data-ttu-id="ee6d0-285">Свойство `OverrideUserUpgradePolicy` типа `ClusterUpgradePolicy` удалено.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-285">The property `OverrideUserUpgradePolicy` of type `ClusterUpgradePolicy` has been removed.</span></span>
-  - <span data-ttu-id="ee6d0-286">Эти изменения влияют на следующие командлеты:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-286">These changes affect the following cmdlets:</span></span>
-    - <span data-ttu-id="ee6d0-287">Add-AzServiceFabricClientCertificate;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-287">Add-AzServiceFabricClientCertificate</span></span>
-    - <span data-ttu-id="ee6d0-288">Add-AzServiceFabricClusterCertificate;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-288">Add-AzServiceFabricClusterCertificate</span></span>
-    - <span data-ttu-id="ee6d0-289">Add-AzServiceFabricNode;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-289">Add-AzServiceFabricNode</span></span>
-    - <span data-ttu-id="ee6d0-290">Add-AzServiceFabricNodeType;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-290">Add-AzServiceFabricNodeType</span></span>
-    - <span data-ttu-id="ee6d0-291">Get-AzServiceFabricCluster;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-291">Get-AzServiceFabricCluster</span></span>
-    - <span data-ttu-id="ee6d0-292">Remove-AzServiceFabricClientCertificate;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-292">Remove-AzServiceFabricClientCertificate</span></span>
-    - <span data-ttu-id="ee6d0-293">Remove-AzServiceFabricClusterCertificate;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-293">Remove-AzServiceFabricClusterCertificate</span></span>
-    - <span data-ttu-id="ee6d0-294">Remove-AzServiceFabricNode;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-294">Remove-AzServiceFabricNode</span></span>
-    - <span data-ttu-id="ee6d0-295">Remove-AzServiceFabricNodeType;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-295">Remove-AzServiceFabricNodeType</span></span>
-    - <span data-ttu-id="ee6d0-296">Remove-AzServiceFabricSetting;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-296">Remove-AzServiceFabricSetting</span></span>
-    - <span data-ttu-id="ee6d0-297">Set-AzServiceFabricSetting;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-297">Set-AzServiceFabricSetting</span></span>
-    - <span data-ttu-id="ee6d0-298">Set-AzServiceFabricUpgradeType;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-298">Set-AzServiceFabricUpgradeType</span></span>
-    - <span data-ttu-id="ee6d0-299">Update-AzServiceFabricDurability;</span><span class="sxs-lookup"><span data-stu-id="ee6d0-299">Update-AzServiceFabricDurability</span></span>
-    - <span data-ttu-id="ee6d0-300">Update-AzServiceFabricReliability.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-300">Update-AzServiceFabricReliability</span></span>
+- <span data-ttu-id="ca35b-282">Следующие типы возвращаемого значения командлета были изменены.</span><span class="sxs-lookup"><span data-stu-id="ca35b-282">The following cmdlet return types have been changed:</span></span>
+  - <span data-ttu-id="ca35b-283">Свойство `ServiceTypeHealthPolicies` типа `ApplicationHealthPolicy` удалено.</span><span class="sxs-lookup"><span data-stu-id="ca35b-283">The property `ServiceTypeHealthPolicies` of type `ApplicationHealthPolicy` has been removed.</span></span>
+  - <span data-ttu-id="ca35b-284">Свойство `ApplicationHealthPolicies` типа `ClusterUpgradeDeltaHealthPolicy` удалено.</span><span class="sxs-lookup"><span data-stu-id="ca35b-284">The property `ApplicationHealthPolicies` of type `ClusterUpgradeDeltaHealthPolicy` has been removed.</span></span>
+  - <span data-ttu-id="ca35b-285">Свойство `OverrideUserUpgradePolicy` типа `ClusterUpgradePolicy` удалено.</span><span class="sxs-lookup"><span data-stu-id="ca35b-285">The property `OverrideUserUpgradePolicy` of type `ClusterUpgradePolicy` has been removed.</span></span>
+  - <span data-ttu-id="ca35b-286">Эти изменения влияют на следующие командлеты:</span><span class="sxs-lookup"><span data-stu-id="ca35b-286">These changes affect the following cmdlets:</span></span>
+    - <span data-ttu-id="ca35b-287">Add-AzServiceFabricClientCertificate;</span><span class="sxs-lookup"><span data-stu-id="ca35b-287">Add-AzServiceFabricClientCertificate</span></span>
+    - <span data-ttu-id="ca35b-288">Add-AzServiceFabricClusterCertificate;</span><span class="sxs-lookup"><span data-stu-id="ca35b-288">Add-AzServiceFabricClusterCertificate</span></span>
+    - <span data-ttu-id="ca35b-289">Add-AzServiceFabricNode;</span><span class="sxs-lookup"><span data-stu-id="ca35b-289">Add-AzServiceFabricNode</span></span>
+    - <span data-ttu-id="ca35b-290">Add-AzServiceFabricNodeType;</span><span class="sxs-lookup"><span data-stu-id="ca35b-290">Add-AzServiceFabricNodeType</span></span>
+    - <span data-ttu-id="ca35b-291">Get-AzServiceFabricCluster;</span><span class="sxs-lookup"><span data-stu-id="ca35b-291">Get-AzServiceFabricCluster</span></span>
+    - <span data-ttu-id="ca35b-292">Remove-AzServiceFabricClientCertificate;</span><span class="sxs-lookup"><span data-stu-id="ca35b-292">Remove-AzServiceFabricClientCertificate</span></span>
+    - <span data-ttu-id="ca35b-293">Remove-AzServiceFabricClusterCertificate;</span><span class="sxs-lookup"><span data-stu-id="ca35b-293">Remove-AzServiceFabricClusterCertificate</span></span>
+    - <span data-ttu-id="ca35b-294">Remove-AzServiceFabricNode;</span><span class="sxs-lookup"><span data-stu-id="ca35b-294">Remove-AzServiceFabricNode</span></span>
+    - <span data-ttu-id="ca35b-295">Remove-AzServiceFabricNodeType;</span><span class="sxs-lookup"><span data-stu-id="ca35b-295">Remove-AzServiceFabricNodeType</span></span>
+    - <span data-ttu-id="ca35b-296">Remove-AzServiceFabricSetting;</span><span class="sxs-lookup"><span data-stu-id="ca35b-296">Remove-AzServiceFabricSetting</span></span>
+    - <span data-ttu-id="ca35b-297">Set-AzServiceFabricSetting;</span><span class="sxs-lookup"><span data-stu-id="ca35b-297">Set-AzServiceFabricSetting</span></span>
+    - <span data-ttu-id="ca35b-298">Set-AzServiceFabricUpgradeType;</span><span class="sxs-lookup"><span data-stu-id="ca35b-298">Set-AzServiceFabricUpgradeType</span></span>
+    - <span data-ttu-id="ca35b-299">Update-AzServiceFabricDurability;</span><span class="sxs-lookup"><span data-stu-id="ca35b-299">Update-AzServiceFabricDurability</span></span>
+    - <span data-ttu-id="ca35b-300">Update-AzServiceFabricReliability.</span><span class="sxs-lookup"><span data-stu-id="ca35b-300">Update-AzServiceFabricReliability</span></span>
 
-### <a name="azsql-previously-azurermsql"></a><span data-ttu-id="ee6d0-301">Az.Sql (ранее AzureRM.Sql)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-301">Az.Sql (previously AzureRM.Sql)</span></span>
+### <a name="azsql-previously-azurermsql"></a><span data-ttu-id="ca35b-301">Az.Sql (ранее AzureRM.Sql)</span><span class="sxs-lookup"><span data-stu-id="ca35b-301">Az.Sql (previously AzureRM.Sql)</span></span>
 
-- <span data-ttu-id="ee6d0-302">Из командлета `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` удалены параметры `State` и `ResourceId`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-302">Removed `State` and `ResourceId` parameters from `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` cmdlet</span></span>
-- <span data-ttu-id="ee6d0-303">Удалены следующие нерекомендуемые командлеты: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-303">Removed deprecated cmdlets: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`</span></span>
-- <span data-ttu-id="ee6d0-304">Из командлета `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` удален нерекомендуемый параметр `Current`</span><span class="sxs-lookup"><span data-stu-id="ee6d0-304">Removed deprecated parameter `Current` from `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` cmdlet</span></span>
-- <span data-ttu-id="ee6d0-305">Из командлета `Get-AzSqlServerServiceObjective` удален нерекомендуемый параметр `DatabaseName`</span><span class="sxs-lookup"><span data-stu-id="ee6d0-305">Removed deprecated parameter `DatabaseName` from `Get-AzSqlServerServiceObjective` cmdlet</span></span>
-- <span data-ttu-id="ee6d0-306">Из командлета `Set-AzSqlDatabaseDataMaskingPolicy` удален нерекомендуемый параметр `PrivilegedLogin`</span><span class="sxs-lookup"><span data-stu-id="ee6d0-306">Removed deprecated parameter `PrivilegedLogin` from `Set-AzSqlDatabaseDataMaskingPolicy` cmdlet</span></span>
+- <span data-ttu-id="ca35b-302">Из командлета `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` удалены параметры `State` и `ResourceId`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-302">Removed `State` and `ResourceId` parameters from `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` cmdlet</span></span>
+- <span data-ttu-id="ca35b-303">Удалены следующие нерекомендуемые командлеты: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-303">Removed deprecated cmdlets: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`</span></span>
+- <span data-ttu-id="ca35b-304">Из командлета `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` удален нерекомендуемый параметр `Current`</span><span class="sxs-lookup"><span data-stu-id="ca35b-304">Removed deprecated parameter `Current` from `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` cmdlet</span></span>
+- <span data-ttu-id="ca35b-305">Из командлета `Get-AzSqlServerServiceObjective` удален нерекомендуемый параметр `DatabaseName`</span><span class="sxs-lookup"><span data-stu-id="ca35b-305">Removed deprecated parameter `DatabaseName` from `Get-AzSqlServerServiceObjective` cmdlet</span></span>
+- <span data-ttu-id="ca35b-306">Из командлета `Set-AzSqlDatabaseDataMaskingPolicy` удален нерекомендуемый параметр `PrivilegedLogin`</span><span class="sxs-lookup"><span data-stu-id="ca35b-306">Removed deprecated parameter `PrivilegedLogin` from `Set-AzSqlDatabaseDataMaskingPolicy` cmdlet</span></span>
 
-### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a><span data-ttu-id="ee6d0-307">Az.Storage (ранее Azure.Storage и AzureRM.Storage)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-307">Az.Storage (previously Azure.Storage and AzureRM.Storage)</span></span>
+### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a><span data-ttu-id="ca35b-307">Az.Storage (ранее Azure.Storage и AzureRM.Storage)</span><span class="sxs-lookup"><span data-stu-id="ca35b-307">Az.Storage (previously Azure.Storage and AzureRM.Storage)</span></span>
 
-- <span data-ttu-id="ee6d0-308">Для поддержки создания контекста хранения Oauth только с именем учетной записи хранения набор параметров по умолчанию был изменен на `OAuthParameterSet`.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-308">To support creating an Oauth storage context with only the storage account name, the default parameter set has been changed to `OAuthParameterSet`</span></span>
-  - <span data-ttu-id="ee6d0-309">Пример: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`</span><span class="sxs-lookup"><span data-stu-id="ee6d0-309">Example: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`</span></span>
-- <span data-ttu-id="ee6d0-310">Параметр `Location` стал обязательным в командлете `Get-AzStorageUsage`</span><span class="sxs-lookup"><span data-stu-id="ee6d0-310">The `Location` parameter has become mandatory in the `Get-AzStorageUsage` cmdlet</span></span>
-- <span data-ttu-id="ee6d0-311">Методы API службы хранилища теперь используют асинхронную модель на основе задач (TAP) вместо синхронных вызовов API.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-311">The Storage API methods now use the Task-based Asynchronous Pattern (TAP), instead of synchronous API calls.</span></span> <span data-ttu-id="ee6d0-312">В приведенных ниже примерах показаны новые асинхронные команды.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-312">The following examples demonstrate the new asynchronous commands:</span></span>
+- <span data-ttu-id="ca35b-308">Для поддержки создания контекста хранения Oauth только с именем учетной записи хранения набор параметров по умолчанию был изменен на `OAuthParameterSet`.</span><span class="sxs-lookup"><span data-stu-id="ca35b-308">To support creating an Oauth storage context with only the storage account name, the default parameter set has been changed to `OAuthParameterSet`</span></span>
+  - <span data-ttu-id="ca35b-309">Пример: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`</span><span class="sxs-lookup"><span data-stu-id="ca35b-309">Example: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`</span></span>
+- <span data-ttu-id="ca35b-310">Параметр `Location` стал обязательным в командлете `Get-AzStorageUsage`</span><span class="sxs-lookup"><span data-stu-id="ca35b-310">The `Location` parameter has become mandatory in the `Get-AzStorageUsage` cmdlet</span></span>
+- <span data-ttu-id="ca35b-311">Методы API службы хранилища теперь используют асинхронную модель на основе задач (TAP) вместо синхронных вызовов API.</span><span class="sxs-lookup"><span data-stu-id="ca35b-311">The Storage API methods now use the Task-based Asynchronous Pattern (TAP), instead of synchronous API calls.</span></span> <span data-ttu-id="ca35b-312">В приведенных ниже примерах показаны новые асинхронные команды.</span><span class="sxs-lookup"><span data-stu-id="ca35b-312">The following examples demonstrate the new asynchronous commands:</span></span>
 
-#### <a name="blob-snapshot"></a><span data-ttu-id="ee6d0-313">Моментальный снимок большого двоичного объекта</span><span class="sxs-lookup"><span data-stu-id="ee6d0-313">Blob Snapshot</span></span>
+#### <a name="blob-snapshot"></a><span data-ttu-id="ca35b-313">Моментальный снимок большого двоичного объекта</span><span class="sxs-lookup"><span data-stu-id="ca35b-313">Blob Snapshot</span></span>
 
-<span data-ttu-id="ee6d0-314">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-314">AzureRM:</span></span>
+<span data-ttu-id="ca35b-314">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="ca35b-314">AzureRM:</span></span>
 
 ```azurepowershell-interactive
 $b = Get-AzureStorageBlob -Container $containerName -Blob $blobName -Context $ctx
 $b.ICloudBlob.Snapshot()
 ```
 
-<span data-ttu-id="ee6d0-315">Az:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-315">Az:</span></span>
+<span data-ttu-id="ca35b-315">Az:</span><span class="sxs-lookup"><span data-stu-id="ca35b-315">Az:</span></span>
 
 ```azurepowershell-interactive
 $b = Get-AzStorageBlob -Container $containerName -Blob $blobName -Context $ctx
@@ -390,16 +390,16 @@ $task.Wait()
 $snapshot = $task.Result
 ```
 
-#### <a name="share-snapshot"></a><span data-ttu-id="ee6d0-316">Общий доступ к снимку</span><span class="sxs-lookup"><span data-stu-id="ee6d0-316">Share Snapshot</span></span>
+#### <a name="share-snapshot"></a><span data-ttu-id="ca35b-316">Общий доступ к снимку</span><span class="sxs-lookup"><span data-stu-id="ca35b-316">Share Snapshot</span></span>
 
-<span data-ttu-id="ee6d0-317">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-317">AzureRM:</span></span>
+<span data-ttu-id="ca35b-317">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="ca35b-317">AzureRM:</span></span>
 
 ```azurepowershell-interactive
 $Share = Get-AzureStorageShare -Name $containerName -Context $ctx
 $snapshot = $Share.Snapshot()
 ```
 
-<span data-ttu-id="ee6d0-318">Az:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-318">Az:</span></span>
+<span data-ttu-id="ca35b-318">Az:</span><span class="sxs-lookup"><span data-stu-id="ca35b-318">Az:</span></span>
 
 ```azurepowershell-interactive
 $Share = Get-AzStorageShare -Name $containerName -Context $ctx
@@ -408,16 +408,16 @@ $task.Wait()
 $snapshot = $task.Result
 ```
 
-#### <a name="undelete-soft-deleted-blob"></a><span data-ttu-id="ee6d0-319">Отмена удаления обратимо удаленных больших двоичных объектов</span><span class="sxs-lookup"><span data-stu-id="ee6d0-319">Undelete soft-deleted blob</span></span>
+#### <a name="undelete-soft-deleted-blob"></a><span data-ttu-id="ca35b-319">Отмена удаления обратимо удаленных больших двоичных объектов</span><span class="sxs-lookup"><span data-stu-id="ca35b-319">Undelete soft-deleted blob</span></span>
 
-<span data-ttu-id="ee6d0-320">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-320">AzureRM:</span></span>
+<span data-ttu-id="ca35b-320">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="ca35b-320">AzureRM:</span></span>
 
 ```azurepowershell-interactive
 $b = Get-AzureStorageBlob -Container $containerName -Blob $blobName -IncludeDeleted -Context $ctx
 $b.ICloudBlob.Undelete()
 ```
 
-<span data-ttu-id="ee6d0-321">Az:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-321">Az:</span></span>
+<span data-ttu-id="ca35b-321">Az:</span><span class="sxs-lookup"><span data-stu-id="ca35b-321">Az:</span></span>
 
 ```azurepowershell-interactive
 $b = Get-AzStorageBlob -Container $containerName -Blob $blobName -IncludeDeleted -Context $ctx
@@ -425,9 +425,9 @@ $task = $b.ICloudBlob.UndeleteAsync()
 $task.Wait()
 ```
 
-#### <a name="set-blob-tier"></a><span data-ttu-id="ee6d0-322">Установка уровня большого двоичного объекта</span><span class="sxs-lookup"><span data-stu-id="ee6d0-322">Set Blob Tier</span></span>
+#### <a name="set-blob-tier"></a><span data-ttu-id="ca35b-322">Установка уровня большого двоичного объекта</span><span class="sxs-lookup"><span data-stu-id="ca35b-322">Set Blob Tier</span></span>
 
-<span data-ttu-id="ee6d0-323">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-323">AzureRM:</span></span>
+<span data-ttu-id="ca35b-323">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="ca35b-323">AzureRM:</span></span>
 
 ```azurepowershell-interactive
 $blockBlob = Get-AzureStorageBlob -Container $containerName -Blob $blockBlobName -Context $ctx
@@ -437,7 +437,7 @@ $pageBlob = Get-AzureStorageBlob -Container $containerName -Blob $pageBlobName -
 $pageBlob.ICloudBlob.SetPremiumBlobTier("P4")
 ```
 
-<span data-ttu-id="ee6d0-324">Az:</span><span class="sxs-lookup"><span data-stu-id="ee6d0-324">Az:</span></span>
+<span data-ttu-id="ca35b-324">Az:</span><span class="sxs-lookup"><span data-stu-id="ca35b-324">Az:</span></span>
 
 ```azurepowershell-interactive
 $blockBlob = Get-AzStorageBlob -Container $containerName -Blob $blockBlobName -Context $ctx
@@ -449,6 +449,6 @@ $task = $pageBlob.ICloudBlob.SetPremiumBlobTierAsync("P4")
 $task.Wait()
 ```
 
-### <a name="azwebsites-previously-azurermwebsites"></a><span data-ttu-id="ee6d0-325">Az.Websites (ранее AzureRM.Websites)</span><span class="sxs-lookup"><span data-stu-id="ee6d0-325">Az.Websites (previously AzureRM.Websites)</span></span>
+### <a name="azwebsites-previously-azurermwebsites"></a><span data-ttu-id="ca35b-325">Az.Websites (ранее AzureRM.Websites)</span><span class="sxs-lookup"><span data-stu-id="ca35b-325">Az.Websites (previously AzureRM.Websites)</span></span>
 
-- <span data-ttu-id="ee6d0-326">Из объектов `PSAppServicePlan`, `PSCertificate`, `PSCloningInfo` и `PSSite` удалены нерекомендуемые свойства.</span><span class="sxs-lookup"><span data-stu-id="ee6d0-326">Removed deprecated properties from the `PSAppServicePlan`, `PSCertificate`, `PSCloningInfo`, and `PSSite` objects</span></span>
+- <span data-ttu-id="ca35b-326">Из объектов `PSAppServicePlan`, `PSCertificate`, `PSCloningInfo` и `PSSite` удалены нерекомендуемые свойства.</span><span class="sxs-lookup"><span data-stu-id="ca35b-326">Removed deprecated properties from the `PSAppServicePlan`, `PSCertificate`, `PSCloningInfo`, and `PSSite` objects</span></span>
