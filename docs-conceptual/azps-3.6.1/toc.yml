@@ -5,7 +5,7 @@
   displayName: 'intro, introduction, azurerm'
 - name: Установка
   items:
-    - name: Установка с помощью PowerShell Get
+    - name: Установка с помощью PowerShellGet
       href: install-az-ps.md
     - name: Установка с помощью пакета MSI
       href: install-az-ps-msi.md
@@ -24,6 +24,8 @@
   displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell
   href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: "Использование Azure PowerShell в\_Docker"
+  href: azureps-in-docker.md
 - name: Вход
   items:
     - name: Методы проверки подлинности
