@@ -71,7 +71,7 @@ landingContent:
     linkLists:
       - linkListType: reference
         links:
-          - text: Справочник по командлетам
+          - text: Справка по командлетам
             url: /powershell/module/?view=azps-2.7.0
           - text: Заметки о выпуске
             url: release-notes-azureps.md

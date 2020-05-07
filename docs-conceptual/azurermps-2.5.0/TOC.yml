@@ -3,5 +3,5 @@
   items:
     - name: Установка
       href: 'https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json'
-    - name: Настройка
+    - name: Configure
       href: 'https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-configure-admin'

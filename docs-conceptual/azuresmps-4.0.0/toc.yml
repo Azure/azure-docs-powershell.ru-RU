@@ -1,5 +1,5 @@
 - name: Обзор
   href: overview.md
   items:
-    - name: Install
+    - name: Установка
       href: install-azure-ps.md
