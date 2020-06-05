@@ -4,104 +4,119 @@ description: Инструкции по установке Azure PowerShell с п
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 1ed7c9055b471ddc266ede7a8e2ca6359c01f8c3
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 88df7d916dd234c51d8982fb63547b5147f9cde8
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387060"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121611"
 ---
-# <a name="install-the-azure-powershell-module"></a><span data-ttu-id="a5ea0-103">Установка модуля Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a5ea0-103">Install the Azure PowerShell module</span></span>
+# <a name="install-azure-powershell"></a><span data-ttu-id="4600c-103">Установите Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="4600c-103">Install Azure PowerShell</span></span>
 
-<span data-ttu-id="a5ea0-104">В этой статье рассказывается, как установить модули Azure PowerShell с помощью PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-104">This article tells you how to install the Azure PowerShell modules using PowerShellGet.</span></span> <span data-ttu-id="a5ea0-105">Эти инструкции применимы для платформ Windows, macOS и Linux.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-105">These instructions work on Windows, macOS, and Linux platforms.</span></span> <span data-ttu-id="a5ea0-106">В данный момент другие методы установки не поддерживаются для модуля Az.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-106">For the Az module, currently no other installation methods are supported.</span></span>
+<span data-ttu-id="4600c-104">В этой статье показано, как установить модули Azure PowerShell с помощью [PowerShellGet](/powershell/scripting/gallery/installing-psget).</span><span class="sxs-lookup"><span data-stu-id="4600c-104">This article explains how to install the Azure PowerShell modules using [PowerShellGet](/powershell/scripting/gallery/installing-psget).</span></span> <span data-ttu-id="4600c-105">Эти инструкции применимы для платформ Windows, macOS и Linux.</span><span class="sxs-lookup"><span data-stu-id="4600c-105">These instructions work on Windows, macOS, and Linux platforms.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="a5ea0-107">Требования</span><span class="sxs-lookup"><span data-stu-id="a5ea0-107">Requirements</span></span>
+<span data-ttu-id="4600c-106">Среда Azure PowerShell также доступна в Azure [Cloud Shell](/azure/cloud-shell/overview).</span><span class="sxs-lookup"><span data-stu-id="4600c-106">Azure PowerShell is also available in Azure [Cloud Shell](/azure/cloud-shell/overview).</span></span>
 
-<span data-ttu-id="a5ea0-108">Azure PowerShell работает с PowerShell 5.1 или более поздней версии на платформе Windows или с PowerShell Core 6.x или более поздней версии на любых платформах.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-108">Azure PowerShell works with PowerShell 5.1 or higher on Windows, or PowerShell Core 6.x and later on all platforms.</span></span> <span data-ttu-id="a5ea0-109">Если вы не уверены, установлена ли среда PowerShell, либо используете macOS или Linux, [установите последнюю версию PowerShell Core](/powershell/scripting/install/installing-powershell#powershell-core).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-109">If you aren't sure if you have PowerShell, or are on macOS or Linux, [install the latest version of PowerShell Core](/powershell/scripting/install/installing-powershell#powershell-core).</span></span>
+## <a name="requirements"></a><span data-ttu-id="4600c-107">Требования</span><span class="sxs-lookup"><span data-stu-id="4600c-107">Requirements</span></span>
 
-<span data-ttu-id="a5ea0-110">Чтобы узнать вашу версию PowerShell, выполните приведенную ниже команду:</span><span class="sxs-lookup"><span data-stu-id="a5ea0-110">To check your PowerShell version, run the command:</span></span>
+> [!NOTE]
+> <span data-ttu-id="4600c-108">Для работы в Azure PowerShell на всех платформах мы рекомендуем использовать PowerShell версии 7.x и выше.</span><span class="sxs-lookup"><span data-stu-id="4600c-108">PowerShell 7.x and later is the recommended version of PowerShell for use with Azure PowerShell on all platforms.</span></span>
 
-```powershell-interactive
+<span data-ttu-id="4600c-109">Azure PowerShell работает с PowerShell версии 6.2.4 и выше на любой платформе.</span><span class="sxs-lookup"><span data-stu-id="4600c-109">Azure PowerShell works with PowerShell 6.2.4 and later on all platforms.</span></span> <span data-ttu-id="4600c-110">Кроме того, в Windows также поддерживается использование в PowerShell 5.1.</span><span class="sxs-lookup"><span data-stu-id="4600c-110">It is also supported with PowerShell 5.1 on Windows.</span></span> <span data-ttu-id="4600c-111">Установите [последнюю версию PowerShell](/powershell/scripting/install/installing-powershell) для своей операционной системы.</span><span class="sxs-lookup"><span data-stu-id="4600c-111">Install the [latest version of PowerShell](/powershell/scripting/install/installing-powershell) available for your operating system.</span></span> <span data-ttu-id="4600c-112">Дополнительных требований для использования Azure PowerShell в PowerShell версии 6.2.4 и выше нет.</span><span class="sxs-lookup"><span data-stu-id="4600c-112">Azure PowerShell has no additional requirements when run on PowerShell 6.2.4 and later.</span></span>
+
+<span data-ttu-id="4600c-113">Чтобы узнать вашу версию PowerShell, выполните приведенную ниже команду:</span><span class="sxs-lookup"><span data-stu-id="4600c-113">To check your PowerShell version, run the command:</span></span>
+
+```azurepowershell-interactive
 $PSVersionTable.PSVersion
 ```
 
-<span data-ttu-id="a5ea0-111">Чтобы запустить Azure PowerShell в PowerShell 5.1 на платформе Windows, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="a5ea0-111">To run Azure PowerShell in PowerShell 5.1 on Windows:</span></span>
+<span data-ttu-id="4600c-114">Чтобы использовать Azure PowerShell в PowerShell 5.1 в Windows, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="4600c-114">To use Azure PowerShell in PowerShell 5.1 on Windows:</span></span>
 
-1. <span data-ttu-id="a5ea0-112">При необходимости выполните обновление до [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-112">Update to [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell) if needed.</span></span> <span data-ttu-id="a5ea0-113">Если вы используете Windows 10, среда PowerShell 5.1 уже установлена.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-113">If you're on Windows 10, you already have PowerShell 5.1 installed.</span></span>
-2. <span data-ttu-id="a5ea0-114">[Установите платформу .NET Framework версии 4.7.2 или более поздней](/dotnet/framework/install).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-114">Install [.NET Framework 4.7.2 or later](/dotnet/framework/install).</span></span>
+1. <span data-ttu-id="4600c-115">Выполните обновление до [Windows PowerShell 5.1](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).</span><span class="sxs-lookup"><span data-stu-id="4600c-115">Update to [Windows PowerShell 5.1](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).</span></span>
+   <span data-ttu-id="4600c-116">Если вы используете Windows 10 версии 1607 и выше, у вас уже есть PowerShell версии 5.1.</span><span class="sxs-lookup"><span data-stu-id="4600c-116">If you're on Windows 10 version 1607 or higher, you already have PowerShell 5.1 installed.</span></span>
+2. <span data-ttu-id="4600c-117">[Установите платформу .NET Framework версии 4.7.2 или более поздней](/dotnet/framework/install).</span><span class="sxs-lookup"><span data-stu-id="4600c-117">Install [.NET Framework 4.7.2 or later](/dotnet/framework/install).</span></span>
+3. <span data-ttu-id="4600c-118">Убедитесь, что у вас установлена последняя версия PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="4600c-118">Make sure you have the latest version of PowerShellGet.</span></span> <span data-ttu-id="4600c-119">Выполните `Install-Module -Name PowerShellGet -Force`.</span><span class="sxs-lookup"><span data-stu-id="4600c-119">Run `Install-Module -Name PowerShellGet -Force`.</span></span>
 
-<span data-ttu-id="a5ea0-115">При использовании PowerShell Core для Azure PowerShell нет дополнительных требований.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-115">There are no additional requirements for Azure PowerShell when using PowerShell Core.</span></span>
-
-## <a name="install-the-azure-powershell-module"></a><span data-ttu-id="a5ea0-116">Установка модуля Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a5ea0-116">Install the Azure PowerShell module</span></span>
+## <a name="install-the-azure-powershell-module"></a><span data-ttu-id="4600c-120">Установка модуля Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="4600c-120">Install the Azure PowerShell module</span></span>
 
 > [!WARNING]
-> <span data-ttu-id="a5ea0-117">Для PowerShell 5.1 в Windows __не могут__ одновременно быть установлены модули AzureRM и Az.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-117">You __can't__ have both the AzureRM and Az modules installed for PowerShell 5.1 for Windows at the same time.</span></span> <span data-ttu-id="a5ea0-118">Если в системе нужно оставить модуль AzureRM, установите модуль Az для PowerShell Core версии 6.x или более поздней.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-118">If you need to keep AzureRM available on your system, install the Az module for PowerShell Core 6.x or later.</span></span> <span data-ttu-id="a5ea0-119">Чтобы сделать это, [установите PowerShell Core версии 6.x или более поздней](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows), а затем следуйте инструкциям в окне терминала PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-119">To do this, [install PowerShell Core 6.x or later](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows) and then follow these instructions in a PowerShell Core terminal.</span></span>
+> <span data-ttu-id="4600c-121">В Windows нельзя одновременно установить модули AzureRM и Az для PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="4600c-121">We do not support having both the AzureRM and Az modules installed for PowerShell 5.1 on Windows at the same time.</span></span> <span data-ttu-id="4600c-122">Если в системе нужно оставить модуль AzureRM, установите модуль Az для PowerShell Core версии 6.x или более поздней.</span><span class="sxs-lookup"><span data-stu-id="4600c-122">If you need to keep AzureRM available on your system, install the Az module for PowerShell Core 6.x or later.</span></span>
 
-<span data-ttu-id="a5ea0-120">Рекомендуемый метод — установка только для активного пользователя:</span><span class="sxs-lookup"><span data-stu-id="a5ea0-120">The recommended install method is to only install for the active user:</span></span>
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber -Scope CurrentUser
-```
-
-<span data-ttu-id="a5ea0-121">Если вам нужно выполнить установку для всех пользователей в системе, потребуются права администратора.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-121">If you want to install for all users on a system, this requires administrator privileges.</span></span> <span data-ttu-id="a5ea0-122">В сеансе PowerShell с повышенными привилегиями выполните запуск от имени администратора или используйте команду `sudo` в macOS либо Linux:</span><span class="sxs-lookup"><span data-stu-id="a5ea0-122">From an elevated PowerShell session either run as administrator or with the `sudo` command on macOS or Linux:</span></span>
+<span data-ttu-id="4600c-123">Использование командлетов PowerShellGet — предпочтительный метод установки.</span><span class="sxs-lookup"><span data-stu-id="4600c-123">Using the PowerShellGet cmdlets is the preferred installation method.</span></span> <span data-ttu-id="4600c-124">Установите модуль Az только для текущего пользователя.</span><span class="sxs-lookup"><span data-stu-id="4600c-124">Install the Az module for the current user only.</span></span> <span data-ttu-id="4600c-125">Это рекомендуемая область установки.</span><span class="sxs-lookup"><span data-stu-id="4600c-125">This is the recommended installation scope.</span></span> <span data-ttu-id="4600c-126">Этот метод работает одинаково на платформах Windows, macOS и Linux.</span><span class="sxs-lookup"><span data-stu-id="4600c-126">This method works the same on Windows, macOS, and Linux platforms.</span></span> <span data-ttu-id="4600c-127">Выполните следующую команду из сеанса PowerShell:</span><span class="sxs-lookup"><span data-stu-id="4600c-127">Run the following command from a PowerShell session:</span></span>
 
 ```powershell-interactive
-Install-Module -Name Az -AllowClobber -Scope AllUsers
+if (Get-Module -Name AzureRM -ListAvailable) {
+    Write-Warning -Message ('Az module not installed. Having both the AzureRM and ' +
+      'Az modules installed at the same time is not supported.')
+} else {
+    Install-Module -Name Az -AllowClobber -Scope CurrentUser
+}
 ```
 
-<span data-ttu-id="a5ea0-123">По умолчанию коллекция PowerShell не используется как доверенный репозиторий для PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-123">By default, the PowerShell gallery isn't configured as a trusted repository for PowerShellGet.</span></span> <span data-ttu-id="a5ea0-124">При первом использовании PSGallery отображается следующее сообщение:</span><span class="sxs-lookup"><span data-stu-id="a5ea0-124">The first time you use the PSGallery you see the following prompt:</span></span>
+<span data-ttu-id="4600c-128">По умолчанию коллекция PowerShell не используется как доверенный репозиторий для PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="4600c-128">By default, the PowerShell gallery isn't configured as a trusted repository for PowerShellGet.</span></span> <span data-ttu-id="4600c-129">При первом использовании PSGallery отображается следующее сообщение:</span><span class="sxs-lookup"><span data-stu-id="4600c-129">The first time you use the PSGallery you see the following prompt:</span></span>
 
-```output
+```Output
 Untrusted repository
 
 You are installing the modules from an untrusted repository. If you trust this repository, change
-its InstallationPolicy value by running the Set-PSRepository cmdlet.
+its InstallationPolicy value by running the `Set-PSRepository` cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-<span data-ttu-id="a5ea0-125">Ответьте `Yes` или `Yes to All`, чтобы продолжить установку.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-125">Answer `Yes` or `Yes to All` to continue with the installation.</span></span>
+<span data-ttu-id="4600c-130">Ответьте `Yes` или `Yes to All`, чтобы продолжить установку.</span><span class="sxs-lookup"><span data-stu-id="4600c-130">Answer `Yes` or `Yes to All` to continue with the installation.</span></span>
 
-<span data-ttu-id="a5ea0-126">Модуль Az — это общий модуль для командлетов Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-126">The Az module is a rollup module for the Azure PowerShell cmdlets.</span></span> <span data-ttu-id="a5ea0-127">Во время его установки скачиваются все доступные модули Azure Resource Manager и устанавливаются все соответствующие командлеты.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-127">Installing it downloads all of the available Azure Resource Manager modules, and makes their cmdlets available for use.</span></span>
+<span data-ttu-id="4600c-131">Для установки модуля для всех пользователей системы требуются повышенные права.</span><span class="sxs-lookup"><span data-stu-id="4600c-131">Installing the module for all users on a system requires elevated privileges.</span></span> <span data-ttu-id="4600c-132">Запустите сеанс PowerShell **от имени администратора** в Windows либо выполните команду `sudo` в macOS или Linux:</span><span class="sxs-lookup"><span data-stu-id="4600c-132">Start the PowerShell session using **Run as administrator** in Windows or use the `sudo` command on macOS or Linux:</span></span>
 
-## <a name="install-offline"></a><span data-ttu-id="a5ea0-128">Установка в автономном режиме</span><span class="sxs-lookup"><span data-stu-id="a5ea0-128">Install offline</span></span>
-
-<span data-ttu-id="a5ea0-129">В некоторых средах невозможно подключиться к коллекции PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-129">In some environments it's not possible to connect to the PowerShell Gallery.</span></span> <span data-ttu-id="a5ea0-130">В таких случаях все же можно выполнить установку в автономном режиме, используя один из следующих методов:</span><span class="sxs-lookup"><span data-stu-id="a5ea0-130">In those situations, you can still install offline using one of these methods:</span></span>
-
-* <span data-ttu-id="a5ea0-131">Скачайте модули в другое расположение и используйте его в качестве источника установки в сети.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-131">Download the modules to another location and use that as an installation source on your network.</span></span> <span data-ttu-id="a5ea0-132">Возможно, этот процесс будет сложным, но так вы сможете поместить в кэш модули PowerShell на отдельном сервере или в общей папке, чтобы развернуть их с помощью PowerShellGet на любой системе без подключения к сети.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-132">This can be a complicated process, but will let you cache PowerShell modules on a single server or file share to be deployed with PowerShellGet to any disconnected systems.</span></span> <span data-ttu-id="a5ea0-133">Сведения о том, как настроить локальный репозиторий и установить его в системах без подключения к сети, см. в статье [Работа с локальными хранилищами PowerShellGet](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-133">Learn how to set up a local repository and install on disconnected systems with [Working with local PowerShellGet repositories](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).</span></span>
-* <span data-ttu-id="a5ea0-134">[Скачайте MSI для Azure PowerShell](install-az-ps-msi.md) на компьютер, подключенный к сети, а затем скопируйте установщик в системы без доступа к коллекции PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-134">[Download the Azure PowerShell MSI](install-az-ps-msi.md) to a machine connected to the network, and then copy the installer to systems without access to PowerShell Gallery.</span></span> <span data-ttu-id="a5ea0-135">Помните, что установщик MSI работает только с PowerShell 5.1 в Windows.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-135">Keep in mind that the MSI installer only works for PowerShell 5.1 on Windows.</span></span>
-* <span data-ttu-id="a5ea0-136">С помощью команды [Save-Module](/powershell/module/PowershellGet/Save-Module) сохраните модуль в общую папку или в другом источнике и вручную скопируйте на другие компьютеры.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-136">Save the module with [Save-Module](/powershell/module/PowershellGet/Save-Module) to a file share, or save it to another source and manually copy it to other machines:</span></span>
-  
-  ```powershell-interactive
-  Save-Module -Name Az -Path '\\someshare\PowerShell\modules' -Force
-  ```
-
-## <a name="troubleshooting"></a><span data-ttu-id="a5ea0-137">Устранение неполадок</span><span class="sxs-lookup"><span data-stu-id="a5ea0-137">Troubleshooting</span></span>
-
-<span data-ttu-id="a5ea0-138">Ниже описаны некоторые распространенные проблемы с установкой модуля Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-138">Here are some common problems seen when installing the Azure PowerShell module.</span></span> <span data-ttu-id="a5ea0-139">Если у вас возникла проблема, не описанная здесь, [сообщите о ней на сайте GitHub](https://github.com/azure/azure-powershell/issues).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-139">If you experience a problem not listed here, please [file an issue on GitHub](https://github.com/azure/azure-powershell/issues).</span></span>
-
-### <a name="proxy-blocks-connection"></a><span data-ttu-id="a5ea0-140">Прокси-сервер блокирует подключения</span><span class="sxs-lookup"><span data-stu-id="a5ea0-140">Proxy blocks connection</span></span>
-
-<span data-ttu-id="a5ea0-141">Если командлет `Install-Module` возвращает ошибки о том, что коллекция PowerShell недоступна, возможно, ваша система находится за прокси-сервером.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-141">If you get errors from `Install-Module` that indicate the PowerShell Gallery is unreachable, you may be behind a proxy.</span></span> <span data-ttu-id="a5ea0-142">Требования к настройке прокси-сервера на уровне системы в разных операционных системах могут отличаться. Эти требования не рассматриваются здесь.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-142">Different operating systems will have different requirements for configuring a system-wide proxy, which are not covered in detail here.</span></span> <span data-ttu-id="a5ea0-143">Обратитесь к системному администратору, чтобы узнать о параметрах своего прокси-сервера и о том, как настроить их для своей операционной системы.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-143">Contact your system administrator for your proxy settings and how to configure them for your OS.</span></span>
-
-<span data-ttu-id="a5ea0-144">Возможно, среду PowerShell нельзя настроить для автоматического использования этого прокси-сервера.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-144">PowerShell itself may not be configured to use this proxy automatically.</span></span> <span data-ttu-id="a5ea0-145">В PowerShell версии 5.1 и более поздних настройте использование прокси-сервера для сеанса PowerShell с помощью следующей команды:</span><span class="sxs-lookup"><span data-stu-id="a5ea0-145">With PowerShell 5.1 and later, configure the proxy to use for a PowerShell session with the following command:</span></span>
-
-```powershell
-(New-Object System.Net.WebClient).Proxy.Credentials = `
-  [System.Net.CredentialCache]::DefaultNetworkCredentials
+```powershell-interactive
+if (Get-Module -Name AzureRM -ListAvailable) {
+    Write-Warning -Message ('Az module not installed. Having both the AzureRM and ' +
+      'Az modules installed at the same time is not supported.')
+} else {
+    Install-Module -Name Az -AllowClobber -Scope AllUsers
+}
 ```
 
-<span data-ttu-id="a5ea0-146">Если учетные данные операционной системы настроены правильно, в результате выполнения приведенной выше команды запросы PowerShell будут направляться через прокси-сервер.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-146">If your operating system credentials are configured correctly, this will route PowerShell requests through the proxy.</span></span>
-<span data-ttu-id="a5ea0-147">Чтобы эта настройка сохранялась между сеансами, добавьте команду в [профиль PowerShell](/powershell/module/microsoft.powershell.core/about/about_profiles).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-147">In order to have this setting persist between sessions, add the command to a [PowerShell profile](/powershell/module/microsoft.powershell.core/about/about_profiles).</span></span>
+<span data-ttu-id="4600c-133">Модуль Az — это общий модуль для командлетов Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4600c-133">The Az module is a rollup module for the Azure PowerShell cmdlets.</span></span> <span data-ttu-id="4600c-134">Во время его установки скачиваются все общедоступные модули Az PowerShell, а после этого становятся доступными все соответствующие командлеты.</span><span class="sxs-lookup"><span data-stu-id="4600c-134">Installing it downloads all of the generally available Az PowerShell modules, and makes their cmdlets available for use.</span></span>
 
-<span data-ttu-id="a5ea0-148">Чтобы установить пакет, ваш прокси-сервер должен разрешать HTTPS-подключения по следующему адресу:</span><span class="sxs-lookup"><span data-stu-id="a5ea0-148">In order to install the package, your proxy needs to allow HTTPS connections to the following address:</span></span>
+## <a name="install-offline"></a><span data-ttu-id="4600c-135">Установка в автономном режиме</span><span class="sxs-lookup"><span data-stu-id="4600c-135">Install offline</span></span>
+
+<span data-ttu-id="4600c-136">В некоторых средах невозможно подключиться к коллекции PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4600c-136">In some environments, it's not possible to connect to the PowerShell Gallery.</span></span> <span data-ttu-id="4600c-137">В таких случаях все же можно выполнить установку в автономном режиме, используя один из следующих методов:</span><span class="sxs-lookup"><span data-stu-id="4600c-137">In those situations, you can still install offline using one of these methods:</span></span>
+
+* <span data-ttu-id="4600c-138">Скачайте модули в другое сетевое расположение и используйте его в качестве источника установки.</span><span class="sxs-lookup"><span data-stu-id="4600c-138">Download the modules to another location in your network and use that as an installation source.</span></span>
+  <span data-ttu-id="4600c-139">Так вы сможете кэшировать модули PowerShell на отдельном сервере или в общей папке, чтобы развернуть их с помощью PowerShellGet в любой системе в автономном режиме.</span><span class="sxs-lookup"><span data-stu-id="4600c-139">This method allows you to cache PowerShell modules on a single server or file share to be deployed with PowerShellGet to any disconnected systems.</span></span> <span data-ttu-id="4600c-140">Сведения о том, как настроить локальный репозиторий и установить его в системах без подключения к сети, см. в статье [Работа с локальными хранилищами PowerShellGet](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).</span><span class="sxs-lookup"><span data-stu-id="4600c-140">Learn how to set up a local repository and install on disconnected systems with [Working with local PowerShellGet repositories](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).</span></span>
+* <span data-ttu-id="4600c-141">[Скачайте MSI для Azure PowerShell](install-az-ps-msi.md) на компьютер, подключенный к сети, а затем скопируйте установщик в системы без доступа к коллекции PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4600c-141">[Download the Azure PowerShell MSI](install-az-ps-msi.md) to a machine connected to the network, and then copy the installer to systems without access to PowerShell Gallery.</span></span> <span data-ttu-id="4600c-142">Помните, что установщик MSI работает только с PowerShell 5.1 в Windows.</span><span class="sxs-lookup"><span data-stu-id="4600c-142">Keep in mind that the MSI installer only works for PowerShell 5.1 on Windows.</span></span>
+* <span data-ttu-id="4600c-143">С помощью команды [Save-Module](/powershell/module/PowershellGet/Save-Module) сохраните модуль в общую папку или в другом источнике и вручную скопируйте на другие компьютеры.</span><span class="sxs-lookup"><span data-stu-id="4600c-143">Save the module with [Save-Module](/powershell/module/PowershellGet/Save-Module) to a file share, or save it to another source and manually copy it to other machines:</span></span>
+
+  ```powershell-interactive
+  Save-Module -Name Az -Path '\\server\share\PowerShell\modules' -Force
+  ```
+
+## <a name="troubleshooting"></a><span data-ttu-id="4600c-144">Устранение неполадок</span><span class="sxs-lookup"><span data-stu-id="4600c-144">Troubleshooting</span></span>
+
+<span data-ttu-id="4600c-145">Ниже описаны некоторые распространенные проблемы с установкой модуля Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4600c-145">Here are some common problems seen when installing the Azure PowerShell module.</span></span> <span data-ttu-id="4600c-146">Если у вас возникла проблема, не описанная здесь, [сообщите о ней на сайте GitHub](https://github.com/azure/azure-powershell/issues).</span><span class="sxs-lookup"><span data-stu-id="4600c-146">If you experience a problem not listed here, [file an issue on GitHub](https://github.com/azure/azure-powershell/issues).</span></span>
+
+### <a name="proxy-blocks-connection"></a><span data-ttu-id="4600c-147">Прокси-сервер блокирует подключения</span><span class="sxs-lookup"><span data-stu-id="4600c-147">Proxy blocks connection</span></span>
+
+<span data-ttu-id="4600c-148">Если командлет `Install-Module` возвращает ошибки о том, что коллекция PowerShell недоступна, возможно, ваша система находится за прокси-сервером.</span><span class="sxs-lookup"><span data-stu-id="4600c-148">If you get errors from `Install-Module` that indicate the PowerShell Gallery is unreachable, you may be behind a proxy.</span></span> <span data-ttu-id="4600c-149">Разные операционные системы и сетевые среды имеют разные требования для настройки прокси-сервера на уровне системы.</span><span class="sxs-lookup"><span data-stu-id="4600c-149">Different operating systems and network environment have different requirements for configuring a system-wide proxy.</span></span> <span data-ttu-id="4600c-150">Обратитесь к системному администратору, чтобы узнать о параметрах своего прокси-сервера и о том, как настроить их для своей среды.</span><span class="sxs-lookup"><span data-stu-id="4600c-150">Contact your system administrator for your proxy settings and how to configure them for your environment.</span></span>
+
+<span data-ttu-id="4600c-151">Возможно, среду PowerShell нельзя настроить для автоматического использования этого прокси-сервера.</span><span class="sxs-lookup"><span data-stu-id="4600c-151">PowerShell itself may not be configured to use this proxy automatically.</span></span> <span data-ttu-id="4600c-152">В PowerShell 5.1 и более поздних версий настройте сеанс PowerShell для использования прокси-сервера с помощью следующих команд:</span><span class="sxs-lookup"><span data-stu-id="4600c-152">With PowerShell 5.1 and later, configure the PowerShell session to use a proxy using the following commands:</span></span>
+
+```powershell
+$webClient = New-Object System.Net.WebClient
+$webClient.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
+```
+
+<span data-ttu-id="4600c-153">Если учетные данные операционной системы настроены правильно, конфигурация будет направлять запросы PowerShell через прокси-сервер.</span><span class="sxs-lookup"><span data-stu-id="4600c-153">If your operating system credentials are configured correctly, this configuration routes PowerShell requests through the proxy.</span></span> <span data-ttu-id="4600c-154">Чтобы такое поведение сохранялось между сеансами, добавьте команду в [профиль PowerShell](/powershell/module/microsoft.powershell.core/about/about_profiles).</span><span class="sxs-lookup"><span data-stu-id="4600c-154">To have this setting persist between sessions, add the commands to your [PowerShell profile](/powershell/module/microsoft.powershell.core/about/about_profiles).</span></span>
+
+<span data-ttu-id="4600c-155">Для установки пакета ваш прокси-сервер должен разрешать HTTPS-подключения по следующему адресу:</span><span class="sxs-lookup"><span data-stu-id="4600c-155">To install the package, your proxy needs to allow HTTPS connections to the following address:</span></span>
 
 * `https://www.powershellgallery.com`
 
-## <a name="sign-in"></a><span data-ttu-id="a5ea0-149">Вход</span><span class="sxs-lookup"><span data-stu-id="a5ea0-149">Sign in</span></span>
+## <a name="sign-in"></a><span data-ttu-id="4600c-156">Вход</span><span class="sxs-lookup"><span data-stu-id="4600c-156">Sign in</span></span>
 
-<span data-ttu-id="a5ea0-150">Чтобы начать работу с Azure PowerShell, выполните вход, используя данные своей учетной записи в Azure.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-150">To start working with Azure PowerShell, sign in with your Azure credentials.</span></span>
+<span data-ttu-id="4600c-157">Чтобы начать работу с Azure PowerShell, выполните вход, используя данные своей учетной записи в Azure.</span><span class="sxs-lookup"><span data-stu-id="4600c-157">To start working with Azure PowerShell, sign in with your Azure credentials.</span></span>
 
 ```powershell-interactive
 # Connect to Azure with a browser sign in token
@@ -109,50 +124,53 @@ Connect-AzAccount
 ```
 
 > [!NOTE]
->
-> <span data-ttu-id="a5ea0-151">Если вы отключили автоматическую загрузку модулей, вручную импортируйте модуль с помощью `Import-Module Az`.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-151">If you've disabled module autoloading, manually import the module with `Import-Module Az`.</span></span> <span data-ttu-id="a5ea0-152">Из-за структуры модуля эта операция может занять несколько секунд.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-152">Because of the way the module is structured, this can take a few seconds.</span></span>
+> <span data-ttu-id="4600c-158">Если вы отключили автоматическую загрузку модулей, вручную импортируйте модуль с помощью `Import-Module -Name Az`.</span><span class="sxs-lookup"><span data-stu-id="4600c-158">If you've disabled module autoloading, manually import the module with `Import-Module -Name Az`.</span></span>
+> <span data-ttu-id="4600c-159">Из-за структуры модуля эта операция может занять несколько секунд.</span><span class="sxs-lookup"><span data-stu-id="4600c-159">Because of the way the module is structured, this can take a few seconds.</span></span>
 
-<span data-ttu-id="a5ea0-153">Эти действия нужно повторять для каждого нового сеанса PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-153">You'll need to repeat these steps for every new PowerShell session you start.</span></span> <span data-ttu-id="a5ea0-154">Чтобы узнать, как повторно использовать свои данные для входа в Azure в разных сеансах PowerShell, см. статью [Использование учетных данных пользователя в разных сеансах PowerShell](context-persistence.md).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-154">To learn how to persist your Azure sign-in across PowerShell sessions, see [Persist user credentials across PowerShell sessions](context-persistence.md).</span></span>
+<span data-ttu-id="4600c-160">Эти действия нужно повторять для каждого нового сеанса PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4600c-160">You'll need to repeat these steps for every new PowerShell session you start.</span></span> <span data-ttu-id="4600c-161">См. сведения в статье [Использование учетных данных пользователя в разных сеансах PowerShell](context-persistence.md).</span><span class="sxs-lookup"><span data-stu-id="4600c-161">To learn how to persist your Azure sign in across PowerShell sessions, see [Persist user credentials across PowerShell sessions](context-persistence.md).</span></span>
 
-## <a name="update-the-azure-powershell-module"></a><span data-ttu-id="a5ea0-155">Обновление модуля Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a5ea0-155">Update the Azure PowerShell module</span></span>
+## <a name="update-the-azure-powershell-module"></a><span data-ttu-id="4600c-162">Обновление модуля Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="4600c-162">Update the Azure PowerShell module</span></span>
 
-<span data-ttu-id="a5ea0-156">Команда [Update-Module](/powershell/module/powershellget/update-module) не обновит установку надлежащим образом из-за способа упаковки модуля Az.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-156">Because of how the Az module is packaged, the [Update-Module](/powershell/module/powershellget/update-module) command won't update your installation correctly.</span></span> <span data-ttu-id="a5ea0-157">Установленный модуль Az фактически собирает и устанавливает все зависимые подмодули, чтобы предоставлять командлеты для каждой службы.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-157">When you install the Az module, it actually collects and installs all of its dependent submodules, and which provide the cmdlets for each service.</span></span>
-<span data-ttu-id="a5ea0-158">Это означает, что для обновления модуля Azure PowerShell его необходимо __переустановить__, а не просто __выполнить обновление__.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-158">That means that to update the Azure PowerShell module, you will need to __reinstall__, rather than just __update__.</span></span> <span data-ttu-id="a5ea0-159">Эта процедура ничем не отличается от установки, но может потребоваться добавить аргумент `-Force`:</span><span class="sxs-lookup"><span data-stu-id="a5ea0-159">This is done in the same way as installing, but you may need to add the `-Force` argument:</span></span>
+<span data-ttu-id="4600c-163">Для обновления любого модуля PowerShell следует использовать тот же метод, который использовался для установки модуля.</span><span class="sxs-lookup"><span data-stu-id="4600c-163">To update any PowerShell module, you should use the same method used to install the module.</span></span> <span data-ttu-id="4600c-164">Например, если вы изначально использовали `Install-Module`, для получения последней версии следует использовать командлет [Update-Module](/powershell/module/powershellget/update-module).</span><span class="sxs-lookup"><span data-stu-id="4600c-164">For example, if you originally used `Install-Module`, then you should use [Update-Module](/powershell/module/powershellget/update-module) to get the latest version.</span></span> <span data-ttu-id="4600c-165">Если вы изначально использовали пакет MSI, необходимо скачать и установить новый пакет MSI.</span><span class="sxs-lookup"><span data-stu-id="4600c-165">If you originally used the MSI package then you should download and install the new MSI package.</span></span>
+
+<span data-ttu-id="4600c-166">Командлеты PowerShellGet не могут обновлять модули, установленные из пакета MSI.</span><span class="sxs-lookup"><span data-stu-id="4600c-166">The PowerShellGet cmdlets cannot update modules that were installed from an MSI package.</span></span> <span data-ttu-id="4600c-167">Пакеты MSI не обновляют модули, установленные с помощью PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="4600c-167">MSI packages do not update modules that were installed using PowerShellGet.</span></span> <span data-ttu-id="4600c-168">Если у вас возникли проблемы с обновлением с помощью модуля PowerShellGet, необходимо выполнить **повторную установку**, а не просто **обновление**.</span><span class="sxs-lookup"><span data-stu-id="4600c-168">If you have any issues updating using PowershellGet, then you should **reinstall**, rather than **update**.</span></span> <span data-ttu-id="4600c-169">Повторная установка выполняется так же, как и первоначальная, но необходимо добавить параметр `-Force`:</span><span class="sxs-lookup"><span data-stu-id="4600c-169">Reinstalling is done the same way as installing, but you need to add the `-Force` parameter:</span></span>
 
 ```powershell
-Install-Module -Name Az -AllowClobber -Force
+if (Get-Module -Name AzureRM -ListAvailable) {
+    Write-Warning -Message ('Az module not installed. Having both the AzureRM and ' +
+      'Az modules installed at the same time is not supported.')
+} else {
+    Install-Module -Name Az -AllowClobber -Force
+}
 ```
 
-<span data-ttu-id="a5ea0-160">Хотя это может перезаписать установленные модули, в системе по-прежнему могут остаться более старые версии.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-160">Although this can overwrite installed modules, you may still have older versions left on your system.</span></span>
-<span data-ttu-id="a5ea0-161">Сведения о том, как удалить из системы предыдущие версии Azure PowerShell, см. в статье [Uninstall the Azure PowerShell module](uninstall-az-ps.md) (Удаление модуля Azure PowerShell).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-161">To learn how to remove old versions of Azure PowerShell from your system, see [Uninstall the Azure PowerShell module](uninstall-az-ps.md).</span></span>
+<span data-ttu-id="4600c-170">В отличие от установки с помощью MSI, при установке или обновлении с помощью PowerShellGet не удаляются более старые версии, которые могут существовать в вашей системе.</span><span class="sxs-lookup"><span data-stu-id="4600c-170">Unlike MSI-based installations, installing or updating using PowerShellGet does not remove older versions that may exist on your system.</span></span> <span data-ttu-id="4600c-171">См. сведения об [удалении из системы предыдущих версий модуля Azure PowerShell](uninstall-az-ps.md).</span><span class="sxs-lookup"><span data-stu-id="4600c-171">To remove old versions of Azure PowerShell from your system, see [Uninstall the Azure PowerShell module](uninstall-az-ps.md).</span></span> <span data-ttu-id="4600c-172">См. сведения об [установке Azure PowerShell с помощью MSI](install-az-ps-msi.md).</span><span class="sxs-lookup"><span data-stu-id="4600c-172">For more information about MSI-based installations, see [Install Azure PowerShell with an MSI](install-az-ps-msi.md).</span></span>
 
-## <a name="use-multiple-versions-of-azure-powershell"></a><span data-ttu-id="a5ea0-162">Использование нескольких версий Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a5ea0-162">Use multiple versions of Azure PowerShell</span></span>
+## <a name="use-multiple-versions-of-azure-powershell"></a><span data-ttu-id="4600c-173">Использование нескольких версий Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="4600c-173">Use multiple versions of Azure PowerShell</span></span>
 
-<span data-ttu-id="a5ea0-163">Вы можете установить несколько версий Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-163">It's possible to install more than one version of Azure PowerShell.</span></span> <span data-ttu-id="a5ea0-164">Чтобы проверить наличие нескольких установленных версий Azure PowerShell, используйте следующую команду:</span><span class="sxs-lookup"><span data-stu-id="a5ea0-164">To check if you have multiple versions of Azure PowerShell installed, use the following command:</span></span>
+<span data-ttu-id="4600c-174">Вы можете установить несколько версий Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4600c-174">It's possible to install more than one version of Azure PowerShell.</span></span> <span data-ttu-id="4600c-175">Чтобы проверить наличие нескольких установленных версий Azure PowerShell, используйте следующую команду:</span><span class="sxs-lookup"><span data-stu-id="4600c-175">To check if you have multiple versions of Azure PowerShell installed, use the following command:</span></span>
 
 ```powershell-interactive
-Get-InstalledModule -Name Az -AllVersions | select Name,Version
+Get-InstalledModule -Name Az -AllVersions | Select-Object -Property Name, Version
 ```
 
-<span data-ttu-id="a5ea0-165">Сведения о том, как удалить версию Azure PowerShell, см. в статье [Удаление модуля Azure PowerShell](uninstall-az-ps.md).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-165">To remove a version of Azure PowerShell, see [Uninstall the Azure PowerShell module](uninstall-az-ps.md).</span></span>
+<span data-ttu-id="4600c-176">Сведения о том, как удалить версию Azure PowerShell, см. в статье [Удаление модуля Azure PowerShell](uninstall-az-ps.md).</span><span class="sxs-lookup"><span data-stu-id="4600c-176">To remove a version of Azure PowerShell, see [Uninstall the Azure PowerShell module](uninstall-az-ps.md).</span></span>
 
-<span data-ttu-id="a5ea0-166">Определенную версию модуля `Az` можно установить или загрузить с помощью аргумента `-RequiredVersion`.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-166">You can install or load a specific version of the `Az` module by using the `-RequiredVersion` argument:</span></span>
+<span data-ttu-id="4600c-177">Если у вас установлено несколько версий модуля, модуль автозагрузки и `Import-Module` загрузит последнюю версию по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="4600c-177">If you have more than one version of the module installed, module autoload and `Import-Module` load the latest version by default.</span></span>
+
+<span data-ttu-id="4600c-178">Определенную версию модуля `Az` можно установить или загрузить с помощью параметра `-RequiredVersion`.</span><span class="sxs-lookup"><span data-stu-id="4600c-178">You can install or load a specific version of the `Az` module using the `-RequiredVersion` parameter:</span></span>
 
 ```powershell-interactive
-# Install Az version 0.7.0
-Install-Module -Name Az -RequiredVersion 0.7.0 
-# Load Az version 0.7.0
-Import-Module -Name Az -RequiredVersion 0.7.0
+# Install Az version 1.8.0
+Install-Module -Name Az -RequiredVersion 1.8.0
+# Load Az version 1.8.0
+Import-Module -Name Az -RequiredVersion 1.8.0
 ```
 
-<span data-ttu-id="a5ea0-167">Если у вас установлено несколько версий модуля, модуль автозагрузки и `Import-Module` загрузит последнюю версию по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="a5ea0-167">If you have more than one version of the module installed, module autoload and `Import-Module` load the latest version by default.</span></span>
+## <a name="provide-feedback"></a><span data-ttu-id="4600c-179">Отзывы</span><span class="sxs-lookup"><span data-stu-id="4600c-179">Provide feedback</span></span>
 
-## <a name="provide-feedback"></a><span data-ttu-id="a5ea0-168">Отзывы</span><span class="sxs-lookup"><span data-stu-id="a5ea0-168">Provide feedback</span></span>
+<span data-ttu-id="4600c-180">Если вы нашли ошибку при работе с Azure PowerShell, [сообщите о проблеме на GitHub](https://github.com/Azure/azure-powershell/issues).</span><span class="sxs-lookup"><span data-stu-id="4600c-180">If you find a bug in Azure PowerShell, [file an issue on GitHub](https://github.com/Azure/azure-powershell/issues).</span></span> <span data-ttu-id="4600c-181">Чтобы отправить отзыв из командной строки, используйте командлет [Send-Feedback](/powershell/module/az.accounts/send-feedback).</span><span class="sxs-lookup"><span data-stu-id="4600c-181">To provide feedback from the command line, use the [Send-Feedback](/powershell/module/az.accounts/send-feedback) cmdlet.</span></span>
 
-<span data-ttu-id="a5ea0-169">Если вы нашли ошибку при работе с Azure Powershell, сообщите о ней [на сайте GitHub](https://github.com/Azure/azure-powershell/issues).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-169">If you find a bug in Azure Powershell, [file an issue on GitHub](https://github.com/Azure/azure-powershell/issues).</span></span>
-<span data-ttu-id="a5ea0-170">Чтобы отправить отзыв из командной строки, используйте командлет [Send-Feedback](/powershell/module/az.accounts/send-feedback).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-170">To provide feedback from the command line, use the [Send-Feedback](/powershell/module/az.accounts/send-feedback) cmdlet.</span></span>
+## <a name="next-steps"></a><span data-ttu-id="4600c-182">Next Steps</span><span class="sxs-lookup"><span data-stu-id="4600c-182">Next Steps</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="a5ea0-171">Next Steps</span><span class="sxs-lookup"><span data-stu-id="a5ea0-171">Next Steps</span></span>
-
-<span data-ttu-id="a5ea0-172">Дополнительные сведения о модулях Azure PowerShell и их функциях см. в статье [Get Started with Azure PowerShell](get-started-azureps.md) (Начало работы с Azure PowerShell).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-172">To learn more about the Azure PowerShell modules and their features, see [Get Started with Azure PowerShell](get-started-azureps.md).</span></span>
-<span data-ttu-id="a5ea0-173">Если вы знакомы с Azure PowerShell и вам необходимо мигрировать из AzureRM, см. статью [Migrate from AzureRM to Az](migrate-from-azurerm-to-az.md) (Миграция с AzureRM на Az).</span><span class="sxs-lookup"><span data-stu-id="a5ea0-173">If you're familiar with Azure PowerShell and need to migrate from AzureRM, see [Migrate from AzureRM to Az](migrate-from-azurerm-to-az.md).</span></span>
+<span data-ttu-id="4600c-183">Дополнительные сведения о модулях Azure PowerShell и их функциях см. в статье [Get Started with Azure PowerShell](get-started-azureps.md) (Начало работы с Azure PowerShell).</span><span class="sxs-lookup"><span data-stu-id="4600c-183">To learn more about the Azure PowerShell modules and their features, see [Get Started with Azure PowerShell](get-started-azureps.md).</span></span> <span data-ttu-id="4600c-184">Если вы знакомы с Azure PowerShell и вам необходимо мигрировать из AzureRM, см. статью [Migrate from AzureRM to Az](migrate-from-azurerm-to-az.md) (Миграция с AzureRM на Az).</span><span class="sxs-lookup"><span data-stu-id="4600c-184">If you're familiar with Azure PowerShell and need to migrate from AzureRM, see [Migrate from AzureRM to Az](migrate-from-azurerm-to-az.md).</span></span>
