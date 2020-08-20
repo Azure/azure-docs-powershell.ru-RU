@@ -56,6 +56,8 @@
       href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
 - name: Основные понятия
   items:
+    - name: Управление ресурсами Azure с помощью командлета Invoke-AzRestMethod
+      href: manage-azure-resources-invoke-azrestmethod.md
     - name: Задания PowerShell
       href: using-psjobs.md
       displayName: 'background, task, scripting, automation, context, process'
@@ -88,3 +90,5 @@
       href: migrate-az-3.0.0.md
     - name: "Критические изменения в версии Az\_4.1.0"
       href: migrate-az-4.1.0.md
+- name: Вопросы и ответы
+  href: faq.md
