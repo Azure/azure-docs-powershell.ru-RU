@@ -1,13 +1,13 @@
 ###YamlMime:Landing
 title: Документация по Azure PowerShell
-summary: "Azure PowerShell\_— это набор командлетов для управления ресурсами Azure непосредственно из командной строки PowerShell. Хотя начать работу с Azure PowerShell очень просто, это средство предоставляет мощные функции для автоматизации. Написанное на .NET Standard, средство Azure PowerShell работает с PowerShell\_5.1 в Windows или PowerShell Core\_6.x и последующих версий на любых платформах.\n"
+summary: "Azure PowerShell\_— это набор командлетов для управления ресурсами Azure непосредственно из командной строки PowerShell. Хотя начать работу с Azure PowerShell очень просто, это средство предоставляет мощные функции для автоматизации. Средство Azure PowerShell, созданное на базе .NET Standard, работает с PowerShell\_5.1 в Windows или PowerShell Core\_7.x и последующих версий на любых платформах.\n"
 metadata:
   title: Общие сведения об Azure PowerShell
   description: 'Начните работу с Azure PowerShell, установив это средство и изучив его функции и возможности.'
   ms.topic: landing-page
-  author: sptramer
-  ms.author: sttramer
-  ms.date: 12/10/2019
+  author: mikefrobbins
+  ms.author: mirobb
+  ms.date: 10/22/2020
 landingContent:
   - title: Начало работы с Azure PowerShell
     linkLists:
@@ -40,7 +40,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: Примеры скриптов для виртуальных машин
-            url: /azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json
+            url: /azure/virtual-machines/linux/powershell-samples?toc=/powershell/azure/toc.json
           - text: Примеры скриптов для Службы приложений Azure
             url: /azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json
           - text: Примеры скриптов для баз данных SQL
@@ -72,7 +72,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: Справка по командлетам
-            url: /powershell/module/?view=azps-2.7.0
+            url: /powershell/module/?view=azps-0.10.0
           - text: Заметки о выпуске
             url: release-notes-azureps.md
           - text: "Критические изменения в Az\_2.0.0"
@@ -84,8 +84,8 @@ landingContent:
       - linkListType: overview
         links:
           - text: Azure Active Directory для PowerShell
-            url: /powershell/azure/active-directory/
+            url: /powershell/module/azuread/
           - text: Azure Service Fabric для PowerShell
-            url: /powershell/azure/service-fabric/
-          - text: Azure ElasticDB для PowerShell
-            url: /powershell/azure/elasticdbjobs/
+            url: /powershell/module/servicefabric/
+          - text: Командлеты для баз данных SQL Azure
+            url: /powershell/module/az.sql/
