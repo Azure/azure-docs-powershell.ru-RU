@@ -1,0 +1,116 @@
+---
+external help file: Microsoft.Azure.Commands.Insights.dll-Help.xml
+Module Name: AzureRM.Insights
+ms.assetid: C7EC21C7-1C7E-49B2-9B33-486532FCDAEC
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Insights/Commands.Insights/help/Remove-AzureRmAlertRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Insights/Commands.Insights/help/Remove-AzureRmAlertRule.md
+ms.openlocfilehash: de0c1f8fa66b195452d7f2c9447189b4e925136b
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93567625"
+---
+# <span data-ttu-id="6df6c-101">Remove-AzureRmAlertRule</span><span class="sxs-lookup"><span data-stu-id="6df6c-101">Remove-AzureRmAlertRule</span></span>
+
+## <span data-ttu-id="6df6c-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="6df6c-102">SYNOPSIS</span></span>
+<span data-ttu-id="6df6c-103">Удаление правила оповещения.</span><span class="sxs-lookup"><span data-stu-id="6df6c-103">Removes an alert rule.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="6df6c-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="6df6c-104">SYNTAX</span></span>
+
+```
+Remove-AzureRmAlertRule -ResourceGroup <String> -Name <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="6df6c-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="6df6c-105">DESCRIPTION</span></span>
+<span data-ttu-id="6df6c-106">Командлет **Remove-AzureRmAlertRule** удаляет правило оповещения.</span><span class="sxs-lookup"><span data-stu-id="6df6c-106">The **Remove-AzureRmAlertRule** cmdlet removes an alert rule.</span></span>
+<span data-ttu-id="6df6c-107">Вы должны указать имя правила оповещения и группу ресурсов, которому она назначена.</span><span class="sxs-lookup"><span data-stu-id="6df6c-107">You must specify the name of the alert rule and the resource group to which it is assigned.</span></span>
+
+## <span data-ttu-id="6df6c-108">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="6df6c-108">EXAMPLES</span></span>
+
+### <span data-ttu-id="6df6c-109">Пример 1: Удаление правила оповещения</span><span class="sxs-lookup"><span data-stu-id="6df6c-109">Example 1: Remove an alert rule</span></span>
+```
+PS C:\>Remove-AzureRmAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8"
+RequestId                                                                                                    StatusCode
+---------                                                                                                    ----------
+2c6c159b-0e73-4a01-a67b-c32c1a0008a3                                                                                 OK
+```
+
+<span data-ttu-id="6df6c-110">Эта команда удаляет правило оповещения с именем myAlert-7da64548-214d-42ca-b12b-b245bb8f0ac8 в группе ресурсов Default-Web-CentralUS.</span><span class="sxs-lookup"><span data-stu-id="6df6c-110">This command removes the alert rule named myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8 in the resource group Default-Web-CentralUS.</span></span>
+
+## <span data-ttu-id="6df6c-111">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="6df6c-111">PARAMETERS</span></span>
+
+### <span data-ttu-id="6df6c-112">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="6df6c-112">-Name</span></span>
+<span data-ttu-id="6df6c-113">Указывает имя удаляемого правила оповещения.</span><span class="sxs-lookup"><span data-stu-id="6df6c-113">Specifies the name of the alert rule to remove.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6df6c-114">-ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="6df6c-114">-ResourceGroup</span></span>
+<span data-ttu-id="6df6c-115">Указывает имя группы ресурсов для правила оповещения.</span><span class="sxs-lookup"><span data-stu-id="6df6c-115">Specifies the name of the resource group for the alert rule.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6df6c-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="6df6c-116">-DefaultProfile</span></span>
+<span data-ttu-id="6df6c-117">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="6df6c-117">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6df6c-118">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="6df6c-118">CommonParameters</span></span>
+<span data-ttu-id="6df6c-119">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="6df6c-119">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="6df6c-120">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="6df6c-120">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="6df6c-121">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="6df6c-121">INPUTS</span></span>
+
+## <span data-ttu-id="6df6c-122">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="6df6c-122">OUTPUTS</span></span>
+
+### <span data-ttu-id="6df6c-123">System. Collections. Generic. List ' 1 [Microsoft. Azure. AzureOperationResponse]</span><span class="sxs-lookup"><span data-stu-id="6df6c-123">System.Collections.Generic.List\`1[Microsoft.Azure.AzureOperationResponse]</span></span>
+
+## <span data-ttu-id="6df6c-124">Пуск</span><span class="sxs-lookup"><span data-stu-id="6df6c-124">NOTES</span></span>
+
+## <span data-ttu-id="6df6c-125">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="6df6c-125">RELATED LINKS</span></span>
+
+[<span data-ttu-id="6df6c-126">Add-AzureRmLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="6df6c-126">Add-AzureRmLogAlertRule</span></span>](./Add-AzureRmLogAlertRule.md)
+
+[<span data-ttu-id="6df6c-127">Add-AzureRmMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="6df6c-127">Add-AzureRmMetricAlertRule</span></span>](./Add-AzureRmMetricAlertRule.md)
+
+[<span data-ttu-id="6df6c-128">Add-AzureRmWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="6df6c-128">Add-AzureRmWebtestAlertRule</span></span>](./Add-AzureRmWebtestAlertRule.md)
+
+[<span data-ttu-id="6df6c-129">Get-AzureRmAlertHistory</span><span class="sxs-lookup"><span data-stu-id="6df6c-129">Get-AzureRmAlertHistory</span></span>](./Get-AzureRmAlertHistory.md)
+
+[<span data-ttu-id="6df6c-130">Get-AzureRmAlertRule</span><span class="sxs-lookup"><span data-stu-id="6df6c-130">Get-AzureRmAlertRule</span></span>](./Get-AzureRmAlertRule.md)
+
+
