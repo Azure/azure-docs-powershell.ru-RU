@@ -1,0 +1,148 @@
+---
+external help file: Microsoft.Azure.Commands.KeyVault.dll-Help.xml
+Module Name: Az.KeyVault
+ms.assetid: C4E7ACDF-22FB-4D49-93B3-69E787B7E0CD
+online version: https://docs.microsoft.com/en-us/powershell/module/Az.keyvault/restore-AzKeyvaultkey
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Restore-AzKeyVaultKey.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Restore-AzKeyVaultKey.md
+ms.openlocfilehash: 5d090bae05e3d931fbf41b656ea66409d1297e8f
+ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "93911168"
+---
+# <span data-ttu-id="e909a-101">Restore-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="e909a-101">Restore-AzKeyVaultKey</span></span>
+
+## <span data-ttu-id="e909a-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="e909a-102">SYNOPSIS</span></span>
+<span data-ttu-id="e909a-103">Создание ключа в хранилище ключей из резервной копии ключа.</span><span class="sxs-lookup"><span data-stu-id="e909a-103">Creates a key in a key vault from a backed-up key.</span></span>
+
+## <span data-ttu-id="e909a-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="e909a-104">SYNTAX</span></span>
+
+```
+Restore-AzKeyVaultKey [-VaultName] <String> [-InputFile] <String> [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="e909a-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="e909a-105">DESCRIPTION</span></span>
+<span data-ttu-id="e909a-106">Командлет **RESTORE-AzKeyVaultKey** создает ключ в указанном хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="e909a-106">The **Restore-AzKeyVaultKey** cmdlet creates a key in the specified key vault.</span></span>
+<span data-ttu-id="e909a-107">Этот ключ является репликой резервного ключа в файле ввода и имеет то же имя, что и исходный ключ.</span><span class="sxs-lookup"><span data-stu-id="e909a-107">This key is a replica of the backed-up key in the input file and has the same name as the original key.</span></span>
+<span data-ttu-id="e909a-108">Если в хранилище ключей уже есть ключ с таким же именем, этот командлет не будет работать вместо перезаписи исходного ключа.</span><span class="sxs-lookup"><span data-stu-id="e909a-108">If the key vault already has a key by the same name, this cmdlet fails instead of overwriting the original key.</span></span>
+<span data-ttu-id="e909a-109">Если резервная копия имеет несколько версий ключа, восстанавливаются все версии.</span><span class="sxs-lookup"><span data-stu-id="e909a-109">If the backup contains multiple versions of a key, all versions are restored.</span></span>
+
+<span data-ttu-id="e909a-110">Ключевое хранилище, в которое вы восстанавливаете ключ, может отличаться от того, с помощью которого была восстановлена клавиша.</span><span class="sxs-lookup"><span data-stu-id="e909a-110">The key vault that you restore the key into can be different from the key vault that you backed up the key from.</span></span>
+<span data-ttu-id="e909a-111">Тем не менее, в одном и том же географическом хранилище вы должны использовать одну и ту же подписку, а также находиться в регионе Azure (например, в Северной Америке).</span><span class="sxs-lookup"><span data-stu-id="e909a-111">However, the key vault must use the same subscription and be in an Azure region in the same geography (for example, North America).</span></span>
+<span data-ttu-id="e909a-112">Просмотрите центр управления безопасностью Microsoft Azure ( https://azure.microsoft.com/support/trust-center/) для сопоставления областей Azure с географией).</span><span class="sxs-lookup"><span data-stu-id="e909a-112">See the Microsoft Azure Trust Center (https://azure.microsoft.com/support/trust-center/) for the mapping of Azure regions to geographies.</span></span>
+
+## <span data-ttu-id="e909a-113">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="e909a-113">EXAMPLES</span></span>
+
+### <span data-ttu-id="e909a-114">Пример 1: восстановление резервной копии ключа</span><span class="sxs-lookup"><span data-stu-id="e909a-114">Example 1: Restore a backed-up key</span></span>
+```
+PS C:\>Restore-AzKeyVaultKey -VaultName 'MyKeyVault' -InputFile "C:\Backup.blob"
+```
+
+<span data-ttu-id="e909a-115">Эта команда восстанавливает ключ, в том числе все его версии, из файла резервной копии с именем Backup. BLOB в хранилище ключей с именем MyKeyVault.</span><span class="sxs-lookup"><span data-stu-id="e909a-115">This command restores a key, including all of its versions, from the backup file named Backup.blob into the key vault named MyKeyVault.</span></span>
+
+## <span data-ttu-id="e909a-116">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="e909a-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="e909a-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e909a-117">-DefaultProfile</span></span>
+<span data-ttu-id="e909a-118">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="e909a-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e909a-119">-InputFile</span><span class="sxs-lookup"><span data-stu-id="e909a-119">-InputFile</span></span>
+<span data-ttu-id="e909a-120">Задает входной файл, содержащий резервную копию ключа для восстановления.</span><span class="sxs-lookup"><span data-stu-id="e909a-120">Specifies the input file that contains the backup of the key to restore.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e909a-121">-VaultName</span><span class="sxs-lookup"><span data-stu-id="e909a-121">-VaultName</span></span>
+<span data-ttu-id="e909a-122">Указывает имя хранилища ключей, в которое восстанавливается ключ.</span><span class="sxs-lookup"><span data-stu-id="e909a-122">Specifies the name of the key vault into which to restore the key.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e909a-123">-Confirm</span><span class="sxs-lookup"><span data-stu-id="e909a-123">-Confirm</span></span>
+<span data-ttu-id="e909a-124">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="e909a-124">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e909a-125">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="e909a-125">-WhatIf</span></span>
+<span data-ttu-id="e909a-126">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="e909a-126">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="e909a-127">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="e909a-127">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e909a-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e909a-128">CommonParameters</span></span>
+<span data-ttu-id="e909a-129">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="e909a-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e909a-130">Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="e909a-130">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="e909a-131">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="e909a-131">INPUTS</span></span>
+
+### <span data-ttu-id="e909a-132">Ничего</span><span class="sxs-lookup"><span data-stu-id="e909a-132">None</span></span>
+<span data-ttu-id="e909a-133">Этот командлет не поддерживает никаких входных данных.</span><span class="sxs-lookup"><span data-stu-id="e909a-133">This cmdlet does not accept any input.</span></span>
+
+## <span data-ttu-id="e909a-134">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="e909a-134">OUTPUTS</span></span>
+
+### <span data-ttu-id="e909a-135">Microsoft. Azure. Commands. KeyVault. Models. KeyBundle</span><span class="sxs-lookup"><span data-stu-id="e909a-135">Microsoft.Azure.Commands.KeyVault.Models.KeyBundle</span></span>
+
+## <span data-ttu-id="e909a-136">Пуск</span><span class="sxs-lookup"><span data-stu-id="e909a-136">NOTES</span></span>
+
+## <span data-ttu-id="e909a-137">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="e909a-137">RELATED LINKS</span></span>
+
+[<span data-ttu-id="e909a-138">Add-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="e909a-138">Add-AzKeyVaultKey</span></span>](./Add-AzKeyVaultKey.md)
+
+[<span data-ttu-id="e909a-139">Backup-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="e909a-139">Backup-AzKeyVaultKey</span></span>](./Backup-AzKeyVaultKey.md)
+
+[<span data-ttu-id="e909a-140">Get-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="e909a-140">Get-AzKeyVaultKey</span></span>](./Get-AzKeyVaultKey.md)
+
+[<span data-ttu-id="e909a-141">Remove-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="e909a-141">Remove-AzKeyVaultKey</span></span>](./Remove-AzKeyVaultKey.md)
+
