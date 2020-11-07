@@ -1,0 +1,128 @@
+---
+external help file: Microsoft.Azure.Commands.Sql.dll-Help.xml
+Module Name: AzureRM.Sql
+ms.assetid: 686785F8-2085-4705-A74D-12B18A87E187
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Sql/Commands.Sql/help/Get-AzureRmSqlServerBackupLongTermRetentionVault.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Sql/Commands.Sql/help/Get-AzureRmSqlServerBackupLongTermRetentionVault.md
+ms.openlocfilehash: 4b63568b4a2bfd6b79c51fcd906819f4831a7ade
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93733607"
+---
+# <span data-ttu-id="e9e1c-101">Get-AzureRmSqlServerBackupLongTermRetentionVault</span><span class="sxs-lookup"><span data-stu-id="e9e1c-101">Get-AzureRmSqlServerBackupLongTermRetentionVault</span></span>
+
+## <span data-ttu-id="e9e1c-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="e9e1c-102">SYNOPSIS</span></span>
+<span data-ttu-id="e9e1c-103">Возвращает серверное хранилище долгосрочного хранения.</span><span class="sxs-lookup"><span data-stu-id="e9e1c-103">Gets a server long term retention vault.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="e9e1c-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="e9e1c-104">SYNTAX</span></span>
+
+```
+Get-AzureRmSqlServerBackupLongTermRetentionVault [-ServerName] <String> [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="e9e1c-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="e9e1c-105">DESCRIPTION</span></span>
+<span data-ttu-id="e9e1c-106">Командлет **Get-AzureRmSqlServerBackupLongTermRetentionVault** получает долгосрочное хранилище, которое зарегистрировано для этого сервера.</span><span class="sxs-lookup"><span data-stu-id="e9e1c-106">The **Get-AzureRmSqlServerBackupLongTermRetentionVault** cmdlet gets the long term retention vault registered to this server.</span></span>
+<span data-ttu-id="e9e1c-107">Хранилище — это ресурс резервного копирования Azure, который используется для хранения данных резервного копирования.</span><span class="sxs-lookup"><span data-stu-id="e9e1c-107">The vault is an Azure Backup resource used to store backup data.</span></span>
+
+## <span data-ttu-id="e9e1c-108">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="e9e1c-108">EXAMPLES</span></span>
+
+## <span data-ttu-id="e9e1c-109">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="e9e1c-109">PARAMETERS</span></span>
+
+### <span data-ttu-id="e9e1c-110">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="e9e1c-110">-ResourceGroupName</span></span>
+<span data-ttu-id="e9e1c-111">Указывает имя группы ресурсов, содержащей сервер.</span><span class="sxs-lookup"><span data-stu-id="e9e1c-111">Specifies the name of the resource group that contains the server.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e9e1c-112">-ИмяСервера</span><span class="sxs-lookup"><span data-stu-id="e9e1c-112">-ServerName</span></span>
+<span data-ttu-id="e9e1c-113">Указывает сервер, для которого этот командлет получает хранилище.</span><span class="sxs-lookup"><span data-stu-id="e9e1c-113">Specifies the server for which this cmdlet gets a vault.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e9e1c-114">-Confirm</span><span class="sxs-lookup"><span data-stu-id="e9e1c-114">-Confirm</span></span>
+<span data-ttu-id="e9e1c-115">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="e9e1c-115">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e9e1c-116">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="e9e1c-116">-WhatIf</span></span>
+<span data-ttu-id="e9e1c-117">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="e9e1c-117">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="e9e1c-118">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="e9e1c-118">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e9e1c-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e9e1c-119">-DefaultProfile</span></span>
+<span data-ttu-id="e9e1c-120">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="e9e1c-120">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e9e1c-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e9e1c-121">CommonParameters</span></span>
+<span data-ttu-id="e9e1c-122">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="e9e1c-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e9e1c-123">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="e9e1c-123">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="e9e1c-124">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="e9e1c-124">INPUTS</span></span>
+
+## <span data-ttu-id="e9e1c-125">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="e9e1c-125">OUTPUTS</span></span>
+
+## <span data-ttu-id="e9e1c-126">Пуск</span><span class="sxs-lookup"><span data-stu-id="e9e1c-126">NOTES</span></span>
+
+## <span data-ttu-id="e9e1c-127">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="e9e1c-127">RELATED LINKS</span></span>
+
+[<span data-ttu-id="e9e1c-128">Set-AzureRmSqlServerBackupLongTermRetentionVault</span><span class="sxs-lookup"><span data-stu-id="e9e1c-128">Set-AzureRmSqlServerBackupLongTermRetentionVault</span></span>](./Set-AzureRmSqlServerBackupLongTermRetentionVault.md)
+
+[<span data-ttu-id="e9e1c-129">Документация по базам данных SQL</span><span class="sxs-lookup"><span data-stu-id="e9e1c-129">SQL Database Documentation</span></span>](https://docs.microsoft.com/azure/sql-database/)
+
