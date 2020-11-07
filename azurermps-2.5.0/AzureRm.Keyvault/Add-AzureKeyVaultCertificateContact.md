@@ -1,0 +1,152 @@
+---
+external help file: Microsoft.Azure.Commands.KeyVault.dll-Help.xml
+Module Name: AzureRM.KeyVault
+ms.assetid: 2D3021B3-12C5-4797-8BF2-800E3CEAC56C
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.keyvault/add-azurekeyvaultcertificatecontact
+schema: 2.0.0
+ms.openlocfilehash: 9f52889f044ba6bf497b57a53f3e2daaea0dbf3b
+ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "93913355"
+---
+# <span data-ttu-id="5a1a1-101">Add-AzureKeyVaultCertificateContact</span><span class="sxs-lookup"><span data-stu-id="5a1a1-101">Add-AzureKeyVaultCertificateContact</span></span>
+
+## <span data-ttu-id="5a1a1-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="5a1a1-102">SYNOPSIS</span></span>
+<span data-ttu-id="5a1a1-103">Добавляет контакт для уведомлений сертификата.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-103">Adds a contact for certificate notifications.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="5a1a1-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="5a1a1-104">SYNTAX</span></span>
+
+```
+Add-AzureKeyVaultCertificateContact [-VaultName] <String> [-EmailAddress] <String> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="5a1a1-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="5a1a1-105">DESCRIPTION</span></span>
+<span data-ttu-id="5a1a1-106">Командлет **Add-AzureKeyVaultCertificateContact** добавляет контакт для хранилища ключей для уведомлений сертификата в хранилище ключей Azure.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-106">The **Add-AzureKeyVaultCertificateContact** cmdlet adds a contact for a key vault for certificate notifications in Azure Key Vault.</span></span>
+<span data-ttu-id="5a1a1-107">Контакт получит обновления о таких событиях, как срок действия сертификата, например "закрыто", "сертификат обновлен" и т. д.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-107">The contact receives updates about events such as certificate close to expiry, certificate renewed, and so on.</span></span>
+<span data-ttu-id="5a1a1-108">Эти события определяются политикой сертификата.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-108">These events are determined by the certificate policy.</span></span>
+
+## <span data-ttu-id="5a1a1-109">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="5a1a1-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="5a1a1-110">Пример 1: Добавление контакта сертификата для хранилища ключей</span><span class="sxs-lookup"><span data-stu-id="5a1a1-110">Example 1: Add a key vault certificate contact</span></span>
+```
+PS C:\>Add-AzureKeyVaultCertificateContact -VaultName "ContosoKV01" -EmailAddress "patti.fuller@contoso.com" -PassThru
+```
+
+<span data-ttu-id="5a1a1-111">Эта команда добавляет Patti Белова в качестве контакта сертификата для хранилища ключей ContosoKV01 и возвращает объект **KeyVaultCertificateContact** .</span><span class="sxs-lookup"><span data-stu-id="5a1a1-111">This command adds Patti Fuller as a certificate contact for the ContosoKV01 key vault and returns the **KeyVaultCertificateContact** object.</span></span>
+
+## <span data-ttu-id="5a1a1-112">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="5a1a1-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="5a1a1-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5a1a1-113">-DefaultProfile</span></span>
+<span data-ttu-id="5a1a1-114">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="5a1a1-114">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a1a1-115">-EmailAddress</span><span class="sxs-lookup"><span data-stu-id="5a1a1-115">-EmailAddress</span></span>
+<span data-ttu-id="5a1a1-116">Указывает адрес электронной почты контакта.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-116">Specifies the email address of the contact.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a1a1-117">-PassThru</span><span class="sxs-lookup"><span data-stu-id="5a1a1-117">-PassThru</span></span>
+<span data-ttu-id="5a1a1-118">Возвращает объект, который представляет собой элемент, с которым вы работаете.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-118">Returns an object representing the item with which you are working.</span></span>
+<span data-ttu-id="5a1a1-119">По умолчанию этот командлет не создает никаких выходных данных.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-119">By default, this cmdlet does not generate any output.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a1a1-120">-VaultName</span><span class="sxs-lookup"><span data-stu-id="5a1a1-120">-VaultName</span></span>
+<span data-ttu-id="5a1a1-121">Указывает имя хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-121">Specifies the name of the key vault.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a1a1-122">-Confirm</span><span class="sxs-lookup"><span data-stu-id="5a1a1-122">-Confirm</span></span>
+<span data-ttu-id="5a1a1-123">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-123">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a1a1-124">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="5a1a1-124">-WhatIf</span></span>
+<span data-ttu-id="5a1a1-125">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-125">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="5a1a1-126">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-126">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a1a1-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5a1a1-127">CommonParameters</span></span>
+<span data-ttu-id="5a1a1-128">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="5a1a1-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5a1a1-129">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5a1a1-129">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="5a1a1-130">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="5a1a1-130">INPUTS</span></span>
+
+## <span data-ttu-id="5a1a1-131">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="5a1a1-131">OUTPUTS</span></span>
+
+### <span data-ttu-id="5a1a1-132">List<Microsoft. Azure. Commands. KeyVault. Models. KeyVaultCertificateContact></span><span class="sxs-lookup"><span data-stu-id="5a1a1-132">List<Microsoft.Azure.Commands.KeyVault.Models.KeyVaultCertificateContact></span></span>
+
+## <span data-ttu-id="5a1a1-133">Пуск</span><span class="sxs-lookup"><span data-stu-id="5a1a1-133">NOTES</span></span>
+
+## <span data-ttu-id="5a1a1-134">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="5a1a1-134">RELATED LINKS</span></span>
+
+[<span data-ttu-id="5a1a1-135">Get-AzureKeyVaultCertificateContact</span><span class="sxs-lookup"><span data-stu-id="5a1a1-135">Get-AzureKeyVaultCertificateContact</span></span>](./Get-AzureKeyVaultCertificateContact.md)
+
+[<span data-ttu-id="5a1a1-136">Remove-AzureKeyVaultCertificateContact</span><span class="sxs-lookup"><span data-stu-id="5a1a1-136">Remove-AzureKeyVaultCertificateContact</span></span>](./Remove-AzureKeyVaultCertificateContact.md)
+
