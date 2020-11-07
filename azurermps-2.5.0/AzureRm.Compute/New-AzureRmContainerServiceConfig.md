@@ -1,0 +1,332 @@
+---
+external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
+Module Name: AzureRM.Compute
+ms.assetid: EC8C915A-A0BC-41DE-9DBF-3617536E3D1A
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermcontainerserviceconfig
+schema: 2.0.0
+ms.openlocfilehash: 4a6f30d1f958094267b4ba8ddf09eb2e342ee889
+ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "93914922"
+---
+# <span data-ttu-id="5a193-101">New-AzureRmContainerServiceConfig</span><span class="sxs-lookup"><span data-stu-id="5a193-101">New-AzureRmContainerServiceConfig</span></span>
+
+## <span data-ttu-id="5a193-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="5a193-102">SYNOPSIS</span></span>
+<span data-ttu-id="5a193-103">Создает локальный объект конфигурации для службы контейнера.</span><span class="sxs-lookup"><span data-stu-id="5a193-103">Creates a local configuration object for a container service.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="5a193-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="5a193-104">SYNTAX</span></span>
+
+```
+New-AzureRmContainerServiceConfig [[-Location] <String>] [[-Tag] <Hashtable>]
+ [[-OrchestratorType] <ContainerServiceOrchestratorTypes>] [[-MasterCount] <Int32>]
+ [[-MasterDnsPrefix] <String>] [[-AgentPoolProfile] <ContainerServiceAgentPoolProfile[]>]
+ [[-WindowsProfileAdminUsername] <String>] [[-WindowsProfileAdminPassword] <String>]
+ [[-AdminUsername] <String>] [[-SshPublicKey] <String[]>] [[-VmDiagnosticsEnabled] <Boolean>]
+ [-CustomProfileOrchestrator <String>] [-ServicePrincipalProfileClientId <String>]
+ [-ServicePrincipalProfileSecret <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="5a193-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="5a193-105">DESCRIPTION</span></span>
+<span data-ttu-id="5a193-106">Командлет **New-AzureRmContainerServiceConfig** создает объект локальной конфигурации для службы контейнера.</span><span class="sxs-lookup"><span data-stu-id="5a193-106">The **New-AzureRmContainerServiceConfig** cmdlet creates a local configuration object for a container service.</span></span>
+<span data-ttu-id="5a193-107">Предоставьте этот объект командлету New-AzureRmContainerService, чтобы создать службу контейнера.</span><span class="sxs-lookup"><span data-stu-id="5a193-107">Provide this object to the New-AzureRmContainerService cmdlet to create a container service.</span></span>
+
+## <span data-ttu-id="5a193-108">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="5a193-108">EXAMPLES</span></span>
+
+### <span data-ttu-id="5a193-109">Пример 1: создание конфигурации службы контейнеров</span><span class="sxs-lookup"><span data-stu-id="5a193-109">Example 1: Create a container service configuration</span></span>
+```
+PS C:\> $Container = New-AzureRmContainerServiceConfig -Location "Australia Southeast" -OrchestratorType "DCOS" -MasterDnsPrefix "MasterResourceGroup17" -AdminUsername "AcsLinuxAdmin" -SshPublicKey "<ssh-key>"
+PS C:\> $Container | Add-AzureRmContainerServiceAgentPoolProfile -Name "AgentPool01" -VmSize "Standard_A1" -DnsPrefix "APResourceGroup17"
+```
+
+<span data-ttu-id="5a193-110">Эта команда создает контейнер и сохраняет его в переменной $Container.</span><span class="sxs-lookup"><span data-stu-id="5a193-110">This command creates a container, and then stores it in the $Container variable.</span></span>
+
+<span data-ttu-id="5a193-111">Команда определяет различные параметры конфигурации службы контейнера.</span><span class="sxs-lookup"><span data-stu-id="5a193-111">The command specifies various settings for the container service configuration.</span></span> <span data-ttu-id="5a193-112">Команда передает объект конфигурации в командлет Add-AzureRmContainerServiceAgentPoolProfile с помощью оператора Pipeline.</span><span class="sxs-lookup"><span data-stu-id="5a193-112">The command passes the configuration object to the Add-AzureRmContainerServiceAgentPoolProfile cmdlet by using the pipeline operator.</span></span> <span data-ttu-id="5a193-113">Этот командлет добавляет профиль пула агентов.</span><span class="sxs-lookup"><span data-stu-id="5a193-113">That cmdlet adds an agent pool profile.</span></span>
+
+<span data-ttu-id="5a193-114">Укажите объект в $Container для параметра *ContainerService* **New-AzureRmContainerService**.</span><span class="sxs-lookup"><span data-stu-id="5a193-114">Specify the object in $Container for the *ContainerService* parameter of **New-AzureRmContainerService**.</span></span>
+
+## <span data-ttu-id="5a193-115">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="5a193-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="5a193-116">-AdminUsername</span><span class="sxs-lookup"><span data-stu-id="5a193-116">-AdminUsername</span></span>
+<span data-ttu-id="5a193-117">Указывает имя учетной записи администратора, которая будет использоваться для службы контейнеров на базе Linux.</span><span class="sxs-lookup"><span data-stu-id="5a193-117">Specifies the administrator account name to use for a Linux-based container service.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 8
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-118">-AgentPoolProfile</span><span class="sxs-lookup"><span data-stu-id="5a193-118">-AgentPoolProfile</span></span>
+<span data-ttu-id="5a193-119">Указывает массив объектов профиля группы агента для службы контейнера.</span><span class="sxs-lookup"><span data-stu-id="5a193-119">Specifies an array of agent pool profile objects for the container service.</span></span>
+<span data-ttu-id="5a193-120">Добавьте профиль с помощью командлета Add-AzureRmContainerServiceAgentPoolProfile.</span><span class="sxs-lookup"><span data-stu-id="5a193-120">Add a profile by using the Add-AzureRmContainerServiceAgentPoolProfile cmdlet.</span></span>
+
+```yaml
+Type: ContainerServiceAgentPoolProfile[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-121">-CustomProfileOrchestrator</span><span class="sxs-lookup"><span data-stu-id="5a193-121">-CustomProfileOrchestrator</span></span>
+<span data-ttu-id="5a193-122">Задает настраиваемую Orchestrator Profile.</span><span class="sxs-lookup"><span data-stu-id="5a193-122">Specifies the custom profile orchestrator.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5a193-123">-DefaultProfile</span></span>
+<span data-ttu-id="5a193-124">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="5a193-124">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-125">-Location</span><span class="sxs-lookup"><span data-stu-id="5a193-125">-Location</span></span>
+<span data-ttu-id="5a193-126">Указывает расположение для создания службы контейнера.</span><span class="sxs-lookup"><span data-stu-id="5a193-126">Specifies the location in which to create the container service.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-127">-MasterCount</span><span class="sxs-lookup"><span data-stu-id="5a193-127">-MasterCount</span></span>
+<span data-ttu-id="5a193-128">Задает количество создаваемых эталонных виртуальных машин.</span><span class="sxs-lookup"><span data-stu-id="5a193-128">Specifies the number of master virtual machines to create.</span></span>
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-129">-MasterDnsPrefix</span><span class="sxs-lookup"><span data-stu-id="5a193-129">-MasterDnsPrefix</span></span>
+<span data-ttu-id="5a193-130">Задает префикс DNS для основной виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="5a193-130">Specifies the DNS prefix for the master virtual machine.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-131">-OrchestratorType</span><span class="sxs-lookup"><span data-stu-id="5a193-131">-OrchestratorType</span></span>
+<span data-ttu-id="5a193-132">Указывает тип Orchestrator для службы контейнера.</span><span class="sxs-lookup"><span data-stu-id="5a193-132">Specifies the type of orchestrator for the container service.</span></span>
+<span data-ttu-id="5a193-133">Допустимые значения этого параметра: DCOS и Swarm.</span><span class="sxs-lookup"><span data-stu-id="5a193-133">The acceptable values for this parameter are: DCOS and Swarm.</span></span>
+
+```yaml
+Type: ContainerServiceOrchestratorTypes
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Swarm, DCOS, Custom, Kubernetes
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-134">-ServicePrincipalProfileClientId</span><span class="sxs-lookup"><span data-stu-id="5a193-134">-ServicePrincipalProfileClientId</span></span>
+<span data-ttu-id="5a193-135">Указывает идентификатор клиента для профиля участника.</span><span class="sxs-lookup"><span data-stu-id="5a193-135">Specifies the principal profile client ID.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-136">-ServicePrincipalProfileSecret</span><span class="sxs-lookup"><span data-stu-id="5a193-136">-ServicePrincipalProfileSecret</span></span>
+<span data-ttu-id="5a193-137">Указывает секретный профиль участника.</span><span class="sxs-lookup"><span data-stu-id="5a193-137">Specifies the principal profile secret.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-138">-SshPublicKey</span><span class="sxs-lookup"><span data-stu-id="5a193-138">-SshPublicKey</span></span>
+<span data-ttu-id="5a193-139">Указывает открытый ключ SSH для службы контейнера на основе Linux.</span><span class="sxs-lookup"><span data-stu-id="5a193-139">Specifies the SSH public key for a Linux-based container service.</span></span>
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 9
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-140">-Тег</span><span class="sxs-lookup"><span data-stu-id="5a193-140">-Tag</span></span>
+<span data-ttu-id="5a193-141">Пары "ключ-значение" в виде хэш-таблицы.</span><span class="sxs-lookup"><span data-stu-id="5a193-141">Key-value pairs in the form of a hash table.</span></span> <span data-ttu-id="5a193-142">Например:</span><span class="sxs-lookup"><span data-stu-id="5a193-142">For example:</span></span>
+
+<span data-ttu-id="5a193-143">@ {Key0 = "value0"; key1 = $null; key2 = "значение2"}</span><span class="sxs-lookup"><span data-stu-id="5a193-143">@{key0="value0";key1=$null;key2="value2"}</span></span>
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-144">-VmDiagnosticsEnabled</span><span class="sxs-lookup"><span data-stu-id="5a193-144">-VmDiagnosticsEnabled</span></span>
+<span data-ttu-id="5a193-145">Указывает, включает ли эта конфигурация диагностику для виртуальной машины службы контейнера.</span><span class="sxs-lookup"><span data-stu-id="5a193-145">Indicates whether this configuration enables diagnostics for the container service virtual machine.</span></span>
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 10
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-146">-WindowsProfileAdminPassword</span><span class="sxs-lookup"><span data-stu-id="5a193-146">-WindowsProfileAdminPassword</span></span>
+<span data-ttu-id="5a193-147">Указывает пароль администратора для службы контейнеров, использующей операционную систему Windows.</span><span class="sxs-lookup"><span data-stu-id="5a193-147">Specifies the administrator password for a container service that uses the Windows operating system.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 7
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-148">-WindowsProfileAdminUsername</span><span class="sxs-lookup"><span data-stu-id="5a193-148">-WindowsProfileAdminUsername</span></span>
+<span data-ttu-id="5a193-149">Указывает имя пользователя администратора для службы контейнеров, использующей операционную систему Windows.</span><span class="sxs-lookup"><span data-stu-id="5a193-149">Specifies the administrator username for a container service that uses the Windows operating system.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-150">-Confirm</span><span class="sxs-lookup"><span data-stu-id="5a193-150">-Confirm</span></span>
+<span data-ttu-id="5a193-151">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="5a193-151">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-152">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="5a193-152">-WhatIf</span></span>
+<span data-ttu-id="5a193-153">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="5a193-153">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="5a193-154">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="5a193-154">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a193-155">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5a193-155">CommonParameters</span></span>
+<span data-ttu-id="5a193-156">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="5a193-156">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5a193-157">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5a193-157">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="5a193-158">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="5a193-158">INPUTS</span></span>
+
+### <span data-ttu-id="5a193-159">Ничего</span><span class="sxs-lookup"><span data-stu-id="5a193-159">None</span></span>
+<span data-ttu-id="5a193-160">Этот командлет не поддерживает никаких входных данных.</span><span class="sxs-lookup"><span data-stu-id="5a193-160">This cmdlet does not accept any input.</span></span>
+
+## <span data-ttu-id="5a193-161">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="5a193-161">OUTPUTS</span></span>
+
+### <span data-ttu-id="5a193-162">Microsoft. Azure. Commands. COMPUTE. Automation. Models. PSContainerService</span><span class="sxs-lookup"><span data-stu-id="5a193-162">Microsoft.Azure.Commands.Compute.Automation.Models.PSContainerService</span></span>
+
+## <span data-ttu-id="5a193-163">Пуск</span><span class="sxs-lookup"><span data-stu-id="5a193-163">NOTES</span></span>
+
+## <span data-ttu-id="5a193-164">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="5a193-164">RELATED LINKS</span></span>
+
+[<span data-ttu-id="5a193-165">Add-AzureRmContainerServiceAgentPoolProfile</span><span class="sxs-lookup"><span data-stu-id="5a193-165">Add-AzureRmContainerServiceAgentPoolProfile</span></span>](./Add-AzureRmContainerServiceAgentPoolProfile.md)
+
+[<span data-ttu-id="5a193-166">New-AzureRmContainerService</span><span class="sxs-lookup"><span data-stu-id="5a193-166">New-AzureRmContainerService</span></span>](./New-AzureRmContainerService.md)
