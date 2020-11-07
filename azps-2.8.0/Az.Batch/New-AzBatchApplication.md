@@ -1,0 +1,163 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Batch.dll-Help.xml
+Module Name: Az.Batch
+ms.assetid: FF111B74-90A3-4F7C-B515-CE1EEF68EB54
+online version: https://docs.microsoft.com/en-us/powershell/module/az.batch/new-azbatchapplication
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/New-AzBatchApplication.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/New-AzBatchApplication.md
+ms.openlocfilehash: 0c1d847045cc4fb8be39674c13c38114ee9d3a57
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93727695"
+---
+# <span data-ttu-id="14175-101">New-AzBatchApplication</span><span class="sxs-lookup"><span data-stu-id="14175-101">New-AzBatchApplication</span></span>
+
+## <span data-ttu-id="14175-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="14175-102">SYNOPSIS</span></span>
+<span data-ttu-id="14175-103">Добавляет приложение в указанную учетную запись пакета.</span><span class="sxs-lookup"><span data-stu-id="14175-103">Adds an application to the specified Batch account.</span></span>
+
+## <span data-ttu-id="14175-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="14175-104">SYNTAX</span></span>
+
+```
+New-AzBatchApplication [-AccountName] <String> [-ResourceGroupName] <String> [-ApplicationId] <String>
+ [[-AllowUpdates] <Boolean>] [[-DisplayName] <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="14175-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="14175-105">DESCRIPTION</span></span>
+<span data-ttu-id="14175-106">Командлет **New-AzBatchApplication** добавляет приложение в указанную учетную запись пакета Azure.</span><span class="sxs-lookup"><span data-stu-id="14175-106">The **New-AzBatchApplication** cmdlet adds an application to the specified Azure Batch account.</span></span>
+
+## <span data-ttu-id="14175-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="14175-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="14175-108">Пример 1: Добавление пустого приложения в пакетную учетную запись</span><span class="sxs-lookup"><span data-stu-id="14175-108">Example 1: Add an empty application to a Batch account</span></span>
+```
+PS C:\>New-AzBatchApplication -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationId "Litware" -AllowUpdates $True -DisplayName "Litware Advanced Reticulator"
+```
+
+<span data-ttu-id="14175-109">Эта команда создает приложение беседа Litware в учетной записи ContosoBatch.</span><span class="sxs-lookup"><span data-stu-id="14175-109">This command creates the Litware application in the ContosoBatch account.</span></span>
+<span data-ttu-id="14175-110">Приложение изначально не включает пакеты.</span><span class="sxs-lookup"><span data-stu-id="14175-110">The application initially contains no packages.</span></span>
+
+## <span data-ttu-id="14175-111">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="14175-111">PARAMETERS</span></span>
+
+### <span data-ttu-id="14175-112">-Имя_учетной_записи</span><span class="sxs-lookup"><span data-stu-id="14175-112">-AccountName</span></span>
+<span data-ttu-id="14175-113">Указывает имя пакетной учетной записи, к которой этот командлет добавляет приложение.</span><span class="sxs-lookup"><span data-stu-id="14175-113">Specifies the name of the Batch account to which this cmdlet adds an application.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="14175-114">-AllowUpdates</span><span class="sxs-lookup"><span data-stu-id="14175-114">-AllowUpdates</span></span>
+<span data-ttu-id="14175-115">Определяет, можно ли перезаписывать пакеты в приложении с использованием той же строки версии.</span><span class="sxs-lookup"><span data-stu-id="14175-115">Specifies whether packages within the application can be overwritten using the same version string.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="14175-116">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="14175-116">-ApplicationId</span></span>
+<span data-ttu-id="14175-117">Указывает идентификатор приложения.</span><span class="sxs-lookup"><span data-stu-id="14175-117">Specifies the ID of the application.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="14175-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="14175-118">-DefaultProfile</span></span>
+<span data-ttu-id="14175-119">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="14175-119">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="14175-120">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="14175-120">-DisplayName</span></span>
+<span data-ttu-id="14175-121">Указывает отображаемое имя приложения.</span><span class="sxs-lookup"><span data-stu-id="14175-121">Specifies the display name for the application.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="14175-122">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="14175-122">-ResourceGroupName</span></span>
+<span data-ttu-id="14175-123">Указывает имя группы ресурсов, которая содержит пакетную учетную запись.</span><span class="sxs-lookup"><span data-stu-id="14175-123">Specifies the name of the resource group that contains the Batch account.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="14175-124">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="14175-124">CommonParameters</span></span>
+<span data-ttu-id="14175-125">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="14175-125">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="14175-126">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="14175-126">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="14175-127">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="14175-127">INPUTS</span></span>
+
+### <span data-ttu-id="14175-128">System. String</span><span class="sxs-lookup"><span data-stu-id="14175-128">System.String</span></span>
+
+### <span data-ttu-id="14175-129">System. Nullable "1 [[System. Boolean, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="14175-129">System.Nullable\`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+
+## <span data-ttu-id="14175-130">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="14175-130">OUTPUTS</span></span>
+
+### <span data-ttu-id="14175-131">Microsoft.Azure.Commands.BatCH. Models. PSApplication</span><span class="sxs-lookup"><span data-stu-id="14175-131">Microsoft.Azure.Commands.Batch.Models.PSApplication</span></span>
+
+## <span data-ttu-id="14175-132">Пуск</span><span class="sxs-lookup"><span data-stu-id="14175-132">NOTES</span></span>
+
+## <span data-ttu-id="14175-133">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="14175-133">RELATED LINKS</span></span>
+
+[<span data-ttu-id="14175-134">Get-AzBatchApplication</span><span class="sxs-lookup"><span data-stu-id="14175-134">Get-AzBatchApplication</span></span>](./Get-AzBatchApplication.md)
+
+[<span data-ttu-id="14175-135">Get-AzBatchApplicationPackage</span><span class="sxs-lookup"><span data-stu-id="14175-135">Get-AzBatchApplicationPackage</span></span>](./Get-AzBatchApplicationPackage.md)
+
+[<span data-ttu-id="14175-136">New-AzBatchApplicationPackage</span><span class="sxs-lookup"><span data-stu-id="14175-136">New-AzBatchApplicationPackage</span></span>](./New-AzBatchApplicationPackage.md)
+
+[<span data-ttu-id="14175-137">Remove-AzBatchApplication</span><span class="sxs-lookup"><span data-stu-id="14175-137">Remove-AzBatchApplication</span></span>](./Remove-AzBatchApplication.md)
+
+[<span data-ttu-id="14175-138">Remove-AzBatchApplicationPackage</span><span class="sxs-lookup"><span data-stu-id="14175-138">Remove-AzBatchApplicationPackage</span></span>](./Remove-AzBatchApplicationPackage.md)
+
+[<span data-ttu-id="14175-139">Set-AzBatchApplication</span><span class="sxs-lookup"><span data-stu-id="14175-139">Set-AzBatchApplication</span></span>](./Set-AzBatchApplication.md)
+
+
