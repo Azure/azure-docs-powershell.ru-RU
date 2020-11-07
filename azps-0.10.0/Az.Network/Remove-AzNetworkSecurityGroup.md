@@ -1,0 +1,181 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+ms.assetid: 01F56553-1685-43D4-89E6-DDCDF17D1E00
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/remove-aznetworksecuritygroup
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/Remove-AzNetworkSecurityGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/Remove-AzNetworkSecurityGroup.md
+ms.openlocfilehash: ecda7c996bee6f707be27d3d58cf560ffaa50009
+ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "93909466"
+---
+# <span data-ttu-id="66876-101">Remove-AzNetworkSecurityGroup</span><span class="sxs-lookup"><span data-stu-id="66876-101">Remove-AzNetworkSecurityGroup</span></span>
+
+## <span data-ttu-id="66876-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="66876-102">SYNOPSIS</span></span>
+<span data-ttu-id="66876-103">Удаляет сетевую группу безопасности.</span><span class="sxs-lookup"><span data-stu-id="66876-103">Removes a network security group.</span></span>
+
+## <span data-ttu-id="66876-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="66876-104">SYNTAX</span></span>
+
+```
+Remove-AzNetworkSecurityGroup -Name <String> -ResourceGroupName <String> [-Force] [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="66876-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="66876-105">DESCRIPTION</span></span>
+<span data-ttu-id="66876-106">Командлет **Remove-AzNetworkSecurityGroup** удаляет сетевую группу безопасности Azure.</span><span class="sxs-lookup"><span data-stu-id="66876-106">The **Remove-AzNetworkSecurityGroup** cmdlet removes an Azure network security group.</span></span>
+
+## <span data-ttu-id="66876-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="66876-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="66876-108">Пример 1: Удаление группы безопасности сети</span><span class="sxs-lookup"><span data-stu-id="66876-108">Example 1: Remove a network security group</span></span>
+```
+PS C:\>Remove-AzNetworkSecurityGroup -Name "NSG-FrontEnd" -ResourceGroupName "TestRG"
+```
+
+<span data-ttu-id="66876-109">Эта команда удаляет группу безопасности с именем NSG-FrontEnd в группе ресурсов с именем TestRG.</span><span class="sxs-lookup"><span data-stu-id="66876-109">This command removes the security group named NSG-FrontEnd in the resource group named TestRG.</span></span>
+
+## <span data-ttu-id="66876-110">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="66876-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="66876-111">-AsJob</span><span class="sxs-lookup"><span data-stu-id="66876-111">-AsJob</span></span>
+<span data-ttu-id="66876-112">Выполнить командлет в фоновом режиме</span><span class="sxs-lookup"><span data-stu-id="66876-112">Run cmdlet in the background</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="66876-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="66876-113">-DefaultProfile</span></span>
+<span data-ttu-id="66876-114">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="66876-114">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="66876-115">-Force</span><span class="sxs-lookup"><span data-stu-id="66876-115">-Force</span></span>
+<span data-ttu-id="66876-116">Принудительное выполнение команды без запроса подтверждения пользователя.</span><span class="sxs-lookup"><span data-stu-id="66876-116">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="66876-117">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="66876-117">-Name</span></span>
+<span data-ttu-id="66876-118">Указывает имя сетевой группы безопасности, которую удаляет этот командлет.</span><span class="sxs-lookup"><span data-stu-id="66876-118">Specifies the name of the network security group that this cmdlet removes.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: ResourceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="66876-119">-PassThru</span><span class="sxs-lookup"><span data-stu-id="66876-119">-PassThru</span></span>
+<span data-ttu-id="66876-120">Возвращает объект, который представляет собой элемент, с которым вы работаете.</span><span class="sxs-lookup"><span data-stu-id="66876-120">Returns an object representing the item with which you are working.</span></span>
+<span data-ttu-id="66876-121">По умолчанию этот командлет не создает никаких выходных данных.</span><span class="sxs-lookup"><span data-stu-id="66876-121">By default, this cmdlet does not generate any output.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="66876-122">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="66876-122">-ResourceGroupName</span></span>
+<span data-ttu-id="66876-123">Указывает имя группы ресурсов, из которой этот командлет удаляет сетевую группу безопасности.</span><span class="sxs-lookup"><span data-stu-id="66876-123">Specifies the name of a resource group that this cmdlet removes a network security group from.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="66876-124">-Confirm</span><span class="sxs-lookup"><span data-stu-id="66876-124">-Confirm</span></span>
+<span data-ttu-id="66876-125">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="66876-125">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="66876-126">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="66876-126">-WhatIf</span></span>
+<span data-ttu-id="66876-127">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="66876-127">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="66876-128">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="66876-128">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="66876-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="66876-129">CommonParameters</span></span>
+<span data-ttu-id="66876-130">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="66876-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="66876-131">Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="66876-131">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="66876-132">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="66876-132">INPUTS</span></span>
+
+## <span data-ttu-id="66876-133">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="66876-133">OUTPUTS</span></span>
+
+## <span data-ttu-id="66876-134">Пуск</span><span class="sxs-lookup"><span data-stu-id="66876-134">NOTES</span></span>
+
+## <span data-ttu-id="66876-135">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="66876-135">RELATED LINKS</span></span>
+
+[<span data-ttu-id="66876-136">Get-AzNetworkSecurityGroup</span><span class="sxs-lookup"><span data-stu-id="66876-136">Get-AzNetworkSecurityGroup</span></span>](./Get-AzNetworkSecurityGroup.md)
+
+[<span data-ttu-id="66876-137">New-AzNetworkSecurityGroup</span><span class="sxs-lookup"><span data-stu-id="66876-137">New-AzNetworkSecurityGroup</span></span>](./New-AzNetworkSecurityGroup.md)
+
+[<span data-ttu-id="66876-138">Set-AzNetworkSecurityGroup</span><span class="sxs-lookup"><span data-stu-id="66876-138">Set-AzNetworkSecurityGroup</span></span>](./Set-AzNetworkSecurityGroup.md)
+
+
