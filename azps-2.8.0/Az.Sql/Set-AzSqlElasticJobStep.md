@@ -1,0 +1,530 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Sql.dll-Help.xml
+Module Name: Az.Sql
+online version: https://docs.microsoft.com/en-us/powershell/module/Az.sql/set-Azsqlelasticjobstep
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlElasticJobStep.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlElasticJobStep.md
+ms.openlocfilehash: 7e1c03b176974c85802451980df24f5a7fdf9b1d
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93906438"
+---
+# <span data-ttu-id="3de32-101">Set-AzSqlElasticJobStep</span><span class="sxs-lookup"><span data-stu-id="3de32-101">Set-AzSqlElasticJobStep</span></span>
+
+## <span data-ttu-id="3de32-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="3de32-102">SYNOPSIS</span></span>
+<span data-ttu-id="3de32-103">Обновляет шаг задания</span><span class="sxs-lookup"><span data-stu-id="3de32-103">Updates a job step</span></span>
+
+## <span data-ttu-id="3de32-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="3de32-104">SYNTAX</span></span>
+
+### <span data-ttu-id="3de32-105">Default (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="3de32-105">DefaultSet (Default)</span></span>
+```
+Set-AzSqlElasticJobStep [-ResourceGroupName] <String> [-ServerName] <String> [-AgentName] <String>
+ [-JobName] <String> -Name <String> [-OutputDatabaseObject <AzureSqlDatabaseModel>]
+ [-OutputCredentialName <String>] [-OutputTableName <String>] [-OutputSchemaName <String>]
+ [-TargetGroupName <String>] [-CredentialName <String>] [-CommandText <String>] [-StepId <Int32>]
+ [-TimeoutSeconds <Int32>] [-RetryAttempts <Int32>] [-InitialRetryIntervalSeconds <Int32>]
+ [-MaximumRetryIntervalSeconds <Int32>] [-RetryIntervalBackoffMultiplier <Double>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="3de32-106">WithRemoveOutput</span><span class="sxs-lookup"><span data-stu-id="3de32-106">WithRemoveOutput</span></span>
+```
+Set-AzSqlElasticJobStep [-ResourceGroupName] <String> [-ServerName] <String> [-AgentName] <String>
+ [-JobName] <String> -Name <String> [-RemoveOutput] [-TargetGroupName <String>] [-CredentialName <String>]
+ [-CommandText <String>] [-StepId <Int32>] [-TimeoutSeconds <Int32>] [-RetryAttempts <Int32>]
+ [-InitialRetryIntervalSeconds <Int32>] [-MaximumRetryIntervalSeconds <Int32>]
+ [-RetryIntervalBackoffMultiplier <Double>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="3de32-107">WithAddOutput</span><span class="sxs-lookup"><span data-stu-id="3de32-107">WithAddOutput</span></span>
+```
+Set-AzSqlElasticJobStep [-ResourceGroupName] <String> [-ServerName] <String> [-AgentName] <String>
+ [-JobName] <String> -Name <String> -OutputDatabaseResourceId <String> [-OutputCredentialName <String>]
+ [-OutputTableName <String>] [-OutputSchemaName <String>] [-TargetGroupName <String>]
+ [-CredentialName <String>] [-CommandText <String>] [-StepId <Int32>] [-TimeoutSeconds <Int32>]
+ [-RetryAttempts <Int32>] [-InitialRetryIntervalSeconds <Int32>] [-MaximumRetryIntervalSeconds <Int32>]
+ [-RetryIntervalBackoffMultiplier <Double>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="3de32-108">Объект</span><span class="sxs-lookup"><span data-stu-id="3de32-108">ObjectSet</span></span>
+```
+Set-AzSqlElasticJobStep [-InputObject] <AzureSqlElasticJobStepModel>
+ [-OutputDatabaseObject <AzureSqlDatabaseModel>] [-OutputCredentialName <String>] [-OutputTableName <String>]
+ [-OutputSchemaName <String>] [-TargetGroupName <String>] [-CredentialName <String>] [-CommandText <String>]
+ [-StepId <Int32>] [-TimeoutSeconds <Int32>] [-RetryAttempts <Int32>] [-InitialRetryIntervalSeconds <Int32>]
+ [-MaximumRetryIntervalSeconds <Int32>] [-RetryIntervalBackoffMultiplier <Double>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="3de32-109">WithRemoveOutputUsingParentObject</span><span class="sxs-lookup"><span data-stu-id="3de32-109">WithRemoveOutputUsingParentObject</span></span>
+```
+Set-AzSqlElasticJobStep [-InputObject] <AzureSqlElasticJobStepModel> [-RemoveOutput]
+ [-TargetGroupName <String>] [-CredentialName <String>] [-CommandText <String>] [-StepId <Int32>]
+ [-TimeoutSeconds <Int32>] [-RetryAttempts <Int32>] [-InitialRetryIntervalSeconds <Int32>]
+ [-MaximumRetryIntervalSeconds <Int32>] [-RetryIntervalBackoffMultiplier <Double>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="3de32-110">WithAddOutputUsingParentObject</span><span class="sxs-lookup"><span data-stu-id="3de32-110">WithAddOutputUsingParentObject</span></span>
+```
+Set-AzSqlElasticJobStep [-InputObject] <AzureSqlElasticJobStepModel> -OutputDatabaseResourceId <String>
+ [-OutputCredentialName <String>] [-OutputTableName <String>] [-OutputSchemaName <String>]
+ [-TargetGroupName <String>] [-CredentialName <String>] [-CommandText <String>] [-StepId <Int32>]
+ [-TimeoutSeconds <Int32>] [-RetryAttempts <Int32>] [-InitialRetryIntervalSeconds <Int32>]
+ [-MaximumRetryIntervalSeconds <Int32>] [-RetryIntervalBackoffMultiplier <Double>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="3de32-111">ResourceIdSet</span><span class="sxs-lookup"><span data-stu-id="3de32-111">ResourceIdSet</span></span>
+```
+Set-AzSqlElasticJobStep [-ResourceId] <String> [-OutputDatabaseObject <AzureSqlDatabaseModel>]
+ [-OutputCredentialName <String>] [-OutputTableName <String>] [-OutputSchemaName <String>]
+ [-TargetGroupName <String>] [-CredentialName <String>] [-CommandText <String>] [-StepId <Int32>]
+ [-TimeoutSeconds <Int32>] [-RetryAttempts <Int32>] [-InitialRetryIntervalSeconds <Int32>]
+ [-MaximumRetryIntervalSeconds <Int32>] [-RetryIntervalBackoffMultiplier <Double>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="3de32-112">WithRemoveOutputUsingParentResourceId</span><span class="sxs-lookup"><span data-stu-id="3de32-112">WithRemoveOutputUsingParentResourceId</span></span>
+```
+Set-AzSqlElasticJobStep [-ResourceId] <String> [-RemoveOutput] [-TargetGroupName <String>]
+ [-CredentialName <String>] [-CommandText <String>] [-StepId <Int32>] [-TimeoutSeconds <Int32>]
+ [-RetryAttempts <Int32>] [-InitialRetryIntervalSeconds <Int32>] [-MaximumRetryIntervalSeconds <Int32>]
+ [-RetryIntervalBackoffMultiplier <Double>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="3de32-113">WithAddOutputUsingParentResourceId</span><span class="sxs-lookup"><span data-stu-id="3de32-113">WithAddOutputUsingParentResourceId</span></span>
+```
+Set-AzSqlElasticJobStep [-ResourceId] <String> -OutputDatabaseResourceId <String>
+ [-OutputCredentialName <String>] [-OutputTableName <String>] [-OutputSchemaName <String>]
+ [-TargetGroupName <String>] [-CredentialName <String>] [-CommandText <String>] [-StepId <Int32>]
+ [-TimeoutSeconds <Int32>] [-RetryAttempts <Int32>] [-InitialRetryIntervalSeconds <Int32>]
+ [-MaximumRetryIntervalSeconds <Int32>] [-RetryIntervalBackoffMultiplier <Double>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="3de32-114">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="3de32-114">DESCRIPTION</span></span>
+<span data-ttu-id="3de32-115">Командлет Set-AzSqlElasticJobStep обновляет шаг задания</span><span class="sxs-lookup"><span data-stu-id="3de32-115">The Set-AzSqlElasticJobStep cmdlet updates a job step</span></span>
+
+## <span data-ttu-id="3de32-116">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="3de32-116">EXAMPLES</span></span>
+
+### <span data-ttu-id="3de32-117">Пример 1: Обновление целевой группы шага задания для задания</span><span class="sxs-lookup"><span data-stu-id="3de32-117">Example 1 - Updates a job step's target group for a job</span></span>
+```
+PS C:\> $jobStep = Get-AzSqlElasticJobStep -ResourceGroupName rg -ServerName elasticjobserver -AgentName agent -JobName job1 -StepName step1
+$jobStep | Set-AzSqlElasticJobStep -TargetGroupName tg2
+
+JobName StepName StepId TargetGroupName CredentialName Output ExecutionOptions   CommandText
+------- -------- ------ --------------- -------------- ------ ----------------   -----------
+job1    step1    1      tg2             cred1                 (43200,10,1,120,2) SELECT 1
+```
+
+### <span data-ttu-id="3de32-118">Пример 2. обновление сценария T-SQL этапа задания для задания</span><span class="sxs-lookup"><span data-stu-id="3de32-118">Example 2 - Updates a job step's T-SQL script for a job</span></span>
+```
+PS C:\> $jobStep = Get-AzSqlElasticJobStep -ResourceGroupName rg -ServerName elasticjobserver -AgentName agent -JobName job1 -StepName step1
+$jobStep | Set-AzSqlElasticJobStep -CommandText "SELECT 2"
+
+JobName StepName StepId TargetGroupName CredentialName Output ExecutionOptions   CommandText
+------- -------- ------ --------------- -------------- ------ ----------------   -----------
+job1    step1    1      tg1             cred1                 (43200,10,1,120,2) SELECT 2
+```
+
+<span data-ttu-id="3de32-119">Обновляет шаг задания из задания</span><span class="sxs-lookup"><span data-stu-id="3de32-119">Updates a job step from a job</span></span>
+
+## <span data-ttu-id="3de32-120">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="3de32-120">PARAMETERS</span></span>
+
+### <span data-ttu-id="3de32-121">-AgentName</span><span class="sxs-lookup"><span data-stu-id="3de32-121">-AgentName</span></span>
+<span data-ttu-id="3de32-122">Имя агента</span><span class="sxs-lookup"><span data-stu-id="3de32-122">The agent name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultSet, WithRemoveOutput, WithAddOutput
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-123">-CommandText</span><span class="sxs-lookup"><span data-stu-id="3de32-123">-CommandText</span></span>
+<span data-ttu-id="3de32-124">Текст команды</span><span class="sxs-lookup"><span data-stu-id="3de32-124">The command text</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-125">-CredentialName</span><span class="sxs-lookup"><span data-stu-id="3de32-125">-CredentialName</span></span>
+<span data-ttu-id="3de32-126">Имя учетных данных</span><span class="sxs-lookup"><span data-stu-id="3de32-126">The credential name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-127">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="3de32-127">-DefaultProfile</span></span>
+<span data-ttu-id="3de32-128">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="3de32-128">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-129">-InitialRetryIntervalSeconds</span><span class="sxs-lookup"><span data-stu-id="3de32-129">-InitialRetryIntervalSeconds</span></span>
+<span data-ttu-id="3de32-130">Начальная интервал повтора (в секундах)</span><span class="sxs-lookup"><span data-stu-id="3de32-130">The initial retry interval seconds</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-131">-InputObject</span><span class="sxs-lookup"><span data-stu-id="3de32-131">-InputObject</span></span>
+<span data-ttu-id="3de32-132">Объект шага задания</span><span class="sxs-lookup"><span data-stu-id="3de32-132">The job step object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Sql.ElasticJobs.Model.AzureSqlElasticJobStepModel
+Parameter Sets: ObjectSet, WithRemoveOutputUsingParentObject, WithAddOutputUsingParentObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-133">-JobName</span><span class="sxs-lookup"><span data-stu-id="3de32-133">-JobName</span></span>
+<span data-ttu-id="3de32-134">Имя задания</span><span class="sxs-lookup"><span data-stu-id="3de32-134">The job name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultSet, WithRemoveOutput, WithAddOutput
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-135">-MaximumRetryIntervalSeconds</span><span class="sxs-lookup"><span data-stu-id="3de32-135">-MaximumRetryIntervalSeconds</span></span>
+<span data-ttu-id="3de32-136">Максимальное значение интервала повтора (в секундах)</span><span class="sxs-lookup"><span data-stu-id="3de32-136">The maximum retry interval seconds</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-137">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="3de32-137">-Name</span></span>
+<span data-ttu-id="3de32-138">Имя шага</span><span class="sxs-lookup"><span data-stu-id="3de32-138">The step name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultSet, WithRemoveOutput, WithAddOutput
+Aliases: StepName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-139">-OutputCredentialName</span><span class="sxs-lookup"><span data-stu-id="3de32-139">-OutputCredentialName</span></span>
+<span data-ttu-id="3de32-140">Имя учетных данных выхода</span><span class="sxs-lookup"><span data-stu-id="3de32-140">The output credential name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultSet, WithAddOutput, ObjectSet, WithAddOutputUsingParentObject, ResourceIdSet, WithAddOutputUsingParentResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-141">-OutputDatabaseObject</span><span class="sxs-lookup"><span data-stu-id="3de32-141">-OutputDatabaseObject</span></span>
+<span data-ttu-id="3de32-142">Объект выходной базы данных</span><span class="sxs-lookup"><span data-stu-id="3de32-142">The output database object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Sql.Database.Model.AzureSqlDatabaseModel
+Parameter Sets: DefaultSet, ObjectSet, ResourceIdSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-143">-OutputDatabaseResourceId</span><span class="sxs-lookup"><span data-stu-id="3de32-143">-OutputDatabaseResourceId</span></span>
+<span data-ttu-id="3de32-144">Идентификатор ресурса выходной базы данных</span><span class="sxs-lookup"><span data-stu-id="3de32-144">The output database resource id</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: WithAddOutput, WithAddOutputUsingParentObject, WithAddOutputUsingParentResourceId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-145">-OutputSchemaName</span><span class="sxs-lookup"><span data-stu-id="3de32-145">-OutputSchemaName</span></span>
+<span data-ttu-id="3de32-146">Имя схемы вывода</span><span class="sxs-lookup"><span data-stu-id="3de32-146">The output schema name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultSet, WithAddOutput, ObjectSet, WithAddOutputUsingParentObject, ResourceIdSet, WithAddOutputUsingParentResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-147">-OutputTableName</span><span class="sxs-lookup"><span data-stu-id="3de32-147">-OutputTableName</span></span>
+<span data-ttu-id="3de32-148">Имя выходной таблицы</span><span class="sxs-lookup"><span data-stu-id="3de32-148">The output table name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultSet, WithAddOutput, ObjectSet, WithAddOutputUsingParentObject, ResourceIdSet, WithAddOutputUsingParentResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-149">-RemoveOutput</span><span class="sxs-lookup"><span data-stu-id="3de32-149">-RemoveOutput</span></span>
+<span data-ttu-id="3de32-150">Флаг, указывающий, нужно ли удалять вывод</span><span class="sxs-lookup"><span data-stu-id="3de32-150">The flag to indicate whether to remove output</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: WithRemoveOutput, WithRemoveOutputUsingParentObject, WithRemoveOutputUsingParentResourceId
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-151">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="3de32-151">-ResourceGroupName</span></span>
+<span data-ttu-id="3de32-152">Имя группы ресурсов</span><span class="sxs-lookup"><span data-stu-id="3de32-152">The resource group name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultSet, WithRemoveOutput, WithAddOutput
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-153">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="3de32-153">-ResourceId</span></span>
+<span data-ttu-id="3de32-154">Идентификатор ресурса шага задания</span><span class="sxs-lookup"><span data-stu-id="3de32-154">The job step resource id</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceIdSet, WithRemoveOutputUsingParentResourceId, WithAddOutputUsingParentResourceId
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-155">-RetryAttempts</span><span class="sxs-lookup"><span data-stu-id="3de32-155">-RetryAttempts</span></span>
+<span data-ttu-id="3de32-156">Повторная попытка attemps</span><span class="sxs-lookup"><span data-stu-id="3de32-156">The retry attemps</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-157">-RetryIntervalBackoffMultiplier</span><span class="sxs-lookup"><span data-stu-id="3de32-157">-RetryIntervalBackoffMultiplier</span></span>
+<span data-ttu-id="3de32-158">Множитель для интервала повтора</span><span class="sxs-lookup"><span data-stu-id="3de32-158">The retry interval backoff multiplier</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Double]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-159">-ИмяСервера</span><span class="sxs-lookup"><span data-stu-id="3de32-159">-ServerName</span></span>
+<span data-ttu-id="3de32-160">Имя сервера</span><span class="sxs-lookup"><span data-stu-id="3de32-160">The server name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultSet, WithRemoveOutput, WithAddOutput
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-161">-StepId</span><span class="sxs-lookup"><span data-stu-id="3de32-161">-StepId</span></span>
+<span data-ttu-id="3de32-162">Текст идентификатора шага</span><span class="sxs-lookup"><span data-stu-id="3de32-162">The step id text</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-163">-TargetGroupName</span><span class="sxs-lookup"><span data-stu-id="3de32-163">-TargetGroupName</span></span>
+<span data-ttu-id="3de32-164">Имя целевой группы</span><span class="sxs-lookup"><span data-stu-id="3de32-164">The target group name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-165">-TimeoutSeconds</span><span class="sxs-lookup"><span data-stu-id="3de32-165">-TimeoutSeconds</span></span>
+<span data-ttu-id="3de32-166">Время ожидания в секундах</span><span class="sxs-lookup"><span data-stu-id="3de32-166">The timeout seconds</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-167">-Confirm</span><span class="sxs-lookup"><span data-stu-id="3de32-167">-Confirm</span></span>
+<span data-ttu-id="3de32-168">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="3de32-168">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-169">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="3de32-169">-WhatIf</span></span>
+<span data-ttu-id="3de32-170">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="3de32-170">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="3de32-171">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="3de32-171">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3de32-172">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3de32-172">CommonParameters</span></span>
+<span data-ttu-id="3de32-173">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="3de32-173">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3de32-174">Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="3de32-174">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="3de32-175">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="3de32-175">INPUTS</span></span>
+
+### <span data-ttu-id="3de32-176">Microsoft. Azure. Commands. SQL. ElasticJobs. Model. AzureSqlElasticJobStepModel</span><span class="sxs-lookup"><span data-stu-id="3de32-176">Microsoft.Azure.Commands.Sql.ElasticJobs.Model.AzureSqlElasticJobStepModel</span></span>
+
+## <span data-ttu-id="3de32-177">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="3de32-177">OUTPUTS</span></span>
+
+### <span data-ttu-id="3de32-178">Microsoft. Azure. Commands. SQL. ElasticJobs. Model. AzureSqlElasticJobStepModel</span><span class="sxs-lookup"><span data-stu-id="3de32-178">Microsoft.Azure.Commands.Sql.ElasticJobs.Model.AzureSqlElasticJobStepModel</span></span>
+
+## <span data-ttu-id="3de32-179">Пуск</span><span class="sxs-lookup"><span data-stu-id="3de32-179">NOTES</span></span>
+
+## <span data-ttu-id="3de32-180">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="3de32-180">RELATED LINKS</span></span>
