@@ -1,0 +1,161 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Batch.dll-Help.xml
+Module Name: Az.Batch
+ms.assetid: B423C1A1-1988-4721-81E7-3B7EC163B03A
+online version: https://docs.microsoft.com/en-us/powershell/module/az.batch/new-azbatchcertificate
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/New-AzBatchCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/New-AzBatchCertificate.md
+ms.openlocfilehash: d0fefe06ad5392d2fe50552203a08872eea4e61f
+ms.sourcegitcommit: b72b338525ee302597b3a54a11453f4881d22689
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "93731859"
+---
+# <span data-ttu-id="eb282-101">New-AzBatchCertificate</span><span class="sxs-lookup"><span data-stu-id="eb282-101">New-AzBatchCertificate</span></span>
+
+## <span data-ttu-id="eb282-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="eb282-102">SYNOPSIS</span></span>
+<span data-ttu-id="eb282-103">Добавляет сертификат в указанную учетную запись пакета.</span><span class="sxs-lookup"><span data-stu-id="eb282-103">Adds a certificate to the specified Batch account.</span></span>
+
+## <span data-ttu-id="eb282-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="eb282-104">SYNTAX</span></span>
+
+### <span data-ttu-id="eb282-105">Файл (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="eb282-105">File (Default)</span></span>
+```
+New-AzBatchCertificate [-FilePath] <String> [-Password <SecureString>] -BatchContext <BatchAccountContext>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="eb282-106">RawData</span><span class="sxs-lookup"><span data-stu-id="eb282-106">RawData</span></span>
+```
+New-AzBatchCertificate [-RawData] <Byte[]> [-Password <SecureString>] -BatchContext <BatchAccountContext>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="eb282-107">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="eb282-107">DESCRIPTION</span></span>
+<span data-ttu-id="eb282-108">Командлет **New-AzBatchCertificate** добавляет сертификат для указанной учетной записи пакетной службы Azure.</span><span class="sxs-lookup"><span data-stu-id="eb282-108">The **New-AzBatchCertificate** cmdlet adds a certificate to the specified Azure Batch account.</span></span>
+
+## <span data-ttu-id="eb282-109">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="eb282-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="eb282-110">Пример 1: Добавление сертификата из файла</span><span class="sxs-lookup"><span data-stu-id="eb282-110">Example 1: Add a certificate from a file</span></span>
+```
+PS C:\>New-AzBatchCertificate -FilePath "E:\Certificates\MyCert.cer" -BatchContext $Context
+```
+
+<span data-ttu-id="eb282-111">Эта команда добавляет сертификат в указанную учетную запись пакета с помощью файла E:\Certificates\MyCert.cer.</span><span class="sxs-lookup"><span data-stu-id="eb282-111">This command adds a certificate to the specified Batch account by using the file E:\Certificates\MyCert.cer.</span></span>
+
+### <span data-ttu-id="eb282-112">Пример 2: Добавление сертификата из необработанных данных</span><span class="sxs-lookup"><span data-stu-id="eb282-112">Example 2: Add a certificate from raw data</span></span>
+```
+PS C:\>$RawData = [System.IO.File]::ReadAllBytes("E:\Certificates\MyCert.pfx")
+PS C:\> New-AzBatchCertificate -RawData $RawData -Password "Password1234" -BatchContext $Context
+```
+
+<span data-ttu-id="eb282-113">Первая команда считывает данные из файла с именем MyCert. pfx в переменную $RawData.</span><span class="sxs-lookup"><span data-stu-id="eb282-113">The first command reads the data from the file named MyCert.pfx into the $RawData variable.</span></span>
+<span data-ttu-id="eb282-114">Вторая команда добавляет сертификат в указанную учетную запись пакета с помощью необработанных данных, хранящихся в $RawData.</span><span class="sxs-lookup"><span data-stu-id="eb282-114">The second command adds a certificate to the specified Batch account using the raw data stored in $RawData.</span></span>
+
+## <span data-ttu-id="eb282-115">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="eb282-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="eb282-116">-BatchContext</span><span class="sxs-lookup"><span data-stu-id="eb282-116">-BatchContext</span></span>
+<span data-ttu-id="eb282-117">Указывает экземпляр **BatchAccountContext** , используемый этим командлетом для взаимодействия со службой пакетной обработки.</span><span class="sxs-lookup"><span data-stu-id="eb282-117">Specifies the **BatchAccountContext** instance that this cmdlet uses to interact with the Batch service.</span></span>
+<span data-ttu-id="eb282-118">Если для получения BatchAccountContext используется командлет Get-AzBatchAccount, проверка подлинности Azure Active Directory будет использоваться при взаимодействии с пакетной службой.</span><span class="sxs-lookup"><span data-stu-id="eb282-118">If you use the Get-AzBatchAccount cmdlet to get your BatchAccountContext, then Azure Active Directory authentication will be used when interacting with the Batch service.</span></span> <span data-ttu-id="eb282-119">Чтобы использовать проверку подлинности с использованием общего ключа, используйте командлет Get-AzBatchAccountKeys, чтобы получить объект BatchAccountContext с заполненными ключами доступа.</span><span class="sxs-lookup"><span data-stu-id="eb282-119">To use shared key authentication instead, use the Get-AzBatchAccountKeys cmdlet to get a BatchAccountContext object with its access keys populated.</span></span> <span data-ttu-id="eb282-120">При использовании проверки подлинности с использованием общего ключа по умолчанию используется первичный ключ доступа.</span><span class="sxs-lookup"><span data-stu-id="eb282-120">When using shared key authentication, the primary access key is used by default.</span></span> <span data-ttu-id="eb282-121">Чтобы изменить ключ на использование, задайте свойство BatchAccountContext. KeyInUse.</span><span class="sxs-lookup"><span data-stu-id="eb282-121">To change the key to use, set the BatchAccountContext.KeyInUse property.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="eb282-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="eb282-122">-DefaultProfile</span></span>
+<span data-ttu-id="eb282-123">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="eb282-123">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="eb282-124">-FilePath</span><span class="sxs-lookup"><span data-stu-id="eb282-124">-FilePath</span></span>
+<span data-ttu-id="eb282-125">Задает путь к файлу сертификата.</span><span class="sxs-lookup"><span data-stu-id="eb282-125">Specifies the path of the certificate file.</span></span>
+<span data-ttu-id="eb282-126">Файл сертификата должен быть в формате CER или PFX.</span><span class="sxs-lookup"><span data-stu-id="eb282-126">The certificate file must be in either .cer or .pfx format.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: File
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="eb282-127">-Password (пароль)</span><span class="sxs-lookup"><span data-stu-id="eb282-127">-Password</span></span>
+<span data-ttu-id="eb282-128">Указывает пароль для доступа к закрытому ключу сертификата.</span><span class="sxs-lookup"><span data-stu-id="eb282-128">Specifies the password to access the certificate private key.</span></span>
+<span data-ttu-id="eb282-129">Вы должны указать этот параметр, если вы указали сертификат в формате PFX.</span><span class="sxs-lookup"><span data-stu-id="eb282-129">You must specify this parameter if you specify a certificate in .pfx format.</span></span>
+
+```yaml
+Type: System.Security.SecureString
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="eb282-130">-RawData</span><span class="sxs-lookup"><span data-stu-id="eb282-130">-RawData</span></span>
+<span data-ttu-id="eb282-131">Задает необработанные данные сертификата в формате CER или PFX.</span><span class="sxs-lookup"><span data-stu-id="eb282-131">Specifies the raw certificate data in either .cer or .pfx format.</span></span>
+
+```yaml
+Type: System.Byte[]
+Parameter Sets: RawData
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="eb282-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="eb282-132">CommonParameters</span></span>
+<span data-ttu-id="eb282-133">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="eb282-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="eb282-134">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="eb282-134">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="eb282-135">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="eb282-135">INPUTS</span></span>
+
+### <span data-ttu-id="eb282-136">System. Byte []</span><span class="sxs-lookup"><span data-stu-id="eb282-136">System.Byte[]</span></span>
+
+### <span data-ttu-id="eb282-137">Microsoft.Azure.Commands.Batch.BatchAccountContext</span><span class="sxs-lookup"><span data-stu-id="eb282-137">Microsoft.Azure.Commands.Batch.BatchAccountContext</span></span>
+
+## <span data-ttu-id="eb282-138">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="eb282-138">OUTPUTS</span></span>
+
+### <span data-ttu-id="eb282-139">System. void</span><span class="sxs-lookup"><span data-stu-id="eb282-139">System.Void</span></span>
+
+## <span data-ttu-id="eb282-140">Пуск</span><span class="sxs-lookup"><span data-stu-id="eb282-140">NOTES</span></span>
+
+## <span data-ttu-id="eb282-141">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="eb282-141">RELATED LINKS</span></span>
+
+[<span data-ttu-id="eb282-142">Get-AzBatchCertificate</span><span class="sxs-lookup"><span data-stu-id="eb282-142">Get-AzBatchCertificate</span></span>](./Get-AzBatchCertificate.md)
+
+[<span data-ttu-id="eb282-143">Get-AzBatchAccountKeys</span><span class="sxs-lookup"><span data-stu-id="eb282-143">Get-AzBatchAccountKeys</span></span>](./Get-AzBatchAccountKey.md)
+
+[<span data-ttu-id="eb282-144">Remove-AzBatchCertificate</span><span class="sxs-lookup"><span data-stu-id="eb282-144">Remove-AzBatchCertificate</span></span>](./Remove-AzBatchCertificate.md)
+
+[<span data-ttu-id="eb282-145">Командлеты пакетной службы Azure</span><span class="sxs-lookup"><span data-stu-id="eb282-145">Azure Batch Cmdlets</span></span>](/powershell/module/az.batch)
+
+

@@ -1,0 +1,124 @@
+---
+external help file: Microsoft.Azure.Commands.StreamAnalytics.dll-Help.xml
+Module Name: AzureRM.StreamAnalytics
+ms.assetid: E711FBFF-FB6D-4DFD-BAE8-7961EB4FD16B
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/StreamAnalytics/Commands.StreamAnalytics/help/Test-AzureRmStreamAnalyticsFunction.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/StreamAnalytics/Commands.StreamAnalytics/help/Test-AzureRmStreamAnalyticsFunction.md
+ms.openlocfilehash: a2f577286a411287886c27863eb72e574b771bd1
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93733088"
+---
+# <span data-ttu-id="5df9c-101">Test-AzureRmStreamAnalyticsFunction</span><span class="sxs-lookup"><span data-stu-id="5df9c-101">Test-AzureRmStreamAnalyticsFunction</span></span>
+
+## <span data-ttu-id="5df9c-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="5df9c-102">SYNOPSIS</span></span>
+<span data-ttu-id="5df9c-103">Проверяет, может ли Stream Analytics подключаться к функции.</span><span class="sxs-lookup"><span data-stu-id="5df9c-103">Tests whether Stream Analytics can connect to a function.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="5df9c-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="5df9c-104">SYNTAX</span></span>
+
+```
+Test-AzureRmStreamAnalyticsFunction [-JobName] <String> [-Name] <String> [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="5df9c-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="5df9c-105">DESCRIPTION</span></span>
+<span data-ttu-id="5df9c-106">Командлет **Test-AzureRmStreamAnalyticsFunction** проверяет, может ли Azure Stream Analytics подключаться к функции.</span><span class="sxs-lookup"><span data-stu-id="5df9c-106">The **Test-AzureRmStreamAnalyticsFunction** cmdlet tests whether Azure Stream Analytics can connect to a function.</span></span>
+
+## <span data-ttu-id="5df9c-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="5df9c-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="5df9c-108">Пример 1: Проверка функции Stream Analytics</span><span class="sxs-lookup"><span data-stu-id="5df9c-108">Example 1: Test a Stream Analytics function</span></span>
+```
+PS C:\>Test-AzureRmStreamAnalyticsFunction -ResourceGroupName "StreamAnalytics-Default-West-US" -JobName "StreamJob22" -Name "ScoreTweet"
+```
+
+<span data-ttu-id="5df9c-109">Эта команда проверяет состояние подключения функции с именем ScoreTweet в задании с именем StreamJob22.</span><span class="sxs-lookup"><span data-stu-id="5df9c-109">This command tests the connection status of the function named ScoreTweet in the job named StreamJob22.</span></span>
+
+## <span data-ttu-id="5df9c-110">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="5df9c-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="5df9c-111">-JobName</span><span class="sxs-lookup"><span data-stu-id="5df9c-111">-JobName</span></span>
+<span data-ttu-id="5df9c-112">Указывает имя задания Stream Analytics, к которому относится функция.</span><span class="sxs-lookup"><span data-stu-id="5df9c-112">Specifies the name of the Stream Analytics job to which a function belongs.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5df9c-113">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="5df9c-113">-Name</span></span>
+<span data-ttu-id="5df9c-114">Указывает имя функции Stream Analytics, которую проверяет этот командлет.</span><span class="sxs-lookup"><span data-stu-id="5df9c-114">Specifies the name of the Stream Analytics function that this cmdlet tests.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5df9c-115">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="5df9c-115">-ResourceGroupName</span></span>
+<span data-ttu-id="5df9c-116">Указывает имя группы ресурсов, к которой относится функция Stream Analytics.</span><span class="sxs-lookup"><span data-stu-id="5df9c-116">Specifies the name of the resource group to which a Stream Analytics function belongs.</span></span>
+<span data-ttu-id="5df9c-117">Этот командлет проверяет функцию в группе ресурсов, которую указывает этот параметр.</span><span class="sxs-lookup"><span data-stu-id="5df9c-117">This cmdlet tests a function in the resource group that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5df9c-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5df9c-118">-DefaultProfile</span></span>
+<span data-ttu-id="5df9c-119">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="5df9c-119">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5df9c-120">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5df9c-120">CommonParameters</span></span>
+<span data-ttu-id="5df9c-121">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="5df9c-121">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5df9c-122">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5df9c-122">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="5df9c-123">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="5df9c-123">INPUTS</span></span>
+
+## <span data-ttu-id="5df9c-124">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="5df9c-124">OUTPUTS</span></span>
+
+### <span data-ttu-id="5df9c-125">System. Object</span><span class="sxs-lookup"><span data-stu-id="5df9c-125">System.Object</span></span>
+
+## <span data-ttu-id="5df9c-126">Пуск</span><span class="sxs-lookup"><span data-stu-id="5df9c-126">NOTES</span></span>
+
+## <span data-ttu-id="5df9c-127">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="5df9c-127">RELATED LINKS</span></span>
+
+[<span data-ttu-id="5df9c-128">Get-AzureRmStreamAnalyticsFunction</span><span class="sxs-lookup"><span data-stu-id="5df9c-128">Get-AzureRmStreamAnalyticsFunction</span></span>](./Get-AzureRmStreamAnalyticsFunction.md)
+
+[<span data-ttu-id="5df9c-129">New-AzureRmStreamAnalyticsFunction</span><span class="sxs-lookup"><span data-stu-id="5df9c-129">New-AzureRmStreamAnalyticsFunction</span></span>](./New-AzureRmStreamAnalyticsFunction.md)
+
+[<span data-ttu-id="5df9c-130">Remove-AzureRmStreamAnalyticsFunction</span><span class="sxs-lookup"><span data-stu-id="5df9c-130">Remove-AzureRmStreamAnalyticsFunction</span></span>](./Remove-AzureRmStreamAnalyticsFunction.md)
+
+
