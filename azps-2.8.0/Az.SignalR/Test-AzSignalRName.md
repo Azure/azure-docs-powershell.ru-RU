@@ -1,0 +1,105 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.SignalR.dll-Help.xml
+Module Name: Az.SignalR
+online version: https://docs.microsoft.com/en-us/powershell/module/az.signalr/test-azsignalrname
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SignalR/SignalR/help/Test-AzSignalRName.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SignalR/SignalR/help/Test-AzSignalRName.md
+ms.openlocfilehash: 21fbee422b898b5e5cf448f4a8f1913777268964
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93903706"
+---
+# <span data-ttu-id="677bd-101">Test-AzSignalRName</span><span class="sxs-lookup"><span data-stu-id="677bd-101">Test-AzSignalRName</span></span>
+
+## <span data-ttu-id="677bd-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="677bd-102">SYNOPSIS</span></span>
+<span data-ttu-id="677bd-103">Проверка доступности имени.</span><span class="sxs-lookup"><span data-stu-id="677bd-103">Check the availability of a name.</span></span> <span data-ttu-id="677bd-104">Alias (псевдоним): Test-AzSignal.</span><span class="sxs-lookup"><span data-stu-id="677bd-104">Alias: Test-AzSignal.</span></span>
+
+## <span data-ttu-id="677bd-105">Максимальное</span><span class="sxs-lookup"><span data-stu-id="677bd-105">SYNTAX</span></span>
+
+```
+Test-AzSignalRName [-Name] <String> [-Location] <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="677bd-106">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="677bd-106">DESCRIPTION</span></span>
+<span data-ttu-id="677bd-107">Проверка доступности имени.</span><span class="sxs-lookup"><span data-stu-id="677bd-107">Check the availability of a name.</span></span> <span data-ttu-id="677bd-108">Alias (псевдоним): Test-AzSignal.</span><span class="sxs-lookup"><span data-stu-id="677bd-108">Alias: Test-AzSignal.</span></span>
+
+## <span data-ttu-id="677bd-109">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="677bd-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="677bd-110">Проверьте существующее имя.</span><span class="sxs-lookup"><span data-stu-id="677bd-110">Check an existed name.</span></span>
+```powershell
+PS C:\> Test-AzSignalRName -Name existedsignalr -Location eastus
+False
+```
+
+### <span data-ttu-id="677bd-111">Убедитесь, что имя не существует.</span><span class="sxs-lookup"><span data-stu-id="677bd-111">Check an unexisted name.</span></span>
+```
+powershell
+PS C:\> Test-AzSignalR unexistedsignalr eastus
+True
+```
+
+## <span data-ttu-id="677bd-112">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="677bd-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="677bd-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="677bd-113">-DefaultProfile</span></span>
+<span data-ttu-id="677bd-114">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="677bd-114">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="677bd-115">-Location</span><span class="sxs-lookup"><span data-stu-id="677bd-115">-Location</span></span>
+<span data-ttu-id="677bd-116">Расположение службы сигнальных сигналов.</span><span class="sxs-lookup"><span data-stu-id="677bd-116">The SignalR service location.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="677bd-117">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="677bd-117">-Name</span></span>
+<span data-ttu-id="677bd-118">Название службы SignalR.</span><span class="sxs-lookup"><span data-stu-id="677bd-118">The SignalR service name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="677bd-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="677bd-119">CommonParameters</span></span>
+<span data-ttu-id="677bd-120">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="677bd-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="677bd-121">Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="677bd-121">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="677bd-122">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="677bd-122">INPUTS</span></span>
+
+### <span data-ttu-id="677bd-123">System. String</span><span class="sxs-lookup"><span data-stu-id="677bd-123">System.String</span></span>
+
+## <span data-ttu-id="677bd-124">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="677bd-124">OUTPUTS</span></span>
+
+### <span data-ttu-id="677bd-125">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="677bd-125">System.Boolean</span></span>
+
+## <span data-ttu-id="677bd-126">Пуск</span><span class="sxs-lookup"><span data-stu-id="677bd-126">NOTES</span></span>
+
+## <span data-ttu-id="677bd-127">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="677bd-127">RELATED LINKS</span></span>
