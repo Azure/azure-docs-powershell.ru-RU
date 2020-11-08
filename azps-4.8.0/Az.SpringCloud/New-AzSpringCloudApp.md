@@ -1,0 +1,354 @@
+---
+external help file: ''
+Module Name: Az.SpringCloud
+online version: https://docs.microsoft.com/en-us/powershell/module/az.springcloud/new-azspringcloudapp
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SpringCloud/help/New-AzSpringCloudApp.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SpringCloud/help/New-AzSpringCloudApp.md
+ms.openlocfilehash: 966a0c0243d8ca8cd982420a9a3018f9d41ab52e
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94243932"
+---
+# <span data-ttu-id="6855f-101">New-AzSpringCloudApp</span><span class="sxs-lookup"><span data-stu-id="6855f-101">New-AzSpringCloudApp</span></span>
+
+## <span data-ttu-id="6855f-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="6855f-102">SYNOPSIS</span></span>
+<span data-ttu-id="6855f-103">Создайте новое приложение или обновите приложение для выхода.</span><span class="sxs-lookup"><span data-stu-id="6855f-103">Create a new App or update an exiting App.</span></span>
+
+## <span data-ttu-id="6855f-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="6855f-104">SYNTAX</span></span>
+
+```
+New-AzSpringCloudApp -Name <String> -ResourceGroupName <String> -ServiceName <String>
+ [-SubscriptionId <String>] [-ActiveDeploymentName <String>] [-Fqdn <String>] [-HttpsOnly]
+ [-Location <String>] [-PersistentDiskMountPath <String>] [-PersistentDiskSizeInGb <Int32>] [-Public]
+ [-TemporaryDiskMountPath <String>] [-TemporaryDiskSizeInGb <Int32>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## <span data-ttu-id="6855f-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="6855f-105">DESCRIPTION</span></span>
+<span data-ttu-id="6855f-106">Создайте новое приложение или обновите приложение для выхода.</span><span class="sxs-lookup"><span data-stu-id="6855f-106">Create a new App or update an exiting App.</span></span>
+
+## <span data-ttu-id="6855f-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="6855f-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="6855f-108">Пример 1: создание веснного облачного приложения.</span><span class="sxs-lookup"><span data-stu-id="6855f-108">Example 1: Create a spring cloud app.</span></span>
+```powershell
+PS C:\> New-AzSpringCloudApp -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service -AppName gateway
+ActiveDeploymentName    :
+CreatedTime             : 2020-08-08 15:37:43
+Fqdn                    : spring-cloud-service.azuremicroservices.io
+HttpsOnly               : False
+Id                      : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/spring-cloud-rg/providers/Microsoft.AppPlatform/Spring/spring-cloud-service/apps/gateway
+IdentityPrincipalId     :
+IdentityTenantId        :
+IdentityType            :
+Location                : eastus
+Name                    : gateway
+PersistentDiskMountPath : /persistent
+PersistentDiskSizeInGb  : 0
+PersistentDiskUsedInGb  :
+ProvisioningState       : Succeeded
+Public                  : False
+TemporaryDiskMountPath  : /tmp
+TemporaryDiskSizeInGb   : 5
+Type                    : Microsoft.AppPlatform/Spring/apps
+Url                     :
+Identity                : Microsoft.Azure.PowerShell.Cmdlets.SpringCloud.Models.Api20190501Preview.ManagedIdentityProperties
+PersistentDisk          : Microsoft.Azure.PowerShell.Cmdlets.SpringCloud.Models.Api20190501Preview.PersistentDisk
+Property                : Microsoft.Azure.PowerShell.Cmdlets.SpringCloud.Models.Api20190501Preview.AppResourceProperties
+TemporaryDisk           : Microsoft.Azure.PowerShell.Cmdlets.SpringCloud.Models.Api20190501Preview.TemporaryDisk
+```
+
+<span data-ttu-id="6855f-109">Создание приложения "пружинное облако".</span><span class="sxs-lookup"><span data-stu-id="6855f-109">Create a spring cloud app.</span></span>
+
+## <span data-ttu-id="6855f-110">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="6855f-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="6855f-111">-ActiveDeploymentName</span><span class="sxs-lookup"><span data-stu-id="6855f-111">-ActiveDeploymentName</span></span>
+<span data-ttu-id="6855f-112">Имя активного развертывания приложения</span><span class="sxs-lookup"><span data-stu-id="6855f-112">Name of the active deployment of the App</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-113">-AsJob</span><span class="sxs-lookup"><span data-stu-id="6855f-113">-AsJob</span></span>
+<span data-ttu-id="6855f-114">Выполнение команды в качестве задания</span><span class="sxs-lookup"><span data-stu-id="6855f-114">Run the command as a job</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="6855f-115">-DefaultProfile</span></span>
+<span data-ttu-id="6855f-116">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="6855f-116">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-117">-FQDN</span><span class="sxs-lookup"><span data-stu-id="6855f-117">-Fqdn</span></span>
+<span data-ttu-id="6855f-118">Полное DNS-имя.</span><span class="sxs-lookup"><span data-stu-id="6855f-118">Fully qualified dns Name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-119">-HttpsOnly</span><span class="sxs-lookup"><span data-stu-id="6855f-119">-HttpsOnly</span></span>
+<span data-ttu-id="6855f-120">Укажите, разрешено ли использование HTTPS.</span><span class="sxs-lookup"><span data-stu-id="6855f-120">Indicate if only https is allowed.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-121">-Location</span><span class="sxs-lookup"><span data-stu-id="6855f-121">-Location</span></span>
+<span data-ttu-id="6855f-122">Географическое расположение приложения, которое всегда одинаково с родительским ресурсом</span><span class="sxs-lookup"><span data-stu-id="6855f-122">The GEO location of the application, always the same with its parent resource</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-123">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="6855f-123">-Name</span></span>
+<span data-ttu-id="6855f-124">Имя ресурса приложения.</span><span class="sxs-lookup"><span data-stu-id="6855f-124">The name of the App resource.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: AppName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-125">-Wait</span><span class="sxs-lookup"><span data-stu-id="6855f-125">-NoWait</span></span>
+<span data-ttu-id="6855f-126">Выполнение команды в асинхронном режиме</span><span class="sxs-lookup"><span data-stu-id="6855f-126">Run the command asynchronously</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-127">-PersistentDiskMountPath</span><span class="sxs-lookup"><span data-stu-id="6855f-127">-PersistentDiskMountPath</span></span>
+<span data-ttu-id="6855f-128">Путь подключения постоянного диска</span><span class="sxs-lookup"><span data-stu-id="6855f-128">Mount path of the persistent disk</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-129">-PersistentDiskSizeInGb</span><span class="sxs-lookup"><span data-stu-id="6855f-129">-PersistentDiskSizeInGb</span></span>
+<span data-ttu-id="6855f-130">Размер постоянного диска в ГБ</span><span class="sxs-lookup"><span data-stu-id="6855f-130">Size of the persistent disk in GB</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-131">-Public</span><span class="sxs-lookup"><span data-stu-id="6855f-131">-Public</span></span>
+<span data-ttu-id="6855f-132">Указывает, предоставляет ли приложение общедоступную конечную точку</span><span class="sxs-lookup"><span data-stu-id="6855f-132">Indicates whether the App exposes public endpoint</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-133">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="6855f-133">-ResourceGroupName</span></span>
+<span data-ttu-id="6855f-134">Имя группы ресурсов, содержащей ресурс.</span><span class="sxs-lookup"><span data-stu-id="6855f-134">The name of the resource group that contains the resource.</span></span>
+<span data-ttu-id="6855f-135">Это значение можно получить в API-интерфейсе диспетчера ресурсов Azure или на портале.</span><span class="sxs-lookup"><span data-stu-id="6855f-135">You can obtain this value from the Azure Resource Manager API or the portal.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-136">-ServiceName</span><span class="sxs-lookup"><span data-stu-id="6855f-136">-ServiceName</span></span>
+<span data-ttu-id="6855f-137">Имя ресурса службы.</span><span class="sxs-lookup"><span data-stu-id="6855f-137">The name of the Service resource.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-138">-SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="6855f-138">-SubscriptionId</span></span>
+<span data-ttu-id="6855f-139">Получает идентификатор подписки, который однозначно определяет подписку Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="6855f-139">Gets subscription ID which uniquely identify the Microsoft Azure subscription.</span></span>
+<span data-ttu-id="6855f-140">Идентификатор подписки образует часть URI для каждого вызова службы.</span><span class="sxs-lookup"><span data-stu-id="6855f-140">The subscription ID forms part of the URI for every service call.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-141">-TemporaryDiskMountPath</span><span class="sxs-lookup"><span data-stu-id="6855f-141">-TemporaryDiskMountPath</span></span>
+<span data-ttu-id="6855f-142">Путь к временному диску для подключения</span><span class="sxs-lookup"><span data-stu-id="6855f-142">Mount path of the temporary disk</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-143">-TemporaryDiskSizeInGb</span><span class="sxs-lookup"><span data-stu-id="6855f-143">-TemporaryDiskSizeInGb</span></span>
+<span data-ttu-id="6855f-144">Размер временного диска в ГБ</span><span class="sxs-lookup"><span data-stu-id="6855f-144">Size of the temporary disk in GB</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-145">-Confirm</span><span class="sxs-lookup"><span data-stu-id="6855f-145">-Confirm</span></span>
+<span data-ttu-id="6855f-146">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="6855f-146">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-147">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="6855f-147">-WhatIf</span></span>
+<span data-ttu-id="6855f-148">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="6855f-148">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="6855f-149">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="6855f-149">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6855f-150">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="6855f-150">CommonParameters</span></span>
+<span data-ttu-id="6855f-151">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="6855f-151">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="6855f-152">Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="6855f-152">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="6855f-153">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="6855f-153">INPUTS</span></span>
+
+## <span data-ttu-id="6855f-154">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="6855f-154">OUTPUTS</span></span>
+
+### <span data-ttu-id="6855f-155">Microsoft. Azure. PowerShell. командлеты. SpringCloud. Models. Api20190501Preview. IAppResource</span><span class="sxs-lookup"><span data-stu-id="6855f-155">Microsoft.Azure.PowerShell.Cmdlets.SpringCloud.Models.Api20190501Preview.IAppResource</span></span>
+
+## <span data-ttu-id="6855f-156">Пуск</span><span class="sxs-lookup"><span data-stu-id="6855f-156">NOTES</span></span>
+
+<span data-ttu-id="6855f-157">СВЯЗЫВАЮТ</span><span class="sxs-lookup"><span data-stu-id="6855f-157">ALIASES</span></span>
+
+## <span data-ttu-id="6855f-158">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="6855f-158">RELATED LINKS</span></span>
+
