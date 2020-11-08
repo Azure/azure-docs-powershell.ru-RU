@@ -1,0 +1,277 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/add-azvmssdatadisk
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVmssDataDisk.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVmssDataDisk.md
+ms.openlocfilehash: 41728fe644148a575e92136838aaf7f120f89ab7
+ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "94074906"
+---
+# <span data-ttu-id="80523-101">Add-AzVmssDataDisk</span><span class="sxs-lookup"><span data-stu-id="80523-101">Add-AzVmssDataDisk</span></span>
+
+## <span data-ttu-id="80523-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="80523-102">SYNOPSIS</span></span>
+<span data-ttu-id="80523-103">Добавляет диск с данными в VMSS.</span><span class="sxs-lookup"><span data-stu-id="80523-103">Adds a data disk to the VMSS.</span></span>
+
+## <span data-ttu-id="80523-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="80523-104">SYNTAX</span></span>
+
+```
+Add-AzVmssDataDisk [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [[-Name] <String>] [[-Lun] <Int32>]
+ [[-Caching] <CachingTypes>] [-WriteAccelerator] [-CreateOption <String>] [-DiskSizeGB <Int32>]
+ [-DiskIOPSReadWrite <Int64>] [-DiskMBpsReadWrite <Int64>] [-StorageAccountType <String>]
+ [-DiskEncryptionSetId <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="80523-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="80523-105">DESCRIPTION</span></span>
+<span data-ttu-id="80523-106">Командлет **Add-AzVmssDataDisk** добавляет диск с данными в экземпляр "Установка масштаба виртуальной машины (VMSS)".</span><span class="sxs-lookup"><span data-stu-id="80523-106">The **Add-AzVmssDataDisk** cmdlet adds a data disk to the Virtual Machine Scale Set (VMSS) instance.</span></span>
+
+## <span data-ttu-id="80523-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="80523-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="80523-108">Пример 1: Добавление диска с данными</span><span class="sxs-lookup"><span data-stu-id="80523-108">Example 1: Add a data disk</span></span>
+```
+PS C:\> $vmss = New-AzVmssConfig -Location $Loc -SkuCapacity 2 -SkuName "Standard_A0" -UpgradePolicyMode "Automatic"
+PS C:\> $vmss = Add-AzVmssDataDisk -VirtualMachineScaleSet $vmss -Name 'DataDisk1' -Lun 0 -Caching 'ReadOnly' -CreateOption Empty -DiskSizeGB 10 -StorageAccountType StandardLRS
+```
+
+<span data-ttu-id="80523-109">Эта команда добавляет пустой диск данных в объект VMSS.</span><span class="sxs-lookup"><span data-stu-id="80523-109">This command adds an empty data disk to the VMSS object.</span></span>
+
+## <span data-ttu-id="80523-110">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="80523-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="80523-111">-Caching</span><span class="sxs-lookup"><span data-stu-id="80523-111">-Caching</span></span>
+<span data-ttu-id="80523-112">Указывает тип кэширования диска.</span><span class="sxs-lookup"><span data-stu-id="80523-112">Specifies the caching type of the disk.</span></span>
+
+```yaml
+Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.CachingTypes]
+Parameter Sets: (All)
+Aliases:
+Accepted values: None, ReadOnly, ReadWrite
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-113">-CreateOption</span><span class="sxs-lookup"><span data-stu-id="80523-113">-CreateOption</span></span>
+<span data-ttu-id="80523-114">Задает параметр создания диска.</span><span class="sxs-lookup"><span data-stu-id="80523-114">Specifies the create option of the disk.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="80523-115">-DefaultProfile</span></span>
+<span data-ttu-id="80523-116">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="80523-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-117">-DiskEncryptionSetId</span><span class="sxs-lookup"><span data-stu-id="80523-117">-DiskEncryptionSetId</span></span>
+<span data-ttu-id="80523-118">Указывает идентификатор ресурса набора шифрования диска, управляемого клиентом.</span><span class="sxs-lookup"><span data-stu-id="80523-118">Specifies the resource Id of customer managed disk encryption set.</span></span>  <span data-ttu-id="80523-119">Это может быть указано только для управляемого диска.</span><span class="sxs-lookup"><span data-stu-id="80523-119">This can only be specified for managed disk.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-120">-DiskIOPSReadWrite</span><span class="sxs-lookup"><span data-stu-id="80523-120">-DiskIOPSReadWrite</span></span>
+<span data-ttu-id="80523-121">Указывает Read-Write ввода/вывода для управляемого диска.</span><span class="sxs-lookup"><span data-stu-id="80523-121">Specifies the Read-Write IOPS for the managed disk.</span></span> <span data-ttu-id="80523-122">Следует использовать только в том случае, если StorageAccountType UltraSSD_LRS.</span><span class="sxs-lookup"><span data-stu-id="80523-122">Should be used only when StorageAccountType is UltraSSD_LRS.</span></span> <span data-ttu-id="80523-123">Если параметр не указан, значение по умолчанию будет назначено на основе diskSizeGB.</span><span class="sxs-lookup"><span data-stu-id="80523-123">If not specified, a default value would be assigned based on diskSizeGB.</span></span>
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-124">-DiskMBpsReadWrite</span><span class="sxs-lookup"><span data-stu-id="80523-124">-DiskMBpsReadWrite</span></span>
+<span data-ttu-id="80523-125">Указывает пропускную способность в МЕГАБАЙТах в секунду для управляемого диска.</span><span class="sxs-lookup"><span data-stu-id="80523-125">Specifies the bandwidth in MB per second for the managed disk.</span></span> <span data-ttu-id="80523-126">Следует использовать только в том случае, если StorageAccountType UltraSSD_LRS.</span><span class="sxs-lookup"><span data-stu-id="80523-126">Should be used only when StorageAccountType is UltraSSD_LRS.</span></span> <span data-ttu-id="80523-127">Если параметр не указан, значение по умолчанию будет назначено на основе diskSizeGB.</span><span class="sxs-lookup"><span data-stu-id="80523-127">If not specified, a default value would be assigned based on diskSizeGB.</span></span>
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-128">-DiskSizeGB</span><span class="sxs-lookup"><span data-stu-id="80523-128">-DiskSizeGB</span></span>
+<span data-ttu-id="80523-129">Задает размер диска в ГБ.</span><span class="sxs-lookup"><span data-stu-id="80523-129">Specifies the size of the disk in GB.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-130">-LUN</span><span class="sxs-lookup"><span data-stu-id="80523-130">-Lun</span></span>
+<span data-ttu-id="80523-131">Задает логический номер устройства для диска.</span><span class="sxs-lookup"><span data-stu-id="80523-131">Specifies the logical unit number of the disk.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-132">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="80523-132">-Name</span></span>
+<span data-ttu-id="80523-133">Указывает имя диска.</span><span class="sxs-lookup"><span data-stu-id="80523-133">Specifies the name of the disk.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-134">-StorageAccountType</span><span class="sxs-lookup"><span data-stu-id="80523-134">-StorageAccountType</span></span>
+<span data-ttu-id="80523-135">Указывает тип учетной записи хранения диска.</span><span class="sxs-lookup"><span data-stu-id="80523-135">Specifies the storage account type of the disk.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-136">-VirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="80523-136">-VirtualMachineScaleSet</span></span>
+<span data-ttu-id="80523-137">Укажите объект VMSS.</span><span class="sxs-lookup"><span data-stu-id="80523-137">Specify the VMSS object.</span></span>
+<span data-ttu-id="80523-138">Для создания объекта можно использовать командлет [New-AzVmssConfig](./New-AzVmssConfig.md) .</span><span class="sxs-lookup"><span data-stu-id="80523-138">You can use the [New-AzVmssConfig](./New-AzVmssConfig.md) cmdlet to create the object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-139">-WriteAccelerator</span><span class="sxs-lookup"><span data-stu-id="80523-139">-WriteAccelerator</span></span>
+<span data-ttu-id="80523-140">Указывает, следует ли включить или отключить WriteAccelerator на диске с данными.</span><span class="sxs-lookup"><span data-stu-id="80523-140">Specifies whether WriteAccelerator should be enabled or disabled on the data disk.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-141">-Confirm</span><span class="sxs-lookup"><span data-stu-id="80523-141">-Confirm</span></span>
+<span data-ttu-id="80523-142">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="80523-142">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-143">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="80523-143">-WhatIf</span></span>
+<span data-ttu-id="80523-144">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="80523-144">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="80523-145">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="80523-145">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80523-146">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="80523-146">CommonParameters</span></span>
+<span data-ttu-id="80523-147">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="80523-147">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="80523-148">Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="80523-148">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="80523-149">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="80523-149">INPUTS</span></span>
+
+### <span data-ttu-id="80523-150">Microsoft. Azure. Commands. COMPUTE. Automation. Models. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="80523-150">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
+
+### <span data-ttu-id="80523-151">System. String</span><span class="sxs-lookup"><span data-stu-id="80523-151">System.String</span></span>
+
+### <span data-ttu-id="80523-152">System. Int32</span><span class="sxs-lookup"><span data-stu-id="80523-152">System.Int32</span></span>
+
+### <span data-ttu-id="80523-153">System. Nullable "1 [[Microsoft. Azure. Management. COMPUTE. Model. CachingTypes, Microsoft. Azure. Management. COMPUTE, Version = 23.0.0.0, культура =" нейтрально ", PublicKeyToken = 31bf3856ad364e35]]</span><span class="sxs-lookup"><span data-stu-id="80523-153">System.Nullable\`1[[Microsoft.Azure.Management.Compute.Models.CachingTypes, Microsoft.Azure.Management.Compute, Version=23.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]</span></span>
+
+## <span data-ttu-id="80523-154">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="80523-154">OUTPUTS</span></span>
+
+### <span data-ttu-id="80523-155">Microsoft. Azure. Commands. COMPUTE. Automation. Models. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="80523-155">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
+
+## <span data-ttu-id="80523-156">Пуск</span><span class="sxs-lookup"><span data-stu-id="80523-156">NOTES</span></span>
+
+## <span data-ttu-id="80523-157">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="80523-157">RELATED LINKS</span></span>
