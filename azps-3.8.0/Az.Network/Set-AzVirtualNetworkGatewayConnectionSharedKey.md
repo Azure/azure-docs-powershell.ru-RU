@@ -1,0 +1,168 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+ms.assetid: 78BADAF3-6001-4A25-A74D-F6B50079FCB4
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/set-azvirtualnetworkgatewayconnectionsharedkey
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzVirtualNetworkGatewayConnectionSharedKey.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzVirtualNetworkGatewayConnectionSharedKey.md
+ms.openlocfilehash: e1623f645c9a45d0b92b682646b0821729fce6fc
+ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "94065130"
+---
+# <span data-ttu-id="3a495-101">Set-AzVirtualNetworkGatewayConnectionSharedKey</span><span class="sxs-lookup"><span data-stu-id="3a495-101">Set-AzVirtualNetworkGatewayConnectionSharedKey</span></span>
+
+## <span data-ttu-id="3a495-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="3a495-102">SYNOPSIS</span></span>
+<span data-ttu-id="3a495-103">Настройка общего ключа подключения к шлюзу виртуальной сети.</span><span class="sxs-lookup"><span data-stu-id="3a495-103">Configures the shared key of the virtual network gateway connection.</span></span>
+
+## <span data-ttu-id="3a495-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="3a495-104">SYNTAX</span></span>
+
+```
+Set-AzVirtualNetworkGatewayConnectionSharedKey -Name <String> -ResourceGroupName <String> -Value <String>
+ [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="3a495-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="3a495-105">DESCRIPTION</span></span>
+<span data-ttu-id="3a495-106">Командлет **Set-AzVirtualNetworkGatewayConnectionSharedKey** настраивает общий ключ подключения к шлюзу виртуальной сети.</span><span class="sxs-lookup"><span data-stu-id="3a495-106">The **Set-AzVirtualNetworkGatewayConnectionSharedKey** cmdlet configures the shared key of the virtual network gateway connection.</span></span>
+
+## <span data-ttu-id="3a495-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="3a495-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="3a495-108">Пример 1:</span><span class="sxs-lookup"><span data-stu-id="3a495-108">Example 1:</span></span>
+```
+PS C:\Users\alzam> Set-AzVirtualNetworkGatewayConnectionSharedKey -ResourceGroupName VPNGatewayV3 -Name VNet1toVNet2 -Value abcd1234
+
+Confirm
+Are you sure you want to overwrite resource 'VNet1toVNet2'
+[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
+abcd1234
+```
+
+## <span data-ttu-id="3a495-109">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="3a495-109">PARAMETERS</span></span>
+
+### <span data-ttu-id="3a495-110">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="3a495-110">-DefaultProfile</span></span>
+<span data-ttu-id="3a495-111">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="3a495-111">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a495-112">-Force</span><span class="sxs-lookup"><span data-stu-id="3a495-112">-Force</span></span>
+<span data-ttu-id="3a495-113">Принудительное выполнение команды без запроса подтверждения пользователя.</span><span class="sxs-lookup"><span data-stu-id="3a495-113">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a495-114">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="3a495-114">-Name</span></span>
+<span data-ttu-id="3a495-115">Указывает имя общего ключа шлюза виртуальной сети.</span><span class="sxs-lookup"><span data-stu-id="3a495-115">Specifies the name of the virtual network gateway shared key.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: ResourceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a495-116">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="3a495-116">-ResourceGroupName</span></span>
+<span data-ttu-id="3a495-117">Указывает имя группы ресурсов, к которой относится шлюз виртуальной сети.</span><span class="sxs-lookup"><span data-stu-id="3a495-117">Specifies the name of the resource group that the virtual network gateway belongs to</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a495-118">-Value (значение)</span><span class="sxs-lookup"><span data-stu-id="3a495-118">-Value</span></span>
+<span data-ttu-id="3a495-119">Задает значение общего ключа.</span><span class="sxs-lookup"><span data-stu-id="3a495-119">Specifies the value of the shared key.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a495-120">-Confirm</span><span class="sxs-lookup"><span data-stu-id="3a495-120">-Confirm</span></span>
+<span data-ttu-id="3a495-121">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="3a495-121">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a495-122">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="3a495-122">-WhatIf</span></span>
+<span data-ttu-id="3a495-123">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="3a495-123">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="3a495-124">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="3a495-124">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a495-125">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3a495-125">CommonParameters</span></span>
+<span data-ttu-id="3a495-126">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="3a495-126">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3a495-127">Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="3a495-127">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="3a495-128">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="3a495-128">INPUTS</span></span>
+
+### <span data-ttu-id="3a495-129">System. String</span><span class="sxs-lookup"><span data-stu-id="3a495-129">System.String</span></span>
+
+## <span data-ttu-id="3a495-130">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="3a495-130">OUTPUTS</span></span>
+
+### <span data-ttu-id="3a495-131">System. String</span><span class="sxs-lookup"><span data-stu-id="3a495-131">System.String</span></span>
+
+## <span data-ttu-id="3a495-132">Пуск</span><span class="sxs-lookup"><span data-stu-id="3a495-132">NOTES</span></span>
+
+## <span data-ttu-id="3a495-133">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="3a495-133">RELATED LINKS</span></span>
+
+[<span data-ttu-id="3a495-134">Get-AzVirtualNetworkGatewayConnectionSharedKey</span><span class="sxs-lookup"><span data-stu-id="3a495-134">Get-AzVirtualNetworkGatewayConnectionSharedKey</span></span>](./Get-AzVirtualNetworkGatewayConnectionSharedKey.md)
+
+[<span data-ttu-id="3a495-135">Сброс — AzVirtualNetworkGatewayConnectionSharedKey</span><span class="sxs-lookup"><span data-stu-id="3a495-135">Reset-AzVirtualNetworkGatewayConnectionSharedKey</span></span>](./Reset-AzVirtualNetworkGatewayConnectionSharedKey.md)
