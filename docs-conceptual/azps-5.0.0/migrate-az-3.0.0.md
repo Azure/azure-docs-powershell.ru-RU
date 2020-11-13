@@ -5,26 +5,27 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 727a74ef9cd0f6e1bf93b65c4776816c1aa23334
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: 641804fc0931d29f082ef7057f610beb75d7550a
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753955"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410032"
 ---
-# <a name="migration-guide-for-az-300"></a><span data-ttu-id="22291-103">Руководство по переходу на Az версии 3.0.0</span><span class="sxs-lookup"><span data-stu-id="22291-103">Migration Guide for Az 3.0.0</span></span>
+# <a name="migration-guide-for-az-300"></a><span data-ttu-id="e0c6c-103">Руководство по переходу на Az версии 3.0.0</span><span class="sxs-lookup"><span data-stu-id="e0c6c-103">Migration Guide for Az 3.0.0</span></span>
 
-<span data-ttu-id="22291-104">В этом документе описываются изменения между Az версии 2.0.0 и Az версии 3.0.0.</span><span class="sxs-lookup"><span data-stu-id="22291-104">This document describes the changes between the 2.0.0 and 3.0.0 versions of Az</span></span>
+<span data-ttu-id="e0c6c-104">В этом документе описываются изменения между Az версии 2.0.0 и Az версии 3.0.0.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-104">This document describes the changes between the 2.0.0 and 3.0.0 versions of Az</span></span>
 
 <!-- TOC -->
 
-- [<span data-ttu-id="22291-105">Руководство по переходу на Az версии 3.0.0</span><span class="sxs-lookup"><span data-stu-id="22291-105">Migration Guide for Az 3.0.0</span></span>](#migration-guide-for-az-300)
-  - [<span data-ttu-id="22291-106">Пакетная служба</span><span class="sxs-lookup"><span data-stu-id="22291-106">Batch</span></span>](#batch)
+- [<span data-ttu-id="e0c6c-105">Руководство по переходу на Az версии 3.0.0</span><span class="sxs-lookup"><span data-stu-id="e0c6c-105">Migration Guide for Az 3.0.0</span></span>](#migration-guide-for-az-300)
+  - [<span data-ttu-id="e0c6c-106">Пакетная служба</span><span class="sxs-lookup"><span data-stu-id="e0c6c-106">Batch</span></span>](#batch)
     - [`Get-AzBatchNodeAgentSku`](#get-azbatchnodeagentsku)
-    - [<span data-ttu-id="22291-107">Несовместимость с предыдущими версиями `Az.Resources`</span><span class="sxs-lookup"><span data-stu-id="22291-107">Incompatibility with previous versions of `Az.Resources`</span></span>](#previous-version-incompatibility-with-azresources-module)
-  - [<span data-ttu-id="22291-108">Среда выполнения приложений</span><span class="sxs-lookup"><span data-stu-id="22291-108">Compute</span></span>](#compute)
+    - [<span data-ttu-id="e0c6c-107">Несовместимость с предыдущими версиями `Az.Resources`</span><span class="sxs-lookup"><span data-stu-id="e0c6c-107">Incompatibility with previous versions of `Az.Resources`</span></span>](#previous-version-incompatibility-with-azresources-module)
+  - [<span data-ttu-id="e0c6c-108">Среда выполнения приложений</span><span class="sxs-lookup"><span data-stu-id="e0c6c-108">Compute</span></span>](#compute)
     - [`New-AzDiskConfig`](#new-azdiskconfig)
-  - [<span data-ttu-id="22291-109">HDInsight</span><span class="sxs-lookup"><span data-stu-id="22291-109">HDInsight</span></span>](#hdinsight)
+  - [<span data-ttu-id="e0c6c-109">HDInsight</span><span class="sxs-lookup"><span data-stu-id="e0c6c-109">HDInsight</span></span>](#hdinsight)
     - [`Get-AzHDInsightJobOutput`](#get-azhdinsightjoboutput)
     - [`Add-AzHDInsightConfigValues`](#add-azhdinsightconfigvalues)
     - [`Disable-AzHDInsightMonitoring`](#disable-azhdinsightmonitoring)
@@ -35,22 +36,22 @@ ms.locfileid: "92753955"
     - [`Remove-AzHDInsightCluster`](#remove-azhdinsightcluster)
     - [`Revoke-AzHDInsightRdpServicesAccess`](#revoke-azhdinsightrdpservicesaccess)
     - [`Set-AzHDInsightGatewayCredential`](#set-azhdinsightgatewaycredential)
-  - [<span data-ttu-id="22291-110">Центр Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="22291-110">IotHub</span></span>](#iothub)
+  - [<span data-ttu-id="e0c6c-110">Центр Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="e0c6c-110">IotHub</span></span>](#iothub)
     - [`New-AzIotHubImportDevices`](#new-aziothubimportdevices)
     - [`New-AzIotHubExportDevices`](#new-aziothubexportdevices)
     - [`Add-AzIotHubEventHubConsumerGroup`](#add-aziothubeventhubconsumergroup)
     - [`Get-AzIotHubEventHubConsumerGroup`](#get-aziothubeventhubconsumergroup)
     - [`Remove-AzIotHubEventHubConsumerGroup`](#remove-aziothubeventhubconsumergroup)
     - [`Set-AzIotHub`](#set-aziothub)
-  - [<span data-ttu-id="22291-111">Службы восстановления</span><span class="sxs-lookup"><span data-stu-id="22291-111">RecoveryServices</span></span>](#recoveryservices)
+  - [<span data-ttu-id="e0c6c-111">Службы восстановления</span><span class="sxs-lookup"><span data-stu-id="e0c6c-111">RecoveryServices</span></span>](#recoveryservices)
     - [`Edit-AzRecoveryServicesAsrRecoveryPlan`](#edit-azrecoveryservicesasrrecoveryplan)
     - [`Get-AzRecoveryServicesAsrRecoveryPlan`](#get-azrecoveryservicesasrrecoveryplan)
     - [`New-AzRecoveryServicesAsrReplicationProtectedItem`](#new-azrecoveryservicesasrreplicationprotecteditem)
-  - [<span data-ttu-id="22291-112">Ресурсы</span><span class="sxs-lookup"><span data-stu-id="22291-112">Resources</span></span>](#resources)
-    - [<span data-ttu-id="22291-113">Несовместимость с предыдущими версиями `Az.Batch`</span><span class="sxs-lookup"><span data-stu-id="22291-113">Incompatibility with previous versions of `Az.Batch`</span></span>](#previous-version-incompatibility-with-azbatch-module)
-  - [<span data-ttu-id="22291-114">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="22291-114">ServiceFabric</span></span>](#servicefabric)
+  - [<span data-ttu-id="e0c6c-112">Ресурсы</span><span class="sxs-lookup"><span data-stu-id="e0c6c-112">Resources</span></span>](#resources)
+    - [<span data-ttu-id="e0c6c-113">Несовместимость с предыдущими версиями `Az.Batch`</span><span class="sxs-lookup"><span data-stu-id="e0c6c-113">Incompatibility with previous versions of `Az.Batch`</span></span>](#previous-version-incompatibility-with-azbatch-module)
+  - [<span data-ttu-id="e0c6c-114">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="e0c6c-114">ServiceFabric</span></span>](#servicefabric)
     - [`Add-ServiceFabricApplicationCertificate`](#add-servicefabricapplicationcertificate)
-  - [<span data-ttu-id="22291-115">SQL</span><span class="sxs-lookup"><span data-stu-id="22291-115">Sql</span></span>](#sql)
+  - [<span data-ttu-id="e0c6c-115">SQL</span><span class="sxs-lookup"><span data-stu-id="e0c6c-115">Sql</span></span>](#sql)
     - [`Get-AzSqlDatabaseSecureConnectionPolicy`](#get-azsqldatabasesecureconnectionpolicy)
     - [`Get-AzSqlDatabaseIndexRecommendations`](#get-azsqldatabaseindexrecommendations)
     - [`Get-AzSqlDatabaseRestorePoints`](#get-azsqldatabaserestorepoints)
@@ -87,78 +88,78 @@ ms.locfileid: "92753955"
 <!-- /TOC -->
 
 
-## <a name="batch"></a><span data-ttu-id="22291-116">Пакетная служба Azure</span><span class="sxs-lookup"><span data-stu-id="22291-116">Batch</span></span>
+## <a name="batch"></a><span data-ttu-id="e0c6c-116">Пакетная служба Azure</span><span class="sxs-lookup"><span data-stu-id="e0c6c-116">Batch</span></span>
 
 ### `Get-AzBatchNodeAgentSku`
-- <span data-ttu-id="22291-117">Параметр `Get-AzBatchNodeAgentSku` удален и заменен на `Get-AzBatchSupportedImage`.</span><span class="sxs-lookup"><span data-stu-id="22291-117">Removed `Get-AzBatchNodeAgentSku` and replaced it with  `Get-AzBatchSupportedImage`.</span></span>
-- <span data-ttu-id="22291-118">`Get-AzBatchSupportedImage` возвращает те же данные, что и `Get-AzBatchNodeAgentSku`, но в более понятном формате.</span><span class="sxs-lookup"><span data-stu-id="22291-118">`Get-AzBatchSupportedImage` returns the same data as `Get-AzBatchNodeAgentSku` but in a more friendly format.</span></span>
-- <span data-ttu-id="22291-119">Также возвращаются новые непроверенные образы.</span><span class="sxs-lookup"><span data-stu-id="22291-119">New non-verified images are also now returned.</span></span> <span data-ttu-id="22291-120">Включается и дополнительная информация о `Capabilities` и `BatchSupportEndOfLife` для каждого образа.</span><span class="sxs-lookup"><span data-stu-id="22291-120">Additional information about `Capabilities` and `BatchSupportEndOfLife` for each image is also included.</span></span>
+- <span data-ttu-id="e0c6c-117">Параметр `Get-AzBatchNodeAgentSku` удален и заменен на `Get-AzBatchSupportedImage`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-117">Removed `Get-AzBatchNodeAgentSku` and replaced it with  `Get-AzBatchSupportedImage`.</span></span>
+- <span data-ttu-id="e0c6c-118">`Get-AzBatchSupportedImage` возвращает те же данные, что и `Get-AzBatchNodeAgentSku`, но в более понятном формате.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-118">`Get-AzBatchSupportedImage` returns the same data as `Get-AzBatchNodeAgentSku` but in a more friendly format.</span></span>
+- <span data-ttu-id="e0c6c-119">Также возвращаются новые непроверенные образы.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-119">New non-verified images are also now returned.</span></span> <span data-ttu-id="e0c6c-120">Включается и дополнительная информация о `Capabilities` и `BatchSupportEndOfLife` для каждого образа.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-120">Additional information about `Capabilities` and `BatchSupportEndOfLife` for each image is also included.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-121">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-121">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-121">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-121">Before</span></span>
 ```powershell
 $Context = Get-AzBatchAccountKeys -AccountName "ContosoBatchAccount"
 Get-AzBatchNodeAgentSku -BatchContext $Context
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-122">После</span><span class="sxs-lookup"><span data-stu-id="22291-122">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-122">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-122">After</span></span>
 ```powershell
 $Context = Get-AzBatchAccountKey -AccountName "ContosoBatchAccount"
 Get-AzBatchSupportedImage -BatchContext $Context
 ```
-### <a name="previous-version-incompatibility-with-azresources-module"></a><span data-ttu-id="22291-123">Совместимость предыдущих версий с модулем Az.Resources</span><span class="sxs-lookup"><span data-stu-id="22291-123">Previous Version Incompatibility with Az.Resources Module</span></span>
-<span data-ttu-id="22291-124">Версия 2.0.1 модуля Az.Batch несовместима с более ранними версиями (1.7.0 или более ранними) модуля Az.Resources.</span><span class="sxs-lookup"><span data-stu-id="22291-124">Version 2.0.1 of the ‘Az.Batch’ module is incompatible with earlier versions (version 1.7.0 or earlier) of the ‘Az.Resources’ module.</span></span>  <span data-ttu-id="22291-125">Из-за этого невозможно импортировать версию 1.7.0 модуля Az.Resources, если импортирована версия 2.0.1 модуля Az.Batch.</span><span class="sxs-lookup"><span data-stu-id="22291-125">This will result in being unable to import  version 1.7.0 of the ‘Az.Resources’ module when version 2.0.1 of the ‘Az.Batch’ module is imported.</span></span>  <span data-ttu-id="22291-126">Чтобы исправить эту проблему, просто обновите модуль Az.Resources до версии 1.7.1 или более поздней либо установите последнюю версию модуля Az.</span><span class="sxs-lookup"><span data-stu-id="22291-126">To fix this issue, simply update the ‘Az.Resources’ module to version 1.7.1 or greater, or simply install the latest version of the ‘Az’ module.</span></span>
+### <a name="previous-version-incompatibility-with-azresources-module"></a><span data-ttu-id="e0c6c-123">Совместимость предыдущих версий с модулем Az.Resources</span><span class="sxs-lookup"><span data-stu-id="e0c6c-123">Previous Version Incompatibility with Az.Resources Module</span></span>
+<span data-ttu-id="e0c6c-124">Версия 2.0.1 модуля Az.Batch несовместима с более ранними версиями (1.7.0 или более ранними) модуля Az.Resources.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-124">Version 2.0.1 of the ‘Az.Batch’ module is incompatible with earlier versions (version 1.7.0 or earlier) of the ‘Az.Resources’ module.</span></span>  <span data-ttu-id="e0c6c-125">Из-за этого невозможно импортировать версию 1.7.0 модуля Az.Resources, если импортирована версия 2.0.1 модуля Az.Batch.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-125">This will result in being unable to import  version 1.7.0 of the ‘Az.Resources’ module when version 2.0.1 of the ‘Az.Batch’ module is imported.</span></span>  <span data-ttu-id="e0c6c-126">Чтобы исправить эту проблему, просто обновите модуль Az.Resources до версии 1.7.1 или более поздней либо установите последнюю версию модуля Az.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-126">To fix this issue, simply update the ‘Az.Resources’ module to version 1.7.1 or greater, or simply install the latest version of the ‘Az’ module.</span></span>
 
-## <a name="compute"></a><span data-ttu-id="22291-127">Службы вычислений</span><span class="sxs-lookup"><span data-stu-id="22291-127">Compute</span></span>
+## <a name="compute"></a><span data-ttu-id="e0c6c-127">Службы вычислений</span><span class="sxs-lookup"><span data-stu-id="e0c6c-127">Compute</span></span>
 
 ### `New-AzDiskConfig`
-<span data-ttu-id="22291-128">Параметр `UploadSizeInBytes` используется вместо `DiskSizeGB` для `New-AzDiskConfig`, если для CreateOption указано Upload.</span><span class="sxs-lookup"><span data-stu-id="22291-128">`UploadSizeInBytes` parameter is used instead of `DiskSizeGB` for `New-AzDiskConfig` when CreateOption is Upload</span></span>
+<span data-ttu-id="e0c6c-128">Параметр `UploadSizeInBytes` используется вместо `DiskSizeGB` для `New-AzDiskConfig`, если для CreateOption указано Upload.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-128">`UploadSizeInBytes` parameter is used instead of `DiskSizeGB` for `New-AzDiskConfig` when CreateOption is Upload</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-129">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-129">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-129">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-129">Before</span></span>
 ```powershell
 $diskconfig = New-AzDiskConfig -Location 'Central US' -DiskSizeGB 1023 -SkuName Standard_LRS -OsType Windows -CreateOption Upload -DiskIOPSReadWrite 500 -DiskMBpsReadWrite 8
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-130">После</span><span class="sxs-lookup"><span data-stu-id="22291-130">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-130">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-130">After</span></span>
 ```powershell
 $diskconfig = New-AzDiskConfig -Location 'Central US' -UploadSizeInBytes 1023 * 1024 * 1024 * 1024 -SkuName Standard_LRS -OsType Windows -CreateOption Upload -DiskIOPSReadWrite 500 -DiskMBpsReadWrite 8
 ```
 
-## <a name="hdinsight"></a><span data-ttu-id="22291-131">HDInsight</span><span class="sxs-lookup"><span data-stu-id="22291-131">HDInsight</span></span>
+## <a name="hdinsight"></a><span data-ttu-id="e0c6c-131">HDInsight</span><span class="sxs-lookup"><span data-stu-id="e0c6c-131">HDInsight</span></span>
 
 ### `Get-AzHDInsightJobOutput`
-- <span data-ttu-id="22291-132">Обновлен командлет `Get-AzHDInsightJobOutput` для поддержки детализированного доступа на основе ролей к ключу к хранилищу.</span><span class="sxs-lookup"><span data-stu-id="22291-132">Updated the `Get-AzHDInsightJobOutput` cmdlet to support granular role-based access to the storage key.</span></span>
-- <span data-ttu-id="22291-133">На пользователей с ролями оператора, участника или владельца кластера HDInsight это не повлияет.</span><span class="sxs-lookup"><span data-stu-id="22291-133">Users with HDInsight Cluster Operator, Contributor, or Owner roles will not be affected.</span></span>
-- <span data-ttu-id="22291-134">Только пользователям с ролью читателя нужно указывать параметр `DefaultStorageAccountKey` явным образом.</span><span class="sxs-lookup"><span data-stu-id="22291-134">Users with only the Reader role will need to specify `DefaultStorageAccountKey` parameter explicitly.</span></span>
+- <span data-ttu-id="e0c6c-132">Обновлен командлет `Get-AzHDInsightJobOutput` для поддержки детализированного доступа на основе ролей к ключу к хранилищу.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-132">Updated the `Get-AzHDInsightJobOutput` cmdlet to support granular role-based access to the storage key.</span></span>
+- <span data-ttu-id="e0c6c-133">На пользователей с ролями оператора, участника или владельца кластера HDInsight это не повлияет.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-133">Users with HDInsight Cluster Operator, Contributor, or Owner roles will not be affected.</span></span>
+- <span data-ttu-id="e0c6c-134">Только пользователям с ролью читателя нужно указывать параметр `DefaultStorageAccountKey` явным образом.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-134">Users with only the Reader role will need to specify `DefaultStorageAccountKey` parameter explicitly.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-135">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-135">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-135">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-135">Before</span></span>
 ```powershell
 Get-AzHDInsightJobOutput  -ClusterName $clusterName -JobId $jobId
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-136">После</span><span class="sxs-lookup"><span data-stu-id="22291-136">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-136">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-136">After</span></span>
 ```powershell
 Get-AzHDInsightJobOutput -ClusterName $clusterName -JobId $jobId -DefaultStorageAccountKey $storageAccountKey
 ```
 
 ### `Add-AzHDInsightConfigValues`
-<span data-ttu-id="22291-137">Для командлета `Add-AzHDInsightConfigValue` удален устаревший псевдоним (ранее — `Add-AzHDInsightConfigValues`).</span><span class="sxs-lookup"><span data-stu-id="22291-137">Cmdlet `Add-AzHDInsightConfigValue` removed alias to `Add-AzHDInsightConfigValues`.</span></span>
+<span data-ttu-id="e0c6c-137">Для командлета `Add-AzHDInsightConfigValue` удален устаревший псевдоним (ранее — `Add-AzHDInsightConfigValues`).</span><span class="sxs-lookup"><span data-stu-id="e0c6c-137">Cmdlet `Add-AzHDInsightConfigValue` removed alias to `Add-AzHDInsightConfigValues`.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-138">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-138">Before</span></span>
-<span data-ttu-id="22291-139">Использование устаревшего псевдонима</span><span class="sxs-lookup"><span data-stu-id="22291-139">Using deprecated alias</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-138">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-138">Before</span></span>
+<span data-ttu-id="e0c6c-139">Использование устаревшего псевдонима</span><span class="sxs-lookup"><span data-stu-id="e0c6c-139">Using deprecated alias</span></span>
 ```powershell
 Add-AzHDInsightConfigValues
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-140">После</span><span class="sxs-lookup"><span data-stu-id="22291-140">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-140">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-140">After</span></span>
 ```powershell
 Add-AzHDInsightConfigValue
 ```
 
 
 ### `Disable-AzHDInsightMonitoring`
-<span data-ttu-id="22291-141">Добавлен новый командлет `Disable-AzHDInsightMonitoring`.</span><span class="sxs-lookup"><span data-stu-id="22291-141">Added a new `Disable-AzHDInsightMonitoring` cmdlet.</span></span> <span data-ttu-id="22291-142">Используйте этот командлет, чтобы отключить мониторинг в кластере HDInsight (заменяет `Disable-AzHDInsightOperationsManagementSuite` и `Disable-AzHDInsightOMS`).</span><span class="sxs-lookup"><span data-stu-id="22291-142">Use this cmdlet to disable monitoring in a HDInsight cluster (replaces `Disable-AzHDInsightOperationsManagementSuite` and `Disable-AzHDInsightOMS`).</span></span>
+<span data-ttu-id="e0c6c-141">Добавлен новый командлет `Disable-AzHDInsightMonitoring`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-141">Added a new `Disable-AzHDInsightMonitoring` cmdlet.</span></span> <span data-ttu-id="e0c6c-142">Используйте этот командлет, чтобы отключить мониторинг в кластере HDInsight (заменяет `Disable-AzHDInsightOperationsManagementSuite` и `Disable-AzHDInsightOMS`).</span><span class="sxs-lookup"><span data-stu-id="e0c6c-142">Use this cmdlet to disable monitoring in a HDInsight cluster (replaces `Disable-AzHDInsightOperationsManagementSuite` and `Disable-AzHDInsightOMS`).</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-143">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-143">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-143">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-143">Before</span></span>
 ```powershell
 Disable-AzHDInsightOMS -Name testcluster
 ```
@@ -166,16 +167,16 @@ Disable-AzHDInsightOMS -Name testcluster
 Disable-AzHDInsightOperationsManagementSuite -Name testcluster
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-144">После</span><span class="sxs-lookup"><span data-stu-id="22291-144">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-144">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-144">After</span></span>
 ```powershell
 Disable-AzHDInsightMonitoring -Name testcluster
 ```
 
 
 ### `Enable-AzHDInsightMonitoring`
-<span data-ttu-id="22291-145">Добавлен новый командлет `Enable-AzHDInsightMonitoring`.</span><span class="sxs-lookup"><span data-stu-id="22291-145">Added a new `Enable-AzHDInsightMonitoring` cmdlet.</span></span> <span data-ttu-id="22291-146">Используйте этот командлет, чтобы включить мониторинг в кластере HDInsight (заменяет `Enable-AzHDInsightOperationsManagementSuite` и `Enable-AzHDInsightOMS`).</span><span class="sxs-lookup"><span data-stu-id="22291-146">Use this cmdlet to enable monitoring in a HDInsight cluster (replaces `Enable-AzHDInsightOperationsManagementSuite` and `Enable-AzHDInsightOMS`).</span></span>
+<span data-ttu-id="e0c6c-145">Добавлен новый командлет `Enable-AzHDInsightMonitoring`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-145">Added a new `Enable-AzHDInsightMonitoring` cmdlet.</span></span> <span data-ttu-id="e0c6c-146">Используйте этот командлет, чтобы включить мониторинг в кластере HDInsight (заменяет `Enable-AzHDInsightOperationsManagementSuite` и `Enable-AzHDInsightOMS`).</span><span class="sxs-lookup"><span data-stu-id="e0c6c-146">Use this cmdlet to enable monitoring in a HDInsight cluster (replaces `Enable-AzHDInsightOperationsManagementSuite` and `Enable-AzHDInsightOMS`).</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-147">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-147">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-147">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-147">Before</span></span>
 ```powershell
 Enable-AzHDInsightOMS Enable-AzHDInsightMonitoring -Name testcluster -WorkspaceId 1d364e89-bb71-4503-aa3d-a23535aea7bd -PrimaryKey <key for workspace 1d364e89-bb71-4503-aa3d-a23535aea7bd>
 ```
@@ -183,15 +184,15 @@ Enable-AzHDInsightOMS Enable-AzHDInsightMonitoring -Name testcluster -WorkspaceI
 Enable-AzHDInsightOperationsManagementSuite Enable-AzHDInsightMonitoring -Name testcluster -WorkspaceId 1d364e89-bb71-4503-aa3d-a23535aea7bd -PrimaryKey <key for workspace 1d364e89-bb71-4503-aa3d-a23535aea7bd>
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-148">После</span><span class="sxs-lookup"><span data-stu-id="22291-148">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-148">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-148">After</span></span>
 ```powershell
 Enable-AzHDInsightMonitoring Enable-AzHDInsightMonitoring -Name testcluster -WorkspaceId 1d364e89-bb71-4503-aa3d-a23535aea7bd -PrimaryKey <key for workspace 1d364e89-bb71-4503-aa3d-a23535aea7bd>
 ```
 
 ### `Get-AzHDInsightMonitoring`
-<span data-ttu-id="22291-149">Добавлен новый командлет `Get-AzHDInsightMonitoring`.</span><span class="sxs-lookup"><span data-stu-id="22291-149">Added a new `Get-AzHDInsightMonitoring` cmdlet.</span></span> <span data-ttu-id="22291-150">Используйте этот командлет, чтобы узнать состояние установки средства мониторинга в кластере Azure HDInsight (заменяет `Get-AzHDInsightOperationsManagementSuite` и `Get-AzHDInsightOMS`).</span><span class="sxs-lookup"><span data-stu-id="22291-150">Use this cmdlet to get the status of monitoring installation in an Azure HDInsight cluster (replaces `Get-AzHDInsightOperationsManagementSuite` and `Get-AzHDInsightOMS`).</span></span>
+<span data-ttu-id="e0c6c-149">Добавлен новый командлет `Get-AzHDInsightMonitoring`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-149">Added a new `Get-AzHDInsightMonitoring` cmdlet.</span></span> <span data-ttu-id="e0c6c-150">Используйте этот командлет, чтобы узнать состояние установки средства мониторинга в кластере Azure HDInsight (заменяет `Get-AzHDInsightOperationsManagementSuite` и `Get-AzHDInsightOMS`).</span><span class="sxs-lookup"><span data-stu-id="e0c6c-150">Use this cmdlet to get the status of monitoring installation in an Azure HDInsight cluster (replaces `Get-AzHDInsightOperationsManagementSuite` and `Get-AzHDInsightOMS`).</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-151">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-151">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-151">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-151">Before</span></span>
 ```powershell
 Get-AzHDInsightOMS -Name testcluster
 ```
@@ -199,161 +200,161 @@ Get-AzHDInsightOMS -Name testcluster
 Get-AzHDInsightOperationsManagementSuite -Name testcluster
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-152">После</span><span class="sxs-lookup"><span data-stu-id="22291-152">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-152">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-152">After</span></span>
 ```powershell
 Get-AzHDInsightMonitoring -Name testcluster
 ```
 
 ### `Get-AzHDInsightProperty`
-<span data-ttu-id="22291-153">Для командлета `Get-HDInsightProperty` удален устаревший псевдоним (ранее — `Get-AzHDInsightProperties`).</span><span class="sxs-lookup"><span data-stu-id="22291-153">Cmdlet `Get-HDInsightProperty` removed alias to `Get-AzHDInsightProperties`.</span></span>
+<span data-ttu-id="e0c6c-153">Для командлета `Get-HDInsightProperty` удален устаревший псевдоним (ранее — `Get-AzHDInsightProperties`).</span><span class="sxs-lookup"><span data-stu-id="e0c6c-153">Cmdlet `Get-HDInsightProperty` removed alias to `Get-AzHDInsightProperties`.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-154">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-154">Before</span></span>
-<span data-ttu-id="22291-155">Использование устаревшего псевдонима</span><span class="sxs-lookup"><span data-stu-id="22291-155">Using deprecated alias</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-154">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-154">Before</span></span>
+<span data-ttu-id="e0c6c-155">Использование устаревшего псевдонима</span><span class="sxs-lookup"><span data-stu-id="e0c6c-155">Using deprecated alias</span></span>
 ```powershell
 Get-AzHDInsightProperties -Location "East US 2"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-156">После</span><span class="sxs-lookup"><span data-stu-id="22291-156">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-156">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-156">After</span></span>
 ```powershell
 Get-AzHDInsightProperty -Location "East US 2"
 ```
 
 ### `Grant-AzHDInsightRdpServicesAccess`
-<span data-ttu-id="22291-157">Удалены командлеты `Grant-AzHDInsightRdpServicesAccess` и `Revoke-AzHDInsightRdpServicesAccess`.</span><span class="sxs-lookup"><span data-stu-id="22291-157">Removed the `Grant-AzHDInsightRdpServicesAccess` and `Revoke-AzHDInsightRdpServicesAccess` cmdlets.</span></span> <span data-ttu-id="22291-158">Эти командлеты больше не нужны, так как кластеры, использующие ОС Windows, не поддерживаются.</span><span class="sxs-lookup"><span data-stu-id="22291-158">These are no longer necessary because clusters using Windows OS type are not supported.</span></span> <span data-ttu-id="22291-159">Вместо этого создайте кластер с ОС Linux.</span><span class="sxs-lookup"><span data-stu-id="22291-159">Please create a cluster using Linux OS type instead.</span></span>
+<span data-ttu-id="e0c6c-157">Удалены командлеты `Grant-AzHDInsightRdpServicesAccess` и `Revoke-AzHDInsightRdpServicesAccess`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-157">Removed the `Grant-AzHDInsightRdpServicesAccess` and `Revoke-AzHDInsightRdpServicesAccess` cmdlets.</span></span> <span data-ttu-id="e0c6c-158">Эти командлеты больше не нужны, так как кластеры, использующие ОС Windows, не поддерживаются.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-158">These are no longer necessary because clusters using Windows OS type are not supported.</span></span> <span data-ttu-id="e0c6c-159">Вместо этого создайте кластер с ОС Linux.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-159">Please create a cluster using Linux OS type instead.</span></span>
 
 ### `Remove-AzHDInsightCluster`
-<span data-ttu-id="22291-160">Тип выходных данных `Remove-AzHDInsightCluster` изменен с `Microsoft.Azure.Management.HDInsight.Models.ClusterGetResponse` на `bool`.</span><span class="sxs-lookup"><span data-stu-id="22291-160">The output type of `Remove-AzHDInsightCluster` changed from `Microsoft.Azure.Management.HDInsight.Models.ClusterGetResponse` to `bool`.</span></span>
+<span data-ttu-id="e0c6c-160">Тип выходных данных `Remove-AzHDInsightCluster` изменен с `Microsoft.Azure.Management.HDInsight.Models.ClusterGetResponse` на `bool`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-160">The output type of `Remove-AzHDInsightCluster` changed from `Microsoft.Azure.Management.HDInsight.Models.ClusterGetResponse` to `bool`.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-161">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-161">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-161">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-161">Before</span></span>
 ```powershell
 $cluster = Remove-AzHDInsightCluster -ClusterName "your-hadoop-001"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-162">После</span><span class="sxs-lookup"><span data-stu-id="22291-162">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-162">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-162">After</span></span>
 ```powershell
 Remove-AzHDInsightCluster -ClusterName "your-hadoop-001" -PassThru
 True
 ```
 
 ### `Revoke-AzHDInsightRdpServicesAccess`
-<span data-ttu-id="22291-163">Командлет считается устаревшим.</span><span class="sxs-lookup"><span data-stu-id="22291-163">The cmdlet is deprecated.</span></span> <span data-ttu-id="22291-164">Для него не существует замены.</span><span class="sxs-lookup"><span data-stu-id="22291-164">There is no replacement for it.</span></span>
+<span data-ttu-id="e0c6c-163">Командлет считается устаревшим.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-163">The cmdlet is deprecated.</span></span> <span data-ttu-id="e0c6c-164">Для него не существует замены.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-164">There is no replacement for it.</span></span>
 
 ### `Set-AzHDInsightGatewayCredential`
-<span data-ttu-id="22291-165">Тип выходных данных `Set-AzHDInsightGatewayCredential` изменен с `HttpConnectivitySettings` на `AzureHDInsightGatewaySettings`.</span><span class="sxs-lookup"><span data-stu-id="22291-165">The output type of `Set-AzHDInsightGatewayCredential` changed from `HttpConnectivitySettings` to `AzureHDInsightGatewaySettings`.</span></span>
+<span data-ttu-id="e0c6c-165">Тип выходных данных `Set-AzHDInsightGatewayCredential` изменен с `HttpConnectivitySettings` на `AzureHDInsightGatewaySettings`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-165">The output type of `Set-AzHDInsightGatewayCredential` changed from `HttpConnectivitySettings` to `AzureHDInsightGatewaySettings`.</span></span>
 
 
 
-## <a name="iothub"></a><span data-ttu-id="22291-166">Центр Интернета вещей:</span><span class="sxs-lookup"><span data-stu-id="22291-166">IotHub</span></span>
+## <a name="iothub"></a><span data-ttu-id="e0c6c-166">Центр Интернета вещей:</span><span class="sxs-lookup"><span data-stu-id="e0c6c-166">IotHub</span></span>
 
 ### `New-AzIotHubImportDevices`
-<span data-ttu-id="22291-167">Этот псевдоним удален. Вместо него следует использовать `New-AzIotHubImportDevice`.</span><span class="sxs-lookup"><span data-stu-id="22291-167">This alias is removed, please use `New-AzIotHubImportDevice` instead.</span></span>
+<span data-ttu-id="e0c6c-167">Этот псевдоним удален. Вместо него следует использовать `New-AzIotHubImportDevice`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-167">This alias is removed, please use `New-AzIotHubImportDevice` instead.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-168">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-168">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-168">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-168">Before</span></span>
 ```powershell
 New-AzIotHubImportDevices -ResourceGroupName "myresourcegroup" -Name "myiothub" -InputBlobContainerUri "https://mystorageaccount.blob.core.windows.net/mystoragecontainer?sv=2015-04-05&ss=bfqt&sr=c&srt=sco&sp=rwdl&se=2016-10-27T04:01:48Z&st=2016-10-26T20:01:48Z&spr=https&sig=QqpIhHsIMF8hNuFO%3D" -OutputBlobContainerUri "https://mystorageaccount.blob.core.windows.net/?sv=2015-04-05&ss=bfqt&sr=c&srt=sco&sp=rwdl&se=2016-10-27T04:01:48Z&st=2016-10-26T20:01:48Z&spr=https&sig=QqpIhHsIMF8hNuFO%3D"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-169">После</span><span class="sxs-lookup"><span data-stu-id="22291-169">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-169">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-169">After</span></span>
 ```powershell
 New-AzIotHubImportDevice -ResourceGroupName "myresourcegroup" -Name "myiothub" -InputBlobContainerUri "https://mystorageaccount.blob.core.windows.net/mystoragecontainer?sv=2015-04-05&ss=bfqt&sr=c&srt=sco&sp=rwdl&se=2016-10-27T04:01:48Z&st=2016-10-26T20:01:48Z&spr=https&sig=QqpIhHsIMF8hNuFO%3D" -OutputBlobContainerUri "https://mystorageaccount.blob.core.windows.net/?sv=2015-04-05&ss=bfqt&sr=c&srt=sco&sp=rwdl&se=2016-10-27T04:01:48Z&st=2016-10-26T20:01:48Z&spr=https&sig=QqpIhHsIMF8hNuFO%3D"
 ```
 
 ### `New-AzIotHubExportDevices`
-<span data-ttu-id="22291-170">Этот псевдоним удален. Вместо него следует использовать `New-AzIotHubExportDevice`.</span><span class="sxs-lookup"><span data-stu-id="22291-170">This alias is removed, please use `New-AzIotHubExportDevice` instead.</span></span>
+<span data-ttu-id="e0c6c-170">Этот псевдоним удален. Вместо него следует использовать `New-AzIotHubExportDevice`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-170">This alias is removed, please use `New-AzIotHubExportDevice` instead.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-171">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-171">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-171">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-171">Before</span></span>
 ```powershell
 New-AzIotHubExportDevices -ResourceGroupName "myresourcegroup" -Name "myiothub" -ExportBlobContainerUri "https://mystorageaccount.blob.core.windows.net/mystoragecontainer?sv=2015-04-05&ss=bfqt&sr=c&srt=sco&sp=rwdl&se=2016-10-27T04:01:48Z&st=2016-10-26T20:01:48Z&spr=https&sig=QqpIhHsIMF8hNuFO%3D" -ExcludeKeys
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-172">После</span><span class="sxs-lookup"><span data-stu-id="22291-172">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-172">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-172">After</span></span>
 ```powershell
 New-AzIotHubExportDevice -ResourceGroupName "myresourcegroup" -Name "myiothub" -ExportBlobContainerUri "https://mystorageaccount.blob.core.windows.net/mystoragecontainer?sv=2015-04-05&ss=bfqt&sr=c&srt=sco&sp=rwdl&se=2016-10-27T04:01:48Z&st=2016-10-26T20:01:48Z&spr=https&sig=QqpIhHsIMF8hNuFO%3D" -ExcludeKeys
 ```
 
 ### `Add-AzIotHubEventHubConsumerGroup`
-<span data-ttu-id="22291-173">Параметр `EventHubEndPointName` считается устаревшим, и для него нет замены. Это связано с тем, что для Центра Интернета вещей предусмотрена только одна встроенная конечная точка (events), на которую можно отправлять сообщения системы и устройства.</span><span class="sxs-lookup"><span data-stu-id="22291-173">Parameter `EventHubEndPointName` is deprecated without being replaced as IotHub comes with only one built-in endpoint("events") which could handle system and device messages.</span></span>
+<span data-ttu-id="e0c6c-173">Параметр `EventHubEndPointName` считается устаревшим, и для него нет замены. Это связано с тем, что для Центра Интернета вещей предусмотрена только одна встроенная конечная точка (events), на которую можно отправлять сообщения системы и устройства.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-173">Parameter `EventHubEndPointName` is deprecated without being replaced as IotHub comes with only one built-in endpoint("events") which could handle system and device messages.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-174">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-174">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-174">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-174">Before</span></span>
 ```powershell
 Add-AzIotHubEventHubConsumerGroup -ResourceGroupName "myresourcegroup" -Name "myiothub" -EventHubConsumerGroupName "myconsumergroup" -EventHubEndpointName "/EventHubEndpointName"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-175">После</span><span class="sxs-lookup"><span data-stu-id="22291-175">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-175">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-175">After</span></span>
 ```powershell
 Add-AzIotHubEventHubConsumerGroup -ResourceGroupName "myresourcegroup" -Name "myiothub" -EventHubConsumerGroupName "myconsumergroup"
 ```
 
 ### `Get-AzIotHubEventHubConsumerGroup`
-<span data-ttu-id="22291-176">Параметр `EventHubEndPointName` считается устаревшим, и для него нет замены. Это связано с тем, что для Центра Интернета вещей предусмотрена только одна встроенная конечная точка (events), на которую можно отправлять сообщения системы и устройства.</span><span class="sxs-lookup"><span data-stu-id="22291-176">Parameter `EventHubEndPointName` is deprecated without being replaced as IotHub comes with only one built-in endpoint("events") which could handle system and device messages.</span></span>
+<span data-ttu-id="e0c6c-176">Параметр `EventHubEndPointName` считается устаревшим, и для него нет замены. Это связано с тем, что для Центра Интернета вещей предусмотрена только одна встроенная конечная точка (events), на которую можно отправлять сообщения системы и устройства.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-176">Parameter `EventHubEndPointName` is deprecated without being replaced as IotHub comes with only one built-in endpoint("events") which could handle system and device messages.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-177">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-177">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-177">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-177">Before</span></span>
 ```powershell
 Get-AzIotHubEventHubConsumerGroup -ResourceGroupName "myresourcegroup" -Name "myiothub" -EventHubEndpointName "/EventHubEndpointName"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-178">После</span><span class="sxs-lookup"><span data-stu-id="22291-178">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-178">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-178">After</span></span>
 ```powershell
 Get-AzIotHubEventHubConsumerGroup -ResourceGroupName "myresourcegroup" -Name "myiothub"
 ```
 
 ### `Remove-AzIotHubEventHubConsumerGroup`
-<span data-ttu-id="22291-179">Параметр `EventHubEndPointName` считается устаревшим, и для него нет замены. Это связано с тем, что для Центра Интернета вещей предусмотрена только одна встроенная конечная точка (events), на которую можно отправлять сообщения системы и устройства.</span><span class="sxs-lookup"><span data-stu-id="22291-179">Parameter `EventHubEndPointName` is deprecated without being replaced as IotHub comes with only one built-in endpoint("events") which could handle system and device messages.</span></span>
+<span data-ttu-id="e0c6c-179">Параметр `EventHubEndPointName` считается устаревшим, и для него нет замены. Это связано с тем, что для Центра Интернета вещей предусмотрена только одна встроенная конечная точка (events), на которую можно отправлять сообщения системы и устройства.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-179">Parameter `EventHubEndPointName` is deprecated without being replaced as IotHub comes with only one built-in endpoint("events") which could handle system and device messages.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-180">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-180">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-180">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-180">Before</span></span>
 ```powershell
 Remove-AzIotHubEventHubConsumerGroup -ResourceGroupName "myresourcegroup" -Name "myiothub" -EventHubConsumerGroupName myconsumergroup -EventHubEndpointName "/EventHubEndpointName"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-181">После</span><span class="sxs-lookup"><span data-stu-id="22291-181">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-181">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-181">After</span></span>
 ```powershell
 Remove-AzIotHubEventHubConsumerGroup -ResourceGroupName "myresourcegroup" -Name "myiothub" -EventHubConsumerGroupName myconsumergroup
 ```
 
 ### `Set-AzIotHub`
-<span data-ttu-id="22291-182">Параметр `OperationsMonitoringProperties` является устаревшим, и для него нет замены. Это связано с тем, что для Центра Интернета вещей больше не используется встроенная конечная точка operationsMonitoringEvents.</span><span class="sxs-lookup"><span data-stu-id="22291-182">Parameter `OperationsMonitoringProperties` is deprecated without being replaced as IotHub is no longer using built-in endpoint("operationsMonitoringEvents").</span></span>
+<span data-ttu-id="e0c6c-182">Параметр `OperationsMonitoringProperties` является устаревшим, и для него нет замены. Это связано с тем, что для Центра Интернета вещей больше не используется встроенная конечная точка operationsMonitoringEvents.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-182">Parameter `OperationsMonitoringProperties` is deprecated without being replaced as IotHub is no longer using built-in endpoint("operationsMonitoringEvents").</span></span>
 
 
 
-## <a name="recoveryservices"></a><span data-ttu-id="22291-183">Службы восстановления</span><span class="sxs-lookup"><span data-stu-id="22291-183">RecoveryServices</span></span>
+## <a name="recoveryservices"></a><span data-ttu-id="e0c6c-183">Службы восстановления</span><span class="sxs-lookup"><span data-stu-id="e0c6c-183">RecoveryServices</span></span>
 
 ### `Edit-AzRecoveryServicesAsrRecoveryPlan`
-<span data-ttu-id="22291-184">`ASRRecoveryPlanGroup.ReplicationProtectedItems`, `ASRRecoveryPlanGroup.StartGroupActions` и `ASRRecoveryPlanGroup.EndGroupActions` удалены из выходных данных.</span><span class="sxs-lookup"><span data-stu-id="22291-184">`ASRRecoveryPlanGroup.ReplicationProtectedItems`, `ASRRecoveryPlanGroup.StartGroupActions` and `ASRRecoveryPlanGroup.EndGroupActions` is removed from output.</span></span>
+<span data-ttu-id="e0c6c-184">`ASRRecoveryPlanGroup.ReplicationProtectedItems`, `ASRRecoveryPlanGroup.StartGroupActions` и `ASRRecoveryPlanGroup.EndGroupActions` удалены из выходных данных.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-184">`ASRRecoveryPlanGroup.ReplicationProtectedItems`, `ASRRecoveryPlanGroup.StartGroupActions` and `ASRRecoveryPlanGroup.EndGroupActions` is removed from output.</span></span>
 
 ### `Get-AzRecoveryServicesAsrRecoveryPlan`
-<span data-ttu-id="22291-185">`ASRRecoveryPlanGroup.ReplicationProtectedItems`, `ASRRecoveryPlanGroup.StartGroupActions` и `ASRRecoveryPlanGroup.EndGroupActions` удалены из выходных данных.</span><span class="sxs-lookup"><span data-stu-id="22291-185">`ASRRecoveryPlanGroup.ReplicationProtectedItems`, `ASRRecoveryPlanGroup.StartGroupActions` and `ASRRecoveryPlanGroup.EndGroupActions` is removed from output.</span></span>
+<span data-ttu-id="e0c6c-185">`ASRRecoveryPlanGroup.ReplicationProtectedItems`, `ASRRecoveryPlanGroup.StartGroupActions` и `ASRRecoveryPlanGroup.EndGroupActions` удалены из выходных данных.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-185">`ASRRecoveryPlanGroup.ReplicationProtectedItems`, `ASRRecoveryPlanGroup.StartGroupActions` and `ASRRecoveryPlanGroup.EndGroupActions` is removed from output.</span></span>
 
 ### `New-AzRecoveryServicesAsrReplicationProtectedItem`
-<span data-ttu-id="22291-186">Параметр IncludeDiskId изменен для поддержки непосредственной записи на управляемый диск в Azure Site Recovery.</span><span class="sxs-lookup"><span data-stu-id="22291-186">Parameter IncludeDiskId is changed to support directly writing to a managed disk in Azure Site Recovery.</span></span>
+<span data-ttu-id="e0c6c-186">Параметр IncludeDiskId изменен для поддержки непосредственной записи на управляемый диск в Azure Site Recovery.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-186">Parameter IncludeDiskId is changed to support directly writing to a managed disk in Azure Site Recovery.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-187">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-187">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-187">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-187">Before</span></span>
 ```powershell
 $job = New-AzRecoveryServicesAsrReplicationProtectedItem -RecoveryAzureStorageAccountId $recoveryAzureStorageAccountId -IncludeDiskId $includeDiskId -VMwareToAzure -Account $fabric.FabricSpecificDetails.RunAsAccounts[0] -RecoveryResourceGroupId $RecoveryResourceGroupId -RecoveryAzureNetworkId $RecoveryAzureNetworkId -name $name -ProcessServer $fabric.FabricSpecificDetails.ProcessServers[0] -ProtectableItem $protectableItem -ProtectionContainerMapping $pcm -RecoveryAzureSubnetName $RecoveryAzureSubnetName -RecoveryVmName $RecoveryVmName -LogStorageAccountId $LogStorageAccountId
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-188">После</span><span class="sxs-lookup"><span data-stu-id="22291-188">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-188">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-188">After</span></span>
 ```powershell
 $disk1 = New-AzRecoveryServicesAsrInMageAzureV2DiskInput -DiskId $diskId -LogStorageAccountId $logStorageAccountId -DiskType $diskType
 $disk2 = New-AzRecoveryServicesAsrInMageAzureV2DiskInput -DiskId $diskId2 -LogStorageAccountId $logStorageAccountId -DiskType $diskType2
 $job = New-AzRecoveryServicesAsrReplicationProtectedItem -VMwareToAzure -Account $fabric.FabricSpecificDetails.RunAsAccounts[0] -RecoveryResourceGroupId $RecoveryResourceGroupId -RecoveryAzureNetworkId $RecoveryAzureNetworkId -name $name -ProcessServer $fabric.FabricSpecificDetails.ProcessServers[0] -ProtectableItem $protectableItem -ProtectionContainerMapping $pcm -RecoveryAzureSubnetName $RecoveryAzureSubnetName -RecoveryVmName $RecoveryVmName -LogStorageAccountId $LogStorageAccountId -InMageAzureV2DiskInput $disk1,$disk2
 ```
 
-## <a name="resources"></a><span data-ttu-id="22291-189">Ресурсы</span><span class="sxs-lookup"><span data-stu-id="22291-189">Resources</span></span>
+## <a name="resources"></a><span data-ttu-id="e0c6c-189">Ресурсы</span><span class="sxs-lookup"><span data-stu-id="e0c6c-189">Resources</span></span>
 
-### <a name="previous-version-incompatibility-with-azbatch-module"></a><span data-ttu-id="22291-190">Несовместимость предыдущих версий с модулем Az.Batch</span><span class="sxs-lookup"><span data-stu-id="22291-190">Previous Version Incompatibility with Az.Batch Module</span></span>
-<span data-ttu-id="22291-191">Версия 1.7.1 модуля Az.Resources несовместима с более ранними версиями (1.1.2 или ниже) модуля Az.Batch.</span><span class="sxs-lookup"><span data-stu-id="22291-191">Version 1.7.1 of the ‘Az.Resources’ module is incompatible with earlier versions (version 1.1.2 or earlier) of the ‘Az.Batch’ module.</span></span>  <span data-ttu-id="22291-192">Из-за этого невозможно импортировать версию 1.1.2 модуля Az.Batch, если импортирована версия 1.7.1 модуля Az.Resources.</span><span class="sxs-lookup"><span data-stu-id="22291-192">This will result in being unable to import  version 1.1.2 of the ‘Az.Batch’ module when version 1.7.1 of the ‘Az.Resources’ module is imported.</span></span>  <span data-ttu-id="22291-193">Чтобы исправить эту проблему, обновите модуль Az.Batch до версии 2.0.1 или более поздней либо просто установите последнюю версию модуля Az.</span><span class="sxs-lookup"><span data-stu-id="22291-193">To fix this issue, update the ‘Az.Batch’ module to version 2.0.1 or greater, or simply install the latest version of the ‘Az’ module.</span></span>
+### <a name="previous-version-incompatibility-with-azbatch-module"></a><span data-ttu-id="e0c6c-190">Несовместимость предыдущих версий с модулем Az.Batch</span><span class="sxs-lookup"><span data-stu-id="e0c6c-190">Previous Version Incompatibility with Az.Batch Module</span></span>
+<span data-ttu-id="e0c6c-191">Версия 1.7.1 модуля Az.Resources несовместима с более ранними версиями (1.1.2 или ниже) модуля Az.Batch.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-191">Version 1.7.1 of the ‘Az.Resources’ module is incompatible with earlier versions (version 1.1.2 or earlier) of the ‘Az.Batch’ module.</span></span>  <span data-ttu-id="e0c6c-192">Из-за этого невозможно импортировать версию 1.1.2 модуля Az.Batch, если импортирована версия 1.7.1 модуля Az.Resources.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-192">This will result in being unable to import  version 1.1.2 of the ‘Az.Batch’ module when version 1.7.1 of the ‘Az.Resources’ module is imported.</span></span>  <span data-ttu-id="e0c6c-193">Чтобы исправить эту проблему, обновите модуль Az.Batch до версии 2.0.1 или более поздней либо просто установите последнюю версию модуля Az.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-193">To fix this issue, update the ‘Az.Batch’ module to version 2.0.1 or greater, or simply install the latest version of the ‘Az’ module.</span></span>
 
-## <a name="servicefabric"></a><span data-ttu-id="22291-194">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="22291-194">ServiceFabric</span></span>
+## <a name="servicefabric"></a><span data-ttu-id="e0c6c-194">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="e0c6c-194">ServiceFabric</span></span>
 
 ### `Add-ServiceFabricApplicationCertificate`
-<span data-ttu-id="22291-195">Удален командлет `Add-ServiceFabricApplicationCertificate`, так как этот сценарий выполняется командлетом `Add-AzVmssSecret`.</span><span class="sxs-lookup"><span data-stu-id="22291-195">Removed `Add-ServiceFabricApplicationCertificate` as this scenario is covered by `Add-AzVmssSecret`.</span></span>
+<span data-ttu-id="e0c6c-195">Удален командлет `Add-ServiceFabricApplicationCertificate`, так как этот сценарий выполняется командлетом `Add-AzVmssSecret`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-195">Removed `Add-ServiceFabricApplicationCertificate` as this scenario is covered by `Add-AzVmssSecret`.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-196">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-196">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-196">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-196">Before</span></span>
 ```powershell
 Add-AzServiceFabricApplicationCertificate -ResourceGroupName "Group1" -Name "Contoso01SFCluster" -SecretIdentifier "http://keyVaultName.vault.contoso.net/secrets/secretName/secretVersion"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-197">После</span><span class="sxs-lookup"><span data-stu-id="22291-197">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-197">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-197">After</span></span>
 ```powershell
 $Vault = Get-AzKeyVault -VaultName "ContosoVault"
 $CertConfig = New-AzVmssVaultCertificateConfig -CertificateUrl "http://keyVaultName.vault.contoso.net/secrets/secretName/secretVersion" -CertificateStore "Certificates"
@@ -362,22 +363,22 @@ Add-AzVmssSecret -VirtualMachineScaleSet $VMSS -SourceVaultId $Vault.ResourceId 
 ```
 
 
-## <a name="sql"></a><span data-ttu-id="22291-198">SQL</span><span class="sxs-lookup"><span data-stu-id="22291-198">Sql</span></span>
+## <a name="sql"></a><span data-ttu-id="e0c6c-198">SQL</span><span class="sxs-lookup"><span data-stu-id="e0c6c-198">Sql</span></span>
 
 ### `Get-AzSqlDatabaseSecureConnectionPolicy`
-<span data-ttu-id="22291-199">Обратите внимание, что функция безопасного подключения считается устаревшей, поэтому команда удалена.</span><span class="sxs-lookup"><span data-stu-id="22291-199">Note that secure connection is deprecated and so command is removed.</span></span> <span data-ttu-id="22291-200">Чтобы просмотреть строки подключения, используйте колонку базы данных SQL на портале Azure.</span><span class="sxs-lookup"><span data-stu-id="22291-200">Please use the SQL database blade in the Azure portal to view the connection strings</span></span>
+<span data-ttu-id="e0c6c-199">Обратите внимание, что функция безопасного подключения считается устаревшей, поэтому команда удалена.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-199">Note that secure connection is deprecated and so command is removed.</span></span> <span data-ttu-id="e0c6c-200">Чтобы просмотреть строки подключения, используйте колонку базы данных SQL на портале Azure.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-200">Please use the SQL database blade in the Azure portal to view the connection strings</span></span>
 
 ### `Get-AzSqlDatabaseIndexRecommendations`
-<span data-ttu-id="22291-201">Псевдоним `Get-AzSqlDatabaseIndexRecommendations` удален.</span><span class="sxs-lookup"><span data-stu-id="22291-201">`Get-AzSqlDatabaseIndexRecommendations` alias is removed.</span></span> <span data-ttu-id="22291-202">Используйте вместо этого `Get-AzSqlDatabaseIndexRecommendation`.</span><span class="sxs-lookup"><span data-stu-id="22291-202">Use `Get-AzSqlDatabaseIndexRecommendation` instead.</span></span>
+<span data-ttu-id="e0c6c-201">Псевдоним `Get-AzSqlDatabaseIndexRecommendations` удален.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-201">`Get-AzSqlDatabaseIndexRecommendations` alias is removed.</span></span> <span data-ttu-id="e0c6c-202">Используйте вместо этого `Get-AzSqlDatabaseIndexRecommendation`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-202">Use `Get-AzSqlDatabaseIndexRecommendation` instead.</span></span>
 
 ### `Get-AzSqlDatabaseRestorePoints`
-<span data-ttu-id="22291-203">Псевдоним `Get-AzSqlDatabaseRestorePoints` удален.</span><span class="sxs-lookup"><span data-stu-id="22291-203">`Get-AzSqlDatabaseRestorePoints` alias is removed.</span></span> <span data-ttu-id="22291-204">Используйте вместо этого `Get-AzSqlDatabaseRestorePoint`.</span><span class="sxs-lookup"><span data-stu-id="22291-204">Use `Get-AzSqlDatabaseRestorePoint` instead.</span></span>
+<span data-ttu-id="e0c6c-203">Псевдоним `Get-AzSqlDatabaseRestorePoints` удален.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-203">`Get-AzSqlDatabaseRestorePoints` alias is removed.</span></span> <span data-ttu-id="e0c6c-204">Используйте вместо этого `Get-AzSqlDatabaseRestorePoint`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-204">Use `Get-AzSqlDatabaseRestorePoint` instead.</span></span>
 
 ### `Get-AzSqlDatabaseAuditing`
-- <span data-ttu-id="22291-205">Этот командлет заменен командлетом `Get-AzSqlDatabaseAudit`.</span><span class="sxs-lookup"><span data-stu-id="22291-205">The cmdlet `Get-AzSqlDatabaseAudit` is replacing this cmdlet.</span></span>
-- <span data-ttu-id="22291-206">Существующий тип выходных данных Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel заменяется новым типом Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseAuditingSettingsModel и удаляются свойства `AuditState`, `StorageAccountName`</span><span class="sxs-lookup"><span data-stu-id="22291-206">The output type is changing from the existing type :'Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel' to the new type :'Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseAuditingSettingsModel', removing properties `AuditState` and `StorageAccountName`.</span></span> <span data-ttu-id="22291-207">и `StorageAccountSubscriptionId`.</span><span class="sxs-lookup"><span data-stu-id="22291-207">and `StorageAccountSubscriptionId`.</span></span>  <span data-ttu-id="22291-208">Скрипты могут получать сведения об учетной записи хранения с помощью нового свойства `StorageAccountResourceId`.</span><span class="sxs-lookup"><span data-stu-id="22291-208">Scripts can retrieve storage account information from the new `StorageAccountResourceId` property.</span></span>
+- <span data-ttu-id="e0c6c-205">Этот командлет заменен командлетом `Get-AzSqlDatabaseAudit`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-205">The cmdlet `Get-AzSqlDatabaseAudit` is replacing this cmdlet.</span></span>
+- <span data-ttu-id="e0c6c-206">Существующий тип выходных данных Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel заменяется новым типом Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseAuditingSettingsModel и удаляются свойства `AuditState`, `StorageAccountName`</span><span class="sxs-lookup"><span data-stu-id="e0c6c-206">The output type is changing from the existing type :'Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel' to the new type :'Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseAuditingSettingsModel', removing properties `AuditState` and `StorageAccountName`.</span></span> <span data-ttu-id="e0c6c-207">и `StorageAccountSubscriptionId`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-207">and `StorageAccountSubscriptionId`.</span></span>  <span data-ttu-id="e0c6c-208">Скрипты могут получать сведения об учетной записи хранения с помощью нового свойства `StorageAccountResourceId`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-208">Scripts can retrieve storage account information from the new `StorageAccountResourceId` property.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-209">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-209">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-209">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-209">Before</span></span>
 ```powershell
 PS C:\> Get-AzSqlDatabaseAuditing -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01"
 DatabaseName                 : database01
@@ -394,7 +395,7 @@ StorageAccountSubscriptionId : 7fe3301d-31d3-4668-af5e-211a890ba6e3
 PredicateExpression          : statement <> 'select 1'
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-210">После</span><span class="sxs-lookup"><span data-stu-id="22291-210">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-210">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-210">After</span></span>
 ```powershell
 PS C:\> Get-AzSqlDatabaseAudit -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01"
 ServerName                          : server01
@@ -416,24 +417,24 @@ WorkspaceResourceId                 : "/subscriptions/4b9e8510-67ab-4e9a-95a9-e2
 ```
 
 ### `Set-AzSqlDatabaseAuditing`
-- <span data-ttu-id="22291-211">Этот командлет заменен командлетом `Set-AzSqlDatabaseAudit`.</span><span class="sxs-lookup"><span data-stu-id="22291-211">The cmdlet `Set-AzSqlDatabaseAudit` is replacing this cmdlet.</span></span>
-- <span data-ttu-id="22291-212">Существующий тип выходных данных Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel заменяется новым типом: bool.</span><span class="sxs-lookup"><span data-stu-id="22291-212">The output type is changing from the existing type :'Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel' to the new type :'bool'</span></span>
+- <span data-ttu-id="e0c6c-211">Этот командлет заменен командлетом `Set-AzSqlDatabaseAudit`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-211">The cmdlet `Set-AzSqlDatabaseAudit` is replacing this cmdlet.</span></span>
+- <span data-ttu-id="e0c6c-212">Существующий тип выходных данных Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel заменяется новым типом: bool.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-212">The output type is changing from the existing type :'Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel' to the new type :'bool'</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-213">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-213">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-213">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-213">Before</span></span>
 ```powershell
 Set-AzSqlDatabaseAuditing -State Enabled -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -StorageAccountName "Storage22" -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-214">После</span><span class="sxs-lookup"><span data-stu-id="22291-214">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-214">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-214">After</span></span>
 ```powershell
 Set-AzSqlDatabaseAudit -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -BlobStorageTargetState Enabled -StorageAccountResourceId "/subscriptions/7fe3301d-31d3-4668-af5e-211a890ba6e3/resourceGroups/resourcegroup01/providers/Microsoft.Storage/storageAccounts/mystorage"
 ```
 
 ### `Get-AzSqlServerAuditing`
-- <span data-ttu-id="22291-215">Этот командлет заменен командлетом `Get-AzSqlServerAudit`.</span><span class="sxs-lookup"><span data-stu-id="22291-215">The cmdlet `Get-AzSqlServerAudit` is replacing this cmdlet.</span></span>
-- <span data-ttu-id="22291-216">Существующий тип выходных данных Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel заменяется новым типом Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseAuditingSettingsModel.</span><span class="sxs-lookup"><span data-stu-id="22291-216">The output type is changing from the existing type :'Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel' to the new type :'Microsoft.Azure.Commands.Sql.Auditing.Model.ServerAuditingSettingsModel'.</span></span>  <span data-ttu-id="22291-217">Свойства `AuditState`, `StorageAccountName` и `StorageAccountSubscriptionId` удалены.</span><span class="sxs-lookup"><span data-stu-id="22291-217">Properties `AuditState`, `StorageAccountName`, and `StorageAccountSubscriptionId` are removed.</span></span>  <span data-ttu-id="22291-218">Скрипты, использующие свойство `StorageAccountName` и `StorageAccountSubscriptionId`, могут получить эту информацию с помощью нового свойства `StorageAccountResourceId`.</span><span class="sxs-lookup"><span data-stu-id="22291-218">Scripts that use `StorageAccountName` and `StorageAccountSubscriptionId` proeprties can retrieve this information from the new `StorageAccountResourceId` property.</span></span>
+- <span data-ttu-id="e0c6c-215">Этот командлет заменен командлетом `Get-AzSqlServerAudit`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-215">The cmdlet `Get-AzSqlServerAudit` is replacing this cmdlet.</span></span>
+- <span data-ttu-id="e0c6c-216">Существующий тип выходных данных Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel заменяется новым типом Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseAuditingSettingsModel.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-216">The output type is changing from the existing type :'Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel' to the new type :'Microsoft.Azure.Commands.Sql.Auditing.Model.ServerAuditingSettingsModel'.</span></span>  <span data-ttu-id="e0c6c-217">Свойства `AuditState`, `StorageAccountName` и `StorageAccountSubscriptionId` удалены.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-217">Properties `AuditState`, `StorageAccountName`, and `StorageAccountSubscriptionId` are removed.</span></span>  <span data-ttu-id="e0c6c-218">Скрипты, использующие свойство `StorageAccountName` и `StorageAccountSubscriptionId`, могут получить эту информацию с помощью нового свойства `StorageAccountResourceId`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-218">Scripts that use `StorageAccountName` and `StorageAccountSubscriptionId` proeprties can retrieve this information from the new `StorageAccountResourceId` property.</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-219">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-219">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-219">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-219">Before</span></span>
 ```powershell
 PS C:\> Get-AzSqlServerAuditing -ResourceGroupName "resourcegroup01" -ServerName "server01"
 AuditActionGroup             : {SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP, FAILED_DATABASE_AUTHENTICATION_GROUP, BATCH_COMPLETED_GROUP, ...}
@@ -447,7 +448,7 @@ StorageAccountSubscriptionId : 7fe3301d-31d3-4668-af5e-211a890ba6e3
 PredicateExpression          : statement <> 'select 1'
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-220">После</span><span class="sxs-lookup"><span data-stu-id="22291-220">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-220">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-220">After</span></span>
 ```powershell
 PS C:\> Get-AzSqlServerAudit -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ServerName                          : server01
@@ -466,101 +467,101 @@ WorkspaceResourceId                 : "/subscriptions/4b9e8510-67ab-4e9a-95a9-e2
 ```
 
 ### `Set-AzSqlServerAuditing`
-- <span data-ttu-id="22291-221">Этот командлет заменен командлетом `Set-AzSqlServerAudit`.</span><span class="sxs-lookup"><span data-stu-id="22291-221">The cmdlet `Set-AzSqlServerAudit` is replacing this cmdlet.</span></span>
-- <span data-ttu-id="22291-222">Существующий тип выходных данных Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel заменяется новым типом: bool.</span><span class="sxs-lookup"><span data-stu-id="22291-222">The output type is changing from the existing type :'Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel' to the new type :'bool'</span></span>
+- <span data-ttu-id="e0c6c-221">Этот командлет заменен командлетом `Set-AzSqlServerAudit`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-221">The cmdlet `Set-AzSqlServerAudit` is replacing this cmdlet.</span></span>
+- <span data-ttu-id="e0c6c-222">Существующий тип выходных данных Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel заменяется новым типом: bool.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-222">The output type is changing from the existing type :'Microsoft.Azure.Commands.Sql.Auditing.Model.DatabaseBlobAuditingSettingsModel' to the new type :'bool'</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-223">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-223">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-223">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-223">Before</span></span>
 ```powershell
 Set-AzSqlServerAuditing -State Enabled -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -StorageAccountName "Storage22"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-224">После</span><span class="sxs-lookup"><span data-stu-id="22291-224">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-224">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-224">After</span></span>
 ```powershell
 PS C:\> Set-AzSqlServerAudit -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -BlobStorageTargetState Enabled -StorageAccountResourceId "/subscriptions/7fe3301d-31d3-4668-af5e-211a890ba6e3/resourceGroups/resourcegroup01/providers/Microsoft.Storage/storageAccounts/mystorage"
 ```
 
 ### `Get-AzSqlServerAdvancedThreatProtectionSettings`
-<span data-ttu-id="22291-225">Командлет `Get-AzSqlServerAdvancedThreatProtectionSettings` заменен командлетом `Get-AzSqlServerAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-225">Cmdlet `Get-AzSqlServerAdvancedThreatProtectionSettings` is replaced by `Get-AzSqlServerAdvancedThreatProtectionSetting`</span></span>
+<span data-ttu-id="e0c6c-225">Командлет `Get-AzSqlServerAdvancedThreatProtectionSettings` заменен командлетом `Get-AzSqlServerAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-225">Cmdlet `Get-AzSqlServerAdvancedThreatProtectionSettings` is replaced by `Get-AzSqlServerAdvancedThreatProtectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-226">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-226">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-226">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-226">Before</span></span>
 ```powershell
 Get-AzSqlServerAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-227">После</span><span class="sxs-lookup"><span data-stu-id="22291-227">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-227">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-227">After</span></span>
 ```powershell
 Get-AzSqlServerAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ```
 
 ### `Clear-AzSqlServerAdvancedThreatProtectionSettings`
-<span data-ttu-id="22291-228">Командлет `Clear-AzSqlServerAdvancedThreatProtectionSettings` заменен командлетом `Clear-AzSqlServerAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-228">Cmdlet `Clear-AzSqlServerAdvancedThreatProtectionSettings` is replaced by `Clear-AzSqlServerAdvancedThreatProtectionSetting`</span></span>
+<span data-ttu-id="e0c6c-228">Командлет `Clear-AzSqlServerAdvancedThreatProtectionSettings` заменен командлетом `Clear-AzSqlServerAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-228">Cmdlet `Clear-AzSqlServerAdvancedThreatProtectionSettings` is replaced by `Clear-AzSqlServerAdvancedThreatProtectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-229">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-229">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-229">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-229">Before</span></span>
 ```powershell
 Clear-AzSqlServerAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-230">После</span><span class="sxs-lookup"><span data-stu-id="22291-230">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-230">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-230">After</span></span>
 ```powershell
 Clear-AzSqlServerAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ```
 
 ### `Update-AzSqlServerAdvancedThreatProtectionSettings`
-<span data-ttu-id="22291-231">Командлет `Update-AzSqlServerAdvancedThreatProtectionSettings` заменен командлетом `Update-AzSqlServerAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-231">Cmdlet `Update-AzSqlServerAdvancedThreatProtectionSettings` is replaced by `Update-AzSqlServerAdvancedThreatProtectionSetting`</span></span>
+<span data-ttu-id="e0c6c-231">Командлет `Update-AzSqlServerAdvancedThreatProtectionSettings` заменен командлетом `Update-AzSqlServerAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-231">Cmdlet `Update-AzSqlServerAdvancedThreatProtectionSettings` is replaced by `Update-AzSqlServerAdvancedThreatProtectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-232">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-232">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-232">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-232">Before</span></span>
 ```powershell
 Update-AzSqlServerAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability","SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-233">После</span><span class="sxs-lookup"><span data-stu-id="22291-233">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-233">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-233">After</span></span>
 ```powershell
 Update-AzSqlServerAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability","SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
 ### `Get-AzSqlDatabaseAdvancedThreatProtectionSettings`
-<span data-ttu-id="22291-234">Командлет `Get-AzSqlDatabaseAdvancedThreatProtectionSettings` заменен командлетом `Get-AzSqlDatabaseAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-234">Cmdlet `Get-AzSqlDatabaseAdvancedThreatProtectionSettings` is replaced by `Get-AzSqlDatabaseAdvancedThreatProtectionSetting`</span></span>
+<span data-ttu-id="e0c6c-234">Командлет `Get-AzSqlDatabaseAdvancedThreatProtectionSettings` заменен командлетом `Get-AzSqlDatabaseAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-234">Cmdlet `Get-AzSqlDatabaseAdvancedThreatProtectionSettings` is replaced by `Get-AzSqlDatabaseAdvancedThreatProtectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-235">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-235">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-235">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-235">Before</span></span>
 ```powershell
 Get-AzSqlDatabaseAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-236">После</span><span class="sxs-lookup"><span data-stu-id="22291-236">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-236">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-236">After</span></span>
 ```powershell
 Get-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 ```
 
 ### `Update-AzSqlDatabaseAdvancedThreatProtectionSettings`
-<span data-ttu-id="22291-237">Командлет `Update-AzSqlDatabaseAdvancedThreatProtectionSettings` заменен командлетом `Update-AzSqlDatabaseAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-237">Cmdlet `Update-AzSqlDatabaseAdvancedThreatProtectionSettings` is repleaced by `Update-AzSqlDatabaseAdvancedThreatProtectionSetting`</span></span>
+<span data-ttu-id="e0c6c-237">Командлет `Update-AzSqlDatabaseAdvancedThreatProtectionSettings` заменен командлетом `Update-AzSqlDatabaseAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-237">Cmdlet `Update-AzSqlDatabaseAdvancedThreatProtectionSettings` is repleaced by `Update-AzSqlDatabaseAdvancedThreatProtectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-238">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-238">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-238">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-238">Before</span></span>
 ```powershell
 Update-AzSqlDatabaseAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability", "SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-239">После</span><span class="sxs-lookup"><span data-stu-id="22291-239">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-239">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-239">After</span></span>
 ```powershell
 Update-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability", "SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
 ### `Clear-AzSqlDatabaseAdvancedThreatProtectionSettings`
-<span data-ttu-id="22291-240">Командлет `Clear-AzSqlDatabaseAdvancedThreatProtectionSettings` заменен командлетом `Clear-AzSqlDatabaseAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-240">Cmdlet `Clear-AzSqlDatabaseAdvancedThreatProtectionSettings` is repleaced by `Clear-AzSqlDatabaseAdvancedThreatProtectionSetting`</span></span>
+<span data-ttu-id="e0c6c-240">Командлет `Clear-AzSqlDatabaseAdvancedThreatProtectionSettings` заменен командлетом `Clear-AzSqlDatabaseAdvancedThreatProtectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-240">Cmdlet `Clear-AzSqlDatabaseAdvancedThreatProtectionSettings` is repleaced by `Clear-AzSqlDatabaseAdvancedThreatProtectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-241">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-241">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-241">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-241">Before</span></span>
 ```powershell
 Clear-AzSqlDatabaseAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-242">После</span><span class="sxs-lookup"><span data-stu-id="22291-242">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-242">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-242">After</span></span>
 ```powershell
 Clear-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 ```
 
 ### `Update-AzSqlDatabaseVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-243">Командлет `Update-AzSqlDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Update-AzSqlDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-243">Cmdlet `Update-AzSqlDatabaseVulnerabilityAssessmentSettings` is repleaced by `Update-AzSqlDatabaseVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-243">Командлет `Update-AzSqlDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Update-AzSqlDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-243">Cmdlet `Update-AzSqlDatabaseVulnerabilityAssessmentSettings` is repleaced by `Update-AzSqlDatabaseVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-244">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-244">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-244">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-244">Before</span></span>
 ```powershell
 Update-AzSqlDatabaseVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01"`
@@ -573,7 +574,7 @@ Update-AzSqlDatabaseVulnerabilityAssessmentSettings `
     -NotificationEmail @("mail1@mail.com" , "mail2@mail.com")
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-245">После</span><span class="sxs-lookup"><span data-stu-id="22291-245">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-245">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-245">After</span></span>
 ```powershell
 Update-AzSqlDatabaseVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01"`
@@ -588,9 +589,9 @@ Update-AzSqlDatabaseVulnerabilityAssessmentSetting `
 
 
 ### `Get-AzSqlDatabaseVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-246">Командлет `Get-AzSqlDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Get-AzSqlDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-246">Cmdlet `Get-AzSqlDatabaseVulnerabilityAssessmentSettings` is repleaced by `Get-AzSqlDatabaseVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-246">Командлет `Get-AzSqlDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Get-AzSqlDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-246">Cmdlet `Get-AzSqlDatabaseVulnerabilityAssessmentSettings` is repleaced by `Get-AzSqlDatabaseVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-247">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-247">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-247">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-247">Before</span></span>
 ```powershell
 Get-AzSqlDatabaseVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01" `
@@ -598,7 +599,7 @@ Get-AzSqlDatabaseVulnerabilityAssessmentSettings `
     -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-248">После</span><span class="sxs-lookup"><span data-stu-id="22291-248">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-248">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-248">After</span></span>
 ```powershell
 Get-AzSqlDatabaseVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01" `
@@ -607,9 +608,9 @@ Get-AzSqlDatabaseVulnerabilityAssessmentSetting `
 ```
 
 ### `Clear-AzSqlDatabaseVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-249">Командлет `Clear-AzSqlDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Clear-AzSqlDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-249">Cmdlet `Clear-AzSqlDatabaseVulnerabilityAssessmentSettings` is repleaced by `Clear-AzSqlDatabaseVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-249">Командлет `Clear-AzSqlDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Clear-AzSqlDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-249">Cmdlet `Clear-AzSqlDatabaseVulnerabilityAssessmentSettings` is repleaced by `Clear-AzSqlDatabaseVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-250">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-250">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-250">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-250">Before</span></span>
 ```powershell
 Clear-AzSqlDatabaseVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01" `
@@ -617,7 +618,7 @@ Clear-AzSqlDatabaseVulnerabilityAssessmentSettings `
     -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-251">После</span><span class="sxs-lookup"><span data-stu-id="22291-251">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-251">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-251">After</span></span>
 ```powershell
 Clear-AzSqlDatabaseVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01" `
@@ -626,9 +627,9 @@ Clear-AzSqlDatabaseVulnerabilityAssessmentSetting `
 ```
 
 ### `Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-252">Командлет `Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-252">Cmdlet `Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` is repleaced by `Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-252">Командлет `Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-252">Cmdlet `Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` is repleaced by `Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-253">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-253">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-253">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-253">Before</span></span>
 ```powershell
 Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01" `
@@ -641,7 +642,7 @@ Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings `
     -NotificationEmail @("mail1@mail.com" , "mail2@mail.com")
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-254">После</span><span class="sxs-lookup"><span data-stu-id="22291-254">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-254">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-254">After</span></span>
 ```powershell
 Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01" `
@@ -655,9 +656,9 @@ Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting `
 ```
 
 ### `Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-255">Командлет `Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-255">Cmdlet `Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` is repleaced by `Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-255">Командлет `Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-255">Cmdlet `Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` is repleaced by `Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-256">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-256">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-256">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-256">Before</span></span>
 ```powershell
 Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01" `
@@ -665,7 +666,7 @@ Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings `
     -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-257">После</span><span class="sxs-lookup"><span data-stu-id="22291-257">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-257">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-257">After</span></span>
 ```powershell
 Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01" `
@@ -674,9 +675,9 @@ Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting `
 ```
 
 ### `Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-258">Командлет `Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-258">Cmdlet `Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` is repleaced by `Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-258">Командлет `Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` заменен командлетом `Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-258">Cmdlet `Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings` is repleaced by `Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-259">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-259">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-259">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-259">Before</span></span>
 ```powershell
 Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01" `
@@ -684,7 +685,7 @@ Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSettings `
     -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-260">После</span><span class="sxs-lookup"><span data-stu-id="22291-260">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-260">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-260">After</span></span>
 ```powershell
 Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01" `
@@ -693,9 +694,9 @@ Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting `
 ```
 
 ### `Update-AzSqlInstanceVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-261">Командлет `Update-AzSqlInstanceVulnerabilityAssessmentSettings` заменен командлетом `Update-AzSqlInstanceVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-261">Cmdlet `Update-AzSqlInstanceVulnerabilityAssessmentSettings` is repleaced by `Update-AzSqlInstanceVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-261">Командлет `Update-AzSqlInstanceVulnerabilityAssessmentSettings` заменен командлетом `Update-AzSqlInstanceVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-261">Cmdlet `Update-AzSqlInstanceVulnerabilityAssessmentSettings` is repleaced by `Update-AzSqlInstanceVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-262">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-262">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-262">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-262">Before</span></span>
 ```powershell
 Update-AzSqlInstanceVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01" `
@@ -707,7 +708,7 @@ Update-AzSqlInstanceVulnerabilityAssessmentSettings `
     -NotificationEmail @("mail1@mail.com" , "mail2@mail.com")
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-263">После</span><span class="sxs-lookup"><span data-stu-id="22291-263">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-263">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-263">After</span></span>
 ```powershell
 Update-AzSqlInstanceVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01" `
@@ -720,9 +721,9 @@ Update-AzSqlInstanceVulnerabilityAssessmentSetting `
 ```
 
 ### `Get-AzSqlInstanceVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-264">Командлет `Get-AzSqlInstanceVulnerabilityAssessmentSettings` заменен командлетом `Get-AzSqlInstanceVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-264">Cmdlet `Get-AzSqlInstanceVulnerabilityAssessmentSettings` is repleaced by `Get-AzSqlInstanceVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-264">Командлет `Get-AzSqlInstanceVulnerabilityAssessmentSettings` заменен командлетом `Get-AzSqlInstanceVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-264">Cmdlet `Get-AzSqlInstanceVulnerabilityAssessmentSettings` is repleaced by `Get-AzSqlInstanceVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-265">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-265">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-265">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-265">Before</span></span>
 ```powershell
 Get-AzSqlInstanceVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01" `
@@ -730,7 +731,7 @@ Get-AzSqlInstanceVulnerabilityAssessmentSettings `
     -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-266">После</span><span class="sxs-lookup"><span data-stu-id="22291-266">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-266">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-266">After</span></span>
 ```powershell
 Get-AzSqlInstanceVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01" `
@@ -739,9 +740,9 @@ Get-AzSqlInstanceVulnerabilityAssessmentSetting `
 ```
 
 ### `Clear-AzSqlInstanceVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-267">Командлет `Clear-AzSqlInstanceVulnerabilityAssessmentSettings` заменен командлетом `Clear-AzSqlInstanceVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-267">Cmdlet `Clear-AzSqlInstanceVulnerabilityAssessmentSettings` is repleaced by `Clear-AzSqlInstanceVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-267">Командлет `Clear-AzSqlInstanceVulnerabilityAssessmentSettings` заменен командлетом `Clear-AzSqlInstanceVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-267">Cmdlet `Clear-AzSqlInstanceVulnerabilityAssessmentSettings` is repleaced by `Clear-AzSqlInstanceVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-268">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-268">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-268">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-268">Before</span></span>
 ```powershell
 Clear-AzSqlInstanceVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01" `
@@ -749,7 +750,7 @@ Clear-AzSqlInstanceVulnerabilityAssessmentSettings `
     -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-269">После</span><span class="sxs-lookup"><span data-stu-id="22291-269">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-269">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-269">After</span></span>
 ```powershell
 Clear-AzSqlInstanceVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01" `
@@ -758,9 +759,9 @@ Clear-AzSqlInstanceVulnerabilityAssessmentSetting `
 ```
 
 ### `Update-AzSqlServerVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-270">Командлет `Update-AzSqlServerVulnerabilityAssessmentSettings` заменен командлетом `Update-AzSqlServerVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-270">Cmdlet `Update-AzSqlServerVulnerabilityAssessmentSettings` is repleaced by `Update-AzSqlServerVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-270">Командлет `Update-AzSqlServerVulnerabilityAssessmentSettings` заменен командлетом `Update-AzSqlServerVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-270">Cmdlet `Update-AzSqlServerVulnerabilityAssessmentSettings` is repleaced by `Update-AzSqlServerVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-271">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-271">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-271">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-271">Before</span></span>
 ```powershell
 Update-AzSqlServerVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01"`
@@ -772,7 +773,7 @@ Update-AzSqlServerVulnerabilityAssessmentSettings `
     -NotificationEmail @("mail1@mail.com" , "mail2@mail.com")
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-272">После</span><span class="sxs-lookup"><span data-stu-id="22291-272">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-272">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-272">After</span></span>
 ```powershell
 Update-AzSqlServerVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01"`
@@ -785,9 +786,9 @@ Update-AzSqlServerVulnerabilityAssessmentSetting `
 ```
 
 ### `Get-AzSqlServerVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-273">Командлет `Get-AzSqlServerVulnerabilityAssessmentSettings` заменен командлетом `Get-AzSqlServerVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-273">Cmdlet `Get-AzSqlServerVulnerabilityAssessmentSettings` is repleaced by `Get-AzSqlServerVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-273">Командлет `Get-AzSqlServerVulnerabilityAssessmentSettings` заменен командлетом `Get-AzSqlServerVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-273">Cmdlet `Get-AzSqlServerVulnerabilityAssessmentSettings` is repleaced by `Get-AzSqlServerVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-274">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-274">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-274">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-274">Before</span></span>
 ```powershell
 Get-AzSqlServerVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01" `
@@ -795,7 +796,7 @@ Get-AzSqlServerVulnerabilityAssessmentSettings `
     -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-275">После</span><span class="sxs-lookup"><span data-stu-id="22291-275">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-275">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-275">After</span></span>
 ```powershell
 Get-AzSqlServerVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01" `
@@ -804,9 +805,9 @@ Get-AzSqlServerVulnerabilityAssessmentSetting `
 ```
 
 ### `Clear-AzSqlServerVulnerabilityAssessmentSettings`
-<span data-ttu-id="22291-276">Командлет `Clear-AzSqlServerVulnerabilityAssessmentSettings` заменен командлетом `Clear-AzSqlServerVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-276">Cmdlet `Clear-AzSqlServerVulnerabilityAssessmentSettings` is repleaced by `Clear-AzSqlServerVulnerabilityAssessmentSetting`</span></span>
+<span data-ttu-id="e0c6c-276">Командлет `Clear-AzSqlServerVulnerabilityAssessmentSettings` заменен командлетом `Clear-AzSqlServerVulnerabilityAssessmentSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-276">Cmdlet `Clear-AzSqlServerVulnerabilityAssessmentSettings` is repleaced by `Clear-AzSqlServerVulnerabilityAssessmentSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-277">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-277">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-277">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-277">Before</span></span>
 ```powershell
 Clear-AzSqlServerVulnerabilityAssessmentSettings `
     -ResourceGroupName "ResourceGroup01" `
@@ -814,7 +815,7 @@ Clear-AzSqlServerVulnerabilityAssessmentSettings `
     -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-278">После</span><span class="sxs-lookup"><span data-stu-id="22291-278">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-278">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-278">After</span></span>
 ```powershell
 Clear-AzSqlDatabaseVulnerabilityAssessmentSetting `
     -ResourceGroupName "ResourceGroup01" `
@@ -823,12 +824,12 @@ Clear-AzSqlDatabaseVulnerabilityAssessmentSetting `
 ```
 
 ### `Get-AzSqlServerAdvancedThreatProtectionPolicy`
-<span data-ttu-id="22291-279">Командлет `Get-AzSqlServerAdvancedThreatProtectionPolicy` удален. Для него нет замены.</span><span class="sxs-lookup"><span data-stu-id="22291-279">Cmdlet `Get-AzSqlServerAdvancedThreatProtectionPolicy` is deleted and no cmdlet is repleaced it</span></span>
+<span data-ttu-id="e0c6c-279">Командлет `Get-AzSqlServerAdvancedThreatProtectionPolicy` удален. Для него нет замены.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-279">Cmdlet `Get-AzSqlServerAdvancedThreatProtectionPolicy` is deleted and no cmdlet is repleaced it</span></span>
 
 ### `Get-AzSqlServerThreatDetectionPolicy`
-<span data-ttu-id="22291-280">Командлет `Get-AzSqlServerThreatDetectionPolicy` заменен командлетом `Get-AzSqlServerThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-280">Cmdlet `Get-AzSqlServerThreatDetectionPolicy` is repleaced by `Get-AzSqlServerThreatDetectionSetting`</span></span>
+<span data-ttu-id="e0c6c-280">Командлет `Get-AzSqlServerThreatDetectionPolicy` заменен командлетом `Get-AzSqlServerThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-280">Cmdlet `Get-AzSqlServerThreatDetectionPolicy` is repleaced by `Get-AzSqlServerThreatDetectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-281">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-281">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-281">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-281">Before</span></span>
 ```powershell
 PS C:\> Get-AzSqlServerThreatDetectionPolicy -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ResourceGroupName            : ResourceGroup11
@@ -841,7 +842,7 @@ ExcludedDetectionTypes       : {}
 RetentionInDays              : 0
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-282">После</span><span class="sxs-lookup"><span data-stu-id="22291-282">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-282">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-282">After</span></span>
 ```powershell
 PS C:\> Get-AzSqlServerAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ResourceGroupName            : ResourceGroup11
@@ -855,35 +856,35 @@ RetentionInDays              : 0
 ```
 
 ### `Remove-AzSqlServerThreatDetectionPolicy`
-<span data-ttu-id="22291-283">Командлет `Remove-AzSqlServerThreatDetectionPolicy` заменен командлетом `Clear-AzSqlServerThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-283">Cmdlet `Remove-AzSqlServerThreatDetectionPolicy` is repleaced by `Clear-AzSqlServerThreatDetectionSetting`</span></span>
+<span data-ttu-id="e0c6c-283">Командлет `Remove-AzSqlServerThreatDetectionPolicy` заменен командлетом `Clear-AzSqlServerThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-283">Cmdlet `Remove-AzSqlServerThreatDetectionPolicy` is repleaced by `Clear-AzSqlServerThreatDetectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-284">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-284">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-284">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-284">Before</span></span>
 ```powershell
 Remove-AzSqlServerThreatDetectionPolicy -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-285">После</span><span class="sxs-lookup"><span data-stu-id="22291-285">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-285">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-285">After</span></span>
 ```powershell
 Clear-AzSqlServerAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ```
 
 ### `Set-AzSqlServerThreatDetectionPolicy`
-<span data-ttu-id="22291-286">Командлет `Set-AzSqlServerThreatDetectionPolicy` заменен командлетом `Update-AzSqlServerThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-286">Cmdlet `Set-AzSqlServerThreatDetectionPolicy` is repleaced by `Update-AzSqlServerThreatDetectionSetting`</span></span>
+<span data-ttu-id="e0c6c-286">Командлет `Set-AzSqlServerThreatDetectionPolicy` заменен командлетом `Update-AzSqlServerThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-286">Cmdlet `Set-AzSqlServerThreatDetectionPolicy` is repleaced by `Update-AzSqlServerThreatDetectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-287">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-287">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-287">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-287">Before</span></span>
 ```powershell
 Set-AzSqlServerThreatDetectionPolicy -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability","SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-288">После</span><span class="sxs-lookup"><span data-stu-id="22291-288">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-288">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-288">After</span></span>
 ```powershell
 Update-AzSqlServerAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability","SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
 ### `Get-AzSqlDatabaseThreatDetectionPolicy`
-<span data-ttu-id="22291-289">Командлет `Get-AzSqlDatabaseThreatDetectionPolicy` заменен командлетом `Get-AzSqlDatabaseThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-289">Cmdlet `Get-AzSqlDatabaseThreatDetectionPolicy` is repleaced by `Get-AzSqlDatabaseThreatDetectionSetting`</span></span>
+<span data-ttu-id="e0c6c-289">Командлет `Get-AzSqlDatabaseThreatDetectionPolicy` заменен командлетом `Get-AzSqlDatabaseThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-289">Cmdlet `Get-AzSqlDatabaseThreatDetectionPolicy` is repleaced by `Get-AzSqlDatabaseThreatDetectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-290">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-290">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-290">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-290">Before</span></span>
 ```powershell
 PS C:\> Get-AzSqlDatabaseThreatDetectionPolicy -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName   "Database01"
 DatabaseName                 : Database01
@@ -897,7 +898,7 @@ ExcludedDetectionTypes       : {}
 RetentionInDays              : 0
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-291">После</span><span class="sxs-lookup"><span data-stu-id="22291-291">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-291">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-291">After</span></span>
 ```powershell
 PS C:\> Get-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01"   -DatabaseName "Database01"
 DatabaseName                 : Database01
@@ -912,27 +913,27 @@ RetentionInDays              : 0
 ```
 
 ### `Set-AzSqlDatabaseThreatDetectionPolicy`
-<span data-ttu-id="22291-292">Командлет `Set-AzSqlDatabaseThreatDetectionPolicy` заменен командлетом `Update-AzSqlDatabaseThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-292">Cmdlet `Set-AzSqlDatabaseThreatDetectionPolicy` is repleaced by `Update-AzSqlDatabaseThreatDetectionSetting`</span></span>
+<span data-ttu-id="e0c6c-292">Командлет `Set-AzSqlDatabaseThreatDetectionPolicy` заменен командлетом `Update-AzSqlDatabaseThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-292">Cmdlet `Set-AzSqlDatabaseThreatDetectionPolicy` is repleaced by `Update-AzSqlDatabaseThreatDetectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-293">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-293">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-293">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-293">Before</span></span>
 ```powershell
 Set-AzSqlDatabaseThreatDetectionPolicy -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability", "SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-294">После</span><span class="sxs-lookup"><span data-stu-id="22291-294">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-294">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-294">After</span></span>
 ```powershell
 Update-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability", "SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
 ### `Remove-AzSqlDatabaseThreatDetectionPolicy`
-<span data-ttu-id="22291-295">Командлет `Remove-AzSqlDatabaseThreatDetectionPolicy` заменен командлетом `Clear-AzSqlDatabaseThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="22291-295">Cmdlet `Remove-AzSqlDatabaseThreatDetectionPolicy` is repleaced by `Clear-AzSqlDatabaseThreatDetectionSetting`</span></span>
+<span data-ttu-id="e0c6c-295">Командлет `Remove-AzSqlDatabaseThreatDetectionPolicy` заменен командлетом `Clear-AzSqlDatabaseThreatDetectionSetting`.</span><span class="sxs-lookup"><span data-stu-id="e0c6c-295">Cmdlet `Remove-AzSqlDatabaseThreatDetectionPolicy` is repleaced by `Clear-AzSqlDatabaseThreatDetectionSetting`</span></span>
 
-#### <a name="before"></a><span data-ttu-id="22291-296">Перед</span><span class="sxs-lookup"><span data-stu-id="22291-296">Before</span></span>
+#### <a name="before"></a><span data-ttu-id="e0c6c-296">Перед</span><span class="sxs-lookup"><span data-stu-id="e0c6c-296">Before</span></span>
 ```powershell
 Remove-AzSqlDatabaseThreatDetectionPolicy -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 ```
 
-#### <a name="after"></a><span data-ttu-id="22291-297">После</span><span class="sxs-lookup"><span data-stu-id="22291-297">After</span></span>
+#### <a name="after"></a><span data-ttu-id="e0c6c-297">После</span><span class="sxs-lookup"><span data-stu-id="e0c6c-297">After</span></span>
 ```powershell
 Clear-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 ```
