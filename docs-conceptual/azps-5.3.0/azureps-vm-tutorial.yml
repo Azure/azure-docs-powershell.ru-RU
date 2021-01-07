@@ -1,0 +1,376 @@
+### YamlMime:Tutorial
+title: Создание виртуальных машин с помощью Azure PowerShell
+metadata:
+  title: Создание виртуальных машин с помощью Azure PowerShell
+  description: Начните создавать виртуальные машины с помощью Azure PowerShell.
+  audience: Developer
+  level: Beginner
+  displayType: two-column
+  interactive: azurepowershell
+  ms.date: 12/13/2018
+  ms.author: mirobb
+  author: mikefrobbins
+  manager: barbkess
+  ms.devlang: azure-powershell
+  ms.prod: powershell
+  ms.technology: azure-powershell
+  ms.topic: tutorial
+  clicktale: true
+  ms.openlocfilehash: f0a86f5eb970528bd4119f8487f724745a6e044c
+  ms.sourcegitcommit: 68451baa389791703e666d95469602c5652609ee
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 01/05/2021
+  ms.locfileid: "97894169"
+items:
+- durationInMinutes: 1
+  content: >-
+    В этом руководстве описано, как настроить виртуальную машину с помощью Azure PowerShell. Вы также узнаете, как создавать запросы выходных данных, повторно использовать ресурсы Azure и очищать ресурсы.
+
+
+    Для работы с этим руководством вам понадобится интерактивная служба Azure Cloud Shell или вы можете [установить Azure PowerShell](install-az-ps.md) локально.
+
+
+    Используйте клавиши **CTRL+SHIFT+V** (**CMD+SHIFT+V** в macOS), чтобы вставить текст руководства в Azure Cloud Shell.
+- durationInMinutes: 1
+  title: Вход
+  content: >-
+    Если вы используете локальную установку Azure PowerShell, вам нужно войти, прежде чем выполнять какие-либо действия.
+
+
+    ```powershell-interactive
+
+    Connect-AzAccount
+
+    ```
+
+
+    Выполните вход, следуя инструкциям в окне терминала.
+- durationInMinutes: 1
+  title: Создание группы ресурсов
+  content: >-
+    В Azure все ресурсы включаются в одну группу управления ресурсами. Эти группы обеспечивают логическое объединение ресурсов, позволяя работать с ними как с коллекцией.
+
+    В этом руководстве все созданные ресурсы помещаются в одну группу с именем `TutorialResources`.
+
+
+    ```powershell-interactive
+
+    New-AzResourceGroup -Name TutorialResources -Location eastus
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Location          : eastus
+
+    ProvisioningState : Succeeded
+
+    Tags              :
+
+    ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources
+
+    ```
+- durationInMinutes: 1
+  title: Создание учетных данных администратора для виртуальной машины
+  content: >-
+    Перед созданием виртуальной машины необходимо создать объект учетных данных, содержащий имя пользователя и пароль учетной записи администратора виртуальной машины Windows.
+
+
+    ```powershell-interactive
+
+    $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
+
+    ```
+
+
+    Когда отобразится запрос, введите имя пользователя и пароль. Полученный объект учетных данных передается как параметр в следующем шаге.
+
+
+    ```Output
+
+    Windows PowerShell credential request.
+
+    Enter a username and password for the virtual machine.
+
+    User: tutorAdmin
+
+    Password for user tutorAdmin: *********
+
+    ```
+- durationInMinutes: 4
+  title: Создание виртуальной машины
+  content: >-
+    Виртуальные машины в Azure имеют большое число зависимостей. Azure PowerShell создает эти ресурсы на основе указанных аргументов командной строки. Для удобства чтения мы используем [сплаттинг PowerShell](/powershell/module/microsoft.powershell.core/about/about_splatting), чтобы передать параметры в командлеты Azure PowerShell.
+
+
+    Создайте виртуальную машину под управлением Windows.
+
+
+    ```powershell-interactive
+
+    $vmParams = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM1'
+      Location = 'eastus'
+      ImageName = 'Win2016Datacenter'
+      PublicIpAddressName = 'tutorialPublicIp'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM1 = New-AzVM @vmParams
+
+    ```
+
+    При создании виртуальной машины отображаются используемые значения параметров и создаваемые ресурсы Azure.
+
+    В PowerShell отобразится индикатор хода выполнения, как показано ниже.
+
+
+    ```Output
+     Creating Azure resources
+      39% \
+      [ooooooooooooooooooooooooooooooooooo                                                                 ]
+
+      Creating TutorialVM1 virtual machine.
+    ```
+
+
+    Когда виртуальная машина будет создана, мы сможем просмотреть результаты на портале Azure или проверить переменную \$newVM1.
+
+
+    ```powershell-interactive
+
+    $newVM1
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Id                : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM1
+
+    VmId              : 12345678-9abc-def0-1234-56789abcedf0
+
+    Name              : TutorialVM1
+
+    Type              : Microsoft.Compute/virtualMachines
+
+    Location          : eastus
+
+    Tags              : {}
+
+    HardwareProfile   : {VmSize}
+
+    NetworkProfile    : {NetworkInterfaces}
+
+    OSProfile         : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState : Succeeded
+
+    StorageProfile    : {ImageReference, OsDisk, DataDisks}
+
+    ```
+
+
+    Значения свойств, перечисленные внутри фигурных скобок, — это вложенные объекты. В следующем шаге мы просмотрим конкретные значения этих вложенных объектов.
+- durationInMinutes: 5
+  title: Получение сведений о виртуальной машине с помощью запросов
+  content: >-
+    Давайте получим более подробные сведения о созданной виртуальной машине. В этом примере мы проверим имя виртуальной машины и созданную учетную запись администратора.
+
+
+    ```powershell-interactive
+
+    $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
+
+    ```
+
+
+    ```Output
+
+    ComputerName AdminUsername
+
+    ------------ -------------
+
+    TutorialVM1  tutorialAdmin
+
+    ```
+
+
+    Мы можем использовать и другие команды Azure PowerShell, чтобы получить конкретные сведения о конфигурации сети.
+
+
+    ```powershell-interactive
+
+    $newVM1 | Get-AzNetworkInterface |
+      Select-Object -ExpandProperty IpConfigurations |
+        Select-Object Name,PrivateIpAddress
+    ```
+
+
+    В этом примере мы используем конвейер PowerShell, чтобы отправить объект \$newVM1 в командлет `Get-AzNetworkInterface`. Из результирующего объекта сетевого интерфейса мы выбираем вложенный объект IpConfigurations. Из объекта IpConfigurations мы выбираем свойства Name и PrivateIpAddress.
+
+
+    ```Output
+
+    Name        PrivateIpAddress
+
+    ----        ----------------
+
+    TutorialVM1 192.168.1.4
+
+    ```
+
+
+    Чтобы убедиться, что виртуальная машина запущена, необходимо подключиться через удаленный рабочий стол. Для этого необходимо знать общедоступный IP-адрес.
+
+
+    ```powershell-interactive
+
+    $publicIp = Get-AzPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
+
+
+    $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
+
+    ```
+
+
+    В этом примере мы используем `Get-AzPublicIpAddress` и помещаем результаты в переменную \$publicIp. Из этой переменной мы выбираем свойства и используем выражение, чтобы получить вложенное свойство Fqdn.
+
+
+    ```Output
+
+    Name             IpAddress           FQDN
+
+    ----             ---------           ----
+
+    tutorialPublicIp <PUBLIC_IP_ADDRESS> tutorialvm1-8a0999.eastus.cloudapp.azure.com
+
+    ```
+
+
+    С локального компьютера можно выполнить следующую команду для подключения к виртуальной машине через удаленный рабочий стол.
+
+
+    ```powershell-interactive
+
+    mstsc.exe /v <PUBLIC_IP_ADDRESS>
+
+    ```
+
+
+    См. дополнительные сведения о [запрашивании свойств объектов Azure](./queries-azureps.md).
+- durationInMinutes: 4
+  title: Создание виртуальной машины в существующей подсети
+  content: >-
+    Вторая виртуальная машина использует существующую подсеть.
+
+
+    ```powershell-interactive
+
+    $vm2Params = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM2'
+      ImageName = 'Win2016Datacenter'
+      VirtualNetworkName = 'TutorialVM1'
+      SubnetName = 'TutorialVM1'
+      PublicIpAddressName = 'tutorialPublicIp2'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM2 = New-AzVM @vm2Params
+
+
+    $newVM2
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName        : TutorialResources
+
+    Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM2
+
+    VmId                     : 12345678-9abc-def0-1234-56789abcedf1
+
+    Name                     : TutorialVM2
+
+    Type                     : Microsoft.Compute/virtualMachines
+
+    Location                 : eastus
+
+    Tags                     : {}
+
+    HardwareProfile          : {VmSize}
+
+    NetworkProfile           : {NetworkInterfaces}
+
+    OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState        : Succeeded
+
+    StorageProfile           : {ImageReference, OsDisk, DataDisks}
+
+    FullyQualifiedDomainName : tutorialvm2-dfa5af.eastus.cloudapp.azure.com
+
+    ```
+
+
+    Вы можете пропустить несколько шагов, чтобы получить общедоступный IP-адрес новой виртуальной машины, так как он возвращается в свойстве FullyQualifiedDomainName объекта \$newVM2. Используйте следующую команду для подключения с помощью удаленного рабочего стола.
+
+
+    ```powershell-interactive
+
+    mstsc.exe /v $newVM2.FullyQualifiedDomainName
+
+    ```
+- durationInMinutes: 4
+  title: Очистка
+  content: >-
+    Теперь, когда вы завершили работу с этим руководством, можно очистить созданные ресурсы. Вы можете удалить отдельные ресурсы с помощью команды `Remove-AzResource`. Но безопаснее будет удалить все ресурсы в группе ресурсов, удалив саму группу с помощью команды `Remove-AzResourceGroup`.
+
+
+    ```powershell-interactive
+
+    $job = Remove-AzResourceGroup -Name TutorialResources -Force -AsJob
+
+
+    $job
+
+    ```
+
+
+    ```Output
+
+    Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+
+    --     ----            -------------   -----         -----------     --------             -------
+
+    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzResource...
+
+    ```
+
+
+    Эта команда удаляет ресурсы, созданные при работе с руководством, и гарантированно удаляет их в правильном порядке. Параметр `-AsJob` предотвращает блокировку PowerShell в ходе удаления. Чтобы дождаться завершения удаления, используйте следующую команду:
+
+
+    ```powershell-interactive
+
+    Wait-Job -Id $job.Id
+
+    ```
+
+
+    Очистка ресурсов — это последнее действие в рамках этого руководства. Теперь еще раз вкратце повторите все, о чем вы узнали. Также вы можете воспользоваться ссылками на ресурсы, которые помогут вам перейти к дальнейшим действиям.
+- durationInMinutes: 1
+  title: Сводка
+  content: "\nПоздравляем! Вы узнали, как создавать виртуальные машины с новыми или существующими ресурсами, использовать выражения и другие команды Azure PowerShell для записи данных в переменные оболочки, а также выполнять поиск некоторых ресурсов, которые создаются для виртуальных машин Azure.\n\nВаши дальнейшие действия будут зависеть от того, для чего вы планируете использовать Azure PowerShell. Доступно множество материалов, которые подробно описывают использование компонентов, рассматриваемых в этом руководстве.\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>Подробная документация по Azure PowerShell\n\nИзучение полной [документации по Azure PowerShell](/powershell/azure/new-azureps-module-az?view=azps-4.1.0) может занять какое-то время.\n\nДополнительные сведения о командах, используемых в этом руководстве, см. в следующих ресурсах.\n\n- [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzVM](/powershell/module/Az.compute/new-Azvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzPublicIpAddress](/powershell/module/Az.network/get-AzPublicIpAddress)\n- [Remove-AzResourceGroup](/powershell/module/Az.resources/Remove-AzResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\nНиже также приведены ресурсы с подробным описание функций, рассматриваемых в этом руководстве.\n\n- [Сплаттинг PowerShell](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [Запросы](queries-azureps.md)\n- [Форматирование](formatting-output.md)\n- [Использование заданий PowerShell](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>Примеры сценариев\n\nЕсли вы хотите начать работу с определенными задачами прямо сейчас, изучите некоторые примеры скриптов.\n\n- [Виртуальные машины Linux](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Виртуальные машины Windows](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Веб-приложения](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Базы данных SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [База данных Cosmos](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>Отзывы\n\nЧтобы оставить отзыв, поделиться предложениями или задать вопросы, вы можете связаться с нами разными способами.\n\n* `Send-Feedback` — это встроенная команда Azure PowerShell, которая позволяет отправить отзыв команде в свободной форме.\n* Можно оставить запрос функции или сообщение об ошибке в [хранилище Azure PowerShell](https://github.com/Azure/azure-powershell/issues).\n* Кроме того, задать вопрос или получить разъяснение можно в [репозитории с документацией Azure PowerShell](https://github.com/MicrosoftDocs/azure-docs-powershell/issues).\n\nМы надеемся, что вам понравится работать с Azure PowerShell!"
