@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
-ms.openlocfilehash: 6d268c2378c93bcfb98e64c654880e8055bcede8
-ms.sourcegitcommit: 68451baa389791703e666d95469602c5652609ee
+ms.openlocfilehash: e7c77dc4daf38634e7661f4579dd5bbcc81d0443
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "98505233"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251834"
 ---
-# <span data-ttu-id="d875f-101">New-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="d875f-101">New-AzADServicePrincipal</span></span>
+# <span data-ttu-id="7c59f-101">New-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="7c59f-101">New-AzADServicePrincipal</span></span>
 
-## <span data-ttu-id="d875f-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="d875f-102">SYNOPSIS</span></span>
-<span data-ttu-id="d875f-103">Создает новую главную службу Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="d875f-103">Creates a new Azure active directory service principal.</span></span>
+## <span data-ttu-id="7c59f-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="7c59f-102">SYNOPSIS</span></span>
+<span data-ttu-id="7c59f-103">Создает новую главную службу Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="7c59f-103">Creates a new Azure active directory service principal.</span></span>
 
-## <span data-ttu-id="d875f-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="d875f-104">SYNTAX</span></span>
+## <span data-ttu-id="7c59f-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="7c59f-104">SYNTAX</span></span>
 
-### <span data-ttu-id="d875f-105">SimpleParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="d875f-105">SimpleParameterSet (Default)</span></span>
+### <span data-ttu-id="7c59f-105">SimpleParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="7c59f-105">SimpleParameterSet (Default)</span></span>
 
 ```
 New-AzADServicePrincipal [-ApplicationId <Guid>] [-DisplayName <String>] [-StartDate <DateTime>]
@@ -28,118 +28,118 @@ New-AzADServicePrincipal [-ApplicationId <Guid>] [-DisplayName <String>] [-Start
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-106">ApplicationWithoutCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-106">ApplicationWithoutCredentialParameterSet</span></span>
+### <span data-ttu-id="7c59f-106">ApplicationWithoutCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-106">ApplicationWithoutCredentialParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -ApplicationId <Guid> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-107">ApplicationWithPasswordPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-107">ApplicationWithPasswordPlainParameterSet</span></span>
+### <span data-ttu-id="7c59f-107">ApplicationWithPasswordPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-107">ApplicationWithPasswordPlainParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -ApplicationId <Guid> [-StartDate <DateTime>] [-EndDate <DateTime>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-108">ApplicationWithPasswordCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-108">ApplicationWithPasswordCredentialParameterSet</span></span>
+### <span data-ttu-id="7c59f-108">ApplicationWithPasswordCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-108">ApplicationWithPasswordCredentialParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -ApplicationId <Guid> -PasswordCredential <PSADPasswordCredential[]>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-109">ApplicationWithKeyPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-109">ApplicationWithKeyPlainParameterSet</span></span>
+### <span data-ttu-id="7c59f-109">ApplicationWithKeyPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-109">ApplicationWithKeyPlainParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -ApplicationId <Guid> -CertValue <String> [-StartDate <DateTime>]
  [-EndDate <DateTime>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-110">ApplicationWithKeyCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-110">ApplicationWithKeyCredentialParameterSet</span></span>
+### <span data-ttu-id="7c59f-110">ApplicationWithKeyCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-110">ApplicationWithKeyCredentialParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -ApplicationId <Guid> -KeyCredential <PSADKeyCredential[]>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-111">DisplayNameWithoutCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-111">DisplayNameWithoutCredentialParameterSet</span></span>
+### <span data-ttu-id="7c59f-111">DisplayNameWithoutCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-111">DisplayNameWithoutCredentialParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -DisplayName <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-112">DisplayNameWithPasswordPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-112">DisplayNameWithPasswordPlainParameterSet</span></span>
+### <span data-ttu-id="7c59f-112">DisplayNameWithPasswordPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-112">DisplayNameWithPasswordPlainParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -DisplayName <String> [-StartDate <DateTime>] [-EndDate <DateTime>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-113">DisplayNameWithPasswordCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-113">DisplayNameWithPasswordCredentialParameterSet</span></span>
+### <span data-ttu-id="7c59f-113">DisplayNameWithPasswordCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-113">DisplayNameWithPasswordCredentialParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -DisplayName <String> -PasswordCredential <PSADPasswordCredential[]>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-114">DisplayNameWithKeyPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-114">DisplayNameWithKeyPlainParameterSet</span></span>
+### <span data-ttu-id="7c59f-114">DisplayNameWithKeyPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-114">DisplayNameWithKeyPlainParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -DisplayName <String> -CertValue <String> [-StartDate <DateTime>]
  [-EndDate <DateTime>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-115">DisplayNameWithKeyCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-115">DisplayNameWithKeyCredentialParameterSet</span></span>
+### <span data-ttu-id="7c59f-115">DisplayNameWithKeyCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-115">DisplayNameWithKeyCredentialParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -DisplayName <String> -KeyCredential <PSADKeyCredential[]>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-116">ApplicationObjectWithPasswordPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-116">ApplicationObjectWithPasswordPlainParameterSet</span></span>
+### <span data-ttu-id="7c59f-116">ApplicationObjectWithPasswordPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-116">ApplicationObjectWithPasswordPlainParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -ApplicationObject <PSADApplication> [-StartDate <DateTime>] [-EndDate <DateTime>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-117">ApplicationObjectWithPasswordCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-117">ApplicationObjectWithPasswordCredentialParameterSet</span></span>
+### <span data-ttu-id="7c59f-117">ApplicationObjectWithPasswordCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-117">ApplicationObjectWithPasswordCredentialParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -ApplicationObject <PSADApplication> -PasswordCredential <PSADPasswordCredential[]>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-118">ApplicationObjectWithKeyPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-118">ApplicationObjectWithKeyPlainParameterSet</span></span>
+### <span data-ttu-id="7c59f-118">ApplicationObjectWithKeyPlainParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-118">ApplicationObjectWithKeyPlainParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -ApplicationObject <PSADApplication> -CertValue <String> [-StartDate <DateTime>]
  [-EndDate <DateTime>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d875f-119">ApplicationObjectWithKeyCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="d875f-119">ApplicationObjectWithKeyCredentialParameterSet</span></span>
+### <span data-ttu-id="7c59f-119">ApplicationObjectWithKeyCredentialParameterSet</span><span class="sxs-lookup"><span data-stu-id="7c59f-119">ApplicationObjectWithKeyCredentialParameterSet</span></span>
 
 ```
 New-AzADServicePrincipal -ApplicationObject <PSADApplication> -KeyCredential <PSADKeyCredential[]>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="d875f-120">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="d875f-120">DESCRIPTION</span></span>
+## <span data-ttu-id="7c59f-120">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="7c59f-120">DESCRIPTION</span></span>
 
-<span data-ttu-id="d875f-121">Создает новую главную службу Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="d875f-121">Creates a new Azure active directory service principal.</span></span> <span data-ttu-id="d875f-122">В наборе параметров по умолчанию используются значения по умолчанию для параметров, если они не заданы.</span><span class="sxs-lookup"><span data-stu-id="d875f-122">The default parameter set uses default values for parameters if they are not provided.</span></span> <span data-ttu-id="d875f-123">Дополнительные сведения о значениях по умолчанию см. в описании каждого параметра.</span><span class="sxs-lookup"><span data-stu-id="d875f-123">For more information on default values, see the description for each parameter.</span></span> <span data-ttu-id="d875f-124">С помощью этого cmdlet можно назначить роль главе службы с параметрами **"Роль"** и **"Область".**</span><span class="sxs-lookup"><span data-stu-id="d875f-124">This cmdlet has the ability to assign a role to the service principal with the **Role** and **Scope** parameters.</span></span> <span data-ttu-id="d875f-125">Если обе функции опущены, роль участника назначена участнику службы.</span><span class="sxs-lookup"><span data-stu-id="d875f-125">If both are omitted, the contributor role is assigned to the service principal.</span></span> <span data-ttu-id="d875f-126">По умолчанию для параметров **"Роль"** и **"Область"** **заданы значения "Участник"** для текущей подписки.</span><span class="sxs-lookup"><span data-stu-id="d875f-126">The default values for the **Role** and **Scope** parameters are **Contributor** for the current subscription.</span></span> <span data-ttu-id="d875f-127">Он создает приложение и задает его свойства, если он не предоставлен.</span><span class="sxs-lookup"><span data-stu-id="d875f-127">The cmdlet creates an application and sets its properties if an ApplicationId is not provided.</span></span> <span data-ttu-id="d875f-128">Чтобы обновить параметры конкретного приложения, используйте [cmdlet Update-AzADApplication.](./update-azadapplication.md)</span><span class="sxs-lookup"><span data-stu-id="d875f-128">To update the application-specific parameters, use the [Update-AzADApplication](./update-azadapplication.md) cmdlet.</span></span>
+<span data-ttu-id="7c59f-121">Создает новую главную службу Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="7c59f-121">Creates a new Azure active directory service principal.</span></span> <span data-ttu-id="7c59f-122">В наборе параметров по умолчанию используются значения по умолчанию для параметров, если они не заданы.</span><span class="sxs-lookup"><span data-stu-id="7c59f-122">The default parameter set uses default values for parameters if they are not provided.</span></span> <span data-ttu-id="7c59f-123">Дополнительные сведения о значениях по умолчанию см. в описании каждого параметра.</span><span class="sxs-lookup"><span data-stu-id="7c59f-123">For more information on default values, see the description for each parameter.</span></span> <span data-ttu-id="7c59f-124">С помощью этого cmdlet можно назначить роль главе службы с параметрами **"Роль"** и **"Область".**</span><span class="sxs-lookup"><span data-stu-id="7c59f-124">This cmdlet has the ability to assign a role to the service principal with the **Role** and **Scope** parameters.</span></span> <span data-ttu-id="7c59f-125">Если обе функции опущены, роль участника назначена участнику службы.</span><span class="sxs-lookup"><span data-stu-id="7c59f-125">If both are omitted, the contributor role is assigned to the service principal.</span></span> <span data-ttu-id="7c59f-126">По умолчанию для параметров **"Роль"** и **"Область"** **заданы значения "Участник"** для текущей подписки.</span><span class="sxs-lookup"><span data-stu-id="7c59f-126">The default values for the **Role** and **Scope** parameters are **Contributor** for the current subscription.</span></span> <span data-ttu-id="7c59f-127">Он создает приложение и задает его свойства, если он не предоставлен.</span><span class="sxs-lookup"><span data-stu-id="7c59f-127">The cmdlet creates an application and sets its properties if an ApplicationId is not provided.</span></span> <span data-ttu-id="7c59f-128">Чтобы обновить параметры конкретного приложения, используйте [cmdlet Update-AzADApplication.](./update-azadapplication.md)</span><span class="sxs-lookup"><span data-stu-id="7c59f-128">To update the application-specific parameters, use the [Update-AzADApplication](./update-azadapplication.md) cmdlet.</span></span>
 
 > [!WARNING]
-> <span data-ttu-id="d875f-129">Когда вы создаете главную службу с помощью команды **New-AzADServicePrincipal,** выходные данные включают учетные данные, которые необходимо защитить.</span><span class="sxs-lookup"><span data-stu-id="d875f-129">When you create a service principal using the **New-AzADServicePrincipal** command, the output includes credentials that you must protect.</span></span> <span data-ttu-id="d875f-130">Не включите эти учетные данные в код и не проверяйте их в источнике данных.</span><span class="sxs-lookup"><span data-stu-id="d875f-130">Be sure that you do not include these credentials in your code or check the credentials into your source control.</span></span> <span data-ttu-id="d875f-131">В качестве альтернативы можно использовать [управляемые удостоверения,](/azure/active-directory/managed-identities-azure-resources/overview) чтобы избежать необходимости использовать учетные данные.</span><span class="sxs-lookup"><span data-stu-id="d875f-131">As an alternative, consider using [managed identities](/azure/active-directory/managed-identities-azure-resources/overview) to avoid the need to use credentials.</span></span>
+> <span data-ttu-id="7c59f-129">Когда вы создаете главную службу с помощью команды **New-AzADServicePrincipal,** выходные данные включают учетные данные, которые необходимо защитить.</span><span class="sxs-lookup"><span data-stu-id="7c59f-129">When you create a service principal using the **New-AzADServicePrincipal** command, the output includes credentials that you must protect.</span></span> <span data-ttu-id="7c59f-130">В качестве альтернативы можно использовать [управляемые удостоверения,](/azure/active-directory/managed-identities-azure-resources/overview) чтобы избежать необходимости использовать учетные данные.</span><span class="sxs-lookup"><span data-stu-id="7c59f-130">As an alternative, consider using [managed identities](/azure/active-directory/managed-identities-azure-resources/overview) to avoid the need to use credentials.</span></span>
 >
-> <span data-ttu-id="d875f-132">По умолчанию **New-AzADServicePrincipal** назначает [](/azure/role-based-access-control/built-in-roles#contributor) роль Участника основной службе в области подписки.</span><span class="sxs-lookup"><span data-stu-id="d875f-132">By default, **New-AzADServicePrincipal** assigns the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role to the service principal at the subscription scope.</span></span> <span data-ttu-id="d875f-133">Чтобы снизить риск компрометации основной службы, назначьте более определенную роль и сузьте область действия до группы ресурсов или ресурсов.</span><span class="sxs-lookup"><span data-stu-id="d875f-133">To reduce your risk of a compromised service principal, assign a more specific role and narrow the scope to a resource or resource group.</span></span> <span data-ttu-id="d875f-134">Дополнительные [сведения см. в сведениях](/azure/role-based-access-control/role-assignments-steps) о добавлении назначения роли в этой области.</span><span class="sxs-lookup"><span data-stu-id="d875f-134">See [Steps to add a role assignment](/azure/role-based-access-control/role-assignments-steps) for more information.</span></span>
+> <span data-ttu-id="7c59f-131">По умолчанию **New-AzADServicePrincipal** назначает [](/azure/role-based-access-control/built-in-roles#contributor) роль Участника основной службе в области подписки.</span><span class="sxs-lookup"><span data-stu-id="7c59f-131">By default, **New-AzADServicePrincipal** assigns the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role to the service principal at the subscription scope.</span></span> <span data-ttu-id="7c59f-132">Чтобы снизить риск компрометации основной службы, назначьте более определенную роль и сузьте область действия до группы ресурсов или ресурсов.</span><span class="sxs-lookup"><span data-stu-id="7c59f-132">To reduce your risk of a compromised service principal, assign a more specific role and narrow the scope to a resource or resource group.</span></span> <span data-ttu-id="7c59f-133">Дополнительные [сведения см. в сведениях](/azure/role-based-access-control/role-assignments-steps) о добавлении назначения роли в этой области.</span><span class="sxs-lookup"><span data-stu-id="7c59f-133">See [Steps to add a role assignment](/azure/role-based-access-control/role-assignments-steps) for more information.</span></span>
 
-## <span data-ttu-id="d875f-135">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="d875f-135">EXAMPLES</span></span>
+## <span data-ttu-id="7c59f-134">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="7c59f-134">EXAMPLES</span></span>
 
-### <span data-ttu-id="d875f-136">Пример 1. Простое создание главной службы AD</span><span class="sxs-lookup"><span data-stu-id="d875f-136">Example 1: Simple AD service principal creation</span></span>
+### <span data-ttu-id="7c59f-135">Пример 1. Простое создание главной службы AD</span><span class="sxs-lookup"><span data-stu-id="7c59f-135">Example 1: Simple AD service principal creation</span></span>
 
-<span data-ttu-id="d875f-137">В следующем примере создается principal-служба AD с использованием значений по умолчанию для параметров, не указанных.</span><span class="sxs-lookup"><span data-stu-id="d875f-137">The following example creates an AD service principal using default values for parameters not specified.</span></span> <span data-ttu-id="d875f-138">Так как не предоставлен ИД приложения, для директора-службы создается приложение.</span><span class="sxs-lookup"><span data-stu-id="d875f-138">Since an application ID is not provided, an application is created for the service principal.</span></span> <span data-ttu-id="d875f-139">Так как для роли  или области не запредоставляются **значения,** созданному участнику службы назначена роль участника для текущей подписки. </span><span class="sxs-lookup"><span data-stu-id="d875f-139">Since no values are provided for **Role** or **Scope**, the created service principal is assigned the **contributor** role for the current subscription.</span></span>
+<span data-ttu-id="7c59f-136">В следующем примере создается principal-служба AD с использованием значений по умолчанию для параметров, не указанных.</span><span class="sxs-lookup"><span data-stu-id="7c59f-136">The following example creates an AD service principal using default values for parameters not specified.</span></span> <span data-ttu-id="7c59f-137">Так как не предоставлен ИД приложения, для директора-службы создается приложение.</span><span class="sxs-lookup"><span data-stu-id="7c59f-137">Since an application ID is not provided, an application is created for the service principal.</span></span> <span data-ttu-id="7c59f-138">Так как для роли  или области не запредоставляются **значения,** созданному участнику службы назначена роль участника для текущей подписки. </span><span class="sxs-lookup"><span data-stu-id="7c59f-138">Since no values are provided for **Role** or **Scope**, the created service principal is assigned the **contributor** role for the current subscription.</span></span>
 
 ```powershell
 New-AzADServicePrincipal
@@ -154,9 +154,9 @@ Id                    : 00000000-0000-0000-0000-000000000000
 Type                  : ServicePrincipal
 ```
 
-### <span data-ttu-id="d875f-140">Пример 2. Простое создание основной службы AD с указанной ролью и областью по умолчанию</span><span class="sxs-lookup"><span data-stu-id="d875f-140">Example 2: Simple AD service principal creation with a specified role and default scope</span></span>
+### <span data-ttu-id="7c59f-139">Пример 2. Простое создание основной службы AD с заданной ролью и областью по умолчанию</span><span class="sxs-lookup"><span data-stu-id="7c59f-139">Example 2: Simple AD service principal creation with a specified role and default scope</span></span>
 
-<span data-ttu-id="d875f-141">В следующем примере создается principal-служба AD с использованием значений по умолчанию для параметров, не указанных.</span><span class="sxs-lookup"><span data-stu-id="d875f-141">The following example creates an AD service principal using the default values for parameters not specified.</span></span> <span data-ttu-id="d875f-142">Так как он не предоставлен, для основного обслуживания создается приложение.</span><span class="sxs-lookup"><span data-stu-id="d875f-142">Since the application ID is not provided, an application is created for the service principal.</span></span> <span data-ttu-id="d875f-143">Principal service principal is created with **Reader** permissions for the current subscription since no value is provided for the **Scope** parameter.</span><span class="sxs-lookup"><span data-stu-id="d875f-143">The service principal is created with **Reader** permissions for the current subscription since no value is provided for the **Scope** parameter.</span></span>
+<span data-ttu-id="7c59f-140">В следующем примере создается principal-служба AD с использованием значений по умолчанию для параметров, не указанных.</span><span class="sxs-lookup"><span data-stu-id="7c59f-140">The following example creates an AD service principal using the default values for parameters not specified.</span></span> <span data-ttu-id="7c59f-141">Так как он не предоставлен, для основного обслуживания создается приложение.</span><span class="sxs-lookup"><span data-stu-id="7c59f-141">Since the application ID is not provided, an application is created for the service principal.</span></span> <span data-ttu-id="7c59f-142">Principal service principal is created with **Reader** permissions for the current subscription since no value is provided for the **Scope** parameter.</span><span class="sxs-lookup"><span data-stu-id="7c59f-142">The service principal is created with **Reader** permissions for the current subscription since no value is provided for the **Scope** parameter.</span></span>
 
 ```powershell
 New-AzADServicePrincipal -Role Reader
@@ -173,9 +173,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Reader' over scope '/subscriptions/00000000-0000-0000-0000-000000000000' to the new service principal.
 ```
 
-### <span data-ttu-id="d875f-144">Пример 3. Простое создание основной службы AD с заданной областью и ролью по умолчанию</span><span class="sxs-lookup"><span data-stu-id="d875f-144">Example 3: Simple AD service principal creation with a specified scope and default role</span></span>
+### <span data-ttu-id="7c59f-143">Пример 3. Простое создание основной службы AD с заданной областью и ролью по умолчанию</span><span class="sxs-lookup"><span data-stu-id="7c59f-143">Example 3: Simple AD service principal creation with a specified scope and default role</span></span>
 
-<span data-ttu-id="d875f-145">В следующем примере создается principal-служба AD с использованием значений по умолчанию для параметров, не указанных.</span><span class="sxs-lookup"><span data-stu-id="d875f-145">The following example creates an AD service principal using the default values for parameters not specified.</span></span> <span data-ttu-id="d875f-146">Так как он не предоставлен, для основного обслуживания создается приложение.</span><span class="sxs-lookup"><span data-stu-id="d875f-146">Since the application ID is not provided, an application is created for the service principal.</span></span> <span data-ttu-id="d875f-147">Для участника-службы создаются разрешения **участника** для заданной области группы ресурсов, так как для параметра **Role** не задано значение.</span><span class="sxs-lookup"><span data-stu-id="d875f-147">The service principal is created with **Contributor** permissions for the provided resource group scope since no value is provided for the **Role** parameter.</span></span>
+<span data-ttu-id="7c59f-144">В следующем примере создается principal-служба AD с использованием значений по умолчанию для параметров, не указанных.</span><span class="sxs-lookup"><span data-stu-id="7c59f-144">The following example creates an AD service principal using the default values for parameters not specified.</span></span> <span data-ttu-id="7c59f-145">Так как он не предоставлен, для основного обслуживания создается приложение.</span><span class="sxs-lookup"><span data-stu-id="7c59f-145">Since the application ID is not provided, an application is created for the service principal.</span></span> <span data-ttu-id="7c59f-146">Для участника-службы создаются разрешения **участника** для заданной области группы ресурсов, так как для параметра **Role** не задано значение.</span><span class="sxs-lookup"><span data-stu-id="7c59f-146">The service principal is created with **Contributor** permissions for the provided resource group scope since no value is provided for the **Role** parameter.</span></span>
 
 ```powershell
 New-AzADServicePrincipal -Scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup
@@ -192,9 +192,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Contributor' over scope '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup' to the new service principal.
 ```
 
-### <span data-ttu-id="d875f-148">Пример 4. Простое создание основной службы AD с заданной областью и ролью</span><span class="sxs-lookup"><span data-stu-id="d875f-148">Example 4: Simple AD service principal creation with a specified scope and role</span></span>
+### <span data-ttu-id="7c59f-147">Пример 4. Простое создание основной службы AD с заданной областью и ролью</span><span class="sxs-lookup"><span data-stu-id="7c59f-147">Example 4: Simple AD service principal creation with a specified scope and role</span></span>
 
-<span data-ttu-id="d875f-149">В следующем примере создается principal-служба AD с использованием значений по умолчанию для параметров, не указанных.</span><span class="sxs-lookup"><span data-stu-id="d875f-149">The following example creates an AD service principal using the default values for parameters not specified.</span></span> <span data-ttu-id="d875f-150">Так как он не предоставлен, для основного обслуживания создается приложение.</span><span class="sxs-lookup"><span data-stu-id="d875f-150">Since the application ID is not provided, an application is created for the service principal.</span></span> <span data-ttu-id="d875f-151">При этом создается principal-служба **с** разрешениями на чтение для предоставляются области для группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="d875f-151">The service principal is created with **Reader** permissions for the provided resource group scope.</span></span>
+<span data-ttu-id="7c59f-148">В следующем примере создается principal-служба AD с использованием значений по умолчанию для параметров, не указанных.</span><span class="sxs-lookup"><span data-stu-id="7c59f-148">The following example creates an AD service principal using the default values for parameters not specified.</span></span> <span data-ttu-id="7c59f-149">Так как он не предоставлен, для основного обслуживания создается приложение.</span><span class="sxs-lookup"><span data-stu-id="7c59f-149">Since the application ID is not provided, an application is created for the service principal.</span></span> <span data-ttu-id="7c59f-150">При этом создается principal-служба **с** разрешениями на чтение для предоставляются области для группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="7c59f-150">The service principal is created with **Reader** permissions for the provided resource group scope.</span></span>
 
 ```powershell
 New-AzADServicePrincipal -Role Reader -Scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup
@@ -211,9 +211,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Reader' over scope '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup' to the new service principal.
 ```
 
-### <span data-ttu-id="d875f-152">Пример 5. Создание новой основной роли службы AD с помощью ИД приложения с назначением ролей</span><span class="sxs-lookup"><span data-stu-id="d875f-152">Example 5: Create a new AD service principal using application ID with role assignment</span></span>
+### <span data-ttu-id="7c59f-151">Пример 5. Создание новой основной роли службы AD с помощью ИД приложения с назначением ролей</span><span class="sxs-lookup"><span data-stu-id="7c59f-151">Example 5: Create a new AD service principal using application ID with role assignment</span></span>
 
-<span data-ttu-id="d875f-153">В следующем примере для приложения создается новая главная служба AD с ИД приложения "00000000-0000-0000-0000-0000000000000".</span><span class="sxs-lookup"><span data-stu-id="d875f-153">The following example creates a new AD service principal for the application with application ID '00000000-0000-0000-0000-000000000000'.</span></span> <span data-ttu-id="d875f-154">Так как для роли  или области не запредоставляются **значения,** созданному участнику службы назначена роль участника для текущей подписки. </span><span class="sxs-lookup"><span data-stu-id="d875f-154">Since no values are provided for **Role** or **Scope**, the created service principal is assigned the **contributor** role for the current subscription.</span></span>
+<span data-ttu-id="7c59f-152">В следующем примере для приложения создается новая главная служба AD с ИД приложения "00000000-0000-0000-0000-0000000000000".</span><span class="sxs-lookup"><span data-stu-id="7c59f-152">The following example creates a new AD service principal for the application with application ID '00000000-0000-0000-0000-000000000000'.</span></span> <span data-ttu-id="7c59f-153">Так как для роли  или области не запредоставляются **значения,** созданному участнику службы назначена роль участника для текущей подписки. </span><span class="sxs-lookup"><span data-stu-id="7c59f-153">Since no values are provided for **Role** or **Scope**, the created service principal is assigned the **contributor** role for the current subscription.</span></span>
 
 ```powershell
 New-AzADServicePrincipal -ApplicationId 00000000-0000-0000-0000-000000000000
@@ -227,17 +227,17 @@ Id                    : 00000000-0000-0000-0000-000000000000
 Type                  : ServicePrincipal
 ```
 
-### <span data-ttu-id="d875f-155">Пример 6. Создание новой основной суммы службы AD с помощью piping</span><span class="sxs-lookup"><span data-stu-id="d875f-155">Example 6: Create a new AD service principal using piping</span></span>
+### <span data-ttu-id="7c59f-154">Пример 6. Создание новой основной суммы службы AD с помощью piping</span><span class="sxs-lookup"><span data-stu-id="7c59f-154">Example 6: Create a new AD service principal using piping</span></span>
 
-<span data-ttu-id="d875f-156">В следующем примере приложение извлекает приложение с ИД объекта '3ede3c26-b443-4e0b-9efc-b05e68338dc3' с помощью [cmdlet Get-AzADApplication.](./get-azadapplication.md)</span><span class="sxs-lookup"><span data-stu-id="d875f-156">The following example retrieves the application with object ID '3ede3c26-b443-4e0b-9efc-b05e68338dc3' using the [Get-AzADApplication](./get-azadapplication.md) cmdlet.</span></span> <span data-ttu-id="d875f-157">Результаты перенакладыются в этот проект, чтобы создать для этого приложения новую `New-AzADServicePrincipal` главную службу AD.</span><span class="sxs-lookup"><span data-stu-id="d875f-157">The results are piped to the `New-AzADServicePrincipal` cmdlet to create a new AD service principal for that application.</span></span>
+<span data-ttu-id="7c59f-155">В следующем примере приложение извлекает приложение с ИД объекта '3ede3c26-b443-4e0b-9efc-b05e68338dc3' с помощью [cmdlet Get-AzADApplication.](./get-azadapplication.md)</span><span class="sxs-lookup"><span data-stu-id="7c59f-155">The following example retrieves the application with object ID '3ede3c26-b443-4e0b-9efc-b05e68338dc3' using the [Get-AzADApplication](./get-azadapplication.md) cmdlet.</span></span> <span data-ttu-id="7c59f-156">Результаты перенакладыются в этот проект, чтобы создать для этого приложения новую `New-AzADServicePrincipal` главную службу AD.</span><span class="sxs-lookup"><span data-stu-id="7c59f-156">The results are piped to the `New-AzADServicePrincipal` cmdlet to create a new AD service principal for that application.</span></span>
 
 ```powershell
 Get-AzADApplication -ObjectId 3ede3c26-b443-4e0b-9efc-b05e68338dc3 | New-AzADServicePrincipal
 ```
 
-### <span data-ttu-id="d875f-158">Пример 7. Создание новой основной службы AD с использованием DisplayName и учетных данных для пароля</span><span class="sxs-lookup"><span data-stu-id="d875f-158">Example 7: Create a new AD service principal using DisplayName and password credential</span></span>
+### <span data-ttu-id="7c59f-157">Пример 7. Создание новой основной службы AD с использованием DisplayName и учетных данных для пароля</span><span class="sxs-lookup"><span data-stu-id="7c59f-157">Example 7: Create a new AD service principal using DisplayName and password credential</span></span>
 
-<span data-ttu-id="d875f-159">В следующем примере создается новое приложение с именем **ServicePrincipalName и** паролем **StrongPassworld!23.**</span><span class="sxs-lookup"><span data-stu-id="d875f-159">The following example creates a new application with the name **ServicePrincipalName** and a password of **StrongPassworld!23**.</span></span> <span data-ttu-id="d875f-160">Она создает главную службу на основе созданного приложения.</span><span class="sxs-lookup"><span data-stu-id="d875f-160">It creates the service principal based on the created application.</span></span> <span data-ttu-id="d875f-161">К учетным данным пароля добавляются даты начала и окончания.</span><span class="sxs-lookup"><span data-stu-id="d875f-161">The start date and end date are added to the password credential.</span></span>
+<span data-ttu-id="7c59f-158">В следующем примере создается новое приложение с именем **ServicePrincipalName и** паролем **StrongPassworld!23.**</span><span class="sxs-lookup"><span data-stu-id="7c59f-158">The following example creates a new application with the name **ServicePrincipalName** and a password of **StrongPassworld!23**.</span></span> <span data-ttu-id="7c59f-159">Она создает главную службу на основе созданного приложения.</span><span class="sxs-lookup"><span data-stu-id="7c59f-159">It creates the service principal based on the created application.</span></span> <span data-ttu-id="7c59f-160">К учетным данным пароля добавляются даты начала и окончания.</span><span class="sxs-lookup"><span data-stu-id="7c59f-160">The start date and end date are added to the password credential.</span></span>
 
 ```powershell
 $credentials = New-Object -TypeName Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential -Property @{
@@ -254,9 +254,9 @@ Id                    : 00000000-0000-0000-0000-000000000000
 Type                  :
 ```
 
-### <span data-ttu-id="d875f-162">Пример 8. Создание новой основной службы AD с использованием DisplayName и обычных учетных данных ключа</span><span class="sxs-lookup"><span data-stu-id="d875f-162">Example 8: Create a new AD service principal using DisplayName and plain key credential</span></span>
+### <span data-ttu-id="7c59f-161">Пример 8. Создание новой основной службы AD с использованием DisplayName и обычных учетных данных ключа</span><span class="sxs-lookup"><span data-stu-id="7c59f-161">Example 8: Create a new AD service principal using DisplayName and plain key credential</span></span>
 
-<span data-ttu-id="d875f-163">В следующем примере создается новое приложение с именем **ServicePrincipalName** **и сертификатом $cert.** Она создает главную службу на основе созданного приложения.</span><span class="sxs-lookup"><span data-stu-id="d875f-163">The following example creates a new application with the name **ServicePrincipalName** and a certificate **$cert**. It creates the service principal based on the application created.</span></span> <span data-ttu-id="d875f-164">Даты окончания добавляются к учетным данным ключа.</span><span class="sxs-lookup"><span data-stu-id="d875f-164">The end date is added to key credential.</span></span>
+<span data-ttu-id="7c59f-162">В следующем примере создается новое приложение с именем **ServicePrincipalName** **и сертификатом $cert.** Она создает главную службу на основе созданного приложения.</span><span class="sxs-lookup"><span data-stu-id="7c59f-162">The following example creates a new application with the name **ServicePrincipalName** and a certificate **$cert**. It creates the service principal based on the application created.</span></span> <span data-ttu-id="7c59f-163">Даты окончания добавляются к учетным данным ключа.</span><span class="sxs-lookup"><span data-stu-id="7c59f-163">The end date is added to key credential.</span></span>
 
 ```powershell
 $cert = 'public certificate as Base64 encoded string'
@@ -272,11 +272,11 @@ Id                    : 00000000-0000-0000-0000-000000000000
 Type                  :
 ```
 
-## <span data-ttu-id="d875f-165">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d875f-165">PARAMETERS</span></span>
+## <span data-ttu-id="7c59f-164">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="7c59f-164">PARAMETERS</span></span>
 
-### <span data-ttu-id="d875f-166">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="d875f-166">-ApplicationId</span></span>
+### <span data-ttu-id="7c59f-165">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="7c59f-165">-ApplicationId</span></span>
 
-<span data-ttu-id="d875f-167">Уникальный ИД приложения для основной службы в клиенте.</span><span class="sxs-lookup"><span data-stu-id="d875f-167">The unique application ID for a service principal in a tenant.</span></span> <span data-ttu-id="d875f-168">Созданное свойство невозможно изменить.</span><span class="sxs-lookup"><span data-stu-id="d875f-168">Once created this property cannot be changed.</span></span> <span data-ttu-id="d875f-169">Если в существующем приложении не указан ИД приложения, создается приложение.</span><span class="sxs-lookup"><span data-stu-id="d875f-169">If an application ID for an existing application is not specified, an application is created.</span></span>
+<span data-ttu-id="7c59f-166">Уникальный ИД приложения для основной службы в клиенте.</span><span class="sxs-lookup"><span data-stu-id="7c59f-166">The unique application ID for a service principal in a tenant.</span></span> <span data-ttu-id="7c59f-167">Созданное свойство невозможно изменить.</span><span class="sxs-lookup"><span data-stu-id="7c59f-167">Once created this property cannot be changed.</span></span> <span data-ttu-id="7c59f-168">Если в существующем приложении не указан ИД приложения, создается приложение.</span><span class="sxs-lookup"><span data-stu-id="7c59f-168">If an application ID for an existing application is not specified, an application is created.</span></span>
 
 ```yaml
 Type: System.Guid
@@ -302,9 +302,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-170">-ApplicationObject</span><span class="sxs-lookup"><span data-stu-id="d875f-170">-ApplicationObject</span></span>
+### <span data-ttu-id="7c59f-169">-ApplicationObject</span><span class="sxs-lookup"><span data-stu-id="7c59f-169">-ApplicationObject</span></span>
 
-<span data-ttu-id="d875f-171">Объект, представляющий приложение, для которого создается основной службы.</span><span class="sxs-lookup"><span data-stu-id="d875f-171">The object representing the application for which the service principal is created.</span></span>
+<span data-ttu-id="7c59f-170">Объект, представляющий приложение, для которого создается principal-служба.</span><span class="sxs-lookup"><span data-stu-id="7c59f-170">The object representing the application for which the service principal is created.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -318,9 +318,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-172">-CertValue</span><span class="sxs-lookup"><span data-stu-id="d875f-172">-CertValue</span></span>
+### <span data-ttu-id="7c59f-171">-CertValue</span><span class="sxs-lookup"><span data-stu-id="7c59f-171">-CertValue</span></span>
 
-<span data-ttu-id="d875f-173">Значение асимметричного типа учетных данных.</span><span class="sxs-lookup"><span data-stu-id="d875f-173">The value of the asymmetric credential type.</span></span> <span data-ttu-id="d875f-174">Он представляет зашифрованный сертификат Base64.</span><span class="sxs-lookup"><span data-stu-id="d875f-174">It represents the Base64 encoded certificate.</span></span>
+<span data-ttu-id="7c59f-172">Значение асимметричного типа учетных данных.</span><span class="sxs-lookup"><span data-stu-id="7c59f-172">The value of the asymmetric credential type.</span></span> <span data-ttu-id="7c59f-173">Он представляет зашифрованный сертификат Base64.</span><span class="sxs-lookup"><span data-stu-id="7c59f-173">It represents the Base64 encoded certificate.</span></span>
 
 ```yaml
 Type: System.String
@@ -346,9 +346,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-175">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d875f-175">-DefaultProfile</span></span>
+### <span data-ttu-id="7c59f-174">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7c59f-174">-DefaultProfile</span></span>
 
-<span data-ttu-id="d875f-176">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="d875f-176">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+<span data-ttu-id="7c59f-175">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="7c59f-175">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -362,9 +362,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-177">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="d875f-177">-DisplayName</span></span>
+### <span data-ttu-id="7c59f-176">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="7c59f-176">-DisplayName</span></span>
 
-<span data-ttu-id="d875f-178">Удобное имя директора-службы.</span><span class="sxs-lookup"><span data-stu-id="d875f-178">The friendly name of the service principal.</span></span> <span data-ttu-id="d875f-179">Если отображаемого имени нет, по умолчанию для этого значения задается **azure-powershell-MM-dd-y-HH-mm-ss,** где суффикс — время создания приложения.</span><span class="sxs-lookup"><span data-stu-id="d875f-179">If a display name is not provided, this value will default to **azure-powershell-MM-dd-yyyy-HH-mm-ss** where the suffix is the time of application creation.</span></span>
+<span data-ttu-id="7c59f-177">Удобное имя директора-службы.</span><span class="sxs-lookup"><span data-stu-id="7c59f-177">The friendly name of the service principal.</span></span> <span data-ttu-id="7c59f-178">Если отображаемого имени нет, по умолчанию для этого значения задается **azure-powershell-MM-dd-y-HH-mm-ss,** где суффикс — время создания приложения.</span><span class="sxs-lookup"><span data-stu-id="7c59f-178">If a display name is not provided, this value will default to **azure-powershell-MM-dd-yyyy-HH-mm-ss** where the suffix is the time of application creation.</span></span>
 
 ```yaml
 Type: System.String
@@ -390,10 +390,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-180">-EndDate</span><span class="sxs-lookup"><span data-stu-id="d875f-180">-EndDate</span></span>
+### <span data-ttu-id="7c59f-179">-EndDate</span><span class="sxs-lookup"><span data-stu-id="7c59f-179">-EndDate</span></span>
 
-<span data-ttu-id="d875f-181">Дата окончания использования учетных данных.</span><span class="sxs-lookup"><span data-stu-id="d875f-181">The effective end date of the credential usage.</span></span> <span data-ttu-id="d875f-182">Значение даты окончания по умолчанию составляет один год от сегодняшнего дня.</span><span class="sxs-lookup"><span data-stu-id="d875f-182">The default end date value is one year from today.</span></span>
-<span data-ttu-id="d875f-183">Для учетных данных асимметричного типа это должно быть установлено в день, когда действительный сертификат X509, или до нее.</span><span class="sxs-lookup"><span data-stu-id="d875f-183">For an asymmetric type credential, this must be set to on or before the date that the X509 certificate is valid.</span></span>
+<span data-ttu-id="7c59f-180">Дата окончания использования учетных данных.</span><span class="sxs-lookup"><span data-stu-id="7c59f-180">The effective end date of the credential usage.</span></span> <span data-ttu-id="7c59f-181">Значение даты окончания по умолчанию составляет один год от сегодняшнего дня.</span><span class="sxs-lookup"><span data-stu-id="7c59f-181">The default end date value is one year from today.</span></span>
+<span data-ttu-id="7c59f-182">Для учетных данных асимметричного типа это должно быть установлено в день, когда действительный сертификат X509, или до нее.</span><span class="sxs-lookup"><span data-stu-id="7c59f-182">For an asymmetric type credential, this must be set to on or before the date that the X509 certificate is valid.</span></span>
 
 ```yaml
 Type: System.DateTime
@@ -419,9 +419,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-184">-KeyCredential</span><span class="sxs-lookup"><span data-stu-id="d875f-184">-KeyCredential</span></span>
+### <span data-ttu-id="7c59f-183">-KeyCredential</span><span class="sxs-lookup"><span data-stu-id="7c59f-183">-KeyCredential</span></span>
 
-<span data-ttu-id="d875f-185">Набор учетных данных ключа, связанных с приложением.</span><span class="sxs-lookup"><span data-stu-id="d875f-185">The collection of key credentials associated with the application.</span></span>
+<span data-ttu-id="7c59f-184">Набор учетных данных ключа, связанных с приложением.</span><span class="sxs-lookup"><span data-stu-id="7c59f-184">The collection of key credentials associated with the application.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]
@@ -447,9 +447,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-186">-PasswordCredential</span><span class="sxs-lookup"><span data-stu-id="d875f-186">-PasswordCredential</span></span>
+### <span data-ttu-id="7c59f-185">-PasswordCredential</span><span class="sxs-lookup"><span data-stu-id="7c59f-185">-PasswordCredential</span></span>
 
-<span data-ttu-id="d875f-187">Набор учетных данных, связанных с приложением.</span><span class="sxs-lookup"><span data-stu-id="d875f-187">The collection of password credentials associated with the application.</span></span>
+<span data-ttu-id="7c59f-186">Набор учетных данных, связанных с приложением.</span><span class="sxs-lookup"><span data-stu-id="7c59f-186">The collection of password credentials associated with the application.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]
@@ -475,25 +475,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-188">-Роль</span><span class="sxs-lookup"><span data-stu-id="d875f-188">-Role</span></span>
+### <span data-ttu-id="7c59f-187">-Роль</span><span class="sxs-lookup"><span data-stu-id="7c59f-187">-Role</span></span>
 
-<span data-ttu-id="d875f-189">Роль, которая является основной службой, в рамках этой области.</span><span class="sxs-lookup"><span data-stu-id="d875f-189">The role that the service principal has over the scope.</span></span> <span data-ttu-id="d875f-190">Если значение не за предоставлено, **для роли** "Участник" по умолчанию запредоставляются **роли "Участник".**</span><span class="sxs-lookup"><span data-stu-id="d875f-190">If no value is provided, **Role** defaults to the **Contributor** role.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: SimpleParameterSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="d875f-191">-Scope</span><span class="sxs-lookup"><span data-stu-id="d875f-191">-Scope</span></span>
-
-<span data-ttu-id="d875f-192">Область, на которую у директора-службы есть разрешения.</span><span class="sxs-lookup"><span data-stu-id="d875f-192">The scope that the service principal has permissions for.</span></span> <span data-ttu-id="d875f-193">Если значение не  за предоставлено, по умолчанию за работой по области действия будет за ценные суммы для текущей подписки.</span><span class="sxs-lookup"><span data-stu-id="d875f-193">If no value is provided, **Scope** defaults to the current subscription.</span></span>
+<span data-ttu-id="7c59f-188">Роль, которая является основной службой в рамках этой области.</span><span class="sxs-lookup"><span data-stu-id="7c59f-188">The role that the service principal has over the scope.</span></span> <span data-ttu-id="7c59f-189">Если значение не за предоставлено, **для роли** "Участник" по умолчанию запредоставляются **роли "Участник".**</span><span class="sxs-lookup"><span data-stu-id="7c59f-189">If no value is provided, **Role** defaults to the **Contributor** role.</span></span>
 
 ```yaml
 Type: System.String
@@ -507,9 +491,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-194">-SkipAssignment</span><span class="sxs-lookup"><span data-stu-id="d875f-194">-SkipAssignment</span></span>
+### <span data-ttu-id="7c59f-190">-Scope</span><span class="sxs-lookup"><span data-stu-id="7c59f-190">-Scope</span></span>
 
-<span data-ttu-id="d875f-195">Если за установлено, пропустите создание назначения роли по умолчанию для основного задания службы.</span><span class="sxs-lookup"><span data-stu-id="d875f-195">If set, skip creating the default role assignment for the service principal.</span></span>
+<span data-ttu-id="7c59f-191">Область, на которую у директора-службы есть разрешения.</span><span class="sxs-lookup"><span data-stu-id="7c59f-191">The scope that the service principal has permissions for.</span></span> <span data-ttu-id="7c59f-192">Если значение не  за предоставлено, по умолчанию за работой по области действия будет за ценные суммы для текущей подписки.</span><span class="sxs-lookup"><span data-stu-id="7c59f-192">If no value is provided, **Scope** defaults to the current subscription.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c59f-193">-SkipAssignment</span><span class="sxs-lookup"><span data-stu-id="7c59f-193">-SkipAssignment</span></span>
+
+<span data-ttu-id="7c59f-194">Если за установлено, пропустите создание назначения роли по умолчанию для основного задания службы.</span><span class="sxs-lookup"><span data-stu-id="7c59f-194">If set, skip creating the default role assignment for the service principal.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -523,9 +523,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-196">-StartDate</span><span class="sxs-lookup"><span data-stu-id="d875f-196">-StartDate</span></span>
+### <span data-ttu-id="7c59f-195">-StartDate</span><span class="sxs-lookup"><span data-stu-id="7c59f-195">-StartDate</span></span>
 
-<span data-ttu-id="d875f-197">Начальную дату использования учетных данных.</span><span class="sxs-lookup"><span data-stu-id="d875f-197">The effective start date of the credential usage.</span></span> <span data-ttu-id="d875f-198">По умолчанию дата начала является сегодняшним значением.</span><span class="sxs-lookup"><span data-stu-id="d875f-198">The default start date value is today.</span></span> <span data-ttu-id="d875f-199">Для учетных данных асимметричного типа это должно быть установлено в дату, начиная с даты действия сертификата X509, или после нее.</span><span class="sxs-lookup"><span data-stu-id="d875f-199">For an asymmetric type credential, this must be set to on or after the date that the X509 certificate is valid from.</span></span>
+<span data-ttu-id="7c59f-196">Начальную дату использования учетных данных.</span><span class="sxs-lookup"><span data-stu-id="7c59f-196">The effective start date of the credential usage.</span></span> <span data-ttu-id="7c59f-197">По умолчанию дата начала является сегодняшним значением.</span><span class="sxs-lookup"><span data-stu-id="7c59f-197">The default start date value is today.</span></span> <span data-ttu-id="7c59f-198">Для учетных данных асимметричного типа это должно быть установлено в дату, начиная с даты действия сертификата X509, или после нее.</span><span class="sxs-lookup"><span data-stu-id="7c59f-198">For an asymmetric type credential, this must be set to on or after the date that the X509 certificate is valid from.</span></span>
 
 ```yaml
 Type: System.DateTime
@@ -551,9 +551,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-200">-Confirm</span><span class="sxs-lookup"><span data-stu-id="d875f-200">-Confirm</span></span>
+### <span data-ttu-id="7c59f-199">-Confirm</span><span class="sxs-lookup"><span data-stu-id="7c59f-199">-Confirm</span></span>
 
-<span data-ttu-id="d875f-201">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="d875f-201">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="7c59f-200">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="7c59f-200">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -567,9 +567,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-202">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="d875f-202">-WhatIf</span></span>
+### <span data-ttu-id="7c59f-201">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="7c59f-201">-WhatIf</span></span>
 
-<span data-ttu-id="d875f-203">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="d875f-203">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="d875f-204">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="d875f-204">The cmdlet is not run.</span></span>
+<span data-ttu-id="7c59f-202">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="7c59f-202">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="7c59f-203">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="7c59f-203">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -583,44 +583,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d875f-205">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d875f-205">CommonParameters</span></span>
-<span data-ttu-id="d875f-206">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d875f-206">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d875f-207">Дополнительные сведения см. [в about_CommonParameters.](/powershell/module/microsoft.powershell.core/about/about_commonparameters)</span><span class="sxs-lookup"><span data-stu-id="d875f-207">For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).</span></span>
-## <span data-ttu-id="d875f-208">INPUTS</span><span class="sxs-lookup"><span data-stu-id="d875f-208">INPUTS</span></span>
+### <span data-ttu-id="7c59f-204">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7c59f-204">CommonParameters</span></span>
+<span data-ttu-id="7c59f-205">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="7c59f-205">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7c59f-206">Дополнительные сведения см. [в about_CommonParameters.](/powershell/module/microsoft.powershell.core/about/about_commonparameters)</span><span class="sxs-lookup"><span data-stu-id="7c59f-206">For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).</span></span>
+## <span data-ttu-id="7c59f-207">INPUTS</span><span class="sxs-lookup"><span data-stu-id="7c59f-207">INPUTS</span></span>
 
-### <span data-ttu-id="d875f-209">System.Guid</span><span class="sxs-lookup"><span data-stu-id="d875f-209">System.Guid</span></span>
+### <span data-ttu-id="7c59f-208">System.Guid</span><span class="sxs-lookup"><span data-stu-id="7c59f-208">System.Guid</span></span>
 
-### <span data-ttu-id="d875f-210">System.String</span><span class="sxs-lookup"><span data-stu-id="d875f-210">System.String</span></span>
+### <span data-ttu-id="7c59f-209">System.String</span><span class="sxs-lookup"><span data-stu-id="7c59f-209">System.String</span></span>
 
-### <span data-ttu-id="d875f-211">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span><span class="sxs-lookup"><span data-stu-id="d875f-211">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
+### <span data-ttu-id="7c59f-210">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span><span class="sxs-lookup"><span data-stu-id="7c59f-210">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
 
-### <span data-ttu-id="d875f-212">Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]</span><span class="sxs-lookup"><span data-stu-id="d875f-212">Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]</span></span>
+### <span data-ttu-id="7c59f-211">Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]</span><span class="sxs-lookup"><span data-stu-id="7c59f-211">Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]</span></span>
 
-### <span data-ttu-id="d875f-213">Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]</span><span class="sxs-lookup"><span data-stu-id="d875f-213">Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]</span></span>
+### <span data-ttu-id="7c59f-212">Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]</span><span class="sxs-lookup"><span data-stu-id="7c59f-212">Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]</span></span>
 
-### <span data-ttu-id="d875f-214">System.DateTime</span><span class="sxs-lookup"><span data-stu-id="d875f-214">System.DateTime</span></span>
+### <span data-ttu-id="7c59f-213">System.DateTime</span><span class="sxs-lookup"><span data-stu-id="7c59f-213">System.DateTime</span></span>
 
-## <span data-ttu-id="d875f-215">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="d875f-215">OUTPUTS</span></span>
+## <span data-ttu-id="7c59f-214">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="7c59f-214">OUTPUTS</span></span>
 
-### <span data-ttu-id="d875f-216">Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="d875f-216">Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal</span></span>
+### <span data-ttu-id="7c59f-215">Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="7c59f-215">Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal</span></span>
 
-### <span data-ttu-id="d875f-217">Microsoft.Azure.Commands.Resources.Models.Authorization.PSADServicePrincipalWrapper</span><span class="sxs-lookup"><span data-stu-id="d875f-217">Microsoft.Azure.Commands.Resources.Models.Authorization.PSADServicePrincipalWrapper</span></span>
+### <span data-ttu-id="7c59f-216">Microsoft.Azure.Commands.Resources.Models.Authorization.PSADServicePrincipalWrapper</span><span class="sxs-lookup"><span data-stu-id="7c59f-216">Microsoft.Azure.Commands.Resources.Models.Authorization.PSADServicePrincipalWrapper</span></span>
 
-## <span data-ttu-id="d875f-218">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="d875f-218">NOTES</span></span>
+## <span data-ttu-id="7c59f-217">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="7c59f-217">NOTES</span></span>
 
-<span data-ttu-id="d875f-219">Ключевые слова: azure, azurerm, arm, resource, management, manager, resource, group, template, deployment</span><span class="sxs-lookup"><span data-stu-id="d875f-219">Keywords: azure, azurerm, arm, resource, management, manager, resource, group, template, deployment</span></span>
+<span data-ttu-id="7c59f-218">Ключевые слова: azure, azurerm, arm, resource, management, manager, resource, group, template, deployment</span><span class="sxs-lookup"><span data-stu-id="7c59f-218">Keywords: azure, azurerm, arm, resource, management, manager, resource, group, template, deployment</span></span>
 
-## <span data-ttu-id="d875f-220">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="d875f-220">RELATED LINKS</span></span>
+## <span data-ttu-id="7c59f-219">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="7c59f-219">RELATED LINKS</span></span>
 
-[<span data-ttu-id="d875f-221">Remove-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="d875f-221">Remove-AzADServicePrincipal</span></span>](./Remove-AzADServicePrincipal.md)
+[<span data-ttu-id="7c59f-220">Remove-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="7c59f-220">Remove-AzADServicePrincipal</span></span>](./Remove-AzADServicePrincipal.md)
 
-[<span data-ttu-id="d875f-222">Get-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="d875f-222">Get-AzADServicePrincipal</span></span>](./Get-AzADServicePrincipal.md)
+[<span data-ttu-id="7c59f-221">Get-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="7c59f-221">Get-AzADServicePrincipal</span></span>](./Get-AzADServicePrincipal.md)
 
-[<span data-ttu-id="d875f-223">New-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="d875f-223">New-AzADApplication</span></span>](./New-AzADApplication.md)
+[<span data-ttu-id="7c59f-222">New-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="7c59f-222">New-AzADApplication</span></span>](./New-AzADApplication.md)
 
-[<span data-ttu-id="d875f-224">Remove-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="d875f-224">Remove-AzADApplication</span></span>](./Remove-AzADApplication.md)
+[<span data-ttu-id="7c59f-223">Remove-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="7c59f-223">Remove-AzADApplication</span></span>](./Remove-AzADApplication.md)
 
-[<span data-ttu-id="d875f-225">Get-AzADSpCredential</span><span class="sxs-lookup"><span data-stu-id="d875f-225">Get-AzADSpCredential</span></span>](./Get-AzADSpCredential.md)
+[<span data-ttu-id="7c59f-224">Get-AzADSpCredential</span><span class="sxs-lookup"><span data-stu-id="7c59f-224">Get-AzADSpCredential</span></span>](./Get-AzADSpCredential.md)
 
-[<span data-ttu-id="d875f-226">New-AzADSpCredential</span><span class="sxs-lookup"><span data-stu-id="d875f-226">New-AzADSpCredential</span></span>](./New-AzADSpCredential.md)
+[<span data-ttu-id="7c59f-225">New-AzADSpCredential</span><span class="sxs-lookup"><span data-stu-id="7c59f-225">New-AzADSpCredential</span></span>](./New-AzADSpCredential.md)
 
-[<span data-ttu-id="d875f-227">Remove-AzADSpCredential</span><span class="sxs-lookup"><span data-stu-id="d875f-227">Remove-AzADSpCredential</span></span>](./Remove-AzADSpCredential.md)
+[<span data-ttu-id="7c59f-226">Remove-AzADSpCredential</span><span class="sxs-lookup"><span data-stu-id="7c59f-226">Remove-AzADSpCredential</span></span>](./Remove-AzADSpCredential.md)
