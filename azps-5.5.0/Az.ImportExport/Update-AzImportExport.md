@@ -1,0 +1,561 @@
+---
+external help file: ''
+Module Name: Az.ImportExport
+online version: https://docs.microsoft.com/en-us/powershell/module/az.importexport/update-azimportexport
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImportExport/help/Update-AzImportExport.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImportExport/help/Update-AzImportExport.md
+ms.openlocfilehash: d6ed55cef91dc93f0ce9101adf94d9dc6931d07c
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100237676"
+---
+# <span data-ttu-id="cc11e-101">Update-AzImportExport</span><span class="sxs-lookup"><span data-stu-id="cc11e-101">Update-AzImportExport</span></span>
+
+## <span data-ttu-id="cc11e-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="cc11e-102">SYNOPSIS</span></span>
+<span data-ttu-id="cc11e-103">Обновляет свойства задания.</span><span class="sxs-lookup"><span data-stu-id="cc11e-103">Updates specific properties of a job.</span></span>
+<span data-ttu-id="cc11e-104">Вы можете вызвать эту операцию, чтобы уведомить службу импорта и экспорта о том, что жесткие диски, включающие задание импорта или экспорта, отправлены в центр обработки данных Майкрософт.</span><span class="sxs-lookup"><span data-stu-id="cc11e-104">You can call this operation to notify the Import/Export service that the hard drives comprising the import or export job have been shipped to the Microsoft data center.</span></span>
+<span data-ttu-id="cc11e-105">Его также можно использовать для отмены существующего задания.</span><span class="sxs-lookup"><span data-stu-id="cc11e-105">It can also be used to cancel an existing job.</span></span>
+
+## <span data-ttu-id="cc11e-106">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="cc11e-106">SYNTAX</span></span>
+
+### <span data-ttu-id="cc11e-107">UpdateExpanded (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="cc11e-107">UpdateExpanded (Default)</span></span>
+```
+Update-AzImportExport -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
+ [-AcceptLanguage <String>] [-BackupDriveManifest] [-CancelRequested] [-DeliveryPackageCarrierName <String>]
+ [-DeliveryPackageDriveCount <Int32>] [-DeliveryPackageShipDate <String>]
+ [-DeliveryPackageTrackingNumber <String>] [-DriveList <IDriveStatus[]>] [-LogLevel <String>]
+ [-ReturnAddressCity <String>] [-ReturnAddressCountryOrRegion <String>] [-ReturnAddressEmail <String>]
+ [-ReturnAddressPhone <String>] [-ReturnAddressPostalCode <String>] [-ReturnAddressRecipientName <String>]
+ [-ReturnAddressStateOrProvince <String>] [-ReturnAddressStreetAddress1 <String>]
+ [-ReturnAddressStreetAddress2 <String>] [-ReturnShippingCarrierAccountNumber <String>]
+ [-ReturnShippingCarrierName <String>] [-State <String>] [-Tag <IUpdateJobParametersTags>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### <span data-ttu-id="cc11e-108">UpdateViaIdentityExpanded</span><span class="sxs-lookup"><span data-stu-id="cc11e-108">UpdateViaIdentityExpanded</span></span>
+```
+Update-AzImportExport -InputObject <IImportExportIdentity> [-AcceptLanguage <String>] [-BackupDriveManifest]
+ [-CancelRequested] [-DeliveryPackageCarrierName <String>] [-DeliveryPackageDriveCount <Int32>]
+ [-DeliveryPackageShipDate <String>] [-DeliveryPackageTrackingNumber <String>] [-DriveList <IDriveStatus[]>]
+ [-LogLevel <String>] [-ReturnAddressCity <String>] [-ReturnAddressCountryOrRegion <String>]
+ [-ReturnAddressEmail <String>] [-ReturnAddressPhone <String>] [-ReturnAddressPostalCode <String>]
+ [-ReturnAddressRecipientName <String>] [-ReturnAddressStateOrProvince <String>]
+ [-ReturnAddressStreetAddress1 <String>] [-ReturnAddressStreetAddress2 <String>]
+ [-ReturnShippingCarrierAccountNumber <String>] [-ReturnShippingCarrierName <String>] [-State <String>]
+ [-Tag <IUpdateJobParametersTags>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## <span data-ttu-id="cc11e-109">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="cc11e-109">DESCRIPTION</span></span>
+<span data-ttu-id="cc11e-110">Обновляет свойства задания.</span><span class="sxs-lookup"><span data-stu-id="cc11e-110">Updates specific properties of a job.</span></span>
+<span data-ttu-id="cc11e-111">Вы можете вызвать эту операцию, чтобы уведомить службу импорта и экспорта о том, что жесткие диски, включающие задание импорта или экспорта, отправлены в центр обработки данных Майкрософт.</span><span class="sxs-lookup"><span data-stu-id="cc11e-111">You can call this operation to notify the Import/Export service that the hard drives comprising the import or export job have been shipped to the Microsoft data center.</span></span>
+<span data-ttu-id="cc11e-112">Его также можно использовать для отмены существующего задания.</span><span class="sxs-lookup"><span data-stu-id="cc11e-112">It can also be used to cancel an existing job.</span></span>
+
+## <span data-ttu-id="cc11e-113">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="cc11e-113">EXAMPLES</span></span>
+
+### <span data-ttu-id="cc11e-114">Пример 1. Обновление задания ImportExport по группе ресурсов и имени сервера</span><span class="sxs-lookup"><span data-stu-id="cc11e-114">Example 1: Update ImportExport job by resource group and server name</span></span>
+```powershell
+PS C:\> Update-AzImportExport -Name test-job -ResourceGroupName ImportTestRG -DeliveryPackageCarrierName pwsh -DeliveryPackageTrackingNumber pwsh20200000
+Location Name     Type
+-------- ----     ----
+East US  test-job Microsoft.ImportExport/jobs
+```
+
+<span data-ttu-id="cc11e-115">Этот cmdlet обновляет задание ImportExport по группе ресурсов и имени сервера.</span><span class="sxs-lookup"><span data-stu-id="cc11e-115">This cmdlet updates ImportExport job by resource group and server name.</span></span>
+
+### <span data-ttu-id="cc11e-116">Пример 2. Обновление задания ImportExport с помощью удостоверения.</span><span class="sxs-lookup"><span data-stu-id="cc11e-116">Example 2: Update ImportExport job by identity.</span></span>
+```powershell
+PS C:\> Get-AzImportExport -Name test-job -ResourceGroupName ImportTestRG | Update-AzImportExport -CancelRequested
+Location Name     Type
+-------- ----     ----
+East US  test-job Microsoft.ImportExport/jobs
+```
+
+<span data-ttu-id="cc11e-117">Этот cmdlet обновляет задание ImportExport по удостоверениям.</span><span class="sxs-lookup"><span data-stu-id="cc11e-117">This cmdlet updates ImportExport job by identity.</span></span>
+
+## <span data-ttu-id="cc11e-118">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="cc11e-118">PARAMETERS</span></span>
+
+### <span data-ttu-id="cc11e-119">-AcceptLanguage</span><span class="sxs-lookup"><span data-stu-id="cc11e-119">-AcceptLanguage</span></span>
+<span data-ttu-id="cc11e-120">Указывает предпочтительный язык для ответа.</span><span class="sxs-lookup"><span data-stu-id="cc11e-120">Specifies the preferred language for the response.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-121">-BackupDriveManifest</span><span class="sxs-lookup"><span data-stu-id="cc11e-121">-BackupDriveManifest</span></span>
+<span data-ttu-id="cc11e-122">Указывает на то, следует ли копировать файлы манифеста на дисках, чтобы блокировать BLOB-файлы.</span><span class="sxs-lookup"><span data-stu-id="cc11e-122">Indicates whether the manifest files on the drives should be copied to block blobs.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-123">-CancelRequested</span><span class="sxs-lookup"><span data-stu-id="cc11e-123">-CancelRequested</span></span>
+<span data-ttu-id="cc11e-124">При этом значение должно быть истинным.</span><span class="sxs-lookup"><span data-stu-id="cc11e-124">If specified, the value must be true.</span></span>
+<span data-ttu-id="cc11e-125">Служба попытается отменить задание.</span><span class="sxs-lookup"><span data-stu-id="cc11e-125">The service will attempt to cancel the job.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-126">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="cc11e-126">-DefaultProfile</span></span>
+<span data-ttu-id="cc11e-127">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="cc11e-127">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-128">-DeliveryPackageCarrierName</span><span class="sxs-lookup"><span data-stu-id="cc11e-128">-DeliveryPackageCarrierName</span></span>
+<span data-ttu-id="cc11e-129">Название оператора, который используется для импорта или экспорта дисков.</span><span class="sxs-lookup"><span data-stu-id="cc11e-129">The name of the carrier that is used to ship the import or export drives.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-130">-DeliveryPackageDriveCount</span><span class="sxs-lookup"><span data-stu-id="cc11e-130">-DeliveryPackageDriveCount</span></span>
+<span data-ttu-id="cc11e-131">Количество дисков, включенных в пакет.</span><span class="sxs-lookup"><span data-stu-id="cc11e-131">The number of drives included in the package.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-132">-DeliveryPackageShipDate</span><span class="sxs-lookup"><span data-stu-id="cc11e-132">-DeliveryPackageShipDate</span></span>
+<span data-ttu-id="cc11e-133">Дата отгрузки пакета.</span><span class="sxs-lookup"><span data-stu-id="cc11e-133">The date when the package is shipped.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-134">-DeliveryPackageTrackingNumber</span><span class="sxs-lookup"><span data-stu-id="cc11e-134">-DeliveryPackageTrackingNumber</span></span>
+<span data-ttu-id="cc11e-135">Номер для отслеживания пакета.</span><span class="sxs-lookup"><span data-stu-id="cc11e-135">The tracking number of the package.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-136">-DriveList</span><span class="sxs-lookup"><span data-stu-id="cc11e-136">-DriveList</span></span>
+<span data-ttu-id="cc11e-137">Список дисков, которые включают в себя задание.</span><span class="sxs-lookup"><span data-stu-id="cc11e-137">List of drives that comprise the job.</span></span>
+<span data-ttu-id="cc11e-138">Чтобы создать таблицу, см. раздел "ЗАМЕТКИ" для свойств DRIVELIST и создание hash table.</span><span class="sxs-lookup"><span data-stu-id="cc11e-138">To construct, see NOTES section for DRIVELIST properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ImportExport.Models.Api20161101.IDriveStatus[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-139">-InputObject</span><span class="sxs-lookup"><span data-stu-id="cc11e-139">-InputObject</span></span>
+<span data-ttu-id="cc11e-140">Параметр Identity To construct (Параметр identity To construct), см. раздел NOTES для свойств INPUTOBJECT и создание hash table.</span><span class="sxs-lookup"><span data-stu-id="cc11e-140">Identity Parameter To construct, see NOTES section for INPUTOBJECT properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ImportExport.Models.IImportExportIdentity
+Parameter Sets: UpdateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-141">-LogLevel</span><span class="sxs-lookup"><span data-stu-id="cc11e-141">-LogLevel</span></span>
+<span data-ttu-id="cc11e-142">Указывает, включено ли ведение журнала ошибок или подробное ведение журнала.</span><span class="sxs-lookup"><span data-stu-id="cc11e-142">Indicates whether error logging or verbose logging is enabled.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-143">-Name</span><span class="sxs-lookup"><span data-stu-id="cc11e-143">-Name</span></span>
+<span data-ttu-id="cc11e-144">Имя задания импорта и экспорта.</span><span class="sxs-lookup"><span data-stu-id="cc11e-144">The name of the import/export job.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases: JobName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-145">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="cc11e-145">-ResourceGroupName</span></span>
+<span data-ttu-id="cc11e-146">Имя группы ресурсов однозначно определяет группу ресурсов в рамках подписки пользователя.</span><span class="sxs-lookup"><span data-stu-id="cc11e-146">The resource group name uniquely identifies the resource group within the user subscription.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-147">-ReturnAddressCity</span><span class="sxs-lookup"><span data-stu-id="cc11e-147">-ReturnAddressCity</span></span>
+<span data-ttu-id="cc11e-148">Название города, которое будет использовать при возврате дисков.</span><span class="sxs-lookup"><span data-stu-id="cc11e-148">The city name to use when returning the drives.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-149">-ReturnAddressCountryOrRegion</span><span class="sxs-lookup"><span data-stu-id="cc11e-149">-ReturnAddressCountryOrRegion</span></span>
+<span data-ttu-id="cc11e-150">Страна или регион, которые будут применяться при возврате дисков.</span><span class="sxs-lookup"><span data-stu-id="cc11e-150">The country or region to use when returning the drives.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-151">-ReturnAddressEmail</span><span class="sxs-lookup"><span data-stu-id="cc11e-151">-ReturnAddressEmail</span></span>
+<span data-ttu-id="cc11e-152">Адрес электронной почты получателя возвращенных дисков.</span><span class="sxs-lookup"><span data-stu-id="cc11e-152">Email address of the recipient of the returned drives.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-153">-ReturnAddressPhone</span><span class="sxs-lookup"><span data-stu-id="cc11e-153">-ReturnAddressPhone</span></span>
+<span data-ttu-id="cc11e-154">Номер телефона получателя возвращенных дисков.</span><span class="sxs-lookup"><span data-stu-id="cc11e-154">Phone number of the recipient of the returned drives.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-155">-ReturnAddressPostalCode</span><span class="sxs-lookup"><span data-stu-id="cc11e-155">-ReturnAddressPostalCode</span></span>
+<span data-ttu-id="cc11e-156">Почтовый индекс, который будет применяться при возврате дисков.</span><span class="sxs-lookup"><span data-stu-id="cc11e-156">The postal code to use when returning the drives.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-157">-ReturnAddressRecipientName</span><span class="sxs-lookup"><span data-stu-id="cc11e-157">-ReturnAddressRecipientName</span></span>
+<span data-ttu-id="cc11e-158">Имя получателя, который получит жесткие диски при возврате.</span><span class="sxs-lookup"><span data-stu-id="cc11e-158">The name of the recipient who will receive the hard drives when they are returned.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-159">-ReturnAddressStateOrProvince</span><span class="sxs-lookup"><span data-stu-id="cc11e-159">-ReturnAddressStateOrProvince</span></span>
+<span data-ttu-id="cc11e-160">Область или край, используемая при возврате дисков.</span><span class="sxs-lookup"><span data-stu-id="cc11e-160">The state or province to use when returning the drives.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-161">-ReturnAddressStreetAddress1</span><span class="sxs-lookup"><span data-stu-id="cc11e-161">-ReturnAddressStreetAddress1</span></span>
+<span data-ttu-id="cc11e-162">Первая строка адреса, используемого при возврате дисков.</span><span class="sxs-lookup"><span data-stu-id="cc11e-162">The first line of the street address to use when returning the drives.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-163">-ReturnAddressStreetAddress2</span><span class="sxs-lookup"><span data-stu-id="cc11e-163">-ReturnAddressStreetAddress2</span></span>
+<span data-ttu-id="cc11e-164">Вторая строка адреса, используемого при возврате дисков.</span><span class="sxs-lookup"><span data-stu-id="cc11e-164">The second line of the street address to use when returning the drives.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-165">-ReturnShippingCarrierAccountNumber</span><span class="sxs-lookup"><span data-stu-id="cc11e-165">-ReturnShippingCarrierAccountNumber</span></span>
+<span data-ttu-id="cc11e-166">Номер счета клиента у оператора связи.</span><span class="sxs-lookup"><span data-stu-id="cc11e-166">The customer's account number with the carrier.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-167">-ReturnShippingCarrierName</span><span class="sxs-lookup"><span data-stu-id="cc11e-167">-ReturnShippingCarrierName</span></span>
+<span data-ttu-id="cc11e-168">Имя оператора связи.</span><span class="sxs-lookup"><span data-stu-id="cc11e-168">The carrier's name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-169">-State</span><span class="sxs-lookup"><span data-stu-id="cc11e-169">-State</span></span>
+<span data-ttu-id="cc11e-170">Если указано, значение должно иметь значение "Отправка", которое указывает службе импорта и экспорта, что пакет отправлен.</span><span class="sxs-lookup"><span data-stu-id="cc11e-170">If specified, the value must be Shipping, which tells the Import/Export service that the package for the job has been shipped.</span></span>
+<span data-ttu-id="cc11e-171">Свойства ReturnAddress и DeliveryPackage должны быть за настроены в этом запросе или в предыдущем запросе. В противном случае запрос не будет создан.</span><span class="sxs-lookup"><span data-stu-id="cc11e-171">The ReturnAddress and DeliveryPackage properties must have been set either in this request or in a previous request, otherwise the request will fail.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-172">-SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="cc11e-172">-SubscriptionId</span></span>
+<span data-ttu-id="cc11e-173">ИД подписки для пользователя Azure.</span><span class="sxs-lookup"><span data-stu-id="cc11e-173">The subscription ID for the Azure user.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-174">-Tag</span><span class="sxs-lookup"><span data-stu-id="cc11e-174">-Tag</span></span>
+<span data-ttu-id="cc11e-175">Определяет теги, которые будут назначены заданиям.</span><span class="sxs-lookup"><span data-stu-id="cc11e-175">Specifies the tags that will be assigned to the job</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ImportExport.Models.Api20161101.IUpdateJobParametersTags
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-176">-Confirm</span><span class="sxs-lookup"><span data-stu-id="cc11e-176">-Confirm</span></span>
+<span data-ttu-id="cc11e-177">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="cc11e-177">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-178">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="cc11e-178">-WhatIf</span></span>
+<span data-ttu-id="cc11e-179">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="cc11e-179">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="cc11e-180">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="cc11e-180">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cc11e-181">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="cc11e-181">CommonParameters</span></span>
+<span data-ttu-id="cc11e-182">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="cc11e-182">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="cc11e-183">Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="cc11e-183">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="cc11e-184">INPUTS</span><span class="sxs-lookup"><span data-stu-id="cc11e-184">INPUTS</span></span>
+
+### <span data-ttu-id="cc11e-185">Microsoft.Azure.PowerShell.Cmdlets.ImportExport.Models.IImportExportIdentity</span><span class="sxs-lookup"><span data-stu-id="cc11e-185">Microsoft.Azure.PowerShell.Cmdlets.ImportExport.Models.IImportExportIdentity</span></span>
+
+## <span data-ttu-id="cc11e-186">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="cc11e-186">OUTPUTS</span></span>
+
+### <span data-ttu-id="cc11e-187">Microsoft.Azure.PowerShell.Cmdlets.ImportExport.Models.Api20161101.IJobResponse</span><span class="sxs-lookup"><span data-stu-id="cc11e-187">Microsoft.Azure.PowerShell.Cmdlets.ImportExport.Models.Api20161101.IJobResponse</span></span>
+
+## <span data-ttu-id="cc11e-188">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="cc11e-188">NOTES</span></span>
+
+<span data-ttu-id="cc11e-189">ALIASES</span><span class="sxs-lookup"><span data-stu-id="cc11e-189">ALIASES</span></span>
+
+<span data-ttu-id="cc11e-190">СЛОЖНЫЕ СВОЙСТВА ПАРАМЕТРОВ</span><span class="sxs-lookup"><span data-stu-id="cc11e-190">COMPLEX PARAMETER PROPERTIES</span></span>
+
+<span data-ttu-id="cc11e-191">Чтобы создать описанные ниже параметры, создайте hash table, содержащую нужные свойства.</span><span class="sxs-lookup"><span data-stu-id="cc11e-191">To create the parameters described below, construct a hash table containing the appropriate properties.</span></span> <span data-ttu-id="cc11e-192">Чтобы получить сведения о hash tables, запустите Get-Help about_Hash_Tables.</span><span class="sxs-lookup"><span data-stu-id="cc11e-192">For information on hash tables, run Get-Help about_Hash_Tables.</span></span>
+
+
+<span data-ttu-id="cc11e-193">DRIVELIST <IDriveStatus[]>: список дисков, в которые входит задание.</span><span class="sxs-lookup"><span data-stu-id="cc11e-193">DRIVELIST <IDriveStatus[]>: List of drives that comprise the job.</span></span>
+  - <span data-ttu-id="cc11e-194">`[BitLockerKey <String>]`. Ключ BitLocker, используемый для шифрования диска.</span><span class="sxs-lookup"><span data-stu-id="cc11e-194">`[BitLockerKey <String>]`: The BitLocker key used to encrypt the drive.</span></span>
+  - <span data-ttu-id="cc11e-195">`[BytesSucceeded <Int64?>]`: Переданные для диска bytes успешно перенесены.</span><span class="sxs-lookup"><span data-stu-id="cc11e-195">`[BytesSucceeded <Int64?>]`: Bytes successfully transferred for the drive.</span></span>
+  - <span data-ttu-id="cc11e-196">`[CopyStatus <String>]`: подробное состояние процесса передачи данных.</span><span class="sxs-lookup"><span data-stu-id="cc11e-196">`[CopyStatus <String>]`: Detailed status about the data transfer process.</span></span> <span data-ttu-id="cc11e-197">Это поле не возвращается в ответе, пока диск не находится в состоянии переноса.</span><span class="sxs-lookup"><span data-stu-id="cc11e-197">This field is not returned in the response until the drive is in the Transferring state.</span></span>
+  - <span data-ttu-id="cc11e-198">`[DriveHeaderHash <String>]`. Hash value the drive header (Hash value).</span><span class="sxs-lookup"><span data-stu-id="cc11e-198">`[DriveHeaderHash <String>]`: The drive header hash value.</span></span>
+  - <span data-ttu-id="cc11e-199">`[DriveId <String>]`: серийный номер диска без пробелов.</span><span class="sxs-lookup"><span data-stu-id="cc11e-199">`[DriveId <String>]`: The drive's hardware serial number, without spaces.</span></span>
+  - <span data-ttu-id="cc11e-200">`[ErrorLogUri <String>]`: URI, который указывает на BLOB-проект, содержащий журнал ошибок для операции передачи данных.</span><span class="sxs-lookup"><span data-stu-id="cc11e-200">`[ErrorLogUri <String>]`: A URI that points to the blob containing the error log for the data transfer operation.</span></span>
+  - <span data-ttu-id="cc11e-201">`[ManifestFile <String>]`: Относительный путь к файлу манифеста на диске.</span><span class="sxs-lookup"><span data-stu-id="cc11e-201">`[ManifestFile <String>]`: The relative path of the manifest file on the drive.</span></span> 
+  - <span data-ttu-id="cc11e-202">`[ManifestHash <String>]`. Кодируемый кодом MD5-файл манифеста на диске.</span><span class="sxs-lookup"><span data-stu-id="cc11e-202">`[ManifestHash <String>]`: The Base16-encoded MD5 hash of the manifest file on the drive.</span></span>
+  - <span data-ttu-id="cc11e-203">`[ManifestUri <String>]`: URI, который указывает на BLOB-файл, содержащий файл манифеста диска.</span><span class="sxs-lookup"><span data-stu-id="cc11e-203">`[ManifestUri <String>]`: A URI that points to the blob containing the drive manifest file.</span></span> 
+  - <span data-ttu-id="cc11e-204">`[PercentComplete <Int32?>]`: процентное завершения для диска.</span><span class="sxs-lookup"><span data-stu-id="cc11e-204">`[PercentComplete <Int32?>]`: Percentage completed for the drive.</span></span> 
+  - <span data-ttu-id="cc11e-205">`[State <DriveState?>]`. Текущее состояние диска.</span><span class="sxs-lookup"><span data-stu-id="cc11e-205">`[State <DriveState?>]`: The drive's current state.</span></span> 
+  - <span data-ttu-id="cc11e-206">`[VerboseLogUri <String>]`: URI, который указывает на BLOB-проект, содержащий подробный журнал для операции передачи данных.</span><span class="sxs-lookup"><span data-stu-id="cc11e-206">`[VerboseLogUri <String>]`: A URI that points to the blob containing the verbose log for the data transfer operation.</span></span> 
+
+<span data-ttu-id="cc11e-207">INPUTOBJECT <IImportExportIdentity> : Параметр identity</span><span class="sxs-lookup"><span data-stu-id="cc11e-207">INPUTOBJECT <IImportExportIdentity>: Identity Parameter</span></span>
+  - <span data-ttu-id="cc11e-208">`[Id <String>]`: путь удостоверения ресурса</span><span class="sxs-lookup"><span data-stu-id="cc11e-208">`[Id <String>]`: Resource identity path</span></span>
+  - <span data-ttu-id="cc11e-209">`[JobName <String>]`: имя задания импорта и экспорта.</span><span class="sxs-lookup"><span data-stu-id="cc11e-209">`[JobName <String>]`: The name of the import/export job.</span></span>
+  - <span data-ttu-id="cc11e-210">`[LocationName <String>]`: Название расположения.</span><span class="sxs-lookup"><span data-stu-id="cc11e-210">`[LocationName <String>]`: The name of the location.</span></span> <span data-ttu-id="cc11e-211">Например, "Запад США" или "запад".</span><span class="sxs-lookup"><span data-stu-id="cc11e-211">For example, West US or westus.</span></span>
+  - <span data-ttu-id="cc11e-212">`[ResourceGroupName <String>]`. Имя группы ресурсов однозначно определяет группу ресурсов в рамках подписки пользователя.</span><span class="sxs-lookup"><span data-stu-id="cc11e-212">`[ResourceGroupName <String>]`: The resource group name uniquely identifies the resource group within the user subscription.</span></span>
+  - <span data-ttu-id="cc11e-213">`[SubscriptionId <String>]`: ИД подписки для пользователя Azure.</span><span class="sxs-lookup"><span data-stu-id="cc11e-213">`[SubscriptionId <String>]`: The subscription ID for the Azure user.</span></span>
+
+## <span data-ttu-id="cc11e-214">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="cc11e-214">RELATED LINKS</span></span>
+
