@@ -1,0 +1,152 @@
+---
+title: Вход с помощью Azure PowerShell
+description: Сведения о том, как с помощью Azure PowerShell выполнить вход в роли пользователя, субъекта-службы или с помощью управляемых удостоверений для ресурсов Azure.
+ms.devlang: powershell
+ms.topic: conceptual
+ms.date: 11/23/2020
+ms.custom: devx-track-azurepowershell
+ms.service: azure-powershell
+ms.openlocfilehash: 46e5e84b6718cc7a700ef2df4e82647e8cb60941
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100012250"
+---
+# <a name="sign-in-with-azure-powershell"></a><span data-ttu-id="170af-103">Вход с помощью Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="170af-103">Sign in with Azure PowerShell</span></span>
+
+<span data-ttu-id="170af-104">Azure PowerShell поддерживает несколько методов проверки подлинности.</span><span class="sxs-lookup"><span data-stu-id="170af-104">Azure PowerShell supports several authentication methods.</span></span> <span data-ttu-id="170af-105">Проще всего приступить к работе можно с помощью оболочки [Azure Cloud Shell](/azure/cloud-shell/overview), которая автоматически выполняет вход в вашу учетную запись.</span><span class="sxs-lookup"><span data-stu-id="170af-105">The easiest way to get started is with [Azure Cloud Shell](/azure/cloud-shell/overview), which automatically logs you in.</span></span> <span data-ttu-id="170af-106">Если используется локальная установка, вы можете выполнить вход в интерактивном режиме с помощью браузера.</span><span class="sxs-lookup"><span data-stu-id="170af-106">With a local install, you can sign in interactively through your browser.</span></span> <span data-ttu-id="170af-107">При написании скриптов автоматизации рекомендуется использовать [субъект-службу](create-azure-service-principal-azureps.md) с необходимыми разрешениями.</span><span class="sxs-lookup"><span data-stu-id="170af-107">When writing scripts for automation, the recommended approach is to use a [service principal](create-azure-service-principal-azureps.md) with the necessary permissions.</span></span> <span data-ttu-id="170af-108">Максимально ограничьте разрешения на вход для своего варианта использования, чтобы обеспечить защиту ресурсов Azure.</span><span class="sxs-lookup"><span data-stu-id="170af-108">When you restrict sign-in permissions as much as possible for your use case, you help keep your Azure resources secure.</span></span>
+
+<span data-ttu-id="170af-109">Если у вас есть доступ более чем к одной подписке, вы входите в первую, которую предлагает Azure.</span><span class="sxs-lookup"><span data-stu-id="170af-109">Initially, you're signed into the first subscription Azure returns if you have access to more than one subscription.</span></span> <span data-ttu-id="170af-110">Команды выполняются для этой подписки по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="170af-110">Commands are run against this subscription by default.</span></span> <span data-ttu-id="170af-111">Чтобы изменить активную подписку для сеанса, используйте командлет [Set-AzContext](/powershell/module/az.accounts/set-azcontext).</span><span class="sxs-lookup"><span data-stu-id="170af-111">To change your active subscription for a session, use the [Set-AzContext](/powershell/module/az.accounts/set-azcontext) cmdlet.</span></span> <span data-ttu-id="170af-112">Чтобы изменить активную подписку и сохранить ее между сеансами в той же системе, используйте командлет [Select-AzContext](/powershell/module/az.accounts/select-azcontext).</span><span class="sxs-lookup"><span data-stu-id="170af-112">To change your active subscription and have it persist between sessions on the same system, use the [Select-AzContext](/powershell/module/az.accounts/select-azcontext) cmdlet.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="170af-113">Одни учетные данные можно использовать в нескольких сеансах PowerShell, пока вы остаетесь в системе.</span><span class="sxs-lookup"><span data-stu-id="170af-113">Your credentials are shared among multiple PowerShell sessions as long as you remain signed in.</span></span>
+> <span data-ttu-id="170af-114">Дополнительные сведения см. в статье [Использование учетных данных пользователя в разных сеансах PowerShell](context-persistence.md).</span><span class="sxs-lookup"><span data-stu-id="170af-114">For more information, see the article on [Persistent Credentials](context-persistence.md).</span></span>
+
+## <a name="sign-in-interactively"></a><span data-ttu-id="170af-115">Интерактивный вход</span><span class="sxs-lookup"><span data-stu-id="170af-115">Sign in interactively</span></span>
+
+<span data-ttu-id="170af-116">Чтобы выполнить вход в интерактивном режиме, используйте командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount).</span><span class="sxs-lookup"><span data-stu-id="170af-116">To sign in interactively, use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) cmdlet.</span></span>
+
+```azurepowershell-interactive
+Connect-AzAccount
+```
+
+<span data-ttu-id="170af-117">Начиная с версии модуля Az PowerShell 5.0.0, этот командлет по умолчанию представляет интерактивный запрос на вход через браузер.</span><span class="sxs-lookup"><span data-stu-id="170af-117">Beginning with Az PowerShell module version 5.0.0, this cmdlet presents an interactive browser based login prompt by default.</span></span> <span data-ttu-id="170af-118">Вы можете указать параметр `UseDeviceAuthentication` для получения строки маркера. Ранее в PowerShell версии 6 и выше этот параметр использовался по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="170af-118">You can specify the `UseDeviceAuthentication` parameter to receive a token string which was previously the default for PowerShell version 6 and higher.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="170af-119">Авторизация с учетными данными (на основе имени пользователя и пароля) была отключена в Azure PowerShell из-за изменений в способах авторизации Active Directory и по соображениям безопасности.</span><span class="sxs-lookup"><span data-stu-id="170af-119">Username/password credential authorization has been removed in Azure PowerShell due to changes in Active Directory authorization implementations and security concerns.</span></span> <span data-ttu-id="170af-120">Если вы используете авторизацию с учетными данными, чтобы автоматизировать процесс, [создайте субъект-службу](create-azure-service-principal-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="170af-120">If you use credential authorization for automation purposes, instead [create a service principal](create-azure-service-principal-azureps.md).</span></span>
+
+<span data-ttu-id="170af-121">Используйте командлет [Get-AzContext](/powershell/module/az.accounts/get-azcontext), чтобы сохранить идентификатор арендатора в переменной, которая будет использоваться в следующих двух разделах этой статьи.</span><span class="sxs-lookup"><span data-stu-id="170af-121">Use the [Get-AzContext](/powershell/module/az.accounts/get-azcontext) cmdlet to store your tenant ID in a variable to be used in the next two sections of this article.</span></span>
+
+```azurepowershell-interactive
+$tenantId = (Get-AzContext).Tenant.Id
+```
+
+## <a name="sign-in-with-a-service-principal"></a><span data-ttu-id="170af-122">Вход с использованием субъекта-службы <a name="sp-signin"/></span><span class="sxs-lookup"><span data-stu-id="170af-122">Sign in with a service principal <a name="sp-signin"/></span></span>
+
+<span data-ttu-id="170af-123">Субъекты-службы не являются интерактивными учетными записями Azure.</span><span class="sxs-lookup"><span data-stu-id="170af-123">Service principals are non-interactive Azure accounts.</span></span> <span data-ttu-id="170af-124">Как и для других учетных записей пользователей, для управления их разрешениями используется Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="170af-124">Like other user accounts, their permissions are managed with Azure Active Directory.</span></span> <span data-ttu-id="170af-125">Предоставив субъекту-службе только необходимые разрешения, вы обеспечите защиту скриптов автоматизации.</span><span class="sxs-lookup"><span data-stu-id="170af-125">By granting a service principal only the permissions it needs, your automation scripts stay secure.</span></span>
+
+<span data-ttu-id="170af-126">Сведения о том, как создать субъект-службу для использования с помощью Azure PowerShell, см. в [этой статье](create-azure-service-principal-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="170af-126">To learn how to create a service principal for use with Azure PowerShell, see [Create an Azure service principal with Azure PowerShell](create-azure-service-principal-azureps.md).</span></span>
+
+<span data-ttu-id="170af-127">Чтобы выполнить вход с помощью субъекта-службы, используйте аргумент `-ServicePrincipal` с командлетом `Connect-AzAccount`.</span><span class="sxs-lookup"><span data-stu-id="170af-127">To sign in with a service principal, use the `-ServicePrincipal` argument with the `Connect-AzAccount` cmdlet.</span></span> <span data-ttu-id="170af-128">Также потребуется идентификатор приложения субъекта-службы, учетные данные для входа и сопоставление идентификатора клиента с субъектом-службой.</span><span class="sxs-lookup"><span data-stu-id="170af-128">You'll also need the service principal's application ID, sign-in credentials, and the tenant ID associate with the service principal.</span></span> <span data-ttu-id="170af-129">Способ входа с использованием субъекта-службы зависит от способа аутентификации: на основе пароля или сертификата.</span><span class="sxs-lookup"><span data-stu-id="170af-129">How you sign in with a service principal depends on whether it's configured for password-based or certificate-based authentication.</span></span>
+
+### <a name="password-based-authentication"></a><span data-ttu-id="170af-130">Аутентификация на основе пароля</span><span class="sxs-lookup"><span data-stu-id="170af-130">Password-based authentication</span></span>
+
+<span data-ttu-id="170af-131">Создайте субъект-службу для использования в примерах в этом разделе.</span><span class="sxs-lookup"><span data-stu-id="170af-131">Create a service principal to be used in the examples in this section.</span></span> <span data-ttu-id="170af-132">См. статью [Создание субъекта-службы Azure с помощью Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps).</span><span class="sxs-lookup"><span data-stu-id="170af-132">For more information on creating service principals, see [Create an Azure service principal with Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps).</span></span>
+
+```azurepowershell-interactive
+$sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
+```
+
+<span data-ttu-id="170af-133">Чтобы получить учетные данные субъекта-службы как соответствующий объект, используйте командлет [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential).</span><span class="sxs-lookup"><span data-stu-id="170af-133">To get the service principal's credentials as the appropriate object, use the [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) cmdlet.</span></span> <span data-ttu-id="170af-134">Этот командлет отображает запрос на ввод имени пользователя и пароля.</span><span class="sxs-lookup"><span data-stu-id="170af-134">This cmdlet presents a prompt for a username and password.</span></span> <span data-ttu-id="170af-135">Используйте значение `applicationID` субъекта-службы в качестве имени пользователя и преобразуйте значение `secret` в обычный текст для пароля.</span><span class="sxs-lookup"><span data-stu-id="170af-135">Use the service principal's `applicationID` for the username and convert its `secret` to plain text for the password.</span></span>
+
+```azurepowershell-interactive
+# Retrieve the plain text password for use with `Get-Credential` in the next command.
+$sp.secret | ConvertFrom-SecureString -AsPlainText
+
+$pscredential = Get-Credential -UserName $sp.ApplicationId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
+```
+
+<span data-ttu-id="170af-136">В сценариях автоматизации вам нужно создать учетные данные на основе значений `applicationId` и `secret`субъекта-службы:</span><span class="sxs-lookup"><span data-stu-id="170af-136">For automation scenarios, you need to create credentials from a service principal's `applicationId` and `secret`:</span></span>
+
+```azurepowershell-interactive
+$pscredential = New-Object -TypeName System.Management.Automation.PSCredential($sp.ApplicationId, $sp.Secret)
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
+```
+
+<span data-ttu-id="170af-137">При автоматизации подключений субъекта-службы обязательно придерживайтесь рекомендаций по использованию паролей.</span><span class="sxs-lookup"><span data-stu-id="170af-137">Make sure that you use good password storage practices when automating service principal connections.</span></span>
+
+### <a name="certificate-based-authentication"></a><span data-ttu-id="170af-138">Аутентификация на основе сертификата</span><span class="sxs-lookup"><span data-stu-id="170af-138">Certificate-based authentication</span></span>
+
+<span data-ttu-id="170af-139">Для аутентификации на основе сертификата обязательно, чтобы среда Azure PowerShell могла извлекать данные из локального хранилища сертификатов по отпечатку сертификата.</span><span class="sxs-lookup"><span data-stu-id="170af-139">Certificate-based authentication requires that Azure PowerShell can retrieve information from a local certificate store based on a certificate thumbprint.</span></span>
+
+```azurepowershell-interactive
+Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
+```
+
+<span data-ttu-id="170af-140">При использовании субъекта-службы вместо зарегистрированного приложения добавьте аргумент `-ServicePrincipal` и предоставьте идентификатор приложения субъекта-службы в качестве значения параметра `-ApplicationId`.</span><span class="sxs-lookup"><span data-stu-id="170af-140">When using a service principal instead of a registered application, add the `-ServicePrincipal` argument and provide the service principal's Application ID as the `-ApplicationId` parameter's value.</span></span>
+
+```azurepowershell-interactive
+Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
+```
+
+<span data-ttu-id="170af-141">В PowerShell 5.1 проверять и администрировать хранилище сертификатов можно с помощью модуля [PKI](/powershell/module/pkiclient).</span><span class="sxs-lookup"><span data-stu-id="170af-141">In PowerShell 5.1, the certificate store can be managed and inspected with the [PKI](/powershell/module/pkiclient) module.</span></span> <span data-ttu-id="170af-142">В PowerShell версии 6.х и выше это не настолько просто.</span><span class="sxs-lookup"><span data-stu-id="170af-142">For PowerShell Core 6.x and later, the process is more complicated.</span></span> <span data-ttu-id="170af-143">Приведенные ниже скрипты демонстрируют, как импортировать существующий сертификат в хранилище сертификатов, к которому имеет доступ PowerShell.</span><span class="sxs-lookup"><span data-stu-id="170af-143">The following scripts show you how to import an existing certificate into the certificate store accessible by PowerShell.</span></span>
+
+#### <a name="import-a-certificate-in-powershell-51"></a><span data-ttu-id="170af-144">Импорт сертификата в PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="170af-144">Import a certificate in PowerShell 5.1</span></span>
+
+```azurepowershell-interactive
+# Import a PFX
+$credentials = Get-Credential -Message "Provide PFX private key password"
+Import-PfxCertificate -FilePath <path to certificate> -Password $credentials.Password -CertStoreLocation cert:\CurrentUser\My
+```
+
+#### <a name="import-a-certificate-in-powershell-core-6x-and-later"></a><span data-ttu-id="170af-145">Импорт сертификата в PowerShell версии 6.х и выше</span><span class="sxs-lookup"><span data-stu-id="170af-145">Import a certificate in PowerShell Core 6.x and later</span></span>
+
+```azurepowershell-interactive
+# Import a PFX
+$storeName = [System.Security.Cryptography.X509Certificates.StoreName]::My
+$storeLocation = [System.Security.Cryptography.X509Certificates.StoreLocation]::CurrentUser
+$store = [System.Security.Cryptography.X509Certificates.X509Store]::new($storeName, $storeLocation)
+$certPath = <path to certificate>
+$credentials = Get-Credential -Message "Provide PFX private key password"
+$flag = [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable
+$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certPath, $credentials.Password, $flag)
+$store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
+$store.Add($Certificate)
+$store.Close()
+```
+
+## <a name="sign-in-using-a-managed-identity"></a><span data-ttu-id="170af-146">Вход с использованием управляемого удостоверения</span><span class="sxs-lookup"><span data-stu-id="170af-146">Sign in using a managed identity</span></span>
+
+<span data-ttu-id="170af-147">Управляемые удостоверения — это функция Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="170af-147">Managed identities are a feature of Azure Active Directory.</span></span> <span data-ttu-id="170af-148">Они представляют собой субъекты-службы, назначенные ресурсам в Azure.</span><span class="sxs-lookup"><span data-stu-id="170af-148">Managed identities are service principals assigned to resources that run in Azure.</span></span> <span data-ttu-id="170af-149">Вы можете использовать субъект-службу управляемых удостоверений для входа и получения маркера доступа только для приложений, обеспечив возможность обращения к другим ресурсам.</span><span class="sxs-lookup"><span data-stu-id="170af-149">You can use a managed identity service principal for sign-in, and acquire an app-only access token to access other resources.</span></span> <span data-ttu-id="170af-150">Управляемые удостоверения доступны только в ресурсах в облаке Azure.</span><span class="sxs-lookup"><span data-stu-id="170af-150">Managed identities are only available on resources running in an Azure cloud.</span></span>
+
+<span data-ttu-id="170af-151">В этом примере для подключения используется управляемое удостоверение среды узла.</span><span class="sxs-lookup"><span data-stu-id="170af-151">This example connects using the managed identity of the host environment.</span></span> <span data-ttu-id="170af-152">Например, при выполнении в VirtualMachine с назначенным Управляемым удостоверением службы код может обеспечивать вход с помощью назначенного удостоверения.</span><span class="sxs-lookup"><span data-stu-id="170af-152">For example, if executed on a VirtualMachine with an assigned Managed Service Identity, this allows the code to sign in using that assigned identity.</span></span>
+
+```azurepowershell-interactive
+ Connect-AzAccount -Identity
+```
+
+## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a><span data-ttu-id="170af-153">Вход с использованием нестандартного клиента или в качестве поставщика облачных решений (CSP)</span><span class="sxs-lookup"><span data-stu-id="170af-153">Sign in with a non-default tenant or as a Cloud Solution Provider (CSP)</span></span>
+
+<span data-ttu-id="170af-154">Если ваша учетная запись связана с несколькими арендаторами, для входа требуется указать параметр `-Tenant` при подключении.</span><span class="sxs-lookup"><span data-stu-id="170af-154">If your account is associated with more than one tenant, sign-in requires the `-Tenant` parameter to be specified when connecting.</span></span> <span data-ttu-id="170af-155">Этот параметр работает с любым методом входа.</span><span class="sxs-lookup"><span data-stu-id="170af-155">This parameter works with any sign-in method.</span></span> <span data-ttu-id="170af-156">При входе в систему в качестве значения для этого параметра можно указать идентификатор объекта Azure клиента (идентификатор клиента) или полное доменное имя клиента.</span><span class="sxs-lookup"><span data-stu-id="170af-156">When logging in, this parameter value can either be the Azure object ID of the tenant (Tenant ID) or the fully qualified domain name of the tenant.</span></span>
+
+<span data-ttu-id="170af-157">Если вы являетесь [поставщиком облачных решений](https://azure.microsoft.com/offers/ms-azr-0145p/), значением для `-Tenant`**должен** быть идентификатор клиента.</span><span class="sxs-lookup"><span data-stu-id="170af-157">If you're a [Cloud Solution Provider (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), the `-Tenant` value **must** be a tenant ID.</span></span>
+
+```azurepowershell-interactive
+Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'
+```
+
+## <a name="sign-in-to-another-cloud"></a><span data-ttu-id="170af-158">Вход в другое облако</span><span class="sxs-lookup"><span data-stu-id="170af-158">Sign in to another Cloud</span></span>
+
+<span data-ttu-id="170af-159">Облачные службы Azure предоставляют среды, которые соответствуют региональным законам об обработке данных.</span><span class="sxs-lookup"><span data-stu-id="170af-159">Azure cloud services offer environments compliant with regional data-handling laws.</span></span> <span data-ttu-id="170af-160">Для учетных записей в региональном облаке нужно при входе указать среду с помощью аргумента `-Environment`.</span><span class="sxs-lookup"><span data-stu-id="170af-160">For accounts in a regional cloud, set the environment when you sign in with the `-Environment` argument.</span></span> <span data-ttu-id="170af-161">Этот параметр работает с любым методом входа.</span><span class="sxs-lookup"><span data-stu-id="170af-161">This parameter works with any sign-in method.</span></span> <span data-ttu-id="170af-162">Например, если ваша учетная запись находится в облаке для Китая, укажите следующее:</span><span class="sxs-lookup"><span data-stu-id="170af-162">For example, if your account is in the China cloud:</span></span>
+
+```azurepowershell-interactive
+Connect-AzAccount -Environment AzureChinaCloud
+```
+
+<span data-ttu-id="170af-163">Следующая команда позволяет получить список доступных сред:</span><span class="sxs-lookup"><span data-stu-id="170af-163">The following command gets a list of available environments:</span></span>
+
+```azurepowershell-interactive
+Get-AzEnvironment | Select-Object -Property Name
+```
