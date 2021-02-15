@@ -6,28 +6,28 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayPathRuleConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayPathRuleConfig.md
-ms.openlocfilehash: cbd69ff20e32d93ff5d9f9f7c4959568f627c7e0
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: f06dbac5e7c7a67acc38c5357351905fab0ed141
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94074804"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402564"
 ---
-# <span data-ttu-id="a81de-101">New-AzApplicationGatewayPathRuleConfig</span><span class="sxs-lookup"><span data-stu-id="a81de-101">New-AzApplicationGatewayPathRuleConfig</span></span>
+# <span data-ttu-id="e6a7f-101">New-AzApplicationGatewayPathRuleConfig</span><span class="sxs-lookup"><span data-stu-id="e6a7f-101">New-AzApplicationGatewayPathRuleConfig</span></span>
 
-## <span data-ttu-id="a81de-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="a81de-102">SYNOPSIS</span></span>
-<span data-ttu-id="a81de-103">Создает правило пути для шлюза приложения.</span><span class="sxs-lookup"><span data-stu-id="a81de-103">Creates an application gateway path rule.</span></span>
+## <span data-ttu-id="e6a7f-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="e6a7f-102">SYNOPSIS</span></span>
+<span data-ttu-id="e6a7f-103">Создает правило пути шлюза приложения.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-103">Creates an application gateway path rule.</span></span>
 
-## <span data-ttu-id="a81de-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="a81de-104">SYNTAX</span></span>
+## <span data-ttu-id="e6a7f-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="e6a7f-104">SYNTAX</span></span>
 
-### <span data-ttu-id="a81de-105">SetByResourceId</span><span class="sxs-lookup"><span data-stu-id="a81de-105">SetByResourceId</span></span>
+### <span data-ttu-id="e6a7f-105">SetByResourceId</span><span class="sxs-lookup"><span data-stu-id="e6a7f-105">SetByResourceId</span></span>
 ```
 New-AzApplicationGatewayPathRuleConfig -Name <String> -Paths <String[]> [-BackendAddressPoolId <String>]
  [-BackendHttpSettingsId <String>] [-RewriteRuleSetId <String>] [-RedirectConfigurationId <String>]
  [-FirewallPolicyId <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="a81de-106">SetByResource</span><span class="sxs-lookup"><span data-stu-id="a81de-106">SetByResource</span></span>
+### <span data-ttu-id="e6a7f-106">SetByResource</span><span class="sxs-lookup"><span data-stu-id="e6a7f-106">SetByResource</span></span>
 ```
 New-AzApplicationGatewayPathRuleConfig -Name <String> -Paths <String[]>
  [-BackendAddressPool <PSApplicationGatewayBackendAddressPool>]
@@ -38,14 +38,14 @@ New-AzApplicationGatewayPathRuleConfig -Name <String> -Paths <String[]>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="a81de-107">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="a81de-107">DESCRIPTION</span></span>
-<span data-ttu-id="a81de-108">Командлет **New-AzApplicationGatewayPathRuleConfig** создает правило пути к шлюзу приложения.</span><span class="sxs-lookup"><span data-stu-id="a81de-108">The **New-AzApplicationGatewayPathRuleConfig** cmdlet creates an application gateway path rule.</span></span>
-<span data-ttu-id="a81de-109">Правила, созданные этим командлетом, можно добавить в коллекцию параметров конфигурации карты URL-пути, а затем назначить шлюзу.</span><span class="sxs-lookup"><span data-stu-id="a81de-109">Rules created by this cmdlet can be added to a collection of URL path map configuration settings and then assigned to a gateway.</span></span>
-<span data-ttu-id="a81de-110">Параметры конфигурации схемы пути используются в балансировке нагрузки для шлюза приложений.</span><span class="sxs-lookup"><span data-stu-id="a81de-110">Path map configuration settings are used in application gateway load balancing.</span></span>
+## <span data-ttu-id="e6a7f-107">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="e6a7f-107">DESCRIPTION</span></span>
+<span data-ttu-id="e6a7f-108">Для создания правила пути шлюза приложения создается **cmdlet New-AzApplicationGatewayPathRuleConfig.**</span><span class="sxs-lookup"><span data-stu-id="e6a7f-108">The **New-AzApplicationGatewayPathRuleConfig** cmdlet creates an application gateway path rule.</span></span>
+<span data-ttu-id="e6a7f-109">Правила, созданные этим cmdlet, можно добавить в коллекцию параметров конфигурации карты URL-адреса, а затем на назначенную шлюзу.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-109">Rules created by this cmdlet can be added to a collection of URL path map configuration settings and then assigned to a gateway.</span></span>
+<span data-ttu-id="e6a7f-110">Параметры конфигурации карты пути используются для балансировки нагрузки шлюза приложения.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-110">Path map configuration settings are used in application gateway load balancing.</span></span>
 
-## <span data-ttu-id="a81de-111">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="a81de-111">EXAMPLES</span></span>
+## <span data-ttu-id="e6a7f-111">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="e6a7f-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="a81de-112">Пример 1</span><span class="sxs-lookup"><span data-stu-id="a81de-112">Example 1</span></span>
+### <span data-ttu-id="e6a7f-112">Пример 1</span><span class="sxs-lookup"><span data-stu-id="e6a7f-112">Example 1</span></span>
 ```
 PS C:\>$Gateway = Get-AzApplicationGateway -Name "ContosoApplicationGateway"
 PS C:\> $AddressPool = New-AzApplicationGatewayBackendAddressPool -Name "ContosoAddressPool" -BackendIPAddresses "192.168.1.1", "192.168.1.2"
@@ -54,31 +54,31 @@ PS C:\> $PathRuleConfig = New-AzApplicationGatewayPathRuleConfig -Name "base" -P
 PS C:\> Add-AzApplicationGatewayUrlPathMapConfig -ApplicationGateway $Gateway -Name "ContosoUrlPathMap" -PathRules $PathRuleConfig -DefaultBackendAddressPool $AddressPool -DefaultBackendHttpSettings $HttpSettings
 ```
 
-<span data-ttu-id="a81de-113">Эти команды создают новое правило для пути к шлюзу приложения, а затем используют командлет **Add-AzApplicationGatewayUrlPathMapConfig** , чтобы назначить это правило для шлюза приложений.</span><span class="sxs-lookup"><span data-stu-id="a81de-113">These commands create a new application gateway path rule and then use the **Add-AzApplicationGatewayUrlPathMapConfig** cmdlet to assign that rule to an application gateway.</span></span>
-<span data-ttu-id="a81de-114">Для этого первая команда создает ссылку на объект для шлюза ContosoApplicationGateway.</span><span class="sxs-lookup"><span data-stu-id="a81de-114">To do this, the first command creates an object reference to the gateway ContosoApplicationGateway.</span></span>
-<span data-ttu-id="a81de-115">Эта ссылка на объект хранится в переменной с именем $Gateway.</span><span class="sxs-lookup"><span data-stu-id="a81de-115">This object reference is stored in a variable named $Gateway.</span></span>
-<span data-ttu-id="a81de-116">Следующие две команды создают пул адресных ресурсов и объект параметров HTTP для внутренних баз данных. Эти объекты (хранящиеся в переменных $AddressPool и $HttpSettings) необходимы для создания объекта правила для пути.</span><span class="sxs-lookup"><span data-stu-id="a81de-116">The next two commands create a backend address pool and a backend HTTP settings object; these objects (stored in the variables $AddressPool and $HttpSettings) are needed in order to create a path rule object.</span></span>
-<span data-ttu-id="a81de-117">Четвертая команда создает объект правила пути и хранится в переменной с именем $PathRuleConfig.</span><span class="sxs-lookup"><span data-stu-id="a81de-117">The fourth command creates the path rule object and is stored in a variable named $PathRuleConfig.</span></span>
-<span data-ttu-id="a81de-118">Пятая команда использует **Add-AzApplicationGatewayUrlPathMapConfig** , чтобы добавить параметры конфигурации и правило нового пути, содержащееся в этих параметрах, в ContosoApplicationGateway.</span><span class="sxs-lookup"><span data-stu-id="a81de-118">The fifth command uses **Add-AzApplicationGatewayUrlPathMapConfig** to add the configuration settings and the new path rule contained within those settings to ContosoApplicationGateway.</span></span>
+<span data-ttu-id="e6a7f-113">Эти команды создают новое правило пути шлюза приложения, а затем назначьте его шлюзу приложения с помощью командлета **Add-AzApplicationGatewayUrlPathConfig.**</span><span class="sxs-lookup"><span data-stu-id="e6a7f-113">These commands create a new application gateway path rule and then use the **Add-AzApplicationGatewayUrlPathMapConfig** cmdlet to assign that rule to an application gateway.</span></span>
+<span data-ttu-id="e6a7f-114">Для этого первая команда создает ссылку на шлюз ContosoApplicationGateway.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-114">To do this, the first command creates an object reference to the gateway ContosoApplicationGateway.</span></span>
+<span data-ttu-id="e6a7f-115">Эта ссылка на объект хранится в переменной с именем $Gateway.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-115">This object reference is stored in a variable named $Gateway.</span></span>
+<span data-ttu-id="e6a7f-116">Следующие две команды создают пул адресов для дополнительных адресов и объект параметров HTTP. Эти объекты (которые хранятся в переменных $AddressPool и $HttpSettings) необходимы для создания объекта правила пути.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-116">The next two commands create a backend address pool and a backend HTTP settings object; these objects (stored in the variables $AddressPool and $HttpSettings) are needed in order to create a path rule object.</span></span>
+<span data-ttu-id="e6a7f-117">Четвертая команда создает объект правила пути и сохраняется в переменной с $PathRuleConfig.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-117">The fourth command creates the path rule object and is stored in a variable named $PathRuleConfig.</span></span>
+<span data-ttu-id="e6a7f-118">Пятая команда использует **Add-AzApplicationGatewayUrlPathMapConfig** для добавления параметров конфигурации и нового правила пути, содержаногося в этих параметрах, в ContosoApplicationGateway.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-118">The fifth command uses **Add-AzApplicationGatewayUrlPathMapConfig** to add the configuration settings and the new path rule contained within those settings to ContosoApplicationGateway.</span></span>
 
-### <span data-ttu-id="a81de-119">Пример 2</span><span class="sxs-lookup"><span data-stu-id="a81de-119">Example 2</span></span>
+### <span data-ttu-id="e6a7f-119">Пример 2</span><span class="sxs-lookup"><span data-stu-id="e6a7f-119">Example 2</span></span>
 ```
 PS C:\> $PathRuleConfig = New-AzApplicationGatewayPathRuleConfig -Name "base" -Paths "/base" -BackendAddressPool $AddressPool -BackendHttpSettings $HttpSettings -FirewallPolicy $firewallPolicy
 ```
 
-<span data-ttu-id="a81de-120">Эти команды создают правило пути с именем как "Base", paths AS "/Base", BackendAddressPool как $AddressPool, $HttpSettings BackendHttpSettings и $firewallPolicy FirewallPolicy. NGS и новое правило для пути, содержащееся в этих параметрах, в ContosoApplicationGateway.</span><span class="sxs-lookup"><span data-stu-id="a81de-120">These command creates a path-rule with the Name as "base", Paths as "/base", BackendAddressPool as $AddressPool, BackendHttpSettings as $HttpSettings and FirewallPolicy as $firewallPolicy.ngs and the new path rule contained within those settings to ContosoApplicationGateway.</span></span>
+<span data-ttu-id="e6a7f-120">Эта команда создает правило пути с именами "base", Paths as "/base", BackendAddressPool как $AddressPool, BackendHttpSettings как $HttpSettings и FirewallPolicy как $firewallPolicy.ngs и новым правилом пути, содержаменем ContosoApplicationGateway.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-120">These command creates a path-rule with the Name as "base", Paths as "/base", BackendAddressPool as $AddressPool, BackendHttpSettings as $HttpSettings and FirewallPolicy as $firewallPolicy.ngs and the new path rule contained within those settings to ContosoApplicationGateway.</span></span>
 
-## <span data-ttu-id="a81de-121">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="a81de-121">PARAMETERS</span></span>
+## <span data-ttu-id="e6a7f-121">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="e6a7f-121">PARAMETERS</span></span>
 
-### <span data-ttu-id="a81de-122">-BackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="a81de-122">-BackendAddressPool</span></span>
-<span data-ttu-id="a81de-123">Задает ссылку на объект для коллекции параметров пула адресных данных, которые будут добавлены в параметры конфигурации правил для путей к шлюзу.</span><span class="sxs-lookup"><span data-stu-id="a81de-123">Specifies an object reference to a collection of backend address pool settings to be added to the gateway path rules configuration settings.</span></span>
-<span data-ttu-id="a81de-124">Вы можете создать ссылку на объект с помощью командлета New-AzApplicationGatewayBackendAddressPool и синтаксиса, как показано ниже. `$AddressPool = New-AzApplicationGatewayBackendAddressPool -Name "ContosoAddressPool" -BackendIPAddresses "192.168.1.1", "192.168.1.2"`</span><span class="sxs-lookup"><span data-stu-id="a81de-124">You can create this object reference by using the New-AzApplicationGatewayBackendAddressPool cmdlet and syntax similar to this: `$AddressPool = New-AzApplicationGatewayBackendAddressPool -Name "ContosoAddressPool" -BackendIPAddresses "192.168.1.1", "192.168.1.2"`</span></span>
-<span data-ttu-id="a81de-125">Предыдущая команда добавляет в пул адресов два IP-адреса (192.16.1.1 и 192.168.1.2).</span><span class="sxs-lookup"><span data-stu-id="a81de-125">The preceding command adds two IP addresses (192.16.1.1 and 192.168.1.2) to the address pool.</span></span>
-<span data-ttu-id="a81de-126">Обратите внимание, что IP-адрес заключен в кавычки и отделен с помощью запятых.</span><span class="sxs-lookup"><span data-stu-id="a81de-126">Note that the IP address are enclosed in quote marks and separated by using commas.</span></span>
-<span data-ttu-id="a81de-127">Конечную переменную, $AddressPool, можно использовать в качестве значения параметра для параметра *DefaultBackendAddressPool* .</span><span class="sxs-lookup"><span data-stu-id="a81de-127">The resulting variable, $AddressPool, can then be used as the parameter value for the *DefaultBackendAddressPool* parameter.</span></span>
-<span data-ttu-id="a81de-128">Пул серверных адресов представляет IP-адреса на внутренних серверах.</span><span class="sxs-lookup"><span data-stu-id="a81de-128">The backend address pool represents the IP addresses on the backend servers.</span></span>
-<span data-ttu-id="a81de-129">Эти IP-адреса должны либо принадлежать к подсети виртуальной сети, либо быть общедоступными IP-адресами.</span><span class="sxs-lookup"><span data-stu-id="a81de-129">These IP addresses should either belong to the virtual network subnet or should be public IP addresses.</span></span>
-<span data-ttu-id="a81de-130">Если вы используете этот параметр, нельзя использовать параметр *DefaultBackendAddressPoolId* в той же команде.</span><span class="sxs-lookup"><span data-stu-id="a81de-130">If you use this parameter you cannot use the *DefaultBackendAddressPoolId* parameter in the same command.</span></span>
+### <span data-ttu-id="e6a7f-122">-BackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="e6a7f-122">-BackendAddressPool</span></span>
+<span data-ttu-id="e6a7f-123">Указывает ссылку на коллекцию параметров пула адресов для дополнительных адресов, которые будут добавлены в параметры конфигурации правил путей шлюза.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-123">Specifies an object reference to a collection of backend address pool settings to be added to the gateway path rules configuration settings.</span></span>
+<span data-ttu-id="e6a7f-124">Эту ссылку на объект можно создать с помощью New-AzApplicationGatewayBackendAddressPool и синтаксиса, аналогичных этой: `$AddressPool = New-AzApplicationGatewayBackendAddressPool -Name "ContosoAddressPool" -BackendIPAddresses "192.168.1.1", "192.168.1.2"`</span><span class="sxs-lookup"><span data-stu-id="e6a7f-124">You can create this object reference by using the New-AzApplicationGatewayBackendAddressPool cmdlet and syntax similar to this: `$AddressPool = New-AzApplicationGatewayBackendAddressPool -Name "ContosoAddressPool" -BackendIPAddresses "192.168.1.1", "192.168.1.2"`</span></span>
+<span data-ttu-id="e6a7f-125">При предыдущей команде в пул адресов добавляется два IP-адреса (192.16.1.1 и 192.168.1.2).</span><span class="sxs-lookup"><span data-stu-id="e6a7f-125">The preceding command adds two IP addresses (192.16.1.1 and 192.168.1.2) to the address pool.</span></span>
+<span data-ttu-id="e6a7f-126">Обратите внимание, что IP-адрес заключен в кавычках и разделен запятой.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-126">Note that the IP address are enclosed in quote marks and separated by using commas.</span></span>
+<span data-ttu-id="e6a7f-127">Итоговую переменную ($AddressPool) можно использовать в качестве значения параметра для параметра *DefaultBackendAddressPool.*</span><span class="sxs-lookup"><span data-stu-id="e6a7f-127">The resulting variable, $AddressPool, can then be used as the parameter value for the *DefaultBackendAddressPool* parameter.</span></span>
+<span data-ttu-id="e6a7f-128">Пул серверных адресов представляет IP-адреса серверов.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-128">The backend address pool represents the IP addresses on the backend servers.</span></span>
+<span data-ttu-id="e6a7f-129">Эти IP-адреса должны принадлежать виртуальной подсети сети или должны быть общедоступными IP-адресами.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-129">These IP addresses should either belong to the virtual network subnet or should be public IP addresses.</span></span>
+<span data-ttu-id="e6a7f-130">Этот параметр нельзя использовать в одной команде с параметром *DefaultBackendAddressPoolId.*</span><span class="sxs-lookup"><span data-stu-id="e6a7f-130">If you use this parameter you cannot use the *DefaultBackendAddressPoolId* parameter in the same command.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool
@@ -92,12 +92,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-131">-BackendAddressPoolId</span><span class="sxs-lookup"><span data-stu-id="a81de-131">-BackendAddressPoolId</span></span>
-<span data-ttu-id="a81de-132">Указывает идентификатор существующего пула серверных адресов, который можно добавить к параметрам конфигурации правила для пути шлюза.</span><span class="sxs-lookup"><span data-stu-id="a81de-132">Specifies the ID of an existing backend address pool that can be added to the gateway path rule configuration settings.</span></span>
-<span data-ttu-id="a81de-133">Идентификаторы пула адресов можно вернуть с помощью командлета Get-AzApplicationGatewayBackendAddressPool.</span><span class="sxs-lookup"><span data-stu-id="a81de-133">Address pool IDs can be returned by using the Get-AzApplicationGatewayBackendAddressPool cmdlet.</span></span>
-<span data-ttu-id="a81de-134">После появления идентификатора вы можете использовать параметр *DefaultBackendAddressPoolId* вместо параметра *DefaultBackendAddressPool* .</span><span class="sxs-lookup"><span data-stu-id="a81de-134">After you have the ID you can then use the *DefaultBackendAddressPoolId* parameter instead of the *DefaultBackendAddressPool* parameter.</span></span>
-<span data-ttu-id="a81de-135">Например:-DefaultBackendAddressPoolId "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendAddressPools/ContosoAddressPool" серверный пул адресных адресов представляет IP-адреса на внутренних серверах.</span><span class="sxs-lookup"><span data-stu-id="a81de-135">For instance: -DefaultBackendAddressPoolId "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendAddressPools/ContosoAddressPool" The backend address pool represents the IP addresses on the backend servers.</span></span>
-<span data-ttu-id="a81de-136">Эти IP-адреса должны либо принадлежать к подсети виртуальной сети, либо быть общедоступными IP-адресами.</span><span class="sxs-lookup"><span data-stu-id="a81de-136">These IP addresses should either belong to the virtual network subnet or should be public IP addresses.</span></span>
+### <span data-ttu-id="e6a7f-131">-BackendAddressPoolId</span><span class="sxs-lookup"><span data-stu-id="e6a7f-131">-BackendAddressPoolId</span></span>
+<span data-ttu-id="e6a7f-132">Определяет ИД существующего пула адресов для дополнительных адресов, который можно добавить в параметры конфигурации пути шлюза.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-132">Specifies the ID of an existing backend address pool that can be added to the gateway path rule configuration settings.</span></span>
+<span data-ttu-id="e6a7f-133">Коды пула адресов можно вернуть с помощью Get-AzApplicationGatewayBackendAddressPool-адресов.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-133">Address pool IDs can be returned by using the Get-AzApplicationGatewayBackendAddressPool cmdlet.</span></span>
+<span data-ttu-id="e6a7f-134">После этого можно использовать параметр *DefaultBackendAddressPoolId* вместо параметра *DefaultBackendAddressPool.*</span><span class="sxs-lookup"><span data-stu-id="e6a7f-134">After you have the ID you can then use the *DefaultBackendAddressPoolId* parameter instead of the *DefaultBackendAddressPool* parameter.</span></span>
+<span data-ttu-id="e6a7f-135">Например: -DefaultBackendAddressPoolId "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups /appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendAddressPools/ContosoAddressPool" Пул адресов серверов представляет IP-адреса серверов.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-135">For instance: -DefaultBackendAddressPoolId "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendAddressPools/ContosoAddressPool" The backend address pool represents the IP addresses on the backend servers.</span></span>
+<span data-ttu-id="e6a7f-136">Эти IP-адреса должны принадлежать виртуальной подсети сети или должны быть общедоступными IP-адресами.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-136">These IP addresses should either belong to the virtual network subnet or should be public IP addresses.</span></span>
 
 ```yaml
 Type: System.String
@@ -111,10 +111,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-137">-BackendHttpSettings</span><span class="sxs-lookup"><span data-stu-id="a81de-137">-BackendHttpSettings</span></span>
-<span data-ttu-id="a81de-138">Указывает ссылку на объект на коллекцию параметров внутренних HTTP-данных, которые должны быть добавлены в параметры конфигурации правила для пути к шлюзу.</span><span class="sxs-lookup"><span data-stu-id="a81de-138">Specifies an object reference to a collection of backend HTTP settings to be added to the gateway path rule configuration settings.</span></span>
-<span data-ttu-id="a81de-139">Вы можете создать ссылку на объект с помощью командлета New-AzApplicationGatewayBackendHttpSettings и синтаксиса, как показано ниже. $HttpSettings = New-AzApplicationGatewayBackendHttpSettings-Name "ContosoHttpSettings"-Port 80-Protocol "http"-CookieBasedAffinity "Disabled", то есть переменная, $HttpSettings, может использоваться в качестве значения параметра для параметра *DefaultBackendAddressPool* :-DefaultBackendHttpSettings $HttpSettings ПАРАМЕТРах HTTP-сервера можно настроить свойства, такие как порт, протокол и сходство на основе файлов cookie для пула баз данных.</span><span class="sxs-lookup"><span data-stu-id="a81de-139">You can create this object reference by using the New-AzApplicationGatewayBackendHttpSettings cmdlet and syntax similar to this: $HttpSettings = New-AzApplicationGatewayBackendHttpSettings -Name "ContosoHttpSettings" -Port 80 -Protocol "Http" -CookieBasedAffinity "Disabled" The resulting variable, $HttpSettings, can then be used as the parameter value for the *DefaultBackendAddressPool* parameter: -DefaultBackendHttpSettings $HttpSettings The backend HTTP settings configure properties such as port, protocol, and cookie-based affinity for a backend pool.</span></span>
-<span data-ttu-id="a81de-140">Если вы используете этот параметр, нельзя использовать параметр *DefaultBackendHttpSettingsId* в той же команде.</span><span class="sxs-lookup"><span data-stu-id="a81de-140">If you use this parameter you cannot use the *DefaultBackendHttpSettingsId* parameter in the same command.</span></span>
+### <span data-ttu-id="e6a7f-137">-BackendHttpSettings</span><span class="sxs-lookup"><span data-stu-id="e6a7f-137">-BackendHttpSettings</span></span>
+<span data-ttu-id="e6a7f-138">Указывает ссылку на коллекцию дополнительных параметров HTTP, которые будут добавлены в параметры конфигурации пути шлюза.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-138">Specifies an object reference to a collection of backend HTTP settings to be added to the gateway path rule configuration settings.</span></span>
+<span data-ttu-id="e6a7f-139">Эту ссылку на объект можно создать с помощью New-AzApplicationGatewayBackendHttpSettings и синтаксиса $HttpSettings = New-AzApplicationGatewayBackendHttpSettings -Name "ContosoHttpSettings" -Port 80 -Protocol "Http" -CookieBasedAffinity "Disabled" The resulting variable, $HttpSettings, затем можно использовать параметр DefaultBackendAddressPool в качестве значения параметра *DefaultBackendAddressPool:* -DefaultBackendHttpSettings $HttpSettings Параметры HTTP-файлов настраивают свойства, такие как порт, протокол и на основе cookie, для пула backend.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-139">You can create this object reference by using the New-AzApplicationGatewayBackendHttpSettings cmdlet and syntax similar to this: $HttpSettings = New-AzApplicationGatewayBackendHttpSettings -Name "ContosoHttpSettings" -Port 80 -Protocol "Http" -CookieBasedAffinity "Disabled" The resulting variable, $HttpSettings, can then be used as the parameter value for the *DefaultBackendAddressPool* parameter: -DefaultBackendHttpSettings $HttpSettings The backend HTTP settings configure properties such as port, protocol, and cookie-based affinity for a backend pool.</span></span>
+<span data-ttu-id="e6a7f-140">Если вы используете этот параметр, нельзя использовать параметр *DefaultBackendHttpSettingsId* в одной команде.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-140">If you use this parameter you cannot use the *DefaultBackendHttpSettingsId* parameter in the same command.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
@@ -128,12 +128,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-141">-BackendHttpSettingsId</span><span class="sxs-lookup"><span data-stu-id="a81de-141">-BackendHttpSettingsId</span></span>
-<span data-ttu-id="a81de-142">Указывает идентификатор существующей коллекции параметров HTTP-сервера, которую можно добавить в параметры конфигурации правила для пути шлюза.</span><span class="sxs-lookup"><span data-stu-id="a81de-142">Specifies the ID of an existing backend HTTP settings collection that can be added to the gateway path rule configuration settings.</span></span>
-<span data-ttu-id="a81de-143">Идентификаторы параметра HTTP можно вернуть с помощью командлета Get-AzApplicationGatewayBackendHttpSettings.</span><span class="sxs-lookup"><span data-stu-id="a81de-143">HTTP setting IDs can be returned by using the Get-AzApplicationGatewayBackendHttpSettings cmdlet.</span></span>
-<span data-ttu-id="a81de-144">После появления идентификатора вы можете использовать параметр *DefaultBackendHttpSettingsId* вместо параметра *DefaultBackendHttpSettings* .</span><span class="sxs-lookup"><span data-stu-id="a81de-144">After you have the ID you can then use the *DefaultBackendHttpSettingsId* parameter instead of the *DefaultBackendHttpSettings* parameter.</span></span>
-<span data-ttu-id="a81de-145">Например:-DefaultBackendSettings ID "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendHttpSettingsCollection/ContosoHttpSettings" Параметры HTTP-базы данных настраивают такие свойства, как порт, протокол и сходство на основе файлов cookie для пула баз данных.</span><span class="sxs-lookup"><span data-stu-id="a81de-145">For instance: -DefaultBackendSettings Id "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendHttpSettingsCollection/ContosoHttpSettings" The backend HTTP settings configure properties such as port, protocol, and cookie-based affinity for a backend pool.</span></span>
-<span data-ttu-id="a81de-146">Если вы используете этот параметр, нельзя использовать параметр *DefaultBackendHttpSettings* в той же команде.</span><span class="sxs-lookup"><span data-stu-id="a81de-146">If you use this parameter you cannot use the *DefaultBackendHttpSettings* parameter in the same command.</span></span>
+### <span data-ttu-id="e6a7f-141">-BackendHttpSettingsId</span><span class="sxs-lookup"><span data-stu-id="e6a7f-141">-BackendHttpSettingsId</span></span>
+<span data-ttu-id="e6a7f-142">Определяет ИД существующего коллекции параметров HTTP-адреса, который можно добавить в параметры конфигурации пути шлюза.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-142">Specifies the ID of an existing backend HTTP settings collection that can be added to the gateway path rule configuration settings.</span></span>
+<span data-ttu-id="e6a7f-143">Коды параметров HTTP можно вернуть с помощью Get-AzApplicationGatewayBackendHttpSettings..</span><span class="sxs-lookup"><span data-stu-id="e6a7f-143">HTTP setting IDs can be returned by using the Get-AzApplicationGatewayBackendHttpSettings cmdlet.</span></span>
+<span data-ttu-id="e6a7f-144">После этого можно использовать параметр *DefaultBackendHttpSettingsId* вместо *параметра DefaultBackendHttpSettings.*</span><span class="sxs-lookup"><span data-stu-id="e6a7f-144">After you have the ID you can then use the *DefaultBackendHttpSettingsId* parameter instead of the *DefaultBackendHttpSettings* parameter.</span></span>
+<span data-ttu-id="e6a7f-145">Например: -DefaultBackendSettings Id "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendHttpSettingsCollection/ContosoHttpSettings" The backend HTTP settings configure properties such as port, protocol, и бесконечность на основе файлов cookie для пула backend.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-145">For instance: -DefaultBackendSettings Id "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendHttpSettingsCollection/ContosoHttpSettings" The backend HTTP settings configure properties such as port, protocol, and cookie-based affinity for a backend pool.</span></span>
+<span data-ttu-id="e6a7f-146">Если вы используете этот параметр, нельзя использовать параметр *DefaultBackendHttpSettings в* одной команде.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-146">If you use this parameter you cannot use the *DefaultBackendHttpSettings* parameter in the same command.</span></span>
 
 ```yaml
 Type: System.String
@@ -147,10 +147,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-147">-FirewallPolicy</span><span class="sxs-lookup"><span data-stu-id="a81de-147">-FirewallPolicy</span></span>
-<span data-ttu-id="a81de-148">Указывает ссылку на объект для политики брандмауэра верхнего уровня.</span><span class="sxs-lookup"><span data-stu-id="a81de-148">Specifies the object reference to a top-level firewall policy.</span></span> <span data-ttu-id="a81de-149">Ссылку на объект можно создать с помощью New-AzApplicationGatewayWebApplicationFirewallPolicy командлета.</span><span class="sxs-lookup"><span data-stu-id="a81de-149">The object reference can be created by using New-AzApplicationGatewayWebApplicationFirewallPolicy cmdlet.</span></span>
-<span data-ttu-id="a81de-150">$firewallPolicy = New-AzApplicationGatewayFirewallPolicy-Name "wafPolicy1"-ResourceGroup "rgName" Политика брандмауэра, созданная с помощью приведенного выше unifiedgroup, может быть указана на уровне пути и правила.</span><span class="sxs-lookup"><span data-stu-id="a81de-150">$firewallPolicy = New-AzApplicationGatewayFirewallPolicy -Name "wafPolicy1" -ResourceGroup "rgName" A firewall policy created using the above commandlet can be referred at a path-rule level.</span></span> <span data-ttu-id="a81de-151">Команда "он больше" создаст параметры политики по умолчанию и управляемые правила.</span><span class="sxs-lookup"><span data-stu-id="a81de-151">he above command would create a default policy settings and managed rules.</span></span>
-<span data-ttu-id="a81de-152">Вместо значений по умолчанию пользователи могут задать PolicySettings, ManagedRules с помощью New-AzApplicationGatewayFirewallPolicySettings и New-AzApplicationGatewayFirewallPolicyManagedRules соответственно.</span><span class="sxs-lookup"><span data-stu-id="a81de-152">Instead of the default values, users can specify PolicySettings, ManagedRules by using New-AzApplicationGatewayFirewallPolicySettings and New-AzApplicationGatewayFirewallPolicyManagedRules respectively.</span></span>
+### <span data-ttu-id="e6a7f-147">-FirewallPolicy</span><span class="sxs-lookup"><span data-stu-id="e6a7f-147">-FirewallPolicy</span></span>
+<span data-ttu-id="e6a7f-148">Указывает ссылку на объект в политике брандмауэра верхнего уровня.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-148">Specifies the object reference to a top-level firewall policy.</span></span> <span data-ttu-id="e6a7f-149">Ссылку на объект можно создать с помощью New-AzApplicationGatewayWebApplicationFirewallPolicy-управления.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-149">The object reference can be created by using New-AzApplicationGatewayWebApplicationFirewallPolicy cmdlet.</span></span>
+<span data-ttu-id="e6a7f-150">$firewallPolicy = New-AzApplicationGatewayFirewallPolicy -Name "wafPolicy1" -ResourceGroup "rgName" Политика брандмауэра, созданная с помощью командлета выше, может быть передана на уровне пути.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-150">$firewallPolicy = New-AzApplicationGatewayFirewallPolicy -Name "wafPolicy1" -ResourceGroup "rgName" A firewall policy created using the above commandlet can be referred at a path-rule level.</span></span> <span data-ttu-id="e6a7f-151">Над командой, над командой, он создает параметры политики по умолчанию и управляемые правила.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-151">he above command would create a default policy settings and managed rules.</span></span>
+<span data-ttu-id="e6a7f-152">Вместо стандартных значений пользователи могут указывать PolicySettings и ManagedRules New-AzApplicationGatewayFirewallPolicySettings и New-AzApplicationGatewayFirewallPolicyManagedRules соответственно.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-152">Instead of the default values, users can specify PolicySettings, ManagedRules by using New-AzApplicationGatewayFirewallPolicySettings and New-AzApplicationGatewayFirewallPolicyManagedRules respectively.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallPolicy
@@ -163,10 +163,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-153">-FirewallPolicyId</span><span class="sxs-lookup"><span data-stu-id="a81de-153">-FirewallPolicyId</span></span>
-<span data-ttu-id="a81de-154">Указывает идентификатор существующего ресурса межсетевого экрана веб-приложения верхнего уровня.</span><span class="sxs-lookup"><span data-stu-id="a81de-154">Specifies the ID of an existing top-level web application firewall resource.</span></span>
-<span data-ttu-id="a81de-155">Идентификаторы политик брандмауэра можно вернуть с помощью командлета Get-AzApplicationGatewayWebApplicationFirewallPolicy.</span><span class="sxs-lookup"><span data-stu-id="a81de-155">Firewall policy IDs can be returned by using the Get-AzApplicationGatewayWebApplicationFirewallPolicy cmdlet.</span></span> <span data-ttu-id="a81de-156">После того как у нас есть идентификатор, вы можете использовать параметр *FirewallPolicyId* вместо параметра *firewallpolicy* .</span><span class="sxs-lookup"><span data-stu-id="a81de-156">After we have the ID you can use *FirewallPolicyId* parameter instead of *FirewallPolicy* parameter.</span></span>
-<span data-ttu-id="a81de-157">Для экземпляра:-FirewallPolicyId "/Subscriptions/<Subscription-ID>/resourceGroups/<ресурсов-ID>/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/ <firewallPolicyName> "</span><span class="sxs-lookup"><span data-stu-id="a81de-157">For instance: -FirewallPolicyId  "/subscriptions/<subscription-id>/resourceGroups/<resource-group-id>/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/<firewallPolicyName>"</span></span>
+### <span data-ttu-id="e6a7f-153">-FirewallPolicyId</span><span class="sxs-lookup"><span data-stu-id="e6a7f-153">-FirewallPolicyId</span></span>
+<span data-ttu-id="e6a7f-154">Определяет ИД существующего ресурса брандмауэра веб-приложения верхнего уровня.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-154">Specifies the ID of an existing top-level web application firewall resource.</span></span>
+<span data-ttu-id="e6a7f-155">Коды политики брандмауэра можно вернуть с помощью Get-AzApplicationGatewayWebApplicationFirewallPolicy управления.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-155">Firewall policy IDs can be returned by using the Get-AzApplicationGatewayWebApplicationFirewallPolicy cmdlet.</span></span> <span data-ttu-id="e6a7f-156">После того как у нас есть ИД, вы можете использовать параметр *FirewallPolicyId* вместо *параметра FirewallPolicy.*</span><span class="sxs-lookup"><span data-stu-id="e6a7f-156">After we have the ID you can use *FirewallPolicyId* parameter instead of *FirewallPolicy* parameter.</span></span>
+<span data-ttu-id="e6a7f-157">Например: -FirewallPolicyId "/subscriptions/<subscription-id>/resourceGroups/<resource-group-id>/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/ <firewallPolicyName> "</span><span class="sxs-lookup"><span data-stu-id="e6a7f-157">For instance: -FirewallPolicyId  "/subscriptions/<subscription-id>/resourceGroups/<resource-group-id>/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/<firewallPolicyName>"</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallPolicy
@@ -179,8 +179,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-158">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="a81de-158">-DefaultProfile</span></span>
-<span data-ttu-id="a81de-159">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="a81de-159">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="e6a7f-158">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e6a7f-158">-DefaultProfile</span></span>
+<span data-ttu-id="e6a7f-159">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-159">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -194,8 +194,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-160">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="a81de-160">-Name</span></span>
-<span data-ttu-id="a81de-161">Указывает имя конфигурации правила для пути, создаваемой этим командлетом.</span><span class="sxs-lookup"><span data-stu-id="a81de-161">Specifies the name of the path rule configuration that this cmdlet creates.</span></span>
+### <span data-ttu-id="e6a7f-160">-Name</span><span class="sxs-lookup"><span data-stu-id="e6a7f-160">-Name</span></span>
+<span data-ttu-id="e6a7f-161">Указывает имя конфигурации правила пути, которую создает этот cmdlet.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-161">Specifies the name of the path rule configuration that this cmdlet creates.</span></span>
 
 ```yaml
 Type: System.String
@@ -209,8 +209,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-162">-Paths</span><span class="sxs-lookup"><span data-stu-id="a81de-162">-Paths</span></span>
-<span data-ttu-id="a81de-163">Задает один или несколько правил пути к шлюзу приложения.</span><span class="sxs-lookup"><span data-stu-id="a81de-163">Specifies one or more application gateway path rules.</span></span>
+### <span data-ttu-id="e6a7f-162">-Paths</span><span class="sxs-lookup"><span data-stu-id="e6a7f-162">-Paths</span></span>
+<span data-ttu-id="e6a7f-163">Определяет одно или несколько правил пути шлюза приложения.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-163">Specifies one or more application gateway path rules.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -224,8 +224,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-164">-RedirectConfiguration</span><span class="sxs-lookup"><span data-stu-id="a81de-164">-RedirectConfiguration</span></span>
-<span data-ttu-id="a81de-165">RedirectConfiguration шлюза приложений</span><span class="sxs-lookup"><span data-stu-id="a81de-165">Application gateway RedirectConfiguration</span></span>
+### <span data-ttu-id="e6a7f-164">-RedirectConfiguration</span><span class="sxs-lookup"><span data-stu-id="e6a7f-164">-RedirectConfiguration</span></span>
+<span data-ttu-id="e6a7f-165">RedirectConfiguration шлюза приложения</span><span class="sxs-lookup"><span data-stu-id="e6a7f-165">Application gateway RedirectConfiguration</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration
@@ -239,8 +239,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-166">-RedirectConfigurationId</span><span class="sxs-lookup"><span data-stu-id="a81de-166">-RedirectConfigurationId</span></span>
-<span data-ttu-id="a81de-167">Идентификатор RedirectConfiguration шлюза приложения</span><span class="sxs-lookup"><span data-stu-id="a81de-167">ID of the application gateway RedirectConfiguration</span></span>
+### <span data-ttu-id="e6a7f-166">-RedirectConfigurationId</span><span class="sxs-lookup"><span data-stu-id="e6a7f-166">-RedirectConfigurationId</span></span>
+<span data-ttu-id="e6a7f-167">ID of the application gateway RedirectConfiguration</span><span class="sxs-lookup"><span data-stu-id="e6a7f-167">ID of the application gateway RedirectConfiguration</span></span>
 
 ```yaml
 Type: System.String
@@ -254,8 +254,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-168">-RewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="a81de-168">-RewriteRuleSet</span></span>
-<span data-ttu-id="a81de-169">RewriteRuleSet шлюза приложений</span><span class="sxs-lookup"><span data-stu-id="a81de-169">Application gateway RewriteRuleSet</span></span>
+### <span data-ttu-id="e6a7f-168">-RewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="e6a7f-168">-RewriteRuleSet</span></span>
+<span data-ttu-id="e6a7f-169">RewriteRuleSet шлюза приложения</span><span class="sxs-lookup"><span data-stu-id="e6a7f-169">Application gateway RewriteRuleSet</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet
@@ -269,8 +269,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-170">-RewriteRuleSetId</span><span class="sxs-lookup"><span data-stu-id="a81de-170">-RewriteRuleSetId</span></span>
-<span data-ttu-id="a81de-171">Идентификатор RewriteRuleSet шлюза приложения</span><span class="sxs-lookup"><span data-stu-id="a81de-171">ID of the application gateway RewriteRuleSet</span></span>
+### <span data-ttu-id="e6a7f-170">-RewriteRuleSetId</span><span class="sxs-lookup"><span data-stu-id="e6a7f-170">-RewriteRuleSetId</span></span>
+<span data-ttu-id="e6a7f-171">ИД шлюза приложения RewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="e6a7f-171">ID of the application gateway RewriteRuleSet</span></span>
 
 ```yaml
 Type: System.String
@@ -284,37 +284,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a81de-172">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a81de-172">CommonParameters</span></span>
-<span data-ttu-id="a81de-173">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="a81de-173">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a81de-174">Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="a81de-174">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="e6a7f-172">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e6a7f-172">CommonParameters</span></span>
+<span data-ttu-id="e6a7f-173">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e6a7f-173">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e6a7f-174">Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="e6a7f-174">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="a81de-175">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="a81de-175">INPUTS</span></span>
+## <span data-ttu-id="e6a7f-175">INPUTS</span><span class="sxs-lookup"><span data-stu-id="e6a7f-175">INPUTS</span></span>
 
-### <span data-ttu-id="a81de-176">Ничего</span><span class="sxs-lookup"><span data-stu-id="a81de-176">None</span></span>
+### <span data-ttu-id="e6a7f-176">Нет</span><span class="sxs-lookup"><span data-stu-id="e6a7f-176">None</span></span>
 
-## <span data-ttu-id="a81de-177">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="a81de-177">OUTPUTS</span></span>
+## <span data-ttu-id="e6a7f-177">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="e6a7f-177">OUTPUTS</span></span>
 
-### <span data-ttu-id="a81de-178">Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayPathRule</span><span class="sxs-lookup"><span data-stu-id="a81de-178">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayPathRule</span></span>
+### <span data-ttu-id="e6a7f-178">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayPathRule</span><span class="sxs-lookup"><span data-stu-id="e6a7f-178">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayPathRule</span></span>
 
-## <span data-ttu-id="a81de-179">Пуск</span><span class="sxs-lookup"><span data-stu-id="a81de-179">NOTES</span></span>
+## <span data-ttu-id="e6a7f-179">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="e6a7f-179">NOTES</span></span>
 
-## <span data-ttu-id="a81de-180">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="a81de-180">RELATED LINKS</span></span>
+## <span data-ttu-id="e6a7f-180">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="e6a7f-180">RELATED LINKS</span></span>
 
-[<span data-ttu-id="a81de-181">Add-AzApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="a81de-181">Add-AzApplicationGatewayUrlPathMapConfig</span></span>](./Add-AzApplicationGatewayUrlPathMapConfig.md)
+[<span data-ttu-id="e6a7f-181">Add-AzApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="e6a7f-181">Add-AzApplicationGatewayUrlPathMapConfig</span></span>](./Add-AzApplicationGatewayUrlPathMapConfig.md)
 
-[<span data-ttu-id="a81de-182">Get-AzApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="a81de-182">Get-AzApplicationGateway</span></span>](./Get-AzApplicationGateway.md)
+[<span data-ttu-id="e6a7f-182">Get-AzApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="e6a7f-182">Get-AzApplicationGateway</span></span>](./Get-AzApplicationGateway.md)
 
-[<span data-ttu-id="a81de-183">Get-AzApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="a81de-183">Get-AzApplicationGatewayUrlPathMapConfig</span></span>](./Get-AzApplicationGatewayUrlPathMapConfig.md)
+[<span data-ttu-id="e6a7f-183">Get-AzApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="e6a7f-183">Get-AzApplicationGatewayUrlPathMapConfig</span></span>](./Get-AzApplicationGatewayUrlPathMapConfig.md)
 
-[<span data-ttu-id="a81de-184">New-AzApplicationGatewayBackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="a81de-184">New-AzApplicationGatewayBackendAddressPool</span></span>](./New-AzApplicationGatewayBackendAddressPool.md)
+[<span data-ttu-id="e6a7f-184">New-AzApplicationGatewayBackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="e6a7f-184">New-AzApplicationGatewayBackendAddressPool</span></span>](./New-AzApplicationGatewayBackendAddressPool.md)
 
-[<span data-ttu-id="a81de-185">New-AzApplicationGatewayBackendHttpSettings</span><span class="sxs-lookup"><span data-stu-id="a81de-185">New-AzApplicationGatewayBackendHttpSettings</span></span>](./New-AzApplicationGatewayBackendHttpSettings.md)
 
-[<span data-ttu-id="a81de-186">New-AzApplicationGatewayPathRuleConfig</span><span class="sxs-lookup"><span data-stu-id="a81de-186">New-AzApplicationGatewayPathRuleConfig</span></span>](./New-AzApplicationGatewayPathRuleConfig.md)
+[<span data-ttu-id="e6a7f-185">New-AzApplicationGatewayPathRuleConfig</span><span class="sxs-lookup"><span data-stu-id="e6a7f-185">New-AzApplicationGatewayPathRuleConfig</span></span>](./New-AzApplicationGatewayPathRuleConfig.md)
 
-[<span data-ttu-id="a81de-187">New-AzApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="a81de-187">New-AzApplicationGatewayUrlPathMapConfig</span></span>](./New-AzApplicationGatewayUrlPathMapConfig.md)
+[<span data-ttu-id="e6a7f-186">New-AzApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="e6a7f-186">New-AzApplicationGatewayUrlPathMapConfig</span></span>](./New-AzApplicationGatewayUrlPathMapConfig.md)
 
-[<span data-ttu-id="a81de-188">Remove-AzApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="a81de-188">Remove-AzApplicationGatewayUrlPathMapConfig</span></span>](./Remove-AzApplicationGatewayUrlPathMapConfig.md)
+[<span data-ttu-id="e6a7f-187">Remove-AzApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="e6a7f-187">Remove-AzApplicationGatewayUrlPathMapConfig</span></span>](./Remove-AzApplicationGatewayUrlPathMapConfig.md)
 
-[<span data-ttu-id="a81de-189">Set-AzApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="a81de-189">Set-AzApplicationGatewayUrlPathMapConfig</span></span>](./Set-AzApplicationGatewayUrlPathMapConfig.md)
+[<span data-ttu-id="e6a7f-188">Set-AzApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="e6a7f-188">Set-AzApplicationGatewayUrlPathMapConfig</span></span>](./Set-AzApplicationGatewayUrlPathMapConfig.md)
 
 
