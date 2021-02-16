@@ -1,0 +1,269 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/set-azloadbalanceroutboundruleconfig
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzLoadBalancerOutboundRuleConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzLoadBalancerOutboundRuleConfig.md
+ms.openlocfilehash: 82e61d3c4a387630dec2c829d651f8d9746a3419
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100213396"
+---
+# <span data-ttu-id="44ef8-101">Set-AzLoadBalancerOutboundRuleConfig</span><span class="sxs-lookup"><span data-stu-id="44ef8-101">Set-AzLoadBalancerOutboundRuleConfig</span></span>
+
+## <span data-ttu-id="44ef8-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="44ef8-102">SYNOPSIS</span></span>
+<span data-ttu-id="44ef8-103">Настраивает исходящие правила для балансиров нагрузки.</span><span class="sxs-lookup"><span data-stu-id="44ef8-103">Sets an outbound rule configuration for a load balancer.</span></span>
+
+## <span data-ttu-id="44ef8-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="44ef8-104">SYNTAX</span></span>
+
+### <span data-ttu-id="44ef8-105">SetByResource (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="44ef8-105">SetByResource (Default)</span></span>
+```
+Set-AzLoadBalancerOutboundRuleConfig -LoadBalancer <PSLoadBalancer> -Name <String>
+ [-AllocatedOutboundPort <Int32>] -Protocol <String> [-EnableTcpReset] [-IdleTimeoutInMinutes <Int32>]
+ -FrontendIpConfiguration <PSResourceId[]> -BackendAddressPool <PSBackendAddressPool>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="44ef8-106">SetByResourceId</span><span class="sxs-lookup"><span data-stu-id="44ef8-106">SetByResourceId</span></span>
+```
+Set-AzLoadBalancerOutboundRuleConfig -LoadBalancer <PSLoadBalancer> -Name <String>
+ [-AllocatedOutboundPort <Int32>] -Protocol <String> [-EnableTcpReset] [-IdleTimeoutInMinutes <Int32>]
+ -FrontendIpConfiguration <PSResourceId[]> -BackendAddressPoolId <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="44ef8-107">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="44ef8-107">DESCRIPTION</span></span>
+<span data-ttu-id="44ef8-108">Cmdlet **Set-AzLoadBalancerOutboundRuleConfig** настраивает исходящие правила для балансиров нагрузки Azure.</span><span class="sxs-lookup"><span data-stu-id="44ef8-108">The **Set-AzLoadBalancerOutboundRuleConfig** cmdlet sets an outbound rule configuration for an Azure load balancer.</span></span>
+
+## <span data-ttu-id="44ef8-109">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="44ef8-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="44ef8-110">Пример 1. Изменение конфигурации правил исходящие для балансировки нагрузки</span><span class="sxs-lookup"><span data-stu-id="44ef8-110">Example 1: Modify the outbound rule configuration on a load balancer</span></span>
+```powershell
+PS C:\>$slb = Get-AzLoadBalancer -ResourceGroupName "MyResourceGroup" -Name "MyLoadBalancer"
+PS C:\>$slb | Add-AzLoadBalancerOutboundRuleConfig -Name "NewRule" -Protocol "Tcp" -FrontendIPConfiguration $slb.FrontendIpConfigurations[0] -BackendAddressPool $slb.BackendAddressPools[0] -IdleTimeoutInMinutes 5
+PS C:\>$slb | Set-AzLoadBalancerOutboundRuleConfig -Name "NewRule" -Protocol "Tcp" -FrontendIPConfiguration $slb.FrontendIpConfigurations[0] -BackendAddressPool $slb.BackendAddressPools[0] -IdleTimeoutInMinutes 10
+```
+
+<span data-ttu-id="44ef8-111">Первая команда получает балансировку нагрузки с именем MyLoadBalancer, а затем сохраняет его в переменной $slb.</span><span class="sxs-lookup"><span data-stu-id="44ef8-111">The first command gets the load balancer named MyLoadBalancer, and then stores it in the $slb variable.</span></span>
+<span data-ttu-id="44ef8-112">Вторая команда использует оператор конвейера для передать балансиру нагрузки в $slb Add-AzLoadBalancerOutboundRuleConfig, который добавляет в него конфигурацию исходящие правила.</span><span class="sxs-lookup"><span data-stu-id="44ef8-112">The second command uses the pipeline operator to pass the load balancer in $slb to Add-AzLoadBalancerOutboundRuleConfig, which adds an outbound rule configuration to it.</span></span>
+<span data-ttu-id="44ef8-113">Третья команда передает балансиру нагрузки в **Set-AzLoadBalancerOutboundRuleConfig,** который сохраняет и обновляет конфигурацию исходящие правила.</span><span class="sxs-lookup"><span data-stu-id="44ef8-113">The third command passes the load balancer to **Set-AzLoadBalancerOutboundRuleConfig**, which saves and updates the outbound rule configuration.</span></span>
+
+## <span data-ttu-id="44ef8-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="44ef8-114">PARAMETERS</span></span>
+
+### <span data-ttu-id="44ef8-115">-AllocatedOutboundPort</span><span class="sxs-lookup"><span data-stu-id="44ef8-115">-AllocatedOutboundPort</span></span>
+<span data-ttu-id="44ef8-116">Количество исходящие порты, используемые для NAT.</span><span class="sxs-lookup"><span data-stu-id="44ef8-116">The number of outbound ports to be used for NAT.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-117">-BackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="44ef8-117">-BackendAddressPool</span></span>
+<span data-ttu-id="44ef8-118">Ссылка на пул ДИПов.</span><span class="sxs-lookup"><span data-stu-id="44ef8-118">A reference to a pool of DIPs.</span></span>
+<span data-ttu-id="44ef8-119">Исходящие потоки случайным образом балансирует нагрузка по IPS на backend IPS.</span><span class="sxs-lookup"><span data-stu-id="44ef8-119">Outbound traffic is randomly load balanced across IPs in the backend IPs.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSBackendAddressPool
+Parameter Sets: SetByResource
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-120">-BackendAddressPoolId</span><span class="sxs-lookup"><span data-stu-id="44ef8-120">-BackendAddressPoolId</span></span>
+<span data-ttu-id="44ef8-121">Ссылка на пул ДИПов.</span><span class="sxs-lookup"><span data-stu-id="44ef8-121">A reference to a pool of DIPs.</span></span>
+<span data-ttu-id="44ef8-122">Исходящие потоки случайным образом балансирует нагрузка по IPS на backend IPS.</span><span class="sxs-lookup"><span data-stu-id="44ef8-122">Outbound traffic is randomly load balanced across IPs in the backend IPs.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="44ef8-123">-DefaultProfile</span></span>
+<span data-ttu-id="44ef8-124">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="44ef8-124">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-125">-EnableTcpReset</span><span class="sxs-lookup"><span data-stu-id="44ef8-125">-EnableTcpReset</span></span>
+<span data-ttu-id="44ef8-126">Получение перенаправленного TCP-сброса при неавторяемом времени ожидания потока TCP или о непредвиде приостановке подключения.</span><span class="sxs-lookup"><span data-stu-id="44ef8-126">Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination.</span></span>
+<span data-ttu-id="44ef8-127">Этот элемент используется только в том случае, если протокол имеет протокол TCP.</span><span class="sxs-lookup"><span data-stu-id="44ef8-127">This element is only used when the protocol is set to TCP.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-128">-FrontendIpConfiguration</span><span class="sxs-lookup"><span data-stu-id="44ef8-128">-FrontendIpConfiguration</span></span>
+<span data-ttu-id="44ef8-129">IP-адреса переднего ip-адреса балансира нагрузки.</span><span class="sxs-lookup"><span data-stu-id="44ef8-129">The Frontend IP addresses of the load balancer.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSResourceId[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-130">-IdleTimeoutInMinutes</span><span class="sxs-lookup"><span data-stu-id="44ef8-130">-IdleTimeoutInMinutes</span></span>
+<span data-ttu-id="44ef8-131">Время ожидания для неавтайного подключения TCP</span><span class="sxs-lookup"><span data-stu-id="44ef8-131">The timeout for the TCP idle connection</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-132">-LoadBalancer</span><span class="sxs-lookup"><span data-stu-id="44ef8-132">-LoadBalancer</span></span>
+<span data-ttu-id="44ef8-133">Ссылка на ресурс балансиров нагрузки.</span><span class="sxs-lookup"><span data-stu-id="44ef8-133">The reference of the load balancer resource.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSLoadBalancer
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-134">-Name</span><span class="sxs-lookup"><span data-stu-id="44ef8-134">-Name</span></span>
+<span data-ttu-id="44ef8-135">Имя правила исходящие.</span><span class="sxs-lookup"><span data-stu-id="44ef8-135">Name of the outbound rule.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-136">-Protocol</span><span class="sxs-lookup"><span data-stu-id="44ef8-136">-Protocol</span></span>
+<span data-ttu-id="44ef8-137">Протокол TCP, UDP или All</span><span class="sxs-lookup"><span data-stu-id="44ef8-137">Protocol - TCP, UDP or All</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-138">-Confirm</span><span class="sxs-lookup"><span data-stu-id="44ef8-138">-Confirm</span></span>
+<span data-ttu-id="44ef8-139">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="44ef8-139">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-140">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="44ef8-140">-WhatIf</span></span>
+<span data-ttu-id="44ef8-141">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="44ef8-141">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="44ef8-142">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="44ef8-142">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44ef8-143">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="44ef8-143">CommonParameters</span></span>
+<span data-ttu-id="44ef8-144">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="44ef8-144">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="44ef8-145">Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="44ef8-145">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="44ef8-146">INPUTS</span><span class="sxs-lookup"><span data-stu-id="44ef8-146">INPUTS</span></span>
+
+### <span data-ttu-id="44ef8-147">Microsoft.Azure.Commands.Network.Models.PSLoadBalancer</span><span class="sxs-lookup"><span data-stu-id="44ef8-147">Microsoft.Azure.Commands.Network.Models.PSLoadBalancer</span></span>
+
+### <span data-ttu-id="44ef8-148">System.Int32</span><span class="sxs-lookup"><span data-stu-id="44ef8-148">System.Int32</span></span>
+
+### <span data-ttu-id="44ef8-149">System.String</span><span class="sxs-lookup"><span data-stu-id="44ef8-149">System.String</span></span>
+
+### <span data-ttu-id="44ef8-150">Microsoft.Azure.Commands.Network.Models.PSResourceId[]</span><span class="sxs-lookup"><span data-stu-id="44ef8-150">Microsoft.Azure.Commands.Network.Models.PSResourceId[]</span></span>
+
+### <span data-ttu-id="44ef8-151">Microsoft.Azure.Commands.Network.Models.PSBackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="44ef8-151">Microsoft.Azure.Commands.Network.Models.PSBackendAddressPool</span></span>
+
+## <span data-ttu-id="44ef8-152">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="44ef8-152">OUTPUTS</span></span>
+
+### <span data-ttu-id="44ef8-153">Microsoft.Azure.Commands.Network.Models.PSLoadBalancer</span><span class="sxs-lookup"><span data-stu-id="44ef8-153">Microsoft.Azure.Commands.Network.Models.PSLoadBalancer</span></span>
+
+## <span data-ttu-id="44ef8-154">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="44ef8-154">NOTES</span></span>
+
+## <span data-ttu-id="44ef8-155">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="44ef8-155">RELATED LINKS</span></span>
+
+[<span data-ttu-id="44ef8-156">Add-AzLoadBalancerOutboundRuleConfig</span><span class="sxs-lookup"><span data-stu-id="44ef8-156">Add-AzLoadBalancerOutboundRuleConfig</span></span>](./Add-AzLoadBalancerOutboundRuleConfig.md)
+
+[<span data-ttu-id="44ef8-157">Get-AzLoadBalancerOutboundRuleConfig</span><span class="sxs-lookup"><span data-stu-id="44ef8-157">Get-AzLoadBalancerOutboundRuleConfig</span></span>](./Get-AzLoadBalancerOutboundRuleConfig.md)
+
+[<span data-ttu-id="44ef8-158">New-AzLoadBalancerOutboundRuleConfig</span><span class="sxs-lookup"><span data-stu-id="44ef8-158">New-AzLoadBalancerOutboundRuleConfig</span></span>](./New-AzLoadBalancerOutboundRuleConfig.md)
+
+[<span data-ttu-id="44ef8-159">Remove-AzLoadBalancerOutboundRuleConfig</span><span class="sxs-lookup"><span data-stu-id="44ef8-159">Remove-AzLoadBalancerOutboundRuleConfig</span></span>](./Remove-AzLoadBalancerOutboundRuleConfig.md)
