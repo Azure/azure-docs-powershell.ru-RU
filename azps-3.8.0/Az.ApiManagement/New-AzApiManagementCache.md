@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementCache.md
-ms.openlocfilehash: 4ae5bdd5dc9c15ab72b2f35f5d67eeaa732296bd
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: cfa2024064256b780121aeb489a3e8988b0a688e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94066716"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398110"
 ---
-# <span data-ttu-id="4ec76-101">New-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="4ec76-101">New-AzApiManagementCache</span></span>
+# <span data-ttu-id="df1b0-101">New-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="df1b0-101">New-AzApiManagementCache</span></span>
 
-## <span data-ttu-id="4ec76-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="4ec76-102">SYNOPSIS</span></span>
-<span data-ttu-id="4ec76-103">Создание новой сущности кэша</span><span class="sxs-lookup"><span data-stu-id="4ec76-103">Creates a new Cache entity</span></span>
+## <span data-ttu-id="df1b0-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="df1b0-102">SYNOPSIS</span></span>
+<span data-ttu-id="df1b0-103">Создание новой сущности кэша</span><span class="sxs-lookup"><span data-stu-id="df1b0-103">Creates a new Cache entity</span></span>
 
-## <span data-ttu-id="4ec76-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="4ec76-104">SYNTAX</span></span>
+## <span data-ttu-id="df1b0-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="df1b0-104">SYNTAX</span></span>
 
 ```
 New-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>] -ConnectionString <String>
@@ -25,12 +25,12 @@ New-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>] -
  [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="4ec76-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="4ec76-105">DESCRIPTION</span></span>
-<span data-ttu-id="4ec76-106">Командлет **New-AzApiManagementCache** создает новую сущность кэша в службе управления API.</span><span class="sxs-lookup"><span data-stu-id="4ec76-106">The cmdlet **New-AzApiManagementCache** creates a new cache entity in Api Management service.</span></span>
+## <span data-ttu-id="df1b0-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="df1b0-105">DESCRIPTION</span></span>
+<span data-ttu-id="df1b0-106">Для выполнения cmdlet **New-AzApiManagementCache** создается новая сущность кэша в службе управления Api.</span><span class="sxs-lookup"><span data-stu-id="df1b0-106">The cmdlet **New-AzApiManagementCache** creates a new cache entity in Api Management service.</span></span>
 
-## <span data-ttu-id="4ec76-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="4ec76-107">EXAMPLES</span></span>
+## <span data-ttu-id="df1b0-107">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="df1b0-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="4ec76-108">Пример 1: создание новой сущности кэша</span><span class="sxs-lookup"><span data-stu-id="4ec76-108">Example 1 : Create a new Cache entity</span></span>
+### <span data-ttu-id="df1b0-108">Пример 1. Создание новой сущности кэша</span><span class="sxs-lookup"><span data-stu-id="df1b0-108">Example 1 : Create a new Cache entity</span></span>
 ```powershell
 PS c:\> New-AzApiManagementCache -Context $context -ConnectionString "teamdemo.redis.cache.windows.net:6380,password=xxxxxx+xxxxx=,ssl=True,abortConnect=False" -Description "Team Cache"
 
@@ -44,29 +44,12 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-<span data-ttu-id="4ec76-109">Командлеты создают новую сущность кэша в главном расположении службы управления API.</span><span class="sxs-lookup"><span data-stu-id="4ec76-109">The cmdlets creates a new cache entity in the master location of the Api Management service.</span></span>
+<span data-ttu-id="df1b0-109">С их мастерами создается новый объект кэша в расположении, которое является главный расположением службы управления Api.</span><span class="sxs-lookup"><span data-stu-id="df1b0-109">The cmdlets creates a new cache entity in the master location of the Api Management service.</span></span>
 
-## <span data-ttu-id="4ec76-110">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="4ec76-110">PARAMETERS</span></span>
+## <span data-ttu-id="df1b0-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="df1b0-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="4ec76-111">-AzureRedisResourceId</span><span class="sxs-lookup"><span data-stu-id="4ec76-111">-AzureRedisResourceId</span></span>
-<span data-ttu-id="4ec76-112">ResourceId (ИД) для экземпляра Azure Redis Cache.</span><span class="sxs-lookup"><span data-stu-id="4ec76-112">Arm ResourceId of the Azure Redis Cache instance.</span></span> <span data-ttu-id="4ec76-113">Этот параметр является необязательным.</span><span class="sxs-lookup"><span data-stu-id="4ec76-113">This parameter is optional.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="4ec76-114">-CacheId</span><span class="sxs-lookup"><span data-stu-id="4ec76-114">-CacheId</span></span>
-<span data-ttu-id="4ec76-115">Идентификатор нового кэша.</span><span class="sxs-lookup"><span data-stu-id="4ec76-115">Identifier of new cache.</span></span>
-<span data-ttu-id="4ec76-116">Этот параметр является необязательным.</span><span class="sxs-lookup"><span data-stu-id="4ec76-116">This parameter is optional.</span></span>
-<span data-ttu-id="4ec76-117">Если не указано, будет создано.</span><span class="sxs-lookup"><span data-stu-id="4ec76-117">If not specified will be generated.</span></span>
+### <span data-ttu-id="df1b0-111">-AzureRedisResourceId</span><span class="sxs-lookup"><span data-stu-id="df1b0-111">-AzureRedisResourceId</span></span>
+<span data-ttu-id="df1b0-112">Arm ResourceId экземпляра Azure Redis Cache.</span><span class="sxs-lookup"><span data-stu-id="df1b0-112">Arm ResourceId of the Azure Redis Cache instance.</span></span> <span data-ttu-id="df1b0-113">Этот параметр является необязательным.</span><span class="sxs-lookup"><span data-stu-id="df1b0-113">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.String
@@ -80,9 +63,26 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4ec76-118">-ConnectionString</span><span class="sxs-lookup"><span data-stu-id="4ec76-118">-ConnectionString</span></span>
-<span data-ttu-id="4ec76-119">Строка подключения Redis.</span><span class="sxs-lookup"><span data-stu-id="4ec76-119">Redis Connection String.</span></span>
-<span data-ttu-id="4ec76-120">Этот параметр является обязательным.</span><span class="sxs-lookup"><span data-stu-id="4ec76-120">This parameter is required.</span></span>
+### <span data-ttu-id="df1b0-114">-CacheId</span><span class="sxs-lookup"><span data-stu-id="df1b0-114">-CacheId</span></span>
+<span data-ttu-id="df1b0-115">Идентификатор нового кэша.</span><span class="sxs-lookup"><span data-stu-id="df1b0-115">Identifier of new cache.</span></span>
+<span data-ttu-id="df1b0-116">Этот параметр является необязательным.</span><span class="sxs-lookup"><span data-stu-id="df1b0-116">This parameter is optional.</span></span>
+<span data-ttu-id="df1b0-117">Если он не указан, будет создан.</span><span class="sxs-lookup"><span data-stu-id="df1b0-117">If not specified will be generated.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df1b0-118">-ConnectionString</span><span class="sxs-lookup"><span data-stu-id="df1b0-118">-ConnectionString</span></span>
+<span data-ttu-id="df1b0-119">Redis Connection String.</span><span class="sxs-lookup"><span data-stu-id="df1b0-119">Redis Connection String.</span></span>
+<span data-ttu-id="df1b0-120">Этот параметр является required(обязательно).</span><span class="sxs-lookup"><span data-stu-id="df1b0-120">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -96,9 +96,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4ec76-121">-Context</span><span class="sxs-lookup"><span data-stu-id="4ec76-121">-Context</span></span>
-<span data-ttu-id="4ec76-122">Экземпляр PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="4ec76-122">Instance of PsApiManagementContext.</span></span>
-<span data-ttu-id="4ec76-123">Этот параметр является обязательным.</span><span class="sxs-lookup"><span data-stu-id="4ec76-123">This parameter is required.</span></span>
+### <span data-ttu-id="df1b0-121">-Контекст</span><span class="sxs-lookup"><span data-stu-id="df1b0-121">-Context</span></span>
+<span data-ttu-id="df1b0-122">Экземпляр PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="df1b0-122">Instance of PsApiManagementContext.</span></span>
+<span data-ttu-id="df1b0-123">Этот параметр является required(обязательно).</span><span class="sxs-lookup"><span data-stu-id="df1b0-123">This parameter is required.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -112,8 +112,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4ec76-124">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="4ec76-124">-DefaultProfile</span></span>
-<span data-ttu-id="4ec76-125">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="4ec76-125">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="df1b0-124">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="df1b0-124">-DefaultProfile</span></span>
+<span data-ttu-id="df1b0-125">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="df1b0-125">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -127,9 +127,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4ec76-126">-Описание</span><span class="sxs-lookup"><span data-stu-id="4ec76-126">-Description</span></span>
-<span data-ttu-id="4ec76-127">Описание кэша.</span><span class="sxs-lookup"><span data-stu-id="4ec76-127">Cache Description.</span></span>
-<span data-ttu-id="4ec76-128">Этот параметр является необязательным.</span><span class="sxs-lookup"><span data-stu-id="4ec76-128">This parameter is optional.</span></span>
+### <span data-ttu-id="df1b0-126">-Description</span><span class="sxs-lookup"><span data-stu-id="df1b0-126">-Description</span></span>
+<span data-ttu-id="df1b0-127">Описание кэша.</span><span class="sxs-lookup"><span data-stu-id="df1b0-127">Cache Description.</span></span>
+<span data-ttu-id="df1b0-128">Этот параметр является необязательным.</span><span class="sxs-lookup"><span data-stu-id="df1b0-128">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.String
@@ -143,8 +143,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4ec76-129">-Confirm</span><span class="sxs-lookup"><span data-stu-id="4ec76-129">-Confirm</span></span>
-<span data-ttu-id="4ec76-130">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="4ec76-130">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="df1b0-129">-Confirm</span><span class="sxs-lookup"><span data-stu-id="df1b0-129">-Confirm</span></span>
+<span data-ttu-id="df1b0-130">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="df1b0-130">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -158,9 +158,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4ec76-131">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="4ec76-131">-WhatIf</span></span>
-<span data-ttu-id="4ec76-132">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="4ec76-132">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="4ec76-133">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="4ec76-133">The cmdlet is not run.</span></span>
+### <span data-ttu-id="df1b0-131">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="df1b0-131">-WhatIf</span></span>
+<span data-ttu-id="df1b0-132">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="df1b0-132">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="df1b0-133">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="df1b0-133">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -174,25 +174,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4ec76-134">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4ec76-134">CommonParameters</span></span>
-<span data-ttu-id="4ec76-135">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="4ec76-135">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4ec76-136">Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="4ec76-136">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="df1b0-134">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="df1b0-134">CommonParameters</span></span>
+<span data-ttu-id="df1b0-135">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="df1b0-135">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="df1b0-136">Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="df1b0-136">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="4ec76-137">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="4ec76-137">INPUTS</span></span>
+## <span data-ttu-id="df1b0-137">INPUTS</span><span class="sxs-lookup"><span data-stu-id="df1b0-137">INPUTS</span></span>
 
-### <span data-ttu-id="4ec76-138">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="4ec76-138">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+### <span data-ttu-id="df1b0-138">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="df1b0-138">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
 
-### <span data-ttu-id="4ec76-139">System. String</span><span class="sxs-lookup"><span data-stu-id="4ec76-139">System.String</span></span>
+### <span data-ttu-id="df1b0-139">System.String</span><span class="sxs-lookup"><span data-stu-id="df1b0-139">System.String</span></span>
 
-## <span data-ttu-id="4ec76-140">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="4ec76-140">OUTPUTS</span></span>
+## <span data-ttu-id="df1b0-140">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="df1b0-140">OUTPUTS</span></span>
 
-### <span data-ttu-id="4ec76-141">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="4ec76-141">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache</span></span>
+### <span data-ttu-id="df1b0-141">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="df1b0-141">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache</span></span>
 
-## <span data-ttu-id="4ec76-142">Пуск</span><span class="sxs-lookup"><span data-stu-id="4ec76-142">NOTES</span></span>
+## <span data-ttu-id="df1b0-142">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="df1b0-142">NOTES</span></span>
 
-## <span data-ttu-id="4ec76-143">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="4ec76-143">RELATED LINKS</span></span>
+## <span data-ttu-id="df1b0-143">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="df1b0-143">RELATED LINKS</span></span>
 
-[<span data-ttu-id="4ec76-144">Get-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="4ec76-144">Get-AzApiManagementCache</span></span>](./Get-AzApiManagementCache)
+[<span data-ttu-id="df1b0-144">Get-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="df1b0-144">Get-AzApiManagementCache</span></span>](./Get-AzApiManagementCache.md)
 
-[<span data-ttu-id="4ec76-145">Set-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="4ec76-145">Set-AzApiManagementCache</span></span>](./Set-AzApiManagementCache.md)
+[<span data-ttu-id="df1b0-145">Remove-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="df1b0-145">Remove-AzApiManagementCache</span></span>](./Remove-AzApiManagementCache.md)
 
-[<span data-ttu-id="4ec76-146">Remove-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="4ec76-146">Remove-AzApiManagementCache</span></span>](./Remove-AzApiManagementCache.md)
+[<span data-ttu-id="df1b0-146">Update-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="df1b0-146">Update-AzApiManagementCache</span></span>](./Update-AzApiManagementCache.md)
