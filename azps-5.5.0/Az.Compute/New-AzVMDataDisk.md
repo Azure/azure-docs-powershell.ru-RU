@@ -1,0 +1,265 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/new-azvmdatadisk
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzVMDataDisk.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzVMDataDisk.md
+ms.openlocfilehash: 4eefa5a0a22b3db0e7ab10085729e1040dbd4e71
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100215652"
+---
+# <span data-ttu-id="a9f37-101">New-AzVMDataDisk</span><span class="sxs-lookup"><span data-stu-id="a9f37-101">New-AzVMDataDisk</span></span>
+
+## <span data-ttu-id="a9f37-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="a9f37-102">SYNOPSIS</span></span>
+<span data-ttu-id="a9f37-103">Создает объект локального диска данных для виртуальной машины или виртуальных машин.</span><span class="sxs-lookup"><span data-stu-id="a9f37-103">Creates a local data disk object for a virtual machine or a Vmss VM.</span></span>
+
+## <span data-ttu-id="a9f37-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="a9f37-104">SYNTAX</span></span>
+
+### <span data-ttu-id="a9f37-105">NormalDiskParameterSetName (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="a9f37-105">NormalDiskParameterSetName (Default)</span></span>
+```
+New-AzVMDataDisk [-Lun] <Int32> [-CreateOption] <String> [-Name <String>] [-Caching <CachingTypes>]
+ [-DiskSizeInGB <Int32>] [-VhdUri <String>] [-SourceImageUri <String>] [-DiskEncryptionSetId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="a9f37-106">ManagedDiskParameterSetName</span><span class="sxs-lookup"><span data-stu-id="a9f37-106">ManagedDiskParameterSetName</span></span>
+```
+New-AzVMDataDisk [-Lun] <Int32> [-CreateOption] <String> [-Name <String>] [-Caching <CachingTypes>]
+ [-DiskSizeInGB <Int32>] [-ManagedDiskId <String>] [-StorageAccountType <String>]
+ [-DiskEncryptionSetId <String>] [-WriteAccelerator] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="a9f37-107">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="a9f37-107">DESCRIPTION</span></span>
+<span data-ttu-id="a9f37-108">С **новыми данными AzVMDataDisk** создается локальный объект диска данных для виртуальной машины или виртуальной машины VMSS.</span><span class="sxs-lookup"><span data-stu-id="a9f37-108">The **New-AzVMDataDisk** cmdlet creates a local data disk object for a virtual machine or a Vmss VM.</span></span>
+
+## <span data-ttu-id="a9f37-109">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="a9f37-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="a9f37-110">Пример 1. Добавление диска управляемых данных в VMSS-модем.</span><span class="sxs-lookup"><span data-stu-id="a9f37-110">Example 1: Add a managed data disk to a Vmss VM.</span></span>
+```powershell
+PS C:\> $disk = Get-AzDisk -ResourceGroupName $rgname -DiskName $diskname0
+PS C:\> $datadisk = New-AzVMDataDisk -Caching 'ReadOnly' -Lun 2 -CreateOption Attach -StorageAccountType Standard_LRS -ManagedDiskId $disk.Id
+PS C:\> $VmssVM = Get-AzVmssVM -ResourceGroupName "myrg" -VMScaleSetName "myvmss" -InstanceId 0
+PS C:\> Update-AzVmssVM -ResourceGroupName "myrg" -VMScaleSetName "myvmss" -InstanceId 0 -DataDisk $datadisk
+```
+
+<span data-ttu-id="a9f37-111">Первая команда получает существующий управляемый диск.</span><span class="sxs-lookup"><span data-stu-id="a9f37-111">The first command gets an existing managed disk.</span></span>
+<span data-ttu-id="a9f37-112">Следующая команда создает объект на диске данных с управляемым диском.</span><span class="sxs-lookup"><span data-stu-id="a9f37-112">The next command creates a data disk object with the managed disk.</span></span>
+<span data-ttu-id="a9f37-113">Следующая команда получает существующий VMS-проект, который задается именем группы ресурсов, именем вим-замы и именем экземпляра.</span><span class="sxs-lookup"><span data-stu-id="a9f37-113">The next command gets an existing Vmss VM given by the resource group name, the vmss name and the instance ID.</span></span>
+<span data-ttu-id="a9f37-114">Последняя команда обновляет VMSs VM путем добавления нового диска данных.</span><span class="sxs-lookup"><span data-stu-id="a9f37-114">The final command updates the Vmss VM by adding a new data disk.</span></span>
+
+### <span data-ttu-id="a9f37-115">Пример 2</span><span class="sxs-lookup"><span data-stu-id="a9f37-115">Example 2</span></span>
+
+<span data-ttu-id="a9f37-116">Создает объект локального диска данных для виртуальной машины или виртуальных машин.</span><span class="sxs-lookup"><span data-stu-id="a9f37-116">Creates a local data disk object for a virtual machine or a Vmss VM.</span></span> <span data-ttu-id="a9f37-117">(autogenerated)</span><span class="sxs-lookup"><span data-stu-id="a9f37-117">(autogenerated)</span></span>
+
+```powershell <!-- Aladdin Generated Example --> 
+New-AzVMDataDisk -Caching None -CreateOption Attach -DiskSizeInGB 1 -Lun 2 -Name 'AgentPool01'
+```
+
+## <span data-ttu-id="a9f37-118">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="a9f37-118">PARAMETERS</span></span>
+
+### <span data-ttu-id="a9f37-119">-Кэшинг</span><span class="sxs-lookup"><span data-stu-id="a9f37-119">-Caching</span></span>
+<span data-ttu-id="a9f37-120">Кэшинг диска данных виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="a9f37-120">The virtual machine data disk's caching.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Management.Compute.Models.CachingTypes
+Parameter Sets: (All)
+Aliases:
+Accepted values: None, ReadOnly, ReadWrite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-121">-CreateOption</span><span class="sxs-lookup"><span data-stu-id="a9f37-121">-CreateOption</span></span>
+<span data-ttu-id="a9f37-122">Параметр создания диска данных виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="a9f37-122">The virtual machine data disk's create option.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="a9f37-123">-DefaultProfile</span></span>
+<span data-ttu-id="a9f37-124">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="a9f37-124">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-125">-DiskEncryptionSetId</span><span class="sxs-lookup"><span data-stu-id="a9f37-125">-DiskEncryptionSetId</span></span>
+<span data-ttu-id="a9f37-126">Код набора шифрования диска, управляемого виртуальной машиной.</span><span class="sxs-lookup"><span data-stu-id="a9f37-126">The virtual machine managed disk encryption set's Id.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-127">-DiskSizeInGB</span><span class="sxs-lookup"><span data-stu-id="a9f37-127">-DiskSizeInGB</span></span>
+<span data-ttu-id="a9f37-128">Размер диска данных виртуальной машины в ГБ.</span><span class="sxs-lookup"><span data-stu-id="a9f37-128">The virtual machine data disk's size in GB.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-129">-Lun</span><span class="sxs-lookup"><span data-stu-id="a9f37-129">-Lun</span></span>
+<span data-ttu-id="a9f37-130">"Луна" на диске данных виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="a9f37-130">The virtual machine data disk's Lun.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-131">-ManagedDiskId</span><span class="sxs-lookup"><span data-stu-id="a9f37-131">-ManagedDiskId</span></span>
+<span data-ttu-id="a9f37-132">ИД диска, управляемого виртуальной машиной.</span><span class="sxs-lookup"><span data-stu-id="a9f37-132">The virtual machine managed disk's Id.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ManagedDiskParameterSetName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-133">-Name</span><span class="sxs-lookup"><span data-stu-id="a9f37-133">-Name</span></span>
+<span data-ttu-id="a9f37-134">Имя диска данных виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="a9f37-134">The virtual machine data disk's name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-135">-SourceImageUri</span><span class="sxs-lookup"><span data-stu-id="a9f37-135">-SourceImageUri</span></span>
+<span data-ttu-id="a9f37-136">Uri образа источника на диске виртуальной машины ОС.</span><span class="sxs-lookup"><span data-stu-id="a9f37-136">The virtual machine OS disk's source image Uri.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: NormalDiskParameterSetName
+Aliases: SourceImage
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-137">-StorageAccountType</span><span class="sxs-lookup"><span data-stu-id="a9f37-137">-StorageAccountType</span></span>
+<span data-ttu-id="a9f37-138">Тип учетной записи на диске, управляемом виртуальной машиной.</span><span class="sxs-lookup"><span data-stu-id="a9f37-138">The virtual machine managed disk's account type.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ManagedDiskParameterSetName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-139">-VhdUri</span><span class="sxs-lookup"><span data-stu-id="a9f37-139">-VhdUri</span></span>
+<span data-ttu-id="a9f37-140">Vhd Uri диска данных виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="a9f37-140">The virtual machine data disk's Vhd Uri.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: NormalDiskParameterSetName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-141">-WriteAccelerator</span><span class="sxs-lookup"><span data-stu-id="a9f37-141">-WriteAccelerator</span></span>
+<span data-ttu-id="a9f37-142">Указывает, следует ли включить или отключить WriteAccelerator на диске управляемых данных.</span><span class="sxs-lookup"><span data-stu-id="a9f37-142">Specifies whether WriteAccelerator should be enabled or disabled on a managed data disk.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ManagedDiskParameterSetName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a9f37-143">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a9f37-143">CommonParameters</span></span>
+<span data-ttu-id="a9f37-144">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="a9f37-144">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a9f37-145">Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="a9f37-145">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="a9f37-146">INPUTS</span><span class="sxs-lookup"><span data-stu-id="a9f37-146">INPUTS</span></span>
+
+### <span data-ttu-id="a9f37-147">System.Int32</span><span class="sxs-lookup"><span data-stu-id="a9f37-147">System.Int32</span></span>
+
+### <span data-ttu-id="a9f37-148">System.String</span><span class="sxs-lookup"><span data-stu-id="a9f37-148">System.String</span></span>
+
+### <span data-ttu-id="a9f37-149">Microsoft.Azure.Management.Compute.Models.CachingTypes</span><span class="sxs-lookup"><span data-stu-id="a9f37-149">Microsoft.Azure.Management.Compute.Models.CachingTypes</span></span>
+
+### <span data-ttu-id="a9f37-150">System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="a9f37-150">System.Nullable\`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+
+## <span data-ttu-id="a9f37-151">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="a9f37-151">OUTPUTS</span></span>
+
+### <span data-ttu-id="a9f37-152">Microsoft.Azure.Commands.Compute.Models.PSVirtualMa modelseDataDisk</span><span class="sxs-lookup"><span data-stu-id="a9f37-152">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachineDataDisk</span></span>
+
+## <span data-ttu-id="a9f37-153">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="a9f37-153">NOTES</span></span>
+
+## <span data-ttu-id="a9f37-154">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="a9f37-154">RELATED LINKS</span></span>
