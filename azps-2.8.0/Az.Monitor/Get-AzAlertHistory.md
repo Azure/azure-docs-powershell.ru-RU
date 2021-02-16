@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: 7b8b12cf5f56d1ca5c4021a3b32539baf09fa995
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ff32f204cf7ee812c324f3efe13fd3751341e1b0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93720331"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406372"
 ---
-# <span data-ttu-id="04076-101">Get-AzAlertHistory</span><span class="sxs-lookup"><span data-stu-id="04076-101">Get-AzAlertHistory</span></span>
+# <span data-ttu-id="38bb0-101">Get-AzAlertHistory</span><span class="sxs-lookup"><span data-stu-id="38bb0-101">Get-AzAlertHistory</span></span>
 
-## <span data-ttu-id="04076-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="04076-102">SYNOPSIS</span></span>
-<span data-ttu-id="04076-103">Получает историю оповещений.</span><span class="sxs-lookup"><span data-stu-id="04076-103">Gets the history of alerts.</span></span>
+## <span data-ttu-id="38bb0-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="38bb0-102">SYNOPSIS</span></span>
+<span data-ttu-id="38bb0-103">Возвращает историю оповещений.</span><span class="sxs-lookup"><span data-stu-id="38bb0-103">Gets the history of alerts.</span></span>
 
-## <span data-ttu-id="04076-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="04076-104">SYNTAX</span></span>
+## <span data-ttu-id="38bb0-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="38bb0-104">SYNTAX</span></span>
 
 ```
 Get-AzAlertHistory [-ResourceId <String>] [-StartTime <DateTime>] [-EndTime <DateTime>] [-Status <String>]
  [-Caller <String>] [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="04076-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="04076-105">DESCRIPTION</span></span>
-<span data-ttu-id="04076-106">Командлет **Get-AzAlertHistory** получает историю оповещений по мере их включения, отключения, срабатывания, разрешения и т. д.</span><span class="sxs-lookup"><span data-stu-id="04076-106">The **Get-AzAlertHistory** cmdlet gets the history of alerts as they are enabled, disabled, fired, resolved, and so on.</span></span>
+## <span data-ttu-id="38bb0-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="38bb0-105">DESCRIPTION</span></span>
+<span data-ttu-id="38bb0-106">С **помощью cmdlet Get-AzAlertHistory** можно получить историю оповещений, которые были включены, отключены, отключены, устранены и так далее.</span><span class="sxs-lookup"><span data-stu-id="38bb0-106">The **Get-AzAlertHistory** cmdlet gets the history of alerts as they are enabled, disabled, fired, resolved, and so on.</span></span>
 
-## <span data-ttu-id="04076-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="04076-107">EXAMPLES</span></span>
+## <span data-ttu-id="38bb0-107">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="38bb0-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="04076-108">Пример 1: получение журнала оповещений</span><span class="sxs-lookup"><span data-stu-id="04076-108">Example 1: Get the alert history</span></span>
+### <span data-ttu-id="38bb0-108">Пример 1. Просмотр истории оповещений</span><span class="sxs-lookup"><span data-stu-id="38bb0-108">Example 1: Get the alert history</span></span>
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -DetailedOutput
 Authorization        : 
@@ -170,9 +170,9 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-<span data-ttu-id="04076-109">Эта команда получает историю оповещений для указанного временного интервала для текущей подписки.</span><span class="sxs-lookup"><span data-stu-id="04076-109">This command gets the alert history for the specified time frame for the current subscription.</span></span>
+<span data-ttu-id="38bb0-109">Эта команда получает журнал оповещений для указанного времени для текущей подписки.</span><span class="sxs-lookup"><span data-stu-id="38bb0-109">This command gets the alert history for the specified time frame for the current subscription.</span></span>
 
-### <span data-ttu-id="04076-110">Пример 2: получение журнала оповещений для определенного ресурса</span><span class="sxs-lookup"><span data-stu-id="04076-110">Example 2: Get alert history for a specified resource</span></span>
+### <span data-ttu-id="38bb0-110">Пример 2. Получать историю оповещений для указанного ресурса</span><span class="sxs-lookup"><span data-stu-id="38bb0-110">Example 2: Get alert history for a specified resource</span></span>
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -ResourceId "/subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft.insights/alertrules/checkrule3-4b135401-a30c-4224-ae21-fa53a5bd253d" -DetailedOutput
 
@@ -268,12 +268,12 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-<span data-ttu-id="04076-111">Эта команда получает события, связанные с правилом оповещения для указанного ресурса.</span><span class="sxs-lookup"><span data-stu-id="04076-111">This command gets the alert rule-related events for a specified resource.</span></span>
+<span data-ttu-id="38bb0-111">Эта команда получает события, связанные с правилом оповещения для указанного ресурса.</span><span class="sxs-lookup"><span data-stu-id="38bb0-111">This command gets the alert rule-related events for a specified resource.</span></span>
 
-## <span data-ttu-id="04076-112">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="04076-112">PARAMETERS</span></span>
+## <span data-ttu-id="38bb0-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="38bb0-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="04076-113">-Вызывающий абонент</span><span class="sxs-lookup"><span data-stu-id="04076-113">-Caller</span></span>
-<span data-ttu-id="04076-114">Задает вызывающий абонент.</span><span class="sxs-lookup"><span data-stu-id="04076-114">Specifies the caller.</span></span>
+### <span data-ttu-id="38bb0-113">-Caller</span><span class="sxs-lookup"><span data-stu-id="38bb0-113">-Caller</span></span>
+<span data-ttu-id="38bb0-114">Указывает вызываемого.</span><span class="sxs-lookup"><span data-stu-id="38bb0-114">Specifies the caller.</span></span>
 
 ```yaml
 Type: System.String
@@ -287,8 +287,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="04076-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="04076-115">-DefaultProfile</span></span>
-<span data-ttu-id="04076-116">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="04076-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="38bb0-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="38bb0-115">-DefaultProfile</span></span>
+<span data-ttu-id="38bb0-116">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="38bb0-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -302,8 +302,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="04076-117">-DetailedOutput</span><span class="sxs-lookup"><span data-stu-id="04076-117">-DetailedOutput</span></span>
-<span data-ttu-id="04076-118">Отображение подробных сведений в выходных данных.</span><span class="sxs-lookup"><span data-stu-id="04076-118">Displays full details in the output.</span></span>
+### <span data-ttu-id="38bb0-117">-DetailedOutput</span><span class="sxs-lookup"><span data-stu-id="38bb0-117">-DetailedOutput</span></span>
+<span data-ttu-id="38bb0-118">Отображение полных сведений в выходных данных.</span><span class="sxs-lookup"><span data-stu-id="38bb0-118">Displays full details in the output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -317,9 +317,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="04076-119">-EndTime</span><span class="sxs-lookup"><span data-stu-id="04076-119">-EndTime</span></span>
-<span data-ttu-id="04076-120">Указывает время окончания запроса в местном времени.</span><span class="sxs-lookup"><span data-stu-id="04076-120">Specifies the end time of the query in local time.</span></span>
-<span data-ttu-id="04076-121">Значение по умолчанию — текущее время.</span><span class="sxs-lookup"><span data-stu-id="04076-121">The default is the current time.</span></span>
+### <span data-ttu-id="38bb0-119">-EndTime</span><span class="sxs-lookup"><span data-stu-id="38bb0-119">-EndTime</span></span>
+<span data-ttu-id="38bb0-120">Время окончания запроса в локальное время.</span><span class="sxs-lookup"><span data-stu-id="38bb0-120">Specifies the end time of the query in local time.</span></span>
+<span data-ttu-id="38bb0-121">Значение по умолчанию — текущее время.</span><span class="sxs-lookup"><span data-stu-id="38bb0-121">The default is the current time.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -333,8 +333,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="04076-122">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="04076-122">-ResourceId</span></span>
-<span data-ttu-id="04076-123">Указывает идентификатор ресурса, с которым связано правило.</span><span class="sxs-lookup"><span data-stu-id="04076-123">Specifies the resource ID the rule is associated with.</span></span>
+### <span data-ttu-id="38bb0-122">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="38bb0-122">-ResourceId</span></span>
+<span data-ttu-id="38bb0-123">Определяет ИД ресурса, с помощью который связано правило.</span><span class="sxs-lookup"><span data-stu-id="38bb0-123">Specifies the resource ID the rule is associated with.</span></span>
 
 ```yaml
 Type: System.String
@@ -348,9 +348,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="04076-124">-StartTime</span><span class="sxs-lookup"><span data-stu-id="04076-124">-StartTime</span></span>
-<span data-ttu-id="04076-125">Задает время начала запроса в местном времени.</span><span class="sxs-lookup"><span data-stu-id="04076-125">Specifies the start time of the query in local time.</span></span>
-<span data-ttu-id="04076-126">По умолчанию используется текущее местное время минус один час.</span><span class="sxs-lookup"><span data-stu-id="04076-126">The default is the current local time minus one hour.</span></span>
+### <span data-ttu-id="38bb0-124">-StartTime</span><span class="sxs-lookup"><span data-stu-id="38bb0-124">-StartTime</span></span>
+<span data-ttu-id="38bb0-125">Время начала запроса в локальное время.</span><span class="sxs-lookup"><span data-stu-id="38bb0-125">Specifies the start time of the query in local time.</span></span>
+<span data-ttu-id="38bb0-126">По умолчанию за вычетом одного часа за вычетом текущего локального времени.</span><span class="sxs-lookup"><span data-stu-id="38bb0-126">The default is the current local time minus one hour.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -364,8 +364,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="04076-127">-Status (состояние)</span><span class="sxs-lookup"><span data-stu-id="04076-127">-Status</span></span>
-<span data-ttu-id="04076-128">Указывает состояние.</span><span class="sxs-lookup"><span data-stu-id="04076-128">Specifies the status.</span></span>
+### <span data-ttu-id="38bb0-127">-Status</span><span class="sxs-lookup"><span data-stu-id="38bb0-127">-Status</span></span>
+<span data-ttu-id="38bb0-128">Указывает состояние.</span><span class="sxs-lookup"><span data-stu-id="38bb0-128">Specifies the status.</span></span>
 
 ```yaml
 Type: System.String
@@ -379,33 +379,32 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="04076-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="04076-129">CommonParameters</span></span>
-<span data-ttu-id="04076-130">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="04076-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="04076-131">Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="04076-131">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="38bb0-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="38bb0-129">CommonParameters</span></span>
+<span data-ttu-id="38bb0-130">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="38bb0-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="38bb0-131">Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="38bb0-131">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="04076-132">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="04076-132">INPUTS</span></span>
+## <span data-ttu-id="38bb0-132">INPUTS</span><span class="sxs-lookup"><span data-stu-id="38bb0-132">INPUTS</span></span>
 
-### <span data-ttu-id="04076-133">System. String</span><span class="sxs-lookup"><span data-stu-id="04076-133">System.String</span></span>
+### <span data-ttu-id="38bb0-133">System.String</span><span class="sxs-lookup"><span data-stu-id="38bb0-133">System.String</span></span>
 
-### <span data-ttu-id="04076-134">System. Nullable "1 [[System. DateTime, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="04076-134">System.Nullable\`1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="38bb0-134">System.Nullable'1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="38bb0-134">System.Nullable\`1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="04076-135">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="04076-135">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="38bb0-135">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="38bb0-135">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="04076-136">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="04076-136">OUTPUTS</span></span>
+## <span data-ttu-id="38bb0-136">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="38bb0-136">OUTPUTS</span></span>
 
-### <span data-ttu-id="04076-137">Microsoft. Azure. Commands. Insights. OutputClasses. PSEventData</span><span class="sxs-lookup"><span data-stu-id="04076-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span></span>
+### <span data-ttu-id="38bb0-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span><span class="sxs-lookup"><span data-stu-id="38bb0-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span></span>
 
-## <span data-ttu-id="04076-138">Пуск</span><span class="sxs-lookup"><span data-stu-id="04076-138">NOTES</span></span>
+## <span data-ttu-id="38bb0-138">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="38bb0-138">NOTES</span></span>
 
-## <span data-ttu-id="04076-139">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="04076-139">RELATED LINKS</span></span>
+## <span data-ttu-id="38bb0-139">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="38bb0-139">RELATED LINKS</span></span>
 
-[<span data-ttu-id="04076-140">Add-AzLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="04076-140">Add-AzLogAlertRule</span></span>](./Add-AzLogAlertRule.md)
 
-[<span data-ttu-id="04076-141">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="04076-141">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
+[<span data-ttu-id="38bb0-140">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="38bb0-140">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
 
-[<span data-ttu-id="04076-142">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="04076-142">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
+[<span data-ttu-id="38bb0-141">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="38bb0-141">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
 
-[<span data-ttu-id="04076-143">Get-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="04076-143">Get-AzAlertRule</span></span>](./Get-AzAlertRule.md)
+[<span data-ttu-id="38bb0-142">Get-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="38bb0-142">Get-AzAlertRule</span></span>](./Get-AzAlertRule.md)
 
-[<span data-ttu-id="04076-144">Remove-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="04076-144">Remove-AzAlertRule</span></span>](./Remove-AzAlertRule.md)
+[<span data-ttu-id="38bb0-143">Remove-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="38bb0-143">Remove-AzAlertRule</span></span>](./Remove-AzAlertRule.md)
 
 

@@ -6,105 +6,105 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
-ms.openlocfilehash: 966b9baf35f1719f29fda6355a9675739693314f
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: bd58a044db49cdd0cedf2872e97e64662a49372c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93910868"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398229"
 ---
-# <span data-ttu-id="08e6b-101">Remove-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="08e6b-101">Remove-AzADServicePrincipal</span></span>
+# <span data-ttu-id="5c80e-101">Remove-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="5c80e-101">Remove-AzADServicePrincipal</span></span>
 
-## <span data-ttu-id="08e6b-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="08e6b-102">SYNOPSIS</span></span>
-<span data-ttu-id="08e6b-103">Удаление субъекта-службы Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="08e6b-103">Deletes the azure active directory service principal.</span></span>
+## <span data-ttu-id="5c80e-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="5c80e-102">SYNOPSIS</span></span>
+<span data-ttu-id="5c80e-103">Удаляет главную службу Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="5c80e-103">Deletes the azure active directory service principal.</span></span>
 
-## <span data-ttu-id="08e6b-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="08e6b-104">SYNTAX</span></span>
+## <span data-ttu-id="5c80e-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="5c80e-104">SYNTAX</span></span>
 
-### <span data-ttu-id="08e6b-105">ObjectIdParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="08e6b-105">ObjectIdParameterSet (Default)</span></span>
+### <span data-ttu-id="5c80e-105">ObjectIdParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="5c80e-105">ObjectIdParameterSet (Default)</span></span>
 ```
 Remove-AzADServicePrincipal -ObjectId <Guid> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="08e6b-106">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="08e6b-106">ApplicationIdParameterSet</span></span>
+### <span data-ttu-id="5c80e-106">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="5c80e-106">ApplicationIdParameterSet</span></span>
 ```
 Remove-AzADServicePrincipal -ApplicationId <Guid> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="08e6b-107">SPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="08e6b-107">SPNParameterSet</span></span>
+### <span data-ttu-id="5c80e-107">SPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="5c80e-107">SPNParameterSet</span></span>
 ```
 Remove-AzADServicePrincipal -ServicePrincipalName <String> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="08e6b-108">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="08e6b-108">DisplayNameParameterSet</span></span>
+### <span data-ttu-id="5c80e-108">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="5c80e-108">DisplayNameParameterSet</span></span>
 ```
 Remove-AzADServicePrincipal -DisplayName <String> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="08e6b-109">InputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="08e6b-109">InputObjectParameterSet</span></span>
+### <span data-ttu-id="5c80e-109">InputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="5c80e-109">InputObjectParameterSet</span></span>
 ```
 Remove-AzADServicePrincipal -InputObject <PSADServicePrincipal> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="08e6b-110">ApplicationObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="08e6b-110">ApplicationObjectParameterSet</span></span>
+### <span data-ttu-id="5c80e-110">ApplicationObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="5c80e-110">ApplicationObjectParameterSet</span></span>
 ```
 Remove-AzADServicePrincipal -ApplicationObject <PSADApplication> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="08e6b-111">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="08e6b-111">DESCRIPTION</span></span>
-<span data-ttu-id="08e6b-112">Удаление субъекта-службы Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="08e6b-112">Deletes the azure active directory service principal.</span></span>
+## <span data-ttu-id="5c80e-111">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="5c80e-111">DESCRIPTION</span></span>
+<span data-ttu-id="5c80e-112">Удаляет главную службу Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="5c80e-112">Deletes the azure active directory service principal.</span></span>
 
-## <span data-ttu-id="08e6b-113">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="08e6b-113">EXAMPLES</span></span>
+## <span data-ttu-id="5c80e-113">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="5c80e-113">EXAMPLES</span></span>
 
-### <span data-ttu-id="08e6b-114">Пример 1: удаление субъекта-службы по идентификатору объекта</span><span class="sxs-lookup"><span data-stu-id="08e6b-114">Example 1 - Remove a service principal by object id</span></span>
+### <span data-ttu-id="5c80e-114">Пример 1. Удаление главной службы по ид объекта</span><span class="sxs-lookup"><span data-stu-id="5c80e-114">Example 1 - Remove a service principal by object id</span></span>
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45
 ```
 
-<span data-ttu-id="08e6b-115">Удаление субъекта-службы с идентификатором объекта "61b5d8ea-fdc6-40a2-8d5b-ad447c678d45".</span><span class="sxs-lookup"><span data-stu-id="08e6b-115">Removes the service principal with object id '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45'.</span></span>
+<span data-ttu-id="5c80e-115">Удаляет главную службу с ид объекта '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45'.</span><span class="sxs-lookup"><span data-stu-id="5c80e-115">Removes the service principal with object id '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45'.</span></span>
 
-### <span data-ttu-id="08e6b-116">Пример 2: удаление субъекта-службы с помощью кода приложения</span><span class="sxs-lookup"><span data-stu-id="08e6b-116">Example 2 - Remove a service principal by application id</span></span>
+### <span data-ttu-id="5c80e-116">Пример 2. Удаление основного обслуживания по ид приложения</span><span class="sxs-lookup"><span data-stu-id="5c80e-116">Example 2 - Remove a service principal by application id</span></span>
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76
 ```
 
-<span data-ttu-id="08e6b-117">Удаление субъекта-службы с идентификатором приложения "9263469e-d328-4321-8646-3e3e75d20e76".</span><span class="sxs-lookup"><span data-stu-id="08e6b-117">Removes the service principal with application id '9263469e-d328-4321-8646-3e3e75d20e76'.</span></span>
+<span data-ttu-id="5c80e-117">Удаляет главную службу с помощью ИД приложения "9263469e-d328-4321-8646-3e3e75d20e76".</span><span class="sxs-lookup"><span data-stu-id="5c80e-117">Removes the service principal with application id '9263469e-d328-4321-8646-3e3e75d20e76'.</span></span>
 
-### <span data-ttu-id="08e6b-118">Пример 3: удаление субъекта-службы по имени участника-службы</span><span class="sxs-lookup"><span data-stu-id="08e6b-118">Example 3 - Remove a service principal by SPN</span></span>
+### <span data-ttu-id="5c80e-118">Пример 3. Удаление основного обслуживания по SPN</span><span class="sxs-lookup"><span data-stu-id="5c80e-118">Example 3 - Remove a service principal by SPN</span></span>
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ServicePrincipalName MyServicePrincipal
 ```
 
-<span data-ttu-id="08e6b-119">Удаление субъекта-службы с именем субъекта-службы "MyServicePrincipal"</span><span class="sxs-lookup"><span data-stu-id="08e6b-119">Remove the service principal with service principal name "MyServicePrincipal"</span></span>
+<span data-ttu-id="5c80e-119">Удаление директора-службы с именем "MyServicePrincipal"</span><span class="sxs-lookup"><span data-stu-id="5c80e-119">Remove the service principal with service principal name "MyServicePrincipal"</span></span>
 
-### <span data-ttu-id="08e6b-120">Пример 4: удаление субъекта-службы с помощью трубопроводов</span><span class="sxs-lookup"><span data-stu-id="08e6b-120">Example 4 - Remove a service principal by piping</span></span>
+### <span data-ttu-id="5c80e-120">Пример 4. Удаление основного обслуживания с помощью piping</span><span class="sxs-lookup"><span data-stu-id="5c80e-120">Example 4 - Remove a service principal by piping</span></span>
 
 ```
 PS C:\> Get-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45 | Remove-AzADServicePrincipal
 ```
 
-<span data-ttu-id="08e6b-121">Возвращает субъекта-службы с идентификатором объекта "61b5d8ea-fdc6-40a2-8d5b-ad447c678d45" и каналами, которые должны быть удалены с помощью командлета Remove-AzADServicePrincipal.</span><span class="sxs-lookup"><span data-stu-id="08e6b-121">Gets the service principal with object id '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45' and pipes that to the Remove-AzADServicePrincipal cmdlet to remove that service principal.</span></span>
+<span data-ttu-id="5c80e-121">Получает главную службу с ид объекта '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45' и каналами, которые до Remove-AzADServicePrincipal-управления, чтобы удалить эту главную службу.</span><span class="sxs-lookup"><span data-stu-id="5c80e-121">Gets the service principal with object id '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45' and pipes that to the Remove-AzADServicePrincipal cmdlet to remove that service principal.</span></span>
 
-### <span data-ttu-id="08e6b-122">Пример 5: удаление субъекта-службы путем передачи приложения по конвейеру</span><span class="sxs-lookup"><span data-stu-id="08e6b-122">Example 5 - Remove a service principal by piping an application</span></span>
+### <span data-ttu-id="5c80e-122">Пример 5. Удаление основного обслуживания путем перенакладки приложения</span><span class="sxs-lookup"><span data-stu-id="5c80e-122">Example 5 - Remove a service principal by piping an application</span></span>
 
 ```
 PS C:\> Get-AzApplication -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76 | Remove-AzADServicePrincipal
 ```
 
-<span data-ttu-id="08e6b-123">Возвращает приложение с ИД приложения "9263469e-d328-4321-8646-3e3e75d20e76" и каналами, которые должны быть связаны с командлетом Remove-AzADServicePrincipal, для удаления субъекта-службы, связанного с этим приложением.</span><span class="sxs-lookup"><span data-stu-id="08e6b-123">Gets the application with application id '9263469e-d328-4321-8646-3e3e75d20e76' and pipes that to the Remove-AzADServicePrincipal cmdlet to remove the service principal associated with that application.</span></span>
+<span data-ttu-id="5c80e-123">Получает приложение с ИД приложения 9263469e-d328-4321-8646-3e3e75d20e76' и каналами, которые до Remove-AzADServicePrincipal-управления, чтобы удалить главную службу, связанную с этим приложением.</span><span class="sxs-lookup"><span data-stu-id="5c80e-123">Gets the application with application id '9263469e-d328-4321-8646-3e3e75d20e76' and pipes that to the Remove-AzADServicePrincipal cmdlet to remove the service principal associated with that application.</span></span>
 
-## <span data-ttu-id="08e6b-124">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="08e6b-124">PARAMETERS</span></span>
+## <span data-ttu-id="5c80e-124">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="5c80e-124">PARAMETERS</span></span>
 
-### <span data-ttu-id="08e6b-125">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="08e6b-125">-ApplicationId</span></span>
-<span data-ttu-id="08e6b-126">Идентификатор приложения субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="08e6b-126">The service principal application id.</span></span>
+### <span data-ttu-id="5c80e-125">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="5c80e-125">-ApplicationId</span></span>
+<span data-ttu-id="5c80e-126">ИД приложения-службы.</span><span class="sxs-lookup"><span data-stu-id="5c80e-126">The service principal application id.</span></span>
 
 ```yaml
 Type: System.Guid
@@ -118,8 +118,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08e6b-127">-ApplicationObject</span><span class="sxs-lookup"><span data-stu-id="08e6b-127">-ApplicationObject</span></span>
-<span data-ttu-id="08e6b-128">Объект приложения, субъект-служба которого удаляется.</span><span class="sxs-lookup"><span data-stu-id="08e6b-128">The application object whose service principal is being removed.</span></span>
+### <span data-ttu-id="5c80e-127">-ApplicationObject</span><span class="sxs-lookup"><span data-stu-id="5c80e-127">-ApplicationObject</span></span>
+<span data-ttu-id="5c80e-128">Объект приложения, главную службу которого удаляется.</span><span class="sxs-lookup"><span data-stu-id="5c80e-128">The application object whose service principal is being removed.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
@@ -133,8 +133,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08e6b-129">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="08e6b-129">-DefaultProfile</span></span>
-<span data-ttu-id="08e6b-130">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="08e6b-130">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="5c80e-129">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5c80e-129">-DefaultProfile</span></span>
+<span data-ttu-id="5c80e-130">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="5c80e-130">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -148,8 +148,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08e6b-131">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="08e6b-131">-DisplayName</span></span>
-<span data-ttu-id="08e6b-132">Отображаемое имя субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="08e6b-132">The display name of the service principal.</span></span>
+### <span data-ttu-id="5c80e-131">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="5c80e-131">-DisplayName</span></span>
+<span data-ttu-id="5c80e-132">Отображаемая имя директора-службы.</span><span class="sxs-lookup"><span data-stu-id="5c80e-132">The display name of the service principal.</span></span>
 
 ```yaml
 Type: System.String
@@ -163,8 +163,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08e6b-133">-Force</span><span class="sxs-lookup"><span data-stu-id="08e6b-133">-Force</span></span>
-<span data-ttu-id="08e6b-134">Переключиться в режим удаления субъекта-службы без подтверждения.</span><span class="sxs-lookup"><span data-stu-id="08e6b-134">Switch to delete service principal without a confirmation.</span></span>
+### <span data-ttu-id="5c80e-133">-Force</span><span class="sxs-lookup"><span data-stu-id="5c80e-133">-Force</span></span>
+<span data-ttu-id="5c80e-134">Перейти к удалите главную службу без подтверждения.</span><span class="sxs-lookup"><span data-stu-id="5c80e-134">Switch to delete service principal without a confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -178,8 +178,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08e6b-135">-InputObject</span><span class="sxs-lookup"><span data-stu-id="08e6b-135">-InputObject</span></span>
-<span data-ttu-id="08e6b-136">Объект субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="08e6b-136">The service principal object.</span></span>
+### <span data-ttu-id="5c80e-135">-InputObject</span><span class="sxs-lookup"><span data-stu-id="5c80e-135">-InputObject</span></span>
+<span data-ttu-id="5c80e-136">Объект-служба.</span><span class="sxs-lookup"><span data-stu-id="5c80e-136">The service principal object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
@@ -193,8 +193,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08e6b-137">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="08e6b-137">-ObjectId</span></span>
-<span data-ttu-id="08e6b-138">Идентификатор объекта субъекта-службы, который нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="08e6b-138">The object id of the service principal to delete.</span></span>
+### <span data-ttu-id="5c80e-137">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="5c80e-137">-ObjectId</span></span>
+<span data-ttu-id="5c80e-138">Object Id of the service principal to delete.</span><span class="sxs-lookup"><span data-stu-id="5c80e-138">The object id of the service principal to delete.</span></span>
 
 ```yaml
 Type: System.Guid
@@ -208,8 +208,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08e6b-139">-PassThru</span><span class="sxs-lookup"><span data-stu-id="08e6b-139">-PassThru</span></span>
-<span data-ttu-id="08e6b-140">Если указан, возвращает участника-службы.</span><span class="sxs-lookup"><span data-stu-id="08e6b-140">If specified, returns the deleted service principal.</span></span>
+### <span data-ttu-id="5c80e-139">-PassThru</span><span class="sxs-lookup"><span data-stu-id="5c80e-139">-PassThru</span></span>
+<span data-ttu-id="5c80e-140">Если указано, возвращает удаленную главную службу.</span><span class="sxs-lookup"><span data-stu-id="5c80e-140">If specified, returns the deleted service principal.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -223,8 +223,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08e6b-141">-Намерено</span><span class="sxs-lookup"><span data-stu-id="08e6b-141">-ServicePrincipalName</span></span>
-<span data-ttu-id="08e6b-142">Имя субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="08e6b-142">The service principal name.</span></span>
+### <span data-ttu-id="5c80e-141">-ServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="5c80e-141">-ServicePrincipalName</span></span>
+<span data-ttu-id="5c80e-142">Имя директора-службы.</span><span class="sxs-lookup"><span data-stu-id="5c80e-142">The service principal name.</span></span>
 
 ```yaml
 Type: System.String
@@ -238,8 +238,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08e6b-143">-Confirm</span><span class="sxs-lookup"><span data-stu-id="08e6b-143">-Confirm</span></span>
-<span data-ttu-id="08e6b-144">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="08e6b-144">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="5c80e-143">-Confirm</span><span class="sxs-lookup"><span data-stu-id="5c80e-143">-Confirm</span></span>
+<span data-ttu-id="5c80e-144">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="5c80e-144">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -253,9 +253,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08e6b-145">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="08e6b-145">-WhatIf</span></span>
-<span data-ttu-id="08e6b-146">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="08e6b-146">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="08e6b-147">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="08e6b-147">The cmdlet is not run.</span></span>
+### <span data-ttu-id="5c80e-145">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="5c80e-145">-WhatIf</span></span>
+<span data-ttu-id="5c80e-146">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="5c80e-146">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="5c80e-147">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="5c80e-147">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -269,36 +269,35 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08e6b-148">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="08e6b-148">CommonParameters</span></span>
-<span data-ttu-id="08e6b-149">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="08e6b-149">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="08e6b-150">Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="08e6b-150">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="5c80e-148">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5c80e-148">CommonParameters</span></span>
+<span data-ttu-id="5c80e-149">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="5c80e-149">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5c80e-150">Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5c80e-150">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="08e6b-151">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="08e6b-151">INPUTS</span></span>
+## <span data-ttu-id="5c80e-151">INPUTS</span><span class="sxs-lookup"><span data-stu-id="5c80e-151">INPUTS</span></span>
 
-### <span data-ttu-id="08e6b-152">System. GUID</span><span class="sxs-lookup"><span data-stu-id="08e6b-152">System.Guid</span></span>
+### <span data-ttu-id="5c80e-152">System.Guid</span><span class="sxs-lookup"><span data-stu-id="5c80e-152">System.Guid</span></span>
 
-### <span data-ttu-id="08e6b-153">System. String</span><span class="sxs-lookup"><span data-stu-id="08e6b-153">System.String</span></span>
+### <span data-ttu-id="5c80e-153">System.String</span><span class="sxs-lookup"><span data-stu-id="5c80e-153">System.String</span></span>
 
-### <span data-ttu-id="08e6b-154">Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="08e6b-154">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal</span></span>
-<span data-ttu-id="08e6b-155">Параметры: InputObject (ByValue)</span><span class="sxs-lookup"><span data-stu-id="08e6b-155">Parameters: InputObject (ByValue)</span></span>
+### <span data-ttu-id="5c80e-154">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="5c80e-154">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal</span></span>
+<span data-ttu-id="5c80e-155">Параметры: InputObject (ByValue)</span><span class="sxs-lookup"><span data-stu-id="5c80e-155">Parameters: InputObject (ByValue)</span></span>
 
-### <span data-ttu-id="08e6b-156">Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADApplication</span><span class="sxs-lookup"><span data-stu-id="08e6b-156">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication</span></span>
-<span data-ttu-id="08e6b-157">Параметры: ApplicationObject (ByValue)</span><span class="sxs-lookup"><span data-stu-id="08e6b-157">Parameters: ApplicationObject (ByValue)</span></span>
+### <span data-ttu-id="5c80e-156">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication</span><span class="sxs-lookup"><span data-stu-id="5c80e-156">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication</span></span>
+<span data-ttu-id="5c80e-157">Параметры: ApplicationObject (ByValue)</span><span class="sxs-lookup"><span data-stu-id="5c80e-157">Parameters: ApplicationObject (ByValue)</span></span>
 
-## <span data-ttu-id="08e6b-158">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="08e6b-158">OUTPUTS</span></span>
+## <span data-ttu-id="5c80e-158">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="5c80e-158">OUTPUTS</span></span>
 
-### <span data-ttu-id="08e6b-159">Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="08e6b-159">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal</span></span>
+### <span data-ttu-id="5c80e-159">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="5c80e-159">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal</span></span>
 
-## <span data-ttu-id="08e6b-160">Пуск</span><span class="sxs-lookup"><span data-stu-id="08e6b-160">NOTES</span></span>
-<span data-ttu-id="08e6b-161">Ключевые слова: Azure, AZ, ARM, ресурс, управление, руководитель, ресурс, группа, шаблон, развертывание</span><span class="sxs-lookup"><span data-stu-id="08e6b-161">Keywords: azure, Az, arm, resource, management, manager, resource, group, template, deployment</span></span>
+## <span data-ttu-id="5c80e-160">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="5c80e-160">NOTES</span></span>
+<span data-ttu-id="5c80e-161">Ключевые слова: azure, Az, arm, resource, management, manager, resource, group, template, deployment</span><span class="sxs-lookup"><span data-stu-id="5c80e-161">Keywords: azure, Az, arm, resource, management, manager, resource, group, template, deployment</span></span>
 
-## <span data-ttu-id="08e6b-162">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="08e6b-162">RELATED LINKS</span></span>
+## <span data-ttu-id="5c80e-162">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="5c80e-162">RELATED LINKS</span></span>
 
-[<span data-ttu-id="08e6b-163">New-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="08e6b-163">New-AzADServicePrincipal</span></span>](./New-AzADServicePrincipal.md)
+[<span data-ttu-id="5c80e-163">New-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="5c80e-163">New-AzADServicePrincipal</span></span>](./New-AzADServicePrincipal.md)
 
-[<span data-ttu-id="08e6b-164">Get-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="08e6b-164">Get-AzADServicePrincipal</span></span>](./Get-AzADServicePrincipal.md)
+[<span data-ttu-id="5c80e-164">Get-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="5c80e-164">Get-AzADServicePrincipal</span></span>](./Get-AzADServicePrincipal.md)
 
-[<span data-ttu-id="08e6b-165">Set-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="08e6b-165">Set-AzADServicePrincipal</span></span>](./Set-AzADServicePrincipal.md)
 
-[<span data-ttu-id="08e6b-166">Remove-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="08e6b-166">Remove-AzADApplication</span></span>](./Remove-AzADApplication.md)
+[<span data-ttu-id="5c80e-165">Remove-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="5c80e-165">Remove-AzADApplication</span></span>](./Remove-AzADApplication.md)
 
-[<span data-ttu-id="08e6b-167">Remove-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="08e6b-167">Remove-AzADAppCredential</span></span>](./Remove-AzADAppCredential.md)
+[<span data-ttu-id="5c80e-166">Remove-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="5c80e-166">Remove-AzADAppCredential</span></span>](./Remove-AzADAppCredential.md)
