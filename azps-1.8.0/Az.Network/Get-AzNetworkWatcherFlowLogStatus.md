@@ -5,44 +5,46 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherFlowLogStatus.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherFlowLogStatus.md
-ms.openlocfilehash: cdc97ff5e528e58aa088950f5272e7689f35b10e
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8a2bde41d0e7e09acc1ad10a9901f0cf26334d02
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93730523"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400507"
 ---
-# <span data-ttu-id="c1de0-101">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="c1de0-101">Get-AzNetworkWatcherFlowLogStatus</span></span>
+# <span data-ttu-id="ff4c1-101">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="ff4c1-101">Get-AzNetworkWatcherFlowLogStatus</span></span>
 
-## <span data-ttu-id="c1de0-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="c1de0-102">SYNOPSIS</span></span>
-<span data-ttu-id="c1de0-103">Возвращает состояние регистрации потока для ресурса.</span><span class="sxs-lookup"><span data-stu-id="c1de0-103">Gets the status of flow logging on a resource.</span></span>
+## <span data-ttu-id="ff4c1-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="ff4c1-102">SYNOPSIS</span></span>
+<span data-ttu-id="ff4c1-103">Возвращает состояние ведения журнала потока для ресурса.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-103">Gets the status of flow logging on a resource.</span></span>
 
-## <span data-ttu-id="c1de0-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="c1de0-104">SYNTAX</span></span>
+## <span data-ttu-id="ff4c1-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="ff4c1-104">SYNTAX</span></span>
 
-### <span data-ttu-id="c1de0-105">SetByResource (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="c1de0-105">SetByResource (Default)</span></span>
+### <span data-ttu-id="ff4c1-105">SetByResource (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="ff4c1-105">SetByResource (Default)</span></span>
 ```
 Get-AzNetworkWatcherFlowLogStatus -NetworkWatcher <PSNetworkWatcher> -TargetResourceId <String> [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="c1de0-106">SetByName</span><span class="sxs-lookup"><span data-stu-id="c1de0-106">SetByName</span></span>
+### <span data-ttu-id="ff4c1-106">SetByName</span><span class="sxs-lookup"><span data-stu-id="ff4c1-106">SetByName</span></span>
 ```
 Get-AzNetworkWatcherFlowLogStatus -NetworkWatcherName <String> -ResourceGroupName <String>
  -TargetResourceId <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="c1de0-107">SetByLocation</span><span class="sxs-lookup"><span data-stu-id="c1de0-107">SetByLocation</span></span>
+### <span data-ttu-id="ff4c1-107">SetByLocation</span><span class="sxs-lookup"><span data-stu-id="ff4c1-107">SetByLocation</span></span>
 ```
 Get-AzNetworkWatcherFlowLogStatus -Location <String> -TargetResourceId <String> [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="c1de0-108">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="c1de0-108">DESCRIPTION</span></span>
-<span data-ttu-id="c1de0-109">Командлет Get-AzNetworkWatcherFlowLogStatus возвращает состояние регистрации потока на ресурсе.</span><span class="sxs-lookup"><span data-stu-id="c1de0-109">The Get-AzNetworkWatcherFlowLogStatus cmdlet Gets the status of flow logging on a resource.</span></span> <span data-ttu-id="c1de0-110">Состояние включает, включено ли ведение журнала потока для указанного ресурса, настроенной учетной записи хранения для отправки журналов и политики хранения для журналов.</span><span class="sxs-lookup"><span data-stu-id="c1de0-110">The status includes whether or not flow logging is enabled for the resource provided, the configured storage account to send logs, and the retention policy for the logs.</span></span> <span data-ttu-id="c1de0-111">Сетевые группы безопасности поддерживаются для ведения журнала потока.</span><span class="sxs-lookup"><span data-stu-id="c1de0-111">Currently Network Security Groups are supported for flow logging.</span></span> 
+## <span data-ttu-id="ff4c1-108">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="ff4c1-108">DESCRIPTION</span></span>
+<span data-ttu-id="ff4c1-109">Этот Get-AzNetworkWatcherFlowLogStatus возвращает состояние ведения журнала потока для ресурса.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-109">The Get-AzNetworkWatcherFlowLogStatus cmdlet Gets the status of flow logging on a resource.</span></span>
+<span data-ttu-id="ff4c1-110">Состояние включает в себя, включено ли ведение журнала потоков для предоставленного ресурса, настроенная учетная запись хранения для отправки журналов и политика хранения журналов.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-110">The status includes whether or not flow logging is enabled for the resource provided, the configured storage account to send logs, and the retention policy for the logs.</span></span>
+<span data-ttu-id="ff4c1-111">В настоящее время сетевые группы безопасности поддерживают ведение журнала потоков.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-111">Currently Network Security Groups are supported for flow logging.</span></span>
 
-## <span data-ttu-id="c1de0-112">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="c1de0-112">EXAMPLES</span></span>
+## <span data-ttu-id="ff4c1-112">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="ff4c1-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="c1de0-113">Пример 1: получение состояния ведения журнала потока для указанного NSG</span><span class="sxs-lookup"><span data-stu-id="c1de0-113">Example 1: Get the Flow Logging Status for a Specified NSG</span></span>
+### <span data-ttu-id="ff4c1-113">Пример 1. Просмотр состояния ведения журнала потока для указанного NSG</span><span class="sxs-lookup"><span data-stu-id="ff4c1-113">Example 1: Get the Flow Logging Status for a Specified NSG</span></span>
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -64,9 +66,9 @@ Properties       : {
                    }
 ```
 
-<span data-ttu-id="c1de0-114">В этом примере мы получаем состояние ведения журнала потока для группы безопасности сети.</span><span class="sxs-lookup"><span data-stu-id="c1de0-114">In this example we get the flow logging status for a Network Security Group.</span></span> <span data-ttu-id="c1de0-115">В указанном NSG включено ведение журнала потока, формат по умолчанию, а политика хранения не задана.</span><span class="sxs-lookup"><span data-stu-id="c1de0-115">The specified NSG has flow logging enabled, default format, and no retention policy set.</span></span>
+<span data-ttu-id="ff4c1-114">В этом примере мы получаем состояние ведения журнала потока для группы безопасности сети.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-114">In this example we get the flow logging status for a Network Security Group.</span></span> <span data-ttu-id="ff4c1-115">В указанной NSG включено ведение журнала потоков, формат по умолчанию, а политика хранения не настроена.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-115">The specified NSG has flow logging enabled, default format, and no retention policy set.</span></span>
 
-### <span data-ttu-id="c1de0-116">Пример 2: получение состояния ведения журнала потока и аналитики трафика для указанного NSG</span><span class="sxs-lookup"><span data-stu-id="c1de0-116">Example 2: Get the Flow Logging and Traffic Analytics Status for a Specified NSG</span></span>
+### <span data-ttu-id="ff4c1-116">Пример 2. Просмотр состояния журнала потока и аналитики трафика для указанного NSG</span><span class="sxs-lookup"><span data-stu-id="ff4c1-116">Example 2: Get the Flow Logging and Traffic Analytics Status for a Specified NSG</span></span>
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -95,12 +97,12 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-<span data-ttu-id="c1de0-117">В этом примере мы получаем журнал потока и состояние аналитики трафика для группы безопасности сети.</span><span class="sxs-lookup"><span data-stu-id="c1de0-117">In this example we get the flow logging and Traffic Analytics status for a Network Security Group.</span></span> <span data-ttu-id="c1de0-118">В указанном NSG включено ведение журнала потока и включена аналитическая трафик, формат по умолчанию и политика хранения.</span><span class="sxs-lookup"><span data-stu-id="c1de0-118">The specified NSG has flow logging and Traffic Analytics enabled, default format and no retention policy set.</span></span>
+<span data-ttu-id="ff4c1-117">В этом примере мы получаем данные о состоянии ведения журнала потоков и аналитики трафика для группы безопасности сети.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-117">In this example we get the flow logging and Traffic Analytics status for a Network Security Group.</span></span> <span data-ttu-id="ff4c1-118">В указанном формате NSG включено ведение журнала потоков и включена аналитика трафика, формат по умолчанию, а политика хранения не настроена.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-118">The specified NSG has flow logging and Traffic Analytics enabled, default format and no retention policy set.</span></span>
 
-## <span data-ttu-id="c1de0-119">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="c1de0-119">PARAMETERS</span></span>
+## <span data-ttu-id="ff4c1-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="ff4c1-119">PARAMETERS</span></span>
 
-### <span data-ttu-id="c1de0-120">-AsJob</span><span class="sxs-lookup"><span data-stu-id="c1de0-120">-AsJob</span></span>
-<span data-ttu-id="c1de0-121">Выполнить командлет в фоновом режиме</span><span class="sxs-lookup"><span data-stu-id="c1de0-121">Run cmdlet in the background</span></span>
+### <span data-ttu-id="ff4c1-120">-AsJob</span><span class="sxs-lookup"><span data-stu-id="ff4c1-120">-AsJob</span></span>
+<span data-ttu-id="ff4c1-121">Запуск cmdlet в фоновом режиме</span><span class="sxs-lookup"><span data-stu-id="ff4c1-121">Run cmdlet in the background</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -114,8 +116,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1de0-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c1de0-122">-DefaultProfile</span></span>
-<span data-ttu-id="c1de0-123">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="c1de0-123">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="ff4c1-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ff4c1-122">-DefaultProfile</span></span>
+<span data-ttu-id="ff4c1-123">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-123">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -129,8 +131,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1de0-124">-Location</span><span class="sxs-lookup"><span data-stu-id="c1de0-124">-Location</span></span>
-<span data-ttu-id="c1de0-125">Расположение наблюдателя сети.</span><span class="sxs-lookup"><span data-stu-id="c1de0-125">Location of the network watcher.</span></span>
+### <span data-ttu-id="ff4c1-124">-Location</span><span class="sxs-lookup"><span data-stu-id="ff4c1-124">-Location</span></span>
+<span data-ttu-id="ff4c1-125">Расположение сетевого просмотра.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-125">Location of the network watcher.</span></span>
 
 ```yaml
 Type: System.String
@@ -144,8 +146,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1de0-126">-NetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="c1de0-126">-NetworkWatcher</span></span>
-<span data-ttu-id="c1de0-127">Ресурс сетевого наблюдателя.</span><span class="sxs-lookup"><span data-stu-id="c1de0-127">The network watcher resource.</span></span>
+### <span data-ttu-id="ff4c1-126">-NetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ff4c1-126">-NetworkWatcher</span></span>
+<span data-ttu-id="ff4c1-127">Сетевой ресурс для просмотра.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-127">The network watcher resource.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -159,8 +161,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1de0-128">-NetworkWatcherName</span><span class="sxs-lookup"><span data-stu-id="c1de0-128">-NetworkWatcherName</span></span>
-<span data-ttu-id="c1de0-129">Имя наблюдателя сети.</span><span class="sxs-lookup"><span data-stu-id="c1de0-129">The name of network watcher.</span></span>
+### <span data-ttu-id="ff4c1-128">-NetworkWatcherName</span><span class="sxs-lookup"><span data-stu-id="ff4c1-128">-NetworkWatcherName</span></span>
+<span data-ttu-id="ff4c1-129">Имя сетевого смотритела.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-129">The name of network watcher.</span></span>
 
 ```yaml
 Type: System.String
@@ -174,8 +176,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1de0-130">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="c1de0-130">-ResourceGroupName</span></span>
-<span data-ttu-id="c1de0-131">Имя группы ресурсов наблюдателя сети.</span><span class="sxs-lookup"><span data-stu-id="c1de0-131">The name of the network watcher resource group.</span></span>
+### <span data-ttu-id="ff4c1-130">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="ff4c1-130">-ResourceGroupName</span></span>
+<span data-ttu-id="ff4c1-131">Имя группы ресурсов сетевого watcher.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-131">The name of the network watcher resource group.</span></span>
 
 ```yaml
 Type: System.String
@@ -189,8 +191,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1de0-132">-TargetResourceId</span><span class="sxs-lookup"><span data-stu-id="c1de0-132">-TargetResourceId</span></span>
-<span data-ttu-id="c1de0-133">Идентификатор целевого ресурса.</span><span class="sxs-lookup"><span data-stu-id="c1de0-133">The target resource ID.</span></span>
+### <span data-ttu-id="ff4c1-132">-TargetResourceId</span><span class="sxs-lookup"><span data-stu-id="ff4c1-132">-TargetResourceId</span></span>
+<span data-ttu-id="ff4c1-133">ИД целевого ресурса.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-133">The target resource ID.</span></span>
 
 ```yaml
 Type: System.String
@@ -204,74 +206,74 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1de0-134">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c1de0-134">CommonParameters</span></span>
-<span data-ttu-id="c1de0-135">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="c1de0-135">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c1de0-136">Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="c1de0-136">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="ff4c1-134">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ff4c1-134">CommonParameters</span></span>
+<span data-ttu-id="ff4c1-135">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ff4c1-135">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ff4c1-136">Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="ff4c1-136">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="c1de0-137">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="c1de0-137">INPUTS</span></span>
+## <span data-ttu-id="ff4c1-137">INPUTS</span><span class="sxs-lookup"><span data-stu-id="ff4c1-137">INPUTS</span></span>
 
-### <span data-ttu-id="c1de0-138">Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="c1de0-138">Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher</span></span>
+### <span data-ttu-id="ff4c1-138">Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ff4c1-138">Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher</span></span>
 
-### <span data-ttu-id="c1de0-139">System. String</span><span class="sxs-lookup"><span data-stu-id="c1de0-139">System.String</span></span>
+### <span data-ttu-id="ff4c1-139">System.String</span><span class="sxs-lookup"><span data-stu-id="ff4c1-139">System.String</span></span>
 
-## <span data-ttu-id="c1de0-140">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="c1de0-140">OUTPUTS</span></span>
+## <span data-ttu-id="ff4c1-140">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="ff4c1-140">OUTPUTS</span></span>
 
-### <span data-ttu-id="c1de0-141">Microsoft. Azure. Commands. Network. Models. PSFlowLog</span><span class="sxs-lookup"><span data-stu-id="c1de0-141">Microsoft.Azure.Commands.Network.Models.PSFlowLog</span></span>
+### <span data-ttu-id="ff4c1-141">Microsoft.Azure.Commands.Network.Models.PSFlowLog</span><span class="sxs-lookup"><span data-stu-id="ff4c1-141">Microsoft.Azure.Commands.Network.Models.PSFlowLog</span></span>
 
-## <span data-ttu-id="c1de0-142">Пуск</span><span class="sxs-lookup"><span data-stu-id="c1de0-142">NOTES</span></span>
-<span data-ttu-id="c1de0-143">Ключевые слова: Azure, azurerm, ARM, Resource, менеджмент, руководитель, сеть, сеть, наблюдатель, поток, журналы, flowlog, ведение журнала</span><span class="sxs-lookup"><span data-stu-id="c1de0-143">Keywords: azure, azurerm, arm, resource, management, manager, network, networking, watcher, flow, logs, flowlog, logging</span></span>
+## <span data-ttu-id="ff4c1-142">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="ff4c1-142">NOTES</span></span>
+<span data-ttu-id="ff4c1-143">Ключевые слова: azure, azurerm, arm, resource, management, manager, network, networking, networking, watcher, flow, logs, flowlog, logging</span><span class="sxs-lookup"><span data-stu-id="ff4c1-143">Keywords: azure, azurerm, arm, resource, management, manager, network, networking, watcher, flow, logs, flowlog, logging</span></span>
 
-## <span data-ttu-id="c1de0-144">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="c1de0-144">RELATED LINKS</span></span>
+## <span data-ttu-id="ff4c1-144">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="ff4c1-144">RELATED LINKS</span></span>
 
-[<span data-ttu-id="c1de0-145">New-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="c1de0-145">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
+[<span data-ttu-id="ff4c1-145">New-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ff4c1-145">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
 
-[<span data-ttu-id="c1de0-146">Get-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="c1de0-146">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
+[<span data-ttu-id="ff4c1-146">Get-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ff4c1-146">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
 
-[<span data-ttu-id="c1de0-147">Remove-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="c1de0-147">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
+[<span data-ttu-id="ff4c1-147">Remove-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ff4c1-147">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
 
-[<span data-ttu-id="c1de0-148">Get-AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="c1de0-148">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
+[<span data-ttu-id="ff4c1-148">Get-AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="ff4c1-148">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
 
-[<span data-ttu-id="c1de0-149">Get-AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="c1de0-149">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
+[<span data-ttu-id="ff4c1-149">Get-AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="ff4c1-149">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
 
-[<span data-ttu-id="c1de0-150">Get-AzNetworkWatcherTopology</span><span class="sxs-lookup"><span data-stu-id="c1de0-150">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
+[<span data-ttu-id="ff4c1-150">Get-AzNetworkWatcherTopology</span><span class="sxs-lookup"><span data-stu-id="ff4c1-150">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
 
-[<span data-ttu-id="c1de0-151">Start-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="c1de0-151">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[<span data-ttu-id="ff4c1-151">Start-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="ff4c1-151">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[<span data-ttu-id="c1de0-152">New-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="c1de0-152">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="ff4c1-152">New-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ff4c1-152">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="c1de0-153">New-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="c1de0-153">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
+[<span data-ttu-id="ff4c1-153">New-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="ff4c1-153">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
 
-[<span data-ttu-id="c1de0-154">Get-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="c1de0-154">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="ff4c1-154">Get-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ff4c1-154">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="c1de0-155">Remove-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="c1de0-155">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="ff4c1-155">Remove-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ff4c1-155">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="c1de0-156">Остановить-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="c1de0-156">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="ff4c1-156">Stop-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ff4c1-156">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="c1de0-157">New-AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="c1de0-157">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
+[<span data-ttu-id="ff4c1-157">New-AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="ff4c1-157">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[<span data-ttu-id="c1de0-158">Test-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="c1de0-158">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
+[<span data-ttu-id="ff4c1-158">Test-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="ff4c1-158">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
 
-[<span data-ttu-id="c1de0-159">Test-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="c1de0-159">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
+[<span data-ttu-id="ff4c1-159">Test-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="ff4c1-159">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
 
-[<span data-ttu-id="c1de0-160">Остановить-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="c1de0-160">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="ff4c1-160">Stop-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ff4c1-160">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="c1de0-161">Start-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="c1de0-161">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="ff4c1-161">Start-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ff4c1-161">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="c1de0-162">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="c1de0-162">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="ff4c1-162">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ff4c1-162">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="c1de0-163">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="c1de0-163">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
+[<span data-ttu-id="ff4c1-163">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="ff4c1-163">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
 
-[<span data-ttu-id="c1de0-164">Remove-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="c1de0-164">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="ff4c1-164">Remove-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ff4c1-164">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="c1de0-165">New-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="c1de0-165">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="ff4c1-165">New-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ff4c1-165">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="c1de0-166">Get-AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="c1de0-166">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
+[<span data-ttu-id="ff4c1-166">Get-AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="ff4c1-166">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
-[<span data-ttu-id="c1de0-167">Get-AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="c1de0-167">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
+[<span data-ttu-id="ff4c1-167">Get-AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="ff4c1-167">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
 
-[<span data-ttu-id="c1de0-168">Get-AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="c1de0-168">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
+[<span data-ttu-id="ff4c1-168">Get-AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="ff4c1-168">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
 
-[<span data-ttu-id="c1de0-169">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="c1de0-169">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
+[<span data-ttu-id="ff4c1-169">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="ff4c1-169">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[<span data-ttu-id="c1de0-170">Get-AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="c1de0-170">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport)
+[<span data-ttu-id="ff4c1-170">Get-AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="ff4c1-170">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[<span data-ttu-id="c1de0-171">Get-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="c1de0-171">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor)
+[<span data-ttu-id="ff4c1-171">Get-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ff4c1-171">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor.md)
