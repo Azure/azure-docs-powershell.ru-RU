@@ -6,28 +6,28 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
-ms.openlocfilehash: f7447725e63634642f285b6a796a2b59b4d1d301
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bb96183d5b1fb9b865bb4d30448c337ab58fbb09
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93900262"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400592"
 ---
-# <span data-ttu-id="b1a9b-101">Add-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="b1a9b-101">Add-AzKeyVaultKey</span></span>
+# <span data-ttu-id="17e8c-101">Add-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="17e8c-101">Add-AzKeyVaultKey</span></span>
 
-## <span data-ttu-id="b1a9b-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="b1a9b-102">SYNOPSIS</span></span>
-<span data-ttu-id="b1a9b-103">Создание ключа в хранилище ключей или импорт ключа в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-103">Creates a key in a key vault or imports a key into a key vault.</span></span>
+## <span data-ttu-id="17e8c-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="17e8c-102">SYNOPSIS</span></span>
+<span data-ttu-id="17e8c-103">Создает ключ в хранилище ключей или импортирует его в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="17e8c-103">Creates a key in a key vault or imports a key into a key vault.</span></span>
 
-## <span data-ttu-id="b1a9b-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="b1a9b-104">SYNTAX</span></span>
+## <span data-ttu-id="17e8c-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="17e8c-104">SYNTAX</span></span>
 
-### <span data-ttu-id="b1a9b-105">InteractiveCreate (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="b1a9b-105">InteractiveCreate (Default)</span></span>
+### <span data-ttu-id="17e8c-105">InteractiveCreate (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="17e8c-105">InteractiveCreate (Default)</span></span>
 ```
 Add-AzKeyVaultKey [-VaultName] <String> [-Name] <String> -Destination <String> [-Disable] [-KeyOps <String[]>]
  [-Expires <DateTime>] [-NotBefore <DateTime>] [-Tag <Hashtable>] [-Size <Int32>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b1a9b-106">InteractiveImport</span><span class="sxs-lookup"><span data-stu-id="b1a9b-106">InteractiveImport</span></span>
+### <span data-ttu-id="17e8c-106">InteractiveImport</span><span class="sxs-lookup"><span data-stu-id="17e8c-106">InteractiveImport</span></span>
 ```
 Add-AzKeyVaultKey [-VaultName] <String> [-Name] <String> -KeyFilePath <String>
  [-KeyFilePassword <SecureString>] [-Destination <String>] [-Disable] [-KeyOps <String[]>]
@@ -35,14 +35,14 @@ Add-AzKeyVaultKey [-VaultName] <String> [-Name] <String> -KeyFilePath <String>
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b1a9b-107">InputObjectCreate</span><span class="sxs-lookup"><span data-stu-id="b1a9b-107">InputObjectCreate</span></span>
+### <span data-ttu-id="17e8c-107">InputObjectCreate</span><span class="sxs-lookup"><span data-stu-id="17e8c-107">InputObjectCreate</span></span>
 ```
 Add-AzKeyVaultKey [-InputObject] <PSKeyVault> [-Name] <String> -Destination <String> [-Disable]
  [-KeyOps <String[]>] [-Expires <DateTime>] [-NotBefore <DateTime>] [-Tag <Hashtable>] [-Size <Int32>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b1a9b-108">InputObjectImport</span><span class="sxs-lookup"><span data-stu-id="b1a9b-108">InputObjectImport</span></span>
+### <span data-ttu-id="17e8c-108">InputObjectImport</span><span class="sxs-lookup"><span data-stu-id="17e8c-108">InputObjectImport</span></span>
 ```
 Add-AzKeyVaultKey [-InputObject] <PSKeyVault> [-Name] <String> -KeyFilePath <String>
  [-KeyFilePassword <SecureString>] [-Destination <String>] [-Disable] [-KeyOps <String[]>]
@@ -50,14 +50,14 @@ Add-AzKeyVaultKey [-InputObject] <PSKeyVault> [-Name] <String> -KeyFilePath <Str
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b1a9b-109">ResourceIdCreate</span><span class="sxs-lookup"><span data-stu-id="b1a9b-109">ResourceIdCreate</span></span>
+### <span data-ttu-id="17e8c-109">ResourceIdCreate</span><span class="sxs-lookup"><span data-stu-id="17e8c-109">ResourceIdCreate</span></span>
 ```
 Add-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> -Destination <String> [-Disable] [-KeyOps <String[]>]
  [-Expires <DateTime>] [-NotBefore <DateTime>] [-Tag <Hashtable>] [-Size <Int32>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b1a9b-110">ResourceIdImport</span><span class="sxs-lookup"><span data-stu-id="b1a9b-110">ResourceIdImport</span></span>
+### <span data-ttu-id="17e8c-110">ResourceIdImport</span><span class="sxs-lookup"><span data-stu-id="17e8c-110">ResourceIdImport</span></span>
 ```
 Add-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> -KeyFilePath <String>
  [-KeyFilePassword <SecureString>] [-Destination <String>] [-Disable] [-KeyOps <String[]>]
@@ -65,22 +65,22 @@ Add-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> -KeyFilePath <String>
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b1a9b-111">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="b1a9b-111">DESCRIPTION</span></span>
-<span data-ttu-id="b1a9b-112">Командлет **Add-AzKeyVaultKey** создает ключ в хранилище ключей в хранилище ключей Azure или импортирует ключ в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-112">The **Add-AzKeyVaultKey** cmdlet creates a key in a key vault in Azure Key Vault, or imports a key into a key vault.</span></span>
-<span data-ttu-id="b1a9b-113">Используйте этот командлет для добавления клавиш одним из следующих способов:</span><span class="sxs-lookup"><span data-stu-id="b1a9b-113">Use this cmdlet to add keys by using any of the following methods:</span></span>
-- <span data-ttu-id="b1a9b-114">Создание ключа в аппаратном модуле безопасности (HSM) в службе хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-114">Create a key in a hardware security module (HSM) in the Key Vault service.</span></span>
-- <span data-ttu-id="b1a9b-115">Создание ключа в программном обеспечении в службе хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-115">Create a key in software in the Key Vault service.</span></span>
-- <span data-ttu-id="b1a9b-116">Импортируйте ключ из собственного модуля безопасности оборудования (HSM) в HSMs в службе хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-116">Import a key from your own hardware security module (HSM) to HSMs in the Key Vault service.</span></span>
-- <span data-ttu-id="b1a9b-117">Импорт ключа из PFX-файла на компьютере.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-117">Import a key from a .pfx file on your computer.</span></span>
-- <span data-ttu-id="b1a9b-118">Импорт ключа из PFX-файла на компьютере в модули безопасности оборудования (HSMs) в службе хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-118">Import a key from a .pfx file on your computer to hardware security modules (HSMs) in the Key Vault service.</span></span>
-<span data-ttu-id="b1a9b-119">Для любой из этих операций можно задать ключевые атрибуты или оставить параметры по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-119">For any of these operations, you can provide key attributes or accept default settings.</span></span>
-<span data-ttu-id="b1a9b-120">Если вы создаете или импортируете ключ с тем же именем, что и у существующего ключа в вашем хранилище ключей, первоначальный ключ обновляется с учетом значений, которые вы указали для нового ключа.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-120">If you create or import a key that has the same name as an existing key in your key vault, the original key is updated with the values that you specify for the new key.</span></span> <span data-ttu-id="b1a9b-121">Вы можете получить доступ к предыдущим значениям, используя универсальный код ресурса (URI) для указанной версии ключа.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-121">You can access the previous values by using the version-specific URI for that version of the key.</span></span> <span data-ttu-id="b1a9b-122">Чтобы узнать о ключевых версиях и структуре URI, ознакомьтесь с [разделами о ключах и секретах](https://go.microsoft.com/fwlink/?linkid=518560) в документации API для оставшейся части хранилища.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-122">To learn about key versions and the URI structure, see [About Keys and Secrets](https://go.microsoft.com/fwlink/?linkid=518560) in the Key Vault REST API documentation.</span></span>
-<span data-ttu-id="b1a9b-123">Примечание. чтобы импортировать ключ из собственного модуля безопасности оборудования, необходимо сначала создать пакет BYOK (файл с расширением BYOK Name) с помощью набора инструментов Azure Key Vault BYOK.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-123">Note: To import a key from your own hardware security module, you must first generate a BYOK package (a file with a .byok file name extension) by using the Azure Key Vault BYOK toolset.</span></span> <span data-ttu-id="b1a9b-124">Дополнительные сведения [можно найти в разделе Создание и перенос ключей HSM-Protected для Azure Key Vault](https://go.microsoft.com/fwlink/?LinkId=522252).</span><span class="sxs-lookup"><span data-stu-id="b1a9b-124">For more information, see [How to Generate and Transfer HSM-Protected Keys for Azure Key Vault](https://go.microsoft.com/fwlink/?LinkId=522252).</span></span>
-<span data-ttu-id="b1a9b-125">Рекомендуется создать резервную копию ключа после его создания или обновления с помощью командлета Backup-AzKeyVaultKey.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-125">As a best practice, back up your key after it is created or updated, by using the Backup-AzKeyVaultKey cmdlet.</span></span> <span data-ttu-id="b1a9b-126">Функция отмены удаления отсутствует, поэтому если вы случайно удалили ключ или удалите его, а затем передумали, ключ не подлежит восстановлению, только если у вас есть резервная копия, которую вы можете восстановить.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-126">There is no undelete functionality, so if you accidentally delete your key or delete it and then change your mind, the key is not recoverable unless you have a backup of it that you can restore.</span></span>
+## <span data-ttu-id="17e8c-111">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="17e8c-111">DESCRIPTION</span></span>
+<span data-ttu-id="17e8c-112">С **его** использованием можно создать ключ в хранилище ключей Azure или импортировать его в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="17e8c-112">The **Add-AzKeyVaultKey** cmdlet creates a key in a key vault in Azure Key Vault, or imports a key into a key vault.</span></span>
+<span data-ttu-id="17e8c-113">Используйте этот cmdlet для добавления клавиш, используя один из следующих способов:</span><span class="sxs-lookup"><span data-stu-id="17e8c-113">Use this cmdlet to add keys by using any of the following methods:</span></span>
+- <span data-ttu-id="17e8c-114">Создайте ключ в модуле безопасности оборудования (HSM) в службе key Vault.</span><span class="sxs-lookup"><span data-stu-id="17e8c-114">Create a key in a hardware security module (HSM) in the Key Vault service.</span></span>
+- <span data-ttu-id="17e8c-115">Создайте ключ в программном обеспечении в службе key Vault.</span><span class="sxs-lookup"><span data-stu-id="17e8c-115">Create a key in software in the Key Vault service.</span></span>
+- <span data-ttu-id="17e8c-116">Импортировать ключ из собственного модуля безопасности оборудования (HSM) в HSMs в службе key Vault.</span><span class="sxs-lookup"><span data-stu-id="17e8c-116">Import a key from your own hardware security module (HSM) to HSMs in the Key Vault service.</span></span>
+- <span data-ttu-id="17e8c-117">Импортировать ключ из PFX-файла на компьютере.</span><span class="sxs-lookup"><span data-stu-id="17e8c-117">Import a key from a .pfx file on your computer.</span></span>
+- <span data-ttu-id="17e8c-118">Импортировать ключ из PFX-файла на компьютере в аппаратные модули безопасности (HSMs) в службе key Vault.</span><span class="sxs-lookup"><span data-stu-id="17e8c-118">Import a key from a .pfx file on your computer to hardware security modules (HSMs) in the Key Vault service.</span></span>
+<span data-ttu-id="17e8c-119">Для любой из этих операций можно уписать ключевые атрибуты или принять параметры по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="17e8c-119">For any of these operations, you can provide key attributes or accept default settings.</span></span>
+<span data-ttu-id="17e8c-120">При создании или импорте ключа, который имеет то же имя, что и у существующего ключа в хранилище ключей, исходный ключ обновляется с помощью значений, которые вы указываете для нового ключа.</span><span class="sxs-lookup"><span data-stu-id="17e8c-120">If you create or import a key that has the same name as an existing key in your key vault, the original key is updated with the values that you specify for the new key.</span></span> <span data-ttu-id="17e8c-121">Для доступа к предыдущим значениям можно использовать URI для конкретной версии ключа.</span><span class="sxs-lookup"><span data-stu-id="17e8c-121">You can access the previous values by using the version-specific URI for that version of the key.</span></span> <span data-ttu-id="17e8c-122">Чтобы узнать о ключевых версиях и [](https://go.microsoft.com/fwlink/?linkid=518560) структуре URI, см. документацию по ключевому сейфу REST API "Ключи и секрет".</span><span class="sxs-lookup"><span data-stu-id="17e8c-122">To learn about key versions and the URI structure, see [About Keys and Secrets](https://go.microsoft.com/fwlink/?linkid=518560) in the Key Vault REST API documentation.</span></span>
+<span data-ttu-id="17e8c-123">Примечание. Чтобы импортировать ключ из собственного модуля безопасности оборудования, необходимо сначала создать пакет BYOK (файл с расширением byok file name) с помощью инструмента "Хранилище ключей Azure BYOK".</span><span class="sxs-lookup"><span data-stu-id="17e8c-123">Note: To import a key from your own hardware security module, you must first generate a BYOK package (a file with a .byok file name extension) by using the Azure Key Vault BYOK toolset.</span></span> <span data-ttu-id="17e8c-124">Дополнительные сведения см. в сведениях о том, как создавать и [HSM-Protected ключей для хранилища ключей Azure.](https://go.microsoft.com/fwlink/?LinkId=522252)</span><span class="sxs-lookup"><span data-stu-id="17e8c-124">For more information, see [How to Generate and Transfer HSM-Protected Keys for Azure Key Vault](https://go.microsoft.com/fwlink/?LinkId=522252).</span></span>
+<span data-ttu-id="17e8c-125">Лучше всего создать или обновить ключ с помощью Backup-AzKeyVaultKey управления.</span><span class="sxs-lookup"><span data-stu-id="17e8c-125">As a best practice, back up your key after it is created or updated, by using the Backup-AzKeyVaultKey cmdlet.</span></span> <span data-ttu-id="17e8c-126">Функции отменить невозможно, поэтому если вы случайно удалили или удалили ключ, а затем передумали, его невозможно восстановить, если у вас нет резервной копии, которую вы сможете восстановить.</span><span class="sxs-lookup"><span data-stu-id="17e8c-126">There is no undelete functionality, so if you accidentally delete your key or delete it and then change your mind, the key is not recoverable unless you have a backup of it that you can restore.</span></span>
 
-## <span data-ttu-id="b1a9b-127">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="b1a9b-127">EXAMPLES</span></span>
+## <span data-ttu-id="17e8c-127">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="17e8c-127">EXAMPLES</span></span>
 
-### <span data-ttu-id="b1a9b-128">Пример 1: создание ключа</span><span class="sxs-lookup"><span data-stu-id="b1a9b-128">Example 1: Create a key</span></span>
+### <span data-ttu-id="17e8c-128">Пример 1. Создание ключа</span><span class="sxs-lookup"><span data-stu-id="17e8c-128">Example 1: Create a key</span></span>
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITSoftware' -Destination 'Software'
 
@@ -97,9 +97,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="b1a9b-129">Эта команда создает ключ с защитой программного обеспечения с именем ITSoftware в хранилище ключей, именуемом contoso.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-129">This command creates a software-protected key named ITSoftware in the key vault named Contoso.</span></span>
+<span data-ttu-id="17e8c-129">Эта команда создает защищенный программным обеспечением ключ ITSoftware в хранилище с именем Contoso.</span><span class="sxs-lookup"><span data-stu-id="17e8c-129">This command creates a software-protected key named ITSoftware in the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="b1a9b-130">Пример 2: создание ключа, защищенного с помощью HSM</span><span class="sxs-lookup"><span data-stu-id="b1a9b-130">Example 2: Create an HSM-protected key</span></span>
+### <span data-ttu-id="17e8c-130">Пример 2. Создание защищенного HSM ключа</span><span class="sxs-lookup"><span data-stu-id="17e8c-130">Example 2: Create an HSM-protected key</span></span>
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITHsm' -Destination 'HSM'
 
@@ -116,9 +116,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="b1a9b-131">Эта команда создает ключ, защищенный HSM, в хранилище ключей, именуемом contoso.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-131">This command creates an HSM-protected key in the key vault named Contoso.</span></span>
+<span data-ttu-id="17e8c-131">Эта команда создает ключ, защищенный HSM, в хранилище с именем Contoso.</span><span class="sxs-lookup"><span data-stu-id="17e8c-131">This command creates an HSM-protected key in the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="b1a9b-132">Пример 3: создание ключа с использованием значений, не заданных по умолчанию</span><span class="sxs-lookup"><span data-stu-id="b1a9b-132">Example 3: Create a key with non-default values</span></span>
+### <span data-ttu-id="17e8c-132">Пример 3. Создание ключа со значениями, которые не являются значениями по умолчанию</span><span class="sxs-lookup"><span data-stu-id="17e8c-132">Example 3: Create a key with non-default values</span></span>
 ```powershell
 PS C:\> $KeyOperations = 'decrypt', 'verify'
 PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
@@ -141,13 +141,13 @@ Tags           : Name        Value
                  Accounting  true
 ```
 
-<span data-ttu-id="b1a9b-133">Первая команда сохраняет значения для расшифровки и проверки в переменной $KeyOperations.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-133">The first command stores the values decrypt and verify in the $KeyOperations variable.</span></span>
-<span data-ttu-id="b1a9b-134">Вторая команда создает объект **DateTime** , определенный в формате UTC, с помощью командлета **Get-Date** .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-134">The second command creates a **DateTime** object, defined in UTC, by using the **Get-Date** cmdlet.</span></span>
-<span data-ttu-id="b1a9b-135">Этот объект указывает на время в будущем на два года.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-135">That object specifies a time two years in the future.</span></span> <span data-ttu-id="b1a9b-136">Команда сохраняет эту дату в переменной $Expires.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-136">The command stores that date in the $Expires variable.</span></span> <span data-ttu-id="b1a9b-137">Для получения дополнительных сведений введите `Get-Help Get-Date` .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-137">For more information, type `Get-Help Get-Date`.</span></span>
-<span data-ttu-id="b1a9b-138">Третья команда создает объект **DateTime** с помощью командлета **Get-Date** .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-138">The third command creates a **DateTime** object by using the **Get-Date** cmdlet.</span></span> <span data-ttu-id="b1a9b-139">Этот объект указывает текущее время в формате UTC.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-139">That object specifies current UTC time.</span></span> <span data-ttu-id="b1a9b-140">Команда сохраняет эту дату в переменной $NotBefore.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-140">The command stores that date in the $NotBefore variable.</span></span>
-<span data-ttu-id="b1a9b-141">Последняя команда создает ключ с именем ITHsmNonDefault, который является ключом, защищенным с помощью HSM.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-141">The final command creates a key named ITHsmNonDefault that is an HSM-protected key.</span></span> <span data-ttu-id="b1a9b-142">Команда задает значения разрешенных операций с ключами, сохраненными $KeyOperations.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-142">The command specifies values for allowed key operations stored $KeyOperations.</span></span> <span data-ttu-id="b1a9b-143">В команде указаны значения времени для параметров *Expires* и *NotBefore* , созданных в предыдущих командах, а также теги для высокого уровня важности и.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-143">The command specifies times for the *Expires* and *NotBefore* parameters created in the previous commands, and tags for high severity and IT.</span></span> <span data-ttu-id="b1a9b-144">Новый ключ отключен.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-144">The new key is disabled.</span></span> <span data-ttu-id="b1a9b-145">Это можно сделать с помощью командлета **Set-AzKeyVaultKey** .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-145">You can enable it by using the **Set-AzKeyVaultKey** cmdlet.</span></span>
+<span data-ttu-id="17e8c-133">Первая команда сохраняет значения в переменной "$KeyOperations".</span><span class="sxs-lookup"><span data-stu-id="17e8c-133">The first command stores the values decrypt and verify in the $KeyOperations variable.</span></span>
+<span data-ttu-id="17e8c-134">Вторая команда создает объект **даты** и времени, определенный в UTC, с помощью командлета **Get-Date.**</span><span class="sxs-lookup"><span data-stu-id="17e8c-134">The second command creates a **DateTime** object, defined in UTC, by using the **Get-Date** cmdlet.</span></span>
+<span data-ttu-id="17e8c-135">Этот объект определяет время на два года в будущем.</span><span class="sxs-lookup"><span data-stu-id="17e8c-135">That object specifies a time two years in the future.</span></span> <span data-ttu-id="17e8c-136">Эта команда сохраняет эту дату в переменной $Expires.</span><span class="sxs-lookup"><span data-stu-id="17e8c-136">The command stores that date in the $Expires variable.</span></span> <span data-ttu-id="17e8c-137">Для получения дополнительных сведений введите `Get-Help Get-Date` .</span><span class="sxs-lookup"><span data-stu-id="17e8c-137">For more information, type `Get-Help Get-Date`.</span></span>
+<span data-ttu-id="17e8c-138">Третья команда создает объект **даты и времени** с помощью командлета **Get-Date.**</span><span class="sxs-lookup"><span data-stu-id="17e8c-138">The third command creates a **DateTime** object by using the **Get-Date** cmdlet.</span></span> <span data-ttu-id="17e8c-139">Этот объект указывает текущее время в UTC.</span><span class="sxs-lookup"><span data-stu-id="17e8c-139">That object specifies current UTC time.</span></span> <span data-ttu-id="17e8c-140">Эта команда сохраняет эту дату в переменной $NotBefore.</span><span class="sxs-lookup"><span data-stu-id="17e8c-140">The command stores that date in the $NotBefore variable.</span></span>
+<span data-ttu-id="17e8c-141">Конечная команда создает ключ с именем ITHsmNonDefault, защищенный HSM.</span><span class="sxs-lookup"><span data-stu-id="17e8c-141">The final command creates a key named ITHsmNonDefault that is an HSM-protected key.</span></span> <span data-ttu-id="17e8c-142">Команда определяет значения для разрешенных операций ключа, хранимых $KeyOperations.</span><span class="sxs-lookup"><span data-stu-id="17e8c-142">The command specifies values for allowed key operations stored $KeyOperations.</span></span> <span data-ttu-id="17e8c-143">Команда определяет время параметров *Expires* (Срок действия) и *NotBefore,* созданных в предыдущих командах, и тегов для высокой важности и ИТ-параметров.</span><span class="sxs-lookup"><span data-stu-id="17e8c-143">The command specifies times for the *Expires* and *NotBefore* parameters created in the previous commands, and tags for high severity and IT.</span></span> <span data-ttu-id="17e8c-144">Новый ключ отключен.</span><span class="sxs-lookup"><span data-stu-id="17e8c-144">The new key is disabled.</span></span> <span data-ttu-id="17e8c-145">Вы можете включить его с помощью **cmdlet Set-AzKeyVaultKey.**</span><span class="sxs-lookup"><span data-stu-id="17e8c-145">You can enable it by using the **Set-AzKeyVaultKey** cmdlet.</span></span>
 
-### <span data-ttu-id="b1a9b-146">Пример 4: импорт ключа, защищенного с помощью HSM</span><span class="sxs-lookup"><span data-stu-id="b1a9b-146">Example 4: Import an HSM-protected key</span></span>
+### <span data-ttu-id="17e8c-146">Пример 4. Импорт ключа, защищенного HSM</span><span class="sxs-lookup"><span data-stu-id="17e8c-146">Example 4: Import an HSM-protected key</span></span>
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITByok' -KeyFilePath 'C:\Contoso\ITByok.byok' -Destination 'HSM'
 
@@ -164,11 +164,11 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="b1a9b-147">Эта команда импортирует ключ с именем ITByok из расположения, указанного параметром *KeyFilePath* .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-147">This command imports the key named ITByok from the location that the *KeyFilePath* parameter specifies.</span></span> <span data-ttu-id="b1a9b-148">Импортированный ключ является ключом, защищенным с помощью HSM.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-148">The imported key is an HSM-protected key.</span></span>
-<span data-ttu-id="b1a9b-149">Чтобы импортировать ключ из собственного модуля безопасности оборудования, необходимо сначала создать пакет BYOK (файл с расширением BYOK Name) с помощью набора инструментов Azure Key Vault BYOK.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-149">To import a key from your own hardware security module, you must first generate a BYOK package (a file with a .byok file name extension) by using the Azure Key Vault BYOK toolset.</span></span>
-<span data-ttu-id="b1a9b-150">Дополнительные сведения [можно найти в разделе Создание и перенос ключей HSM-Protected для Azure Key Vault](https://go.microsoft.com/fwlink/?LinkId=522252).</span><span class="sxs-lookup"><span data-stu-id="b1a9b-150">For more information, see [How to Generate and Transfer HSM-Protected Keys for Azure Key Vault](https://go.microsoft.com/fwlink/?LinkId=522252).</span></span>
+<span data-ttu-id="17e8c-147">Эта команда импортирует ключ "ITByok" из расположения, заданного *параметром KeyFilePath.*</span><span class="sxs-lookup"><span data-stu-id="17e8c-147">This command imports the key named ITByok from the location that the *KeyFilePath* parameter specifies.</span></span> <span data-ttu-id="17e8c-148">Импортируемый ключ является ключом, защищенным HSM.</span><span class="sxs-lookup"><span data-stu-id="17e8c-148">The imported key is an HSM-protected key.</span></span>
+<span data-ttu-id="17e8c-149">Чтобы импортировать ключ из собственного модуля безопасности оборудования, необходимо сначала создать пакет BYOK (файл с расширением имени файла BYOK) с помощью средства BYOK key Vault Azure.</span><span class="sxs-lookup"><span data-stu-id="17e8c-149">To import a key from your own hardware security module, you must first generate a BYOK package (a file with a .byok file name extension) by using the Azure Key Vault BYOK toolset.</span></span>
+<span data-ttu-id="17e8c-150">Дополнительные сведения см. в сведениях о том, как создавать и [HSM-Protected ключей для хранилища ключей Azure.](https://go.microsoft.com/fwlink/?LinkId=522252)</span><span class="sxs-lookup"><span data-stu-id="17e8c-150">For more information, see [How to Generate and Transfer HSM-Protected Keys for Azure Key Vault](https://go.microsoft.com/fwlink/?LinkId=522252).</span></span>
 
-### <span data-ttu-id="b1a9b-151">Пример 5: импорт ключа, защищенного с помощью программного обеспечения</span><span class="sxs-lookup"><span data-stu-id="b1a9b-151">Example 5: Import a software-protected key</span></span>
+### <span data-ttu-id="17e8c-151">Пример 5. Импорт ключа, защищенного программным обеспечением</span><span class="sxs-lookup"><span data-stu-id="17e8c-151">Example 5: Import a software-protected key</span></span>
 ```powershell
 PS C:\> $Password = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITPfx' -KeyFilePath 'C:\Contoso\ITPfx.pfx' -KeyFilePassword $Password
@@ -186,12 +186,12 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="b1a9b-152">Первая команда преобразует строку в защищенную строку с помощью командлета **ConvertTo-SecureString** , а затем сохраняет эту строку в переменной $Password.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-152">The first command converts a string into a secure string by using the **ConvertTo-SecureString** cmdlet, and then stores that string in the $Password variable.</span></span> <span data-ttu-id="b1a9b-153">Для получения дополнительных сведений введите `Get-Help
-ConvertTo-SecureString` .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-153">For more information, type `Get-Help
+<span data-ttu-id="17e8c-152">Первая команда преобразует строку в безопасную строку с помощью командлета **ConvertTo-SecureString,** а затем сохраняет ее в $Password строке.</span><span class="sxs-lookup"><span data-stu-id="17e8c-152">The first command converts a string into a secure string by using the **ConvertTo-SecureString** cmdlet, and then stores that string in the $Password variable.</span></span> <span data-ttu-id="17e8c-153">Для получения дополнительных сведений введите `Get-Help
+ConvertTo-SecureString` .</span><span class="sxs-lookup"><span data-stu-id="17e8c-153">For more information, type `Get-Help
 ConvertTo-SecureString`.</span></span>
-<span data-ttu-id="b1a9b-154">Вторая команда создает пароль программного обеспечения в хранилище ключей contoso.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-154">The second command creates a software password in the Contoso key vault.</span></span> <span data-ttu-id="b1a9b-155">Команда задает расположение ключа и пароль, хранящийся в $Password.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-155">The command specifies the location for the key and the password stored in $Password.</span></span>
+<span data-ttu-id="17e8c-154">Вторая команда создает пароль программного обеспечения в хранилище ключей Contoso.</span><span class="sxs-lookup"><span data-stu-id="17e8c-154">The second command creates a software password in the Contoso key vault.</span></span> <span data-ttu-id="17e8c-155">Команда определяет расположение ключа и пароля, которые хранятся в $Password.</span><span class="sxs-lookup"><span data-stu-id="17e8c-155">The command specifies the location for the key and the password stored in $Password.</span></span>
 
-### <span data-ttu-id="b1a9b-156">Пример 6: импорт ключа и назначение атрибутов</span><span class="sxs-lookup"><span data-stu-id="b1a9b-156">Example 6: Import a key and assign attributes</span></span>
+### <span data-ttu-id="17e8c-156">Пример 6. Импорт ключа и назначение атрибутов</span><span class="sxs-lookup"><span data-stu-id="17e8c-156">Example 6: Import a key and assign attributes</span></span>
 ```powershell
 PS C:\> $Password = ConvertTo-SecureString -String 'password' -AsPlainText -Force
 PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
@@ -213,15 +213,15 @@ Tags           : Name        Value
                  Accounting  true
 ```
 
-<span data-ttu-id="b1a9b-157">Первая команда преобразует строку в защищенную строку с помощью командлета **ConvertTo-SecureString** , а затем сохраняет эту строку в переменной $Password.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-157">The first command converts a string into a secure string by using the **ConvertTo-SecureString** cmdlet, and then stores that string in the $Password variable.</span></span>
-<span data-ttu-id="b1a9b-158">Вторая команда создает объект **DateTime** с помощью командлета **Get-Date** , а затем сохраняет этот объект в переменной $Expires.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-158">The second command creates a **DateTime** object by using the **Get-Date** cmdlet, and then stores that object in the $Expires variable.</span></span>
-<span data-ttu-id="b1a9b-159">Третья команда создает переменную $tags, чтобы установить теги для высокого уровня важности и.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-159">The third command creates the $tags variable to set tags for high severity and IT.</span></span>
-<span data-ttu-id="b1a9b-160">Последняя команда импортирует ключ в качестве ключа HSM из указанного места.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-160">The final command imports a key as an HSM key from the specified location.</span></span> <span data-ttu-id="b1a9b-161">Команда задает срок действия, хранящийся в $Expires и пароль, которые хранятся в $Password, и применяет теги, хранящиеся в $tags.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-161">The command specifies the expiration time stored in $Expires and password stored in $Password, and applies the tags stored in $tags.</span></span>
+<span data-ttu-id="17e8c-157">Первая команда преобразует строку в безопасную строку с помощью командлета **ConvertTo-SecureString,** а затем сохраняет ее в $Password строке.</span><span class="sxs-lookup"><span data-stu-id="17e8c-157">The first command converts a string into a secure string by using the **ConvertTo-SecureString** cmdlet, and then stores that string in the $Password variable.</span></span>
+<span data-ttu-id="17e8c-158">Вторая команда создает объект **даты** и времени с помощью командлета **Get-Date,** а затем сохраняет его в $Expires переменной.</span><span class="sxs-lookup"><span data-stu-id="17e8c-158">The second command creates a **DateTime** object by using the **Get-Date** cmdlet, and then stores that object in the $Expires variable.</span></span>
+<span data-ttu-id="17e8c-159">Третья команда создает переменную $tags, чтобы настроить теги для высокой важности и ИТ-информации.</span><span class="sxs-lookup"><span data-stu-id="17e8c-159">The third command creates the $tags variable to set tags for high severity and IT.</span></span>
+<span data-ttu-id="17e8c-160">Конечная команда импортирует ключ как клавишу HSM из указанного расположения.</span><span class="sxs-lookup"><span data-stu-id="17e8c-160">The final command imports a key as an HSM key from the specified location.</span></span> <span data-ttu-id="17e8c-161">Команда определяет срок действия, которые хранятся $Expires пароль, которые хранятся в $Password, и применяет теги, хранимые в $tags.</span><span class="sxs-lookup"><span data-stu-id="17e8c-161">The command specifies the expiration time stored in $Expires and password stored in $Password, and applies the tags stored in $tags.</span></span>
 
-## <span data-ttu-id="b1a9b-162">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="b1a9b-162">PARAMETERS</span></span>
+## <span data-ttu-id="17e8c-162">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="17e8c-162">PARAMETERS</span></span>
 
-### <span data-ttu-id="b1a9b-163">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b1a9b-163">-DefaultProfile</span></span>
-<span data-ttu-id="b1a9b-164">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="b1a9b-164">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="17e8c-163">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="17e8c-163">-DefaultProfile</span></span>
+<span data-ttu-id="17e8c-164">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="17e8c-164">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -235,13 +235,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-165">-Destination</span><span class="sxs-lookup"><span data-stu-id="b1a9b-165">-Destination</span></span>
-<span data-ttu-id="b1a9b-166">Указывает, следует ли добавить ключ в качестве ключа с защитой программного обеспечения или ключа, защищенного с помощью HSM, в службе хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-166">Specifies whether to add the key as a software-protected key or an HSM-protected key in the Key Vault service.</span></span>
-<span data-ttu-id="b1a9b-167">Допустимые значения: HSM и программное обеспечение.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-167">Valid values are: HSM and Software.</span></span>
-<span data-ttu-id="b1a9b-168">Примечание. чтобы использовать HSM в качестве места назначения, необходимо иметь ключевое хранилище, которое поддерживает HSMs.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-168">Note: To use HSM as your destination, you must have a key vault that supports HSMs.</span></span> <span data-ttu-id="b1a9b-169">Дополнительные сведения о уровнях обслуживания и возможностях Azure Key Vault можно найти на [веб-сайте ценообразования для Azure Key Vault](https://go.microsoft.com/fwlink/?linkid=512521).</span><span class="sxs-lookup"><span data-stu-id="b1a9b-169">For more information about the service tiers and capabilities for Azure Key Vault, see the [Azure Key Vault Pricing website](https://go.microsoft.com/fwlink/?linkid=512521).</span></span>
-<span data-ttu-id="b1a9b-170">Этот параметр является обязательным при создании нового ключа.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-170">This parameter is required when you create a new key.</span></span> <span data-ttu-id="b1a9b-171">При импорте ключа с помощью параметра *KeyFilePath* этот параметр является необязательным:</span><span class="sxs-lookup"><span data-stu-id="b1a9b-171">If you import a key by using the *KeyFilePath* parameter, this parameter is optional:</span></span>
-- <span data-ttu-id="b1a9b-172">Если этот параметр не указан, а этот командлет импортирует ключ с расширением byok, он импортирует этот ключ в качестве ключа, защищенного с помощью HSM-файлов.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-172">If you do not specify this parameter, and this cmdlet imports a key that has .byok file name extension, it imports that key as an HSM-protected key.</span></span> <span data-ttu-id="b1a9b-173">Командлет не может импортировать эту клавишу в качестве ключа, защищенного с помощью программного обеспечения.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-173">The cmdlet cannot import that key as software-protected key.</span></span>
-- <span data-ttu-id="b1a9b-174">Если этот параметр не указан, а этот командлет импортирует ключ с расширением имени PFX-файла, он импортирует ключ как ключ, защищенный программным обеспечением.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-174">If you do not specify this parameter, and this cmdlet imports a key that has a .pfx file name extension, it imports the key as a software-protected key.</span></span>
+### <span data-ttu-id="17e8c-165">-Destination</span><span class="sxs-lookup"><span data-stu-id="17e8c-165">-Destination</span></span>
+<span data-ttu-id="17e8c-166">Указывает, следует ли добавить ключ в качестве защищенного по программному обеспечению или защищенного HSM ключа в службе key Vault.</span><span class="sxs-lookup"><span data-stu-id="17e8c-166">Specifies whether to add the key as a software-protected key or an HSM-protected key in the Key Vault service.</span></span>
+<span data-ttu-id="17e8c-167">Допустимые значения: HSM и Программное обеспечение.</span><span class="sxs-lookup"><span data-stu-id="17e8c-167">Valid values are: HSM and Software.</span></span>
+<span data-ttu-id="17e8c-168">Примечание. Чтобы использовать HSM в качестве назначения, у вас должен быть ключ сейф, который поддерживает HSMs.</span><span class="sxs-lookup"><span data-stu-id="17e8c-168">Note: To use HSM as your destination, you must have a key vault that supports HSMs.</span></span> <span data-ttu-id="17e8c-169">Дополнительные сведения об уровнях обслуживания и возможностях хранилища ключей Azure см. на веб-сайте цены [на ключ хранилища Azure.](https://go.microsoft.com/fwlink/?linkid=512521)</span><span class="sxs-lookup"><span data-stu-id="17e8c-169">For more information about the service tiers and capabilities for Azure Key Vault, see the [Azure Key Vault Pricing website](https://go.microsoft.com/fwlink/?linkid=512521).</span></span>
+<span data-ttu-id="17e8c-170">Этот параметр требуется при создании нового ключа.</span><span class="sxs-lookup"><span data-stu-id="17e8c-170">This parameter is required when you create a new key.</span></span> <span data-ttu-id="17e8c-171">Если вы импортируете ключ с помощью *параметра KeyFilePath,* этот параметр является необязательным:</span><span class="sxs-lookup"><span data-stu-id="17e8c-171">If you import a key by using the *KeyFilePath* parameter, this parameter is optional:</span></span>
+- <span data-ttu-id="17e8c-172">Если этот параметр не задан и этот cmdlet импортирует ключ с расширением byok, он будет импортироваться как ключ, защищенный HSM.</span><span class="sxs-lookup"><span data-stu-id="17e8c-172">If you do not specify this parameter, and this cmdlet imports a key that has .byok file name extension, it imports that key as an HSM-protected key.</span></span> <span data-ttu-id="17e8c-173">Этот ключ нельзя импортировать как защищенный программным обеспечением ключ.</span><span class="sxs-lookup"><span data-stu-id="17e8c-173">The cmdlet cannot import that key as software-protected key.</span></span>
+- <span data-ttu-id="17e8c-174">Если этот параметр не указан, а этот cmdlet импортирует ключ с расширением имени файла PFX, ключ будет импортироваться как защищенный программным обеспечением ключ.</span><span class="sxs-lookup"><span data-stu-id="17e8c-174">If you do not specify this parameter, and this cmdlet imports a key that has a .pfx file name extension, it imports the key as a software-protected key.</span></span>
 
 ```yaml
 Type: System.String
@@ -269,8 +269,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-175">-Отключение</span><span class="sxs-lookup"><span data-stu-id="b1a9b-175">-Disable</span></span>
-<span data-ttu-id="b1a9b-176">Указывает на то, что для добавляемого ключа задано начальное состояние "отключено".</span><span class="sxs-lookup"><span data-stu-id="b1a9b-176">Indicates that the key you are adding is set to an initial state of disabled.</span></span> <span data-ttu-id="b1a9b-177">Любая попытка использования ключа завершится сбоем.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-177">Any attempt to use the key will fail.</span></span> <span data-ttu-id="b1a9b-178">Используйте этот параметр, если нужно предварительно загрузить ключи, которые нужно включить в дальнейшем.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-178">Use this parameter if you are preloading keys that you intend to enable later.</span></span>
+### <span data-ttu-id="17e8c-175">-Disable</span><span class="sxs-lookup"><span data-stu-id="17e8c-175">-Disable</span></span>
+<span data-ttu-id="17e8c-176">Указывает на то, что для добавляемого ключа за установлено начальное состояние отключения.</span><span class="sxs-lookup"><span data-stu-id="17e8c-176">Indicates that the key you are adding is set to an initial state of disabled.</span></span> <span data-ttu-id="17e8c-177">Любая попытка использовать ключ будет со сбой.</span><span class="sxs-lookup"><span data-stu-id="17e8c-177">Any attempt to use the key will fail.</span></span> <span data-ttu-id="17e8c-178">Используйте этот параметр, если вы предварительно добавили ключи, которые предполагается включить позже.</span><span class="sxs-lookup"><span data-stu-id="17e8c-178">Use this parameter if you are preloading keys that you intend to enable later.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -284,8 +284,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-179">-Истекает</span><span class="sxs-lookup"><span data-stu-id="b1a9b-179">-Expires</span></span>
-<span data-ttu-id="b1a9b-180">Задает время истечения срока действия в виде объекта **DateTime** для ключа, который добавляется этим командлетом.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-180">Specifies the expiration time, as a **DateTime** object, for the key that this cmdlet adds.</span></span> <span data-ttu-id="b1a9b-181">Этот параметр использует координированное координированное время (UTC).</span><span class="sxs-lookup"><span data-stu-id="b1a9b-181">This parameter uses Coordinated Universal Time (UTC).</span></span> <span data-ttu-id="b1a9b-182">Чтобы получить объект **DateTime** , используйте командлет **Get-Date** .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-182">To obtain a **DateTime** object, use the **Get-Date** cmdlet.</span></span> <span data-ttu-id="b1a9b-183">Для получения дополнительных сведений введите `Get-Help Get-Date` .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-183">For more information, type `Get-Help Get-Date`.</span></span> <span data-ttu-id="b1a9b-184">Если этот параметр не указан, срок действия ключа не истекает.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-184">If you do not specify this parameter, the key does not expire.</span></span>
+### <span data-ttu-id="17e8c-179">-Expires</span><span class="sxs-lookup"><span data-stu-id="17e8c-179">-Expires</span></span>
+<span data-ttu-id="17e8c-180">Срок действия ключа, который добавляет этот **cmdlet,** определяет срок действия в качестве объекта даты и времени.</span><span class="sxs-lookup"><span data-stu-id="17e8c-180">Specifies the expiration time, as a **DateTime** object, for the key that this cmdlet adds.</span></span> <span data-ttu-id="17e8c-181">Этот параметр использует UTC.</span><span class="sxs-lookup"><span data-stu-id="17e8c-181">This parameter uses Coordinated Universal Time (UTC).</span></span> <span data-ttu-id="17e8c-182">Чтобы получить объект **даты и времени,** используйте cmdlet **Get-Date.**</span><span class="sxs-lookup"><span data-stu-id="17e8c-182">To obtain a **DateTime** object, use the **Get-Date** cmdlet.</span></span> <span data-ttu-id="17e8c-183">Для получения дополнительных сведений введите `Get-Help Get-Date` .</span><span class="sxs-lookup"><span data-stu-id="17e8c-183">For more information, type `Get-Help Get-Date`.</span></span> <span data-ttu-id="17e8c-184">Если этот параметр не задан, срок действия ключа не истекает.</span><span class="sxs-lookup"><span data-stu-id="17e8c-184">If you do not specify this parameter, the key does not expire.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -299,8 +299,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-185">-InputObject</span><span class="sxs-lookup"><span data-stu-id="b1a9b-185">-InputObject</span></span>
-<span data-ttu-id="b1a9b-186">Объект хранилища.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-186">Vault object.</span></span>
+### <span data-ttu-id="17e8c-185">-InputObject</span><span class="sxs-lookup"><span data-stu-id="17e8c-185">-InputObject</span></span>
+<span data-ttu-id="17e8c-186">Объект Vault.</span><span class="sxs-lookup"><span data-stu-id="17e8c-186">Vault object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -314,8 +314,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-187">-KeyFilePassword</span><span class="sxs-lookup"><span data-stu-id="b1a9b-187">-KeyFilePassword</span></span>
-<span data-ttu-id="b1a9b-188">Указывает пароль для импортированного файла как объект **SecureString** .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-188">Specifies a password for the imported file as a **SecureString** object.</span></span> <span data-ttu-id="b1a9b-189">Чтобы получить объект **SecureString** , используйте командлет **ConvertTo-SecureString** .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-189">To obtain a **SecureString** object, use the **ConvertTo-SecureString** cmdlet.</span></span> <span data-ttu-id="b1a9b-190">Для получения дополнительных сведений введите `Get-Help ConvertTo-SecureString` .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-190">For more information, type `Get-Help ConvertTo-SecureString`.</span></span> <span data-ttu-id="b1a9b-191">Вы должны указать этот пароль, чтобы импортировать файл с расширением имени PFX-файла.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-191">You must specify this password to import a file with a .pfx file name extension.</span></span>
+### <span data-ttu-id="17e8c-187">-KeyFilePassword</span><span class="sxs-lookup"><span data-stu-id="17e8c-187">-KeyFilePassword</span></span>
+<span data-ttu-id="17e8c-188">Пароль импортируемого файла в качестве объекта **SecureString.**</span><span class="sxs-lookup"><span data-stu-id="17e8c-188">Specifies a password for the imported file as a **SecureString** object.</span></span> <span data-ttu-id="17e8c-189">Чтобы получить объект **SecureString,** используйте **cmdlet ConvertTo-SecureString.**</span><span class="sxs-lookup"><span data-stu-id="17e8c-189">To obtain a **SecureString** object, use the **ConvertTo-SecureString** cmdlet.</span></span> <span data-ttu-id="17e8c-190">Для получения дополнительных сведений введите `Get-Help ConvertTo-SecureString` .</span><span class="sxs-lookup"><span data-stu-id="17e8c-190">For more information, type `Get-Help ConvertTo-SecureString`.</span></span> <span data-ttu-id="17e8c-191">Этот пароль необходимо указать для импорта файла с расширением PFX.</span><span class="sxs-lookup"><span data-stu-id="17e8c-191">You must specify this password to import a file with a .pfx file name extension.</span></span>
 
 ```yaml
 Type: System.Security.SecureString
@@ -329,12 +329,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-192">-KeyFilePath</span><span class="sxs-lookup"><span data-stu-id="b1a9b-192">-KeyFilePath</span></span>
-<span data-ttu-id="b1a9b-193">Указывает путь к локальному файлу, содержащему ключевой материал, который этот командлет импортирует.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-193">Specifies the path of a local file that contains key material that this cmdlet imports.</span></span>
-<span data-ttu-id="b1a9b-194">Допустимые расширения имен файлов: byok и PFX.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-194">The valid file name extensions are .byok and .pfx.</span></span>
-- <span data-ttu-id="b1a9b-195">Если файл является файлом byok, ключ автоматически защищается HSMs после импорта, и вы не сможете переопределить этот параметр по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-195">If the file is a .byok file, the key is automatically protected by HSMs after the import and you cannot override this default.</span></span>
-- <span data-ttu-id="b1a9b-196">Если файл является PFX-файлом, ключ автоматически защищается программным путем после импорта.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-196">If the file is a .pfx file, the key is automatically protected by software after the import.</span></span> <span data-ttu-id="b1a9b-197">Чтобы переопределить это значение по умолчанию, установите для параметра *Destination* значение HSM, чтобы ключ был защищен с помощью HSM-аппаратных защит.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-197">To override this default, set the *Destination* parameter to HSM so that the key is HSM-protected.</span></span>
-<span data-ttu-id="b1a9b-198">Если указать этот параметр, параметр *Destination* является необязательным.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-198">When you specify this parameter, the *Destination* parameter is optional.</span></span>
+### <span data-ttu-id="17e8c-192">-KeyFilePath</span><span class="sxs-lookup"><span data-stu-id="17e8c-192">-KeyFilePath</span></span>
+<span data-ttu-id="17e8c-193">Путь к локальному файлу, который содержит ключевые материалы, импортируемые этим cmdlet.</span><span class="sxs-lookup"><span data-stu-id="17e8c-193">Specifies the path of a local file that contains key material that this cmdlet imports.</span></span>
+<span data-ttu-id="17e8c-194">Допустимые расширения имен файлов: BYOK и PFX.</span><span class="sxs-lookup"><span data-stu-id="17e8c-194">The valid file name extensions are .byok and .pfx.</span></span>
+- <span data-ttu-id="17e8c-195">Если это BYOK-файл, он автоматически защищен HSMs после импорта, и этот элемент по умолчанию нельзя переопрестить.</span><span class="sxs-lookup"><span data-stu-id="17e8c-195">If the file is a .byok file, the key is automatically protected by HSMs after the import and you cannot override this default.</span></span>
+- <span data-ttu-id="17e8c-196">Если это PFX-файл, ключ автоматически защищен программным обеспечением после импорта.</span><span class="sxs-lookup"><span data-stu-id="17e8c-196">If the file is a .pfx file, the key is automatically protected by software after the import.</span></span> <span data-ttu-id="17e8c-197">Чтобы переопререгировать этот параметр по умолчанию, задате для параметра *Destination* параметр HSM так, чтобы ключ защищен HSM.</span><span class="sxs-lookup"><span data-stu-id="17e8c-197">To override this default, set the *Destination* parameter to HSM so that the key is HSM-protected.</span></span>
+<span data-ttu-id="17e8c-198">Если этот параметр указан, параметр *Destination* является необязательным.</span><span class="sxs-lookup"><span data-stu-id="17e8c-198">When you specify this parameter, the *Destination* parameter is optional.</span></span>
 
 ```yaml
 Type: System.String
@@ -348,16 +348,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-199">-KeyOps</span><span class="sxs-lookup"><span data-stu-id="b1a9b-199">-KeyOps</span></span>
-<span data-ttu-id="b1a9b-200">Задает массив операций, которые можно выполнить с помощью ключа, который добавляет этот командлет.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-200">Specifies an array of operations that can be performed by using the key that this cmdlet adds.</span></span>
-<span data-ttu-id="b1a9b-201">Если этот параметр не указан, может выполняться выполнение всех операций.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-201">If you do not specify this parameter, all operations can be performed.</span></span>
-<span data-ttu-id="b1a9b-202">Допустимые значения этого параметра — это разделенный запятыми список ключевых операций, заданных [спецификацией JSON Web Key (JWK)](https://go.microsoft.com/fwlink/?LinkID=613300):</span><span class="sxs-lookup"><span data-stu-id="b1a9b-202">The acceptable values for this parameter are a comma-separated list of key operations as defined by the [JSON Web Key (JWK) specification](https://go.microsoft.com/fwlink/?LinkID=613300):</span></span>
-- <span data-ttu-id="b1a9b-203">EFS</span><span class="sxs-lookup"><span data-stu-id="b1a9b-203">Encrypt</span></span>
-- <span data-ttu-id="b1a9b-204">Расшифровки</span><span class="sxs-lookup"><span data-stu-id="b1a9b-204">Decrypt</span></span>
-- <span data-ttu-id="b1a9b-205">Инкапсулирует</span><span class="sxs-lookup"><span data-stu-id="b1a9b-205">Wrap</span></span>
-- <span data-ttu-id="b1a9b-206">Разтекание</span><span class="sxs-lookup"><span data-stu-id="b1a9b-206">Unwrap</span></span>
-- <span data-ttu-id="b1a9b-207">Рядом</span><span class="sxs-lookup"><span data-stu-id="b1a9b-207">Sign</span></span>
-- <span data-ttu-id="b1a9b-208">Подтвержда</span><span class="sxs-lookup"><span data-stu-id="b1a9b-208">Verify</span></span>
+### <span data-ttu-id="17e8c-199">-KeyOps</span><span class="sxs-lookup"><span data-stu-id="17e8c-199">-KeyOps</span></span>
+<span data-ttu-id="17e8c-200">Определяет массив операций, которые можно выполнять с помощью ключа, который добавляет этот cmdlet.</span><span class="sxs-lookup"><span data-stu-id="17e8c-200">Specifies an array of operations that can be performed by using the key that this cmdlet adds.</span></span>
+<span data-ttu-id="17e8c-201">Если этот параметр не задан, можно выполнить все операции.</span><span class="sxs-lookup"><span data-stu-id="17e8c-201">If you do not specify this parameter, all operations can be performed.</span></span>
+<span data-ttu-id="17e8c-202">Допустимыми значениями для этого параметра является список операций, разделенных запятыми, в соответствии со спецификацией [JSON Web Key (JWK):](https://go.microsoft.com/fwlink/?LinkID=613300)</span><span class="sxs-lookup"><span data-stu-id="17e8c-202">The acceptable values for this parameter are a comma-separated list of key operations as defined by the [JSON Web Key (JWK) specification](https://go.microsoft.com/fwlink/?LinkID=613300):</span></span>
+- <span data-ttu-id="17e8c-203">Шифровать</span><span class="sxs-lookup"><span data-stu-id="17e8c-203">Encrypt</span></span>
+- <span data-ttu-id="17e8c-204">Расшифровать</span><span class="sxs-lookup"><span data-stu-id="17e8c-204">Decrypt</span></span>
+- <span data-ttu-id="17e8c-205">Обтекать</span><span class="sxs-lookup"><span data-stu-id="17e8c-205">Wrap</span></span>
+- <span data-ttu-id="17e8c-206">Отвяхить</span><span class="sxs-lookup"><span data-stu-id="17e8c-206">Unwrap</span></span>
+- <span data-ttu-id="17e8c-207">Подписать</span><span class="sxs-lookup"><span data-stu-id="17e8c-207">Sign</span></span>
+- <span data-ttu-id="17e8c-208">Проверить</span><span class="sxs-lookup"><span data-stu-id="17e8c-208">Verify</span></span>
 
 ```yaml
 Type: System.String[]
@@ -371,8 +371,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-209">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="b1a9b-209">-Name</span></span>
-<span data-ttu-id="b1a9b-210">Задает имя ключа, который нужно добавить в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-210">Specifies the name of the key to add to the key vault.</span></span> <span data-ttu-id="b1a9b-211">Этот командлет создает полное доменное имя (FQDN) ключа на основе имени, которое указывает этот параметр, имя хранилища ключей и текущую среду.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-211">This cmdlet constructs the fully qualified domain name (FQDN) of a key based on the name that this parameter specifies, the name of the key vault, and your current environment.</span></span> <span data-ttu-id="b1a9b-212">Имя должно быть строкой из 1 – 63 знаков длиной, содержащей только 0-9, a-z, A-Z и (дефис).</span><span class="sxs-lookup"><span data-stu-id="b1a9b-212">The name must be a string of 1 through 63 characters in length that contains only 0-9, a-z, A-Z, and - (the dash symbol).</span></span>
+### <span data-ttu-id="17e8c-209">-Name</span><span class="sxs-lookup"><span data-stu-id="17e8c-209">-Name</span></span>
+<span data-ttu-id="17e8c-210">Указывает имя ключа, который нужно добавить в хранилище.</span><span class="sxs-lookup"><span data-stu-id="17e8c-210">Specifies the name of the key to add to the key vault.</span></span> <span data-ttu-id="17e8c-211">Этот cmdlet конструирует полное доменное имя (FQDN) ключа на основе имени, указанного этим параметром, имени хранилища ключа и текущей среды.</span><span class="sxs-lookup"><span data-stu-id="17e8c-211">This cmdlet constructs the fully qualified domain name (FQDN) of a key based on the name that this parameter specifies, the name of the key vault, and your current environment.</span></span> <span data-ttu-id="17e8c-212">Имя должно быть строкой от 1 до 63 символов длины, которая содержит только 0–9, a-z, A-Z и - (символ тире).</span><span class="sxs-lookup"><span data-stu-id="17e8c-212">The name must be a string of 1 through 63 characters in length that contains only 0-9, a-z, A-Z, and - (the dash symbol).</span></span>
 
 ```yaml
 Type: System.String
@@ -386,8 +386,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-213">-NotBefore</span><span class="sxs-lookup"><span data-stu-id="b1a9b-213">-NotBefore</span></span>
-<span data-ttu-id="b1a9b-214">Указывает время в виде объекта **DateTime** , до которого невозможно использовать клавишу.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-214">Specifies the time, as a **DateTime** object, before which the key cannot be used.</span></span> <span data-ttu-id="b1a9b-215">Этот параметр использует время в формате UTC.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-215">This parameter uses UTC.</span></span> <span data-ttu-id="b1a9b-216">Чтобы получить объект **DateTime** , используйте командлет **Get-Date** .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-216">To obtain a **DateTime** object, use the **Get-Date** cmdlet.</span></span> <span data-ttu-id="b1a9b-217">Если этот параметр не указан, клавишу можно использовать сразу.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-217">If you do not specify this parameter, the key can be used immediately.</span></span>
+### <span data-ttu-id="17e8c-213">-NotBefore</span><span class="sxs-lookup"><span data-stu-id="17e8c-213">-NotBefore</span></span>
+<span data-ttu-id="17e8c-214">Время в качестве объекта **даты и времени,** перед которым нельзя использовать ключ.</span><span class="sxs-lookup"><span data-stu-id="17e8c-214">Specifies the time, as a **DateTime** object, before which the key cannot be used.</span></span> <span data-ttu-id="17e8c-215">Этот параметр использует UTC.</span><span class="sxs-lookup"><span data-stu-id="17e8c-215">This parameter uses UTC.</span></span> <span data-ttu-id="17e8c-216">Чтобы получить объект **даты и времени,** используйте cmdlet **Get-Date.**</span><span class="sxs-lookup"><span data-stu-id="17e8c-216">To obtain a **DateTime** object, use the **Get-Date** cmdlet.</span></span> <span data-ttu-id="17e8c-217">Если этот параметр не задан, его можно использовать сразу же.</span><span class="sxs-lookup"><span data-stu-id="17e8c-217">If you do not specify this parameter, the key can be used immediately.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -401,8 +401,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-218">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="b1a9b-218">-ResourceId</span></span>
-<span data-ttu-id="b1a9b-219">Идентификатор ресурса хранилища.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-219">Vault Resource Id.</span></span>
+### <span data-ttu-id="17e8c-218">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="17e8c-218">-ResourceId</span></span>
+<span data-ttu-id="17e8c-219">ИД ресурса хранилища.</span><span class="sxs-lookup"><span data-stu-id="17e8c-219">Vault Resource Id.</span></span>
 
 ```yaml
 Type: System.String
@@ -416,8 +416,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-220">-Size</span><span class="sxs-lookup"><span data-stu-id="b1a9b-220">-Size</span></span>
-<span data-ttu-id="b1a9b-221">Размер ключа RSA в битах.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-221">RSA key size, in bits.</span></span> <span data-ttu-id="b1a9b-222">Если он не указан, служба обеспечивает безопасность по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-222">If not specified, the service will provide a safe default.</span></span>
+### <span data-ttu-id="17e8c-220">-Size</span><span class="sxs-lookup"><span data-stu-id="17e8c-220">-Size</span></span>
+<span data-ttu-id="17e8c-221">Размер ключа RSA в битах.</span><span class="sxs-lookup"><span data-stu-id="17e8c-221">RSA key size, in bits.</span></span> <span data-ttu-id="17e8c-222">Если не указано, служба предоставит безопасный стандартный стандарт.</span><span class="sxs-lookup"><span data-stu-id="17e8c-222">If not specified, the service will provide a safe default.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -431,8 +431,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-223">-Тег</span><span class="sxs-lookup"><span data-stu-id="b1a9b-223">-Tag</span></span>
-<span data-ttu-id="b1a9b-224">Пары "ключ-значение" в виде хэш-таблицы.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-224">Key-value pairs in the form of a hash table.</span></span> <span data-ttu-id="b1a9b-225">Например: @ {Key0 = "value0"; key1 = $null; key2 = "значение2"}</span><span class="sxs-lookup"><span data-stu-id="b1a9b-225">For example: @{key0="value0";key1=$null;key2="value2"}</span></span>
+### <span data-ttu-id="17e8c-223">-Tag</span><span class="sxs-lookup"><span data-stu-id="17e8c-223">-Tag</span></span>
+<span data-ttu-id="17e8c-224">Пары значений ключа в виде hash table.</span><span class="sxs-lookup"><span data-stu-id="17e8c-224">Key-value pairs in the form of a hash table.</span></span> <span data-ttu-id="17e8c-225">Например: @{key0="value0";key1=$null;key2="value2"}</span><span class="sxs-lookup"><span data-stu-id="17e8c-225">For example: @{key0="value0";key1=$null;key2="value2"}</span></span>
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -446,8 +446,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-226">-VaultName</span><span class="sxs-lookup"><span data-stu-id="b1a9b-226">-VaultName</span></span>
-<span data-ttu-id="b1a9b-227">Указывает имя хранилища ключей, к которому этот командлет добавляет ключ.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-227">Specifies the name of the key vault to which this cmdlet adds the key.</span></span> <span data-ttu-id="b1a9b-228">Этот командлет создает полное доменное имя хранилища ключей, основываясь на имени, указанном этим параметром, и текущей среде.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-228">This cmdlet constructs the FQDN of a key vault based on the name that this parameter specifies and your current environment.</span></span>
+### <span data-ttu-id="17e8c-226">-VaultName</span><span class="sxs-lookup"><span data-stu-id="17e8c-226">-VaultName</span></span>
+<span data-ttu-id="17e8c-227">Указывает имя хранилища ключей, к которому этот cmdlet добавляет ключ.</span><span class="sxs-lookup"><span data-stu-id="17e8c-227">Specifies the name of the key vault to which this cmdlet adds the key.</span></span> <span data-ttu-id="17e8c-228">Этот cmdlet конструирует FQDN ключа хранилища на основе имени, указанного этим параметром, и текущей среды.</span><span class="sxs-lookup"><span data-stu-id="17e8c-228">This cmdlet constructs the FQDN of a key vault based on the name that this parameter specifies and your current environment.</span></span>
 
 ```yaml
 Type: System.String
@@ -461,8 +461,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-229">-Confirm</span><span class="sxs-lookup"><span data-stu-id="b1a9b-229">-Confirm</span></span>
-<span data-ttu-id="b1a9b-230">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-230">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="17e8c-229">-Confirm</span><span class="sxs-lookup"><span data-stu-id="17e8c-229">-Confirm</span></span>
+<span data-ttu-id="17e8c-230">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="17e8c-230">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -476,9 +476,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-231">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b1a9b-231">-WhatIf</span></span>
-<span data-ttu-id="b1a9b-232">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-232">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="b1a9b-233">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-233">The cmdlet is not run.</span></span>
+### <span data-ttu-id="17e8c-231">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="17e8c-231">-WhatIf</span></span>
+<span data-ttu-id="17e8c-232">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="17e8c-232">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="17e8c-233">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="17e8c-233">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -492,27 +492,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b1a9b-234">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b1a9b-234">CommonParameters</span></span>
-<span data-ttu-id="b1a9b-235">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="b1a9b-235">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b1a9b-236">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="b1a9b-236">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="17e8c-234">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="17e8c-234">CommonParameters</span></span>
+<span data-ttu-id="17e8c-235">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="17e8c-235">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="17e8c-236">Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="17e8c-236">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b1a9b-237">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="b1a9b-237">INPUTS</span></span>
+## <span data-ttu-id="17e8c-237">INPUTS</span><span class="sxs-lookup"><span data-stu-id="17e8c-237">INPUTS</span></span>
 
-### <span data-ttu-id="b1a9b-238">Microsoft. Azure. Commands. KeyVault. Models. PSKeyVault</span><span class="sxs-lookup"><span data-stu-id="b1a9b-238">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
+### <span data-ttu-id="17e8c-238">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span><span class="sxs-lookup"><span data-stu-id="17e8c-238">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
 
-### <span data-ttu-id="b1a9b-239">System. String</span><span class="sxs-lookup"><span data-stu-id="b1a9b-239">System.String</span></span>
+### <span data-ttu-id="17e8c-239">System.String</span><span class="sxs-lookup"><span data-stu-id="17e8c-239">System.String</span></span>
 
-## <span data-ttu-id="b1a9b-240">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="b1a9b-240">OUTPUTS</span></span>
+## <span data-ttu-id="17e8c-240">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="17e8c-240">OUTPUTS</span></span>
 
-### <span data-ttu-id="b1a9b-241">Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="b1a9b-241">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey</span></span>
+### <span data-ttu-id="17e8c-241">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="17e8c-241">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey</span></span>
 
-## <span data-ttu-id="b1a9b-242">Пуск</span><span class="sxs-lookup"><span data-stu-id="b1a9b-242">NOTES</span></span>
+## <span data-ttu-id="17e8c-242">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="17e8c-242">NOTES</span></span>
 
-## <span data-ttu-id="b1a9b-243">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="b1a9b-243">RELATED LINKS</span></span>
+## <span data-ttu-id="17e8c-243">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="17e8c-243">RELATED LINKS</span></span>
 
-[<span data-ttu-id="b1a9b-244">Backup-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="b1a9b-244">Backup-AzKeyVaultKey</span></span>](./Backup-AzKeyVaultKey.md)
+[<span data-ttu-id="17e8c-244">Backup-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="17e8c-244">Backup-AzKeyVaultKey</span></span>](./Backup-AzKeyVaultKey.md)
 
-[<span data-ttu-id="b1a9b-245">Get-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="b1a9b-245">Get-AzKeyVaultKey</span></span>](./Get-AzKeyVaultKey.md)
+[<span data-ttu-id="17e8c-245">Get-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="17e8c-245">Get-AzKeyVaultKey</span></span>](./Get-AzKeyVaultKey.md)
 
-[<span data-ttu-id="b1a9b-246">Remove-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="b1a9b-246">Remove-AzKeyVaultKey</span></span>](./Remove-AzKeyVaultKey.md)
+[<span data-ttu-id="17e8c-246">Remove-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="17e8c-246">Remove-AzKeyVaultKey</span></span>](./Remove-AzKeyVaultKey.md)
 
-[<span data-ttu-id="b1a9b-247">Set-AzKeyVaultKeyAttribute</span><span class="sxs-lookup"><span data-stu-id="b1a9b-247">Set-AzKeyVaultKeyAttribute</span></span>](./Set-AzKeyVaultKeyAttribute.md)
