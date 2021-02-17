@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/New-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/New-AzADUser.md
-ms.openlocfilehash: f7127b97790736e69dd138b861b5239a907ab4e7
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 213e488dde914a8e87b76d6c3765f5dbe99a527a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93910907"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399980"
 ---
-# <span data-ttu-id="21531-101">New-AzADUser</span><span class="sxs-lookup"><span data-stu-id="21531-101">New-AzADUser</span></span>
+# <span data-ttu-id="7a478-101">New-AzADUser</span><span class="sxs-lookup"><span data-stu-id="7a478-101">New-AzADUser</span></span>
 
-## <span data-ttu-id="21531-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="21531-102">SYNOPSIS</span></span>
-<span data-ttu-id="21531-103">Создание нового пользователя Active Directory.</span><span class="sxs-lookup"><span data-stu-id="21531-103">Creates a new active directory user.</span></span>
+## <span data-ttu-id="7a478-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="7a478-102">SYNOPSIS</span></span>
+<span data-ttu-id="7a478-103">Создает нового пользователя Active Directory.</span><span class="sxs-lookup"><span data-stu-id="7a478-103">Creates a new active directory user.</span></span>
 
-## <span data-ttu-id="21531-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="21531-104">SYNTAX</span></span>
+## <span data-ttu-id="7a478-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="7a478-104">SYNTAX</span></span>
 
 ```
 New-AzADUser -DisplayName <String> -UserPrincipalName <String> -Password <SecureString>
@@ -26,24 +26,24 @@ New-AzADUser -DisplayName <String> -UserPrincipalName <String> -Password <Secure
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="21531-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="21531-105">DESCRIPTION</span></span>
-<span data-ttu-id="21531-106">Создание нового пользователя Active Directory (рабочей или учебной учетной записи, которая известна как "org-ID").</span><span class="sxs-lookup"><span data-stu-id="21531-106">Creates a new active directory user (work/school account also popularly known as org-id).</span></span>
-<span data-ttu-id="21531-107">Дополнительные сведения: https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#CreateUser</span><span class="sxs-lookup"><span data-stu-id="21531-107">For more information: https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#CreateUser</span></span>
+## <span data-ttu-id="7a478-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="7a478-105">DESCRIPTION</span></span>
+<span data-ttu-id="7a478-106">Создает нового пользователя Active Directory (рабочих и учебных учетных записей, также известных как ид организации).</span><span class="sxs-lookup"><span data-stu-id="7a478-106">Creates a new active directory user (work/school account also popularly known as org-id).</span></span>
+<span data-ttu-id="7a478-107">Дополнительные сведения https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#CreateUser</span><span class="sxs-lookup"><span data-stu-id="7a478-107">For more information: https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#CreateUser</span></span>
 
-## <span data-ttu-id="21531-108">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="21531-108">EXAMPLES</span></span>
+## <span data-ttu-id="7a478-108">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="7a478-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="21531-109">Пример 1: создание нового пользователя рекламы</span><span class="sxs-lookup"><span data-stu-id="21531-109">Example 1 - Create a new AD user</span></span>
+### <span data-ttu-id="7a478-109">Пример 1. Создание нового пользователя с AD</span><span class="sxs-lookup"><span data-stu-id="7a478-109">Example 1 - Create a new AD user</span></span>
 ```
 PS C:\> $SecureStringPassword = ConvertTo-SecureString -String "password" -AsPlainText -Force
 PS C:\> New-AzADUser -DisplayName "MyDisplayName" -UserPrincipalName "myemail@domain.com" -Password $SecureStringPassword -MailNickname "MyMailNickName"
 ```
 
-<span data-ttu-id="21531-110">Создает в клиенте нового пользователя AD с именем "MyDisplayName" и именем участника-пользователя " myemail@domain.com ".</span><span class="sxs-lookup"><span data-stu-id="21531-110">Creates a new AD user with the name "MyDisplayName" and user principal name "myemail@domain.com" in a tenant.</span></span>
+<span data-ttu-id="7a478-110">Создает нового пользователя AD с именем MyDisplayName и именем директора пользователя myemail@domain.com " в клиенте.</span><span class="sxs-lookup"><span data-stu-id="7a478-110">Creates a new AD user with the name "MyDisplayName" and user principal name "myemail@domain.com" in a tenant.</span></span>
 
-## <span data-ttu-id="21531-111">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="21531-111">PARAMETERS</span></span>
+## <span data-ttu-id="7a478-111">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="7a478-111">PARAMETERS</span></span>
 
-### <span data-ttu-id="21531-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="21531-112">-DefaultProfile</span></span>
-<span data-ttu-id="21531-113">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="21531-113">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="7a478-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7a478-112">-DefaultProfile</span></span>
+<span data-ttu-id="7a478-113">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="7a478-113">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -57,9 +57,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21531-114">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="21531-114">-DisplayName</span></span>
-<span data-ttu-id="21531-115">Имя, которое будет отображаться в адресной книге пользователя.</span><span class="sxs-lookup"><span data-stu-id="21531-115">The name to display in the address book for the user.</span></span>
-<span data-ttu-id="21531-116">Пример "Алекс Wu".</span><span class="sxs-lookup"><span data-stu-id="21531-116">example 'Alex Wu'.</span></span>
+### <span data-ttu-id="7a478-114">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="7a478-114">-DisplayName</span></span>
+<span data-ttu-id="7a478-115">Имя, которое будет отображаться в адресной книге пользователя.</span><span class="sxs-lookup"><span data-stu-id="7a478-115">The name to display in the address book for the user.</span></span>
+<span data-ttu-id="7a478-116">пример "Alex Wu".</span><span class="sxs-lookup"><span data-stu-id="7a478-116">example 'Alex Wu'.</span></span>
 
 ```yaml
 Type: System.String
@@ -73,9 +73,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21531-117">-ForceChangePasswordNextLogin</span><span class="sxs-lookup"><span data-stu-id="21531-117">-ForceChangePasswordNextLogin</span></span>
-<span data-ttu-id="21531-118">Он должен быть указан, если пользователь должен сменить пароль при следующем успешном входе (истина).</span><span class="sxs-lookup"><span data-stu-id="21531-118">It must be specified if the user must change the password on the next successful login (true).</span></span>
-<span data-ttu-id="21531-119">По умолчанию используется значение (false), чтобы не менять пароль при следующем успешном входе.</span><span class="sxs-lookup"><span data-stu-id="21531-119">Default behavior is (false) to not change the password on the next successful login.</span></span>
+### <span data-ttu-id="7a478-117">-ForceChangePasswordNextLogin</span><span class="sxs-lookup"><span data-stu-id="7a478-117">-ForceChangePasswordNextLogin</span></span>
+<span data-ttu-id="7a478-118">При следующем успешном входе необходимо у указывается, должен ли пользователь изменить пароль (true).</span><span class="sxs-lookup"><span data-stu-id="7a478-118">It must be specified if the user must change the password on the next successful login (true).</span></span>
+<span data-ttu-id="7a478-119">По умолчанию (false) не нужно менять пароль при следующем успешном входе в систему.</span><span class="sxs-lookup"><span data-stu-id="7a478-119">Default behavior is (false) to not change the password on the next successful login.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -89,8 +89,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21531-120">-ImmutableId</span><span class="sxs-lookup"><span data-stu-id="21531-120">-ImmutableId</span></span>
-<span data-ttu-id="21531-121">Он должен быть указан только в том случае, если вы используете федеративный домен для основного имени пользователя (UPN).</span><span class="sxs-lookup"><span data-stu-id="21531-121">It needs to be specified only if you are using a federated domain for the user's user principal name (upn) property.</span></span>
+### <span data-ttu-id="7a478-120">-ImmutableId</span><span class="sxs-lookup"><span data-stu-id="7a478-120">-ImmutableId</span></span>
+<span data-ttu-id="7a478-121">Его нужно укадрять только в том случае, если вы используете федератный домен в качестве свойства имени пользователя (upn).</span><span class="sxs-lookup"><span data-stu-id="7a478-121">It needs to be specified only if you are using a federated domain for the user's user principal name (upn) property.</span></span>
 
 ```yaml
 Type: System.String
@@ -104,8 +104,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21531-122">-MailNickname</span><span class="sxs-lookup"><span data-stu-id="21531-122">-MailNickname</span></span>
-<span data-ttu-id="21531-123">Псевдоним почты для пользователя.</span><span class="sxs-lookup"><span data-stu-id="21531-123">The mail alias for the user.</span></span>
+### <span data-ttu-id="7a478-122">-MailNickname</span><span class="sxs-lookup"><span data-stu-id="7a478-122">-MailNickname</span></span>
+<span data-ttu-id="7a478-123">Псевдоним электронной почты пользователя.</span><span class="sxs-lookup"><span data-stu-id="7a478-123">The mail alias for the user.</span></span>
 
 ```yaml
 Type: System.String
@@ -119,10 +119,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21531-124">-Password (пароль)</span><span class="sxs-lookup"><span data-stu-id="21531-124">-Password</span></span>
-<span data-ttu-id="21531-125">Пароль пользователя.</span><span class="sxs-lookup"><span data-stu-id="21531-125">Password for the user.</span></span>
-<span data-ttu-id="21531-126">Он должен соответствовать требованиям к сложности пароля клиента.</span><span class="sxs-lookup"><span data-stu-id="21531-126">It must meet the tenant's password complexity requirements.</span></span>
-<span data-ttu-id="21531-127">Рекомендуется установить надежный пароль.</span><span class="sxs-lookup"><span data-stu-id="21531-127">It is recommended to set a strong password.</span></span>
+### <span data-ttu-id="7a478-124">-Password</span><span class="sxs-lookup"><span data-stu-id="7a478-124">-Password</span></span>
+<span data-ttu-id="7a478-125">Пароль пользователя.</span><span class="sxs-lookup"><span data-stu-id="7a478-125">Password for the user.</span></span>
+<span data-ttu-id="7a478-126">Оно должно соответствовать требованиям клиента к сложности паролей.</span><span class="sxs-lookup"><span data-stu-id="7a478-126">It must meet the tenant's password complexity requirements.</span></span>
+<span data-ttu-id="7a478-127">Рекомендуется установить надежный пароль.</span><span class="sxs-lookup"><span data-stu-id="7a478-127">It is recommended to set a strong password.</span></span>
 
 ```yaml
 Type: System.Security.SecureString
@@ -136,9 +136,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21531-128">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="21531-128">-UserPrincipalName</span></span>
-<span data-ttu-id="21531-129">Имя участника-пользователя.</span><span class="sxs-lookup"><span data-stu-id="21531-129">The user principal name.</span></span>
-<span data-ttu-id="21531-130">Пример: " someuser@contoso.com ".</span><span class="sxs-lookup"><span data-stu-id="21531-130">Example-'someuser@contoso.com'.</span></span>
+### <span data-ttu-id="7a478-128">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="7a478-128">-UserPrincipalName</span></span>
+<span data-ttu-id="7a478-129">Имя директора пользователя.</span><span class="sxs-lookup"><span data-stu-id="7a478-129">The user principal name.</span></span>
+<span data-ttu-id="7a478-130">Example-' someuser@contoso.com '.</span><span class="sxs-lookup"><span data-stu-id="7a478-130">Example-'someuser@contoso.com'.</span></span>
 
 ```yaml
 Type: System.String
@@ -152,8 +152,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21531-131">-Confirm</span><span class="sxs-lookup"><span data-stu-id="21531-131">-Confirm</span></span>
-<span data-ttu-id="21531-132">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="21531-132">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="7a478-131">-Confirm</span><span class="sxs-lookup"><span data-stu-id="7a478-131">-Confirm</span></span>
+<span data-ttu-id="7a478-132">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="7a478-132">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -167,9 +167,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21531-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="21531-133">-WhatIf</span></span>
-<span data-ttu-id="21531-134">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="21531-134">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="21531-135">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="21531-135">The cmdlet is not run.</span></span>
+### <span data-ttu-id="7a478-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="7a478-133">-WhatIf</span></span>
+<span data-ttu-id="7a478-134">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="7a478-134">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="7a478-135">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="7a478-135">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -183,27 +183,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21531-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="21531-136">CommonParameters</span></span>
-<span data-ttu-id="21531-137">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="21531-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="21531-138">Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="21531-138">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="7a478-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7a478-136">CommonParameters</span></span>
+<span data-ttu-id="7a478-137">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="7a478-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7a478-138">Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="7a478-138">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="21531-139">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="21531-139">INPUTS</span></span>
+## <span data-ttu-id="7a478-139">INPUTS</span><span class="sxs-lookup"><span data-stu-id="7a478-139">INPUTS</span></span>
 
-### <span data-ttu-id="21531-140">System. String</span><span class="sxs-lookup"><span data-stu-id="21531-140">System.String</span></span>
+### <span data-ttu-id="7a478-140">System.String</span><span class="sxs-lookup"><span data-stu-id="7a478-140">System.String</span></span>
 
-### <span data-ttu-id="21531-141">System. Security. SecureString</span><span class="sxs-lookup"><span data-stu-id="21531-141">System.Security.SecureString</span></span>
+### <span data-ttu-id="7a478-141">System.Security.SecureString</span><span class="sxs-lookup"><span data-stu-id="7a478-141">System.Security.SecureString</span></span>
 
-### <span data-ttu-id="21531-142">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="21531-142">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="7a478-142">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="7a478-142">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="21531-143">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="21531-143">OUTPUTS</span></span>
+## <span data-ttu-id="7a478-143">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="7a478-143">OUTPUTS</span></span>
 
-### <span data-ttu-id="21531-144">Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADUser</span><span class="sxs-lookup"><span data-stu-id="21531-144">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADUser</span></span>
+### <span data-ttu-id="7a478-144">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADUser</span><span class="sxs-lookup"><span data-stu-id="7a478-144">Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADUser</span></span>
 
-## <span data-ttu-id="21531-145">Пуск</span><span class="sxs-lookup"><span data-stu-id="21531-145">NOTES</span></span>
+## <span data-ttu-id="7a478-145">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="7a478-145">NOTES</span></span>
 
-## <span data-ttu-id="21531-146">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="21531-146">RELATED LINKS</span></span>
+## <span data-ttu-id="7a478-146">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="7a478-146">RELATED LINKS</span></span>
 
-[<span data-ttu-id="21531-147">Get-AzADUser</span><span class="sxs-lookup"><span data-stu-id="21531-147">Get-AzADUser</span></span>](./Get-AzADUser.md)
+[<span data-ttu-id="7a478-147">Get-AzADUser</span><span class="sxs-lookup"><span data-stu-id="7a478-147">Get-AzADUser</span></span>](./Get-AzADUser.md)
 
-[<span data-ttu-id="21531-148">Set-AzADUser</span><span class="sxs-lookup"><span data-stu-id="21531-148">Set-AzADUser</span></span>](./Set-AzADUser.md)
 
-[<span data-ttu-id="21531-149">Remove-AzADUser</span><span class="sxs-lookup"><span data-stu-id="21531-149">Remove-AzADUser</span></span>](./Remove-AzADUser.md)
+[<span data-ttu-id="7a478-148">Remove-AzADUser</span><span class="sxs-lookup"><span data-stu-id="7a478-148">Remove-AzADUser</span></span>](./Remove-AzADUser.md)
