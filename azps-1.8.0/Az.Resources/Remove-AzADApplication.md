@@ -6,77 +6,77 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
-ms.openlocfilehash: eed437a235072972778925c0b94f2d22466399b3
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7b66dff3f59e3ad186bfc559343aebf484ff2bc2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93729362"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399624"
 ---
-# <span data-ttu-id="434d0-101">Remove-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="434d0-101">Remove-AzADApplication</span></span>
+# <span data-ttu-id="68dc6-101">Remove-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="68dc6-101">Remove-AzADApplication</span></span>
 
-## <span data-ttu-id="434d0-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="434d0-102">SYNOPSIS</span></span>
-<span data-ttu-id="434d0-103">Удаляет приложение Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="434d0-103">Deletes the azure active directory application.</span></span>
+## <span data-ttu-id="68dc6-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="68dc6-102">SYNOPSIS</span></span>
+<span data-ttu-id="68dc6-103">Удаляет приложение Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="68dc6-103">Deletes the azure active directory application.</span></span>
 
-## <span data-ttu-id="434d0-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="434d0-104">SYNTAX</span></span>
+## <span data-ttu-id="68dc6-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="68dc6-104">SYNTAX</span></span>
 
-### <span data-ttu-id="434d0-105">ObjectIdParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="434d0-105">ObjectIdParameterSet (Default)</span></span>
+### <span data-ttu-id="68dc6-105">ObjectIdParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="68dc6-105">ObjectIdParameterSet (Default)</span></span>
 ```
 Remove-AzADApplication -ObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="434d0-106">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="434d0-106">ApplicationIdParameterSet</span></span>
+### <span data-ttu-id="68dc6-106">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="68dc6-106">ApplicationIdParameterSet</span></span>
 ```
 Remove-AzADApplication -ApplicationId <Guid> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="434d0-107">ApplicationDisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="434d0-107">ApplicationDisplayNameParameterSet</span></span>
+### <span data-ttu-id="68dc6-107">ApplicationDisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="68dc6-107">ApplicationDisplayNameParameterSet</span></span>
 ```
 Remove-AzADApplication -DisplayName <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="434d0-108">InputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="434d0-108">InputObjectParameterSet</span></span>
+### <span data-ttu-id="68dc6-108">InputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="68dc6-108">InputObjectParameterSet</span></span>
 ```
 Remove-AzADApplication -InputObject <PSADApplication> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="434d0-109">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="434d0-109">DESCRIPTION</span></span>
-<span data-ttu-id="434d0-110">Удаляет приложение Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="434d0-110">Deletes the azure active directory application.</span></span>
+## <span data-ttu-id="68dc6-109">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="68dc6-109">DESCRIPTION</span></span>
+<span data-ttu-id="68dc6-110">Удаляет приложение Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="68dc6-110">Deletes the azure active directory application.</span></span>
 
-## <span data-ttu-id="434d0-111">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="434d0-111">EXAMPLES</span></span>
+## <span data-ttu-id="68dc6-111">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="68dc6-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="434d0-112">Пример 1: Удаление приложения по идентификатору объекта</span><span class="sxs-lookup"><span data-stu-id="434d0-112">Example 1 - Remove application by object id</span></span>
+### <span data-ttu-id="68dc6-112">Пример 1. Удаление приложения по ид объекта</span><span class="sxs-lookup"><span data-stu-id="68dc6-112">Example 1 - Remove application by object id</span></span>
 
 ```
 PS C:\> Remove-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738
 ```
 
-<span data-ttu-id="434d0-113">Удаляет приложение с идентификатором объекта "b4cd1619-80b3-4cfb-9f8f-9f2333425738" из клиента.</span><span class="sxs-lookup"><span data-stu-id="434d0-113">Removes the application with object id 'b4cd1619-80b3-4cfb-9f8f-9f2333425738' from the tenant.</span></span>
+<span data-ttu-id="68dc6-113">Удаляет приложение с ид объекта 'b4cd1619-80b3-4cfb-9f8f-9f233425738' из клиента.</span><span class="sxs-lookup"><span data-stu-id="68dc6-113">Removes the application with object id 'b4cd1619-80b3-4cfb-9f8f-9f2333425738' from the tenant.</span></span>
 
-### <span data-ttu-id="434d0-114">Пример 2: Удаление приложения по идентификатору приложения</span><span class="sxs-lookup"><span data-stu-id="434d0-114">Example 2 - Remove application by application id</span></span>
+### <span data-ttu-id="68dc6-114">Пример 2. Удаление приложения по ид приложения</span><span class="sxs-lookup"><span data-stu-id="68dc6-114">Example 2 - Remove application by application id</span></span>
 
 ```
 PS C:\> Remove-AzADApplication -ApplicationId f9c5ea4f-28f0-401a-a491-491a037fa346
 ```
 
-<span data-ttu-id="434d0-115">Удаляет приложение с идентификатором приложения "f9c5ea4f-28f0-401A-a491-491a037fa346" из клиента.</span><span class="sxs-lookup"><span data-stu-id="434d0-115">Removes the application with application id 'f9c5ea4f-28f0-401a-a491-491a037fa346' from the tenant.</span></span>
+<span data-ttu-id="68dc6-115">Удаляет приложение с ид приложения f9c5ea4f-28f0-401a-a491-491a037fa346' из клиента.</span><span class="sxs-lookup"><span data-stu-id="68dc6-115">Removes the application with application id 'f9c5ea4f-28f0-401a-a491-491a037fa346' from the tenant.</span></span>
 
-### <span data-ttu-id="434d0-116">Пример 3-Удаление приложения с помощью трубопроводов</span><span class="sxs-lookup"><span data-stu-id="434d0-116">Example 3 - Remove application by piping</span></span>
+### <span data-ttu-id="68dc6-116">Пример 3. Удаление приложения с помощью piping</span><span class="sxs-lookup"><span data-stu-id="68dc6-116">Example 3 - Remove application by piping</span></span>
 
 ```
 PS C:\> Get-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738 | Remove-AzADApplication
 ```
 
-<span data-ttu-id="434d0-117">Возвращает приложение с идентификатором объекта "b4cd1619-80b3-4cfb-9f8f-9f2333425738" и каналами, которые должны быть удалены из клиента с помощью командлета Remove-AzADApplication.</span><span class="sxs-lookup"><span data-stu-id="434d0-117">Gets the application with object id 'b4cd1619-80b3-4cfb-9f8f-9f2333425738' and pipes that to the Remove-AzADApplication cmdlet to remove the application from the tenant.</span></span>
+<span data-ttu-id="68dc6-117">Получает приложение с ид объекта 'b4cd1619-80b3-4cfb-9f8f-9f233425738' и каналами, которые до Remove-AzADApplication добираются до Remove-AzADApplication, чтобы удалить приложение из клиента.</span><span class="sxs-lookup"><span data-stu-id="68dc6-117">Gets the application with object id 'b4cd1619-80b3-4cfb-9f8f-9f2333425738' and pipes that to the Remove-AzADApplication cmdlet to remove the application from the tenant.</span></span>
 
-## <span data-ttu-id="434d0-118">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="434d0-118">PARAMETERS</span></span>
+## <span data-ttu-id="68dc6-118">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="68dc6-118">PARAMETERS</span></span>
 
-### <span data-ttu-id="434d0-119">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="434d0-119">-ApplicationId</span></span>
-<span data-ttu-id="434d0-120">Идентификатор приложения, которое нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="434d0-120">The application id of the application to remove.</span></span>
+### <span data-ttu-id="68dc6-119">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="68dc6-119">-ApplicationId</span></span>
+<span data-ttu-id="68dc6-120">ИД приложения, которое нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="68dc6-120">The application id of the application to remove.</span></span>
 
 ```yaml
 Type: System.Guid
@@ -90,8 +90,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="434d0-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="434d0-121">-DefaultProfile</span></span>
-<span data-ttu-id="434d0-122">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="434d0-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="68dc6-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="68dc6-121">-DefaultProfile</span></span>
+<span data-ttu-id="68dc6-122">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="68dc6-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -105,8 +105,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="434d0-123">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="434d0-123">-DisplayName</span></span>
-<span data-ttu-id="434d0-124">Отображаемое имя приложения.</span><span class="sxs-lookup"><span data-stu-id="434d0-124">The display name of the application.</span></span>
+### <span data-ttu-id="68dc6-123">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="68dc6-123">-DisplayName</span></span>
+<span data-ttu-id="68dc6-124">Отображаемого имени приложения.</span><span class="sxs-lookup"><span data-stu-id="68dc6-124">The display name of the application.</span></span>
 
 ```yaml
 Type: System.String
@@ -120,8 +120,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="434d0-125">-Force</span><span class="sxs-lookup"><span data-stu-id="434d0-125">-Force</span></span>
-<span data-ttu-id="434d0-126">Переключение на удаление приложения без подтверждения.</span><span class="sxs-lookup"><span data-stu-id="434d0-126">Switch to delete an application without a confirmation.</span></span>
+### <span data-ttu-id="68dc6-125">-Force</span><span class="sxs-lookup"><span data-stu-id="68dc6-125">-Force</span></span>
+<span data-ttu-id="68dc6-126">Переключение на удаление приложения без подтверждения.</span><span class="sxs-lookup"><span data-stu-id="68dc6-126">Switch to delete an application without a confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -135,8 +135,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="434d0-127">-InputObject</span><span class="sxs-lookup"><span data-stu-id="434d0-127">-InputObject</span></span>
-<span data-ttu-id="434d0-128">Объект, представляющий приложение, которое нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="434d0-128">The object representing the application to remove.</span></span>
+### <span data-ttu-id="68dc6-127">-InputObject</span><span class="sxs-lookup"><span data-stu-id="68dc6-127">-InputObject</span></span>
+<span data-ttu-id="68dc6-128">Объект, представляющий приложение, которое нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="68dc6-128">The object representing the application to remove.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -150,8 +150,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="434d0-129">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="434d0-129">-ObjectId</span></span>
-<span data-ttu-id="434d0-130">Идентификатор объекта приложения, которое нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="434d0-130">The object id of the application to delete.</span></span>
+### <span data-ttu-id="68dc6-129">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="68dc6-129">-ObjectId</span></span>
+<span data-ttu-id="68dc6-130">ИД объекта приложения, который нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="68dc6-130">The object id of the application to delete.</span></span>
 
 ```yaml
 Type: System.String
@@ -165,8 +165,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="434d0-131">-PassThru</span><span class="sxs-lookup"><span data-stu-id="434d0-131">-PassThru</span></span>
-<span data-ttu-id="434d0-132">Если указать это, будет возвращено значение истина, если команда была выполнена успешно.</span><span class="sxs-lookup"><span data-stu-id="434d0-132">Specifying this will return true if the command was successful.</span></span>
+### <span data-ttu-id="68dc6-131">-PassThru</span><span class="sxs-lookup"><span data-stu-id="68dc6-131">-PassThru</span></span>
+<span data-ttu-id="68dc6-132">Если эта команда была успешной, ее можно указать как истина.</span><span class="sxs-lookup"><span data-stu-id="68dc6-132">Specifying this will return true if the command was successful.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -180,8 +180,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="434d0-133">-Confirm</span><span class="sxs-lookup"><span data-stu-id="434d0-133">-Confirm</span></span>
-<span data-ttu-id="434d0-134">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="434d0-134">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="68dc6-133">-Confirm</span><span class="sxs-lookup"><span data-stu-id="68dc6-133">-Confirm</span></span>
+<span data-ttu-id="68dc6-134">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="68dc6-134">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -195,9 +195,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="434d0-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="434d0-135">-WhatIf</span></span>
-<span data-ttu-id="434d0-136">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="434d0-136">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="434d0-137">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="434d0-137">The cmdlet is not run.</span></span>
+### <span data-ttu-id="68dc6-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="68dc6-135">-WhatIf</span></span>
+<span data-ttu-id="68dc6-136">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="68dc6-136">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="68dc6-137">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="68dc6-137">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -211,31 +211,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="434d0-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="434d0-138">CommonParameters</span></span>
-<span data-ttu-id="434d0-139">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="434d0-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="434d0-140">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="434d0-140">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="68dc6-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="68dc6-138">CommonParameters</span></span>
+<span data-ttu-id="68dc6-139">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="68dc6-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="68dc6-140">Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="68dc6-140">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="434d0-141">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="434d0-141">INPUTS</span></span>
+## <span data-ttu-id="68dc6-141">INPUTS</span><span class="sxs-lookup"><span data-stu-id="68dc6-141">INPUTS</span></span>
 
-### <span data-ttu-id="434d0-142">System. String</span><span class="sxs-lookup"><span data-stu-id="434d0-142">System.String</span></span>
+### <span data-ttu-id="68dc6-142">System.String</span><span class="sxs-lookup"><span data-stu-id="68dc6-142">System.String</span></span>
 
-### <span data-ttu-id="434d0-143">System. GUID</span><span class="sxs-lookup"><span data-stu-id="434d0-143">System.Guid</span></span>
+### <span data-ttu-id="68dc6-143">System.Guid</span><span class="sxs-lookup"><span data-stu-id="68dc6-143">System.Guid</span></span>
 
-### <span data-ttu-id="434d0-144">Microsoft. Azure. Commands. ActiveDirectory. PSADApplication</span><span class="sxs-lookup"><span data-stu-id="434d0-144">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
+### <span data-ttu-id="68dc6-144">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span><span class="sxs-lookup"><span data-stu-id="68dc6-144">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
 
-## <span data-ttu-id="434d0-145">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="434d0-145">OUTPUTS</span></span>
+## <span data-ttu-id="68dc6-145">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="68dc6-145">OUTPUTS</span></span>
 
-### <span data-ttu-id="434d0-146">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="434d0-146">System.Boolean</span></span>
+### <span data-ttu-id="68dc6-146">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="68dc6-146">System.Boolean</span></span>
 
-## <span data-ttu-id="434d0-147">Пуск</span><span class="sxs-lookup"><span data-stu-id="434d0-147">NOTES</span></span>
-<span data-ttu-id="434d0-148">Ключевые слова: Azure, azurerm, ARM, Resource, менеджмент, руководитель, ресурс, группа, шаблон, развертывание</span><span class="sxs-lookup"><span data-stu-id="434d0-148">Keywords: azure, azurerm, arm, resource, management, manager, resource, group, template, deployment</span></span>
+## <span data-ttu-id="68dc6-147">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="68dc6-147">NOTES</span></span>
+<span data-ttu-id="68dc6-148">Ключевые слова: azure, azurerm, arm, resource, management, manager, resource, group, template, deployment</span><span class="sxs-lookup"><span data-stu-id="68dc6-148">Keywords: azure, azurerm, arm, resource, management, manager, resource, group, template, deployment</span></span>
 
-## <span data-ttu-id="434d0-149">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="434d0-149">RELATED LINKS</span></span>
+## <span data-ttu-id="68dc6-149">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="68dc6-149">RELATED LINKS</span></span>
 
-[<span data-ttu-id="434d0-150">New-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="434d0-150">New-AzADApplication</span></span>](./New-AzADApplication.md)
+[<span data-ttu-id="68dc6-150">New-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="68dc6-150">New-AzADApplication</span></span>](./New-AzADApplication.md)
 
-[<span data-ttu-id="434d0-151">Get-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="434d0-151">Get-AzADApplication</span></span>](./Get-AzADApplication.md)
+[<span data-ttu-id="68dc6-151">Get-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="68dc6-151">Get-AzADApplication</span></span>](./Get-AzADApplication.md)
 
-[<span data-ttu-id="434d0-152">Set-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="434d0-152">Set-AzADApplication</span></span>](./Set-AzADApplication.md)
 
-[<span data-ttu-id="434d0-153">Remove-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="434d0-153">Remove-AzADAppCredential</span></span>](./Remove-AzADAppCredential.md)
+[<span data-ttu-id="68dc6-152">Remove-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="68dc6-152">Remove-AzADAppCredential</span></span>](./Remove-AzADAppCredential.md)
 
