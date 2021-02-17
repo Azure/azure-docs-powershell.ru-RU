@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
-ms.openlocfilehash: 4d6e6fef4ff51038c0939f11571b582628ab0740
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 237742c633ffe7a2a113467c7a12725b4f3b8b89
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93899509"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403074"
 ---
-# <span data-ttu-id="3314a-101">New-AzAlertRuleWebhook</span><span class="sxs-lookup"><span data-stu-id="3314a-101">New-AzAlertRuleWebhook</span></span>
+# <span data-ttu-id="d3a7c-101">New-AzAlertRuleWebhook</span><span class="sxs-lookup"><span data-stu-id="d3a7c-101">New-AzAlertRuleWebhook</span></span>
 
-## <span data-ttu-id="3314a-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="3314a-102">SYNOPSIS</span></span>
-<span data-ttu-id="3314a-103">Создание веб-перехватчика правила оповещения.</span><span class="sxs-lookup"><span data-stu-id="3314a-103">Creates an alert rule webhook.</span></span>
+## <span data-ttu-id="d3a7c-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="d3a7c-102">SYNOPSIS</span></span>
+<span data-ttu-id="d3a7c-103">Создает правило оповещения webhook.</span><span class="sxs-lookup"><span data-stu-id="d3a7c-103">Creates an alert rule webhook.</span></span>
 
-## <span data-ttu-id="3314a-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="3314a-104">SYNTAX</span></span>
+## <span data-ttu-id="d3a7c-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="d3a7c-104">SYNTAX</span></span>
 
 ```
 New-AzAlertRuleWebhook [-ServiceUri] <String> [[-Property] <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="3314a-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="3314a-105">DESCRIPTION</span></span>
-<span data-ttu-id="3314a-106">Командлет **New-AzAlertRuleWebhook** создает интерфейсный обработчик для правила оповещения.</span><span class="sxs-lookup"><span data-stu-id="3314a-106">The **New-AzAlertRuleWebhook** cmdlet creates an alert rule webhook.</span></span>
+## <span data-ttu-id="d3a7c-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="d3a7c-105">DESCRIPTION</span></span>
+<span data-ttu-id="d3a7c-106">Для создания правила оповещения webhook будет создаваться **cmdlet New-AzAlertRuleWebhook.**</span><span class="sxs-lookup"><span data-stu-id="d3a7c-106">The **New-AzAlertRuleWebhook** cmdlet creates an alert rule webhook.</span></span>
 
-## <span data-ttu-id="3314a-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="3314a-107">EXAMPLES</span></span>
+## <span data-ttu-id="d3a7c-107">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="d3a7c-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="3314a-108">Пример 1: создание веб-перехватчика правила оповещения</span><span class="sxs-lookup"><span data-stu-id="3314a-108">Example 1: Create an alert rule webhook</span></span>
+### <span data-ttu-id="d3a7c-108">Пример 1. Создание веб-приложения "Правило оповещения"</span><span class="sxs-lookup"><span data-stu-id="d3a7c-108">Example 1: Create an alert rule webhook</span></span>
 ```
 PS C:\>New-AzAlertRuleWebhook -ServiceUri "http://contoso.com"
 ```
 
-<span data-ttu-id="3314a-109">Эта команда создает веб-перехватчик правила оповещения, указывая только URI-адрес службы.</span><span class="sxs-lookup"><span data-stu-id="3314a-109">This command creates an alert rule webhook by specifying only the service URI.</span></span>
+<span data-ttu-id="d3a7c-109">Эта команда создает правило оповещения с указанием только URI службы.</span><span class="sxs-lookup"><span data-stu-id="d3a7c-109">This command creates an alert rule webhook by specifying only the service URI.</span></span>
 
-### <span data-ttu-id="3314a-110">Пример 2: создание веб-перехватчика с одним свойством</span><span class="sxs-lookup"><span data-stu-id="3314a-110">Example 2: Create a webhook with one property</span></span>
+### <span data-ttu-id="d3a7c-110">Пример 2. Создание веб-сайта с одним свойством</span><span class="sxs-lookup"><span data-stu-id="d3a7c-110">Example 2: Create a webhook with one property</span></span>
 ```
 PS C:\>$Actual = New-AzAlertRuleWebhook -ServiceUri "http://contoso.com" -Properties @{prop1 = 'value1'}
 ```
 
-<span data-ttu-id="3314a-111">Эта команда создает веб-перехватчик правила оповещения для Contoso.com с одним свойством, а затем сохраняет его в переменной $Actual.</span><span class="sxs-lookup"><span data-stu-id="3314a-111">This command creates an alert rule webhook for Contoso.com that has one property, and then stores it in the $Actual variable.</span></span>
+<span data-ttu-id="d3a7c-111">Эта команда создает веб-сайт правила оповещения для Contoso.com с одним свойством, а затем сохраняет его в $Actual переменной.</span><span class="sxs-lookup"><span data-stu-id="d3a7c-111">This command creates an alert rule webhook for Contoso.com that has one property, and then stores it in the $Actual variable.</span></span>
 
-## <span data-ttu-id="3314a-112">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="3314a-112">PARAMETERS</span></span>
+## <span data-ttu-id="d3a7c-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d3a7c-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="3314a-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="3314a-113">-DefaultProfile</span></span>
-<span data-ttu-id="3314a-114">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="3314a-114">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="d3a7c-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d3a7c-113">-DefaultProfile</span></span>
+<span data-ttu-id="d3a7c-114">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="d3a7c-114">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -61,8 +61,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3314a-115">-Property</span><span class="sxs-lookup"><span data-stu-id="3314a-115">-Property</span></span>
-<span data-ttu-id="3314a-116">Задает список свойств в формате @ (property1 = ' value1 ',....).</span><span class="sxs-lookup"><span data-stu-id="3314a-116">Specifies the list of properties in the format @(property1 = 'value1',....).</span></span>
+### <span data-ttu-id="d3a7c-115">-Свойство</span><span class="sxs-lookup"><span data-stu-id="d3a7c-115">-Property</span></span>
+<span data-ttu-id="d3a7c-116">Список свойств в формате @(свойство1 = 'значение1',....).</span><span class="sxs-lookup"><span data-stu-id="d3a7c-116">Specifies the list of properties in the format @(property1 = 'value1',....).</span></span>
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -76,8 +76,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3314a-117">-ServiceUri</span><span class="sxs-lookup"><span data-stu-id="3314a-117">-ServiceUri</span></span>
-<span data-ttu-id="3314a-118">Указывает URI службы.</span><span class="sxs-lookup"><span data-stu-id="3314a-118">Specifies the service URI.</span></span>
+### <span data-ttu-id="d3a7c-117">-ServiceUri</span><span class="sxs-lookup"><span data-stu-id="d3a7c-117">-ServiceUri</span></span>
+<span data-ttu-id="d3a7c-118">Указывает URI службы.</span><span class="sxs-lookup"><span data-stu-id="d3a7c-118">Specifies the service URI.</span></span>
 
 ```yaml
 Type: System.String
@@ -91,31 +91,30 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3314a-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3314a-119">CommonParameters</span></span>
-<span data-ttu-id="3314a-120">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="3314a-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3314a-121">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="3314a-121">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="d3a7c-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d3a7c-119">CommonParameters</span></span>
+<span data-ttu-id="d3a7c-120">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d3a7c-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d3a7c-121">Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="d3a7c-121">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="3314a-122">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="3314a-122">INPUTS</span></span>
+## <span data-ttu-id="d3a7c-122">INPUTS</span><span class="sxs-lookup"><span data-stu-id="d3a7c-122">INPUTS</span></span>
 
-### <span data-ttu-id="3314a-123">System. String</span><span class="sxs-lookup"><span data-stu-id="3314a-123">System.String</span></span>
+### <span data-ttu-id="d3a7c-123">System.String</span><span class="sxs-lookup"><span data-stu-id="d3a7c-123">System.String</span></span>
 
-### <span data-ttu-id="3314a-124">System. Collections. Hashtable</span><span class="sxs-lookup"><span data-stu-id="3314a-124">System.Collections.Hashtable</span></span>
+### <span data-ttu-id="d3a7c-124">System.Collections.Hashtable</span><span class="sxs-lookup"><span data-stu-id="d3a7c-124">System.Collections.Hashtable</span></span>
 
-## <span data-ttu-id="3314a-125">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="3314a-125">OUTPUTS</span></span>
+## <span data-ttu-id="d3a7c-125">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="d3a7c-125">OUTPUTS</span></span>
 
-### <span data-ttu-id="3314a-126">Microsoft. Azure. Management. Monitor. Management. Models. RuleWebhookAction</span><span class="sxs-lookup"><span data-stu-id="3314a-126">Microsoft.Azure.Management.Monitor.Management.Models.RuleWebhookAction</span></span>
+### <span data-ttu-id="d3a7c-126">Microsoft.Azure.Management.Monitor.Management.Models.RuleWebhookAction</span><span class="sxs-lookup"><span data-stu-id="d3a7c-126">Microsoft.Azure.Management.Monitor.Management.Models.RuleWebhookAction</span></span>
 
-## <span data-ttu-id="3314a-127">Пуск</span><span class="sxs-lookup"><span data-stu-id="3314a-127">NOTES</span></span>
+## <span data-ttu-id="d3a7c-127">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="d3a7c-127">NOTES</span></span>
 
-## <span data-ttu-id="3314a-128">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="3314a-128">RELATED LINKS</span></span>
+## <span data-ttu-id="d3a7c-128">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="d3a7c-128">RELATED LINKS</span></span>
 
-[<span data-ttu-id="3314a-129">Add-AzLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="3314a-129">Add-AzLogAlertRule</span></span>](./Add-AzLogAlertRule.md)
 
-[<span data-ttu-id="3314a-130">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="3314a-130">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
+[<span data-ttu-id="d3a7c-129">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="d3a7c-129">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
 
-[<span data-ttu-id="3314a-131">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="3314a-131">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
+[<span data-ttu-id="d3a7c-130">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="d3a7c-130">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
 
-[<span data-ttu-id="3314a-132">New-AzAlertRuleEmail</span><span class="sxs-lookup"><span data-stu-id="3314a-132">New-AzAlertRuleEmail</span></span>](./New-AzAlertRuleEmail.md)
+[<span data-ttu-id="d3a7c-131">New-AzAlertRuleEmail</span><span class="sxs-lookup"><span data-stu-id="d3a7c-131">New-AzAlertRuleEmail</span></span>](./New-AzAlertRuleEmail.md)
 
-[<span data-ttu-id="3314a-133">New-AzAutoscaleWebhook</span><span class="sxs-lookup"><span data-stu-id="3314a-133">New-AzAutoscaleWebhook</span></span>](./New-AzAutoscaleWebhook.md)
+[<span data-ttu-id="d3a7c-132">New-AzAutoscaleWebhook</span><span class="sxs-lookup"><span data-stu-id="d3a7c-132">New-AzAutoscaleWebhook</span></span>](./New-AzAutoscaleWebhook.md)
 
 

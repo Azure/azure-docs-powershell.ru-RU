@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActionGroup.md
-ms.openlocfilehash: dfc185ee4879ebae66665db695b2e1b0f74bd12e
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 2b5a9471bd26b7c59c95fea1fb2f27204304d949
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93903210"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404944"
 ---
-# <span data-ttu-id="671c8-101">Set-AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="671c8-101">Set-AzActionGroup</span></span>
+# <span data-ttu-id="584ec-101">Set-AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="584ec-101">Set-AzActionGroup</span></span>
 
-## <span data-ttu-id="671c8-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="671c8-102">SYNOPSIS</span></span>
-<span data-ttu-id="671c8-103">Создает новую или обновляет существующую группу действий.</span><span class="sxs-lookup"><span data-stu-id="671c8-103">Creates a new or updates an existing action group.</span></span>
+## <span data-ttu-id="584ec-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="584ec-102">SYNOPSIS</span></span>
+<span data-ttu-id="584ec-103">Создает новую или обновляет существующую группу действий.</span><span class="sxs-lookup"><span data-stu-id="584ec-103">Creates a new or updates an existing action group.</span></span>
 
-## <span data-ttu-id="671c8-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="671c8-104">SYNTAX</span></span>
+## <span data-ttu-id="584ec-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="584ec-104">SYNTAX</span></span>
 
-### <span data-ttu-id="671c8-105">ByPropertyName (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="671c8-105">ByPropertyName (Default)</span></span>
+### <span data-ttu-id="584ec-105">ByPropertyName (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="584ec-105">ByPropertyName (Default)</span></span>
 ```
 Set-AzActionGroup -ResourceGroupName <String> -Name <String> -ShortName <String>
  -Receiver <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase]>
@@ -28,7 +28,7 @@ Set-AzActionGroup -ResourceGroupName <String> -Name <String> -ShortName <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="671c8-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="671c8-106">ByResourceId</span></span>
+### <span data-ttu-id="584ec-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="584ec-106">ByResourceId</span></span>
 ```
 Set-AzActionGroup -ShortName <String>
  -Receiver <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase]>
@@ -36,7 +36,7 @@ Set-AzActionGroup -ShortName <String>
  -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="671c8-107">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="671c8-107">ByInputObject</span></span>
+### <span data-ttu-id="584ec-107">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="584ec-107">ByInputObject</span></span>
 ```
 Set-AzActionGroup [-ShortName <String>] [-DisableGroup]
  [-Tag <System.Collections.Generic.IDictionary`2[System.String,System.String]>]
@@ -44,25 +44,25 @@ Set-AzActionGroup [-ShortName <String>] [-DisableGroup]
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="671c8-108">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="671c8-108">DESCRIPTION</span></span>
-<span data-ttu-id="671c8-109">Командлет **Set-AzActionGroup** создает новый или обновляет существующую группу действий</span><span class="sxs-lookup"><span data-stu-id="671c8-109">The **Set-AzActionGroup** cmdlet creates a new or updates an existing action group</span></span>
+## <span data-ttu-id="584ec-108">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="584ec-108">DESCRIPTION</span></span>
+<span data-ttu-id="584ec-109">Для создания или обновления **существующей** группы действий будет создан или обновлена существующая группа действий.</span><span class="sxs-lookup"><span data-stu-id="584ec-109">The **Set-AzActionGroup** cmdlet creates a new or updates an existing action group</span></span>
 
-## <span data-ttu-id="671c8-110">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="671c8-110">EXAMPLES</span></span>
+## <span data-ttu-id="584ec-110">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="584ec-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="671c8-111">Пример 1: создание группы действий</span><span class="sxs-lookup"><span data-stu-id="671c8-111">Example 1: Create an Action Group</span></span>
+### <span data-ttu-id="584ec-111">Пример 1. Создание группы действий</span><span class="sxs-lookup"><span data-stu-id="584ec-111">Example 1: Create an Action Group</span></span>
 ```
 PS C:\>$email1 = New-AzActionGroupReceiver -Name 'user1' -EmailReceiver -EmailAddress 'user1@example.com'
 PS C:\>$sms1 = New-AzActionGroupReceiver -Name 'user2' -SmsReceiver -CountryCode '1' -PhoneNumber '5555555555'
 PS C:\>Set-AzActionGroup -Name $actionGroupName -ResourceGroup $resourceGroupName -ShortName $shortName -Receiver $email1,$sms1
 ```
 
-<span data-ttu-id="671c8-112">Первые две команды создают два получателя.</span><span class="sxs-lookup"><span data-stu-id="671c8-112">The first two commands create two receivers.</span></span>
-<span data-ttu-id="671c8-113">В последней команде создается группа действий, в том числе два получателя.</span><span class="sxs-lookup"><span data-stu-id="671c8-113">The final command creates an Action Group including the two receivers.</span></span>
+<span data-ttu-id="584ec-112">В первых двух командах создаются два приемника.</span><span class="sxs-lookup"><span data-stu-id="584ec-112">The first two commands create two receivers.</span></span>
+<span data-ttu-id="584ec-113">Конечная команда создает группу действий с двумя приемниками.</span><span class="sxs-lookup"><span data-stu-id="584ec-113">The final command creates an Action Group including the two receivers.</span></span>
 
-## <span data-ttu-id="671c8-114">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="671c8-114">PARAMETERS</span></span>
+## <span data-ttu-id="584ec-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="584ec-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="671c8-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="671c8-115">-DefaultProfile</span></span>
-<span data-ttu-id="671c8-116">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="671c8-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="584ec-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="584ec-115">-DefaultProfile</span></span>
+<span data-ttu-id="584ec-116">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="584ec-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,8 +76,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="671c8-117">-DisableGroup</span><span class="sxs-lookup"><span data-stu-id="671c8-117">-DisableGroup</span></span>
-<span data-ttu-id="671c8-118">Отключение группы действий.</span><span class="sxs-lookup"><span data-stu-id="671c8-118">Disables the action group.</span></span>
+### <span data-ttu-id="584ec-117">-DisableGroup</span><span class="sxs-lookup"><span data-stu-id="584ec-117">-DisableGroup</span></span>
+<span data-ttu-id="584ec-118">Отключает группу действий.</span><span class="sxs-lookup"><span data-stu-id="584ec-118">Disables the action group.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -103,8 +103,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="671c8-119">-InputObject</span><span class="sxs-lookup"><span data-stu-id="671c8-119">-InputObject</span></span>
-<span data-ttu-id="671c8-120">Ресурс группы действий</span><span class="sxs-lookup"><span data-stu-id="671c8-120">The action group resource</span></span>
+### <span data-ttu-id="584ec-119">-InputObject</span><span class="sxs-lookup"><span data-stu-id="584ec-119">-InputObject</span></span>
+<span data-ttu-id="584ec-120">Ресурс группы действий</span><span class="sxs-lookup"><span data-stu-id="584ec-120">The action group resource</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
@@ -118,8 +118,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="671c8-121">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="671c8-121">-Name</span></span>
-<span data-ttu-id="671c8-122">Имя группы действий.</span><span class="sxs-lookup"><span data-stu-id="671c8-122">The name of the action group.</span></span>
+### <span data-ttu-id="584ec-121">-Name</span><span class="sxs-lookup"><span data-stu-id="584ec-121">-Name</span></span>
+<span data-ttu-id="584ec-122">Имя группы действий.</span><span class="sxs-lookup"><span data-stu-id="584ec-122">The name of the action group.</span></span>
 
 ```yaml
 Type: System.String
@@ -133,8 +133,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="671c8-123">-Получатель</span><span class="sxs-lookup"><span data-stu-id="671c8-123">-Receiver</span></span>
-<span data-ttu-id="671c8-124">Список получателей группы действий.</span><span class="sxs-lookup"><span data-stu-id="671c8-124">The list of receivers of the action group.</span></span>
+### <span data-ttu-id="584ec-123">-Receiver</span><span class="sxs-lookup"><span data-stu-id="584ec-123">-Receiver</span></span>
+<span data-ttu-id="584ec-124">Список приемников группы действий.</span><span class="sxs-lookup"><span data-stu-id="584ec-124">The list of receivers of the action group.</span></span>
 
 ```yaml
 Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase]
@@ -148,8 +148,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="671c8-125">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="671c8-125">-ResourceGroupName</span></span>
-<span data-ttu-id="671c8-126">"Группа ресурсов"</span><span class="sxs-lookup"><span data-stu-id="671c8-126">The resource group nam</span></span>
+### <span data-ttu-id="584ec-125">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="584ec-125">-ResourceGroupName</span></span>
+<span data-ttu-id="584ec-126">Имя группы ресурсов</span><span class="sxs-lookup"><span data-stu-id="584ec-126">The resource group nam</span></span>
 
 ```yaml
 Type: System.String
@@ -163,8 +163,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="671c8-127">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="671c8-127">-ResourceId</span></span>
-<span data-ttu-id="671c8-128">Ресурс</span><span class="sxs-lookup"><span data-stu-id="671c8-128">The resource i</span></span>
+### <span data-ttu-id="584ec-127">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="584ec-127">-ResourceId</span></span>
+<span data-ttu-id="584ec-128">Ресурс i</span><span class="sxs-lookup"><span data-stu-id="584ec-128">The resource i</span></span>
 
 ```yaml
 Type: System.String
@@ -178,8 +178,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="671c8-129">-ShortName</span><span class="sxs-lookup"><span data-stu-id="671c8-129">-ShortName</span></span>
-<span data-ttu-id="671c8-130">Краткое имя группы действий.</span><span class="sxs-lookup"><span data-stu-id="671c8-130">The short name of the action group.</span></span>
+### <span data-ttu-id="584ec-129">-ShortName</span><span class="sxs-lookup"><span data-stu-id="584ec-129">-ShortName</span></span>
+<span data-ttu-id="584ec-130">Краткое имя группы действий.</span><span class="sxs-lookup"><span data-stu-id="584ec-130">The short name of the action group.</span></span>
 
 ```yaml
 Type: System.String
@@ -205,8 +205,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="671c8-131">-Тег</span><span class="sxs-lookup"><span data-stu-id="671c8-131">-Tag</span></span>
-<span data-ttu-id="671c8-132">Теги ресурса группы действий</span><span class="sxs-lookup"><span data-stu-id="671c8-132">The tags of the action group resource</span></span>
+### <span data-ttu-id="584ec-131">-Tag</span><span class="sxs-lookup"><span data-stu-id="584ec-131">-Tag</span></span>
+<span data-ttu-id="584ec-132">Теги ресурса группы действий</span><span class="sxs-lookup"><span data-stu-id="584ec-132">The tags of the action group resource</span></span>
 
 ```yaml
 Type: System.Collections.Generic.IDictionary`2[System.String,System.String]
@@ -232,8 +232,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="671c8-133">-Confirm</span><span class="sxs-lookup"><span data-stu-id="671c8-133">-Confirm</span></span>
-<span data-ttu-id="671c8-134">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="671c8-134">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="584ec-133">-Confirm</span><span class="sxs-lookup"><span data-stu-id="584ec-133">-Confirm</span></span>
+<span data-ttu-id="584ec-134">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="584ec-134">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -247,8 +247,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="671c8-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="671c8-135">-WhatIf</span></span>
-<span data-ttu-id="671c8-136">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="671c8-136">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="671c8-137">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="671c8-137">The cmdlet is not run.</span></span>
+### <span data-ttu-id="584ec-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="584ec-135">-WhatIf</span></span>
+<span data-ttu-id="584ec-136">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="584ec-136">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="584ec-137">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="584ec-137">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -262,31 +262,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="671c8-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="671c8-138">CommonParameters</span></span>
-<span data-ttu-id="671c8-139">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="671c8-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="671c8-140">Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="671c8-140">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="584ec-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="584ec-138">CommonParameters</span></span>
+<span data-ttu-id="584ec-139">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="584ec-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="584ec-140">Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="584ec-140">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="671c8-141">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="671c8-141">INPUTS</span></span>
+## <span data-ttu-id="584ec-141">INPUTS</span><span class="sxs-lookup"><span data-stu-id="584ec-141">INPUTS</span></span>
 
-### <span data-ttu-id="671c8-142">System. String</span><span class="sxs-lookup"><span data-stu-id="671c8-142">System.String</span></span>
+### <span data-ttu-id="584ec-142">System.String</span><span class="sxs-lookup"><span data-stu-id="584ec-142">System.String</span></span>
 
-### <span data-ttu-id="671c8-143">System. Collections. Generic. List ' 1 [[Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupReceiverBase, Microsoft. Azure. PowerShell. командлеты. Monitor, версия = 1.0.0.0, культура = независимая, PublicKeyToken = NULL]]</span><span class="sxs-lookup"><span data-stu-id="671c8-143">System.Collections.Generic.List\`1[[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</span></span>
+### <span data-ttu-id="584ec-143">System.Collections.Generic.List'1[[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</span><span class="sxs-lookup"><span data-stu-id="584ec-143">System.Collections.Generic.List\`1[[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</span></span>
 
-### <span data-ttu-id="671c8-144">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="671c8-144">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="584ec-144">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="584ec-144">System.Management.Automation.SwitchParameter</span></span>
 
-### <span data-ttu-id="671c8-145">System. Collections. Generic. IDictionary "2 [[System. String, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e], [System. String, System. Private. CoreLib, Version = 4.0.0.0, Culture = Neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="671c8-145">System.Collections.Generic.IDictionary\`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="584ec-145">System.Collections.Generic.IDictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="584ec-145">System.Collections.Generic.IDictionary\`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="671c8-146">Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupResource</span><span class="sxs-lookup"><span data-stu-id="671c8-146">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span></span>
+### <span data-ttu-id="584ec-146">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span><span class="sxs-lookup"><span data-stu-id="584ec-146">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span></span>
 
-## <span data-ttu-id="671c8-147">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="671c8-147">OUTPUTS</span></span>
+## <span data-ttu-id="584ec-147">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="584ec-147">OUTPUTS</span></span>
 
-### <span data-ttu-id="671c8-148">Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupResource</span><span class="sxs-lookup"><span data-stu-id="671c8-148">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span></span>
+### <span data-ttu-id="584ec-148">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span><span class="sxs-lookup"><span data-stu-id="584ec-148">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span></span>
 
-## <span data-ttu-id="671c8-149">Пуск</span><span class="sxs-lookup"><span data-stu-id="671c8-149">NOTES</span></span>
+## <span data-ttu-id="584ec-149">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="584ec-149">NOTES</span></span>
 
-## <span data-ttu-id="671c8-150">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="671c8-150">RELATED LINKS</span></span>
+## <span data-ttu-id="584ec-150">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="584ec-150">RELATED LINKS</span></span>
 
-<span data-ttu-id="671c8-151">[Get-AzActionGroup](./Get-AzActionGroup.md) 
- [Remove-AzActionGroup](./Remove-AzActionGroup.md) 
- [New-AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)</span><span class="sxs-lookup"><span data-stu-id="671c8-151">[Get-AzActionGroup](./Get-AzActionGroup.md)
-[Remove-AzActionGroup](./Remove-AzActionGroup.md)
-[New-AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)</span></span>
+<span data-ttu-id="584ec-151">[Get-AzActionGroup](./Get-AzActionGroup.md) 
+ [Remove-AzActionGroup](./Remove-AzActionGroup.md)</span><span class="sxs-lookup"><span data-stu-id="584ec-151">[Get-AzActionGroup](./Get-AzActionGroup.md)
+[Remove-AzActionGroup](./Remove-AzActionGroup.md)</span></span>
+
