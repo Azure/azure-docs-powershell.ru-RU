@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendProxy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendProxy.md
-ms.openlocfilehash: aa681d48330755137b9c9687be6c40adc12295f2
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8b4b93e734c64e3b46b4ba9488a24f2d7f442d8e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93720111"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400932"
 ---
-# <span data-ttu-id="0919b-101">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="0919b-101">New-AzApiManagementBackendProxy</span></span>
+# <span data-ttu-id="83135-101">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="83135-101">New-AzApiManagementBackendProxy</span></span>
 
-## <span data-ttu-id="0919b-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="0919b-102">SYNOPSIS</span></span>
-<span data-ttu-id="0919b-103">Создает новый объект прокси-сервера в серверной части.</span><span class="sxs-lookup"><span data-stu-id="0919b-103">Creates a new Backend Proxy Object.</span></span>
+## <span data-ttu-id="83135-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="83135-102">SYNOPSIS</span></span>
+<span data-ttu-id="83135-103">Создает объект прокси-сервера серверов.</span><span class="sxs-lookup"><span data-stu-id="83135-103">Creates a new Backend Proxy Object.</span></span>
 
-## <span data-ttu-id="0919b-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="0919b-104">SYNTAX</span></span>
+## <span data-ttu-id="83135-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="83135-104">SYNTAX</span></span>
 
 ```
 New-AzApiManagementBackendProxy -Url <String> [-ProxyCredential <PSCredential>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="0919b-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="0919b-105">DESCRIPTION</span></span>
-<span data-ttu-id="0919b-106">Создает новый объект-посредник для базы данных, который может быть передан при создании новой серверной сущности.</span><span class="sxs-lookup"><span data-stu-id="0919b-106">Creates a new Backend Proxy Object which can be piped when creating a new Backend entity.</span></span>
+## <span data-ttu-id="83135-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="83135-105">DESCRIPTION</span></span>
+<span data-ttu-id="83135-106">Создает объект прокси-сервера серверов, который можно создать в канале при создании нового объекта backend.</span><span class="sxs-lookup"><span data-stu-id="83135-106">Creates a new Backend Proxy Object which can be piped when creating a new Backend entity.</span></span>
 
-## <span data-ttu-id="0919b-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="0919b-107">EXAMPLES</span></span>
+## <span data-ttu-id="83135-107">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="83135-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="0919b-108">Создание объекта прокси-сервера в серверной In-Memory</span><span class="sxs-lookup"><span data-stu-id="0919b-108">Create a Backend Proxy In-Memory Object</span></span>
+### <span data-ttu-id="83135-108">Создание объекта прокси-сервера In-Memory сервера</span><span class="sxs-lookup"><span data-stu-id="83135-108">Create a Backend Proxy In-Memory Object</span></span>
 ```powershell
 PS C:\>$secpassword = ConvertTo-SecureString "PlainTextPassword" -AsPlainText -Force
 PS C:\>$proxyCreds = New-Object System.Management.Automation.PSCredential ("foo", $secpassword)
@@ -40,12 +40,12 @@ PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Proxy $credential -Description "backend with proxy server"
 ```
 
-<span data-ttu-id="0919b-109">Создает внутренний прокси-объект и настраивает внутренний сервер</span><span class="sxs-lookup"><span data-stu-id="0919b-109">Creates a Backend Proxy Object and sets up Backend</span></span>
+<span data-ttu-id="83135-109">Создание прокси-сервера и его создание</span><span class="sxs-lookup"><span data-stu-id="83135-109">Creates a Backend Proxy Object and sets up Backend</span></span>
 
-## <span data-ttu-id="0919b-110">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="0919b-110">PARAMETERS</span></span>
+## <span data-ttu-id="83135-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="83135-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="0919b-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="0919b-111">-DefaultProfile</span></span>
-<span data-ttu-id="0919b-112">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="0919b-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="83135-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="83135-111">-DefaultProfile</span></span>
+<span data-ttu-id="83135-112">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="83135-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,8 +59,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0919b-113">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="0919b-113">-ProxyCredential</span></span>
-<span data-ttu-id="0919b-114">Учетные данные, используемые для подключения к прокси-серверу внутренней сети.</span><span class="sxs-lookup"><span data-stu-id="0919b-114">Credentials used to connect to Backend Proxy.</span></span> <span data-ttu-id="0919b-115">Этот параметр является необязательным.</span><span class="sxs-lookup"><span data-stu-id="0919b-115">This parameter is optional.</span></span>
+### <span data-ttu-id="83135-113">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="83135-113">-ProxyCredential</span></span>
+<span data-ttu-id="83135-114">Учетные данные, используемые для подключения к серверу прокси-сервера.</span><span class="sxs-lookup"><span data-stu-id="83135-114">Credentials used to connect to Backend Proxy.</span></span> <span data-ttu-id="83135-115">Этот параметр является необязательным.</span><span class="sxs-lookup"><span data-stu-id="83135-115">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -74,9 +74,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0919b-116">— URL-адрес</span><span class="sxs-lookup"><span data-stu-id="0919b-116">-Url</span></span>
-<span data-ttu-id="0919b-117">Адрес прокси-сервера, который будет использоваться для переадресации звонков на сервер.</span><span class="sxs-lookup"><span data-stu-id="0919b-117">Url of the Proxy server to be used when forwarding calls to Backend.</span></span>
-<span data-ttu-id="0919b-118">Этот параметр является обязательным.</span><span class="sxs-lookup"><span data-stu-id="0919b-118">This parameter is required.</span></span>
+### <span data-ttu-id="83135-116">-URL-адрес</span><span class="sxs-lookup"><span data-stu-id="83135-116">-Url</span></span>
+<span data-ttu-id="83135-117">URL-адрес прокси-сервера, который будет использоваться при переададности звонков на сервер.</span><span class="sxs-lookup"><span data-stu-id="83135-117">Url of the Proxy server to be used when forwarding calls to Backend.</span></span>
+<span data-ttu-id="83135-118">Этот параметр является required(обязательно).</span><span class="sxs-lookup"><span data-stu-id="83135-118">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -90,27 +90,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0919b-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="0919b-119">CommonParameters</span></span>
-<span data-ttu-id="0919b-120">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="0919b-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="0919b-121">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="0919b-121">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="83135-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="83135-119">CommonParameters</span></span>
+<span data-ttu-id="83135-120">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="83135-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="83135-121">Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="83135-121">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="0919b-122">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="0919b-122">INPUTS</span></span>
+## <span data-ttu-id="83135-122">INPUTS</span><span class="sxs-lookup"><span data-stu-id="83135-122">INPUTS</span></span>
 
-### <span data-ttu-id="0919b-123">Ничего</span><span class="sxs-lookup"><span data-stu-id="0919b-123">None</span></span>
+### <span data-ttu-id="83135-123">Нет</span><span class="sxs-lookup"><span data-stu-id="83135-123">None</span></span>
 
-## <span data-ttu-id="0919b-124">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="0919b-124">OUTPUTS</span></span>
+## <span data-ttu-id="83135-124">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="83135-124">OUTPUTS</span></span>
 
-### <span data-ttu-id="0919b-125">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="0919b-125">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy</span></span>
+### <span data-ttu-id="83135-125">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="83135-125">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy</span></span>
 
-## <span data-ttu-id="0919b-126">Пуск</span><span class="sxs-lookup"><span data-stu-id="0919b-126">NOTES</span></span>
+## <span data-ttu-id="83135-126">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="83135-126">NOTES</span></span>
 
-## <span data-ttu-id="0919b-127">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="0919b-127">RELATED LINKS</span></span>
+## <span data-ttu-id="83135-127">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="83135-127">RELATED LINKS</span></span>
 
-[<span data-ttu-id="0919b-128">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0919b-128">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend)
+[<span data-ttu-id="83135-128">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="83135-128">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend.md)
 
-[<span data-ttu-id="0919b-129">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0919b-129">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
+[<span data-ttu-id="83135-129">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="83135-129">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
 
-[<span data-ttu-id="0919b-130">New-AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="0919b-130">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
+[<span data-ttu-id="83135-130">New-AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="83135-130">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
 
-[<span data-ttu-id="0919b-131">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0919b-131">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
+[<span data-ttu-id="83135-131">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="83135-131">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
 
-[<span data-ttu-id="0919b-132">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0919b-132">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)
+[<span data-ttu-id="83135-132">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="83135-132">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)
