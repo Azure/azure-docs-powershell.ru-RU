@@ -6,45 +6,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: 70badaebf0b6b8a35fd96cc20a54aab1ff316bef
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 0adba1dfe453852b0797f40d6cd4d188db87169f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93730601"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402003"
 ---
-# <span data-ttu-id="cff50-101">Get-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="cff50-101">Get-AzExpressRouteCircuitConnectionConfig</span></span>
+# <span data-ttu-id="d0a73-101">Get-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="d0a73-101">Get-AzExpressRouteCircuitConnectionConfig</span></span>
 
-## <span data-ttu-id="cff50-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="cff50-102">SYNOPSIS</span></span>
-<span data-ttu-id="cff50-103">Получает конфигурацию подключения к каналу ExpressRoute, связанную с частным одноранговым подключением ExpressRouteCircuit.</span><span class="sxs-lookup"><span data-stu-id="cff50-103">Gets an ExpressRoute circuit connection configuration associated with Private Peering of ExpressRouteCircuit.</span></span>
+## <span data-ttu-id="d0a73-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="d0a73-102">SYNOPSIS</span></span>
+<span data-ttu-id="d0a73-103">Возвращает конфигурацию подключения к каналу ExpressRoute, связанную с частным пирингом ExpressRouteCircuit.</span><span class="sxs-lookup"><span data-stu-id="d0a73-103">Gets an ExpressRoute circuit connection configuration associated with Private Peering of ExpressRouteCircuit.</span></span>
 
-## <span data-ttu-id="cff50-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="cff50-104">SYNTAX</span></span>
+## <span data-ttu-id="d0a73-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="d0a73-104">SYNTAX</span></span>
 
 ```
 Get-AzExpressRouteCircuitConnectionConfig [[-Name] <String>] [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="cff50-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="cff50-105">DESCRIPTION</span></span>
-<span data-ttu-id="cff50-106">Командлет **Get-AzExpressRouteCircuitConnectionConfig** извлекает конфигурацию подключения к каналу, связанного с частным одноранговым соединением для канала ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="cff50-106">The **Get-AzExpressRouteCircuitConnectionConfig** cmdlet retrieves the configuration of a circuit connection associated with Private Peering for an ExpressRoute circuit.</span></span>
+## <span data-ttu-id="d0a73-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="d0a73-105">DESCRIPTION</span></span>
+<span data-ttu-id="d0a73-106">Cmdlet **Get-AzExpressRouteCircuitConnectionConfig** извлекает конфигурацию подключения к каналу, связанному с частным пирингом для схемы ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="d0a73-106">The **Get-AzExpressRouteCircuitConnectionConfig** cmdlet retrieves the configuration of a circuit connection associated with Private Peering for an ExpressRoute circuit.</span></span>
 
-## <span data-ttu-id="cff50-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="cff50-107">EXAMPLES</span></span>
+## <span data-ttu-id="d0a73-107">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="d0a73-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="cff50-108">Пример 1: отображение конфигурации подключения к каналу для канала ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="cff50-108">Example 1: Display the circuit connection configuration for an ExpressRoute circuit</span></span>
+### <span data-ttu-id="d0a73-108">Пример 1. Отображение конфигурации подключения к каналу ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="d0a73-108">Example 1: Display the circuit connection configuration for an ExpressRoute circuit</span></span>
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 ```
 
-### <span data-ttu-id="cff50-109">Пример 2: получение ресурса подключения к каналу, связанного с цепью ExpressRoute с помощью трубопроводов</span><span class="sxs-lookup"><span data-stu-id="cff50-109">Example 2: Get circuit connection resource associated with an ExpressRoute Circuit using piping</span></span>
+### <span data-ttu-id="d0a73-109">Пример 2. Подключение к каналу, связанному с каналом ExpressRoute, с помощью piping</span><span class="sxs-lookup"><span data-stu-id="d0a73-109">Example 2: Get circuit connection resource associated with an ExpressRoute Circuit using piping</span></span>
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName
 ```
 
-## <span data-ttu-id="cff50-110">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="cff50-110">PARAMETERS</span></span>
+## <span data-ttu-id="d0a73-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d0a73-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="cff50-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="cff50-111">-DefaultProfile</span></span>
-<span data-ttu-id="cff50-112">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="cff50-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="d0a73-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d0a73-111">-DefaultProfile</span></span>
+<span data-ttu-id="d0a73-112">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="d0a73-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -58,8 +58,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cff50-113">-ExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="cff50-113">-ExpressRouteCircuit</span></span>
-<span data-ttu-id="cff50-114">Объект цепи ExpressRoute, который содержит конфигурацию подключения к каналу.</span><span class="sxs-lookup"><span data-stu-id="cff50-114">The ExpressRoute circuit object containing the circuit connection configuration.</span></span>
+### <span data-ttu-id="d0a73-113">-ExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="d0a73-113">-ExpressRouteCircuit</span></span>
+<span data-ttu-id="d0a73-114">Объект схемы ExpressRoute, содержащий конфигурацию подключения к каналу.</span><span class="sxs-lookup"><span data-stu-id="d0a73-114">The ExpressRoute circuit object containing the circuit connection configuration.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -73,8 +73,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cff50-115">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="cff50-115">-Name</span></span>
-<span data-ttu-id="cff50-116">Имя конфигурации подключения к каналу, которую требуется получить.</span><span class="sxs-lookup"><span data-stu-id="cff50-116">The name of the circuit connection configuration to be retrieved.</span></span>
+### <span data-ttu-id="d0a73-115">-Name</span><span class="sxs-lookup"><span data-stu-id="d0a73-115">-Name</span></span>
+<span data-ttu-id="d0a73-116">Имя извлечения конфигурации подключения к каналу.</span><span class="sxs-lookup"><span data-stu-id="d0a73-116">The name of the circuit connection configuration to be retrieved.</span></span>
 
 ```yaml
 Type: System.String
@@ -88,27 +88,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cff50-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="cff50-117">CommonParameters</span></span>
-<span data-ttu-id="cff50-118">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="cff50-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="cff50-119">Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="cff50-119">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="d0a73-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d0a73-117">CommonParameters</span></span>
+<span data-ttu-id="d0a73-118">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d0a73-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d0a73-119">Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="d0a73-119">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="cff50-120">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="cff50-120">INPUTS</span></span>
+## <span data-ttu-id="d0a73-120">INPUTS</span><span class="sxs-lookup"><span data-stu-id="d0a73-120">INPUTS</span></span>
 
-### <span data-ttu-id="cff50-121">Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="cff50-121">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
+### <span data-ttu-id="d0a73-121">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="d0a73-121">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
 
-## <span data-ttu-id="cff50-122">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="cff50-122">OUTPUTS</span></span>
+## <span data-ttu-id="d0a73-122">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="d0a73-122">OUTPUTS</span></span>
 
-### <span data-ttu-id="cff50-123">Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuitConnection</span><span class="sxs-lookup"><span data-stu-id="cff50-123">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitConnection</span></span>
+### <span data-ttu-id="d0a73-123">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitConnection</span><span class="sxs-lookup"><span data-stu-id="d0a73-123">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitConnection</span></span>
 
-## <span data-ttu-id="cff50-124">Пуск</span><span class="sxs-lookup"><span data-stu-id="cff50-124">NOTES</span></span>
+## <span data-ttu-id="d0a73-124">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="d0a73-124">NOTES</span></span>
 
-## <span data-ttu-id="cff50-125">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="cff50-125">RELATED LINKS</span></span>
+## <span data-ttu-id="d0a73-125">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="d0a73-125">RELATED LINKS</span></span>
 
-[<span data-ttu-id="cff50-126">Get-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="cff50-126">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
+[<span data-ttu-id="d0a73-126">Get-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="d0a73-126">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
 
-[<span data-ttu-id="cff50-127">Add-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="cff50-127">Add-AzExpressRouteCircuitConnectionConfig</span></span>](Add-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="d0a73-127">Add-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="d0a73-127">Add-AzExpressRouteCircuitConnectionConfig</span></span>](Add-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="cff50-128">Remove-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="cff50-128">Remove-AzExpressRouteCircuitConnectionConfig</span></span>](Remove-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="d0a73-128">Remove-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="d0a73-128">Remove-AzExpressRouteCircuitConnectionConfig</span></span>](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="cff50-129">Set-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="cff50-129">Set-AzExpressRouteCircuitConnectionConfig</span></span>](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="cff50-130">New-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="cff50-130">New-AzExpressRouteCircuitConnectionConfig</span></span>](New-AzExpressRouteCircuitConnectionConfig.md)
+
+
