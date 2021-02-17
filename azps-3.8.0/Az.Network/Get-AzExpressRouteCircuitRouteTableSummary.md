@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTableSummary.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTableSummary.md
-ms.openlocfilehash: 78807c8504452479eef0cbe25a8e33cb017f4b9e
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 19a96083bc24c1ae50759aadd1a87b5bf23fdf48
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94073376"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408191"
 ---
-# <span data-ttu-id="cca6f-101">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="cca6f-101">Get-AzExpressRouteCircuitRouteTableSummary</span></span>
+# <span data-ttu-id="64926-101">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="64926-101">Get-AzExpressRouteCircuitRouteTableSummary</span></span>
 
-## <span data-ttu-id="cca6f-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="cca6f-102">SYNOPSIS</span></span>
-<span data-ttu-id="cca6f-103">Возвращает сводку по таблице маршрутов для канала ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="cca6f-103">Gets a route table summary of an ExpressRoute circuit.</span></span>
+## <span data-ttu-id="64926-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="64926-102">SYNOPSIS</span></span>
+<span data-ttu-id="64926-103">Возвращает сводку таблицы маршрутов по каналу ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="64926-103">Gets a route table summary of an ExpressRoute circuit.</span></span>
 
-## <span data-ttu-id="cca6f-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="cca6f-104">SYNTAX</span></span>
+## <span data-ttu-id="64926-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="64926-104">SYNTAX</span></span>
 
 ```
 Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName <String> -ExpressRouteCircuitName <String>
@@ -26,20 +26,20 @@ Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName <String> -ExpressR
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="cca6f-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="cca6f-105">DESCRIPTION</span></span>
-<span data-ttu-id="cca6f-106">Командлет **Get-AzExpressRouteCircuitRouteTableSummary** извлекает сводку сведений о соседях BGP для определенного контекста маршрутизации.</span><span class="sxs-lookup"><span data-stu-id="cca6f-106">The **Get-AzExpressRouteCircuitRouteTableSummary** cmdlet retrieves a summary of BGP neighbor information for a particular routing context.</span></span> <span data-ttu-id="cca6f-107">Эти сведения полезны для определения времени, в течение которого был установлен контекст маршрутизации, и количества префиксов маршрутов, объявленных маршрутизатором пиринга.</span><span class="sxs-lookup"><span data-stu-id="cca6f-107">This information is useful to determine for how long a routing context has been established and the number of route prefixes advertised by the peering router.</span></span>
+## <span data-ttu-id="64926-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="64926-105">DESCRIPTION</span></span>
+<span data-ttu-id="64926-106">Cmdlet **Get-AzExpressRouteCircuitRouteTableSummary** извлекает сводку данных о соседних BGP для определенного контекста маршрутации.</span><span class="sxs-lookup"><span data-stu-id="64926-106">The **Get-AzExpressRouteCircuitRouteTableSummary** cmdlet retrieves a summary of BGP neighbor information for a particular routing context.</span></span> <span data-ttu-id="64926-107">Эти сведения полезны для определения времени установления контекста маршрутки и количества префиксов маршрутов, объявленных маршрутизатором пиринга.</span><span class="sxs-lookup"><span data-stu-id="64926-107">This information is useful to determine for how long a routing context has been established and the number of route prefixes advertised by the peering router.</span></span>
 
-## <span data-ttu-id="cca6f-108">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="cca6f-108">EXAMPLES</span></span>
+## <span data-ttu-id="64926-108">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="64926-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="cca6f-109">Пример 1: отображение сводки маршрута для основного пути</span><span class="sxs-lookup"><span data-stu-id="cca6f-109">Example 1: Display the route summary for the primary path</span></span>
+### <span data-ttu-id="64926-109">Пример 1. Отображение сводки маршрута для основного пути</span><span class="sxs-lookup"><span data-stu-id="64926-109">Example 1: Display the route summary for the primary path</span></span>
 ```
 Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -DevicePath 'Primary'
 ```
 
-## <span data-ttu-id="cca6f-110">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="cca6f-110">PARAMETERS</span></span>
+## <span data-ttu-id="64926-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="64926-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="cca6f-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="cca6f-111">-DefaultProfile</span></span>
-<span data-ttu-id="cca6f-112">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="cca6f-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="64926-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="64926-111">-DefaultProfile</span></span>
+<span data-ttu-id="64926-112">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="64926-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -53,8 +53,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cca6f-113">-DevicePath</span><span class="sxs-lookup"><span data-stu-id="cca6f-113">-DevicePath</span></span>
-<span data-ttu-id="cca6f-114">Допустимые значения этого параметра: `Primary` или `Secondary`</span><span class="sxs-lookup"><span data-stu-id="cca6f-114">The acceptable values for this parameter are: `Primary` or `Secondary`</span></span>
+### <span data-ttu-id="64926-113">-DevicePath</span><span class="sxs-lookup"><span data-stu-id="64926-113">-DevicePath</span></span>
+<span data-ttu-id="64926-114">Допустимыми значениями для этого параметра являются: `Primary` или `Secondary`</span><span class="sxs-lookup"><span data-stu-id="64926-114">The acceptable values for this parameter are: `Primary` or `Secondary`</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.DevicePathEnum
@@ -69,8 +69,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cca6f-115">-ExpressRouteCircuitName</span><span class="sxs-lookup"><span data-stu-id="cca6f-115">-ExpressRouteCircuitName</span></span>
-<span data-ttu-id="cca6f-116">Имя проверяемого канала ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="cca6f-116">The name of the ExpressRoute circuit being examined.</span></span>
+### <span data-ttu-id="64926-115">-ExpressRouteCircuitName</span><span class="sxs-lookup"><span data-stu-id="64926-115">-ExpressRouteCircuitName</span></span>
+<span data-ttu-id="64926-116">Имя проверяемого контура ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="64926-116">The name of the ExpressRoute circuit being examined.</span></span>
 
 ```yaml
 Type: System.String
@@ -84,8 +84,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cca6f-117">-PeeringType</span><span class="sxs-lookup"><span data-stu-id="cca6f-117">-PeeringType</span></span>
-<span data-ttu-id="cca6f-118">Допустимые значения этого параметра: `AzurePrivatePeering` , `AzurePublicPeering` и `MicrosoftPeering`</span><span class="sxs-lookup"><span data-stu-id="cca6f-118">The acceptable values for this parameter are: `AzurePrivatePeering`, `AzurePublicPeering`, and `MicrosoftPeering`</span></span>
+### <span data-ttu-id="64926-117">-PeeringType</span><span class="sxs-lookup"><span data-stu-id="64926-117">-PeeringType</span></span>
+<span data-ttu-id="64926-118">Допустимыми значениями для этого параметра являются: `AzurePrivatePeering` `AzurePublicPeering` , и `MicrosoftPeering`</span><span class="sxs-lookup"><span data-stu-id="64926-118">The acceptable values for this parameter are: `AzurePrivatePeering`, `AzurePublicPeering`, and `MicrosoftPeering`</span></span>
 
 ```yaml
 Type: System.String
@@ -100,8 +100,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cca6f-119">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="cca6f-119">-ResourceGroupName</span></span>
-<span data-ttu-id="cca6f-120">Имя группы ресурсов, содержащей канал ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="cca6f-120">The name of the resource group containing the ExpressRoute circuit.</span></span>
+### <span data-ttu-id="64926-119">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="64926-119">-ResourceGroupName</span></span>
+<span data-ttu-id="64926-120">Имя группы ресурсов, содержащей канал ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="64926-120">The name of the resource group containing the ExpressRoute circuit.</span></span>
 
 ```yaml
 Type: System.String
@@ -115,23 +115,23 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cca6f-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="cca6f-121">CommonParameters</span></span>
-<span data-ttu-id="cca6f-122">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="cca6f-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="cca6f-123">Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="cca6f-123">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="64926-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="64926-121">CommonParameters</span></span>
+<span data-ttu-id="64926-122">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="64926-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="64926-123">Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="64926-123">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="cca6f-124">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="cca6f-124">INPUTS</span></span>
+## <span data-ttu-id="64926-124">INPUTS</span><span class="sxs-lookup"><span data-stu-id="64926-124">INPUTS</span></span>
 
-### <span data-ttu-id="cca6f-125">System. String</span><span class="sxs-lookup"><span data-stu-id="cca6f-125">System.String</span></span>
+### <span data-ttu-id="64926-125">System.String</span><span class="sxs-lookup"><span data-stu-id="64926-125">System.String</span></span>
 
-## <span data-ttu-id="cca6f-126">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="cca6f-126">OUTPUTS</span></span>
+## <span data-ttu-id="64926-126">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="64926-126">OUTPUTS</span></span>
 
-### <span data-ttu-id="cca6f-127">Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuitRoutesTableSummary</span><span class="sxs-lookup"><span data-stu-id="cca6f-127">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitRoutesTableSummary</span></span>
+### <span data-ttu-id="64926-127">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitRoutesTableSummary</span><span class="sxs-lookup"><span data-stu-id="64926-127">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitRoutesTableSummary</span></span>
 
-## <span data-ttu-id="cca6f-128">Пуск</span><span class="sxs-lookup"><span data-stu-id="cca6f-128">NOTES</span></span>
+## <span data-ttu-id="64926-128">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="64926-128">NOTES</span></span>
 
-## <span data-ttu-id="cca6f-129">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="cca6f-129">RELATED LINKS</span></span>
+## <span data-ttu-id="64926-129">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="64926-129">RELATED LINKS</span></span>
 
-[<span data-ttu-id="cca6f-130">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="cca6f-130">Get-AzExpressRouteCircuitARPTable</span></span>](Get-AzExpressRouteCircuitARPTable.md)
+[<span data-ttu-id="64926-130">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="64926-130">Get-AzExpressRouteCircuitARPTable</span></span>](Get-AzExpressRouteCircuitARPTable.md)
 
-[<span data-ttu-id="cca6f-131">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="cca6f-131">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
+[<span data-ttu-id="64926-131">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="64926-131">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
 
-[<span data-ttu-id="cca6f-132">Get-AzExpressRouteCircuitStats</span><span class="sxs-lookup"><span data-stu-id="cca6f-132">Get-AzExpressRouteCircuitStats</span></span>](Get-AzExpressRouteCircuitStats.md)
+[<span data-ttu-id="64926-132">Get-AzExpressRouteCircuitStat</span><span class="sxs-lookup"><span data-stu-id="64926-132">Get-AzExpressRouteCircuitStat</span></span>](Get-AzExpressRouteCircuitStat.md)
