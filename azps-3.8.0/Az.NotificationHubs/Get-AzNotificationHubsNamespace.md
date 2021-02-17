@@ -6,62 +6,62 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespace.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespace.md
-ms.openlocfilehash: 021f83895494fa56cbd60032c37eecdc0007460b
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 93ee8ceb15d3c07942f87c0187f4b04b8ac4aaa5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93911718"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413308"
 ---
-# <span data-ttu-id="9b656-101">Get-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="9b656-101">Get-AzNotificationHubsNamespace</span></span>
+# <span data-ttu-id="eef65-101">Get-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="eef65-101">Get-AzNotificationHubsNamespace</span></span>
 
-## <span data-ttu-id="9b656-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="9b656-102">SYNOPSIS</span></span>
-<span data-ttu-id="9b656-103">Получает сведения о пространстве имен концентратора уведомлений.</span><span class="sxs-lookup"><span data-stu-id="9b656-103">Gets information about a notification hub namespace.</span></span>
+## <span data-ttu-id="eef65-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="eef65-102">SYNOPSIS</span></span>
+<span data-ttu-id="eef65-103">Получает сведения о пространстве имен концентратора уведомлений.</span><span class="sxs-lookup"><span data-stu-id="eef65-103">Gets information about a notification hub namespace.</span></span>
 
-## <span data-ttu-id="9b656-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="9b656-104">SYNTAX</span></span>
+## <span data-ttu-id="eef65-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="eef65-104">SYNTAX</span></span>
 
 ```
 Get-AzNotificationHubsNamespace [[-ResourceGroup] <String>] [[-Namespace] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="9b656-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="9b656-105">DESCRIPTION</span></span>
-<span data-ttu-id="9b656-106">Командлет **Get-AzNotificationHubsNamespace** получает сведения о пространствах имен концентратора уведомлений.</span><span class="sxs-lookup"><span data-stu-id="9b656-106">**The Get-AzNotificationHubsNamespace** cmdlet gets information about notification hub namespaces.</span></span>
-<span data-ttu-id="9b656-107">Этот командлет предоставляет возможность получения сведений обо всех пространствах имен, а также сведения о пространствах имен, назначенных определенной группе ресурсов; или для возврата сведений о конкретном пространстве имен.</span><span class="sxs-lookup"><span data-stu-id="9b656-107">This cmdlet provides you the option of getting information for all your namespaces, information about the namespaces assigned to a specified resource group; or for returning information about a specific namespace.</span></span>
-<span data-ttu-id="9b656-108">Пространства имен — это логические контейнеры, помогающие упорядочивать концентраторы уведомлений и управлять ими.</span><span class="sxs-lookup"><span data-stu-id="9b656-108">Namespaces are logical containers that help you organize and manage your notification hubs.</span></span>
-<span data-ttu-id="9b656-109">Необходимо иметь по крайней мере одно пространство имен концентратора уведомлений: все концентраторы уведомлений должны быть назначены пространству имен.</span><span class="sxs-lookup"><span data-stu-id="9b656-109">You must have at least one notification hub namespace: all notification hubs must be assigned to a namespace.</span></span>
-<span data-ttu-id="9b656-110">Одно пространство имен может быть размещено на нескольких концентраторах, что означает, что вам потребуется только одно пространство имен в Организации.</span><span class="sxs-lookup"><span data-stu-id="9b656-110">A single namespace can house multiple hubs which means that you might only need one namespace in your organization.</span></span>
-<span data-ttu-id="9b656-111">Однако вы также можете использовать несколько пространств имен для более эффективной организации концентраторов или предоставить конкретным пользователям разрешение на управление выбранной подмножеством концентраторов.</span><span class="sxs-lookup"><span data-stu-id="9b656-111">However, you can also have multiple namespaces to better organize your hubs, or to give specific individuals permission to manage a selected subset of hubs.</span></span>
-<span data-ttu-id="9b656-112">Командлет **Get-AzNotificationHubsNamespace** возвращает основные сведения о пространстве имен.</span><span class="sxs-lookup"><span data-stu-id="9b656-112">The **Get-AzNotificationHubsNamespace** cmdlet returns basic information about the namespace itself.</span></span>
-<span data-ttu-id="9b656-113">Чтобы получить сведения о правилах авторизации, связанных с пространством имен, используйте Get-AzNotificationHubsNamespaceAuthorizationRules.</span><span class="sxs-lookup"><span data-stu-id="9b656-113">To get information about the authorization rules associated with a namespace use Get-AzNotificationHubsNamespaceAuthorizationRules.</span></span>
+## <span data-ttu-id="eef65-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="eef65-105">DESCRIPTION</span></span>
+<span data-ttu-id="eef65-106">Чтобы получить сведения о пространствах имен концентратора уведомлений, можно получить сведения о **cmdlet Get-AzNotificationHubsNamespace.**</span><span class="sxs-lookup"><span data-stu-id="eef65-106">**The Get-AzNotificationHubsNamespace** cmdlet gets information about notification hub namespaces.</span></span>
+<span data-ttu-id="eef65-107">Этот cmdlet обеспечивает получение сведений обо всех пространствах имен, а также об пространствах имен, которые назначены указанной группе ресурсов. или для получения сведений об определенном пространстве имен.</span><span class="sxs-lookup"><span data-stu-id="eef65-107">This cmdlet provides you the option of getting information for all your namespaces, information about the namespaces assigned to a specified resource group; or for returning information about a specific namespace.</span></span>
+<span data-ttu-id="eef65-108">Пространства имен — это логические контейнеры, которые помогают организовать концентраторы уведомлений и управлять ими.</span><span class="sxs-lookup"><span data-stu-id="eef65-108">Namespaces are logical containers that help you organize and manage your notification hubs.</span></span>
+<span data-ttu-id="eef65-109">Необходимо иметь хотя бы одно пространство имен концентратора уведомлений: все концентраторы уведомлений должны быть назначены для пространства имен.</span><span class="sxs-lookup"><span data-stu-id="eef65-109">You must have at least one notification hub namespace: all notification hubs must be assigned to a namespace.</span></span>
+<span data-ttu-id="eef65-110">В одном пространстве имен может быть несколько концентраторов, что означает, что в вашей организации может потребоваться только одно пространство имен.</span><span class="sxs-lookup"><span data-stu-id="eef65-110">A single namespace can house multiple hubs which means that you might only need one namespace in your organization.</span></span>
+<span data-ttu-id="eef65-111">Однако вы также можете использовать несколько пространства имен для более эффективного у упорядочества концентраторов или для того, чтобы предоставить определенным людям разрешение на управление выбранным подмножеством концентраторов.</span><span class="sxs-lookup"><span data-stu-id="eef65-111">However, you can also have multiple namespaces to better organize your hubs, or to give specific individuals permission to manage a selected subset of hubs.</span></span>
+<span data-ttu-id="eef65-112">Для получения основных сведений о самом пространстве имен возвращается **cmdlet Get-AzNotificationHubsNamespace.**</span><span class="sxs-lookup"><span data-stu-id="eef65-112">The **Get-AzNotificationHubsNamespace** cmdlet returns basic information about the namespace itself.</span></span>
+<span data-ttu-id="eef65-113">Чтобы получить сведения о правилах авторизации, связанных с пространством имен, используйте Get-AzNotificationHubsNamespaceAuthorizationRules.</span><span class="sxs-lookup"><span data-stu-id="eef65-113">To get information about the authorization rules associated with a namespace use Get-AzNotificationHubsNamespaceAuthorizationRules.</span></span>
 
-## <span data-ttu-id="9b656-114">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="9b656-114">EXAMPLES</span></span>
+## <span data-ttu-id="eef65-114">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="eef65-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="9b656-115">Пример 1: получение сведений для всех пространств имен концентратора уведомлений</span><span class="sxs-lookup"><span data-stu-id="9b656-115">Example 1: Get information for all notification hub namespaces</span></span>
+### <span data-ttu-id="eef65-115">Пример 1. Получите сведения для всех пространства имен концентратора уведомлений</span><span class="sxs-lookup"><span data-stu-id="eef65-115">Example 1: Get information for all notification hub namespaces</span></span>
 ```
 PS C:\>Get-AzNotificationHubsNamespace
 ```
 
-<span data-ttu-id="9b656-116">Эта команда возвращает сведения обо всех пространствах имен концентратора уведомлений.</span><span class="sxs-lookup"><span data-stu-id="9b656-116">This command returns information for all your notification hub namespaces.</span></span>
+<span data-ttu-id="eef65-116">Эта команда возвращает сведения для всех пространства имен концентратора уведомлений.</span><span class="sxs-lookup"><span data-stu-id="eef65-116">This command returns information for all your notification hub namespaces.</span></span>
 
-### <span data-ttu-id="9b656-117">Пример 2: получение сведений для одного пространства имен концентратора уведомлений</span><span class="sxs-lookup"><span data-stu-id="9b656-117">Example 2: Get information for a single notification hub namespace</span></span>
+### <span data-ttu-id="eef65-117">Пример 2. Получите сведения для одного пространства имен концентратора уведомлений</span><span class="sxs-lookup"><span data-stu-id="eef65-117">Example 2: Get information for a single notification hub namespace</span></span>
 ```
 PS C:\>Get-AzNotificationHubsNamespace -Namespace "ContosoNamespace"
 ```
 
-<span data-ttu-id="9b656-118">Эта команда получает сведения для одного пространства имен концентратора уведомлений: ContosoNamespace.</span><span class="sxs-lookup"><span data-stu-id="9b656-118">This command gets information for a single notification hub namespace: ContosoNamespace.</span></span>
+<span data-ttu-id="eef65-118">Эта команда получает сведения для единого пространства имен концентратора уведомлений: ContosoNamespace.</span><span class="sxs-lookup"><span data-stu-id="eef65-118">This command gets information for a single notification hub namespace: ContosoNamespace.</span></span>
 
-### <span data-ttu-id="9b656-119">Пример 3: получение сведений для всех концентраторов уведомлений, назначенных определенному пространству имен</span><span class="sxs-lookup"><span data-stu-id="9b656-119">Example 3: Get information for all notification hubs assigned to a specific namespace</span></span>
+### <span data-ttu-id="eef65-119">Пример 3. Сведения для всех концентраторов уведомлений, которые назначены определенному пространству имен</span><span class="sxs-lookup"><span data-stu-id="eef65-119">Example 3: Get information for all notification hubs assigned to a specific namespace</span></span>
 ```
 PS C:\>Get-AzNotificationHubsNamespace -ResourceGroup "ContosoNotificationsGroup"
 ```
 
-<span data-ttu-id="9b656-120">Эта команда получает сведения обо всех пространствах имен концентратора уведомлений, назначенных группе ресурсов ContosoNotificationsGroup.</span><span class="sxs-lookup"><span data-stu-id="9b656-120">This command gets information for all notification hub namespaces assigned to the resource group ContosoNotificationsGroup.</span></span>
+<span data-ttu-id="eef65-120">Эта команда получает сведения для всех пространства имен концентратора уведомлений, которые назначены группе ресурсов ContosoNotificationsGroup.</span><span class="sxs-lookup"><span data-stu-id="eef65-120">This command gets information for all notification hub namespaces assigned to the resource group ContosoNotificationsGroup.</span></span>
 
-## <span data-ttu-id="9b656-121">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="9b656-121">PARAMETERS</span></span>
+## <span data-ttu-id="eef65-121">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="eef65-121">PARAMETERS</span></span>
 
-### <span data-ttu-id="9b656-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="9b656-122">-DefaultProfile</span></span>
-<span data-ttu-id="9b656-123">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="9b656-123">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="eef65-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="eef65-122">-DefaultProfile</span></span>
+<span data-ttu-id="eef65-123">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="eef65-123">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,9 +75,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9b656-124">-Namespace</span><span class="sxs-lookup"><span data-stu-id="9b656-124">-Namespace</span></span>
-<span data-ttu-id="9b656-125">Задает уникальное имя для пространства имен.</span><span class="sxs-lookup"><span data-stu-id="9b656-125">Specifies a unique name for the namespace.</span></span>
-<span data-ttu-id="9b656-126">Пространства имен обеспечивают способ группировки и классификации концентраторов уведомлений.</span><span class="sxs-lookup"><span data-stu-id="9b656-126">Namespaces provide a way to group and categorize notification hubs.</span></span>
+### <span data-ttu-id="eef65-124">-Namespace</span><span class="sxs-lookup"><span data-stu-id="eef65-124">-Namespace</span></span>
+<span data-ttu-id="eef65-125">Указывает уникальное имя пространства имен.</span><span class="sxs-lookup"><span data-stu-id="eef65-125">Specifies a unique name for the namespace.</span></span>
+<span data-ttu-id="eef65-126">Пространства имен предоставляют возможность группировать концентраторы уведомлений и классифицировать их.</span><span class="sxs-lookup"><span data-stu-id="eef65-126">Namespaces provide a way to group and categorize notification hubs.</span></span>
 
 ```yaml
 Type: System.String
@@ -91,9 +91,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9b656-127">-ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="9b656-127">-ResourceGroup</span></span>
-<span data-ttu-id="9b656-128">Указывает группу ресурсов, которой назначено пространство имен.</span><span class="sxs-lookup"><span data-stu-id="9b656-128">Specifies the resource group to which the namespace is assigned.</span></span>
-<span data-ttu-id="9b656-129">Группы ресурсов организуют элементы, такие как пространства имен, концентраторы уведомлений и правила авторизации, в целях простого управления запасами и администрирования Azure.</span><span class="sxs-lookup"><span data-stu-id="9b656-129">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
+### <span data-ttu-id="eef65-127">-ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="eef65-127">-ResourceGroup</span></span>
+<span data-ttu-id="eef65-128">Группа ресурсов, которой назначено пространство имен.</span><span class="sxs-lookup"><span data-stu-id="eef65-128">Specifies the resource group to which the namespace is assigned.</span></span>
+<span data-ttu-id="eef65-129">Группы ресурсов упорядочиют такие элементы, как пространства имен, концентраторы уведомлений и правила авторизации, чтобы упрость управление запасами и администрирование Azure.</span><span class="sxs-lookup"><span data-stu-id="eef65-129">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
 
 ```yaml
 Type: System.String
@@ -107,27 +107,26 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9b656-130">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9b656-130">CommonParameters</span></span>
-<span data-ttu-id="9b656-131">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="9b656-131">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9b656-132">Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="9b656-132">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="eef65-130">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="eef65-130">CommonParameters</span></span>
+<span data-ttu-id="eef65-131">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="eef65-131">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="eef65-132">Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="eef65-132">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="9b656-133">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="9b656-133">INPUTS</span></span>
+## <span data-ttu-id="eef65-133">INPUTS</span><span class="sxs-lookup"><span data-stu-id="eef65-133">INPUTS</span></span>
 
-### <span data-ttu-id="9b656-134">System. String</span><span class="sxs-lookup"><span data-stu-id="9b656-134">System.String</span></span>
+### <span data-ttu-id="eef65-134">System.String</span><span class="sxs-lookup"><span data-stu-id="eef65-134">System.String</span></span>
 
-## <span data-ttu-id="9b656-135">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="9b656-135">OUTPUTS</span></span>
+## <span data-ttu-id="eef65-135">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="eef65-135">OUTPUTS</span></span>
 
-### <span data-ttu-id="9b656-136">Microsoft. Azure. Commands. NotificationHubs. Models. NamespaceAttributes</span><span class="sxs-lookup"><span data-stu-id="9b656-136">Microsoft.Azure.Commands.NotificationHubs.Models.NamespaceAttributes</span></span>
+### <span data-ttu-id="eef65-136">Microsoft.Azure.Commands.NotificationHubs.Models.NamespaceAttributes</span><span class="sxs-lookup"><span data-stu-id="eef65-136">Microsoft.Azure.Commands.NotificationHubs.Models.NamespaceAttributes</span></span>
 
-## <span data-ttu-id="9b656-137">Пуск</span><span class="sxs-lookup"><span data-stu-id="9b656-137">NOTES</span></span>
+## <span data-ttu-id="eef65-137">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="eef65-137">NOTES</span></span>
 
-## <span data-ttu-id="9b656-138">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="9b656-138">RELATED LINKS</span></span>
+## <span data-ttu-id="eef65-138">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="eef65-138">RELATED LINKS</span></span>
 
-[<span data-ttu-id="9b656-139">Get-AzNotificationHubsNamespaceAuthorizationRules</span><span class="sxs-lookup"><span data-stu-id="9b656-139">Get-AzNotificationHubsNamespaceAuthorizationRules</span></span>](./Get-AzNotificationHubsNamespaceAuthorizationRules.md)
 
-[<span data-ttu-id="9b656-140">New-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="9b656-140">New-AzNotificationHubsNamespace</span></span>](./New-AzNotificationHubsNamespace.md)
+[<span data-ttu-id="eef65-139">New-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="eef65-139">New-AzNotificationHubsNamespace</span></span>](./New-AzNotificationHubsNamespace.md)
 
-[<span data-ttu-id="9b656-141">Remove-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="9b656-141">Remove-AzNotificationHubsNamespace</span></span>](./Remove-AzNotificationHubsNamespace.md)
+[<span data-ttu-id="eef65-140">Remove-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="eef65-140">Remove-AzNotificationHubsNamespace</span></span>](./Remove-AzNotificationHubsNamespace.md)
 
-[<span data-ttu-id="9b656-142">Set-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="9b656-142">Set-AzNotificationHubsNamespace</span></span>](./Set-AzNotificationHubsNamespace.md)
+[<span data-ttu-id="eef65-141">Set-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="eef65-141">Set-AzNotificationHubsNamespace</span></span>](./Set-AzNotificationHubsNamespace.md)
 
 
