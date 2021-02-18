@@ -6,40 +6,40 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
-ms.openlocfilehash: afa217565dc90bed1f047bc18b9407141b98dd0c
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 4017d9eba94f82b235b5016145ee0692ff56892c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93902929"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410775"
 ---
-# <span data-ttu-id="4371f-101">Get-AzExpressRouteServiceProvider</span><span class="sxs-lookup"><span data-stu-id="4371f-101">Get-AzExpressRouteServiceProvider</span></span>
+# <span data-ttu-id="ffb8e-101">Get-AzExpressRouteServiceProvider</span><span class="sxs-lookup"><span data-stu-id="ffb8e-101">Get-AzExpressRouteServiceProvider</span></span>
 
-## <span data-ttu-id="4371f-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="4371f-102">SYNOPSIS</span></span>
-<span data-ttu-id="4371f-103">Получает список поставщиков услуг ExpressRoute и их атрибутов.</span><span class="sxs-lookup"><span data-stu-id="4371f-103">Gets a list ExpressRoute service providers and their attributes.</span></span>
+## <span data-ttu-id="ffb8e-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="ffb8e-102">SYNOPSIS</span></span>
+<span data-ttu-id="ffb8e-103">Список поставщиков услуг ExpressRoute и их атрибутов.</span><span class="sxs-lookup"><span data-stu-id="ffb8e-103">Gets a list ExpressRoute service providers and their attributes.</span></span>
 
-## <span data-ttu-id="4371f-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="4371f-104">SYNTAX</span></span>
+## <span data-ttu-id="ffb8e-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="ffb8e-104">SYNTAX</span></span>
 
 ```
 Get-AzExpressRouteServiceProvider [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="4371f-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="4371f-105">DESCRIPTION</span></span>
-<span data-ttu-id="4371f-106">Командлет **Get-AzExpressRouteServiceProvider** извлекает список поставщиков служб ExpressRoute и их атрибуты.</span><span class="sxs-lookup"><span data-stu-id="4371f-106">The **Get-AzExpressRouteServiceProvider** cmdlet retrieves a list ExpressRoute service providers and their attributes.</span></span> <span data-ttu-id="4371f-107">Атрибут: расположение и параметры пропускной способности.</span><span class="sxs-lookup"><span data-stu-id="4371f-107">Attribute include location and bandwidth options.</span></span>
+## <span data-ttu-id="ffb8e-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="ffb8e-105">DESCRIPTION</span></span>
+<span data-ttu-id="ffb8e-106">Для получения списка поставщиков услуг ExpressRoute и их атрибутов извлекается **cmdlet Get-AzExpressRouteServiceProvider.**</span><span class="sxs-lookup"><span data-stu-id="ffb8e-106">The **Get-AzExpressRouteServiceProvider** cmdlet retrieves a list ExpressRoute service providers and their attributes.</span></span> <span data-ttu-id="ffb8e-107">Атрибут включает параметры расположения и пропускной способности.</span><span class="sxs-lookup"><span data-stu-id="ffb8e-107">Attribute include location and bandwidth options.</span></span>
 
-## <span data-ttu-id="4371f-108">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="4371f-108">EXAMPLES</span></span>
+## <span data-ttu-id="ffb8e-108">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="ffb8e-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="4371f-109">Пример 1: получение списка поставщика услуг с разположениями в «Silicon впадина»</span><span class="sxs-lookup"><span data-stu-id="4371f-109">Example 1: Get a list of service provider with locations in "Silicon Valley"</span></span>
+### <span data-ttu-id="ffb8e-109">Пример 1. Получить список поставщиков услуг с расположениями в "Кремниевой долине"</span><span class="sxs-lookup"><span data-stu-id="ffb8e-109">Example 1: Get a list of service provider with locations in "Silicon Valley"</span></span>
 ```
 Get-AzExpressRouteServiceProvider |
    Where-Object PeeringLocations -Contains "Silicon Valley" |
    Select-Object Name
 ```
 
-## <span data-ttu-id="4371f-110">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="4371f-110">PARAMETERS</span></span>
+## <span data-ttu-id="ffb8e-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="ffb8e-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="4371f-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="4371f-111">-DefaultProfile</span></span>
-<span data-ttu-id="4371f-112">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="4371f-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="ffb8e-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ffb8e-111">-DefaultProfile</span></span>
+<span data-ttu-id="ffb8e-112">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="ffb8e-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -53,25 +53,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4371f-113">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4371f-113">CommonParameters</span></span>
-<span data-ttu-id="4371f-114">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="4371f-114">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4371f-115">Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="4371f-115">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="ffb8e-113">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ffb8e-113">CommonParameters</span></span>
+<span data-ttu-id="ffb8e-114">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ffb8e-114">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ffb8e-115">Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="ffb8e-115">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="4371f-116">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="4371f-116">INPUTS</span></span>
+## <span data-ttu-id="ffb8e-116">INPUTS</span><span class="sxs-lookup"><span data-stu-id="ffb8e-116">INPUTS</span></span>
 
-### <span data-ttu-id="4371f-117">Ничего</span><span class="sxs-lookup"><span data-stu-id="4371f-117">None</span></span>
+### <span data-ttu-id="ffb8e-117">Нет</span><span class="sxs-lookup"><span data-stu-id="ffb8e-117">None</span></span>
 
-## <span data-ttu-id="4371f-118">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="4371f-118">OUTPUTS</span></span>
+## <span data-ttu-id="ffb8e-118">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="ffb8e-118">OUTPUTS</span></span>
 
-### <span data-ttu-id="4371f-119">Microsoft. Azure. Commands. Network. Models. PSExpressRouteServiceProvider</span><span class="sxs-lookup"><span data-stu-id="4371f-119">Microsoft.Azure.Commands.Network.Models.PSExpressRouteServiceProvider</span></span>
+### <span data-ttu-id="ffb8e-119">Microsoft.Azure.Commands.Network.Models.PSExpressRouteServiceProvider</span><span class="sxs-lookup"><span data-stu-id="ffb8e-119">Microsoft.Azure.Commands.Network.Models.PSExpressRouteServiceProvider</span></span>
 
-## <span data-ttu-id="4371f-120">Пуск</span><span class="sxs-lookup"><span data-stu-id="4371f-120">NOTES</span></span>
+## <span data-ttu-id="ffb8e-120">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="ffb8e-120">NOTES</span></span>
 
-## <span data-ttu-id="4371f-121">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="4371f-121">RELATED LINKS</span></span>
+## <span data-ttu-id="ffb8e-121">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="ffb8e-121">RELATED LINKS</span></span>
 
-[<span data-ttu-id="4371f-122">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="4371f-122">Get-AzExpressRouteCircuitARPTable</span></span>](Get-AzExpressRouteCircuitARPTable.md)
+[<span data-ttu-id="ffb8e-122">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="ffb8e-122">Get-AzExpressRouteCircuitARPTable</span></span>](Get-AzExpressRouteCircuitARPTable.md)
 
-[<span data-ttu-id="4371f-123">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="4371f-123">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
+[<span data-ttu-id="ffb8e-123">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="ffb8e-123">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
 
-[<span data-ttu-id="4371f-124">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="4371f-124">Get-AzExpressRouteCircuitRouteTableSummary</span></span>](Get-AzExpressRouteCircuitRouteTableSummary.md)
+[<span data-ttu-id="ffb8e-124">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="ffb8e-124">Get-AzExpressRouteCircuitRouteTableSummary</span></span>](Get-AzExpressRouteCircuitRouteTableSummary.md)
 
-[<span data-ttu-id="4371f-125">Get-AzExpressRouteCircuitStats</span><span class="sxs-lookup"><span data-stu-id="4371f-125">Get-AzExpressRouteCircuitStats</span></span>](Get-AzExpressRouteCircuitStats.md)
+[<span data-ttu-id="ffb8e-125">Get-AzExpressRouteCircuitStat</span><span class="sxs-lookup"><span data-stu-id="ffb8e-125">Get-AzExpressRouteCircuitStat</span></span>](Get-AzExpressRouteCircuitStat.md)
