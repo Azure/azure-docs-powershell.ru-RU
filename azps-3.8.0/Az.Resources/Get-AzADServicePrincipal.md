@@ -6,111 +6,111 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADServicePrincipal.md
-ms.openlocfilehash: c51740ef111c0efe2f05c71d55ab5d3f076ac9d2
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 45f355b0317d8db8f9f24b40d5161e38888c4bb3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94066326"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405590"
 ---
-# <span data-ttu-id="8f8fc-101">Get-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="8f8fc-101">Get-AzADServicePrincipal</span></span>
+# <span data-ttu-id="e793d-101">Get-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="e793d-101">Get-AzADServicePrincipal</span></span>
 
-## <span data-ttu-id="8f8fc-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="8f8fc-102">SYNOPSIS</span></span>
-<span data-ttu-id="8f8fc-103">Фильтрует субъектов-служб Active Directory.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-103">Filters active directory service principals.</span></span>
+## <span data-ttu-id="e793d-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="e793d-102">SYNOPSIS</span></span>
+<span data-ttu-id="e793d-103">Фильтрует активных руководителей службы каталогов.</span><span class="sxs-lookup"><span data-stu-id="e793d-103">Filters active directory service principals.</span></span>
 
-## <span data-ttu-id="8f8fc-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="8f8fc-104">SYNTAX</span></span>
+## <span data-ttu-id="e793d-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="e793d-104">SYNTAX</span></span>
 
-### <span data-ttu-id="8f8fc-105">EmptyParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="8f8fc-105">EmptyParameterSet (Default)</span></span>
+### <span data-ttu-id="e793d-105">EmptyParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="e793d-105">EmptyParameterSet (Default)</span></span>
 ```
 Get-AzADServicePrincipal [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="8f8fc-106">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="8f8fc-106">SearchStringParameterSet</span></span>
+### <span data-ttu-id="e793d-106">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="e793d-106">SearchStringParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -DisplayNameBeginsWith <String> [-DefaultProfile <IAzureContextContainer>]
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="8f8fc-107">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="8f8fc-107">DisplayNameParameterSet</span></span>
+### <span data-ttu-id="e793d-107">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="e793d-107">DisplayNameParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -DisplayName <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="8f8fc-108">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="8f8fc-108">ObjectIdParameterSet</span></span>
+### <span data-ttu-id="e793d-108">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="e793d-108">ObjectIdParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -ObjectId <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="8f8fc-109">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="8f8fc-109">ApplicationIdParameterSet</span></span>
+### <span data-ttu-id="e793d-109">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="e793d-109">ApplicationIdParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -ApplicationId <Guid> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="8f8fc-110">ApplicationObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="8f8fc-110">ApplicationObjectParameterSet</span></span>
+### <span data-ttu-id="e793d-110">ApplicationObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="e793d-110">ApplicationObjectParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -ApplicationObject <PSADApplication> [-DefaultProfile <IAzureContextContainer>]
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="8f8fc-111">SPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="8f8fc-111">SPNParameterSet</span></span>
+### <span data-ttu-id="e793d-111">SPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="e793d-111">SPNParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -ServicePrincipalName <String> [-DefaultProfile <IAzureContextContainer>]
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="8f8fc-112">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="8f8fc-112">DESCRIPTION</span></span>
-<span data-ttu-id="8f8fc-113">Фильтрует субъектов-служб Active Directory.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-113">Filters active directory service principals.</span></span>
+## <span data-ttu-id="e793d-112">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="e793d-112">DESCRIPTION</span></span>
+<span data-ttu-id="e793d-113">Фильтрует активных руководителей службы каталогов.</span><span class="sxs-lookup"><span data-stu-id="e793d-113">Filters active directory service principals.</span></span>
 
-## <span data-ttu-id="8f8fc-114">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="8f8fc-114">EXAMPLES</span></span>
+## <span data-ttu-id="e793d-114">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="e793d-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="8f8fc-115">Пример 1: список участников службы AD</span><span class="sxs-lookup"><span data-stu-id="8f8fc-115">Example 1 - List AD service principals</span></span>
+### <span data-ttu-id="e793d-115">Пример 1. Основные принципы работы службы List AD</span><span class="sxs-lookup"><span data-stu-id="e793d-115">Example 1 - List AD service principals</span></span>
 
 ```
 PS C:\> Get-AzADServicePrincipal
 ```
 
-<span data-ttu-id="8f8fc-116">Выводит список всех участников службы AD в клиенте.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-116">Lists all AD service principals in a tenant.</span></span>
+<span data-ttu-id="e793d-116">Список всех основных лиц служб AD в клиенте.</span><span class="sxs-lookup"><span data-stu-id="e793d-116">Lists all AD service principals in a tenant.</span></span>
 
-### <span data-ttu-id="8f8fc-117">Пример 2: список участников AD-службы с помощью разбиения по страницам</span><span class="sxs-lookup"><span data-stu-id="8f8fc-117">Example 2 - List AD service principals using paging</span></span>
+### <span data-ttu-id="e793d-117">Пример 2. Основные принципы работы службы List AD с помощью разведки</span><span class="sxs-lookup"><span data-stu-id="e793d-117">Example 2 - List AD service principals using paging</span></span>
 
 ```
 PS C:\> Get-AzADServicePrincipal -First 100
 ```
 
-<span data-ttu-id="8f8fc-118">В этом списке указаны первые участники службы AD 100 в клиенте.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-118">Lists the first 100 AD service principals in a tenant.</span></span>
+<span data-ttu-id="e793d-118">Список первых 100 основных лиц служб AD в клиенте.</span><span class="sxs-lookup"><span data-stu-id="e793d-118">Lists the first 100 AD service principals in a tenant.</span></span>
 
-### <span data-ttu-id="8f8fc-119">Пример 3: список участников службы по имени SPN</span><span class="sxs-lookup"><span data-stu-id="8f8fc-119">Example 3 - List service principals by SPN</span></span>
+### <span data-ttu-id="e793d-119">Пример 3. Основные принципы обслуживания списков по spn</span><span class="sxs-lookup"><span data-stu-id="e793d-119">Example 3 - List service principals by SPN</span></span>
 
 ```
 PS C:\> Get-AzADServicePrincipal -ServicePrincipalName 36f81fc3-b00f-48cd-8218-3879f51ff39f
 ```
 
-<span data-ttu-id="8f8fc-120">Список участников-служб с именем участника-службы "36f81fc3-b00f-48cd-8218-3879f51ff39f".</span><span class="sxs-lookup"><span data-stu-id="8f8fc-120">Lists service principals with the SPN '36f81fc3-b00f-48cd-8218-3879f51ff39f'.</span></span>
+<span data-ttu-id="e793d-120">Список основных служб с spN "36f81fc3-b00f-48cd-8218-3879f51ff39f".</span><span class="sxs-lookup"><span data-stu-id="e793d-120">Lists service principals with the SPN '36f81fc3-b00f-48cd-8218-3879f51ff39f'.</span></span>
 
-### <span data-ttu-id="8f8fc-121">Пример 4: список субъектов-служб по строке поиска</span><span class="sxs-lookup"><span data-stu-id="8f8fc-121">Example 4 - List service principals by search string</span></span>
+### <span data-ttu-id="e793d-121">Пример 4. Список глав служб по строке поиска</span><span class="sxs-lookup"><span data-stu-id="e793d-121">Example 4 - List service principals by search string</span></span>
 
 ```
 PS C:\> Get-AzADServicePrincipal -SearchString "Web"
 ```
 
-<span data-ttu-id="8f8fc-122">Список всех участников службы AD, отображаемое имя которых начинается с "веб".</span><span class="sxs-lookup"><span data-stu-id="8f8fc-122">Lists all AD service principals whose display name start with "Web".</span></span>
+<span data-ttu-id="e793d-122">В этой списке перечислены все основные пользователи службЫ AD, отображаемая имя которых начинается с веб-сайта.</span><span class="sxs-lookup"><span data-stu-id="e793d-122">Lists all AD service principals whose display name start with "Web".</span></span>
 
-### <span data-ttu-id="8f8fc-123">Пример 5: перечисление участников службы по конвейеру</span><span class="sxs-lookup"><span data-stu-id="8f8fc-123">Example 5 - List service principals by piping</span></span>
+### <span data-ttu-id="e793d-123">Пример 5. Основные стороны служб списка путем перена доверений</span><span class="sxs-lookup"><span data-stu-id="e793d-123">Example 5 - List service principals by piping</span></span>
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69 | Get-AzADServicePrincipal
 ```
 
-<span data-ttu-id="8f8fc-124">Получает РЕКЛАМное приложение с идентификатором объекта "39e64ec6-569b-4030-8e1c-c3c519a05d69" и преобразует его в командлет Get-AzADServicePrincipal, чтобы получить список всех участников-служб для этого приложения.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-124">Gets the AD application with object id '39e64ec6-569b-4030-8e1c-c3c519a05d69' and pipes it to the Get-AzADServicePrincipal cmdlet to list all service principals for that application.</span></span>
+<span data-ttu-id="e793d-124">Получает приложение AD с ид объекта 39e64ec6-569b-4030-8e1c-c3c519a05d69' и передает его в Get-AzADServicePrincipal-Get-AzADServicePrincipal, чтобы перечислить всех участников обслуживания для этого приложения.</span><span class="sxs-lookup"><span data-stu-id="e793d-124">Gets the AD application with object id '39e64ec6-569b-4030-8e1c-c3c519a05d69' and pipes it to the Get-AzADServicePrincipal cmdlet to list all service principals for that application.</span></span>
 
-## <span data-ttu-id="8f8fc-125">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="8f8fc-125">PARAMETERS</span></span>
+## <span data-ttu-id="e793d-125">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="e793d-125">PARAMETERS</span></span>
 
-### <span data-ttu-id="8f8fc-126">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="8f8fc-126">-ApplicationId</span></span>
-<span data-ttu-id="8f8fc-127">Идентификатор приложения субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-127">The service principal application id.</span></span>
+### <span data-ttu-id="e793d-126">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="e793d-126">-ApplicationId</span></span>
+<span data-ttu-id="e793d-127">ИД приложения-службы.</span><span class="sxs-lookup"><span data-stu-id="e793d-127">The service principal application id.</span></span>
 
 ```yaml
 Type: System.Guid
@@ -124,8 +124,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8f8fc-128">-ApplicationObject</span><span class="sxs-lookup"><span data-stu-id="8f8fc-128">-ApplicationObject</span></span>
-<span data-ttu-id="8f8fc-129">Объект приложения, для которого извлекается субъект-служба.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-129">The application object whose service principal is being retrieved.</span></span>
+### <span data-ttu-id="e793d-128">-ApplicationObject</span><span class="sxs-lookup"><span data-stu-id="e793d-128">-ApplicationObject</span></span>
+<span data-ttu-id="e793d-129">Объект приложения, для которого извлекется основной-сервис.</span><span class="sxs-lookup"><span data-stu-id="e793d-129">The application object whose service principal is being retrieved.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -139,8 +139,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8f8fc-130">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="8f8fc-130">-DefaultProfile</span></span>
-<span data-ttu-id="8f8fc-131">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="8f8fc-131">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="e793d-130">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e793d-130">-DefaultProfile</span></span>
+<span data-ttu-id="e793d-131">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="e793d-131">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -154,8 +154,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8f8fc-132">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="8f8fc-132">-DisplayName</span></span>
-<span data-ttu-id="8f8fc-133">Отображаемое имя субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-133">The service principal display name.</span></span>
+### <span data-ttu-id="e793d-132">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="e793d-132">-DisplayName</span></span>
+<span data-ttu-id="e793d-133">Отображаемая имя директора-службы.</span><span class="sxs-lookup"><span data-stu-id="e793d-133">The service principal display name.</span></span>
 
 ```yaml
 Type: System.String
@@ -169,8 +169,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8f8fc-134">-DisplayNameBeginsWith</span><span class="sxs-lookup"><span data-stu-id="8f8fc-134">-DisplayNameBeginsWith</span></span>
-<span data-ttu-id="8f8fc-135">Строка поиска субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-135">The service principal search string.</span></span>
+### <span data-ttu-id="e793d-134">-DisplayNameBeginsWith</span><span class="sxs-lookup"><span data-stu-id="e793d-134">-DisplayNameBeginsWith</span></span>
+<span data-ttu-id="e793d-135">Строка поиска с основной строкой запроса на обслуживание.</span><span class="sxs-lookup"><span data-stu-id="e793d-135">The service principal search string.</span></span>
 
 ```yaml
 Type: System.String
@@ -184,8 +184,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8f8fc-136">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="8f8fc-136">-ObjectId</span></span>
-<span data-ttu-id="8f8fc-137">Идентификатор объекта субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-137">Object id of the service principal.</span></span>
+### <span data-ttu-id="e793d-136">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="e793d-136">-ObjectId</span></span>
+<span data-ttu-id="e793d-137">Object id of the service principal.</span><span class="sxs-lookup"><span data-stu-id="e793d-137">Object id of the service principal.</span></span>
 
 ```yaml
 Type: System.String
@@ -199,8 +199,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8f8fc-138">-Намерено</span><span class="sxs-lookup"><span data-stu-id="8f8fc-138">-ServicePrincipalName</span></span>
-<span data-ttu-id="8f8fc-139">SPN службы.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-139">SPN of the service.</span></span>
+### <span data-ttu-id="e793d-138">-ServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="e793d-138">-ServicePrincipalName</span></span>
+<span data-ttu-id="e793d-139">SpN службы.</span><span class="sxs-lookup"><span data-stu-id="e793d-139">SPN of the service.</span></span>
 
 ```yaml
 Type: System.String
@@ -214,8 +214,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8f8fc-140">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="8f8fc-140">-IncludeTotalCount</span></span>
-<span data-ttu-id="8f8fc-141">Показывает количество объектов в наборе данных.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-141">Reports the number of objects in the data set.</span></span> <span data-ttu-id="8f8fc-142">В настоящее время этот параметр не выполняет никаких действий.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-142">Currently, this parameter does nothing.</span></span>
+### <span data-ttu-id="e793d-140">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="e793d-140">-IncludeTotalCount</span></span>
+<span data-ttu-id="e793d-141">Отчет о количестве объектов в наборе данных.</span><span class="sxs-lookup"><span data-stu-id="e793d-141">Reports the number of objects in the data set.</span></span> <span data-ttu-id="e793d-142">В настоящее время этот параметр не имеет никакого отношения.</span><span class="sxs-lookup"><span data-stu-id="e793d-142">Currently, this parameter does nothing.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -229,8 +229,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8f8fc-143">-Skip</span><span class="sxs-lookup"><span data-stu-id="8f8fc-143">-Skip</span></span>
-<span data-ttu-id="8f8fc-144">Пропускает первые N объектов, а затем возвращает оставшиеся объекты.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-144">Ignores the first N objects and then gets the remaining objects.</span></span>
+### <span data-ttu-id="e793d-143">-Skip</span><span class="sxs-lookup"><span data-stu-id="e793d-143">-Skip</span></span>
+<span data-ttu-id="e793d-144">Игнорирует первые N объектов, а затем возвращает оставшиеся объекты.</span><span class="sxs-lookup"><span data-stu-id="e793d-144">Ignores the first N objects and then gets the remaining objects.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -244,8 +244,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8f8fc-145">-First</span><span class="sxs-lookup"><span data-stu-id="8f8fc-145">-First</span></span>
-<span data-ttu-id="8f8fc-146">Максимальное количество возвращаемых объектов.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-146">The maximum number of objects to return.</span></span>
+### <span data-ttu-id="e793d-145">-First</span><span class="sxs-lookup"><span data-stu-id="e793d-145">-First</span></span>
+<span data-ttu-id="e793d-146">Максимальное количество возвращаемых объектов.</span><span class="sxs-lookup"><span data-stu-id="e793d-146">The maximum number of objects to return.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -259,32 +259,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8f8fc-147">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8f8fc-147">CommonParameters</span></span>
-<span data-ttu-id="8f8fc-148">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="8f8fc-148">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8f8fc-149">Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="8f8fc-149">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="e793d-147">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e793d-147">CommonParameters</span></span>
+<span data-ttu-id="e793d-148">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e793d-148">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e793d-149">Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="e793d-149">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="8f8fc-150">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="8f8fc-150">INPUTS</span></span>
+## <span data-ttu-id="e793d-150">INPUTS</span><span class="sxs-lookup"><span data-stu-id="e793d-150">INPUTS</span></span>
 
-### <span data-ttu-id="8f8fc-151">System. String</span><span class="sxs-lookup"><span data-stu-id="8f8fc-151">System.String</span></span>
+### <span data-ttu-id="e793d-151">System.String</span><span class="sxs-lookup"><span data-stu-id="e793d-151">System.String</span></span>
 
-### <span data-ttu-id="8f8fc-152">System. GUID</span><span class="sxs-lookup"><span data-stu-id="8f8fc-152">System.Guid</span></span>
+### <span data-ttu-id="e793d-152">System.Guid</span><span class="sxs-lookup"><span data-stu-id="e793d-152">System.Guid</span></span>
 
-### <span data-ttu-id="8f8fc-153">Microsoft. Azure. Commands. ActiveDirectory. PSADApplication</span><span class="sxs-lookup"><span data-stu-id="8f8fc-153">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
+### <span data-ttu-id="e793d-153">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span><span class="sxs-lookup"><span data-stu-id="e793d-153">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
 
-## <span data-ttu-id="8f8fc-154">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="8f8fc-154">OUTPUTS</span></span>
+## <span data-ttu-id="e793d-154">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="e793d-154">OUTPUTS</span></span>
 
-### <span data-ttu-id="8f8fc-155">Microsoft. Azure. Commands. ActiveDirectory. PSADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="8f8fc-155">Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal</span></span>
+### <span data-ttu-id="e793d-155">Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="e793d-155">Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal</span></span>
 
-## <span data-ttu-id="8f8fc-156">Пуск</span><span class="sxs-lookup"><span data-stu-id="8f8fc-156">NOTES</span></span>
+## <span data-ttu-id="e793d-156">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="e793d-156">NOTES</span></span>
 
-## <span data-ttu-id="8f8fc-157">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="8f8fc-157">RELATED LINKS</span></span>
+## <span data-ttu-id="e793d-157">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="e793d-157">RELATED LINKS</span></span>
 
-[<span data-ttu-id="8f8fc-158">New-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="8f8fc-158">New-AzADServicePrincipal</span></span>](./New-AzADServicePrincipal.md)
+[<span data-ttu-id="e793d-158">New-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="e793d-158">New-AzADServicePrincipal</span></span>](./New-AzADServicePrincipal.md)
 
-[<span data-ttu-id="8f8fc-159">Set-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="8f8fc-159">Set-AzADServicePrincipal</span></span>](./Set-AzADServicePrincipal.md)
 
-[<span data-ttu-id="8f8fc-160">Remove-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="8f8fc-160">Remove-AzADServicePrincipal</span></span>](./Remove-AzADServicePrincipal.md)
+[<span data-ttu-id="e793d-159">Remove-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="e793d-159">Remove-AzADServicePrincipal</span></span>](./Remove-AzADServicePrincipal.md)
 
-[<span data-ttu-id="8f8fc-161">Get-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="8f8fc-161">Get-AzADApplication</span></span>](./Get-AzADApplication.md)
+[<span data-ttu-id="e793d-160">Get-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="e793d-160">Get-AzADApplication</span></span>](./Get-AzADApplication.md)
 
-[<span data-ttu-id="8f8fc-162">Get-AzADSpCredential</span><span class="sxs-lookup"><span data-stu-id="8f8fc-162">Get-AzADSpCredential</span></span>](./Get-AzADSpCredential.md)
+[<span data-ttu-id="e793d-161">Get-AzADSpCredential</span><span class="sxs-lookup"><span data-stu-id="e793d-161">Get-AzADSpCredential</span></span>](./Get-AzADSpCredential.md)
 

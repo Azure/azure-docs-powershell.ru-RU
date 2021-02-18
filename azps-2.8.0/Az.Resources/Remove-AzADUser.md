@@ -6,83 +6,83 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADUser.md
-ms.openlocfilehash: 2dc9a0d3d41ca1bccb131e92cf514fd2f814943b
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8799450cc73784b45804ea1fa26785716a895bed
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93905549"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405641"
 ---
-# <span data-ttu-id="38877-101">Remove-AzADUser</span><span class="sxs-lookup"><span data-stu-id="38877-101">Remove-AzADUser</span></span>
+# <span data-ttu-id="7b944-101">Remove-AzADUser</span><span class="sxs-lookup"><span data-stu-id="7b944-101">Remove-AzADUser</span></span>
 
-## <span data-ttu-id="38877-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="38877-102">SYNOPSIS</span></span>
-<span data-ttu-id="38877-103">Удаляет пользователя Active Directory.</span><span class="sxs-lookup"><span data-stu-id="38877-103">Deletes an active directory user.</span></span>
+## <span data-ttu-id="7b944-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="7b944-102">SYNOPSIS</span></span>
+<span data-ttu-id="7b944-103">Удаляет активного пользователя каталога.</span><span class="sxs-lookup"><span data-stu-id="7b944-103">Deletes an active directory user.</span></span>
 
-## <span data-ttu-id="38877-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="38877-104">SYNTAX</span></span>
+## <span data-ttu-id="7b944-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="7b944-104">SYNTAX</span></span>
 
-### <span data-ttu-id="38877-105">UPNOrObjectIdParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="38877-105">UPNOrObjectIdParameterSet (Default)</span></span>
+### <span data-ttu-id="7b944-105">UPNOrObjectIdParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="7b944-105">UPNOrObjectIdParameterSet (Default)</span></span>
 ```
 Remove-AzADUser -UPNOrObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="38877-106">UPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="38877-106">UPNParameterSet</span></span>
+### <span data-ttu-id="7b944-106">UPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="7b944-106">UPNParameterSet</span></span>
 ```
 Remove-AzADUser -UserPrincipalName <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="38877-107">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="38877-107">ObjectIdParameterSet</span></span>
+### <span data-ttu-id="7b944-107">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="7b944-107">ObjectIdParameterSet</span></span>
 ```
 Remove-AzADUser -ObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="38877-108">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="38877-108">DisplayNameParameterSet</span></span>
+### <span data-ttu-id="7b944-108">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="7b944-108">DisplayNameParameterSet</span></span>
 ```
 Remove-AzADUser -DisplayName <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="38877-109">InputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="38877-109">InputObjectParameterSet</span></span>
+### <span data-ttu-id="7b944-109">InputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="7b944-109">InputObjectParameterSet</span></span>
 ```
 Remove-AzADUser -InputObject <PSADUser> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="38877-110">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="38877-110">DESCRIPTION</span></span>
-<span data-ttu-id="38877-111">Удаление пользователя Active Directory (рабочей или учебной учетной записи, известной как "org-ID").</span><span class="sxs-lookup"><span data-stu-id="38877-111">Deletes an active directory user (work/school account also popularly known as org-id).</span></span>
+## <span data-ttu-id="7b944-110">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="7b944-110">DESCRIPTION</span></span>
+<span data-ttu-id="7b944-111">Удаляет пользователя Active Directory (рабочий или учебный аккаунт, также известный как ид организации).</span><span class="sxs-lookup"><span data-stu-id="7b944-111">Deletes an active directory user (work/school account also popularly known as org-id).</span></span>
 
-## <span data-ttu-id="38877-112">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="38877-112">EXAMPLES</span></span>
+## <span data-ttu-id="7b944-112">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="7b944-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="38877-113">Пример 1: Удаление пользователя по имени субъекта-пользователя</span><span class="sxs-lookup"><span data-stu-id="38877-113">Example 1 - Remove a user by user principal name</span></span>
+### <span data-ttu-id="7b944-113">Пример 1. Удаление пользователя по имени пользователя</span><span class="sxs-lookup"><span data-stu-id="7b944-113">Example 1 - Remove a user by user principal name</span></span>
 
 ```
 PS C:\> Remove-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-<span data-ttu-id="38877-114">Удаляет пользователя с именем участника-пользователя " foo@domain.com " из клиента.</span><span class="sxs-lookup"><span data-stu-id="38877-114">Removes the user with user principal name "foo@domain.com" from the tenant.</span></span>
+<span data-ttu-id="7b944-114">Удаляет пользователя с основным именем пользователя " foo@domain.com из клиента.</span><span class="sxs-lookup"><span data-stu-id="7b944-114">Removes the user with user principal name "foo@domain.com" from the tenant.</span></span>
 
-### <span data-ttu-id="38877-115">Пример 2: Удаление пользователя по идентификатору объекта</span><span class="sxs-lookup"><span data-stu-id="38877-115">Example 2 - Remove a user by object id</span></span>
+### <span data-ttu-id="7b944-115">Пример 2. Удаление пользователя по ид объекта</span><span class="sxs-lookup"><span data-stu-id="7b944-115">Example 2 - Remove a user by object id</span></span>
 
 ```
 PS C:\> Remove-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69
 ```
 
-<span data-ttu-id="38877-116">Удаляет пользователя с идентификатором объекта "7a9582cf-88c4-4319-842b-7a5d60967a69" из клиента.</span><span class="sxs-lookup"><span data-stu-id="38877-116">Removes the user with object id '7a9582cf-88c4-4319-842b-7a5d60967a69' from the tenant.</span></span>
+<span data-ttu-id="7b944-116">Удаляет пользователя с ид объекта '7a9582cf-88c4-4319-842b-7a5d60967a69' из клиента.</span><span class="sxs-lookup"><span data-stu-id="7b944-116">Removes the user with object id '7a9582cf-88c4-4319-842b-7a5d60967a69' from the tenant.</span></span>
 
-### <span data-ttu-id="38877-117">Пример 3. Удаление пользователя с помощью трубопроводов</span><span class="sxs-lookup"><span data-stu-id="38877-117">Example 3 - Remove a user by piping</span></span>
+### <span data-ttu-id="7b944-117">Пример 3. Удаление пользователя с помощью piping</span><span class="sxs-lookup"><span data-stu-id="7b944-117">Example 3 - Remove a user by piping</span></span>
 
 ```
 PS C:\> Get-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69 | Remove-AzADUser
 ```
 
-<span data-ttu-id="38877-118">Возвращает пользователя с идентификатором объекта "7a9582cf-88c4-4319-842b-7a5d60967a69" и каналами, которые должны быть удалены из клиента с помощью командлета Remove-AzADUser.</span><span class="sxs-lookup"><span data-stu-id="38877-118">Gets the user with object id '7a9582cf-88c4-4319-842b-7a5d60967a69' and pipes that to the Remove-AzADUser cmdlet to remove the user from the tenant.</span></span>
+<span data-ttu-id="7b944-118">Возвращает пользователя с объектным ид '7a9582cf-88c4-4319-842b-7a5d60967a69' и каналами, которые можно Remove-AzADUser, чтобы удалить пользователя из клиента.</span><span class="sxs-lookup"><span data-stu-id="7b944-118">Gets the user with object id '7a9582cf-88c4-4319-842b-7a5d60967a69' and pipes that to the Remove-AzADUser cmdlet to remove the user from the tenant.</span></span>
 
-## <span data-ttu-id="38877-119">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="38877-119">PARAMETERS</span></span>
+## <span data-ttu-id="7b944-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="7b944-119">PARAMETERS</span></span>
 
-### <span data-ttu-id="38877-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="38877-120">-DefaultProfile</span></span>
-<span data-ttu-id="38877-121">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="38877-121">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="7b944-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7b944-120">-DefaultProfile</span></span>
+<span data-ttu-id="7b944-121">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="7b944-121">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -96,8 +96,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="38877-122">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="38877-122">-DisplayName</span></span>
-<span data-ttu-id="38877-123">Отображаемое имя пользователя, который нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="38877-123">The display name of the user to be deleted.</span></span>
+### <span data-ttu-id="7b944-122">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="7b944-122">-DisplayName</span></span>
+<span data-ttu-id="7b944-123">Отображаемая имя удаляемого пользователя.</span><span class="sxs-lookup"><span data-stu-id="7b944-123">The display name of the user to be deleted.</span></span>
 
 ```yaml
 Type: System.String
@@ -111,8 +111,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="38877-124">-Force</span><span class="sxs-lookup"><span data-stu-id="38877-124">-Force</span></span>
-<span data-ttu-id="38877-125">Если задано, не запрашивает подтверждение удаления пользователя.</span><span class="sxs-lookup"><span data-stu-id="38877-125">If specified, doesn't ask for confirmation for deleting the user.</span></span>
+### <span data-ttu-id="7b944-124">-Force</span><span class="sxs-lookup"><span data-stu-id="7b944-124">-Force</span></span>
+<span data-ttu-id="7b944-125">При этом не запросить подтверждение удаления пользователя.</span><span class="sxs-lookup"><span data-stu-id="7b944-125">If specified, doesn't ask for confirmation for deleting the user.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -126,8 +126,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="38877-126">-InputObject</span><span class="sxs-lookup"><span data-stu-id="38877-126">-InputObject</span></span>
-<span data-ttu-id="38877-127">Объект пользователя, который нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="38877-127">The user object to be deleted.</span></span>
+### <span data-ttu-id="7b944-126">-InputObject</span><span class="sxs-lookup"><span data-stu-id="7b944-126">-InputObject</span></span>
+<span data-ttu-id="7b944-127">Удаляемый объект пользователя.</span><span class="sxs-lookup"><span data-stu-id="7b944-127">The user object to be deleted.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADUser
@@ -141,8 +141,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="38877-128">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="38877-128">-ObjectId</span></span>
-<span data-ttu-id="38877-129">Идентификатор объекта пользователя, который нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="38877-129">The object id of the user to be deleted.</span></span>
+### <span data-ttu-id="7b944-128">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="7b944-128">-ObjectId</span></span>
+<span data-ttu-id="7b944-129">ИД объекта пользователя, который нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="7b944-129">The object id of the user to be deleted.</span></span>
 
 ```yaml
 Type: System.String
@@ -156,8 +156,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="38877-130">-PassThru</span><span class="sxs-lookup"><span data-stu-id="38877-130">-PassThru</span></span>
-<span data-ttu-id="38877-131">Если указать это, будет возвращено значение истина, если команда была выполнена успешно.</span><span class="sxs-lookup"><span data-stu-id="38877-131">Specifying this will return true if the command was successful.</span></span>
+### <span data-ttu-id="7b944-130">-PassThru</span><span class="sxs-lookup"><span data-stu-id="7b944-130">-PassThru</span></span>
+<span data-ttu-id="7b944-131">Если эта команда была успешной, ее можно указать как истина.</span><span class="sxs-lookup"><span data-stu-id="7b944-131">Specifying this will return true if the command was successful.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -171,8 +171,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="38877-132">-UPNOrObjectId</span><span class="sxs-lookup"><span data-stu-id="38877-132">-UPNOrObjectId</span></span>
-<span data-ttu-id="38877-133">Имя субъекта-пользователя или ИД объекта пользователя, который нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="38877-133">The user principal name or the objectId of the user to be deleted.</span></span>
+### <span data-ttu-id="7b944-132">-UPNOrObjectId</span><span class="sxs-lookup"><span data-stu-id="7b944-132">-UPNOrObjectId</span></span>
+<span data-ttu-id="7b944-133">Имя пользователя или objectId удаляемого пользователя.</span><span class="sxs-lookup"><span data-stu-id="7b944-133">The user principal name or the objectId of the user to be deleted.</span></span>
 
 ```yaml
 Type: System.String
@@ -186,8 +186,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="38877-134">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="38877-134">-UserPrincipalName</span></span>
-<span data-ttu-id="38877-135">Имя субъекта-пользователя удаляемого пользователя.</span><span class="sxs-lookup"><span data-stu-id="38877-135">The user principal name of the user to be deleted.</span></span>
+### <span data-ttu-id="7b944-134">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="7b944-134">-UserPrincipalName</span></span>
+<span data-ttu-id="7b944-135">Имя пользователя, которого нужно удалить.</span><span class="sxs-lookup"><span data-stu-id="7b944-135">The user principal name of the user to be deleted.</span></span>
 
 ```yaml
 Type: System.String
@@ -201,8 +201,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="38877-136">-Confirm</span><span class="sxs-lookup"><span data-stu-id="38877-136">-Confirm</span></span>
-<span data-ttu-id="38877-137">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="38877-137">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="7b944-136">-Confirm</span><span class="sxs-lookup"><span data-stu-id="7b944-136">-Confirm</span></span>
+<span data-ttu-id="7b944-137">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="7b944-137">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -216,9 +216,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="38877-138">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="38877-138">-WhatIf</span></span>
-<span data-ttu-id="38877-139">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="38877-139">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="38877-140">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="38877-140">The cmdlet is not run.</span></span>
+### <span data-ttu-id="7b944-138">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="7b944-138">-WhatIf</span></span>
+<span data-ttu-id="7b944-139">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="7b944-139">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="7b944-140">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="7b944-140">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -232,26 +232,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="38877-141">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="38877-141">CommonParameters</span></span>
-<span data-ttu-id="38877-142">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="38877-142">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="38877-143">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="38877-143">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="7b944-141">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7b944-141">CommonParameters</span></span>
+<span data-ttu-id="7b944-142">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="7b944-142">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7b944-143">Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="7b944-143">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="38877-144">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="38877-144">INPUTS</span></span>
+## <span data-ttu-id="7b944-144">INPUTS</span><span class="sxs-lookup"><span data-stu-id="7b944-144">INPUTS</span></span>
 
-### <span data-ttu-id="38877-145">System. String</span><span class="sxs-lookup"><span data-stu-id="38877-145">System.String</span></span>
+### <span data-ttu-id="7b944-145">System.String</span><span class="sxs-lookup"><span data-stu-id="7b944-145">System.String</span></span>
 
-### <span data-ttu-id="38877-146">Microsoft. Azure. Commands. ActiveDirectory. PSADUser</span><span class="sxs-lookup"><span data-stu-id="38877-146">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span></span>
+### <span data-ttu-id="7b944-146">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span><span class="sxs-lookup"><span data-stu-id="7b944-146">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span></span>
 
-## <span data-ttu-id="38877-147">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="38877-147">OUTPUTS</span></span>
+## <span data-ttu-id="7b944-147">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="7b944-147">OUTPUTS</span></span>
 
-### <span data-ttu-id="38877-148">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="38877-148">System.Boolean</span></span>
+### <span data-ttu-id="7b944-148">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="7b944-148">System.Boolean</span></span>
 
-## <span data-ttu-id="38877-149">Пуск</span><span class="sxs-lookup"><span data-stu-id="38877-149">NOTES</span></span>
+## <span data-ttu-id="7b944-149">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="7b944-149">NOTES</span></span>
 
-## <span data-ttu-id="38877-150">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="38877-150">RELATED LINKS</span></span>
+## <span data-ttu-id="7b944-150">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="7b944-150">RELATED LINKS</span></span>
 
-[<span data-ttu-id="38877-151">New-AzADUser</span><span class="sxs-lookup"><span data-stu-id="38877-151">New-AzADUser</span></span>](./New-AzADUser.md)
+[<span data-ttu-id="7b944-151">New-AzADUser</span><span class="sxs-lookup"><span data-stu-id="7b944-151">New-AzADUser</span></span>](./New-AzADUser.md)
 
-[<span data-ttu-id="38877-152">Get-AzADUser</span><span class="sxs-lookup"><span data-stu-id="38877-152">Get-AzADUser</span></span>](./Get-AzADUser.md)
+[<span data-ttu-id="7b944-152">Get-AzADUser</span><span class="sxs-lookup"><span data-stu-id="7b944-152">Get-AzADUser</span></span>](./Get-AzADUser.md)
 
-[<span data-ttu-id="38877-153">Set-AzADUser</span><span class="sxs-lookup"><span data-stu-id="38877-153">Set-AzADUser</span></span>](./Set-AzADUser.md)
 

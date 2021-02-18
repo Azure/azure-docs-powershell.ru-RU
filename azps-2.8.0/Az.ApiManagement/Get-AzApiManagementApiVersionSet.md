@@ -5,40 +5,40 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
-ms.openlocfilehash: 4fefe6e7a763cdce60483342e8e8db880405e060
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 931c61c9a42b795a78ad17133c1b15ba126afa04
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93728124"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405437"
 ---
-# <span data-ttu-id="47d18-101">Get-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="47d18-101">Get-AzApiManagementApiVersionSet</span></span>
+# <span data-ttu-id="c636b-101">Get-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="c636b-101">Get-AzApiManagementApiVersionSet</span></span>
 
-## <span data-ttu-id="47d18-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="47d18-102">SYNOPSIS</span></span>
-<span data-ttu-id="47d18-103">Получение подробных сведений о наборах версий API</span><span class="sxs-lookup"><span data-stu-id="47d18-103">Get the details of the API Version Sets</span></span>
+## <span data-ttu-id="c636b-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="c636b-102">SYNOPSIS</span></span>
+<span data-ttu-id="c636b-103">Подробные сведения о наборах версий API</span><span class="sxs-lookup"><span data-stu-id="c636b-103">Get the details of the API Version Sets</span></span>
 
-## <span data-ttu-id="47d18-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="47d18-104">SYNTAX</span></span>
+## <span data-ttu-id="c636b-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="c636b-104">SYNTAX</span></span>
 
-### <span data-ttu-id="47d18-105">ContextParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="47d18-105">ContextParameterSet (Default)</span></span>
+### <span data-ttu-id="c636b-105">ContextParameterSet (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="c636b-105">ContextParameterSet (Default)</span></span>
 ```
 Get-AzApiManagementApiVersionSet -Context <PsApiManagementContext> [-ApiVersionSetId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="47d18-106">ResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="47d18-106">ResourceIdParameterSet</span></span>
+### <span data-ttu-id="c636b-106">ResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="c636b-106">ResourceIdParameterSet</span></span>
 ```
 Get-AzApiManagementApiVersionSet -Context <PsApiManagementContext> [-ApiVersionSetId <String>]
  -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="47d18-107">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="47d18-107">DESCRIPTION</span></span>
-<span data-ttu-id="47d18-108">Командлет **Get-AzApiManagementApiVersionSet** получает сведения о наборах версий API, настроенных в контексте управления API.</span><span class="sxs-lookup"><span data-stu-id="47d18-108">The **Get-AzApiManagementApiVersionSet** cmdlet gets the details of the API Version Sets configured in an API Management context.</span></span>
+## <span data-ttu-id="c636b-107">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="c636b-107">DESCRIPTION</span></span>
+<span data-ttu-id="c636b-108">Для получения подробных сведений о наборах версий API, настроенных в контексте управления API, можно получить cmdlet **Get-AzApiManagementApiVersionSet.**</span><span class="sxs-lookup"><span data-stu-id="c636b-108">The **Get-AzApiManagementApiVersionSet** cmdlet gets the details of the API Version Sets configured in an API Management context.</span></span>
 
-## <span data-ttu-id="47d18-109">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="47d18-109">EXAMPLES</span></span>
+## <span data-ttu-id="c636b-109">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="c636b-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="47d18-110">Пример 1</span><span class="sxs-lookup"><span data-stu-id="47d18-110">Example 1</span></span>
+### <span data-ttu-id="c636b-110">Пример 1</span><span class="sxs-lookup"><span data-stu-id="c636b-110">Example 1</span></span>
 
-### <span data-ttu-id="47d18-111">Пример 1: получение всех наборов версий API</span><span class="sxs-lookup"><span data-stu-id="47d18-111">Example 1: Get all API Version Sets</span></span>
+### <span data-ttu-id="c636b-111">Пример 1. Получить все наборы версий API</span><span class="sxs-lookup"><span data-stu-id="c636b-111">Example 1: Get all API Version Sets</span></span>
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext
@@ -75,9 +75,9 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-<span data-ttu-id="47d18-112">Эта команда получает все наборы версий API для заданного контекста.</span><span class="sxs-lookup"><span data-stu-id="47d18-112">This command gets all of the API Version sets for the specified context.</span></span>
+<span data-ttu-id="c636b-112">Эта команда получает все наборы версий API для заданного контекста.</span><span class="sxs-lookup"><span data-stu-id="c636b-112">This command gets all of the API Version sets for the specified context.</span></span>
 
-### <span data-ttu-id="47d18-113">Пример 2: получение версии API, установленной ИДЕНТИФИКАТОРом</span><span class="sxs-lookup"><span data-stu-id="47d18-113">Example 2: Get a API Version Set by ID</span></span>
+### <span data-ttu-id="c636b-113">Пример 2. Получить версию API, настроенную по ИД</span><span class="sxs-lookup"><span data-stu-id="c636b-113">Example 2: Get a API Version Set by ID</span></span>
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext -ApiVersionSetId $ApiVersionSetId
@@ -93,13 +93,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-<span data-ttu-id="47d18-114">Эта команда возвращает версию API, установленную с указанным ИДЕНТИФИКАТОРом.</span><span class="sxs-lookup"><span data-stu-id="47d18-114">This command gets the API Version Set with the specified ID.</span></span>
+<span data-ttu-id="c636b-114">Эта команда получает набор версий API с указанным ИД.</span><span class="sxs-lookup"><span data-stu-id="c636b-114">This command gets the API Version Set with the specified ID.</span></span>
 
-## <span data-ttu-id="47d18-115">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="47d18-115">PARAMETERS</span></span>
+## <span data-ttu-id="c636b-115">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="c636b-115">PARAMETERS</span></span>
 
-### <span data-ttu-id="47d18-116">-ApiVersionSetId</span><span class="sxs-lookup"><span data-stu-id="47d18-116">-ApiVersionSetId</span></span>
-<span data-ttu-id="47d18-117">Идентификатор API для поиска.</span><span class="sxs-lookup"><span data-stu-id="47d18-117">API identifier to look for.</span></span>
-<span data-ttu-id="47d18-118">Если указано, попытается получить API с помощью идентификатора.</span><span class="sxs-lookup"><span data-stu-id="47d18-118">If specified will try to get the API by the Id.</span></span>
+### <span data-ttu-id="c636b-116">-ApiVersionSetId</span><span class="sxs-lookup"><span data-stu-id="c636b-116">-ApiVersionSetId</span></span>
+<span data-ttu-id="c636b-117">Идеумный идентификатор API.</span><span class="sxs-lookup"><span data-stu-id="c636b-117">API identifier to look for.</span></span>
+<span data-ttu-id="c636b-118">Если он указан, будет пытаться получить API по ИД.</span><span class="sxs-lookup"><span data-stu-id="c636b-118">If specified will try to get the API by the Id.</span></span>
 
 ```yaml
 Type: System.String
@@ -113,9 +113,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d18-119">-Context</span><span class="sxs-lookup"><span data-stu-id="47d18-119">-Context</span></span>
-<span data-ttu-id="47d18-120">Экземпляр PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="47d18-120">Instance of PsApiManagementContext.</span></span>
-<span data-ttu-id="47d18-121">Этот параметр является обязательным.</span><span class="sxs-lookup"><span data-stu-id="47d18-121">This parameter is required.</span></span>
+### <span data-ttu-id="c636b-119">-Контекст</span><span class="sxs-lookup"><span data-stu-id="c636b-119">-Context</span></span>
+<span data-ttu-id="c636b-120">Экземпляр PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="c636b-120">Instance of PsApiManagementContext.</span></span>
+<span data-ttu-id="c636b-121">Этот параметр является required(обязательно).</span><span class="sxs-lookup"><span data-stu-id="c636b-121">This parameter is required.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -129,8 +129,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d18-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="47d18-122">-DefaultProfile</span></span>
-<span data-ttu-id="47d18-123">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="47d18-123">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="c636b-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c636b-122">-DefaultProfile</span></span>
+<span data-ttu-id="c636b-123">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="c636b-123">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -144,8 +144,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d18-124">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="47d18-124">-ResourceId</span></span>
-<span data-ttu-id="47d18-125">Идентификатор ресурса ARM для ApiVersionSet.</span><span class="sxs-lookup"><span data-stu-id="47d18-125">Arm Resource Identifier of the ApiVersionSet.</span></span> <span data-ttu-id="47d18-126">Если задано значение, это попытается найти apiVersionSet по идентификатору.</span><span class="sxs-lookup"><span data-stu-id="47d18-126">If specified will try to find apiVersionSet by the identifier.</span></span> <span data-ttu-id="47d18-127">Этот параметр является обязательным.</span><span class="sxs-lookup"><span data-stu-id="47d18-127">This parameter is required.</span></span>
+### <span data-ttu-id="c636b-124">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="c636b-124">-ResourceId</span></span>
+<span data-ttu-id="c636b-125">Идентификатор ресурса Arm для ApiVersionSet.</span><span class="sxs-lookup"><span data-stu-id="c636b-125">Arm Resource Identifier of the ApiVersionSet.</span></span> <span data-ttu-id="c636b-126">Если он указан, будет пытаться найти apiVersionSet по идентификатору.</span><span class="sxs-lookup"><span data-stu-id="c636b-126">If specified will try to find apiVersionSet by the identifier.</span></span> <span data-ttu-id="c636b-127">Этот параметр является required(обязательно).</span><span class="sxs-lookup"><span data-stu-id="c636b-127">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -159,25 +159,25 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d18-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="47d18-128">CommonParameters</span></span>
-<span data-ttu-id="47d18-129">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="47d18-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="47d18-130">Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="47d18-130">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="c636b-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c636b-128">CommonParameters</span></span>
+<span data-ttu-id="c636b-129">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="c636b-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c636b-130">Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="c636b-130">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="47d18-131">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="47d18-131">INPUTS</span></span>
+## <span data-ttu-id="c636b-131">INPUTS</span><span class="sxs-lookup"><span data-stu-id="c636b-131">INPUTS</span></span>
 
-### <span data-ttu-id="47d18-132">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="47d18-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+### <span data-ttu-id="c636b-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="c636b-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
 
-### <span data-ttu-id="47d18-133">System. String</span><span class="sxs-lookup"><span data-stu-id="47d18-133">System.String</span></span>
+### <span data-ttu-id="c636b-133">System.String</span><span class="sxs-lookup"><span data-stu-id="c636b-133">System.String</span></span>
 
-## <span data-ttu-id="47d18-134">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="47d18-134">OUTPUTS</span></span>
+## <span data-ttu-id="c636b-134">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="c636b-134">OUTPUTS</span></span>
 
-### <span data-ttu-id="47d18-135">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="47d18-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiVersionSet</span></span>
+### <span data-ttu-id="c636b-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="c636b-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiVersionSet</span></span>
 
-## <span data-ttu-id="47d18-136">Пуск</span><span class="sxs-lookup"><span data-stu-id="47d18-136">NOTES</span></span>
+## <span data-ttu-id="c636b-136">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="c636b-136">NOTES</span></span>
 
-## <span data-ttu-id="47d18-137">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="47d18-137">RELATED LINKS</span></span>
+## <span data-ttu-id="c636b-137">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="c636b-137">RELATED LINKS</span></span>
 
-[<span data-ttu-id="47d18-138">New-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="47d18-138">New-AzApiManagementApiVersionSet</span></span>](./New-AzApiManagementApiVersionSet.md)
+[<span data-ttu-id="c636b-138">New-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="c636b-138">New-AzApiManagementApiVersionSet</span></span>](./New-AzApiManagementApiVersionSet.md)
 
-[<span data-ttu-id="47d18-139">Remove-AzApiManagementApiSet</span><span class="sxs-lookup"><span data-stu-id="47d18-139">Remove-AzApiManagementApiSet</span></span>](./Remove-AzApiManagementApiVersionSet.md)
+[<span data-ttu-id="c636b-139">Remove-AzApiManagementApiSet</span><span class="sxs-lookup"><span data-stu-id="c636b-139">Remove-AzApiManagementApiSet</span></span>](./Remove-AzApiManagementApiVersionSet.md)
 
-[<span data-ttu-id="47d18-140">Set-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="47d18-140">Set-AzApiManagementApiVersionSet</span></span>](./Set-AzApiManagementApiSet.md)
+[<span data-ttu-id="c636b-140">Set-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="c636b-140">Set-AzApiManagementApiVersionSet</span></span>](./Set-AzApiManagementApiVersionSet.md)
