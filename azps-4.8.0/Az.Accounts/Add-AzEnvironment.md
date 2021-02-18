@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.accounts/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
-ms.openlocfilehash: ba5a398e21543bc4b19c09309884ceb11fed3197
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2db2e90dc1292bdfe67907e5a180b08a09a54718
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94243769"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406015"
 ---
-# <span data-ttu-id="b6c9d-101">Add-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="b6c9d-101">Add-AzEnvironment</span></span>
+# <span data-ttu-id="73b58-101">Add-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="73b58-101">Add-AzEnvironment</span></span>
 
-## <span data-ttu-id="b6c9d-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="b6c9d-102">SYNOPSIS</span></span>
-<span data-ttu-id="b6c9d-103">Добавляет конечные точки и метаданные для экземпляра диспетчера ресурсов Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-103">Adds endpoints and metadata for an instance of Azure Resource Manager.</span></span>
+## <span data-ttu-id="73b58-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="73b58-102">SYNOPSIS</span></span>
+<span data-ttu-id="73b58-103">Добавляет конечные точки и метаданные для экземпляра Azure Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="73b58-103">Adds endpoints and metadata for an instance of Azure Resource Manager.</span></span>
 
-## <span data-ttu-id="b6c9d-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="b6c9d-104">SYNTAX</span></span>
+## <span data-ttu-id="73b58-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="73b58-104">SYNTAX</span></span>
 
-### <span data-ttu-id="b6c9d-105">Имя (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="b6c9d-105">Name (Default)</span></span>
+### <span data-ttu-id="73b58-105">Имя (по умолчанию)</span><span class="sxs-lookup"><span data-stu-id="73b58-105">Name (Default)</span></span>
 ```
 Add-AzEnvironment [-Name] <String> [[-PublishSettingsFileUrl] <String>] [[-ServiceEndpoint] <String>]
  [[-ManagementPortalUrl] <String>] [[-StorageEndpoint] <String>] [[-ActiveDirectoryEndpoint] <String>]
@@ -38,7 +38,7 @@ Add-AzEnvironment [-Name] <String> [[-PublishSettingsFileUrl] <String>] [[-Servi
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b6c9d-106">ARMEndpoint</span><span class="sxs-lookup"><span data-stu-id="b6c9d-106">ARMEndpoint</span></span>
+### <span data-ttu-id="73b58-106">ARMEndpoint</span><span class="sxs-lookup"><span data-stu-id="73b58-106">ARMEndpoint</span></span>
 ```
 Add-AzEnvironment [-Name] <String> [[-StorageEndpoint] <String>] [-ARMEndpoint] <String>
  [[-AzureKeyVaultDnsSuffix] <String>] [[-AzureKeyVaultServiceEndpointResourceId] <String>]
@@ -51,19 +51,19 @@ Add-AzEnvironment [-Name] <String> [[-StorageEndpoint] <String>] [-ARMEndpoint] 
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b6c9d-107">Поиска</span><span class="sxs-lookup"><span data-stu-id="b6c9d-107">Discovery</span></span>
+### <span data-ttu-id="73b58-107">Обнаружение</span><span class="sxs-lookup"><span data-stu-id="73b58-107">Discovery</span></span>
 ```
 Add-AzEnvironment -AutoDiscover [-Uri <Uri>] [-Scope {Process | CurrentUser}]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b6c9d-108">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="b6c9d-108">DESCRIPTION</span></span>
-<span data-ttu-id="b6c9d-109">Командлет Add-AzEnvironment добавляет конечные точки и метаданные, чтобы включить командлеты диспетчера ресурсов Azure для соединения с новым экземпляром диспетчера ресурсов Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-109">The Add-AzEnvironment cmdlet adds endpoints and metadata to enable Azure Resource Manager cmdlets to connect with a new instance of Azure Resource Manager.</span></span>
-<span data-ttu-id="b6c9d-110">Встроенные среды AzureCloud и AzureChinaCloud предназначены для существующих открытых экземпляров диспетчера ресурсов Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-110">The built-in environments AzureCloud and AzureChinaCloud target existing public instances of Azure Resource Manager.</span></span>
+## <span data-ttu-id="73b58-108">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="73b58-108">DESCRIPTION</span></span>
+<span data-ttu-id="73b58-109">Новый Add-AzEnvironment добавляет конечные точки и метаданные, чтобы обеспечить подключение диспетчера ресурсов Azure к новому экземпляру Диспетчера ресурсов Azure.</span><span class="sxs-lookup"><span data-stu-id="73b58-109">The Add-AzEnvironment cmdlet adds endpoints and metadata to enable Azure Resource Manager cmdlets to connect with a new instance of Azure Resource Manager.</span></span>
+<span data-ttu-id="73b58-110">Встроенные среды AzureCloud и AzureChinaCloud нацелены на существующие общедоступные экземпляры Диспетчера ресурсов Azure.</span><span class="sxs-lookup"><span data-stu-id="73b58-110">The built-in environments AzureCloud and AzureChinaCloud target existing public instances of Azure Resource Manager.</span></span>
 
-## <span data-ttu-id="b6c9d-111">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="b6c9d-111">EXAMPLES</span></span>
+## <span data-ttu-id="73b58-111">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="73b58-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="b6c9d-112">Пример 1: создание и изменение новой среды</span><span class="sxs-lookup"><span data-stu-id="b6c9d-112">Example 1: Creating and modifying a new environment</span></span>
+### <span data-ttu-id="73b58-112">Пример 1. Создание и изменение новой среды</span><span class="sxs-lookup"><span data-stu-id="73b58-112">Example 1: Creating and modifying a new environment</span></span>
 ```
 PS C:\> Add-AzEnvironment -Name TestEnvironment `
         -ActiveDirectoryEndpoint TestADEndpoint `
@@ -113,9 +113,9 @@ ExtendedProperties                                : {}
 BatchEndpointResourceId                           :
 ```
 
-<span data-ttu-id="b6c9d-113">В этом примере мы создаем новую среду Azure с примерами конечных точек с помощью Add-AzEnvironment, а затем изменили значения атрибутов ActiveDirectoryEndpoint и GraphEndpoint для созданной среды с помощью командлета Set-AzEnvironment.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-113">In this example we are creating a new Azure environment with sample endpoints using Add-AzEnvironment, and then we are changing the value of the ActiveDirectoryEndpoint and GraphEndpoint attributes of the created environment using the cmdlet Set-AzEnvironment.</span></span>
+<span data-ttu-id="73b58-113">В этом примере мы создаем новую среду Azure с образцами конечных точек с помощью Add-AzEnvironment, а затем изменяем значение атрибутов ActiveDirectoryEndpoint и GraphEndpoint созданной среды с помощью cmdlet Set-AzEnvironment.</span><span class="sxs-lookup"><span data-stu-id="73b58-113">In this example we are creating a new Azure environment with sample endpoints using Add-AzEnvironment, and then we are changing the value of the ActiveDirectoryEndpoint and GraphEndpoint attributes of the created environment using the cmdlet Set-AzEnvironment.</span></span>
 
-### <span data-ttu-id="b6c9d-114">Пример 2: обнаружение новой среды с помощью URI</span><span class="sxs-lookup"><span data-stu-id="b6c9d-114">Example 2: Discovering a new environment via Uri</span></span>
+### <span data-ttu-id="73b58-114">Пример 2. Обнаружение новой среды с помощью URI</span><span class="sxs-lookup"><span data-stu-id="73b58-114">Example 2: Discovering a new environment via Uri</span></span>
 ```
 <#
 Uri https://configuredmetadata.net returns an array of environment metadata. The following example contains a payload for the AzureCloud default environment.
@@ -162,12 +162,12 @@ Name            Resource Manager Url ActiveDirectory Authority
 TestEnvironment TestRMEndpoint       TestADEndpoint/
 ```
 
-<span data-ttu-id="b6c9d-115">В этом примере мы обнаруживаем новую среду Azure из https://configuredmetadata.net универсального кода ресурса (URI).</span><span class="sxs-lookup"><span data-stu-id="b6c9d-115">In this example, we are discovering a new Azure environment from the https://configuredmetadata.net Uri.</span></span>
+<span data-ttu-id="73b58-115">В этом примере мы обнаруживаем новую среду Azure из `https://configuredmetadata.net` URI.</span><span class="sxs-lookup"><span data-stu-id="73b58-115">In this example, we are discovering a new Azure environment from the `https://configuredmetadata.net` Uri.</span></span>
 
-## <span data-ttu-id="b6c9d-116">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="b6c9d-116">PARAMETERS</span></span>
+## <span data-ttu-id="73b58-116">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="73b58-116">PARAMETERS</span></span>
 
-### <span data-ttu-id="b6c9d-117">-ActiveDirectoryEndpoint</span><span class="sxs-lookup"><span data-stu-id="b6c9d-117">-ActiveDirectoryEndpoint</span></span>
-<span data-ttu-id="b6c9d-118">Указывает базовый центр проверки подлинности Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-118">Specifies the base authority for Azure Active Directory authentication.</span></span>
+### <span data-ttu-id="73b58-117">-ActiveDirectoryEndpoint</span><span class="sxs-lookup"><span data-stu-id="73b58-117">-ActiveDirectoryEndpoint</span></span>
+<span data-ttu-id="73b58-118">Указывает базовый орган проверки подлинности Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="73b58-118">Specifies the base authority for Azure Active Directory authentication.</span></span>
 
 ```yaml
 Type: System.String
@@ -181,8 +181,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-119">-ActiveDirectoryServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="b6c9d-119">-ActiveDirectoryServiceEndpointResourceId</span></span>
-<span data-ttu-id="b6c9d-120">Указывает аудиторию для маркеров, которые проверяют запросы на конечные точки диспетчера ресурсов Azure или службы управления службами (RDFE).</span><span class="sxs-lookup"><span data-stu-id="b6c9d-120">Specifies the audience for tokens that authenticate requests to Azure Resource Manager or Service Management (RDFE) endpoints.</span></span>
+### <span data-ttu-id="73b58-119">-ActiveDirectoryServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="73b58-119">-ActiveDirectoryServiceEndpointResourceId</span></span>
+<span data-ttu-id="73b58-120">Определяет аудиторию для маркеров, которые запрашивают проверку подлинности в конечных точках диспетчера ресурсов Azure или службы управления службами.</span><span class="sxs-lookup"><span data-stu-id="73b58-120">Specifies the audience for tokens that authenticate requests to Azure Resource Manager or Service Management (RDFE) endpoints.</span></span>
 
 ```yaml
 Type: System.String
@@ -196,8 +196,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-121">-AdTenant</span><span class="sxs-lookup"><span data-stu-id="b6c9d-121">-AdTenant</span></span>
-<span data-ttu-id="b6c9d-122">Указывает клиента Active Directory, используемого по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-122">Specifies the default Active Directory tenant.</span></span>
+### <span data-ttu-id="73b58-121">-AdTenant</span><span class="sxs-lookup"><span data-stu-id="73b58-121">-AdTenant</span></span>
+<span data-ttu-id="73b58-122">Определяет клиент Active Directory по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="73b58-122">Specifies the default Active Directory tenant.</span></span>
 
 ```yaml
 Type: System.String
@@ -211,8 +211,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-123">-ARMEndpoint</span><span class="sxs-lookup"><span data-stu-id="b6c9d-123">-ARMEndpoint</span></span>
-<span data-ttu-id="b6c9d-124">Конечная точка диспетчера ресурсов Azure</span><span class="sxs-lookup"><span data-stu-id="b6c9d-124">The Azure Resource Manager endpoint</span></span>
+### <span data-ttu-id="73b58-123">-ARMEndpoint</span><span class="sxs-lookup"><span data-stu-id="73b58-123">-ARMEndpoint</span></span>
+<span data-ttu-id="73b58-124">Конечная точка Диспетчера ресурсов Azure</span><span class="sxs-lookup"><span data-stu-id="73b58-124">The Azure Resource Manager endpoint</span></span>
 
 ```yaml
 Type: System.String
@@ -226,8 +226,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-125">-Автообнаружения</span><span class="sxs-lookup"><span data-stu-id="b6c9d-125">-AutoDiscover</span></span>
-<span data-ttu-id="b6c9d-126">Среды рассматриваются по умолчанию или настроенной конечной точке.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-126">Discovers environments via default or configured endpoint.</span></span>
+### <span data-ttu-id="73b58-125">-AutoDiscover</span><span class="sxs-lookup"><span data-stu-id="73b58-125">-AutoDiscover</span></span>
+<span data-ttu-id="73b58-126">Обнаружение сред через стандартную или настроенную конечную точку.</span><span class="sxs-lookup"><span data-stu-id="73b58-126">Discovers environments via default or configured endpoint.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -241,8 +241,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-127">-AzureAnalysisServicesEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="b6c9d-127">-AzureAnalysisServicesEndpointResourceId</span></span>
-<span data-ttu-id="b6c9d-128">Идентификатор ресурса для ресурса служб аналитики Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-128">The resource identifier of the Azure Analysis Services resource.</span></span>
+### <span data-ttu-id="73b58-127">-AzureAnalysisServicesEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="73b58-127">-AzureAnalysisServicesEndpointResourceId</span></span>
+<span data-ttu-id="73b58-128">Идентификатор ресурса Служб Аналитики Azure.</span><span class="sxs-lookup"><span data-stu-id="73b58-128">The resource identifier of the Azure Analysis Services resource.</span></span>
 
 ```yaml
 Type: System.String
@@ -256,8 +256,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-129">-AzureAnalysisServicesEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="b6c9d-129">-AzureAnalysisServicesEndpointSuffix</span></span>
-<span data-ttu-id="b6c9d-130">Конечная точка, используемая при взаимодействии с API аналитических журналов Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-130">The endpoint to use when communicating with the Azure Log Analytics API.</span></span>
+### <span data-ttu-id="73b58-129">-AzureAnalysisServicesEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="73b58-129">-AzureAnalysisServicesEndpointSuffix</span></span>
+<span data-ttu-id="73b58-130">Конечная точка, используемая при общении с azure Log Analytics API.</span><span class="sxs-lookup"><span data-stu-id="73b58-130">The endpoint to use when communicating with the Azure Log Analytics API.</span></span>
 
 ```yaml
 Type: System.String
@@ -271,8 +271,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-131">-AzureAttestationServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="b6c9d-131">-AzureAttestationServiceEndpointResourceId</span></span>
-<span data-ttu-id="b6c9d-132">Идентификатор ресурса службы аттестации Azure, который является получателем запрошенного маркера.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-132">The The resource identifier of the Azure Attestation service that is the recipient of the requested token.</span></span>
+### <span data-ttu-id="73b58-131">-AzureAttestationServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="73b58-131">-AzureAttestationServiceEndpointResourceId</span></span>
+<span data-ttu-id="73b58-132">Идентификатор ресурса службы Azure Attestation, который является получателем запрашиваемого маркера.</span><span class="sxs-lookup"><span data-stu-id="73b58-132">The The resource identifier of the Azure Attestation service that is the recipient of the requested token.</span></span>
 
 ```yaml
 Type: System.String
@@ -286,8 +286,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-133">-AzureAttestationServiceEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="b6c9d-133">-AzureAttestationServiceEndpointSuffix</span></span>
-<span data-ttu-id="b6c9d-134">DNS-суффикс службы аттестации Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-134">Dns suffix of Azure Attestation service.</span></span>
+### <span data-ttu-id="73b58-133">-AzureAttestationServiceEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="73b58-133">-AzureAttestationServiceEndpointSuffix</span></span>
+<span data-ttu-id="73b58-134">DNS-суффикс службы Azure Attestation.</span><span class="sxs-lookup"><span data-stu-id="73b58-134">Dns suffix of Azure Attestation service.</span></span>
 
 ```yaml
 Type: System.String
@@ -301,8 +301,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-135">-AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="b6c9d-135">-AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix</span></span>
-<span data-ttu-id="b6c9d-136">DNS-суффикс для задания и службы каталогов Azure Data Lake Analytics</span><span class="sxs-lookup"><span data-stu-id="b6c9d-136">Dns Suffix of Azure Data Lake Analytics job and catalog services</span></span>
+### <span data-ttu-id="73b58-135">-AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="73b58-135">-AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix</span></span>
+<span data-ttu-id="73b58-136">DNS-суффикс служб Azure Data Lake Analytics и служб каталога</span><span class="sxs-lookup"><span data-stu-id="73b58-136">Dns Suffix of Azure Data Lake Analytics job and catalog services</span></span>
 
 ```yaml
 Type: System.String
@@ -316,8 +316,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-137">-AzureDataLakeStoreFileSystemEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="b6c9d-137">-AzureDataLakeStoreFileSystemEndpointSuffix</span></span>
-<span data-ttu-id="b6c9d-138">DNS-суффикс для файловой системы Azure Data Lake Store.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-138">Dns Suffix of Azure Data Lake Store FileSystem.</span></span> <span data-ttu-id="b6c9d-139">Пример: azuredatalake.net</span><span class="sxs-lookup"><span data-stu-id="b6c9d-139">Example: azuredatalake.net</span></span>
+### <span data-ttu-id="73b58-137">-AzureDataLakeStoreFileSystemEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="73b58-137">-AzureDataLakeStoreFileSystemEndpointSuffix</span></span>
+<span data-ttu-id="73b58-138">Суффикс DNS для Azure Data Lake Store FileSystem.</span><span class="sxs-lookup"><span data-stu-id="73b58-138">Dns Suffix of Azure Data Lake Store FileSystem.</span></span> <span data-ttu-id="73b58-139">Пример: azuredatalake.net</span><span class="sxs-lookup"><span data-stu-id="73b58-139">Example: azuredatalake.net</span></span>
 
 ```yaml
 Type: System.String
@@ -331,8 +331,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-140">-AzureKeyVaultDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="b6c9d-140">-AzureKeyVaultDnsSuffix</span></span>
-<span data-ttu-id="b6c9d-141">DNS-суффикс службы хранилища ключей Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-141">Dns suffix of Azure Key Vault service.</span></span> <span data-ttu-id="b6c9d-142">Пример vault-int.azure-int.net</span><span class="sxs-lookup"><span data-stu-id="b6c9d-142">Example is vault-int.azure-int.net</span></span>
+### <span data-ttu-id="73b58-140">-AzureKeyVaultDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="73b58-140">-AzureKeyVaultDnsSuffix</span></span>
+<span data-ttu-id="73b58-141">DNS-суффикс службы хранилища ключей Azure.</span><span class="sxs-lookup"><span data-stu-id="73b58-141">Dns suffix of Azure Key Vault service.</span></span> <span data-ttu-id="73b58-142">Пример: vault-int.azure-int.net</span><span class="sxs-lookup"><span data-stu-id="73b58-142">Example is vault-int.azure-int.net</span></span>
 
 ```yaml
 Type: System.String
@@ -346,8 +346,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-143">-AzureKeyVaultServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="b6c9d-143">-AzureKeyVaultServiceEndpointResourceId</span></span>
-<span data-ttu-id="b6c9d-144">Идентификатор ресурса службы данных Azure Key Vault, которая является получателем запрошенного маркера.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-144">Resource identifier of Azure Key Vault data service that is the recipient of the requested token.</span></span>
+### <span data-ttu-id="73b58-143">-AzureKeyVaultServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="73b58-143">-AzureKeyVaultServiceEndpointResourceId</span></span>
+<span data-ttu-id="73b58-144">Идентификатор ресурса службы данных хранилища ключа Azure, который является получателем запрашиваемого маркера.</span><span class="sxs-lookup"><span data-stu-id="73b58-144">Resource identifier of Azure Key Vault data service that is the recipient of the requested token.</span></span>
 
 ```yaml
 Type: System.String
@@ -361,8 +361,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-145">-AzureOperationalInsightsEndpoint</span><span class="sxs-lookup"><span data-stu-id="b6c9d-145">-AzureOperationalInsightsEndpoint</span></span>
-<span data-ttu-id="b6c9d-146">Конечная точка, используемая при взаимодействии с API аналитических журналов Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-146">The endpoint to use when communicating with the Azure Log Analytics API.</span></span>
+### <span data-ttu-id="73b58-145">-AzureOperationalInsightsEndpoint</span><span class="sxs-lookup"><span data-stu-id="73b58-145">-AzureOperationalInsightsEndpoint</span></span>
+<span data-ttu-id="73b58-146">Конечная точка, используемая при общении с azure Log Analytics API.</span><span class="sxs-lookup"><span data-stu-id="73b58-146">The endpoint to use when communicating with the Azure Log Analytics API.</span></span>
 
 ```yaml
 Type: System.String
@@ -376,8 +376,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-147">-AzureOperationalInsightsEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="b6c9d-147">-AzureOperationalInsightsEndpointResourceId</span></span>
-<span data-ttu-id="b6c9d-148">Аудитория для маркеров, проверяющих подлинность с помощью API аналитических журналов Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-148">The audience for tokens authenticating with the Azure Log Analytics API.</span></span>
+### <span data-ttu-id="73b58-147">-AzureOperationalInsightsEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="73b58-147">-AzureOperationalInsightsEndpointResourceId</span></span>
+<span data-ttu-id="73b58-148">Аудитория для проверки подлинности токенов с помощью API Azure Log Analytics.</span><span class="sxs-lookup"><span data-stu-id="73b58-148">The audience for tokens authenticating with the Azure Log Analytics API.</span></span>
 
 ```yaml
 Type: System.String
@@ -391,8 +391,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-149">-AzureSynapseAnalyticsEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="b6c9d-149">-AzureSynapseAnalyticsEndpointResourceId</span></span>
-<span data-ttu-id="b6c9d-150">Идентификатор ресурса аналитики Azure Synapse Analytics, которая является получателем запрошенного маркера.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-150">The The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.</span></span>
+### <span data-ttu-id="73b58-149">-AzureSynapseAnalyticsEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="73b58-149">-AzureSynapseAnalyticsEndpointResourceId</span></span>
+<span data-ttu-id="73b58-150">Идентификатор ресурса средства аналитики Azure SynapseAnalytics, который является получателем запрашиваемого маркера.</span><span class="sxs-lookup"><span data-stu-id="73b58-150">The The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.</span></span>
 
 ```yaml
 Type: System.String
@@ -406,8 +406,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-151">-AzureSynapseAnalyticsEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="b6c9d-151">-AzureSynapseAnalyticsEndpointSuffix</span></span>
-<span data-ttu-id="b6c9d-152">DNS-суффикс Azure Synapse Analytics.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-152">Dns suffix of Azure Synapse Analytics.</span></span>
+### <span data-ttu-id="73b58-151">-AzureSynapseAnalyticsEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="73b58-151">-AzureSynapseAnalyticsEndpointSuffix</span></span>
+<span data-ttu-id="73b58-152">DNS-суффикс средства аналитики Azure Synapse.</span><span class="sxs-lookup"><span data-stu-id="73b58-152">Dns suffix of Azure Synapse Analytics.</span></span>
 
 ```yaml
 Type: System.String
@@ -421,8 +421,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-153">-BatchEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="b6c9d-153">-BatchEndpointResourceId</span></span>
-<span data-ttu-id="b6c9d-154">Идентификатор ресурса пакетной службы Azure, которая является получателем запрашиваемого маркера.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-154">The resource identifier of the Azure Batch service that is the recipient of the requested token</span></span>
+### <span data-ttu-id="73b58-153">-BatchEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="73b58-153">-BatchEndpointResourceId</span></span>
+<span data-ttu-id="73b58-154">Идентификатор ресурса службы Azure Batch, который является получателем запрашиваемого маркера.</span><span class="sxs-lookup"><span data-stu-id="73b58-154">The resource identifier of the Azure Batch service that is the recipient of the requested token</span></span>
 
 ```yaml
 Type: System.String
@@ -436,8 +436,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-155">-DataLakeAudience</span><span class="sxs-lookup"><span data-stu-id="b6c9d-155">-DataLakeAudience</span></span>
-<span data-ttu-id="b6c9d-156">Аудитория для маркеров, прошедших проверку подлинности с помощью конечной точки AD Data Lake Services.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-156">The audience for tokens authenticating with the AD Data Lake services Endpoint.</span></span>
+### <span data-ttu-id="73b58-155">-DataLakeAudience</span><span class="sxs-lookup"><span data-stu-id="73b58-155">-DataLakeAudience</span></span>
+<span data-ttu-id="73b58-156">Аудитория маркеров для проверки подлинности с помощью конечной точки служб AD Data Lake services.</span><span class="sxs-lookup"><span data-stu-id="73b58-156">The audience for tokens authenticating with the AD Data Lake services Endpoint.</span></span>
 
 ```yaml
 Type: System.String
@@ -451,8 +451,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-157">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b6c9d-157">-DefaultProfile</span></span>
-<span data-ttu-id="b6c9d-158">Учетные данные, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="b6c9d-158">The credentials, tenant and subscription used for communication with azure</span></span>
+### <span data-ttu-id="73b58-157">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="73b58-157">-DefaultProfile</span></span>
+<span data-ttu-id="73b58-158">Учетные данные, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="73b58-158">The credentials, tenant and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -466,8 +466,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-159">-EnableAdfsAuthentication</span><span class="sxs-lookup"><span data-stu-id="b6c9d-159">-EnableAdfsAuthentication</span></span>
-<span data-ttu-id="b6c9d-160">Указывает, что локальная проверка подлинности служб федерации Active Directory (ADFS) разрешена.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-160">Indicates that Active Directory Federation Services (ADFS) on-premise authentication is allowed.</span></span>
+### <span data-ttu-id="73b58-159">-EnableAdfsAuthentication</span><span class="sxs-lookup"><span data-stu-id="73b58-159">-EnableAdfsAuthentication</span></span>
+<span data-ttu-id="73b58-160">Указывает на то, что разрешена проверка локальной проверки подлинности в службах федерации Active Directory (ADFS).</span><span class="sxs-lookup"><span data-stu-id="73b58-160">Indicates that Active Directory Federation Services (ADFS) on-premise authentication is allowed.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -481,8 +481,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-161">-GalleryEndpoint</span><span class="sxs-lookup"><span data-stu-id="b6c9d-161">-GalleryEndpoint</span></span>
-<span data-ttu-id="b6c9d-162">Задает конечную точку для коллекции шаблонов развертывания диспетчера ресурсов Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-162">Specifies the endpoint for the Azure Resource Manager gallery of deployment templates.</span></span>
+### <span data-ttu-id="73b58-161">-GalleryEndpoint</span><span class="sxs-lookup"><span data-stu-id="73b58-161">-GalleryEndpoint</span></span>
+<span data-ttu-id="73b58-162">Указывает конечную точку для коллекции шаблонов развертывания Диспетчера ресурсов Azure.</span><span class="sxs-lookup"><span data-stu-id="73b58-162">Specifies the endpoint for the Azure Resource Manager gallery of deployment templates.</span></span>
 
 ```yaml
 Type: System.String
@@ -496,8 +496,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-163">-GraphAudience</span><span class="sxs-lookup"><span data-stu-id="b6c9d-163">-GraphAudience</span></span>
-<span data-ttu-id="b6c9d-164">Аудитория для маркеров, прошедших проверку подлинности с помощью конечной точки AD Graph.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-164">The audience for tokens authenticating with the AD Graph Endpoint.</span></span>
+### <span data-ttu-id="73b58-163">-GraphAudience</span><span class="sxs-lookup"><span data-stu-id="73b58-163">-GraphAudience</span></span>
+<span data-ttu-id="73b58-164">Аудитория маркеров для проверки подлинности с помощью конечной точки AD Graph.</span><span class="sxs-lookup"><span data-stu-id="73b58-164">The audience for tokens authenticating with the AD Graph Endpoint.</span></span>
 
 ```yaml
 Type: System.String
@@ -511,8 +511,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-165">-GraphEndpoint</span><span class="sxs-lookup"><span data-stu-id="b6c9d-165">-GraphEndpoint</span></span>
-<span data-ttu-id="b6c9d-166">Указывает URL-адрес для запросов Graph (для метаданных Active Directory).</span><span class="sxs-lookup"><span data-stu-id="b6c9d-166">Specifies the URL for Graph (Active Directory metadata) requests.</span></span>
+### <span data-ttu-id="73b58-165">-GraphEndpoint</span><span class="sxs-lookup"><span data-stu-id="73b58-165">-GraphEndpoint</span></span>
+<span data-ttu-id="73b58-166">Url-адрес запросов Graph (метаданных Active Directory).</span><span class="sxs-lookup"><span data-stu-id="73b58-166">Specifies the URL for Graph (Active Directory metadata) requests.</span></span>
 
 ```yaml
 Type: System.String
@@ -526,8 +526,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-167">-ManagementPortalUrl</span><span class="sxs-lookup"><span data-stu-id="b6c9d-167">-ManagementPortalUrl</span></span>
-<span data-ttu-id="b6c9d-168">Указывает URL-адрес портала управления.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-168">Specifies the URL for the Management Portal.</span></span>
+### <span data-ttu-id="73b58-167">-ManagementPortalUrl</span><span class="sxs-lookup"><span data-stu-id="73b58-167">-ManagementPortalUrl</span></span>
+<span data-ttu-id="73b58-168">Url-адрес портала управления.</span><span class="sxs-lookup"><span data-stu-id="73b58-168">Specifies the URL for the Management Portal.</span></span>
 
 ```yaml
 Type: System.String
@@ -541,8 +541,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-169">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="b6c9d-169">-Name</span></span>
-<span data-ttu-id="b6c9d-170">Указывает имя среды, которую нужно добавить.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-170">Specifies the name of the environment to add.</span></span>
+### <span data-ttu-id="73b58-169">-Name</span><span class="sxs-lookup"><span data-stu-id="73b58-169">-Name</span></span>
+<span data-ttu-id="73b58-170">Указывает имя добавляемой среды.</span><span class="sxs-lookup"><span data-stu-id="73b58-170">Specifies the name of the environment to add.</span></span>
 
 ```yaml
 Type: System.String
@@ -556,8 +556,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-171">-PublishSettingsFileUrl</span><span class="sxs-lookup"><span data-stu-id="b6c9d-171">-PublishSettingsFileUrl</span></span>
-<span data-ttu-id="b6c9d-172">Указывает URL-адрес, с которого можно загрузить файлы publishsettings.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-172">Specifies the URL from which .publishsettings files can be downloaded.</span></span>
+### <span data-ttu-id="73b58-171">-PublishSettingsFileUrl</span><span class="sxs-lookup"><span data-stu-id="73b58-171">-PublishSettingsFileUrl</span></span>
+<span data-ttu-id="73b58-172">Url-адрес, с которого можно скачать файлы Publishsettings.</span><span class="sxs-lookup"><span data-stu-id="73b58-172">Specifies the URL from which .publishsettings files can be downloaded.</span></span>
 
 ```yaml
 Type: System.String
@@ -571,8 +571,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-173">-ResourceManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="b6c9d-173">-ResourceManagerEndpoint</span></span>
-<span data-ttu-id="b6c9d-174">Указывает URL-адрес для запросов диспетчера ресурсов Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-174">Specifies the URL for Azure Resource Manager requests.</span></span>
+### <span data-ttu-id="73b58-173">-ResourceManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="73b58-173">-ResourceManagerEndpoint</span></span>
+<span data-ttu-id="73b58-174">URL-адрес запросов Диспетчера ресурсов Azure.</span><span class="sxs-lookup"><span data-stu-id="73b58-174">Specifies the URL for Azure Resource Manager requests.</span></span>
 
 ```yaml
 Type: System.String
@@ -586,8 +586,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-175">-Scope</span><span class="sxs-lookup"><span data-stu-id="b6c9d-175">-Scope</span></span>
-<span data-ttu-id="b6c9d-176">Определяет область изменений контекста, например, применяются ли изменения только к текущему процессу или ко всем сеансам, запускаемым этим пользователем.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-176">Determines the scope of context changes, for example, whether changes apply only to the current process, or to all sessions started by this user.</span></span>
+### <span data-ttu-id="73b58-175">-Scope</span><span class="sxs-lookup"><span data-stu-id="73b58-175">-Scope</span></span>
+<span data-ttu-id="73b58-176">Определяет область изменения контекста, например, применяются ли изменения только к текущему процессу или же к всем сеансам, на которые начал пользователь.</span><span class="sxs-lookup"><span data-stu-id="73b58-176">Determines the scope of context changes, for example, whether changes apply only to the current process, or to all sessions started by this user.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Profile.Common.ContextModificationScope
@@ -602,8 +602,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-177">-ServiceEndpoint</span><span class="sxs-lookup"><span data-stu-id="b6c9d-177">-ServiceEndpoint</span></span>
-<span data-ttu-id="b6c9d-178">Задает конечную точку для запросов на управление службами (RDFE).</span><span class="sxs-lookup"><span data-stu-id="b6c9d-178">Specifies the endpoint for Service Management (RDFE) requests.</span></span>
+### <span data-ttu-id="73b58-177">-ServiceEndpoint</span><span class="sxs-lookup"><span data-stu-id="73b58-177">-ServiceEndpoint</span></span>
+<span data-ttu-id="73b58-178">Указывает конечную точку для запросов на управление службами (RDFE).</span><span class="sxs-lookup"><span data-stu-id="73b58-178">Specifies the endpoint for Service Management (RDFE) requests.</span></span>
 
 ```yaml
 Type: System.String
@@ -617,8 +617,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-179">-SqlDatabaseDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="b6c9d-179">-SqlDatabaseDnsSuffix</span></span>
-<span data-ttu-id="b6c9d-180">Указывает суффикс доменных имен для серверов баз данных Azure SQL.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-180">Specifies the domain-name suffix for Azure SQL Database servers.</span></span>
+### <span data-ttu-id="73b58-179">-SqlDatabaseDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="73b58-179">-SqlDatabaseDnsSuffix</span></span>
+<span data-ttu-id="73b58-180">Определяет суффикс доменного имени для серверов баз данных Azure SQL.</span><span class="sxs-lookup"><span data-stu-id="73b58-180">Specifies the domain-name suffix for Azure SQL Database servers.</span></span>
 
 ```yaml
 Type: System.String
@@ -632,8 +632,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-181">-StorageEndpoint</span><span class="sxs-lookup"><span data-stu-id="b6c9d-181">-StorageEndpoint</span></span>
-<span data-ttu-id="b6c9d-182">Задает конечную точку для хранилища (BLOB-объектов, таблицы, очереди и файла).</span><span class="sxs-lookup"><span data-stu-id="b6c9d-182">Specifies the endpoint for storage (blob, table, queue, and file) access.</span></span>
+### <span data-ttu-id="73b58-181">-StorageEndpoint</span><span class="sxs-lookup"><span data-stu-id="73b58-181">-StorageEndpoint</span></span>
+<span data-ttu-id="73b58-182">Указывает конечную точку доступа к хранилищу (BLOB-файлу, таблице, очереди и файлу).</span><span class="sxs-lookup"><span data-stu-id="73b58-182">Specifies the endpoint for storage (blob, table, queue, and file) access.</span></span>
 
 ```yaml
 Type: System.String
@@ -647,8 +647,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-183">-TrafficManagerDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="b6c9d-183">-TrafficManagerDnsSuffix</span></span>
-<span data-ttu-id="b6c9d-184">Задает суффикс доменных имен для служб диспетчера трафика Azure.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-184">Specifies the domain-name suffix for Azure Traffic Manager services.</span></span>
+### <span data-ttu-id="73b58-183">-TrafficManagerDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="73b58-183">-TrafficManagerDnsSuffix</span></span>
+<span data-ttu-id="73b58-184">Определяет суффикс доменного имени для служб Azure Traffic Manager.</span><span class="sxs-lookup"><span data-stu-id="73b58-184">Specifies the domain-name suffix for Azure Traffic Manager services.</span></span>
 
 ```yaml
 Type: System.String
@@ -662,8 +662,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-185">-URI</span><span class="sxs-lookup"><span data-stu-id="b6c9d-185">-Uri</span></span>
-<span data-ttu-id="b6c9d-186">Указывает URI интернет-ресурса для выборки сред.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-186">Specifies URI of the internet resource to fetch environments.</span></span>
+### <span data-ttu-id="73b58-185">-Uri</span><span class="sxs-lookup"><span data-stu-id="73b58-185">-Uri</span></span>
+<span data-ttu-id="73b58-186">Определяет URI интернет-ресурса для выборки среды.</span><span class="sxs-lookup"><span data-stu-id="73b58-186">Specifies URI of the internet resource to fetch environments.</span></span>
 
 ```yaml
 Type: System.Uri
@@ -677,8 +677,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-187">-Confirm</span><span class="sxs-lookup"><span data-stu-id="b6c9d-187">-Confirm</span></span>
-<span data-ttu-id="b6c9d-188">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-188">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="73b58-187">-Confirm</span><span class="sxs-lookup"><span data-stu-id="73b58-187">-Confirm</span></span>
+<span data-ttu-id="73b58-188">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="73b58-188">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -692,8 +692,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-189">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b6c9d-189">-WhatIf</span></span>
-<span data-ttu-id="b6c9d-190">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-190">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="b6c9d-191">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-191">The cmdlet is not run.</span></span>
+### <span data-ttu-id="73b58-189">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="73b58-189">-WhatIf</span></span>
+<span data-ttu-id="73b58-190">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="73b58-190">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="73b58-191">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="73b58-191">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -707,26 +707,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6c9d-192">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b6c9d-192">CommonParameters</span></span>
-<span data-ttu-id="b6c9d-193">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="b6c9d-193">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b6c9d-194">Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="b6c9d-194">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="73b58-192">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="73b58-192">CommonParameters</span></span>
+<span data-ttu-id="73b58-193">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="73b58-193">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="73b58-194">Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="73b58-194">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b6c9d-195">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="b6c9d-195">INPUTS</span></span>
+## <span data-ttu-id="73b58-195">INPUTS</span><span class="sxs-lookup"><span data-stu-id="73b58-195">INPUTS</span></span>
 
-### <span data-ttu-id="b6c9d-196">System. String</span><span class="sxs-lookup"><span data-stu-id="b6c9d-196">System.String</span></span>
+### <span data-ttu-id="73b58-196">System.String</span><span class="sxs-lookup"><span data-stu-id="73b58-196">System.String</span></span>
 
-### <span data-ttu-id="b6c9d-197">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="b6c9d-197">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="73b58-197">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="73b58-197">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="b6c9d-198">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="b6c9d-198">OUTPUTS</span></span>
+## <span data-ttu-id="73b58-198">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="73b58-198">OUTPUTS</span></span>
 
-### <span data-ttu-id="b6c9d-199">Microsoft. Azure. Commands. Profile. Models. PSAzureEnvironment</span><span class="sxs-lookup"><span data-stu-id="b6c9d-199">Microsoft.Azure.Commands.Profile.Models.PSAzureEnvironment</span></span>
+### <span data-ttu-id="73b58-199">Microsoft.Azure.Commands.Profile.Models.PSAzureEnvironment</span><span class="sxs-lookup"><span data-stu-id="73b58-199">Microsoft.Azure.Commands.Profile.Models.PSAzureEnvironment</span></span>
 
-## <span data-ttu-id="b6c9d-200">Пуск</span><span class="sxs-lookup"><span data-stu-id="b6c9d-200">NOTES</span></span>
+## <span data-ttu-id="73b58-200">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="73b58-200">NOTES</span></span>
 
-## <span data-ttu-id="b6c9d-201">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="b6c9d-201">RELATED LINKS</span></span>
+## <span data-ttu-id="73b58-201">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="73b58-201">RELATED LINKS</span></span>
 
-[<span data-ttu-id="b6c9d-202">Get-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="b6c9d-202">Get-AzEnvironment</span></span>](./Get-AzEnvironment.md)
+[<span data-ttu-id="73b58-202">Get-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="73b58-202">Get-AzEnvironment</span></span>](./Get-AzEnvironment.md)
 
-[<span data-ttu-id="b6c9d-203">Remove-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="b6c9d-203">Remove-AzEnvironment</span></span>](./Remove-AzEnvironment.md)
+[<span data-ttu-id="73b58-203">Remove-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="73b58-203">Remove-AzEnvironment</span></span>](./Remove-AzEnvironment.md)
 
-[<span data-ttu-id="b6c9d-204">Set-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="b6c9d-204">Set-AzEnvironment</span></span>](./Set-AzEnvironment.md)
+[<span data-ttu-id="73b58-204">Set-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="73b58-204">Set-AzEnvironment</span></span>](./Set-AzEnvironment.md)
 

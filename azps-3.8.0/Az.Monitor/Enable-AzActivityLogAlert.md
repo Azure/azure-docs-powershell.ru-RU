@@ -6,70 +6,70 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/en
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Enable-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Enable-AzActivityLogAlert.md
-ms.openlocfilehash: 39f097c2cc580d2b161e3b4b31b247c13c3a411c
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: f1af25ca59b6af6a9712019d541e68c269609242
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94075011"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409194"
 ---
-# <span data-ttu-id="3e3bd-101">Enable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="3e3bd-101">Enable-AzActivityLogAlert</span></span>
+# <span data-ttu-id="f6549-101">Enable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="f6549-101">Enable-AzActivityLogAlert</span></span>
 
-## <span data-ttu-id="3e3bd-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="3e3bd-102">SYNOPSIS</span></span>
-<span data-ttu-id="3e3bd-103">Включает предупреждение журнала активности и задает его Теги.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-103">Enables an activity log alert and sets its Tags.</span></span>
+## <span data-ttu-id="f6549-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="f6549-102">SYNOPSIS</span></span>
+<span data-ttu-id="f6549-103">Включает оповещение журнала действий и устанавливает его теги.</span><span class="sxs-lookup"><span data-stu-id="f6549-103">Enables an activity log alert and sets its Tags.</span></span>
 
-## <span data-ttu-id="3e3bd-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="3e3bd-104">SYNTAX</span></span>
+## <span data-ttu-id="f6549-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="f6549-104">SYNTAX</span></span>
 
-### <span data-ttu-id="3e3bd-105">EnableByNameAndResourceGroup</span><span class="sxs-lookup"><span data-stu-id="3e3bd-105">EnableByNameAndResourceGroup</span></span>
+### <span data-ttu-id="f6549-105">EnableByNameAndResourceGroup</span><span class="sxs-lookup"><span data-stu-id="f6549-105">EnableByNameAndResourceGroup</span></span>
 ```
 Enable-AzActivityLogAlert -Name <String> -ResourceGroupName <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="3e3bd-106">EnableByInputObject</span><span class="sxs-lookup"><span data-stu-id="3e3bd-106">EnableByInputObject</span></span>
+### <span data-ttu-id="f6549-106">EnableByInputObject</span><span class="sxs-lookup"><span data-stu-id="f6549-106">EnableByInputObject</span></span>
 ```
 Enable-AzActivityLogAlert -InputObject <PSActivityLogAlertResource> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="3e3bd-107">EnableByResourceId</span><span class="sxs-lookup"><span data-stu-id="3e3bd-107">EnableByResourceId</span></span>
+### <span data-ttu-id="f6549-107">EnableByResourceId</span><span class="sxs-lookup"><span data-stu-id="f6549-107">EnableByResourceId</span></span>
 ```
 Enable-AzActivityLogAlert -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="3e3bd-108">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="3e3bd-108">DESCRIPTION</span></span>
-<span data-ttu-id="3e3bd-109">Командлет **Enable-AzActivityLogAlert** позволяет включить оповещение журнала активности и задать его Теги.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-109">The **Enable-AzActivityLogAlert** cmdlet allows enabling an activity log alert and setting its tags.</span></span>
-<span data-ttu-id="3e3bd-110">Этот командлет реализует шаблон ShouldProcess, т. е. может запросить подтверждение от пользователя, прежде чем действительно обновить ресурс.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-110">This cmdlet implements the ShouldProcess pattern, i.e. it might request confirmation from the user before actually patching the resource.</span></span>
+## <span data-ttu-id="f6549-108">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="f6549-108">DESCRIPTION</span></span>
+<span data-ttu-id="f6549-109">Командлет **Enable-AzActivityLogAlert** позволяет включить оповещение журнала действий и установить его теги.</span><span class="sxs-lookup"><span data-stu-id="f6549-109">The **Enable-AzActivityLogAlert** cmdlet allows enabling an activity log alert and setting its tags.</span></span>
+<span data-ttu-id="f6549-110">Этот cmdlet реализует шаблон ShouldProcess, то есть может запросить подтверждение у пользователя перед фактическим исправлением ресурса.</span><span class="sxs-lookup"><span data-stu-id="f6549-110">This cmdlet implements the ShouldProcess pattern, i.e. it might request confirmation from the user before actually patching the resource.</span></span>
 
-## <span data-ttu-id="3e3bd-111">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="3e3bd-111">EXAMPLES</span></span>
+## <span data-ttu-id="f6549-111">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="f6549-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="3e3bd-112">Пример 1: Включение оповещения журнала активности</span><span class="sxs-lookup"><span data-stu-id="3e3bd-112">Example 1: Enable an activity log alert</span></span>
+### <span data-ttu-id="f6549-112">Пример 1. Включить оповещение журнала действий</span><span class="sxs-lookup"><span data-stu-id="f6549-112">Example 1: Enable an activity log alert</span></span>
 ```
 PS C:\>Enable-AzActivityLogAlert -Name "alert1" -ResourceGroupName "Default-ActivityLogsAlerts"
 ```
 
-<span data-ttu-id="3e3bd-113">Эта команда включает предупреждение журнала активности с именем alert1 в группе ресурсов по умолчанию — ActivityLogsAlerts.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-113">This command enables the activity log alert called alert1 in the resource group Default-ActivityLogsAlerts.</span></span>
+<span data-ttu-id="f6549-113">Эта команда включает оповещение журнала действий "Оповещение1" в группе ресурсов Default-ActivityLogsAlerts.</span><span class="sxs-lookup"><span data-stu-id="f6549-113">This command enables the activity log alert called alert1 in the resource group Default-ActivityLogsAlerts.</span></span>
 
-### <span data-ttu-id="3e3bd-114">Пример 2: Включение оповещения журнала активности с помощью объекта PSActivityLogAlertResource в качестве входных данных</span><span class="sxs-lookup"><span data-stu-id="3e3bd-114">Example 2: Enable an activity log alert using a PSActivityLogAlertResource object as input</span></span>
+### <span data-ttu-id="f6549-114">Пример 2. Включите оповещение журнала действий с использованием объекта PSActivityLogAlertResource в качестве входных данных</span><span class="sxs-lookup"><span data-stu-id="f6549-114">Example 2: Enable an activity log alert using a PSActivityLogAlertResource object as input</span></span>
 ```
 PS C:\>$obj = Get-AzActivityLogAlert -ResourceGroup "Default-activityLogAlerts" -Name "alert1"
 PS C:\>Enable-AzActivityLogAlert -InputObject $obj
 ```
 
-<span data-ttu-id="3e3bd-115">Эта команда включает предупреждение журнала активности с именем alert1.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-115">This command enables an activity log alert called alert1.</span></span> <span data-ttu-id="3e3bd-116">Для этого он использует объект PSActivityLogAlertResource в качестве аргумента ввода.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-116">For this it uses a PSActivityLogAlertResource object as input argument.</span></span>
+<span data-ttu-id="f6549-115">Эта команда включает оповещение журнала действий под названием "Оповещение1".</span><span class="sxs-lookup"><span data-stu-id="f6549-115">This command enables an activity log alert called alert1.</span></span> <span data-ttu-id="f6549-116">Для этого используется объект PSActivityLogAlertResource в качестве входного аргумента.</span><span class="sxs-lookup"><span data-stu-id="f6549-116">For this it uses a PSActivityLogAlertResource object as input argument.</span></span>
 
-### <span data-ttu-id="3e3bd-117">Пример 3: включение ActivityLogAlert с помощью параметра ResourceId</span><span class="sxs-lookup"><span data-stu-id="3e3bd-117">Example 3: Enable the ActivityLogAlert using the ResourceId parameter</span></span>
+### <span data-ttu-id="f6549-117">Пример 3. Включить ActivityLogAlert с помощью параметра ResourceId</span><span class="sxs-lookup"><span data-stu-id="f6549-117">Example 3: Enable the ActivityLogAlert using the ResourceId parameter</span></span>
 ```
 PS C:\>Get-AzResource -ResourceGroupName "myResourceGroup" -Name "myLogAlert" | Enable-AzActivityLogAlert
 ```
 
-<span data-ttu-id="3e3bd-118">Эта команда активирует ActivityLogAlert с помощью параметра ResourceId в канале.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-118">This command enables the ActivityLogAlert using the ResourceId parameter from the pipe.</span></span>
+<span data-ttu-id="f6549-118">Эта команда включает activityLogAlert с использованием параметра ResourceId из канала.</span><span class="sxs-lookup"><span data-stu-id="f6549-118">This command enables the ActivityLogAlert using the ResourceId parameter from the pipe.</span></span>
 
-## <span data-ttu-id="3e3bd-119">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="3e3bd-119">PARAMETERS</span></span>
+## <span data-ttu-id="f6549-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="f6549-119">PARAMETERS</span></span>
 
-### <span data-ttu-id="3e3bd-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="3e3bd-120">-DefaultProfile</span></span>
-<span data-ttu-id="3e3bd-121">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="3e3bd-121">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="f6549-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f6549-120">-DefaultProfile</span></span>
+<span data-ttu-id="f6549-121">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="f6549-121">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -83,8 +83,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3e3bd-122">-InputObject</span><span class="sxs-lookup"><span data-stu-id="3e3bd-122">-InputObject</span></span>
-<span data-ttu-id="3e3bd-123">Задает свойство Tags (Теги InputObject) для вызова, чтобы извлечь требуемое имя, имя группы ресурсов и необязательные свойства Tags.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-123">Sets the InputObject tags property of the call to extract the required name, resource group name, and the optional tags properties.</span></span>
+### <span data-ttu-id="f6549-122">-InputObject</span><span class="sxs-lookup"><span data-stu-id="f6549-122">-InputObject</span></span>
+<span data-ttu-id="f6549-123">Задает свойство "Теги InputObject" звонка для извлечения требуемого имени, названия группы ресурсов и дополнительных свойств тегов.</span><span class="sxs-lookup"><span data-stu-id="f6549-123">Sets the InputObject tags property of the call to extract the required name, resource group name, and the optional tags properties.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -98,8 +98,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3e3bd-124">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="3e3bd-124">-Name</span></span>
-<span data-ttu-id="3e3bd-125">Имя оповещения журнала активности.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-125">The name of the activity log alert.</span></span>
+### <span data-ttu-id="f6549-124">-Name</span><span class="sxs-lookup"><span data-stu-id="f6549-124">-Name</span></span>
+<span data-ttu-id="f6549-125">Имя оповещения журнала действий.</span><span class="sxs-lookup"><span data-stu-id="f6549-125">The name of the activity log alert.</span></span>
 
 ```yaml
 Type: System.String
@@ -113,8 +113,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3e3bd-126">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="3e3bd-126">-ResourceGroupName</span></span>
-<span data-ttu-id="3e3bd-127">Имя группы ресурсов, в которой будет находиться ресурс оповещения.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-127">The name of the resource group where the alert resource is going to exist.</span></span>
+### <span data-ttu-id="f6549-126">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="f6549-126">-ResourceGroupName</span></span>
+<span data-ttu-id="f6549-127">Имя группы ресурсов, в которой должен существовать оповещение.</span><span class="sxs-lookup"><span data-stu-id="f6549-127">The name of the resource group where the alert resource is going to exist.</span></span>
 
 ```yaml
 Type: System.String
@@ -128,8 +128,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3e3bd-128">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="3e3bd-128">-ResourceId</span></span>
-<span data-ttu-id="3e3bd-129">Задает свойство Tags (Теги) для вызова, чтобы извлечь требуемое имя, свойства имени группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-129">Sets the ResourceId tags property of the call to extract the required name, resource group name properties.</span></span>
+### <span data-ttu-id="f6549-128">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="f6549-128">-ResourceId</span></span>
+<span data-ttu-id="f6549-129">Задает свойство "Теги ResourceId" звонка для извлечения требуемого имени (свойства имени группы ресурсов).</span><span class="sxs-lookup"><span data-stu-id="f6549-129">Sets the ResourceId tags property of the call to extract the required name, resource group name properties.</span></span>
 
 ```yaml
 Type: System.String
@@ -143,8 +143,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3e3bd-130">-Confirm</span><span class="sxs-lookup"><span data-stu-id="3e3bd-130">-Confirm</span></span>
-<span data-ttu-id="3e3bd-131">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-131">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="f6549-130">-Confirm</span><span class="sxs-lookup"><span data-stu-id="f6549-130">-Confirm</span></span>
+<span data-ttu-id="f6549-131">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="f6549-131">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -158,8 +158,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3e3bd-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="3e3bd-132">-WhatIf</span></span>
-<span data-ttu-id="3e3bd-133">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-133">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="3e3bd-134">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-134">The cmdlet is not run.</span></span>
+### <span data-ttu-id="f6549-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f6549-132">-WhatIf</span></span>
+<span data-ttu-id="f6549-133">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="f6549-133">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="f6549-134">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="f6549-134">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -173,31 +173,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3e3bd-135">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3e3bd-135">CommonParameters</span></span>
-<span data-ttu-id="3e3bd-136">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="3e3bd-136">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3e3bd-137">Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="3e3bd-137">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="f6549-135">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f6549-135">CommonParameters</span></span>
+<span data-ttu-id="f6549-136">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="f6549-136">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f6549-137">Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="f6549-137">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="3e3bd-138">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="3e3bd-138">INPUTS</span></span>
+## <span data-ttu-id="f6549-138">INPUTS</span><span class="sxs-lookup"><span data-stu-id="f6549-138">INPUTS</span></span>
 
-### <span data-ttu-id="3e3bd-139">System. String</span><span class="sxs-lookup"><span data-stu-id="3e3bd-139">System.String</span></span>
+### <span data-ttu-id="f6549-139">System.String</span><span class="sxs-lookup"><span data-stu-id="f6549-139">System.String</span></span>
 
-### <span data-ttu-id="3e3bd-140">Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource</span><span class="sxs-lookup"><span data-stu-id="3e3bd-140">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
+### <span data-ttu-id="f6549-140">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span><span class="sxs-lookup"><span data-stu-id="f6549-140">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
 
-## <span data-ttu-id="3e3bd-141">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="3e3bd-141">OUTPUTS</span></span>
+## <span data-ttu-id="f6549-141">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="f6549-141">OUTPUTS</span></span>
 
-### <span data-ttu-id="3e3bd-142">Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource</span><span class="sxs-lookup"><span data-stu-id="3e3bd-142">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
+### <span data-ttu-id="f6549-142">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span><span class="sxs-lookup"><span data-stu-id="f6549-142">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
 
-## <span data-ttu-id="3e3bd-143">Пуск</span><span class="sxs-lookup"><span data-stu-id="3e3bd-143">NOTES</span></span>
+## <span data-ttu-id="f6549-143">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="f6549-143">NOTES</span></span>
 
-## <span data-ttu-id="3e3bd-144">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="3e3bd-144">RELATED LINKS</span></span>
+## <span data-ttu-id="f6549-144">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="f6549-144">RELATED LINKS</span></span>
 
-[<span data-ttu-id="3e3bd-145">Set-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="3e3bd-145">Set-AzActivityLogAlert</span></span>](./Set-AzActivityLogAlert.md)
+[<span data-ttu-id="f6549-145">Set-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="f6549-145">Set-AzActivityLogAlert</span></span>](./Set-AzActivityLogAlert.md)
 
-[<span data-ttu-id="3e3bd-146">Get-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="3e3bd-146">Get-AzActivityLogAlert</span></span>](./Get-AzActivityLogAlert.md)
+[<span data-ttu-id="f6549-146">Get-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="f6549-146">Get-AzActivityLogAlert</span></span>](./Get-AzActivityLogAlert.md)
 
-[<span data-ttu-id="3e3bd-147">Remove-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="3e3bd-147">Remove-AzActivityLogAlert</span></span>](./Remove-AzActivityLogAlert.md)
+[<span data-ttu-id="f6549-147">Remove-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="f6549-147">Remove-AzActivityLogAlert</span></span>](./Remove-AzActivityLogAlert.md)
 
-[<span data-ttu-id="3e3bd-148">New-AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="3e3bd-148">New-AzActionGroup</span></span>](./New-AzActionGroup.md)
+[<span data-ttu-id="f6549-148">New-AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="f6549-148">New-AzActionGroup</span></span>](./New-AzActionGroup.md)
 
-[<span data-ttu-id="3e3bd-149">New-AzActivityLogAlertCondition</span><span class="sxs-lookup"><span data-stu-id="3e3bd-149">New-AzActivityLogAlertCondition</span></span>](./Get-AzActivityLogAlertCondition.md)
 
-[<span data-ttu-id="3e3bd-150">Disable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="3e3bd-150">Disable-AzActivityLogAlert</span></span>](./Disable-AzActivityLogAlert.md)
+
+[<span data-ttu-id="f6549-149">Disable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="f6549-149">Disable-AzActivityLogAlert</span></span>](./Disable-AzActivityLogAlert.md)
