@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
-ms.openlocfilehash: 4f21ce7a14873d201fa18f45c96d508dcd38cb8e
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 561b19f7eb09d9addfda2b7f3c66c66f2d9f759d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94244677"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415603"
 ---
-# <span data-ttu-id="58ebd-101">Move-AzResource</span><span class="sxs-lookup"><span data-stu-id="58ebd-101">Move-AzResource</span></span>
+# <span data-ttu-id="735f5-101">Move-AzResource</span><span class="sxs-lookup"><span data-stu-id="735f5-101">Move-AzResource</span></span>
 
-## <span data-ttu-id="58ebd-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="58ebd-102">SYNOPSIS</span></span>
-<span data-ttu-id="58ebd-103">Перемещает ресурс в другую группу ресурсов или подписку.</span><span class="sxs-lookup"><span data-stu-id="58ebd-103">Moves a resource to a different resource group or subscription.</span></span>
+## <span data-ttu-id="735f5-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="735f5-102">SYNOPSIS</span></span>
+<span data-ttu-id="735f5-103">Перемещение ресурса в другую группу ресурсов или подписку.</span><span class="sxs-lookup"><span data-stu-id="735f5-103">Moves a resource to a different resource group or subscription.</span></span>
 
-## <span data-ttu-id="58ebd-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="58ebd-104">SYNTAX</span></span>
+## <span data-ttu-id="735f5-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="735f5-104">SYNTAX</span></span>
 
 ```
 Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscriptionId <Guid>]
@@ -26,27 +26,27 @@ Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscription
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="58ebd-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="58ebd-105">DESCRIPTION</span></span>
-<span data-ttu-id="58ebd-106">Командлет **Move-AzResource** перемещает существующие ресурсы в другую группу ресурсов.</span><span class="sxs-lookup"><span data-stu-id="58ebd-106">The **Move-AzResource** cmdlet moves existing resources to a different resource group.</span></span>
-<span data-ttu-id="58ebd-107">Эта группа ресурсов может входить в другую подписку.</span><span class="sxs-lookup"><span data-stu-id="58ebd-107">That resource group can be in a different subscription.</span></span>
+## <span data-ttu-id="735f5-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="735f5-105">DESCRIPTION</span></span>
+<span data-ttu-id="735f5-106">Для перемещения существующих ресурсов в другую **группу перемещается ресурс AzResource.**</span><span class="sxs-lookup"><span data-stu-id="735f5-106">The **Move-AzResource** cmdlet moves existing resources to a different resource group.</span></span>
+<span data-ttu-id="735f5-107">Группа ресурсов может быть в другой подписке.</span><span class="sxs-lookup"><span data-stu-id="735f5-107">That resource group can be in a different subscription.</span></span>
 
-## <span data-ttu-id="58ebd-108">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="58ebd-108">EXAMPLES</span></span>
+## <span data-ttu-id="735f5-108">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="735f5-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="58ebd-109">Пример 1: перемещение ресурса в группу ресурсов</span><span class="sxs-lookup"><span data-stu-id="58ebd-109">Example 1: Move a resource to a resource group</span></span>
+### <span data-ttu-id="735f5-109">Пример 1. Перемещение ресурса в группу ресурсов</span><span class="sxs-lookup"><span data-stu-id="735f5-109">Example 1: Move a resource to a resource group</span></span>
 ```
 PS C:\>$Resource = Get-AzResource -ResourceType "Microsoft.ClassicCompute/storageAccounts" -ResourceName "ContosoStorageAccount"
 PS C:\> Move-AzResource -ResourceId $Resource.ResourceId -DestinationResourceGroupName "ResourceGroup14"
 ```
 
-<span data-ttu-id="58ebd-110">Первая команда получает ресурс с именем ContosoStorageAccount с помощью командлета Get-AzResource и сохраняет этот ресурс в переменной $Resource.</span><span class="sxs-lookup"><span data-stu-id="58ebd-110">The first command gets a resource named ContosoStorageAccount by using the Get-AzResource cmdlet, and then stores that resource in the $Resource variable.</span></span>
-<span data-ttu-id="58ebd-111">Вторая команда перемещает этот ресурс в группу ресурсов с именем ResourceGroup14.</span><span class="sxs-lookup"><span data-stu-id="58ebd-111">The second command moves that resource into the resource group named ResourceGroup14.</span></span>
-<span data-ttu-id="58ebd-112">Команда определяет ресурс для перемещения с помощью свойства **ResourceId** для $Resource.</span><span class="sxs-lookup"><span data-stu-id="58ebd-112">The command identifies the resource to move by using the **ResourceId** property of $Resource.</span></span>
+<span data-ttu-id="735f5-110">Первая команда получает ресурс с именем ContosoStorageAccount с помощью командлета Get-AzResource, а затем сохраняет его в переменной $Resource.</span><span class="sxs-lookup"><span data-stu-id="735f5-110">The first command gets a resource named ContosoStorageAccount by using the Get-AzResource cmdlet, and then stores that resource in the $Resource variable.</span></span>
+<span data-ttu-id="735f5-111">Вторая команда перемещает этот ресурс в группу ресурсов с именем ResourceGroup14.</span><span class="sxs-lookup"><span data-stu-id="735f5-111">The second command moves that resource into the resource group named ResourceGroup14.</span></span>
+<span data-ttu-id="735f5-112">Команда определяет ресурс, который нужно переместить, с помощью свойства **ResourceId** $Resource.</span><span class="sxs-lookup"><span data-stu-id="735f5-112">The command identifies the resource to move by using the **ResourceId** property of $Resource.</span></span>
 
-## <span data-ttu-id="58ebd-113">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="58ebd-113">PARAMETERS</span></span>
+## <span data-ttu-id="735f5-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="735f5-113">PARAMETERS</span></span>
 
-### <span data-ttu-id="58ebd-114">-ApiVersion</span><span class="sxs-lookup"><span data-stu-id="58ebd-114">-ApiVersion</span></span>
-<span data-ttu-id="58ebd-115">Указывает версию используемого API поставщика ресурсов.</span><span class="sxs-lookup"><span data-stu-id="58ebd-115">Specifies the version of the resource provider API to use.</span></span>
-<span data-ttu-id="58ebd-116">Если вы не укажете версию, этот командлет использует последнюю доступную версию.</span><span class="sxs-lookup"><span data-stu-id="58ebd-116">If you do not specify a version, this cmdlet uses the latest available version.</span></span>
+### <span data-ttu-id="735f5-114">-ApiVersion</span><span class="sxs-lookup"><span data-stu-id="735f5-114">-ApiVersion</span></span>
+<span data-ttu-id="735f5-115">Определяет версию API поставщика ресурсов.</span><span class="sxs-lookup"><span data-stu-id="735f5-115">Specifies the version of the resource provider API to use.</span></span>
+<span data-ttu-id="735f5-116">Если не указать версию, этот cmdlet использует последнюю доступную версию.</span><span class="sxs-lookup"><span data-stu-id="735f5-116">If you do not specify a version, this cmdlet uses the latest available version.</span></span>
 
 ```yaml
 Type: System.String
@@ -60,8 +60,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="58ebd-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="58ebd-117">-DefaultProfile</span></span>
-<span data-ttu-id="58ebd-118">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="58ebd-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="735f5-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="735f5-117">-DefaultProfile</span></span>
+<span data-ttu-id="735f5-118">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure</span><span class="sxs-lookup"><span data-stu-id="735f5-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,8 +75,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="58ebd-119">-DestinationResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="58ebd-119">-DestinationResourceGroupName</span></span>
-<span data-ttu-id="58ebd-120">Указывает имя группы ресурсов, в которую этот командлет перемещает ресурсы.</span><span class="sxs-lookup"><span data-stu-id="58ebd-120">Specifies the name of the resource group into which this cmdlet moves resources.</span></span>
+### <span data-ttu-id="735f5-119">-DestinationResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="735f5-119">-DestinationResourceGroupName</span></span>
+<span data-ttu-id="735f5-120">Имя группы ресурсов, в которую этот cmdlet перемещает ресурсы.</span><span class="sxs-lookup"><span data-stu-id="735f5-120">Specifies the name of the resource group into which this cmdlet moves resources.</span></span>
 
 ```yaml
 Type: System.String
@@ -90,8 +90,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="58ebd-121">-DestinationSubscriptionId</span><span class="sxs-lookup"><span data-stu-id="58ebd-121">-DestinationSubscriptionId</span></span>
-<span data-ttu-id="58ebd-122">Указывает идентификатор подписки, в которую этот командлет перемещает ресурсы.</span><span class="sxs-lookup"><span data-stu-id="58ebd-122">Specifies the ID of the subscription into which this cmdlet moves resources .</span></span>
+### <span data-ttu-id="735f5-121">-DestinationSubscriptionId</span><span class="sxs-lookup"><span data-stu-id="735f5-121">-DestinationSubscriptionId</span></span>
+<span data-ttu-id="735f5-122">Определяет код подписки, в которую этот cmdlet перемещает ресурсы.</span><span class="sxs-lookup"><span data-stu-id="735f5-122">Specifies the ID of the subscription into which this cmdlet moves resources .</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -105,8 +105,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="58ebd-123">-Force</span><span class="sxs-lookup"><span data-stu-id="58ebd-123">-Force</span></span>
-<span data-ttu-id="58ebd-124">Принудительное выполнение команды без запроса подтверждения пользователя.</span><span class="sxs-lookup"><span data-stu-id="58ebd-124">Forces the command to run without asking for user confirmation.</span></span>
+### <span data-ttu-id="735f5-123">-Force</span><span class="sxs-lookup"><span data-stu-id="735f5-123">-Force</span></span>
+<span data-ttu-id="735f5-124">Запуск команды без запроса подтверждения.</span><span class="sxs-lookup"><span data-stu-id="735f5-124">Forces the command to run without asking for user confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -120,8 +120,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="58ebd-125">-Pre</span><span class="sxs-lookup"><span data-stu-id="58ebd-125">-Pre</span></span>
-<span data-ttu-id="58ebd-126">Указывает на то, что этот командлет учитывает версии API предварительного выпуска, когда он автоматически определяет, какую версию использовать.</span><span class="sxs-lookup"><span data-stu-id="58ebd-126">Indicates that this cmdlet considers pre-release API versions when it automatically determines which version to use.</span></span>
+### <span data-ttu-id="735f5-125">-Pre</span><span class="sxs-lookup"><span data-stu-id="735f5-125">-Pre</span></span>
+<span data-ttu-id="735f5-126">Указывает на то, что этот cmdlet рассматривает предварительные версии API при автоматическом определении используемой версии.</span><span class="sxs-lookup"><span data-stu-id="735f5-126">Indicates that this cmdlet considers pre-release API versions when it automatically determines which version to use.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -135,8 +135,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="58ebd-127">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="58ebd-127">-ResourceId</span></span>
-<span data-ttu-id="58ebd-128">Задает массив идентификаторов ресурсов, перемещаемых этим командлетом.</span><span class="sxs-lookup"><span data-stu-id="58ebd-128">Specifies an array of IDs of the resources that this cmdlet moves.</span></span>
+### <span data-ttu-id="735f5-127">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="735f5-127">-ResourceId</span></span>
+<span data-ttu-id="735f5-128">Определяет массив кодов ресурсов, перемещаемых этим cmdlet.</span><span class="sxs-lookup"><span data-stu-id="735f5-128">Specifies an array of IDs of the resources that this cmdlet moves.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -150,8 +150,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="58ebd-129">-Confirm</span><span class="sxs-lookup"><span data-stu-id="58ebd-129">-Confirm</span></span>
-<span data-ttu-id="58ebd-130">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="58ebd-130">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="735f5-129">-Confirm</span><span class="sxs-lookup"><span data-stu-id="735f5-129">-Confirm</span></span>
+<span data-ttu-id="735f5-130">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="735f5-130">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -165,9 +165,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="58ebd-131">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="58ebd-131">-WhatIf</span></span>
-<span data-ttu-id="58ebd-132">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="58ebd-132">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="58ebd-133">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="58ebd-133">The cmdlet is not run.</span></span>
+### <span data-ttu-id="735f5-131">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="735f5-131">-WhatIf</span></span>
+<span data-ttu-id="735f5-132">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="735f5-132">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="735f5-133">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="735f5-133">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -181,31 +181,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="58ebd-134">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="58ebd-134">CommonParameters</span></span>
-<span data-ttu-id="58ebd-135">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="58ebd-135">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="58ebd-136">Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="58ebd-136">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="735f5-134">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="735f5-134">CommonParameters</span></span>
+<span data-ttu-id="735f5-135">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="735f5-135">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="735f5-136">Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="735f5-136">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="58ebd-137">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="58ebd-137">INPUTS</span></span>
+## <span data-ttu-id="735f5-137">INPUTS</span><span class="sxs-lookup"><span data-stu-id="735f5-137">INPUTS</span></span>
 
-### <span data-ttu-id="58ebd-138">System. Nullable "1 [[System. GUID, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="58ebd-138">System.Nullable\`1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="735f5-138">System.Nullable'1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="735f5-138">System.Nullable\`1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="58ebd-139">System. String []</span><span class="sxs-lookup"><span data-stu-id="58ebd-139">System.String[]</span></span>
+### <span data-ttu-id="735f5-139">System.String[]</span><span class="sxs-lookup"><span data-stu-id="735f5-139">System.String[]</span></span>
 
-## <span data-ttu-id="58ebd-140">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="58ebd-140">OUTPUTS</span></span>
+## <span data-ttu-id="735f5-140">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="735f5-140">OUTPUTS</span></span>
 
-### <span data-ttu-id="58ebd-141">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="58ebd-141">System.Boolean</span></span>
+### <span data-ttu-id="735f5-141">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="735f5-141">System.Boolean</span></span>
 
-## <span data-ttu-id="58ebd-142">Пуск</span><span class="sxs-lookup"><span data-stu-id="58ebd-142">NOTES</span></span>
+## <span data-ttu-id="735f5-142">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="735f5-142">NOTES</span></span>
 
-## <span data-ttu-id="58ebd-143">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="58ebd-143">RELATED LINKS</span></span>
+## <span data-ttu-id="735f5-143">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="735f5-143">RELATED LINKS</span></span>
 
-[<span data-ttu-id="58ebd-144">Find-AzResource</span><span class="sxs-lookup"><span data-stu-id="58ebd-144">Find-AzResource</span></span>](./Find-AzResource.md)
 
-[<span data-ttu-id="58ebd-145">Get-AzResource</span><span class="sxs-lookup"><span data-stu-id="58ebd-145">Get-AzResource</span></span>](./Get-AzResource.md)
+[<span data-ttu-id="735f5-144">Get-AzResource</span><span class="sxs-lookup"><span data-stu-id="735f5-144">Get-AzResource</span></span>](./Get-AzResource.md)
 
-[<span data-ttu-id="58ebd-146">New-AzResource</span><span class="sxs-lookup"><span data-stu-id="58ebd-146">New-AzResource</span></span>](./New-AzResource.md)
+[<span data-ttu-id="735f5-145">New-AzResource</span><span class="sxs-lookup"><span data-stu-id="735f5-145">New-AzResource</span></span>](./New-AzResource.md)
 
-[<span data-ttu-id="58ebd-147">Remove-AzResource</span><span class="sxs-lookup"><span data-stu-id="58ebd-147">Remove-AzResource</span></span>](./Remove-AzResource.md)
+[<span data-ttu-id="735f5-146">Remove-AzResource</span><span class="sxs-lookup"><span data-stu-id="735f5-146">Remove-AzResource</span></span>](./Remove-AzResource.md)
 
-[<span data-ttu-id="58ebd-148">Set-AzResource</span><span class="sxs-lookup"><span data-stu-id="58ebd-148">Set-AzResource</span></span>](./Set-AzResource.md)
+[<span data-ttu-id="735f5-147">Set-AzResource</span><span class="sxs-lookup"><span data-stu-id="735f5-147">Set-AzResource</span></span>](./Set-AzResource.md)
 
 

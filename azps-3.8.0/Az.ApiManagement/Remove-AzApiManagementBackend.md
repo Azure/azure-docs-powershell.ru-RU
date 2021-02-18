@@ -5,41 +5,41 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
-ms.openlocfilehash: d1a353e9534cbfd2530bb67f5eeda92fbb6d72ff
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 073b32936be1e1614e495ca680a250498742ba66
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94073011"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414600"
 ---
-# <span data-ttu-id="50955-101">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="50955-101">Remove-AzApiManagementBackend</span></span>
+# <span data-ttu-id="c71f6-101">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="c71f6-101">Remove-AzApiManagementBackend</span></span>
 
-## <span data-ttu-id="50955-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="50955-102">SYNOPSIS</span></span>
-<span data-ttu-id="50955-103">Удаляет сервер.</span><span class="sxs-lookup"><span data-stu-id="50955-103">Removes a Backend.</span></span>
+## <span data-ttu-id="c71f6-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="c71f6-102">SYNOPSIS</span></span>
+<span data-ttu-id="c71f6-103">Удаляет "Backend".</span><span class="sxs-lookup"><span data-stu-id="c71f6-103">Removes a Backend.</span></span>
 
-## <span data-ttu-id="50955-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="50955-104">SYNTAX</span></span>
+## <span data-ttu-id="c71f6-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="c71f6-104">SYNTAX</span></span>
 
 ```
 Remove-AzApiManagementBackend -Context <PsApiManagementContext> -BackendId <String> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="50955-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="50955-105">DESCRIPTION</span></span>
-<span data-ttu-id="50955-106">Удаляет серверные части, заданные идентификатором, из управления API.</span><span class="sxs-lookup"><span data-stu-id="50955-106">Removes a backend specified by the Identifier from the Api Management.</span></span>
+## <span data-ttu-id="c71f6-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="c71f6-105">DESCRIPTION</span></span>
+<span data-ttu-id="c71f6-106">Из управления Api удаляется заданный идентификатором.</span><span class="sxs-lookup"><span data-stu-id="c71f6-106">Removes a backend specified by the Identifier from the Api Management.</span></span>
 
-## <span data-ttu-id="50955-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="50955-107">EXAMPLES</span></span>
+## <span data-ttu-id="c71f6-107">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="c71f6-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="50955-108">Пример 1: удаление внутреннего сервера 123</span><span class="sxs-lookup"><span data-stu-id="50955-108">Example 1: Remove the Backend 123</span></span>
+### <span data-ttu-id="c71f6-108">Пример 1. Удаление backend 123</span><span class="sxs-lookup"><span data-stu-id="c71f6-108">Example 1: Remove the Backend 123</span></span>
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Remove-AzApiManagementBackend -Context $apimContext -BackendId 123 -PassThru
 ```
 
-## <span data-ttu-id="50955-109">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="50955-109">PARAMETERS</span></span>
+## <span data-ttu-id="c71f6-109">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="c71f6-109">PARAMETERS</span></span>
 
-### <span data-ttu-id="50955-110">-BackendId</span><span class="sxs-lookup"><span data-stu-id="50955-110">-BackendId</span></span>
-<span data-ttu-id="50955-111">Идентификатор существующей базы данных.</span><span class="sxs-lookup"><span data-stu-id="50955-111">Identifier of existing backend.</span></span>
-<span data-ttu-id="50955-112">Этот параметр является обязательным.</span><span class="sxs-lookup"><span data-stu-id="50955-112">This parameter is required.</span></span>
+### <span data-ttu-id="c71f6-110">-BackendId</span><span class="sxs-lookup"><span data-stu-id="c71f6-110">-BackendId</span></span>
+<span data-ttu-id="c71f6-111">Идентификатор существующего backend.</span><span class="sxs-lookup"><span data-stu-id="c71f6-111">Identifier of existing backend.</span></span>
+<span data-ttu-id="c71f6-112">Этот параметр является required(обязательно).</span><span class="sxs-lookup"><span data-stu-id="c71f6-112">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -53,9 +53,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="50955-113">-Context</span><span class="sxs-lookup"><span data-stu-id="50955-113">-Context</span></span>
-<span data-ttu-id="50955-114">Экземпляр PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="50955-114">Instance of PsApiManagementContext.</span></span>
-<span data-ttu-id="50955-115">Этот параметр является обязательным.</span><span class="sxs-lookup"><span data-stu-id="50955-115">This parameter is required.</span></span>
+### <span data-ttu-id="c71f6-113">-Контекст</span><span class="sxs-lookup"><span data-stu-id="c71f6-113">-Context</span></span>
+<span data-ttu-id="c71f6-114">Экземпляр PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="c71f6-114">Instance of PsApiManagementContext.</span></span>
+<span data-ttu-id="c71f6-115">Этот параметр является required(обязательно).</span><span class="sxs-lookup"><span data-stu-id="c71f6-115">This parameter is required.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -69,8 +69,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="50955-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="50955-116">-DefaultProfile</span></span>
-<span data-ttu-id="50955-117">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="50955-117">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="c71f6-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c71f6-116">-DefaultProfile</span></span>
+<span data-ttu-id="c71f6-117">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="c71f6-117">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,10 +84,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="50955-118">-PassThru</span><span class="sxs-lookup"><span data-stu-id="50955-118">-PassThru</span></span>
-<span data-ttu-id="50955-119">Если задано значение true, операция Case запишется успешно.</span><span class="sxs-lookup"><span data-stu-id="50955-119">If specified will write true in case operation succeeds.</span></span>
-<span data-ttu-id="50955-120">Этот параметр является необязательным.</span><span class="sxs-lookup"><span data-stu-id="50955-120">This parameter is optional.</span></span>
-<span data-ttu-id="50955-121">Значение по умолчанию — false.</span><span class="sxs-lookup"><span data-stu-id="50955-121">Default value is false.</span></span>
+### <span data-ttu-id="c71f6-118">-PassThru</span><span class="sxs-lookup"><span data-stu-id="c71f6-118">-PassThru</span></span>
+<span data-ttu-id="c71f6-119">Если этот задан, будет указано "Истина" в случае успешной операции.</span><span class="sxs-lookup"><span data-stu-id="c71f6-119">If specified will write true in case operation succeeds.</span></span>
+<span data-ttu-id="c71f6-120">Этот параметр является необязательным.</span><span class="sxs-lookup"><span data-stu-id="c71f6-120">This parameter is optional.</span></span>
+<span data-ttu-id="c71f6-121">Значение по умолчанию — false.</span><span class="sxs-lookup"><span data-stu-id="c71f6-121">Default value is false.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -101,8 +101,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="50955-122">-Confirm</span><span class="sxs-lookup"><span data-stu-id="50955-122">-Confirm</span></span>
-<span data-ttu-id="50955-123">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="50955-123">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="c71f6-122">-Confirm</span><span class="sxs-lookup"><span data-stu-id="c71f6-122">-Confirm</span></span>
+<span data-ttu-id="c71f6-123">Перед запуском cmdlet вам будет предложено подтвердить его.</span><span class="sxs-lookup"><span data-stu-id="c71f6-123">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -116,8 +116,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="50955-124">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="50955-124">-WhatIf</span></span>
-<span data-ttu-id="50955-125">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="50955-125">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="50955-126">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="50955-126">The cmdlet is not run.</span></span>
+### <span data-ttu-id="c71f6-124">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="c71f6-124">-WhatIf</span></span>
+<span data-ttu-id="c71f6-125">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c71f6-125">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="c71f6-126">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="c71f6-126">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -131,31 +131,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="50955-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="50955-127">CommonParameters</span></span>
-<span data-ttu-id="50955-128">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="50955-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="50955-129">Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="50955-129">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="c71f6-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c71f6-127">CommonParameters</span></span>
+<span data-ttu-id="c71f6-128">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="c71f6-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c71f6-129">Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="c71f6-129">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="50955-130">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="50955-130">INPUTS</span></span>
+## <span data-ttu-id="c71f6-130">INPUTS</span><span class="sxs-lookup"><span data-stu-id="c71f6-130">INPUTS</span></span>
 
-### <span data-ttu-id="50955-131">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="50955-131">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+### <span data-ttu-id="c71f6-131">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="c71f6-131">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
 
-### <span data-ttu-id="50955-132">System. String</span><span class="sxs-lookup"><span data-stu-id="50955-132">System.String</span></span>
+### <span data-ttu-id="c71f6-132">System.String</span><span class="sxs-lookup"><span data-stu-id="c71f6-132">System.String</span></span>
 
-### <span data-ttu-id="50955-133">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="50955-133">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="c71f6-133">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="c71f6-133">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="50955-134">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="50955-134">OUTPUTS</span></span>
+## <span data-ttu-id="c71f6-134">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="c71f6-134">OUTPUTS</span></span>
 
-### <span data-ttu-id="50955-135">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="50955-135">System.Boolean</span></span>
+### <span data-ttu-id="c71f6-135">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="c71f6-135">System.Boolean</span></span>
 
-## <span data-ttu-id="50955-136">Пуск</span><span class="sxs-lookup"><span data-stu-id="50955-136">NOTES</span></span>
+## <span data-ttu-id="c71f6-136">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="c71f6-136">NOTES</span></span>
 
-## <span data-ttu-id="50955-137">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="50955-137">RELATED LINKS</span></span>
+## <span data-ttu-id="c71f6-137">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="c71f6-137">RELATED LINKS</span></span>
 
-[<span data-ttu-id="50955-138">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="50955-138">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend)
+[<span data-ttu-id="c71f6-138">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="c71f6-138">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend.md)
 
-[<span data-ttu-id="50955-139">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="50955-139">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
+[<span data-ttu-id="c71f6-139">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="c71f6-139">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
 
-[<span data-ttu-id="50955-140">New-AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="50955-140">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
+[<span data-ttu-id="c71f6-140">New-AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="c71f6-140">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
 
-[<span data-ttu-id="50955-141">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="50955-141">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
+[<span data-ttu-id="c71f6-141">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="c71f6-141">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
 
-[<span data-ttu-id="50955-142">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="50955-142">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
+[<span data-ttu-id="c71f6-142">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="c71f6-142">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
