@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.servicefab
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
-ms.openlocfilehash: 283ca228ba44d2ec87cd926d23e0217eb67434eb
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8aec0babd295e6208cd0b1b055880fcd71164592
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93729100"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684870"
 ---
-# <span data-ttu-id="91ffc-101">Update-AzServiceFabricDurability</span><span class="sxs-lookup"><span data-stu-id="91ffc-101">Update-AzServiceFabricDurability</span></span>
+# <span data-ttu-id="184a0-101">Update-AzServiceFabricDurability</span><span class="sxs-lookup"><span data-stu-id="184a0-101">Update-AzServiceFabricDurability</span></span>
 
-## <span data-ttu-id="91ffc-102">КРАТКИй обзор</span><span class="sxs-lookup"><span data-stu-id="91ffc-102">SYNOPSIS</span></span>
-<span data-ttu-id="91ffc-103">Обновите уровень устойчивости или VmSku типа узла в кластере.</span><span class="sxs-lookup"><span data-stu-id="91ffc-103">Update the durability tier or VmSku of a node type in the cluster.</span></span>
+## <span data-ttu-id="184a0-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="184a0-102">SYNOPSIS</span></span>
+<span data-ttu-id="184a0-103">Обновление уровня надежности (VMSKU) типа узла в кластере.</span><span class="sxs-lookup"><span data-stu-id="184a0-103">Update the durability tier or VmSku of a node type in the cluster.</span></span> <span data-ttu-id="184a0-104">При этом также будет обновляться уровень надежности в расширении Service Fabric VM в связанном наборе масштаба виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="184a0-104">It will also update the durability tier in the Service Fabric VM extension on the associated Virtual Machine Scale Set.</span></span>
 
-## <span data-ttu-id="91ffc-104">Максимальное</span><span class="sxs-lookup"><span data-stu-id="91ffc-104">SYNTAX</span></span>
+## <span data-ttu-id="184a0-105">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="184a0-105">SYNTAX</span></span>
 
 ```
 Update-AzServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
@@ -25,22 +25,22 @@ Update-AzServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> 
  [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="91ffc-105">NОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="91ffc-105">DESCRIPTION</span></span>
-<span data-ttu-id="91ffc-106">С помощью **Update-AzServiceFabricDurability** обновите устойчивость или SKU кластера.</span><span class="sxs-lookup"><span data-stu-id="91ffc-106">Use **Update-AzServiceFabricDurability** to update durability or SKU of the cluster.</span></span>
+## <span data-ttu-id="184a0-106">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="184a0-106">DESCRIPTION</span></span>
+<span data-ttu-id="184a0-107">Используйте **update-AzServiceFabricDurability** для обновления надежности или SKU кластера.</span><span class="sxs-lookup"><span data-stu-id="184a0-107">Use **Update-AzServiceFabricDurability** to update durability or SKU of the cluster.</span></span>
 
-## <span data-ttu-id="91ffc-107">ИЛЛЮСТРИРУЮТ</span><span class="sxs-lookup"><span data-stu-id="91ffc-107">EXAMPLES</span></span>
+## <span data-ttu-id="184a0-108">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="184a0-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="91ffc-108">Пример 1</span><span class="sxs-lookup"><span data-stu-id="91ffc-108">Example 1</span></span>
+### <span data-ttu-id="184a0-109">Пример 1</span><span class="sxs-lookup"><span data-stu-id="184a0-109">Example 1</span></span>
 ```
 PS c:> Update-AzServiceFabricDurability -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -DurabilityLevel Silver -NodeType nt1
 ```
 
-<span data-ttu-id="91ffc-109">Эта команда изменяет уровень устойчивости NodeType "NT1" на "серебр.".</span><span class="sxs-lookup"><span data-stu-id="91ffc-109">This command changes durability tier of the NodeType 'nt1' to silver.</span></span>
+<span data-ttu-id="184a0-110">Эта команда изменяет уровень надежности nodeType "nt1" на silver.</span><span class="sxs-lookup"><span data-stu-id="184a0-110">This command changes durability tier of the NodeType 'nt1' to silver.</span></span>
 
-## <span data-ttu-id="91ffc-110">ПАРАМЕТРЫ</span><span class="sxs-lookup"><span data-stu-id="91ffc-110">PARAMETERS</span></span>
+## <span data-ttu-id="184a0-111">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="184a0-111">PARAMETERS</span></span>
 
-### <span data-ttu-id="91ffc-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="91ffc-111">-DefaultProfile</span></span>
-<span data-ttu-id="91ffc-112">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="91ffc-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="184a0-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="184a0-112">-DefaultProfile</span></span>
+<span data-ttu-id="184a0-113">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="184a0-113">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -54,8 +54,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="91ffc-113">-DurabilityLevel</span><span class="sxs-lookup"><span data-stu-id="91ffc-113">-DurabilityLevel</span></span>
-<span data-ttu-id="91ffc-114">Укажите уровень устойчивости.</span><span class="sxs-lookup"><span data-stu-id="91ffc-114">Specify durability level.</span></span>
+### <span data-ttu-id="184a0-114">-DurabilityLevel</span><span class="sxs-lookup"><span data-stu-id="184a0-114">-DurabilityLevel</span></span>
+<span data-ttu-id="184a0-115">Укажите уровень надежности.</span><span class="sxs-lookup"><span data-stu-id="184a0-115">Specify durability level.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
@@ -70,8 +70,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="91ffc-115">-Name (имя)</span><span class="sxs-lookup"><span data-stu-id="91ffc-115">-Name</span></span>
-<span data-ttu-id="91ffc-116">Укажите имя кластера.</span><span class="sxs-lookup"><span data-stu-id="91ffc-116">Specify the name of the cluster.</span></span>
+### <span data-ttu-id="184a0-116">-Name</span><span class="sxs-lookup"><span data-stu-id="184a0-116">-Name</span></span>
+<span data-ttu-id="184a0-117">Укажите имя кластера.</span><span class="sxs-lookup"><span data-stu-id="184a0-117">Specify the name of the cluster.</span></span>
 
 ```yaml
 Type: System.String
@@ -85,8 +85,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="91ffc-117">-NodeType</span><span class="sxs-lookup"><span data-stu-id="91ffc-117">-NodeType</span></span>
-<span data-ttu-id="91ffc-118">Укажите имя типа узла фабрики служб.</span><span class="sxs-lookup"><span data-stu-id="91ffc-118">Specify Service Fabric node type name.</span></span>
+### <span data-ttu-id="184a0-118">-NodeType</span><span class="sxs-lookup"><span data-stu-id="184a0-118">-NodeType</span></span>
+<span data-ttu-id="184a0-119">Укажите имя типа узла "Сервисная ткань".</span><span class="sxs-lookup"><span data-stu-id="184a0-119">Specify Service Fabric node type name.</span></span>
 
 ```yaml
 Type: System.String
@@ -100,8 +100,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="91ffc-119">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="91ffc-119">-ResourceGroupName</span></span>
-<span data-ttu-id="91ffc-120">Указывает имя группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="91ffc-120">Specifies the name of the resource group.</span></span>
+### <span data-ttu-id="184a0-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="184a0-120">-ResourceGroupName</span></span>
+<span data-ttu-id="184a0-121">Имя группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="184a0-121">Specifies the name of the resource group.</span></span>
 
 ```yaml
 Type: System.String
@@ -115,8 +115,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="91ffc-121">-SKU</span><span class="sxs-lookup"><span data-stu-id="91ffc-121">-Sku</span></span>
-<span data-ttu-id="91ffc-122">Укажите номер SKU для типа узла.</span><span class="sxs-lookup"><span data-stu-id="91ffc-122">Specify the SKU of the node type.</span></span>
+### <span data-ttu-id="184a0-122">-SKU</span><span class="sxs-lookup"><span data-stu-id="184a0-122">-Sku</span></span>
+<span data-ttu-id="184a0-123">Укажите SKU типа узла.</span><span class="sxs-lookup"><span data-stu-id="184a0-123">Specify the SKU of the node type.</span></span>
 
 ```yaml
 Type: System.String
@@ -130,8 +130,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="91ffc-123">-Confirm</span><span class="sxs-lookup"><span data-stu-id="91ffc-123">-Confirm</span></span>
-<span data-ttu-id="91ffc-124">Запрашивает подтверждение перед запуском командлета.</span><span class="sxs-lookup"><span data-stu-id="91ffc-124">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="184a0-124">-Confirm</span><span class="sxs-lookup"><span data-stu-id="184a0-124">-Confirm</span></span>
+<span data-ttu-id="184a0-125">Запрос на подтверждение перед запуском cmdlet.</span><span class="sxs-lookup"><span data-stu-id="184a0-125">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -145,8 +145,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="91ffc-125">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="91ffc-125">-WhatIf</span></span>
-<span data-ttu-id="91ffc-126">Показывает, что произойдет при запуске командлета.</span><span class="sxs-lookup"><span data-stu-id="91ffc-126">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="91ffc-127">Командлет не выполняется.</span><span class="sxs-lookup"><span data-stu-id="91ffc-127">The cmdlet is not run.</span></span>
+### <span data-ttu-id="184a0-126">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="184a0-126">-WhatIf</span></span>
+<span data-ttu-id="184a0-127">Показывает, что произойдет при запуске cmdlet.</span><span class="sxs-lookup"><span data-stu-id="184a0-127">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="184a0-128">Этот cmdlet не будет выполниться.</span><span class="sxs-lookup"><span data-stu-id="184a0-128">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -160,19 +160,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="91ffc-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="91ffc-128">CommonParameters</span></span>
-<span data-ttu-id="91ffc-129">Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction.</span><span class="sxs-lookup"><span data-stu-id="91ffc-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="91ffc-130">Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="91ffc-130">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="184a0-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="184a0-129">CommonParameters</span></span>
+<span data-ttu-id="184a0-130">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="184a0-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="184a0-131">Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="184a0-131">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="91ffc-131">ВХОДНЫЕ данные</span><span class="sxs-lookup"><span data-stu-id="91ffc-131">INPUTS</span></span>
+## <span data-ttu-id="184a0-132">INPUTS</span><span class="sxs-lookup"><span data-stu-id="184a0-132">INPUTS</span></span>
 
-### <span data-ttu-id="91ffc-132">System. String</span><span class="sxs-lookup"><span data-stu-id="91ffc-132">System.String</span></span>
+### <span data-ttu-id="184a0-133">System.String</span><span class="sxs-lookup"><span data-stu-id="184a0-133">System.String</span></span>
 
-### <span data-ttu-id="91ffc-133">Microsoft. Azure. Commands. ServiceFabric. Models. DurabilityLevel</span><span class="sxs-lookup"><span data-stu-id="91ffc-133">Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel</span></span>
+### <span data-ttu-id="184a0-134">Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel</span><span class="sxs-lookup"><span data-stu-id="184a0-134">Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel</span></span>
 
-## <span data-ttu-id="91ffc-134">НАПРЯЖЕНИЕ</span><span class="sxs-lookup"><span data-stu-id="91ffc-134">OUTPUTS</span></span>
+## <span data-ttu-id="184a0-135">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="184a0-135">OUTPUTS</span></span>
 
-### <span data-ttu-id="91ffc-135">Microsoft. Azure. Commands. ServiceFabric. Models. PSCluster</span><span class="sxs-lookup"><span data-stu-id="91ffc-135">Microsoft.Azure.Commands.ServiceFabric.Models.PSCluster</span></span>
+### <span data-ttu-id="184a0-136">Microsoft.Azure.Commands.ServiceFabric.Models.PSCluster</span><span class="sxs-lookup"><span data-stu-id="184a0-136">Microsoft.Azure.Commands.ServiceFabric.Models.PSCluster</span></span>
 
-## <span data-ttu-id="91ffc-136">Пуск</span><span class="sxs-lookup"><span data-stu-id="91ffc-136">NOTES</span></span>
+## <span data-ttu-id="184a0-137">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="184a0-137">NOTES</span></span>
 
-## <span data-ttu-id="91ffc-137">ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="91ffc-137">RELATED LINKS</span></span>
+## <span data-ttu-id="184a0-138">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="184a0-138">RELATED LINKS</span></span>

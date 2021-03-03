@@ -72,7 +72,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: Справка по командлетам
-            url: /powershell/module/?view=azps-4.8.0
+            url: /powershell/module/?view=azps-5.5.0
           - text: Заметки о выпуске
             url: release-notes-azureps.md
           - text: "Критические изменения в Az\_2.0.0"
