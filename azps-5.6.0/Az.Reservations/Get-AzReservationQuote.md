@@ -1,0 +1,252 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Reservations.dll-Help.xml
+Module Name: Az.Reservations
+online version: https://docs.microsoft.com/powershell/module/az.reservations/get-azreservationquote
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Reservations/Reservations/help/Get-AzReservationQuote.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Reservations/Reservations/help/Get-AzReservationQuote.md
+ms.openlocfilehash: 3a06de95cedd0ea38fa38b2fb8784e553ae6f4d7
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102000259"
+---
+# <span data-ttu-id="acf16-101">Get-AzReservationQuote</span><span class="sxs-lookup"><span data-stu-id="acf16-101">Get-AzReservationQuote</span></span>
+
+## <span data-ttu-id="acf16-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="acf16-102">SYNOPSIS</span></span>
+<span data-ttu-id="acf16-103">Получите кавычка для резервирования.</span><span class="sxs-lookup"><span data-stu-id="acf16-103">Get a quote for the reservation.</span></span> <span data-ttu-id="acf16-104">Это передается для `New-AzReservation` покупки.</span><span class="sxs-lookup"><span data-stu-id="acf16-104">This is passed to `New-AzReservation` to purchase.</span></span>
+
+## <span data-ttu-id="acf16-105">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="acf16-105">SYNTAX</span></span>
+
+```
+Get-AzReservationQuote -ReservedResourceType <String> -Sku <String> [-Location <String>]
+ -BillingScopeId <String> -Term <String> [-BillingPlan <String>] -Quantity <Int32> -DisplayName <String>
+ -AppliedScopeType <String> [-AppliedScope <String>] [-Renew <Boolean>] [-InstanceFlexibility <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="acf16-106">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="acf16-106">DESCRIPTION</span></span>
+<span data-ttu-id="acf16-107">Расчет цены для размещения заказа на резервирование.</span><span class="sxs-lookup"><span data-stu-id="acf16-107">Calculate price for placing a reservation order.</span></span>
+
+## <span data-ttu-id="acf16-108">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="acf16-108">EXAMPLES</span></span>
+
+### <span data-ttu-id="acf16-109">Пример 1</span><span class="sxs-lookup"><span data-stu-id="acf16-109">Example 1</span></span>
+```powershell
+PS C:\> Get-AzReservationQuote -ReservedResourceType "VirtualMachines" [-Sku "standard b1"] -Location "centralus"
+-BillingScopeId "/subscriptions/79c182d9-9af7-4fd5-b136-b71f0a69a1d0" -Term "P1Y" [-BillingPlan "Monthly"] -Quantity 2 [-DisplayName "demo"] -AppliedScopeType "Shared" [-AppliedScopes ""]
+```
+
+<span data-ttu-id="acf16-110">После получения каталога клиент может получить продукт в зависимости от расположения.</span><span class="sxs-lookup"><span data-stu-id="acf16-110">After get catalog, customer can get the differe product based on location.</span></span> <span data-ttu-id="acf16-111">Используя эти сведения, проверьте правильное</span><span class="sxs-lookup"><span data-stu-id="acf16-111">By using those infomation, check the price properly</span></span>
+
+## <span data-ttu-id="acf16-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="acf16-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="acf16-113">-AppliedScope</span><span class="sxs-lookup"><span data-stu-id="acf16-113">-AppliedScope</span></span>
+<span data-ttu-id="acf16-114">Подписка, в которую будет применено это преимущество.</span><span class="sxs-lookup"><span data-stu-id="acf16-114">Subscription that the benefit will be applied.</span></span> <span data-ttu-id="acf16-115">Требуется, если --applied-scope-type is Single.</span><span class="sxs-lookup"><span data-stu-id="acf16-115">Required if --applied-scope-type is Single.</span></span> <span data-ttu-id="acf16-116">Не укажите, является ли тип "Общий" --applied-scope-type общим.</span><span class="sxs-lookup"><span data-stu-id="acf16-116">Do not specify if --applied-scope-type is Shared.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-117">-AppliedScopeType</span><span class="sxs-lookup"><span data-stu-id="acf16-117">-AppliedScopeType</span></span>
+<span data-ttu-id="acf16-118">Тип применяемой области, чтобы обновить резервирование с помощью single или Shared</span><span class="sxs-lookup"><span data-stu-id="acf16-118">Type of the Applied Scope to update the reservation with "Single" or "Shared"</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-119">-BillingPlan</span><span class="sxs-lookup"><span data-stu-id="acf16-119">-BillingPlan</span></span>
+<span data-ttu-id="acf16-120">Варианты вы счета, доступные для этого SKU.</span><span class="sxs-lookup"><span data-stu-id="acf16-120">The billing plan options available for this SKU.</span></span> <span data-ttu-id="acf16-121">"Monthly" или "Upfront"</span><span class="sxs-lookup"><span data-stu-id="acf16-121">"Monthly" or "Upfront"</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-122">-BillingScopeId</span><span class="sxs-lookup"><span data-stu-id="acf16-122">-BillingScopeId</span></span>
+<span data-ttu-id="acf16-123">Подписка, с которую взимается плата за резервирование для покупки.</span><span class="sxs-lookup"><span data-stu-id="acf16-123">Subscription that will be charged for purchasing Reservation.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-124">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="acf16-124">-DefaultProfile</span></span>
+<span data-ttu-id="acf16-125">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="acf16-125">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-126">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="acf16-126">-DisplayName</span></span>
+<span data-ttu-id="acf16-127">Имя, которое легко определить для резервирования.</span><span class="sxs-lookup"><span data-stu-id="acf16-127">Friendly name for user to easily identified the reservation.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-128">-InstanceFlexibility</span><span class="sxs-lookup"><span data-stu-id="acf16-128">-InstanceFlexibility</span></span>
+<span data-ttu-id="acf16-129">Тип гибкости экземпляра для обновления резервирования.</span><span class="sxs-lookup"><span data-stu-id="acf16-129">Type of the Instance Flexibility to update the reservation with.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-130">-Location</span><span class="sxs-lookup"><span data-stu-id="acf16-130">-Location</span></span>
+<span data-ttu-id="acf16-131">Расположение, где доступен SKU.</span><span class="sxs-lookup"><span data-stu-id="acf16-131">Location that the SKU is available.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-132">-Quantity</span><span class="sxs-lookup"><span data-stu-id="acf16-132">-Quantity</span></span>
+<span data-ttu-id="acf16-133">Количество продукта для расчета цены или приобретения.</span><span class="sxs-lookup"><span data-stu-id="acf16-133">Quantity of product for calculating price or purchasing.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-134">-Продлить</span><span class="sxs-lookup"><span data-stu-id="acf16-134">-Renew</span></span>
+<span data-ttu-id="acf16-135">При этом будет автоматически приобретено новое резервирование в срок действия.</span><span class="sxs-lookup"><span data-stu-id="acf16-135">Set this to true will automatically purchase a new reservation on the expiration date time.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-136">-ReservedResourceType</span><span class="sxs-lookup"><span data-stu-id="acf16-136">-ReservedResourceType</span></span>
+<span data-ttu-id="acf16-137">Тип ресурса, для которого должны быть предоставлены skus.</span><span class="sxs-lookup"><span data-stu-id="acf16-137">Type of the resource for which the skus should be provided.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-138">-SKU</span><span class="sxs-lookup"><span data-stu-id="acf16-138">-Sku</span></span>
+<span data-ttu-id="acf16-139">Имя SKU, получить список sku с помощью каталога резервирования az команды</span><span class="sxs-lookup"><span data-stu-id="acf16-139">Sku name, get the sku list by using command az reservations catalog show</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-140">-Term</span><span class="sxs-lookup"><span data-stu-id="acf16-140">-Term</span></span>
+<span data-ttu-id="acf16-141">Доступные условия резервирования для этого ресурса.</span><span class="sxs-lookup"><span data-stu-id="acf16-141">Available reservation terms for this resource.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="acf16-142">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="acf16-142">CommonParameters</span></span>
+<span data-ttu-id="acf16-143">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="acf16-143">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="acf16-144">Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="acf16-144">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="acf16-145">INPUTS</span><span class="sxs-lookup"><span data-stu-id="acf16-145">INPUTS</span></span>
+
+### <span data-ttu-id="acf16-146">Нет</span><span class="sxs-lookup"><span data-stu-id="acf16-146">None</span></span>
+
+## <span data-ttu-id="acf16-147">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="acf16-147">OUTPUTS</span></span>
+
+### <span data-ttu-id="acf16-148">Microsoft.Azure.Management.Reservations.Models.CalculatePriceResponse</span><span class="sxs-lookup"><span data-stu-id="acf16-148">Microsoft.Azure.Management.Reservations.Models.CalculatePriceResponse</span></span>
+
+## <span data-ttu-id="acf16-149">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="acf16-149">NOTES</span></span>
+
+## <span data-ttu-id="acf16-150">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="acf16-150">RELATED LINKS</span></span>
