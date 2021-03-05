@@ -1,0 +1,114 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Monitor.dll-Help.xml
+Module Name: Az.Monitor
+online version: https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryruletriggercondition
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzScheduledQueryRuleTriggerCondition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzScheduledQueryRuleTriggerCondition.md
+ms.openlocfilehash: 1fcafb0eb9e4bd1cfb0cf5b3f5ec770c35ea92d2
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101996593"
+---
+# <span data-ttu-id="9f5ab-101">New-AzScheduledQueryRuleTriggerCondition</span><span class="sxs-lookup"><span data-stu-id="9f5ab-101">New-AzScheduledQueryRuleTriggerCondition</span></span>
+
+## <span data-ttu-id="9f5ab-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="9f5ab-102">SYNOPSIS</span></span>
+<span data-ttu-id="9f5ab-103">Создание объекта условия триггера типа</span><span class="sxs-lookup"><span data-stu-id="9f5ab-103">Creates an object of type Trigger Condition</span></span>
+
+## <span data-ttu-id="9f5ab-104">СИНТАКСИС</span><span class="sxs-lookup"><span data-stu-id="9f5ab-104">SYNTAX</span></span>
+
+```
+New-AzScheduledQueryRuleTriggerCondition -ThresholdOperator <String> -Threshold <Double>
+ [-MetricTrigger <PSScheduledQueryRuleLogMetricTrigger>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="9f5ab-105">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="9f5ab-105">DESCRIPTION</span></span>
+<span data-ttu-id="9f5ab-106">Создает объект условия триггера типа.</span><span class="sxs-lookup"><span data-stu-id="9f5ab-106">Creates an object of type Trigger Condition.</span></span>
+<span data-ttu-id="9f5ab-107">Этот объект передается команде, которая создает объект action alerting</span><span class="sxs-lookup"><span data-stu-id="9f5ab-107">This object is to be passed to the command that creates Alerting Action object</span></span>
+
+## <span data-ttu-id="9f5ab-108">ПРИМЕРЫ</span><span class="sxs-lookup"><span data-stu-id="9f5ab-108">EXAMPLES</span></span>
+
+### <span data-ttu-id="9f5ab-109">Пример 1</span><span class="sxs-lookup"><span data-stu-id="9f5ab-109">Example 1</span></span>
+```powershell
+PS C:\>  $triggerCondition = New-AzScheduledQueryRuleTriggerCondition -ThresholdOperator "GreaterThan" -Threshold 3 -MetricTrigger $metricTrigger
+```
+
+## <span data-ttu-id="9f5ab-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="9f5ab-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="9f5ab-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="9f5ab-111">-DefaultProfile</span></span>
+<span data-ttu-id="9f5ab-112">Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.</span><span class="sxs-lookup"><span data-stu-id="9f5ab-112">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9f5ab-113">-MetricTrigger</span><span class="sxs-lookup"><span data-stu-id="9f5ab-113">-MetricTrigger</span></span>
+<span data-ttu-id="9f5ab-114">Условие триггера для правила запроса метрики</span><span class="sxs-lookup"><span data-stu-id="9f5ab-114">Trigger condition for metric query rule</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSScheduledQueryRuleLogMetricTrigger
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9f5ab-115">-Пороговое значение</span><span class="sxs-lookup"><span data-stu-id="9f5ab-115">-Threshold</span></span>
+<span data-ttu-id="9f5ab-116">Пороговое значение, пре превышенное для оповещения</span><span class="sxs-lookup"><span data-stu-id="9f5ab-116">The threshold above which alert gets fired</span></span>
+
+```yaml
+Type: System.Double
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9f5ab-117">-ThresholdOperator</span><span class="sxs-lookup"><span data-stu-id="9f5ab-117">-ThresholdOperator</span></span>
+<span data-ttu-id="9f5ab-118">Оператор порогового значения: большее, меньшее или равное</span><span class="sxs-lookup"><span data-stu-id="9f5ab-118">The threshold operator : GreaterThan, LessThan or Equal</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9f5ab-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9f5ab-119">CommonParameters</span></span>
+<span data-ttu-id="9f5ab-120">Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="9f5ab-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9f5ab-121">Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="9f5ab-121">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="9f5ab-122">INPUTS</span><span class="sxs-lookup"><span data-stu-id="9f5ab-122">INPUTS</span></span>
+
+### <span data-ttu-id="9f5ab-123">Нет</span><span class="sxs-lookup"><span data-stu-id="9f5ab-123">None</span></span>
+
+## <span data-ttu-id="9f5ab-124">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="9f5ab-124">OUTPUTS</span></span>
+
+### <span data-ttu-id="9f5ab-125">Microsoft.Azure.Commands.Insights.OutputClasses.PSScheduledQueryRuleTriggerCondition</span><span class="sxs-lookup"><span data-stu-id="9f5ab-125">Microsoft.Azure.Commands.Insights.OutputClasses.PSScheduledQueryRuleTriggerCondition</span></span>
+
+## <span data-ttu-id="9f5ab-126">ПРИМЕЧАНИЯ</span><span class="sxs-lookup"><span data-stu-id="9f5ab-126">NOTES</span></span>
+
+## <span data-ttu-id="9f5ab-127">СВЯЗАННЫЕ ССЫЛКИ</span><span class="sxs-lookup"><span data-stu-id="9f5ab-127">RELATED LINKS</span></span>
